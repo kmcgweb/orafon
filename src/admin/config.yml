@@ -227,10 +227,51 @@ collections:
         file: content/pages/home.yml
         i18n: true
         fields:
-          - { name: hero_title, label: "หัวข้อใหญ่", widget: string, i18n: true }
+          - { name: hero_title, label: "หัวข้อใหญ่ (ใช้เมื่อไม่มีสไลด์ และสำหรับ Google)", widget: string, i18n: true }
           - { name: hero_highlight, label: "หัวข้อใหญ่ (ส่วนสีไล่เฉด)", widget: string, i18n: true }
-          - { name: hero_lead, label: "คำอธิบายใต้หัวข้อ", widget: text, i18n: true }
-          - { name: hero_product, label: "สินค้าที่แสดงในภาพหลัก", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false }
+          - { name: hero_lead, label: "คำอธิบายใต้หัวข้อ (ใช้เมื่อไม่มีสไลด์)", widget: text, i18n: true }
+          - name: slides
+            label: "แบนเนอร์สไลด์ด้านบน"
+            hint: "รูปคอม 1920×720 px · รูปมือถือ 1080×1350 px (ถ้าไม่ใส่ จะใช้รูปคอมแทน) · ลบสไลด์ทั้งหมดเพื่อกลับไปใช้หัวข้อแบบข้อความ"
+            widget: list
+            required: false
+            i18n: true
+            summary: "{{title}}"
+            fields:
+              - { name: image, label: "รูปแบนเนอร์ (คอม) 1920×720", widget: image, required: false, i18n: duplicate }
+              - { name: image_mobile, label: "รูปแบนเนอร์ (มือถือ) 1080×1350", widget: image, required: false, i18n: duplicate }
+              - { name: product, label: "ลิงก์ไปสินค้า", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false, i18n: duplicate }
+              - { name: url, label: "หรือลิงก์อื่น", hint: "เช่น /technical/ (ถ้าใส่ จะใช้แทนลิงก์สินค้า)", widget: string, required: false, i18n: duplicate }
+              - { name: title, label: "หัวข้อบนแบนเนอร์", hint: "เว้นว่างได้ ถ้ารูปมีข้อความอยู่แล้ว", widget: string, required: false }
+              - { name: text, label: "ข้อความรอง", widget: string, required: false }
+              - { name: button, label: "ข้อความปุ่ม", widget: string, required: false }
+          - name: promos
+            label: "แบนเนอร์โปรโมทสินค้า (ใต้สไลด์)"
+            hint: "แนะนำ 3 ช่อง · รูป 800×600 px"
+            widget: list
+            required: false
+            i18n: true
+            summary: "{{title}}"
+            fields:
+              - { name: image, label: "รูป 800×600", widget: image, required: false, i18n: duplicate }
+              - { name: product, label: "ลิงก์ไปสินค้า", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false, i18n: duplicate }
+              - { name: url, label: "หรือลิงก์อื่น", widget: string, required: false, i18n: duplicate }
+              - { name: title, label: "หัวข้อ", widget: string }
+              - { name: text, label: "ข้อความรอง", widget: string, required: false }
+          - name: wide_banner
+            label: "แบนเนอร์กว้าง (เหนือส่วนแบรนด์)"
+            hint: "รูปคอม 1920×480 px · รูปมือถือ 1200×675 px"
+            widget: object
+            required: false
+            i18n: true
+            fields:
+              - { name: image, label: "รูป (คอม) 1920×480", widget: image, required: false, i18n: duplicate }
+              - { name: image_mobile, label: "รูป (มือถือ) 1200×675", widget: image, required: false, i18n: duplicate }
+              - { name: product, label: "ลิงก์ไปสินค้า", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false, i18n: duplicate }
+              - { name: url, label: "หรือลิงก์อื่น", widget: string, required: false, i18n: duplicate }
+              - { name: title, label: "หัวข้อ", widget: string, required: false }
+              - { name: text, label: "ข้อความรอง", widget: string, required: false }
+              - { name: button, label: "ข้อความปุ่ม", widget: string, required: false }
           - name: stats
             label: "ตัวเลขความน่าเชื่อถือ"
             widget: list

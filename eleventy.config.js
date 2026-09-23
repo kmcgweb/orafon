@@ -99,6 +99,7 @@ function buildDb() {
     const one = (k) => localize(singles[k], lang);
     db[lang] = {
       refrigerants, brands, products, articles, refMap, brandMap,
+      productMap: Object.fromEntries(products.map((p) => [p.slug, p])),
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
       refsByClass: CLASS_ORDER.map((c) => ({ class: c, items: refrigerants.filter((r) => r.class === c) })).filter((g) => g.items.length),
@@ -134,6 +135,12 @@ export default function (eleventyConfig) {
 
   // "/products/" + "en" -> "/en/products/"
   eleventyConfig.addFilter("u", (p, lang) => (lang && lang !== DEFAULT_LANG ? `/${lang}${p}` : p));
+  // banner links: external URLs untouched, site paths localized, else the linked product's page
+  eleventyConfig.addFilter("bannerHref", (b, lang) => {
+    const loc = (p) => (lang && lang !== DEFAULT_LANG ? `/${lang}${p}` : p);
+    if (b.url) return /^https?:\/\//.test(b.url) ? b.url : loc(b.url);
+    return b.product ? loc(`/products/${b.product}/`) : loc("/products/");
+  });
   eleventyConfig.addFilter("md", (s) => (s ? md.render(String(s)) : ""));
   eleventyConfig.addFilter("mdInline", (s) => (s ? md.renderInline(String(s)) : ""));
   eleventyConfig.addFilter("shortNum", (num) => String(num || "").replace(/^R-?/i, ""));

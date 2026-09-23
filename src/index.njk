@@ -4,49 +4,119 @@ permalink: "{{ '/' | u(lang) }}"
 layout: layouts/base.njk
 pathKey: /
 section: home
+pageScript: home.js
 ---
-{%- from "partials/macros.njk" import cylinder, productCard, ctaBand -%}
+{#- Home: banner slider → promo tiles → featured products → wide banner → brands → stats → CTA.
+    Every image slot is edited in /admin (หน้าเว็บ → หน้าแรก). Empty slots render a designed placeholder with the recommended size. -#}
+{%- from "partials/macros.njk" import cylinder, productCard, ctaBand, icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set H = D.home -%}
-{%- set hp = null -%}
-{%- for p in D.products %}{% if p.slug == H.hero_product %}{% set hp = p %}{% endif %}{% endfor -%}
-{%- if not hp and D.products.length %}{% set hp = D.products[0] %}{% endif -%}
 {%- set featured = D.featured -%}
 
-<section class="hero"><div class="container hero-grid">
-  <div>
-    <h1 class="display">{{ H.hero_title }} <span class="grad-text">{{ H.hero_highlight }}</span></h1>
-    <p class="lead">{{ H.hero_lead }}</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary grad-bg" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }}</a>
-      <a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+{%- set imgIcon = icon("image") -%}
+
+{%- if H.slides and H.slides.length %}
+<h1 class="sr-only">{{ H.hero_title }} {{ H.hero_highlight }} — {{ D.site.brand_name }}</h1>
+<section class="hero-slider-wrap"><div class="container">
+  <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="{{ D.site.brand_name }}">
+    {%- for s in H.slides %}
+    {%- set p = D.productMap[s.product] if s.product else null %}
+    <div class="hs-slide{% if loop.first %} active{% endif %}{% if not s.image %} is-ph{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
+      {%- if s.image %}
+      <picture>
+        {%- if s.image_mobile %}<source media="(max-width:768px)" srcset="{{ s.image_mobile }}">{% endif %}
+        <img src="{{ s.image }}" alt="{{ s.title }}"{% if not loop.first %} loading="lazy"{% endif %}>
+      </picture>
+      {%- else %}
+      <div class="hs-ph">
+        <div class="hs-ph-art{% if not p %} is-icon{% endif %}">{% if p %}{{ cylinder(p.ref, "slide-" ~ loop.index) }}{% else %}{{ icon("doc") }}{% endif %}</div>
+        <span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} <i class="d">1920×720 px</i><i class="m">1080×1350 px</i></span>
+      </div>
+      {%- endif %}
+      {%- if s.title or s.text %}
+      <div class="hs-content">
+        {%- if s.title %}<h2>{{ s.title }}</h2>{% endif %}
+        {%- if s.text %}<p>{{ s.text }}</p>{% endif %}
+        {%- if s.button %}<a class="btn btn-white" href="{{ s | bannerHref(lang) }}">{{ s.button }} →</a>{% endif %}
+      </div>
+      {%- elif s.product or s.url %}
+      <a class="hs-link" href="{{ s | bannerHref(lang) }}" aria-label="{{ s.title or D.site.brand_name }}"></a>
+      {%- endif %}
     </div>
-  </div>
-  {%- if hp %}
-  <div class="hero-visual"><div class="hero-card grad-bg">
-    {%- if hp.ref %}
-    <div class="hero-float hf1"><div class="k">ASHRAE</div><div class="v">{{ hp.ref.number }}</div></div>
-    <div class="hero-float hf2"><div class="k">GWP (AR4)</div><div class="v">{{ hp.ref.gwp_ar4 }}</div></div>
+    {%- endfor %}
+    {%- if H.slides.length > 1 %}
+    <button class="hs-nav prev" type="button" aria-label="Previous">{{ icon("chev") }}</button>
+    <button class="hs-nav next" type="button" aria-label="Next">{{ icon("chev") }}</button>
+    <div class="hs-dots" role="tablist">
+      {%- for s in H.slides %}<button type="button" class="{{ 'active' if loop.first }}" aria-label="{{ loop.index }}"></button>{% endfor %}
+    </div>
     {%- endif %}
-    <a class="inner" href="{{ ('/products/' ~ hp.slug ~ '/') | u(lang) }}">
-      {%- if hp.images and hp.images[0] %}<img src="{{ hp.images[0] }}" alt="{{ hp.name }}">{% else %}{{ cylinder(hp.ref, "hero") }}{% endif %}
-      <div class="hn">{{ hp.name }}</div>
-      <div class="hs">{{ hp.tagline }}</div>
-    </a>
-  </div></div>
-  {%- endif %}
+  </div>
 </div></section>
+{%- else %}
+{#- no slides configured: fall back to the text hero -#}
+<section class="hero"><div class="container">
+  <h1 class="display">{{ H.hero_title }} <span class="grad-text">{{ H.hero_highlight }}</span></h1>
+  <p class="lead">{{ H.hero_lead }}</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary grad-bg" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }}</a>
+    <a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+  </div>
+</div></section>
+{%- endif %}
+
+{%- if H.promos and H.promos.length %}
+<section class="promo-wrap"><div class="container">
+  <div class="promo-grid">
+    {%- for m in H.promos %}
+    {%- set p = D.productMap[m.product] if m.product else null %}
+    <a class="promo-tile{% if not m.image %} is-ph{% endif %}" href="{{ m | bannerHref(lang) }}">
+      {%- if m.image %}<img src="{{ m.image }}" alt="{{ m.title }}" loading="lazy">
+      {%- else %}
+      <span class="pt-ph">{{ cylinder(p.ref if p else null, "promo-" ~ loop.index) }}</span>
+      <span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} 800×600 px</span>
+      {%- endif %}
+      <span class="pt-text">
+        <b>{{ m.title }}</b>
+        {%- if m.text %}<span>{{ m.text }}</span>{% endif %}
+      </span>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}
 
 {%- set showList = featured if featured.length else D.products %}
 {%- if showList.length %}
-<section class="section" style="padding-top:24px"><div class="container">
+<section class="section"><div class="container">
   <h2 class="display">{{ T.featured }}</h2>
   <p class="lead">{{ T.featuredLead }}</p>
   <div class="prod-grid">
     {%- for p in showList | batch(8) | first %}{{ productCard(p, lang, T) }}{% endfor %}
   </div>
   <div style="margin-top:28px"><a class="btn btn-ghost" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }} →</a></div>
+</div></section>
+{%- endif %}
+
+{%- set w = H.wide_banner %}
+{%- if w and (w.image or w.title) %}
+<section class="section" style="padding-top:0"><div class="container">
+  <a class="wide-banner{% if not w.image %} is-ph{% endif %}" href="{{ w | bannerHref(lang) }}">
+    {%- if w.image %}
+    <picture>
+      {%- if w.image_mobile %}<source media="(max-width:768px)" srcset="{{ w.image_mobile }}">{% endif %}
+      <img src="{{ w.image }}" alt="{{ w.title }}" loading="lazy">
+    </picture>
+    {%- else %}<span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} <i class="d">1920×480 px</i><i class="m">1200×675 px</i></span>{% endif %}
+    {%- if w.title %}
+    <span class="wb-content">
+      <b>{{ w.title }}</b>
+      {%- if w.text %}<span>{{ w.text }}</span>{% endif %}
+      {%- if w.button %}<em>{{ w.button }} →</em>{% endif %}
+    </span>
+    {%- endif %}
+  </a>
 </div></section>
 {%- endif %}
 

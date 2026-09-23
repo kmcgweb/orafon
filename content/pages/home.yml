@@ -3,6 +3,52 @@ th:
   hero_highlight: ที่ทีมงานมืออาชีพไว้วางใจ
   hero_lead: ORAFON จำหน่ายสารทำความเย็นแบรนด์ของเราเองและ Solstice® พร้อมข้อมูลทางเทคนิคและคำปรึกษาสำหรับงานปรับอากาศ เชิงพาณิชย์ และอุตสาหกรรม
   hero_product: solstice-n40
+  slides:
+    - image: ""
+      image_mobile: ""
+      product: solstice-n40
+      url: ""
+      title: Solstice® N40 (R-448A)
+      text: สารทดแทน R-404A ไม่ติดไฟ A1 ลด GWP 68% สำหรับงานทำความเย็นเชิงพาณิชย์
+      button: ดูรายละเอียดสินค้า
+    - image: ""
+      image_mobile: ""
+      product: orafon-r32
+      url: ""
+      title: ORAFON R-32
+      text: สารทำความเย็นสำหรับแอร์อินเวอร์เตอร์รุ่นใหม่ GWP ต่ำกว่า R-410A
+      button: ดูรายละเอียดสินค้า
+    - image: ""
+      image_mobile: ""
+      product: ""
+      url: /technical/
+      title: ศูนย์ข้อมูลเทคนิค
+      text: ตารางสารทดแทน เอกสาร TDS/SDS และคู่มือความปลอดภัย
+      button: เข้าสู่ศูนย์ข้อมูลเทคนิค
+  promos:
+    - image: ""
+      product: orafon-r410a
+      url: ""
+      title: ORAFON R-410A
+      text: สำหรับแอร์บ้านและแอร์เชิงพาณิชย์
+    - image: ""
+      product: solstice-r454b
+      url: ""
+      title: Solstice® R-454B
+      text: GWP ต่ำ สำหรับแอร์รุ่นใหม่
+    - image: ""
+      product: orafon-r290
+      url: ""
+      title: ORAFON R-290
+      text: สารทำความเย็นธรรมชาติ GWP ต่ำมาก
+  wide_banner:
+    image: ""
+    image_mobile: ""
+    product: ""
+    url: /brands/solstice/
+    title: ตัวแทนจำหน่าย Solstice®
+    text: สารทำความเย็นเทคโนโลยี HFO จาก Solstice Advanced Materials
+    button: ดูสินค้า Solstice®
   stats:
     - num: "100%"
       label: สินค้าของแท้
@@ -18,6 +64,52 @@ en:
   hero_title: Refrigerants
   hero_highlight: trusted by professionals
   hero_lead: ORAFON supplies our own refrigerant brand and Solstice®, with technical data and advice for air-conditioning, commercial and industrial refrigeration.
+  slides:
+    - image: ""
+      image_mobile: ""
+      product: solstice-n40
+      url: ""
+      title: Solstice® N40 (R-448A)
+      text: Non-flammable A1 replacement for R-404A with 68% lower GWP for commercial refrigeration
+      button: View product
+    - image: ""
+      image_mobile: ""
+      product: orafon-r32
+      url: ""
+      title: ORAFON R-32
+      text: Refrigerant for new inverter air conditioners, lower GWP than R-410A
+      button: View product
+    - image: ""
+      image_mobile: ""
+      product: ""
+      url: /technical/
+      title: Technical Center
+      text: Retrofit guide, TDS/SDS documents and safety guidance
+      button: Open Technical Center
+  promos:
+    - image: ""
+      product: orafon-r410a
+      url: ""
+      title: ORAFON R-410A
+      text: For residential and commercial AC
+    - image: ""
+      product: solstice-r454b
+      url: ""
+      title: Solstice® R-454B
+      text: Low GWP for new air conditioners
+    - image: ""
+      product: orafon-r290
+      url: ""
+      title: ORAFON R-290
+      text: Natural refrigerant with ultra-low GWP
+  wide_banner:
+    image: ""
+    image_mobile: ""
+    product: ""
+    url: /brands/solstice/
+    title: Authorized Solstice® distributor
+    text: HFO-technology refrigerants from Solstice Advanced Materials
+    button: View Solstice® products
   stats:
     - num: "100%"
       label: Genuine products
