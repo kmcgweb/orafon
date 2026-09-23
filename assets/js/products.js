@@ -3,7 +3,10 @@
   var bar = document.getElementById("filters");
   var grid = document.getElementById("grid");
   if (!bar || !grid) return;
-  var cards = Array.prototype.slice.call(grid.querySelectorAll(".prod-card"));
+  var tableView = document.getElementById("tableView");
+  // cards and table rows carry the same data-* attributes, so one pass filters both views
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#grid .prod-card, #tableView .prod-row"));
+  var cardCount = grid.querySelectorAll(".prod-card").length;
   var count = document.getElementById("count");
   var empty = document.getElementById("empty");
   var reset = document.getElementById("reset");
@@ -33,10 +36,10 @@
         return !state[key] || has(c, key === "label" ? "labels" : key, state[key]);
       }) && terms.every(function (t) { return c.dataset.text.indexOf(t) !== -1; });
       c.hidden = !ok;
-      if (ok) n++;
+      if (ok && c.classList.contains("prod-card")) n++;
     });
     count.textContent = count.dataset.tpl.replace("{n}", n);
-    if (cards.length) empty.hidden = n > 0;
+    if (cardCount) empty.hidden = n > 0;
     var active = false;
     selects.forEach(function (s) { var on = !!s.value; s.classList.toggle("on", on); active = active || on; });
     reset.hidden = !(active || state.q);
@@ -54,6 +57,24 @@
     selects.forEach(function (s) { s.value = ""; state[s.getAttribute("data-key")] = ""; });
     apply();
   });
+
+  // card / table view toggle (remembered per visitor; storage may be unavailable)
+  var viewBtns = Array.prototype.slice.call(bar.querySelectorAll("[data-view]"));
+  function setView(v) {
+    var table = v === "table";
+    grid.hidden = table;
+    tableView.hidden = !table;
+    viewBtns.forEach(function (b) {
+      var on = b.getAttribute("data-view") === v;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on);
+    });
+    try { localStorage.setItem("orafon-view", v); } catch (e) {}
+  }
+  viewBtns.forEach(function (b) { b.addEventListener("click", function () { setView(b.getAttribute("data-view")); }); });
+  var saved = "cards";
+  try { saved = localStorage.getItem("orafon-view") || "cards"; } catch (e) {}
+  setView(saved);
 
   apply();
 })();

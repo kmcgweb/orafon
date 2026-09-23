@@ -72,6 +72,10 @@
       <option value="">All grades</option><option value="r-22">R-22</option><option value="r-141b">R-141b</option><option value="r-32">R-32</option><option value="r-410a">R-410A</option><option value="r-152a">R-152a</option><option value="r-23">R-23</option><option value="r-245fa">R-245fa</option><option value="r-134a">R-134a</option><option value="r-404a">R-404A</option><option value="r-507a">R-507A</option><option value="r-407c">R-407C</option><option value="r-407f">R-407F</option><option value="r-417a">R-417A</option><option value="r-508b">R-508B</option><option value="r-448a">R-448A</option><option value="r-449a">R-449A</option><option value="r-452a">R-452A</option><option value="r-454b">R-454B</option><option value="r-454c">R-454C</option><option value="r-455a">R-455A</option><option value="r-513a">R-513A</option><option value="r-515b">R-515B</option><option value="r-1233zd">R-1233zd(E)</option><option value="r-600a">R-600a</option><option value="r-290">R-290</option>
     </select>
     <button type="button" class="tb-reset" id="reset" hidden>✕ Clear filters</button>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button type="button" data-view="cards" class="active" aria-pressed="true" title="Card view"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span class="sr-only">Card view</span></button>
+      <button type="button" data-view="table" aria-pressed="false" title="Table view"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg><span class="sr-only">Table view</span></button>
+    </div>
   </div>
 </div></section>
 
@@ -369,6 +373,315 @@
   </div>
 </article>
   </div>
+  <div class="table-wrap" id="tableView" hidden>
+    <table class="data-table prod-table">
+      <thead><tr>
+        <th>Products</th><th>Brand</th><th>Grade</th><th>Type</th><th>ASHRAE</th><th>GWP (AR4)</th><th>Pack sizes</th><th></th>
+      </tr></thead>
+      <tbody>
+        <tr class="prod-row" data-labels="recommended popular" data-class="HFC" data-brand="orafon" data-ref="r-32" data-text="orafon r-32 hfc refrigerant r-32 hfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r32/"><span class="dot" style="background:#EA580C"></span>ORAFON R-32</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span><span class="prod-tag lb-popular">Popular</span></div>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-32</strong></td>
+          <td>HFC</td>
+          <td><span class="chip sfc sf-A2L">A2L</span></td>
+          <td><span class="gwp-bar" style="--w:68%"></span>675</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r32/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended popular" data-class="HFC Blend" data-brand="orafon" data-ref="r-410a" data-text="orafon r-410a hfc blend refrigerant r-410a hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r410a/"><span class="dot" style="background:#7C3AED"></span>ORAFON R-410A</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span><span class="prod-tag lb-popular">Popular</span></div>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-410A</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:79%"></span>2088</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r410a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended" data-class="HCFC" data-brand="orafon" data-ref="r-22" data-text="orafon r-22 hcfc refrigerant r-22 hcfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r22/"><span class="dot" style="background:#0F766E"></span>ORAFON R-22</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span></div>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-22</strong></td>
+          <td>HCFC</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:78%"></span>1810</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r22/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended popular" data-class="HFC" data-brand="orafon" data-ref="r-134a" data-text="orafon r-134a hfc refrigerant r-134a hfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r134a/"><span class="dot" style="background:#059669"></span>ORAFON R-134a</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span><span class="prod-tag lb-popular">Popular</span></div>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-134a</strong></td>
+          <td>HFC</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:76%"></span>1430</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r134a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended" data-class="HFO Blend" data-brand="solstice" data-ref="r-448a" data-text="solstice® n40 (r-448a) hfo blend refrigerant r-448a hfo blend solstice® 10637999 10637061 10657578 10655356">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-n40/"><span class="dot" style="background:#4F46E5"></span>Solstice® N40 (R-448A)</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span></div>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-448A</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:75%"></span>1387</td>
+          <td class="muted">11.3 · 45 · 386 · 658 kg</td>
+          <td><a class="pt-go" href="/en/products/solstice-n40/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HCFC" data-brand="orafon" data-ref="r-141b" data-text="orafon r-141b hcfc flushing &amp; blowing agent r-141b hcfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r141b/"><span class="dot" style="background:#B45309"></span>ORAFON R-141b</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-141b</strong></td>
+          <td>HCFC</td>
+          <td><span class="chip sfc sf-A2">A2</span></td>
+          <td><span class="gwp-bar" style="--w:69%"></span>725</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r141b/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC" data-brand="orafon" data-ref="r-152a" data-text="orafon r-152a hfc aerosol propellant &amp; blend component r-152a hfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r152a/"><span class="dot" style="background:#0891B2"></span>ORAFON R-152a</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-152a</strong></td>
+          <td>HFC</td>
+          <td><span class="chip sfc sf-A2">A2</span></td>
+          <td><span class="gwp-bar" style="--w:50%"></span>124</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r152a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC" data-brand="orafon" data-ref="r-23" data-text="orafon r-23 ultra-low-temperature hfc refrigerant r-23 hfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r23/"><span class="dot" style="background:#1E3A8A"></span>ORAFON R-23</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-23</strong></td>
+          <td>HFC</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:100%"></span>14800</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r23/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC" data-brand="orafon" data-ref="r-245fa" data-text="orafon r-245fa low-pressure hfc r-245fa hfc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r245fa/"><span class="dot" style="background:#6D28D9"></span>ORAFON R-245fa</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-245fa</strong></td>
+          <td>HFC</td>
+          <td><span class="chip sfc sf-B1">B1</span></td>
+          <td><span class="gwp-bar" style="--w:72%"></span>1030</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r245fa/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-404a" data-text="orafon r-404a hfc blend refrigerant r-404a hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r404a/"><span class="dot" style="background:#334155"></span>ORAFON R-404A</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-404A</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:86%"></span>3922</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r404a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-507a" data-text="orafon r-507a hfc blend refrigerant r-507a hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r507a/"><span class="dot" style="background:#475569"></span>ORAFON R-507A</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-507A</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:86%"></span>3985</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r507a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-407c" data-text="orafon r-407c hfc blend refrigerant r-407c hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r407c/"><span class="dot" style="background:#7C3AED"></span>ORAFON R-407C</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-407C</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:78%"></span>1774</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r407c/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-407f" data-text="orafon r-407f hfc blend refrigerant r-407f hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r407f/"><span class="dot" style="background:#7C3AED"></span>ORAFON R-407F</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-407F</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:78%"></span>1825</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r407f/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-417a" data-text="orafon r-417a hfc blend refrigerant r-417a hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r417a/"><span class="dot" style="background:#0F766E"></span>ORAFON R-417A</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-417A</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:81%"></span>2346</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r417a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFC Blend" data-brand="orafon" data-ref="r-508b" data-text="orafon r-508b ultra-low-temperature hfc blend r-508b hfc blend orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r508b/"><span class="dot" style="background:#1E40AF"></span>ORAFON R-508B</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-508B</strong></td>
+          <td>HFC Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:99%"></span>13396</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r508b/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended" data-class="HFO Blend" data-brand="solstice" data-ref="r-449a" data-text="solstice® r-449a hfo blend refrigerant r-449a hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r449a/"><span class="dot" style="background:#4338CA"></span>Solstice® R-449A</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span></div>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-449A</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:75%"></span>1397</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r449a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-452a" data-text="solstice® r-452a hfo blend refrigerant r-452a hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r452a/"><span class="dot" style="background:#0369A1"></span>Solstice® R-452A</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-452A</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:80%"></span>2140</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r452a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended" data-class="HFO Blend" data-brand="solstice" data-ref="r-454b" data-text="solstice® r-454b hfo blend refrigerant r-454b hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r454b/"><span class="dot" style="background:#EA580C"></span>Solstice® R-454B</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span></div>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-454B</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A2L">A2L</span></td>
+          <td><span class="gwp-bar" style="--w:64%"></span>466</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r454b/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-454c" data-text="solstice® r-454c hfo blend refrigerant r-454c hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r454c/"><span class="dot" style="background:#059669"></span>Solstice® R-454C</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-454C</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A2L">A2L</span></td>
+          <td><span class="gwp-bar" style="--w:52%"></span>148</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r454c/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-455a" data-text="solstice® r-455a hfo blend refrigerant r-455a hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r455a/"><span class="dot" style="background:#0D9488"></span>Solstice® R-455A</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-455A</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A2L">A2L</span></td>
+          <td><span class="gwp-bar" style="--w:52%"></span>148</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r455a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-513a" data-text="solstice® r-513a hfo blend refrigerant r-513a hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r513a/"><span class="dot" style="background:#0EA5E9"></span>Solstice® R-513A</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-513A</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:67%"></span>631</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r513a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-515b" data-text="solstice® r-515b hfo blend refrigerant r-515b hfo blend solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-r515b/"><span class="dot" style="background:#0284C7"></span>Solstice® R-515B</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-515B</strong></td>
+          <td>HFO Blend</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:59%"></span>293</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-r515b/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HFO" data-brand="solstice" data-ref="r-1233zd" data-text="solstice® lba (hfo-1233zd(e)) hfo liquid blowing agent &amp; refrigerant r-1233zd(e) hfo solstice®">
+          <td>
+            <a class="pt-name" href="/en/products/solstice-lba/"><span class="dot" style="background:#16A34A"></span>Solstice® LBA (HFO-1233zd(E))</a>
+          </td>
+          <td>Solstice®</td>
+          <td><strong>R-1233zd(E)</strong></td>
+          <td>HFO</td>
+          <td><span class="chip sfc sf-A1">A1</span></td>
+          <td><span class="gwp-bar" style="--w:7%"></span>1</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/solstice-lba/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="" data-class="HC" data-brand="orafon" data-ref="r-600a" data-text="orafon r-600a natural refrigerant (isobutane) r-600a hc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r600a/"><span class="dot" style="background:#DC2626"></span>ORAFON R-600a</a>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-600a</strong></td>
+          <td>HC</td>
+          <td><span class="chip sfc sf-A3">A3</span></td>
+          <td><span class="gwp-bar" style="--w:14%"></span>3</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r600a/">View details →</a></td>
+        </tr>
+        <tr class="prod-row" data-labels="recommended" data-class="HC" data-brand="orafon" data-ref="r-290" data-text="orafon r-290 natural refrigerant (propane) r-290 hc orafon">
+          <td>
+            <a class="pt-name" href="/en/products/orafon-r290/"><span class="dot" style="background:#EF4444"></span>ORAFON R-290</a><div class="pt-tags"><span class="prod-tag lb-recommended">Recommended</span></div>
+          </td>
+          <td>ORAFON</td>
+          <td><strong>R-290</strong></td>
+          <td>HC</td>
+          <td><span class="chip sfc sf-A3">A3</span></td>
+          <td><span class="gwp-bar" style="--w:14%"></span>3</td>
+          <td class="muted">on request</td>
+          <td><a class="pt-go" href="/en/products/orafon-r290/">View details →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div class="card empty" id="empty" hidden>
     No products match your filters
     <div style="margin-top:16px"><a class="btn btn-ghost" href="/en/contact/">Contact sales</a></div>
@@ -390,7 +703,7 @@
         <li><a href="/en/brands/solstice/">Solstice®</a></li>
       </ul></div>
       <div class="foot-col"><h4>Technical Center</h4><ul>
-        <li><a href="/en/refrigerants/">Refrigerants</a></li>
+        <li><a href="/en/technical/">Overview</a></li>
         <li><a href="/en/retrofit/">Retrofit guide</a></li>
         <li><a href="/en/documents/">TDS/SDS documents</a></li>
         <li><a href="/en/contact/">Request a quote</a></li><li><a href="tel:+66000000000">Call 0X-XXX-XXXX</a></li><li><a href="https://line.me/R/ti/p/%40orafon" rel="noopener" target="_blank">LINE @orafon</a></li>
