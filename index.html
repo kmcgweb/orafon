@@ -3,180 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ORAFON — สารทำความเย็นและตัวแทนจำหน่าย Solstice®</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="orafon.css">
-<style>
-.hero{padding:56px 0 40px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero h1{font-size:52px;font-weight:800}
-.hero .lead{font-size:19px;color:var(--text-muted);margin:22px 0 30px;max-width:34ch;line-height:1.7}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.hero-visual{perspective:2000px}
-.hero-card{transform:rotateX(4deg) rotateY(-10deg);transition:transform .5s;border-radius:28px;padding:36px;box-shadow:var(--shadow-lift);position:relative}
-.hero-visual:hover .hero-card{transform:rotateX(2deg) rotateY(-6deg)}
-.hero-card .inner{background:#fff;border-radius:20px;padding:34px;text-align:center}
-.hero-card svg{width:150px;height:180px}
-.hero-float{position:absolute;background:#fff;border-radius:16px;box-shadow:var(--shadow-lift);padding:12px 16px}
-.hero-float .k{font-size:11px;color:var(--text-muted);font-weight:600}
-.hero-float .v{font-size:18px;font-weight:800;color:var(--text)}
-.hf1{top:-16px;left:-16px}.hf2{bottom:-18px;right:-16px}
-.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
-.cat-card{background:#fff;border:1px solid var(--border-soft);border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow-soft);transition:.2s}
-.cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-.cat-card .e{width:56px;height:56px;margin:0 auto 12px;border-radius:16px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;font-size:26px}
-.cat-card .t{font-weight:700;font-size:15px;color:var(--text)}
-.cat-card .d{font-size:12.5px;color:var(--text-muted);margin-top:4px}
-.trust{background:linear-gradient(135deg,#eef2ff,#f5f3ff);border:1px solid #e0e7ff;border-radius:24px;padding:44px}
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px}
-.trust-item .n{font-size:38px;font-weight:800}
-.trust-item .l{font-size:14px;color:var(--text-muted);margin-top:4px}
-.home-cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#312e81,#1e1b4b);border-radius:28px;padding:64px 32px;text-align:center;color:#fff}
-.home-cta h2{font-size:36px;font-weight:800;color:#fff;max-width:22ch;margin:0 auto 14px}
-.home-cta p{color:#c7d2fe;max-width:52ch;margin:0 auto 28px;font-size:17px}
-.home-cta .fb{position:absolute;border-radius:50%;filter:blur(80px)}
-.home-cta .fb1{top:-80px;right:-80px;width:320px;height:320px;background:var(--secondary);opacity:.25}
-.home-cta .fb2{bottom:-80px;left:-80px;width:320px;height:320px;background:var(--primary);opacity:.3}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero h1{font-size:38px}.hero-card{transform:none}}
-</style>
+<title>ORAFON — สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®</title>
+<meta name="description" content="สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®">
+<link rel="canonical" href="https://orafon.co.th/">
+<link rel="alternate" hreflang="th" href="https://orafon.co.th/">
+<link rel="alternate" hreflang="en" href="https://orafon.co.th/en/">
+<link rel="alternate" hreflang="x-default" href="https://orafon.co.th/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ORAFON">
+<meta property="og:title" content="ORAFON — สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®">
+<meta property="og:description" content="สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®">
+<meta property="og:url" content="https://orafon.co.th/">
+<meta property="og:image" content="https://orafon.co.th/assets/img/orafon-logo.png">
+<meta property="og:locale" content="th_TH">
+<link rel="icon" type="image/png" href="/assets/img/orafon-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/orafon.css">
 </head>
-<body>
-<div class="blobs"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
-<header>
+<body class="">
+<div class="blobs" aria-hidden="true"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
+<header class="site">
   <div class="container nav">
-    <a class="logo" href="index.html" aria-label="ORAFON หน้าแรก"><img src="orafon-logo.png" alt="ORAFON"></a>
-    <div class="search"><input type="text" placeholder="ค้นหาสารทำความเย็น อุปกรณ์ เครื่องมือ..." aria-label="ค้นหาสินค้า"><span class="ico" aria-hidden="true">🔍</span></div>
+    <a class="logo" href="/" aria-label="ORAFON — หน้าแรก"><img src="/assets/img/orafon-logo.png" alt="ORAFON" width="120" height="32"></a>
+    <form class="search" action="/products/" method="get" role="search">
+      <input type="search" name="q" placeholder="ค้นหาสินค้า เบอร์น้ำยา เช่น R-32" aria-label="ค้นหา">
+      <button type="submit" aria-label="ค้นหา"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    </form>
     <div class="nav-actions">
-      <button aria-label="เปลี่ยนภาษา">🌐<span>TH</span></button>
-      <button aria-label="รายการสอบถาม">📋<span>รายการสอบถาม</span></button>
-      <button aria-label="เข้าสู่ระบบ">👤<span>เข้าสู่ระบบ</span></button>
-      <a class="nav-cta grad-bg btn" href="contact.html"><span>ขอใบเสนอราคา</span></a>
+      <div class="lang-switch" aria-label="Language"><span aria-current="true">TH</span><a href="/en/" hreflang="en" lang="en">EN</a>
+      </div>
+      <a class="nav-cta grad-bg" href="/contact/">ขอใบเสนอราคา</a>
     </div>
   </div>
-  <nav class="catbar" aria-label="เมนูหลัก">
+  <nav class="catbar" aria-label="หน้าแรก">
     <div class="container">
-      <a href="index.html" class="active">หน้าแรก</a>
-      <a href="shop.html">สินค้าทั้งหมด</a>
-      <a href="shop.html">สารทำความเย็น</a>
-      <a href="about.html">เกี่ยวกับเรา</a>
-      <a href="contact.html">ติดต่อเรา</a>
+      <a href="/" class="active" aria-current="page">หน้าแรก</a>
+      <a href="/products/">สินค้าทั้งหมด</a>
+      <a href="/refrigerants/">เบอร์น้ำยา</a>
+      <a href="/brands/">แบรนด์</a>
+      <a href="/retrofit/">ตารางสารทดแทน</a>
+      <a href="/documents/">เอกสาร TDS/SDS</a>
+      <a href="/about/">เกี่ยวกับเรา</a>
+      <a href="/contact/">ติดต่อเรา</a>
     </div>
   </nav>
 </header>
 
+<main id="main">
 <section class="hero"><div class="container hero-grid">
   <div>
     <h1 class="display">สารทำความเย็น <span class="grad-text">ที่ทีมงานมืออาชีพไว้วางใจ</span></h1>
-    <p class="lead">ORAFON จำหน่ายสารทำความเย็นแบรนด์ชั้นนำและสินค้าของเราเอง พร้อมคำปรึกษาทางเทคนิคครบวงจร สำหรับงานทำความเย็นเชิงพาณิชย์และอุตสาหกรรม</p>
+    <p class="lead">ORAFON จำหน่ายสารทำความเย็นแบรนด์ของเราเองและ Solstice® พร้อมข้อมูลทางเทคนิคและคำปรึกษาสำหรับงานปรับอากาศ เชิงพาณิชย์ และอุตสาหกรรม</p>
     <div class="hero-cta">
-      <a class="btn btn-primary grad-bg" href="shop.html">ดูสินค้าทั้งหมด</a>
-      <a class="btn btn-ghost" href="contact.html">ขอใบเสนอราคา</a>
+      <a class="btn btn-primary grad-bg" href="/products/">ดูสินค้าทั้งหมด</a>
+      <a class="btn btn-ghost" href="/contact/">ขอใบเสนอราคา</a>
     </div>
   </div>
   <div class="hero-visual"><div class="hero-card grad-bg">
     <div class="hero-float hf1"><div class="k">ASHRAE</div><div class="v">R-448A</div></div>
-    <div class="hero-float hf2"><div class="k">GWP</div><div class="v">−68%</div></div>
-    <div class="inner"><svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'><defs><linearGradient id='gN40' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#4F46E5'/><stop offset='1' stop-color='#7C3AED'/></linearGradient></defs><rect x='74' y='40' width='52' height='130' rx='16' fill='#fff' stroke='#4F46E5' stroke-width='3'/><rect x='74' y='40' width='52' height='34' rx='16' fill='url(#gN40)'/><rect x='90' y='24' width='20' height='20' rx='5' fill='#4F46E5'/><text x='100' y='120' font-family='Plus Jakarta Sans,sans-serif' font-size='22' font-weight='800' fill='#4F46E5' text-anchor='middle'>N40</text><text x='100' y='142' font-family='Plus Jakarta Sans,sans-serif' font-size='11' font-weight='600' fill='#7C3AED' text-anchor='middle'>R-448A</text></svg><div style="font-weight:800;font-size:18px;margin-top:8px">Solstice® N40</div><div style="color:var(--text-muted);font-size:13px">สารทำความเย็น HFO Blend</div></div>
+    <div class="hero-float hf2"><div class="k">GWP (AR4)</div><div class="v">1387</div></div>
+    <a class="inner" href="/products/solstice-n40/"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="R-448A"><defs><linearGradient id="g-hero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><rect x="74" y="40" width="52" height="130" rx="16" fill="#fff" stroke="#4F46E5" stroke-width="3"/><rect x="74" y="40" width="52" height="34" rx="16" fill="url(#g-hero)"/><rect x="90" y="24" width="20" height="20" rx="5" fill="#4F46E5"/><text x="100" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="17" font-weight="800" fill="#4F46E5" text-anchor="middle">448A</text><text x="100" y="142" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">R-448A</text></svg>
+      <div class="hn">Solstice® N40 (R-448A)</div>
+      <div class="hs">สารทำความเย็น HFO Blend</div>
+    </a>
   </div></div>
 </div></section>
 
-<section class="section"><div class="container">
-  <h2 class="display">หมวดสินค้า <span class="grad-text">ครอบคลุมทุกงาน</span></h2>
-  <p class="lead">เลือกสารทำความเย็นตามประเภทการใช้งาน</p>
+<section class="section" style="padding-top:24px"><div class="container">
+  <h2 class="display">เลือกตามเบอร์น้ำยา</h2>
+  <p class="lead">ข้อมูลเทคนิคสากลของแต่ละเบอร์ พร้อมสินค้าที่เรามี</p>
   <div class="cats">
-    <a class="cat-card" href="shop.html"><div class="e">🏬</div><div class="t">เชิงพาณิชย์</div><div class="d">ซูเปอร์มาร์เก็ต ห้องเย็น</div></a>
-    <a class="cat-card" href="shop.html"><div class="e">🌀</div><div class="t">ปรับอากาศ</div><div class="d">R-410A, R-32, R-407C</div></a>
-    <a class="cat-card" href="shop.html"><div class="e">🚗</div><div class="t">ยานยนต์</div><div class="d">R-134a, R-1234yf</div></a>
-    <a class="cat-card" href="shop.html"><div class="e">🧊</div><div class="t">ชิลเลอร์</div><div class="d">R-513A และรุ่น GWP ต่ำ</div></a>
+    <a class="cat-card" href="/refrigerants/r-32/">
+      <div class="e" style="color:#EA580C">32</div>
+      <div class="t">R-32</div>
+      <div class="d">HFC · A2L</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-410a/">
+      <div class="e" style="color:#7C3AED">410A</div>
+      <div class="t">R-410A</div>
+      <div class="d">HFC Blend · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-134a/">
+      <div class="e" style="color:#059669">134a</div>
+      <div class="t">R-134a</div>
+      <div class="d">HFC · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-404a/">
+      <div class="e" style="color:#334155">404A</div>
+      <div class="t">R-404A</div>
+      <div class="d">HFC Blend · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-407c/">
+      <div class="e" style="color:#7C3AED">407C</div>
+      <div class="t">R-407C</div>
+      <div class="d">HFC Blend · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-448a/">
+      <div class="e" style="color:#4F46E5">448A</div>
+      <div class="t">R-448A</div>
+      <div class="d">HFO Blend · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-513a/">
+      <div class="e" style="color:#0EA5E9">513A</div>
+      <div class="t">R-513A</div>
+      <div class="d">HFO Blend · A1</div>
+    </a>
+    <a class="cat-card" href="/refrigerants/r-1234yf/">
+      <div class="e" style="color:#0EA5E9">1234yf</div>
+      <div class="t">R-1234yf</div>
+      <div class="d">HFO · A2L</div>
+    </a>
   </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">สินค้าแนะนำ</h2>
+  <p class="lead">รุ่นที่พร้อมจัดจำหน่าย</p>
+  <div class="prod-grid"><article class="prod-card" data-class="HFO Blend" data-brand="solstice" data-ref="r-448a" data-text="solstice® n40 (r-448a) สารทำความเย็น hfo blend r-448a hfo blend solstice® 10637999 10637061 10657578 10655356">
+  <a class="prod-media" href="/products/solstice-n40/" tabindex="-1" aria-hidden="true"><span class="prod-tag grad-bg">แนะนำ</span><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="R-448A"><defs><linearGradient id="g-card-solstice-n40" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><rect x="74" y="40" width="52" height="130" rx="16" fill="#fff" stroke="#4F46E5" stroke-width="3"/><rect x="74" y="40" width="52" height="34" rx="16" fill="url(#g-card-solstice-n40)"/><rect x="90" y="24" width="20" height="20" rx="5" fill="#4F46E5"/><text x="100" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="17" font-weight="800" fill="#4F46E5" text-anchor="middle">448A</text><text x="100" y="142" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">R-448A</text></svg></a>
+  <div class="prod-body">
+    <span class="prod-brand">Solstice® · HFO Blend</span>
+    <a class="prod-name" href="/products/solstice-n40/">Solstice® N40 (R-448A)</a>
+    <div class="prod-badges"><span class="chip i">R-448A</span><span class="chip v">A1</span><span class="chip g">GWP 1387</span></div>
+    <div class="prod-foot">
+      <span class="sku">11.3 · 45 · 386 · 658 kg</span>
+      <a href="/products/solstice-n40/">ดูรายละเอียด →</a>
+    </div>
+  </div>
+</article>
+  </div>
+  <div style="margin-top:28px"><a class="btn btn-ghost" href="/products/">ดูสินค้าทั้งหมด →</a></div>
 </div></section>
 
 <section class="section" style="padding-top:0"><div class="container">
-  <h2 class="display">สินค้าแนะนำ</h2>
-  <p class="lead">รุ่นยอดนิยมที่พร้อมจัดจำหน่าย</p>
-  <div class="prod-grid"><article class="prod-card" data-cat="commercial">
-      <a class="prod-media" href="orafon-n40-shop-corporate.html"><span class="prod-tag grad-bg">แนะนำ</span><svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'><defs><linearGradient id='g448A' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#4F46E5'/><stop offset='1' stop-color='#7C3AED'/></linearGradient></defs><rect x='74' y='40' width='52' height='130' rx='16' fill='#fff' stroke='#4F46E5' stroke-width='3'/><rect x='74' y='40' width='52' height='34' rx='16' fill='url(#g448A)'/><rect x='90' y='24' width='20' height='20' rx='5' fill='#4F46E5'/><text x='100' y='120' font-family='Plus Jakarta Sans,sans-serif' font-size='22' font-weight='800' fill='#4F46E5' text-anchor='middle'>448A</text><text x='100' y='142' font-family='Plus Jakarta Sans,sans-serif' font-size='11' font-weight='600' fill='#7C3AED' text-anchor='middle'>R-448A</text></svg></a>
-      <div class="prod-body">
-        <span class="prod-brand">Solstice®</span>
-        <a href="orafon-n40-shop-corporate.html" class="prod-name">Solstice® N40 (R-448A)</a>
-        <div class="prod-badges"><span class="chip g">GWP −68%</span><span class="chip i">A1 ไม่ติดไฟ</span></div>
-        <div class="prod-foot">
-          <span class="sku">SKU 10637999</span>
-          <a href="orafon-n40-shop-corporate.html">ดูรายละเอียด →</a>
-        </div>
-      </div>
-    </article><article class="prod-card" data-cat="chiller">
-      <a class="prod-media" href="orafon-n40-shop-corporate.html"><span class="prod-tag grad-bg">GWP ต่ำ</span><svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'><defs><linearGradient id='g513A' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#0EA5E9'/><stop offset='1' stop-color='#2563EB'/></linearGradient></defs><rect x='74' y='40' width='52' height='130' rx='16' fill='#fff' stroke='#0EA5E9' stroke-width='3'/><rect x='74' y='40' width='52' height='34' rx='16' fill='url(#g513A)'/><rect x='90' y='24' width='20' height='20' rx='5' fill='#0EA5E9'/><text x='100' y='120' font-family='Plus Jakarta Sans,sans-serif' font-size='22' font-weight='800' fill='#0EA5E9' text-anchor='middle'>513A</text><text x='100' y='142' font-family='Plus Jakarta Sans,sans-serif' font-size='11' font-weight='600' fill='#2563EB' text-anchor='middle'>R-513A</text></svg></a>
-      <div class="prod-body">
-        <span class="prod-brand">Solstice®</span>
-        <a href="orafon-n40-shop-corporate.html" class="prod-name">Solstice® ZENA (R-513A)</a>
-        <div class="prod-badges"><span class="chip g">GWP ต่ำ</span><span class="chip i">A1</span></div>
-        <div class="prod-foot">
-          <span class="sku">SKU 10650012</span>
-          <a href="orafon-n40-shop-corporate.html">ดูรายละเอียด →</a>
-        </div>
-      </div>
-    </article><article class="prod-card" data-cat="ac">
-      <a class="prod-media" href="orafon-n40-shop-corporate.html"><svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'><defs><linearGradient id='g410A' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#7C3AED'/><stop offset='1' stop-color='#DB2777'/></linearGradient></defs><rect x='74' y='40' width='52' height='130' rx='16' fill='#fff' stroke='#7C3AED' stroke-width='3'/><rect x='74' y='40' width='52' height='34' rx='16' fill='url(#g410A)'/><rect x='90' y='24' width='20' height='20' rx='5' fill='#7C3AED'/><text x='100' y='120' font-family='Plus Jakarta Sans,sans-serif' font-size='22' font-weight='800' fill='#7C3AED' text-anchor='middle'>410A</text><text x='100' y='142' font-family='Plus Jakarta Sans,sans-serif' font-size='11' font-weight='600' fill='#DB2777' text-anchor='middle'>R-410A</text></svg></a>
-      <div class="prod-body">
-        <span class="prod-brand">Genetron®</span>
-        <a href="orafon-n40-shop-corporate.html" class="prod-name">Genetron® R-410A</a>
-        <div class="prod-badges"><span class="chip i">A1</span><span class="chip v">ปรับอากาศ</span></div>
-        <div class="prod-foot">
-          <span class="sku">SKU R410A-11</span>
-          <a href="orafon-n40-shop-corporate.html">ดูรายละเอียด →</a>
-        </div>
-      </div>
-    </article><article class="prod-card" data-cat="auto">
-      <a class="prod-media" href="orafon-n40-shop-corporate.html"><svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'><defs><linearGradient id='g134a' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#059669'/><stop offset='1' stop-color='#0D9488'/></linearGradient></defs><rect x='74' y='40' width='52' height='130' rx='16' fill='#fff' stroke='#059669' stroke-width='3'/><rect x='74' y='40' width='52' height='34' rx='16' fill='url(#g134a)'/><rect x='90' y='24' width='20' height='20' rx='5' fill='#059669'/><text x='100' y='120' font-family='Plus Jakarta Sans,sans-serif' font-size='22' font-weight='800' fill='#059669' text-anchor='middle'>134a</text><text x='100' y='142' font-family='Plus Jakarta Sans,sans-serif' font-size='11' font-weight='600' fill='#0D9488' text-anchor='middle'>R-134a</text></svg></a>
-      <div class="prod-body">
-        <span class="prod-brand">Genetron®</span>
-        <a href="orafon-n40-shop-corporate.html" class="prod-name">R-134a Refrigerant</a>
-        <div class="prod-badges"><span class="chip i">A1</span><span class="chip v">ยานยนต์/ตู้เย็น</span></div>
-        <div class="prod-foot">
-          <span class="sku">SKU R134A-30</span>
-          <a href="orafon-n40-shop-corporate.html">ดูรายละเอียด →</a>
-        </div>
-      </div>
-    </article></div>
-  <div style="margin-top:28px"><a class="btn btn-ghost" href="shop.html">ดูสินค้าทั้งหมด →</a></div>
+  <h2 class="display">แบรนด์ของเรา</h2>
+  <div class="brand-cards" style="margin-top:24px">
+    <a class="brand-card" href="/brands/orafon/">
+      <span class="bl"><img src="/assets/img/orafon-logo.png" alt=""></span>
+      <span><span class="chip i">แบรนด์ของเรา</span>
+      <h3>ORAFON</h3><p>แบรนด์สารทำความเย็นของเราเอง</p></span>
+    </a>
+    <a class="brand-card" href="/brands/solstice/">
+      <span class="bl">S</span>
+      <span><span class="chip v">ตัวแทนจำหน่าย</span>
+      <h3>Solstice®</h3><p>ตัวแทนจำหน่ายสารทำความเย็นเทคโนโลยี HFO</p></span>
+    </a>
+  </div>
 </div></section>
-
 <section class="section" style="padding-top:0"><div class="container"><div class="trust">
   <div class="trust-grid">
-    <div class="trust-item"><div class="n grad-text">20+</div><div class="l">ปีประสบการณ์ในวงการ</div></div>
-    <div class="trust-item"><div class="n grad-text">8</div><div class="l">แบรนด์สารทำความเย็น</div></div>
     <div class="trust-item"><div class="n grad-text">100%</div><div class="l">สินค้าของแท้</div></div>
-    <div class="trust-item"><div class="n grad-text">A1</div><div class="l">มาตรฐานความปลอดภัย</div></div>
+    <div class="trust-item"><div class="n grad-text">2</div><div class="l">แบรนด์ ORAFON และ Solstice®</div></div>
+    <div class="trust-item"><div class="n grad-text">TDS/SDS</div><div class="l">เอกสารทางเทคนิคครบ</div></div>
+    <div class="trust-item"><div class="n grad-text">B2B · B2C</div><div class="l">ผู้รับเหมา ร้านค้า และผู้ใช้ทั่วไป</div></div>
   </div>
 </div></div></section>
 
-<section class="section" style="padding-top:0"><div class="container"><div class="home-cta">
+<section class="section" style="padding-top:0"><div class="container">
+  <div class="final-cta">
   <div class="fb fb1"></div><div class="fb fb2"></div>
-  <div style="position:relative">
-    <h2 class="display">พร้อมช่วยวางแผนสารทำความเย็นสำหรับโครงการของคุณ</h2>
-    <p>ทีมขายทางเทคนิคของ ORAFON พร้อมให้คำปรึกษา ตรวจสอบสต็อก และจัดทำใบเสนอราคา</p>
-    <a class="btn" style="background:#fff;color:var(--primary)" href="contact.html">ติดต่อฝ่ายขาย</a>
+  <div class="inner">
+    <h2 class="display">พร้อมช่วยวางแผนสารทำความเย็นสำหรับงานของคุณ</h2>
+    <p>ทีมงาน ORAFON พร้อมให้คำปรึกษาการเลือกสาร ตรวจสอบสต็อก และจัดทำใบเสนอราคา</p>
+    <div class="btns">
+      <a class="btn btn-white" href="/contact/">ขอใบเสนอราคา</a><a class="btn btn-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener">สอบถามทาง LINE</a>
+    </div>
+    <div class="contact-row"><a href="tel:+66000000000">โทร 0X-XXX-XXXX</a><a href="mailto:sales@orafon.co.th">sales@orafon.co.th</a><span>LINE @orafon</span>
+    </div>
   </div>
-</div></div></section>
-<footer>
+</div>
+</div></section>
+
+</main>
+<footer class="site">
   <div class="container">
     <div class="foot-grid">
       <div>
-        <img class="foot-logo" src="orafon-logo.png" alt="ORAFON">
-        <p class="foot-about">สินค้าของเราเองและตัวแทนจำหน่ายสารทำความเย็นชั้นนำ ให้คำปรึกษาทางเทคนิคครบวงจร</p>
+        <img class="foot-logo" src="/assets/img/orafon-logo.png" alt="ORAFON" width="120" height="32" loading="lazy">
+        <p class="foot-about">ผู้จัดจำหน่ายสารทำความเย็นแบรนด์ ORAFON ของเราเอง และตัวแทนจำหน่าย Solstice® พร้อมคำปรึกษาทางเทคนิคสำหรับงานปรับอากาศและทำความเย็น</p>
+        <p class="foot-company"><strong>บริษัท โอราโนส จำกัด</strong><br>(กรอกที่อยู่บริษัท)</p>
       </div>
-      <div class="foot-col"><h4>สินค้า</h4><ul><li><a href="shop.html">สารทำความเย็น</a></li><li><a href="shop.html">อุปกรณ์ติดตั้ง</a></li><li><a href="shop.html">เครื่องมือช่าง</a></li></ul></div>
-      <div class="foot-col"><h4>บริการ</h4><ul><li><a href="contact.html">ขอใบเสนอราคา</a></li><li><a href="contact.html">เอกสาร TDS/SDS</a></li><li><a href="contact.html">ติดต่อฝ่ายขาย</a></li></ul></div>
-      <div class="foot-col"><h4>เกี่ยวกับ</h4><ul><li><a href="about.html">เกี่ยวกับ ORAFON</a></li><li><a href="contact.html">ติดต่อเรา</a></li></ul></div>
+      <div class="foot-col"><h4>สินค้า</h4><ul>
+        <li><a href="/products/">สินค้าทั้งหมด</a></li>
+        <li><a href="/brands/orafon/">ORAFON</a></li>
+        <li><a href="/brands/solstice/">Solstice®</a></li>
+        <li><a href="/refrigerants/">เบอร์น้ำยา</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>ติดต่อฝ่ายขาย</h4><ul>
+        <li><a href="/contact/">ขอใบเสนอราคา</a></li>
+        <li><a href="/documents/">เอกสาร TDS/SDS</a></li>
+        <li><a href="/retrofit/">ตารางสารทดแทน</a></li><li><a href="tel:+66000000000">โทร 0X-XXX-XXXX</a></li><li><a href="https://line.me/R/ti/p/%40orafon" rel="noopener" target="_blank">LINE @orafon</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>ORAFON</h4><ul>
+        <li><a href="/about/">เกี่ยวกับเรา</a></li>
+        <li><a href="/contact/">ติดต่อเรา</a></li>
+        <li><a href="/privacy/">นโยบายความเป็นส่วนตัว</a></li>
+      </ul></div>
     </div>
   </div>
   <div class="foot-bottom">
     <div class="container">
-      <span>© 2026 ORAFON · ตัวแทนจำหน่าย Solstice® Advanced Materials</span>
+      <span>© 2026 บริษัท โอราโนส จำกัด · ORAFON</span>
       <span>Solstice® เป็นเครื่องหมายการค้าของเจ้าของแบรนด์</span>
     </div>
   </div>
 </footer>
+
 </body>
 </html>

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /thanks/
+Disallow: /en/thanks/
+
+Sitemap: https://orafon.co.th/sitemap.xml
