@@ -3,6 +3,7 @@
 {%- set D = db[lang] -%}
 {%- set S = D.site -%}
 <footer class="site">
+  <div class="foot-top">
   <img class="foot-penguin" src="/assets/img/penguin-white.png" alt="" aria-hidden="true" width="460" height="900" loading="lazy">
   <div class="container foot-main">
     <div class="foot-brand">
@@ -45,6 +46,7 @@
       {%- if S.address %}<li><span class="fc-row">{{ icon("pin") }}<span>{{ S.company_name }}<br>{{ S.address }}</span></span></li>{% endif %}
       {%- if S.hours %}<li><span class="fc-row">{{ icon("clock") }}<span>{{ S.hours }}</span></span></li>{% endif %}
     </ul></div>
+  </div>
   </div>
 
   <div class="foot-bottom">

@@ -85,10 +85,12 @@ header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);ba
 .prose img{border-radius:12px;margin:12px 0}
 
 /* footer */
-footer.site{position:relative;overflow:hidden;margin-top:48px;background:linear-gradient(160deg,#0b1437 0%,#131a4a 55%,#1e1b4b 100%);color:#cbd5e1}
-footer.site::before{content:"";position:absolute;top:-160px;left:-120px;width:480px;height:480px;border-radius:50%;background:var(--primary);filter:blur(120px);opacity:.22;pointer-events:none}
-.foot-penguin{position:absolute;right:2%;bottom:-40px;height:112%;width:auto;opacity:.12;pointer-events:none;user-select:none}
-.foot-main{position:relative;display:grid;grid-template-columns:1.6fr 1fr 1fr .8fr 1.3fr;gap:40px;padding:64px 24px 48px}
+footer.site{margin-top:48px;color:#cbd5e1}
+.foot-top{position:relative;overflow:hidden;background:linear-gradient(160deg,#0b1437 0%,#131a4a 55%,#1e1b4b 100%)}
+.foot-top::before{content:"";position:absolute;top:-160px;left:-120px;width:480px;height:480px;border-radius:50%;background:var(--primary);filter:blur(120px);opacity:.22;pointer-events:none}
+/* penguin: fully visible, standing on the bottom edge, aligned with the content's right edge */
+.foot-penguin{position:absolute;bottom:0;top:36px;height:calc(100% - 36px);width:auto;right:max(24px,calc((100% - var(--container)) / 2 + 24px));opacity:.2;pointer-events:none;user-select:none}
+.foot-main{position:relative;display:grid;grid-template-columns:1.6fr 1fr 1fr .8fr 1.3fr;gap:40px;padding:64px 24px 56px;padding-right:230px}
 .foot-logo{height:40px;width:auto;margin-bottom:18px}
 .foot-about{font-size:14px;line-height:1.75;color:#94a3b8;max-width:340px}
 .foot-badges{display:flex;flex-direction:column;gap:6px;margin:18px 0 20px}
@@ -107,12 +109,13 @@ footer.site::before{content:"";position:absolute;top:-160px;left:-120px;width:48
 .foot-col a:hover{color:#fff}
 .foot-contact a,.foot-contact .fc-row{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#cbd5e1;line-height:1.55}
 .foot-contact svg{width:17px;height:17px;flex:0 0 auto;margin-top:2px;color:#a5b4fc}
-.foot-bottom{position:relative;border-top:1px solid rgba(255,255,255,.1)}
-.foot-bottom .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:20px 24px;font-size:12.5px;color:#64748b}
+/* bottom bar sits on the page background (no fill) */
+.foot-bottom{background:none}
+.foot-bottom .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 24px;padding:18px 24px 22px;font-size:12.5px;color:var(--text-muted)}
 .fb-links{display:flex;gap:18px}
-.fb-links a{color:#94a3b8}
-.fb-links a:hover{color:#fff}
-.fb-tm{flex-basis:100%;color:#475569}
+.fb-links a{color:var(--text-muted)}
+.fb-links a:hover{color:var(--primary)}
+.fb-tm{flex-basis:100%;color:#94a3b8}
 
 /* chips */
 .chip{display:inline-block;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px}
@@ -521,7 +524,7 @@ a.ro-num:hover{color:var(--primary)}
 .center-msg p{color:var(--text-muted);margin:12px auto 28px;max-width:48ch}
 
 /* responsive */
-@media (max-width:1100px){.foot-main{grid-template-columns:1fr 1fr 1fr;gap:32px}.foot-brand{grid-column:1/-1}.foot-about{max-width:560px}.foot-badges{flex-direction:row;flex-wrap:wrap;gap:6px 18px}}
+@media (max-width:1100px){.foot-main{grid-template-columns:1fr 1fr 1fr;gap:32px;padding-right:200px}.foot-brand{grid-column:1/-1}.foot-about{max-width:560px}.foot-badges{flex-direction:row;flex-wrap:wrap;gap:6px 18px}}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero h1{font-size:38px}.hero-card{transform:none}.ct-grid{grid-template-columns:1fr;gap:28px}.ref-hero{grid-template-columns:1fr}.ref-hero .cyl{max-width:220px}}
 @media (max-width:768px){
   .search{display:none}
@@ -531,9 +534,9 @@ a.ro-num:hover{color:var(--primary)}
   .page-head h1,.ct-info h1,.ab-hero h1,.ref-hero h1{font-size:30px}
   .nav{gap:12px}
   .nav-cta{display:none}
-  .foot-main{grid-template-columns:1fr 1fr;gap:28px 20px;padding:44px 16px 32px}
+  .foot-main{grid-template-columns:1fr 1fr;gap:28px 20px;padding:44px 16px 36px}
   .foot-contact{grid-column:1/-1}
-  .foot-penguin{height:70%;right:-60px;bottom:-30px}
+  .foot-penguin{top:auto;height:360px;right:12px;opacity:.1}
   .foot-bottom .container{padding:18px 16px}
   .row2{grid-template-columns:1fr}
   .trust{padding:36px 20px}
