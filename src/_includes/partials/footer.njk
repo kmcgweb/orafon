@@ -2,61 +2,92 @@
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set S = D.site -%}
+{%- set chev = icon("arrow") -%}
 <footer class="site">
   <div class="foot-top">
-  <img class="foot-penguin" src="/assets/img/penguin-white.png" alt="" aria-hidden="true" width="460" height="900" loading="lazy">
-  <div class="container foot-main">
-    <div class="foot-brand">
-      <a href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }}"><img class="foot-logo" src="/assets/img/orafon-logo-white.png" alt="{{ S.brand_name }}" width="150" height="44" loading="lazy"></a>
-      <p class="foot-about">{{ S.footer_about }}</p>
-      <div class="foot-badges">
-        {%- for b in D.brands %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ (T.ownBrand if b.own_brand else T.distributor) }} · <b>{{ b.name }}</b></a>{% endfor %}
+    {#- decorative scene: mountains + ice + glowing penguin (all aria-hidden) -#}
+    <div class="foot-scene" aria-hidden="true">
+      <svg class="fs-mountains" viewBox="0 0 800 400" preserveAspectRatio="xMaxYMax slice">
+        <defs>
+          <linearGradient id="fsM1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c9fe6" stop-opacity=".55"/><stop offset="1" stop-color="#1e3a8a" stop-opacity="0"/></linearGradient>
+          <linearGradient id="fsM2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfdbfe" stop-opacity=".45"/><stop offset="1" stop-color="#1e40af" stop-opacity="0"/></linearGradient>
+          <linearGradient id="fsIce" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93c5fd" stop-opacity=".35"/><stop offset="1" stop-color="#1e3a8a" stop-opacity="0"/></linearGradient>
+        </defs>
+        <path d="M120 400 L300 210 L360 250 L470 120 L560 230 L620 190 L800 330 L800 400 Z" fill="url(#fsM1)"/>
+        <path d="M380 400 L520 260 L580 300 L680 170 L800 260 L800 400 Z" fill="url(#fsM2)"/>
+        <path d="M470 120 L490 150 L470 145 L455 160 Z M680 170 L700 200 L682 195 L668 208 Z" fill="#e0f2fe" opacity=".5"/>
+        <rect x="0" y="352" width="800" height="48" fill="url(#fsIce)"/>
+      </svg>
+      <div class="fs-penguin"></div>
+    </div>
+
+    <div class="foot-wide foot-main">
+      <div class="foot-brand">
+        <a href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }}"><img class="foot-logo" src="/assets/img/orafon-logo-white.png" alt="{{ S.brand_name }}" width="200" height="59" loading="lazy"></a>
+        <p class="foot-about">{{ S.footer_about }}</p>
+        <dl class="foot-brands">
+          {%- for b in D.brands %}<dt>{{ T.ownBrand if b.own_brand else T.distributor }}</dt><dd><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></dd>{% endfor %}
+        </dl>
+        <p class="foot-motto">COOLER TOMORROW<br>TOGETHER <span></span></p>
+        <div class="foot-social">
+          {%- if S.line_id %}<a class="fs-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}<b>LINE</b> <span>{{ S.line_id }}</span>{{ chev | safe }}</a>{% endif %}
+          {%- if S.phone %}<a href="tel:{{ S.phone }}" aria-label="{{ T.call }}">{{ icon("phone") }}</a>{% endif %}
+          {%- if S.email %}<a href="mailto:{{ S.email }}" aria-label="{{ T.email }}">{{ icon("mail") }}</a>{% endif %}
+        </div>
+        <p class="foot-slogan"><span></span>{{ T.footSlogan }}<span></span></p>
       </div>
-      <div class="foot-social">
-        {%- if S.line_id %}<a class="fs-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener" aria-label="LINE {{ S.line_id }}">{{ icon("chat") }}<span>LINE</span></a>{% endif %}
-        {%- if S.facebook_url %}<a href="{{ S.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.2-.6.6-.6z"/></svg></a>{% endif %}
-        {%- if S.phone %}<a href="tel:{{ S.phone }}" aria-label="{{ T.call }}">{{ icon("phone") }}</a>{% endif %}
-        {%- if S.email %}<a href="mailto:{{ S.email }}" aria-label="{{ T.email }}">{{ icon("mail") }}</a>{% endif %}
+
+      <div class="foot-col">
+        <div class="fc-head">{{ icon("cube") }}<div><h4>{{ T.products }}</h4><small>OUR PRODUCTS</small></div></div>
+        <ul>
+          <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}{{ chev | safe }}</a></li>
+          {%- for b in D.brands %}<li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}{{ chev | safe }}</a></li>{% endfor %}
+          {%- for p in D.featured | batch(3) | first %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}{{ chev | safe }}</a></li>{% endfor %}
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <div class="fc-head">{{ icon("doc") }}<div><h4>{{ T.technical }}</h4><small>TECHNICAL CENTER</small></div></div>
+        <ul>
+          <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}{{ chev | safe }}</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <div class="fc-head">{{ icon("building") }}<div><h4>{{ T.company }}</h4><small>OUR COMPANY</small></div></div>
+        <ul>
+          <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}{{ chev | safe }}</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col foot-contact">
+        <div class="fc-head">{{ icon("headset") }}<div><h4>{{ T.contact }}</h4><small>GET IN TOUCH</small></div></div>
+        <ul>
+          {%- if S.phone %}<li><a href="tel:{{ S.phone }}"><i>{{ icon("phone") }}</i><span>{{ S.phone_display }}</span></a></li>{% endif %}
+          {%- if S.email %}<li><a href="mailto:{{ S.email }}"><i>{{ icon("mail") }}</i><span>{{ S.email }}</span></a></li>{% endif %}
+          {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener"><i>{{ icon("chat") }}</i><span>LINE {{ S.line_id }}</span></a></li>{% endif %}
+          {%- if S.address %}<li><span class="fc-row"><i>{{ icon("pin") }}</i><span>{{ S.company_name }}<br><small>{{ S.address }}</small></span></span></li>{% endif %}
+          {%- if S.hours %}<li><span class="fc-row"><i>{{ icon("clock") }}</i><span>{{ S.hours }}</span></span></li>{% endif %}
+        </ul>
       </div>
     </div>
 
-    <div class="foot-col"><h4>{{ T.products }}</h4><ul>
-      <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a></li>
-      {%- for b in D.brands %}<li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>{% endfor %}
-      {%- for p in D.featured | batch(3) | first %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a></li>{% endfor %}
-    </ul></div>
-
-    <div class="foot-col"><h4>{{ T.technical }}</h4><ul>
-      <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}</a></li>
-      <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
-      <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
-      <li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a></li>
-    </ul></div>
-
-    <div class="foot-col"><h4>{{ T.company }}</h4><ul>
-      <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a></li>
-      <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
-      <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a></li>
-    </ul></div>
-
-    <div class="foot-col foot-contact"><h4>{{ T.contact }}</h4><ul>
-      {%- if S.phone %}<li><a href="tel:{{ S.phone }}">{{ icon("phone") }}<span>{{ S.phone_display }}</span></a></li>{% endif %}
-      {%- if S.email %}<li><a href="mailto:{{ S.email }}">{{ icon("mail") }}<span>{{ S.email }}</span></a></li>{% endif %}
-      {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}<span>LINE {{ S.line_id }}</span></a></li>{% endif %}
-      {%- if S.address %}<li><span class="fc-row">{{ icon("pin") }}<span>{{ S.company_name }}<br>{{ S.address }}</span></span></li>{% endif %}
-      {%- if S.hours %}<li><span class="fc-row">{{ icon("clock") }}<span>{{ S.hours }}</span></span></li>{% endif %}
-    </ul></div>
-  </div>
-  </div>
-
-  <div class="foot-bottom">
-    <div class="container">
-      <span>© {{ buildYear }} {{ S.company_name }} · {{ T.rights }}</span>
-      <span class="fb-links">
-        <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
-        {%- for l in langs %}{% if l != lang %}<a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ i18n[l].langName }}</a>{% endif %}{% endfor %}
-      </span>
-      <span class="fb-tm">{{ T.trademark }}</span>
+    <div class="foot-bottom">
+      <div class="foot-wide">
+        <div class="fb-left">
+          <span>© {{ buildYear }} {{ S.company_name }} · {{ T.rights }}</span>
+          <span class="fb-tm">{{ T.trademark }}</span>
+        </div>
+        <span class="fb-links">
+          <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
+          {%- for l in langs %}{% if l != lang %}<i></i><a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ i18n[l].langName }}</a>{% endif %}{% endfor %}
+        </span>
+      </div>
     </div>
   </div>
 </footer>
