@@ -1,9 +1,10 @@
-{#- Shared header for Technical Center pages. Needs: lang, T, D, techTab ("overview"|"retrofit"|"documents"), techTitle, techLead -#}
+{#- Shared header for Technical Center pages. Needs: lang, T, D, techTab ("overview"|"retrofit"|"documents"|"articles"), techTitle, techLead -#}
 {%- from "partials/macros.njk" import icon -%}
 {%- set tabs = [
   ["overview", "/technical/", T.techOverview, "grid"],
   ["retrofit", "/retrofit/", T.retrofit, "cube"],
-  ["documents", "/documents/", T.documents, "doc"]
+  ["documents", "/documents/", T.documents, "doc"],
+  ["articles", "/articles/", T.articles, "list"]
 ] -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
   <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>

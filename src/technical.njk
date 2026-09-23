@@ -32,6 +32,13 @@ eleventyComputed:
       <p>{{ T.techDocsDesc }}</p>
       <span class="tc-go">{{ T.open }} →</span>
     </a>
+    <a class="tech-card" href="{{ '/articles/' | u(lang) }}">
+      <span class="tc-ic">{{ icon("list") }}</span>
+      <span class="tc-num">{{ D.articles.length }} <small>{{ T.articlesCount }}</small></span>
+      <h3>{{ T.articles }}</h3>
+      <p>{{ T.articlesLead }}</p>
+      <span class="tc-go">{{ T.open }} →</span>
+    </a>
     <a class="tech-card" href="{{ '/contact/' | u(lang) }}">
       <span class="tc-ic">{{ icon("chat") }}</span>
       <span class="tc-num">{{ D.products.length }} <small>{{ T.items }}</small></span>
@@ -41,6 +48,23 @@ eleventyComputed:
     </a>
   </div>
 </div></section>
+
+{%- if D.articles.length %}
+<section class="section" style="padding-top:0"><div class="container">
+  <div class="sec-head">
+    <h2 class="display">{{ T.latestArticles }}</h2>
+    <a class="btn btn-ghost" href="{{ '/articles/' | u(lang) }}">{{ T.allArticles }} →</a>
+  </div>
+  <div class="art-grid">
+    {%- for a in D.articles | batch(3) | first %}
+    <a class="art-card" href="{{ ('/articles/' ~ a.slug ~ '/') | u(lang) }}">
+      <div class="cover">{% if a.cover %}<img src="{{ a.cover }}" alt="" loading="lazy">{% else %}<span class="cover-ph">{{ icon("list") }}</span>{% endif %}</div>
+      <div class="b"><time datetime="{{ a.date | isoDate }}">{{ a.date | dateFmt(lang) }}</time><h3>{{ a.title }}</h3><p>{{ a.excerpt }}</p><span class="art-more">{{ T.readMore }} →</span></div>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}
 
 <section class="section" style="padding-top:0"><div class="container">
   <h2 class="display">{{ T.finder }}</h2>

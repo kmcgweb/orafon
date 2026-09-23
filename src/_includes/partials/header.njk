@@ -22,14 +22,11 @@
         ["home", "/", T.home],
         ["products", "/products/", T.allProducts],
         ["technical", "/technical/", T.technical],
-        ["articles", "/articles/", T.articles],
         ["about", "/about/", T.about],
         ["contact", "/contact/", T.contact]
       ] %}
       {%- for item in nav %}
-      {%- if item[0] != "articles" or D.articles.length %}
       <a href="{{ item[1] | u(lang) }}"{% if section == item[0] %} class="active" aria-current="page"{% endif %}>{{ item[2] }}</a>
-      {%- endif %}
       {%- endfor %}
     </div>
   </nav>

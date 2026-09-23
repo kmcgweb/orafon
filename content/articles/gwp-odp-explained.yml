@@ -1,0 +1,64 @@
+th:
+  id: gwp-odp-explained
+  date: 2026-09-21
+  cover: ""
+  draft: false
+  title: GWP และ ODP คืออะไร? ทำไมตัวเลขในเอกสารแต่ละฉบับถึงไม่เท่ากัน
+  excerpt: สองค่าสำคัญที่บอกผลกระทบของสารทำความเย็นต่อสิ่งแวดล้อม พร้อมอธิบายความต่างของ GWP ฉบับ AR4 และ AR5
+  body: |
+    ## ODP — Ozone Depletion Potential
+    ค่าที่บอกว่าสารทำลายชั้นโอโซนมากน้อยเพียงใด เทียบกับ R-11 ที่มีค่า ODP = 1
+
+    - สาร **HCFC** เช่น R-22 (ODP 0.055) และ R-141b (ODP 0.11) ยังมีค่า ODP จึงอยู่ในแผนทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+    - สาร **HFC, HFO และ HC** มีค่า ODP เป็นศูนย์หรือใกล้ศูนย์
+
+    ## GWP — Global Warming Potential
+    ค่าที่บอกว่าสาร 1 กิโลกรัมกักเก็บความร้อนในบรรยากาศได้มากกว่า CO₂ 1 กิโลกรัมกี่เท่า ในช่วงเวลา 100 ปี
+
+    - R-404A มีค่า GWP ประมาณ 3,922 หมายความว่าหากรั่วออก 1 กิโลกรัม ส่งผลต่อภาวะโลกร้อนเทียบเท่า CO₂ ประมาณ 3.9 ตัน
+    - สาร HFO เช่น R-1234yf มีค่า GWP ต่ำมาก (น้อยกว่า 1 ถึง 4)
+    - การลดการใช้ HFC ที่มี GWP สูงเป็นเป้าหมายของ Kigali Amendment ภายใต้พิธีสารมอนทรีออล
+
+    ## ทำไม GWP ของสารเดียวกันถึงมีหลายค่า?
+    ค่า GWP อ้างอิงจากรายงานของ IPCC ซึ่งปรับปรุงเป็นระยะ ฉบับที่ใช้บ่อยคือ **AR4** (2007) และ **AR5** (2013) ตัวอย่างเช่น
+
+    | สาร | GWP (AR4) | GWP (AR5) |
+    |---|---|---|
+    | R-404A | 3,922 | 3,943 |
+    | R-410A | 2,088 | 1,924 |
+    | R-448A | 1,387 | 1,273 |
+    | R-32 | 675 | 677 |
+
+    ดังนั้นตัวเลข "ลด GWP กี่ %" ในเอกสารแต่ละฉบับอาจต่างกันเล็กน้อยตามฉบับที่ใช้อ้างอิง เช่น R-448A เทียบกับ R-404A ลดลงประมาณ 65% (AR4) หรือ 68% (AR5) บนเว็บไซต์นี้แสดงค่า AR4 เป็นหลัก และระบุ AR5 ไว้ในตารางคุณสมบัติของสินค้า
+
+    ดูสินค้า GWP ต่ำได้ที่ [สินค้าทั้งหมด](/products/)
+en:
+  title: What are GWP and ODP? And why do the numbers differ between documents?
+  excerpt: The two key figures for a refrigerant's environmental impact, and why GWP values from IPCC AR4 and AR5 are not the same.
+  body: |
+    ## ODP — Ozone Depletion Potential
+    How much a substance damages the ozone layer, relative to R-11 (ODP = 1).
+
+    - **HCFCs** such as R-22 (ODP 0.055) and R-141b (ODP 0.11) still deplete ozone, so they are being phased out under the Montreal Protocol.
+    - **HFCs, HFOs and HCs** have zero or near-zero ODP.
+
+    ## GWP — Global Warming Potential
+    How much heat 1 kg of a gas traps in the atmosphere compared with 1 kg of CO₂, over 100 years.
+
+    - R-404A has a GWP of about 3,922 — a 1 kg leak has roughly the climate impact of 3.9 tonnes of CO₂.
+    - HFOs such as R-1234yf have ultra-low GWP (below 1 to 4).
+    - Phasing down high-GWP HFCs is the goal of the Kigali Amendment to the Montreal Protocol.
+
+    ## Why does one refrigerant have several GWP values?
+    GWP values come from IPCC assessment reports, which are updated over time. The most commonly used are **AR4** (2007) and **AR5** (2013), for example:
+
+    | Refrigerant | GWP (AR4) | GWP (AR5) |
+    |---|---|---|
+    | R-404A | 3,922 | 3,943 |
+    | R-410A | 2,088 | 1,924 |
+    | R-448A | 1,387 | 1,273 |
+    | R-32 | 675 | 677 |
+
+    So a "% lower GWP" figure can differ slightly between documents depending on the basis — R-448A versus R-404A is about 65% lower on AR4 or 68% on AR5. This website shows AR4 values by default and lists AR5 in each product's specification table.
+
+    Browse low-GWP products in [all products](/en/products/).

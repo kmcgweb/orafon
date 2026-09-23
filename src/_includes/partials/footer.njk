@@ -1,40 +1,60 @@
+{%- from "partials/macros.njk" import icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set S = D.site -%}
 <footer class="site">
-  <div class="container">
-    <div class="foot-grid">
-      <div>
-        <img class="foot-logo" src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="120" height="32" loading="lazy">
-        <p class="foot-about">{{ S.footer_about }}</p>
-        <p class="foot-company"><strong>{{ S.company_name }}</strong><br>{{ S.address }}</p>
+  <img class="foot-penguin" src="/assets/img/penguin-white.png" alt="" aria-hidden="true" width="460" height="900" loading="lazy">
+  <div class="container foot-main">
+    <div class="foot-brand">
+      <a href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }}"><img class="foot-logo" src="/assets/img/orafon-logo-white.png" alt="{{ S.brand_name }}" width="150" height="44" loading="lazy"></a>
+      <p class="foot-about">{{ S.footer_about }}</p>
+      <div class="foot-badges">
+        {%- for b in D.brands %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ (T.ownBrand if b.own_brand else T.distributor) }} · <b>{{ b.name }}</b></a>{% endfor %}
       </div>
-      <div class="foot-col"><h4>{{ T.products }}</h4><ul>
-        <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a></li>
-        {%- for b in D.brands %}
-        <li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>
-        {%- endfor %}
-      </ul></div>
-      <div class="foot-col"><h4>{{ T.technical }}</h4><ul>
-        <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}</a></li>
-        <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
-        <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
-        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
-        {%- if S.phone %}<li><a href="tel:{{ S.phone }}">{{ T.call }} {{ S.phone_display }}</a></li>{% endif %}
-        {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" rel="noopener" target="_blank">LINE {{ S.line_id }}</a></li>{% endif %}
-      </ul></div>
-      <div class="foot-col"><h4>{{ S.brand_name }}</h4><ul>
-        <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a></li>
-        {%- if D.articles.length %}<li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a></li>{% endif %}
-        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.contact }}</a></li>
-        <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a></li>
-      </ul></div>
+      <div class="foot-social">
+        {%- if S.line_id %}<a class="fs-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener" aria-label="LINE {{ S.line_id }}">{{ icon("chat") }}<span>LINE</span></a>{% endif %}
+        {%- if S.facebook_url %}<a href="{{ S.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.2-.6.6-.6z"/></svg></a>{% endif %}
+        {%- if S.phone %}<a href="tel:{{ S.phone }}" aria-label="{{ T.call }}">{{ icon("phone") }}</a>{% endif %}
+        {%- if S.email %}<a href="mailto:{{ S.email }}" aria-label="{{ T.email }}">{{ icon("mail") }}</a>{% endif %}
+      </div>
     </div>
+
+    <div class="foot-col"><h4>{{ T.products }}</h4><ul>
+      <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a></li>
+      {%- for b in D.brands %}<li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>{% endfor %}
+      {%- for p in D.featured | batch(3) | first %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a></li>{% endfor %}
+    </ul></div>
+
+    <div class="foot-col"><h4>{{ T.technical }}</h4><ul>
+      <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}</a></li>
+      <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
+      <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
+      <li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a></li>
+    </ul></div>
+
+    <div class="foot-col"><h4>{{ T.company }}</h4><ul>
+      <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a></li>
+      <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
+      <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a></li>
+    </ul></div>
+
+    <div class="foot-col foot-contact"><h4>{{ T.contact }}</h4><ul>
+      {%- if S.phone %}<li><a href="tel:{{ S.phone }}">{{ icon("phone") }}<span>{{ S.phone_display }}</span></a></li>{% endif %}
+      {%- if S.email %}<li><a href="mailto:{{ S.email }}">{{ icon("mail") }}<span>{{ S.email }}</span></a></li>{% endif %}
+      {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}<span>LINE {{ S.line_id }}</span></a></li>{% endif %}
+      {%- if S.address %}<li><span class="fc-row">{{ icon("pin") }}<span>{{ S.company_name }}<br>{{ S.address }}</span></span></li>{% endif %}
+      {%- if S.hours %}<li><span class="fc-row">{{ icon("clock") }}<span>{{ S.hours }}</span></span></li>{% endif %}
+    </ul></div>
   </div>
+
   <div class="foot-bottom">
     <div class="container">
-      <span>© {{ buildYear }} {{ S.company_name }} · {{ S.brand_name }}</span>
-      <span>{{ T.trademark }}</span>
+      <span>© {{ buildYear }} {{ S.company_name }} · {{ T.rights }}</span>
+      <span class="fb-links">
+        <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
+        {%- for l in langs %}{% if l != lang %}<a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ i18n[l].langName }}</a>{% endif %}{% endfor %}
+      </span>
+      <span class="fb-tm">{{ T.trademark }}</span>
     </div>
   </div>
 </footer>

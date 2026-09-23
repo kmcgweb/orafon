@@ -1,3 +1,5 @@
 .claude/
 node_modules/
 _site/
+# local design working files (penguin variants etc.) — kept on this PC only
+design/

@@ -2,7 +2,7 @@
 pagination: { data: articlePages, size: 1, alias: entry }
 permalink: "{{ ('/articles/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
 layout: layouts/base.njk
-section: articles
+section: technical
 eleventyComputed:
   lang: "{{ entry.lang }}"
   pathKey: "/articles/{{ entry.item.slug }}/"
@@ -10,16 +10,38 @@ eleventyComputed:
   description: "{{ entry.item.excerpt }}"
   ogImage: "{{ entry.item.cover or '' }}"
 ---
+{%- from "partials/macros.njk" import icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set a = entry.item -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
   <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/technical/' | u(lang) }}">{{ T.technical }}</a><span>›</span>
   <a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a><span>›</span>{{ a.title }}
 </nav></div>
-<article class="section" style="padding-top:24px"><div class="container" style="max-width:860px">
-  <time class="muted" datetime="{{ a.date | isoDate }}">{{ a.date | dateFmt(lang) }}</time>
-  <h1 class="display" style="font-size:36px;font-weight:800;margin:8px 0 20px">{{ a.title }}</h1>
-  {%- if a.cover %}<img src="{{ a.cover }}" alt="" style="border-radius:20px;margin-bottom:24px;width:100%">{% endif %}
-  <div class="prose">{{ a.body | md | safe }}</div>
+
+<article class="section article" style="padding-top:20px"><div class="container">
+  <header class="art-head">
+    <span class="tb-kicker art-kicker">{{ icon("list") }} {{ T.articles }}</span>
+    <h1 class="display">{{ a.title }}</h1>
+    {%- if a.excerpt %}<p class="art-lead">{{ a.excerpt }}</p>{% endif %}
+    <time class="muted" datetime="{{ a.date | isoDate }}">{{ a.date | dateFmt(lang) }}</time>
+  </header>
+  {%- if a.cover %}<img class="art-cover" src="{{ a.cover }}" alt="">{% endif %}
+  <div class="prose art-body">{{ a.body | md | safe }}</div>
 </div></article>
+
+{%- set others = [] %}{% for o in D.articles %}{% if o.slug != a.slug %}{% set others = others.concat([o]) %}{% endif %}{% endfor %}
+{%- if others.length %}
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display" style="font-size:24px">{{ T.moreArticles }}</h2>
+  <div class="art-grid" style="margin-top:18px">
+    {%- for o in others | batch(3) | first %}
+    <a class="art-card" href="{{ ('/articles/' ~ o.slug ~ '/') | u(lang) }}">
+      <div class="cover">{% if o.cover %}<img src="{{ o.cover }}" alt="" loading="lazy">{% else %}<span class="cover-ph">{{ icon("list") }}</span>{% endif %}</div>
+      <div class="b"><time datetime="{{ o.date | isoDate }}">{{ o.date | dateFmt(lang) }}</time><h3>{{ o.title }}</h3><span class="art-more">{{ T.readMore }} →</span></div>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}

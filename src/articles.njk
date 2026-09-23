@@ -3,24 +3,30 @@ pagination: { data: langs, size: 1, alias: lang }
 permalink: "{{ '/articles/' | u(lang) }}"
 layout: layouts/base.njk
 pathKey: /articles/
-section: articles
+section: technical
 eleventyComputed:
-  title: "{{ i18n[lang].articles }}"
+  title: "{{ i18n[lang].articles }} — {{ i18n[lang].technical }}"
   description: "{{ i18n[lang].articlesLead }}"
 ---
+{%- from "partials/macros.njk" import icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.articles }}</nav></div>
-<section class="page-head"><div class="container">
-  <h1 class="display">{{ T.articles }}</h1>
-  <p>{{ T.articlesLead }}</p>
-</div></section>
-<section class="section" style="padding-top:24px"><div class="container">
+{%- set techTab = "articles" -%}
+{%- set techTitle = T.articles -%}
+{%- set techLead = T.articlesLead -%}
+{% include "partials/tech-head.njk" %}
+
+<section class="section" style="padding-top:28px"><div class="container">
   <div class="art-grid">
     {%- for a in D.articles %}
     <a class="art-card" href="{{ ('/articles/' ~ a.slug ~ '/') | u(lang) }}">
-      <div class="cover">{% if a.cover %}<img src="{{ a.cover }}" alt="" loading="lazy">{% endif %}</div>
-      <div class="b"><time datetime="{{ a.date | isoDate }}">{{ a.date | dateFmt(lang) }}</time><h3>{{ a.title }}</h3><p>{{ a.excerpt }}</p></div>
+      <div class="cover">{% if a.cover %}<img src="{{ a.cover }}" alt="" loading="lazy">{% else %}<span class="cover-ph">{{ icon("list") }}</span>{% endif %}</div>
+      <div class="b">
+        <time datetime="{{ a.date | isoDate }}">{{ a.date | dateFmt(lang) }}</time>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.excerpt }}</p>
+        <span class="art-more">{{ T.readMore }} →</span>
+      </div>
     </a>
     {%- else %}
     <div class="card empty">{{ T.noArticles }}</div>

@@ -18,13 +18,6 @@ th:
       title: ORAFON R-32
       text: สารทำความเย็นสำหรับแอร์อินเวอร์เตอร์รุ่นใหม่ GWP ต่ำกว่า R-410A
       button: ดูรายละเอียดสินค้า
-    - image: ""
-      image_mobile: ""
-      product: ""
-      url: /technical/
-      title: ศูนย์ข้อมูลเทคนิค
-      text: ตารางสารทดแทน เอกสาร TDS/SDS และคู่มือความปลอดภัย
-      button: เข้าสู่ศูนย์ข้อมูลเทคนิค
   promos:
     - image: ""
       product: orafon-r410a
@@ -79,13 +72,6 @@ en:
       title: ORAFON R-32
       text: Refrigerant for new inverter air conditioners, lower GWP than R-410A
       button: View product
-    - image: ""
-      image_mobile: ""
-      product: ""
-      url: /technical/
-      title: Technical Center
-      text: Retrofit guide, TDS/SDS documents and safety guidance
-      button: Open Technical Center
   promos:
     - image: ""
       product: orafon-r410a

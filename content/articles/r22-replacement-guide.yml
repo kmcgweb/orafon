@@ -1,0 +1,50 @@
+th:
+  id: r22-replacement-guide
+  date: 2026-09-23
+  cover: ""
+  draft: false
+  title: เลือกสารทดแทน R-22 อย่างไรให้เหมาะกับระบบ
+  excerpt: R-22 อยู่ระหว่างการทยอยเลิกใช้ บทความนี้สรุปทางเลือกสำหรับระบบเดิม (Retrofit) และสำหรับอุปกรณ์ใหม่ พร้อมข้อควรระวังก่อนเปลี่ยนสาร
+  body: |
+    R-22 เป็นสาร HCFC ที่มีค่า ODP มากกว่าศูนย์ จึงอยู่ในแผนทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปริมาณที่นำเข้าได้ลดลงเรื่อย ๆ และหลังปี 2030 จะเหลือเพียงปริมาณเล็กน้อยสำหรับงานซ่อมบำรุงเท่านั้น เจ้าของระบบจึงควรวางแผนเปลี่ยนสารตั้งแต่วันนี้
+
+    ## 1. ระบบเดิมที่ยังใช้งานได้ดี: เปลี่ยนสารแบบ Retrofit
+    สำหรับเครื่องที่ยังไม่หมดอายุการใช้งาน สามารถเปลี่ยนไปใช้สารที่ออกแบบมาเพื่อแทน R-22 โดยไม่ต้องเปลี่ยนเครื่องทั้งชุด
+
+    - **R-407C** — สาร HFC Blend แบบ Zeotropic คุณสมบัติใกล้เคียง R-22 นิยมใช้ในแอร์และ Chiller ส่วนใหญ่ต้องเปลี่ยนน้ำมันหล่อลื่นเป็น POE และต้องเติมในสถานะของเหลวเพราะมี Temperature glide
+    - **R-417A** — ออกแบบมาสำหรับงาน Retrofit จาก R-22 โดยเฉพาะ ในหลายกรณีใช้กับน้ำมันหล่อลื่นเดิมได้
+    - **R-448A (Solstice® N40) / R-449A / R-407F** — สำหรับงานทำความเย็น เช่น ห้องเย็นและตู้แช่ที่เคยใช้ R-22
+
+    ## 2. ติดตั้งเครื่องใหม่: เลือกสารที่อุปกรณ์ออกแบบมา
+    เครื่องปรับอากาศรุ่นใหม่ส่วนใหญ่ใช้ **R-32**, **R-410A** หรือ **R-454B** ซึ่งทำงานที่แรงดันสูงกว่า R-22 มาก จึง **ห้ามนำไปเติมในระบบ R-22 เดิม** ต้องใช้กับเครื่องที่ออกแบบมาสำหรับสารนั้นเท่านั้น
+
+    ## ก่อนเปลี่ยนสาร ควรตรวจสอบ
+    - คำแนะนำของผู้ผลิตเครื่องและคอมเพรสเซอร์
+    - ชนิดน้ำมันหล่อลื่น ซีล และวาล์วขยายตัวว่ารองรับสารใหม่หรือไม่
+    - ระดับความปลอดภัยของสารใหม่ (A1, A2L, A3) ต้องเหมาะกับอุปกรณ์และพื้นที่ติดตั้ง
+    - ไล่สารเดิมออกให้หมดและกู้คืนสารตามข้อกำหนด ห้ามปล่อยสู่บรรยากาศ
+
+    ทีมงาน ORAFON ช่วยแนะนำสารที่เหมาะกับระบบของคุณได้ ดูเพิ่มเติมที่ [ตารางสารทดแทน](/retrofit/) หรือ [ติดต่อเรา](/contact/)
+en:
+  title: How to choose a replacement for R-22
+  excerpt: R-22 is being phased out. This article summarises options for existing systems (retrofit) and for new equipment, plus what to check before converting.
+  body: |
+    R-22 is an HCFC with a non-zero ODP, so it is being phased out under the Montreal Protocol. Permitted supply keeps shrinking, and after 2030 only a small amount remains for servicing. System owners should plan the change now.
+
+    ## 1. Existing systems in good condition: retrofit
+    Equipment that still has useful life can be converted to a refrigerant designed to replace R-22 without replacing the whole unit.
+
+    - **R-407C** — a zeotropic HFC blend with properties close to R-22, common in air conditioning and chillers. Usually requires a change to POE oil, and must be charged as liquid because of its temperature glide.
+    - **R-417A** — designed specifically for R-22 retrofits; in many cases it works with the existing oil.
+    - **R-448A (Solstice® N40) / R-449A / R-407F** — for refrigeration such as cold rooms and cabinets that previously used R-22.
+
+    ## 2. New installations: use the refrigerant the equipment is designed for
+    Most new air conditioners use **R-32**, **R-410A** or **R-454B**. These run at much higher pressure than R-22, so they **must never be charged into an existing R-22 system** — only into equipment designed for them.
+
+    ## Before converting, check
+    - The equipment and compressor manufacturer's guidance
+    - Oil type, seals and expansion valve compatibility with the new refrigerant
+    - The new refrigerant's safety class (A1, A2L, A3) suits the equipment and installation space
+    - Recover the old refrigerant properly — never vent it to atmosphere
+
+    The ORAFON team can help choose the right refrigerant for your system. See the [retrofit guide](/en/retrofit/) or [contact us](/en/contact/).

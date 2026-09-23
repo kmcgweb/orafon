@@ -1,0 +1,66 @@
+th:
+  id: ashrae-safety-classes
+  date: 2026-09-22
+  cover: ""
+  draft: false
+  title: A1, A2L, A3 คืออะไร? ทำความเข้าใจระดับความปลอดภัยของสารทำความเย็น
+  excerpt: รหัสความปลอดภัยตามมาตรฐาน ASHRAE 34 บอกทั้งความเป็นพิษและการติดไฟของสารทำความเย็น ช่วยให้เลือกสารและติดตั้งได้อย่างปลอดภัย
+  body: |
+    ทุกเบอร์สารทำความเย็นจะมีรหัสความปลอดภัยตามมาตรฐาน **ASHRAE 34** ประกอบด้วยตัวอักษร 1 ตัวและตัวเลข 1 ตัว
+
+    ## ตัวอักษร: ระดับความเป็นพิษ
+    - **A** — ความเป็นพิษต่ำ
+    - **B** — ความเป็นพิษสูงกว่า ต้องมีการระบายอากาศและระบบตรวจจับการรั่วไหล
+
+    ## ตัวเลข: ระดับการติดไฟ
+    - **1** — ไม่ติดไฟ
+    - **2L** — ติดไฟได้เล็กน้อย ลุกไหม้ยากและเปลวไฟลามช้า
+    - **2** — ติดไฟได้
+    - **3** — ติดไฟได้สูง
+
+    ## ตัวอย่างสารที่พบบ่อย
+    | รหัส | ตัวอย่าง |
+    |---|---|
+    | A1 | R-22, R-134a, R-410A, R-404A, R-448A |
+    | A2L | R-32, R-454B, R-1234yf |
+    | A2 | R-152a, R-141b |
+    | A3 | R-290 (Propane), R-600a (Isobutane) |
+    | B1 | R-245fa |
+
+    ## สิ่งที่ช่างควรรู้
+    - สารกลุ่ม **A2L และ A3** ต้องใช้กับอุปกรณ์ที่ออกแบบมาสำหรับสารกลุ่มนั้นเท่านั้น **ห้ามเติมแทนในระบบที่ออกแบบสำหรับสาร A1**
+    - สาร A3 มีข้อกำหนดเรื่องปริมาณบรรจุสูงสุดและพื้นที่ติดตั้ง ควรให้ช่างที่ผ่านการอบรมเป็นผู้ดำเนินการ
+    - ตรวจสอบรายละเอียดการจัดเก็บและการใช้งานจากเอกสาร SDS ของสินค้าทุกครั้ง
+
+    ขอรับเอกสาร SDS ของสินค้า ORAFON และ Solstice® ได้ที่ [เอกสาร TDS/SDS](/documents/)
+en:
+  title: What do A1, A2L and A3 mean? Understanding refrigerant safety classes
+  excerpt: The ASHRAE 34 safety code shows both the toxicity and flammability of a refrigerant, helping you choose and install it safely.
+  body: |
+    Every refrigerant grade has a safety classification under **ASHRAE 34**, made of one letter and one number.
+
+    ## The letter: toxicity
+    - **A** — lower toxicity
+    - **B** — higher toxicity; requires ventilation and leak detection
+
+    ## The number: flammability
+    - **1** — no flame propagation
+    - **2L** — lower flammability; hard to ignite with a slow burning velocity
+    - **2** — flammable
+    - **3** — higher flammability
+
+    ## Common examples
+    | Class | Examples |
+    |---|---|
+    | A1 | R-22, R-134a, R-410A, R-404A, R-448A |
+    | A2L | R-32, R-454B, R-1234yf |
+    | A2 | R-152a, R-141b |
+    | A3 | R-290 (Propane), R-600a (Isobutane) |
+    | B1 | R-245fa |
+
+    ## What technicians should know
+    - **A2L and A3** refrigerants may only be used in equipment designed for them — **never as a replacement in systems designed for A1 refrigerants**.
+    - A3 refrigerants have maximum charge and installation-space limits; they should be handled by trained technicians.
+    - Always check storage and handling details in the product SDS.
+
+    SDS documents for ORAFON and Solstice® products are available under [TDS/SDS documents](/en/documents/).

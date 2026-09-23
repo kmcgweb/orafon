@@ -94,7 +94,7 @@ function buildDb() {
 
     const articles = L(folders.articles)
       .filter((a) => !a.draft)
-      .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+      .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
     const one = (k) => localize(singles[k], lang);
     db[lang] = {
