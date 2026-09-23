@@ -81,6 +81,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/privacy/"/>
   </url>
   <url>
+    <loc>https://orafon.co.th/articles/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/articles/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/"/>
+  </url>
+  <url>
     <loc>https://orafon.co.th/products/orafon-r32/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r32/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r32/"/>
@@ -349,5 +359,35 @@
     <loc>https://orafon.co.th/en/brands/solstice/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/brands/solstice/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/brands/solstice/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/articles/r22-replacement-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/r22-replacement-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/r22-replacement-guide/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/articles/r22-replacement-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/r22-replacement-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/r22-replacement-guide/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/articles/ashrae-safety-classes/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/ashrae-safety-classes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/ashrae-safety-classes/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/articles/ashrae-safety-classes/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/ashrae-safety-classes/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/ashrae-safety-classes/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/articles/gwp-odp-explained/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/gwp-odp-explained/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/gwp-odp-explained/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/articles/gwp-odp-explained/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/gwp-odp-explained/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/gwp-odp-explained/"/>
   </url>
 </urlset>
