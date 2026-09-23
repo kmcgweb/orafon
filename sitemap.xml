@@ -21,6 +21,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/"/>
   </url>
   <url>
+    <loc>https://orafon.co.th/technical/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/technical/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/technical/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/technical/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/technical/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/technical/"/>
+  </url>
+  <url>
     <loc>https://orafon.co.th/refrigerants/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/refrigerants/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/refrigerants/"/>
@@ -29,16 +39,6 @@
     <loc>https://orafon.co.th/en/refrigerants/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/refrigerants/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/refrigerants/"/>
-  </url>
-  <url>
-    <loc>https://orafon.co.th/brands/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/brands/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/brands/"/>
-  </url>
-  <url>
-    <loc>https://orafon.co.th/en/brands/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/brands/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/brands/"/>
   </url>
   <url>
     <loc>https://orafon.co.th/retrofit/</loc>
