@@ -1,4 +1,4 @@
-// Client-side filtering for /products/. State is mirrored in the URL (?q=&class=&brand=&ref=)
+// Client-side filtering for /products/. State is mirrored in the URL (?q=&label=&class=&brand=&ref=)
 (function () {
   var bar = document.getElementById("filters");
   var grid = document.getElementById("grid");
@@ -6,55 +6,54 @@
   var cards = Array.prototype.slice.call(grid.querySelectorAll(".prod-card"));
   var count = document.getElementById("count");
   var empty = document.getElementById("empty");
+  var reset = document.getElementById("reset");
   var q = document.getElementById("q");
-  var ref = document.getElementById("ref");
-  var state = { q: "", label: "", class: "", brand: "", ref: "" };
-
+  var selects = Array.prototype.slice.call(bar.querySelectorAll("select[data-key]"));
+  var state = { q: "" };
   var params = new URLSearchParams(location.search);
-  Object.keys(state).forEach(function (k) { state[k] = params.get(k) || ""; });
-  q.value = state.q;
-  ref.value = state.ref;
-  if (ref.value !== state.ref) state.ref = ""; // unknown grade in URL
 
-  function syncButtons() {
-    bar.querySelectorAll("[data-group]").forEach(function (row) {
-      var g = row.getAttribute("data-group");
-      row.querySelectorAll(".filter").forEach(function (b) {
-        b.classList.toggle("active", b.getAttribute("data-v") === state[g]);
-      });
-    });
+  q.value = state.q = params.get("q") || "";
+  selects.forEach(function (s) {
+    var key = s.getAttribute("data-key");
+    s.value = params.get(key) || "";
+    if (s.selectedIndex < 0) s.value = ""; // unknown value in URL
+    state[key] = s.value;
+  });
+
+  function has(card, key, v) {
+    return (" " + (card.getAttribute("data-" + key) || "") + " ").indexOf(" " + v + " ") !== -1;
   }
 
   function apply() {
     var terms = state.q.toLowerCase().trim().split(/\s+/).filter(Boolean);
     var n = 0;
     cards.forEach(function (c) {
-      var ok =
-        (!state.label || (" " + c.dataset.labels + " ").indexOf(" " + state.label + " ") !== -1) &&
-        (!state.class || c.dataset.class === state.class) &&
-        (!state.brand || c.dataset.brand === state.brand) &&
-        (!state.ref || c.dataset.ref === state.ref) &&
-        terms.every(function (t) { return c.dataset.text.indexOf(t) !== -1; });
+      var ok = selects.every(function (s) {
+        var key = s.getAttribute("data-key");
+        return !state[key] || has(c, key === "label" ? "labels" : key, state[key]);
+      }) && terms.every(function (t) { return c.dataset.text.indexOf(t) !== -1; });
       c.hidden = !ok;
       if (ok) n++;
     });
     count.textContent = count.dataset.tpl.replace("{n}", n);
     if (cards.length) empty.hidden = n > 0;
+    var active = false;
+    selects.forEach(function (s) { var on = !!s.value; s.classList.toggle("on", on); active = active || on; });
+    reset.hidden = !(active || state.q);
     var p = new URLSearchParams();
     Object.keys(state).forEach(function (k) { if (state[k]) p.set(k, state[k]); });
-    var qs = p.toString();
-    history.replaceState(null, "", location.pathname + (qs ? "?" + qs : ""));
-    syncButtons();
+    history.replaceState(null, "", location.pathname + (p.toString() ? "?" + p : ""));
   }
 
-  bar.addEventListener("click", function (e) {
-    var b = e.target.closest(".filter");
-    if (!b) return;
-    state[b.closest("[data-group]").getAttribute("data-group")] = b.getAttribute("data-v");
-    apply();
+  selects.forEach(function (s) {
+    s.addEventListener("change", function () { state[s.getAttribute("data-key")] = s.value; apply(); });
   });
   q.addEventListener("input", function () { state.q = q.value; apply(); });
-  ref.addEventListener("change", function () { state.ref = ref.value; apply(); });
+  reset.addEventListener("click", function () {
+    q.value = state.q = "";
+    selects.forEach(function (s) { s.value = ""; state[s.getAttribute("data-key")] = ""; });
+    apply();
+  });
 
   apply();
 })();

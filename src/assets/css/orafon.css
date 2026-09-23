@@ -131,6 +131,25 @@ footer.site{border-top:1px solid var(--border);background:#fff;margin-top:24px}
 .filter:hover{border-color:var(--primary);color:var(--primary)}
 .filter.active{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
 .count{font-size:14px;color:var(--text-muted);margin-bottom:16px}
+
+/* compact filter toolbar (products page) */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 0 20px;padding:8px;background:#fff;border:1px solid var(--border-soft);border-radius:18px;box-shadow:var(--shadow-soft)}
+.tb-search{flex:1 1 260px;position:relative;display:flex;align-items:center}
+.tb-search svg{position:absolute;left:14px;width:18px;height:18px;color:var(--text-muted);pointer-events:none}
+.tb-search input{width:100%;height:42px;border:1px solid transparent;border-radius:12px;padding:0 14px 0 40px;font-family:inherit;font-size:14px;background:var(--bg);color:var(--text);transition:.2s}
+.tb-search input:focus{outline:none;border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(var(--primary-rgb),.12)}
+.tb-select{flex:0 1 auto;height:42px;min-width:130px;border:1px solid var(--border);border-radius:12px;padding:0 34px 0 14px;font-family:inherit;font-size:14px;font-weight:600;color:var(--text-muted);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;-webkit-appearance:none;appearance:none;cursor:pointer;transition:.2s}
+.tb-select:hover{border-color:var(--primary)}
+.tb-select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(var(--primary-rgb),.12)}
+.tb-select.on{background-color:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
+.tb-reset{height:42px;padding:0 14px;border:none;border-radius:12px;background:none;color:var(--text-muted);font-size:13.5px;font-weight:600;white-space:nowrap}
+.tb-reset:hover{color:#dc2626;background:#fef2f2}
+@media (max-width:768px){
+  .toolbar{display:grid;grid-template-columns:1fr 1fr}
+  .tb-search{grid-column:1/-1}
+  .tb-select{min-width:0;width:100%}
+  .tb-reset{grid-column:1/-1}
+}
 .q-input{height:42px;border:1px solid var(--border);border-radius:999px;padding:0 18px;font-family:inherit;font-size:14px;background:#fff;min-width:260px}
 .q-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(var(--primary-rgb),.15)}
 

@@ -9,7 +9,7 @@ eleventyComputed:
   title: "{{ i18n[lang].allProducts }}"
   description: "{{ i18n[lang].productsLead }}"
 ---
-{%- from "partials/macros.njk" import productCard -%}
+{%- from "partials/macros.njk" import productCard, icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.allProducts }}</nav></div>
@@ -17,35 +17,31 @@ eleventyComputed:
   <h1 class="display">{{ T.allProducts }}</h1>
   <p>{{ T.productsLead }}</p>
 
-  <div class="filter-bar" id="filters">
-    <div class="filter-row">
+  <div class="toolbar" id="filters">
+    <div class="tb-search">
+      {{ icon("search") }}
       <label class="sr-only" for="q">{{ T.search }}</label>
-      <input class="q-input" id="q" type="search" placeholder="{{ T.searchPh }}">
+      <input id="q" type="search" placeholder="{{ T.searchPh }}">
     </div>
     {%- if D.usedLabels.length %}
-    <div class="filter-row" data-group="label">
-      <span class="lbl">{{ T.labelFilter }}</span>
-      <button class="filter active" data-v="">{{ T.all }}</button>
-      {%- for l in D.usedLabels %}<button class="filter" data-v="{{ l }}">{{ T.labels[l] }}</button>{% endfor %}
-    </div>
+    <select class="tb-select" data-key="label" aria-label="{{ T.labelFilter }}">
+      <option value="">{{ T.allLabels }}</option>
+      {%- for l in D.usedLabels %}<option value="{{ l }}">{{ T.labels[l] }}</option>{% endfor %}
+    </select>
     {%- endif %}
-    <div class="filter-row" data-group="class">
-      <span class="lbl">{{ T.type }}</span>
-      <button class="filter active" data-v="">{{ T.all }}</button>
-      {%- for c in D.classes %}<button class="filter" data-v="{{ c }}">{{ c }}</button>{% endfor %}
-    </div>
-    <div class="filter-row" data-group="brand">
-      <span class="lbl">{{ T.brand }}</span>
-      <button class="filter active" data-v="">{{ T.all }}</button>
-      {%- for b in D.brands %}{% if b.products.length %}<button class="filter" data-v="{{ b.slug }}">{{ b.name }}</button>{% endif %}{% endfor %}
-    </div>
-    <div class="filter-row">
-      <label class="lbl" for="ref">{{ T.refrigerant }}</label>
-      <select class="q-input" id="ref" style="min-width:200px">
-        <option value="">{{ T.all }}</option>
-        {%- for r in D.refrigerants %}{% if r.products.length %}<option value="{{ r.slug }}">{{ r.number }} · {{ r.class }}</option>{% endif %}{% endfor %}
-      </select>
-    </div>
+    <select class="tb-select" data-key="class" aria-label="{{ T.type }}">
+      <option value="">{{ T.allTypes }}</option>
+      {%- for c in D.classes %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+    </select>
+    <select class="tb-select" data-key="brand" aria-label="{{ T.brand }}">
+      <option value="">{{ T.allBrands }}</option>
+      {%- for b in D.brands %}{% if b.products.length %}<option value="{{ b.slug }}">{{ b.name }}</option>{% endif %}{% endfor %}
+    </select>
+    <select class="tb-select" data-key="ref" aria-label="{{ T.refrigerant }}">
+      <option value="">{{ T.allGrades }}</option>
+      {%- for r in D.refrigerants %}{% if r.products.length %}<option value="{{ r.slug }}">{{ r.number }}</option>{% endif %}{% endfor %}
+    </select>
+    <button type="button" class="tb-reset" id="reset" hidden>✕ {{ T.clearFilters }}</button>
   </div>
 </div></section>
 
