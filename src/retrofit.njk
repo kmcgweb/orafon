@@ -32,19 +32,23 @@ eleventyComputed:
     <div class="retro-row" data-f-item data-text="{{ (old ~ ' ' ~ (alts | join(' ', 'number'))) | lower }}">
       <div class="retro-old">
         <span class="ro-label">{{ T.oldRef }}</span>
-        {%- if oldRef %}<a class="ro-num" href="{{ ('/refrigerants/' ~ oldRef.slug ~ '/') | u(lang) }}">{{ old }}</a>
-        <span class="ro-meta">{{ oldRef.class }} · GWP {{ oldRef.gwp_ar4 }}</span>
+        {%- if oldRef and oldRef.products.length %}<a class="ro-num" href="{{ oldRef.url | u(lang) }}">{{ old }}</a>
         {%- else %}<span class="ro-num">{{ old }}</span>{% endif %}
+        {%- if oldRef %}<span class="ro-meta">{{ oldRef.class }} · GWP {{ oldRef.gwp_ar4 }}</span>{% endif %}
+        {%- if oldRef and oldRef.products.length == 1 %}<a class="ro-prod" href="{{ oldRef.url | u(lang) }}">{{ oldRef.products[0].name }} →</a>{% endif %}
       </div>
       <div class="retro-arrow" aria-hidden="true">→</div>
       <div class="retro-alts">
         {%- for r in alts %}
         {%- set save = (oldRef.gwp_ar4 | gwpSaving(r.gwp_ar4)) if oldRef else 0 %}
-        <a class="alt-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
+        {%- set altHref = (r.url | u(lang)) if r.products.length else (('/contact/' | u(lang)) ~ '?product=' ~ (r.number | urlencode)) %}
+        <a class="alt-card{% if not r.products.length %} no-prod{% endif %}" href="{{ altHref }}" style="--c:{{ r.color or '#4F46E5' }}">
           <span class="ac-top"><b>{{ r.number }}</b><span class="chip sfc sf-{{ r.safety }}">{{ r.safety }}</span></span>
           <span class="ac-meta">{{ r.class }} · GWP {{ r.gwp_ar4 }}</span>
           {%- if save >= 10 %}<span class="ac-save">−{{ save }}% GWP</span>{% endif %}
-          {%- if r.products.length %}<span class="ac-prod">{{ r.products.length }} {{ T.items }}</span>{% endif %}
+          {%- if r.products.length == 1 %}<span class="ac-prod">{{ r.products[0].name }} →</span>
+          {%- elif r.products.length > 1 %}<span class="ac-prod">{{ r.products.length }} {{ T.items }} →</span>
+          {%- else %}<span class="ac-prod muted">{{ T.requestQuote }} →</span>{% endif %}
         </a>
         {%- endfor %}
       </div>

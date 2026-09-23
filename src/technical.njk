@@ -18,13 +18,6 @@ eleventyComputed:
 
 <section class="section" style="padding-top:28px"><div class="container">
   <div class="tech-cards">
-    <a class="tech-card" href="{{ '/refrigerants/' | u(lang) }}">
-      <span class="tc-ic">{{ icon("flask") }}</span>
-      <span class="tc-num">{{ D.refrigerants.length }} <small>{{ T.grades }}</small></span>
-      <h3>{{ T.refrigerants }}</h3>
-      <p>{{ T.techRefDesc }}</p>
-      <span class="tc-go">{{ T.open }} →</span>
-    </a>
     <a class="tech-card" href="{{ '/retrofit/' | u(lang) }}">
       <span class="tc-ic">{{ icon("cube") }}</span>
       <span class="tc-num">{{ D.retrofitPairs }} <small>{{ T.pairs }}</small></span>
@@ -39,6 +32,13 @@ eleventyComputed:
       <p>{{ T.techDocsDesc }}</p>
       <span class="tc-go">{{ T.open }} →</span>
     </a>
+    <a class="tech-card" href="{{ '/contact/' | u(lang) }}">
+      <span class="tc-ic">{{ icon("chat") }}</span>
+      <span class="tc-num">{{ D.products.length }} <small>{{ T.items }}</small></span>
+      <h3>{{ T.needHelp }}</h3>
+      <p>{{ T.needHelpText }}</p>
+      <span class="tc-go">{{ T.contactSales }} →</span>
+    </a>
   </div>
 </div></section>
 
@@ -47,17 +47,20 @@ eleventyComputed:
   <p class="lead">{{ T.finderLead }}</p>
   <div class="class-groups">
     {%- for g in D.refsByClass %}
+    {%- set sold = [] %}{% for r in g.items %}{% if r.products.length %}{% set sold = sold.concat([r]) %}{% endif %}{% endfor %}
+    {%- if sold.length %}
     <div class="class-group">
-      <div class="cg-head"><span class="chip i">{{ g.class }}</span><span class="muted">{{ g.items.length }} {{ T.grades }}</span></div>
+      <div class="cg-head"><span class="chip i">{{ g.class }}</span><span class="muted">{{ sold.length }} {{ T.grades }}</span></div>
       <p class="cg-desc">{{ T.classDesc[g.class] }}</p>
       <div class="cg-grades">
-        {%- for r in g.items %}
-        <a class="grade-chip" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
+        {%- for r in sold %}
+        <a class="grade-chip" href="{{ r.url | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
           <b>{{ r.number }}</b><span>{{ r.safety }} · GWP {{ r.gwp_ar4 }}</span>
         </a>
         {%- endfor %}
       </div>
     </div>
+    {%- endif %}
     {%- endfor %}
   </div>
 </div></section>
@@ -71,7 +74,7 @@ eleventyComputed:
       <div class="sf-code">{{ s }}</div>
       <div class="sf-name">{{ T.safetyText[s] | replace(s ~ " — ", "") }}</div>
       <p>{{ T.safetyDesc[s] }}</p>
-      {%- if D.safetyCounts[s] %}<a class="sf-count" href="{{ '/refrigerants/' | u(lang) }}?safety={{ s }}">{{ D.safetyCounts[s] }} {{ T.grades }} →</a>{% endif %}
+      {%- if D.safetyCounts[s] %}<span class="sf-count">{{ D.safetyCounts[s] }} {{ T.grades }}</span>{% endif %}
     </div>
     {%- endfor %}
   </div>

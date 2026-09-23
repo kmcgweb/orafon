@@ -42,6 +42,10 @@ eleventyComputed:
       {%- for r in D.refrigerants %}{% if r.products.length %}<option value="{{ r.slug }}">{{ r.number }}</option>{% endif %}{% endfor %}
     </select>
     <button type="button" class="tb-reset" id="reset" hidden>✕ {{ T.clearFilters }}</button>
+    <div class="view-toggle" role="group" aria-label="{{ T.viewMode }}">
+      <button type="button" data-view="cards" class="active" aria-pressed="true" title="{{ T.viewCards }}">{{ icon("cards") }}<span class="sr-only">{{ T.viewCards }}</span></button>
+      <button type="button" data-view="table" aria-pressed="false" title="{{ T.viewTable }}">{{ icon("list") }}<span class="sr-only">{{ T.viewTable }}</span></button>
+    </div>
   </div>
 </div></section>
 
@@ -49,6 +53,31 @@ eleventyComputed:
   <div class="count" id="count" data-tpl="{{ T.showing }} {n} {{ T.items }}">{{ T.showing }} {{ D.products.length }} {{ T.items }}</div>
   <div class="prod-grid" id="grid">
     {%- for p in D.products %}{{ productCard(p, lang, T) }}{% endfor %}
+  </div>
+  <div class="table-wrap" id="tableView" hidden>
+    <table class="data-table prod-table">
+      <thead><tr>
+        <th>{{ T.products }}</th><th>{{ T.brand }}</th><th>{{ T.refrigerant }}</th><th>{{ T.type }}</th><th>ASHRAE</th><th>{{ T.gwp }}</th><th>{{ T.packages }}</th><th></th>
+      </tr></thead>
+      <tbody>
+        {%- for p in D.products %}
+        {%- set href = ('/products/' ~ p.slug ~ '/') | u(lang) %}
+        <tr class="prod-row" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+          <td>
+            <a class="pt-name" href="{{ href }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a>
+            {%- if p.labels.length %}<div class="pt-tags">{% for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}</div>{% endif %}
+          </td>
+          <td>{{ p.brandObj.name if p.brandObj }}</td>
+          <td><strong>{{ p.ref.number if p.ref }}</strong></td>
+          <td>{{ p.ref.class if p.ref }}</td>
+          <td>{% if p.ref %}<span class="chip sfc sf-{{ p.ref.safety }}">{{ p.ref.safety }}</span>{% endif %}</td>
+          <td>{% if p.ref %}<span class="gwp-bar" style="--w:{{ p.ref.gwp_ar4 | gwpBar }}%"></span>{{ p.ref.gwp_ar4 }}{% endif %}</td>
+          <td class="muted">{% if p.packages and p.packages.length %}{% for k in p.packages %}{{ k.kg | kg }}{% if not loop.last %} · {% endif %}{% endfor %} kg{% else %}{{ T.askSizesHi }}{% endif %}</td>
+          <td><a class="pt-go" href="{{ href }}">{{ T.viewDetails }} →</a></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
   <div class="card empty" id="empty" {% if D.products.length %}hidden{% endif %}>
     {{ T.noResults if D.products.length else T.comingSoon }}

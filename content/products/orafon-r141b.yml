@@ -13,6 +13,9 @@ th:
     - type: SDS
       label: Safety Data Sheet (SDS)
       file: ""
+    - type: Sales
+      label: Sales Sheet — ORAFON R-141b
+      file: ""
   name: ORAFON R-141b
   tagline: น้ำยาล้างระบบ / สารเป่าโฟม HCFC
   tag: ""

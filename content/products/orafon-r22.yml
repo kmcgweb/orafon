@@ -14,6 +14,9 @@ th:
     - type: SDS
       label: Safety Data Sheet (SDS)
       file: ""
+    - type: Sales
+      label: Sales Sheet — ORAFON R-22
+      file: ""
   name: ORAFON R-22
   tagline: สารทำความเย็น HCFC
   tag: ""

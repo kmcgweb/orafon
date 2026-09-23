@@ -14,6 +14,9 @@ th:
     - type: SDS
       label: Safety Data Sheet (SDS)
       file: ""
+    - type: Sales
+      label: Sales Sheet — Solstice® R-449A
+      file: ""
   name: Solstice® R-449A
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

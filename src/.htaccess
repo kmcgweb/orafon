@@ -19,6 +19,12 @@ Redirect 301 /contact.html /contact/
   # Brands index merged into About (brand detail pages /brands/<name>/ still exist)
   RewriteRule ^brands/?$ /about/#brands [R=301,NE,L]
   RewriteRule ^en/brands/?$ /en/about/#brands [R=301,NE,L]
+
+  # Refrigerant data pages were removed -> products filtered by that grade
+  RewriteRule ^refrigerants/?$ /products/ [R=301,L]
+  RewriteRule ^en/refrigerants/?$ /en/products/ [R=301,L]
+  RewriteRule ^refrigerants/([a-z0-9-]+)/?$ /products/?ref=$1 [R=301,L]
+  RewriteRule ^en/refrigerants/([a-z0-9-]+)/?$ /en/products/?ref=$1 [R=301,L]
 </IfModule>
 
 # Security headers

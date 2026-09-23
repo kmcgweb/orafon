@@ -1,8 +1,7 @@
-{#- Shared header for Technical Center pages. Needs: lang, T, D, techTab ("overview"|"refrigerants"|"retrofit"|"documents"), techTitle, techLead -#}
+{#- Shared header for Technical Center pages. Needs: lang, T, D, techTab ("overview"|"retrofit"|"documents"), techTitle, techLead -#}
 {%- from "partials/macros.njk" import icon -%}
 {%- set tabs = [
   ["overview", "/technical/", T.techOverview, "grid"],
-  ["refrigerants", "/refrigerants/", T.refrigerants, "flask"],
   ["retrofit", "/retrofit/", T.retrofit, "cube"],
   ["documents", "/documents/", T.documents, "doc"]
 ] -%}

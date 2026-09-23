@@ -42,9 +42,9 @@ eleventyComputed:
       <div class="dc-docs">
         {%- for d in p.documents %}
         {%- if d.file %}
-        <a class="dc-doc ready" href="{{ d.file }}" target="_blank" rel="noopener">{{ icon("doc") }}<span>{{ d.type or d.label }}</span><em>{{ T.download }}</em></a>
+        <a class="dc-doc ready" href="{{ d.file }}" target="_blank" rel="noopener">{{ icon("doc") }}<span>{{ "Sales Sheet" if d.type == "Sales" else (d.type or d.label) }}</span><em>{{ T.download }}</em></a>
         {%- else %}
-        <a class="dc-doc" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ icon("doc") }}<span>{{ d.type or d.label }}</span><em>{{ T.requestDoc }}</em></a>
+        <a class="dc-doc" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ icon("doc") }}<span>{{ "Sales Sheet" if d.type == "Sales" else (d.type or d.label) }}</span><em>{{ T.requestDoc }}</em></a>
         {%- endif %}
         {%- endfor %}
       </div>

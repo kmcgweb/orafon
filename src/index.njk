@@ -43,7 +43,7 @@ section: home
   <p class="lead">{{ T.byTypeLead }}</p>
   <div class="cats">
     {%- for r in D.refrigerants %}{% if r.products.length %}
-    <a class="cat-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">
+    <a class="cat-card" href="{{ r.url | u(lang) }}">
       <div class="e" style="color:{{ r.color }}">{{ r.number | shortNum }}</div>
       <div class="t">{{ r.number }}</div>
       <div class="d">{{ r.class }} · {{ r.safety }}</div>

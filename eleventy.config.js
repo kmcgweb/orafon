@@ -82,6 +82,8 @@ function buildDb() {
 
     for (const r of refrigerants) {
       r.products = products.filter((p) => p.refrigerant === r.slug);
+      // where a grade links to: its only product, or the product list filtered to that grade
+      r.url = r.products.length === 1 ? `/products/${r.products[0].slug}/` : `/products/?ref=${r.slug}`;
       // "replaces" is free text (R-22 etc.); link it when we have a page for it
       r.replacesLinks = (r.replaces || []).map((num) => ({ number: num, slug: refNumberToSlug(num, refrigerants) }));
       r.replacedBy = refrigerants
@@ -100,7 +102,7 @@ function buildDb() {
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
       refsByClass: CLASS_ORDER.map((c) => ({ class: c, items: refrigerants.filter((r) => r.class === c) })).filter((g) => g.items.length),
-      safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s).length])),
+      safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s && r.products.length).length])),
       retrofitPairs: refrigerants.reduce((n, r) => n + (r.replaces || []).length, 0),
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
       site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"),

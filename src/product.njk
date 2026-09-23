@@ -83,7 +83,7 @@ eleventyComputed:
       <ul class="specs">
         <li><span class="ico">▸</span><span class="k">{{ T.refType }}</span><span class="v">{{ r.class }}{% if r.blend_type %} ({{ T.blend[r.blend_type] or r.blend_type }}){% endif %}</span></li>
         <li><span class="ico">▸</span><span class="k">{{ T.safety }}</span><span class="v">{{ T.safetyText[r.safety] or r.safety }}</span></li>
-        <li><span class="ico">▸</span><span class="k">{{ T.ashrae }}</span><span class="v"><a href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">{{ r.number }}</a></span></li>
+        <li><span class="ico">▸</span><span class="k">{{ T.ashrae }}</span><span class="v">{{ r.number }}</span></li>
         <li><span class="ico">▸</span><span class="k">{{ T.odp }}</span><span class="v">{{ r.odp }}</span></li>
         <li><span class="ico">▸</span><span class="k">{{ T.gwp }}</span><span class="v">{{ r.gwp_ar4 }}</span></li>
         {%- if r.replaces and r.replaces.length %}<li><span class="ico">▸</span><span class="k">{{ T.replaces }}</span><span class="v">{{ r.replaces | join(", ") }}</span></li>{% endif %}
@@ -187,7 +187,7 @@ eleventyComputed:
 
     <div class="tab-pane" data-pane="related" role="tabpanel">
       <div class="rel-grid">
-        {%- if r %}<a class="rel-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ T.moreOf }} {{ r.number }}</span><br><span class="rd">{{ r.class }} · {{ r.safety }}</span></span></a>{% endif %}
+        {%- if r and r.products.length > 1 %}<a class="rel-card" href="{{ ('/products/?ref=' ~ r.slug) | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ T.productsOfRef }} {{ r.number }}</span><br><span class="rd">{{ r.products.length }} {{ T.items }}</span></span></a>{% endif %}
         {%- if b %}<a class="rel-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ b.name | first }}</span><span><span class="rt">{{ T.brandPage }} {{ b.name }}</span><br><span class="rd">{{ b.tagline }}</span></span></a>{% endif %}
         {%- if r %}{% for o in r.products %}{% if o.slug != p.slug %}<a class="rel-card" href="{{ ('/products/' ~ o.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ o.name }}</span><br><span class="rd">{{ o.brandObj.name if o.brandObj }}</span></span></a>{% endif %}{% endfor %}{% endif %}
         <a class="rel-card" href="{{ '/retrofit/' | u(lang) }}"><span class="rel-ic">↔</span><span><span class="rt">{{ T.retrofit }}</span></span></a>
