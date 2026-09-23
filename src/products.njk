@@ -32,10 +32,12 @@ eleventyComputed:
       <button class="filter active" data-v="">{{ T.all }}</button>
       {%- for b in D.brands %}{% if b.products.length %}<button class="filter" data-v="{{ b.slug }}">{{ b.name }}</button>{% endif %}{% endfor %}
     </div>
-    <div class="filter-row" data-group="ref">
-      <span class="lbl">{{ T.refrigerant }}</span>
-      <button class="filter active" data-v="">{{ T.all }}</button>
-      {%- for r in D.refrigerants %}{% if r.products.length %}<button class="filter" data-v="{{ r.slug }}">{{ r.number }}</button>{% endif %}{% endfor %}
+    <div class="filter-row">
+      <label class="lbl" for="ref">{{ T.refrigerant }}</label>
+      <select class="q-input" id="ref" style="min-width:200px">
+        <option value="">{{ T.all }}</option>
+        {%- for r in D.refrigerants %}{% if r.products.length %}<option value="{{ r.slug }}">{{ r.number }} · {{ r.class }}</option>{% endif %}{% endfor %}
+      </select>
     </div>
   </div>
 </div></section>

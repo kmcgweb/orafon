@@ -1,0 +1,95 @@
+th:
+  id: orafon-r22
+  brand: orafon
+  refrigerant: r-22
+  featured: true
+  draft: false
+  order: 30
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-22
+  tagline: สารทำความเย็น HCFC
+  tag: ""
+  badges:
+    - GWP 1810
+    - A1 ไม่ติดไฟ
+    - ODP = 0.055
+  short: ORAFON R-22 — สาร HCFC ชนิดเดี่ยว ไม่ติดไฟ (A1) เคยเป็นสารหลักของเครื่องปรับอากาศและห้องเย็นรุ่นเก่า มีค่า ODP จึงอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
+  highlights:
+    - title: GWP 1810
+      text: ค่า GWP (AR4) 1810 · ODP 0.055
+    - title: HCFC
+      text: สารเดี่ยว · CHClF₂ (Chlorodifluoromethane)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: สำหรับซ่อมบำรุงระบบเดิม
+      text: อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+    - title: งานที่เหมาะ
+      text: แอร์บ้านรุ่นเดิม · แอร์เชิงพาณิชย์รุ่นเดิม · ห้องเย็น
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-22 เป็นสารทำความเย็นประเภท HCFC แบบสารเดี่ยว หมายเลข ASHRAE R-22 ส่วนผสม CHClF₂ (Chlorodifluoromethane) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 1810 และ ODP 0.055
+
+    สาร HCFC ชนิดเดี่ยว ไม่ติดไฟ (A1) เคยเป็นสารหลักของเครื่องปรับอากาศและห้องเย็นรุ่นเก่า มีค่า ODP จึงอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
+
+    **หมายเหตุ:** สาร HCFC อยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปริมาณการนำเข้าถูกควบคุม เหมาะสำหรับงานซ่อมบำรุงระบบเดิม และควรวางแผนเปลี่ยนไปใช้สารทดแทนในระยะยาว
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-22 ใช้ทำอะไร?
+      a: แอร์บ้านรุ่นเดิม · แอร์เชิงพาณิชย์รุ่นเดิม · ห้องเย็น — ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: ยังใช้ R-22 ได้อยู่หรือไม่?
+      a: ยังใช้ได้สำหรับซ่อมบำรุงระบบเดิม แต่อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออลและปริมาณนำเข้าถูกควบคุม ควรวางแผนเปลี่ยนไปใช้สารทดแทน
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-22 สารทำความเย็น R-22 HCFC A1 GWP 1810 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-22
+  tagline: HCFC refrigerant
+  tag: ""
+  badges:
+    - GWP 1810
+    - A1 non-flammable
+    - ODP = 0.055
+  short: ORAFON R-22 is a single-component, non-flammable (A1) HCFC that was the mainstay of older air conditioners and cold rooms. Because it depletes ozone it is being phased out under the Montreal Protocol and is now mainly used to service existing systems.
+  highlights:
+    - title: GWP 1810
+      text: GWP (AR4) 1810 · ODP 0.055
+    - title: HCFC
+      text: Single component · CHClF₂ (Chlorodifluoromethane)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: For servicing existing systems
+      text: Being phased out under the Montreal Protocol
+    - title: Applications
+      text: Legacy residential AC · Legacy commercial AC · Cold rooms
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-22 is an HCFC refrigerant (single component), ASHRAE number R-22, composition CHClF₂ (Chlorodifluoromethane). It is classified A1 under ASHRAE 34, with GWP (AR4) 1810 and ODP 0.055.
+
+    A single-component, non-flammable (A1) HCFC that was the mainstay of older air conditioners and cold rooms. Because it depletes ozone it is being phased out under the Montreal Protocol and is now mainly used to service existing systems.
+
+    **Note:** HCFCs are being phased out under the Montreal Protocol and imports are controlled. Use for servicing existing systems and plan a long-term move to alternatives.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: What is ORAFON R-22 used for?
+      a: Legacy residential AC · Legacy commercial AC · Cold rooms — now mainly for servicing existing systems.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Can R-22 still be used?
+      a: Yes, for servicing existing systems, but it is being phased out under the Montreal Protocol and imports are controlled. Plan a move to alternatives.
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-22 R-22 HCFC refrigerant, A1, GWP 1810. Distributed by ORAFON — request a quotation.

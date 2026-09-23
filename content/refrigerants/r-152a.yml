@@ -1,0 +1,28 @@
+th:
+  id: r-152a
+  number: R-152a
+  class: HFC
+  composition: CH₃CHF₂ (1,1-Difluoroethane)
+  blend_type: pure
+  safety: A2
+  gwp_ar4: "124"
+  gwp_ar5: "138"
+  odp: "0"
+  boiling_point: −24.0
+  replaces: []
+  color: "#0891B2"
+  color2: "#0EA5E9"
+  order: 22
+  summary: สาร HFC ชนิดเดี่ยว ค่า GWP ต่ำ ใช้เป็นสารขับดันในกระป๋องสเปรย์และเป็นส่วนผสมของสารทำความเย็นแบบผสม จัดอยู่ในกลุ่มติดไฟได้ (A2)
+  applications:
+    - icon: spray
+      label: สารขับดันสเปรย์
+    - icon: flask
+      label: ส่วนผสมสารทำความเย็น
+en:
+  summary: A single-component, low-GWP HFC used as an aerosol propellant and as a component of refrigerant blends. Flammable (A2).
+  applications:
+    - icon: spray
+      label: Aerosol propellant
+    - icon: flask
+      label: Blend component

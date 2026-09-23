@@ -1,0 +1,87 @@
+th:
+  id: orafon-r417a
+  brand: orafon
+  refrigerant: r-417a
+  featured: false
+  draft: false
+  order: 220
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-417A
+  tagline: สารทำความเย็น HFC Blend
+  tag: รีโทรฟิต R-22
+  badges:
+    - GWP 2346
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: ORAFON R-417A — สาร HFC ผสมแบบซีโอโทรป ไม่ติดไฟ (A1) ออกแบบเป็นสารรีโทรฟิตแทน R-22 ในระบบปรับอากาศและทำความเย็นเดิม ในหลายกรณีใช้กับน้ำมันคอมเพรสเซอร์เดิมได้ (ควรตรวจสอบกับผู้ผลิตอุปกรณ์)
+  highlights:
+    - title: GWP 2346
+      text: ค่า GWP (AR4) 2346 · ODP 0
+    - title: HFC Blend
+      text: สารผสมซีโอโทรป (มี temperature glide) · R-125 / R-134a / R-600 (46.6/50/3.4)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-22
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: แอร์ระบบเดิม (รีโทรฟิต) · ห้องเย็น · ฮีตปั๊ม
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-417A เป็นสารทำความเย็นประเภท HFC Blend แบบสารผสมซีโอโทรป หมายเลข ASHRAE R-417A ส่วนผสม R-125 / R-134a / R-600 (46.6/50/3.4) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 2346 และ ODP 0
+
+    สาร HFC ผสมแบบซีโอโทรป ไม่ติดไฟ (A1) ออกแบบเป็นสารรีโทรฟิตแทน R-22 ในระบบปรับอากาศและทำความเย็นเดิม ในหลายกรณีใช้กับน้ำมันคอมเพรสเซอร์เดิมได้ (ควรตรวจสอบกับผู้ผลิตอุปกรณ์)
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-417A ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-22 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-417A สารทำความเย็น R-417A HFC Blend A1 GWP 2346 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-417A
+  tagline: HFC Blend refrigerant
+  tag: R-22 retrofit
+  badges:
+    - GWP 2346
+    - A1 non-flammable
+    - ODP = 0
+  short: ORAFON R-417A is a zeotropic, non-flammable (A1) HFC blend designed as a retrofit replacement for R-22 in existing AC and refrigeration systems; in many cases it works with the existing compressor oil (confirm with the equipment manufacturer).
+  highlights:
+    - title: GWP 2346
+      text: GWP (AR4) 2346 · ODP 0
+    - title: HFC Blend
+      text: Zeotropic blend (with temperature glide) · R-125 / R-134a / R-600 (46.6/50/3.4)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-22
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Existing AC (retrofit) · Cold rooms · Heat pumps
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-417A is an HFC Blend refrigerant (zeotropic blend), ASHRAE number R-417A, composition R-125 / R-134a / R-600 (46.6/50/3.4). It is classified A1 under ASHRAE 34, with GWP (AR4) 2346 and ODP 0.
+
+    A zeotropic, non-flammable (A1) HFC blend designed as a retrofit replacement for R-22 in existing AC and refrigeration systems; in many cases it works with the existing compressor oil (confirm with the equipment manufacturer).
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-417A replace?
+      a: R-22. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-417A R-417A HFC Blend refrigerant, A1, GWP 2346. Distributed by ORAFON — request a quotation.

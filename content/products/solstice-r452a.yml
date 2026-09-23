@@ -1,0 +1,87 @@
+th:
+  id: solstice-r452a
+  brand: solstice
+  refrigerant: r-452a
+  featured: false
+  draft: false
+  order: 264
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: Solstice® R-452A
+  tagline: สารทำความเย็น HFO Blend
+  tag: ""
+  badges:
+    - ลด GWP 45% เทียบ R-404A
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: Solstice® R-452A — สาร HFO/HFC ผสม ไม่ติดไฟ (A1) ออกแบบสำหรับระบบทำความเย็นในการขนส่ง เช่น รถห้องเย็นและตู้คอนเทนเนอร์ ใช้แทน R-404A โดยให้อุณหภูมิขาออกคอมเพรสเซอร์ใกล้เคียงเดิม และค่า GWP ต่ำกว่า R-404A ราว 45%
+  highlights:
+    - title: ลด GWP 45%
+      text: ค่า GWP (AR4) 2140 ต่ำกว่า R-404A ราว 45% · ODP 0
+    - title: HFO Blend
+      text: สารผสมซีโอโทรป (มี temperature glide) · R-32 / R-125 / R-1234yf (11/59/30)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-404A
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: รถห้องเย็น · ตู้คอนเทนเนอร์ห้องเย็น · ห้องเย็นขนาดเล็ก
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    Solstice® R-452A เป็นสารทำความเย็นประเภท HFO Blend แบบสารผสมซีโอโทรป หมายเลข ASHRAE R-452A ส่วนผสม R-32 / R-125 / R-1234yf (11/59/30) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 2140 และ ODP 0
+
+    สาร HFO/HFC ผสม ไม่ติดไฟ (A1) ออกแบบสำหรับระบบทำความเย็นในการขนส่ง เช่น รถห้องเย็นและตู้คอนเทนเนอร์ ใช้แทน R-404A โดยให้อุณหภูมิขาออกคอมเพรสเซอร์ใกล้เคียงเดิม และค่า GWP ต่ำกว่า R-404A ราว 45%
+
+    จัดจำหน่ายในประเทศไทยโดย ORAFON (บริษัท โอราโนส จำกัด) ตัวแทนจำหน่าย Solstice® พร้อมเอกสาร TDS/SDS และคำปรึกษาทางเทคนิค ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: Solstice® R-452A ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-404A ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: Solstice® R-452A สารทำความเย็น R-452A HFO Blend A1 GWP 2140 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: Solstice® R-452A
+  tagline: HFO Blend refrigerant
+  tag: ""
+  badges:
+    - 45% lower GWP vs R-404A
+    - A1 non-flammable
+    - ODP = 0
+  short: Solstice® R-452A is a non-flammable (A1) HFO/HFC blend designed for transport refrigeration such as reefer trucks and containers, replacing R-404A with similar compressor discharge temperatures and about 45% lower GWP.
+  highlights:
+    - title: 45% lower GWP
+      text: GWP (AR4) 2140, about 45% below R-404A · ODP 0
+    - title: HFO Blend
+      text: Zeotropic blend (with temperature glide) · R-32 / R-125 / R-1234yf (11/59/30)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-404A
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Refrigerated trucks · Reefer containers · Small cold rooms
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    Solstice® R-452A is an HFO Blend refrigerant (zeotropic blend), ASHRAE number R-452A, composition R-32 / R-125 / R-1234yf (11/59/30). It is classified A1 under ASHRAE 34, with GWP (AR4) 2140 and ODP 0.
+
+    A non-flammable (A1) HFO/HFC blend designed for transport refrigeration such as reefer trucks and containers, replacing R-404A with similar compressor discharge temperatures and about 45% lower GWP.
+
+    Distributed in Thailand by ORAFON (Oranoss Co., Ltd.), an authorized Solstice® distributor, with TDS/SDS documents and technical support. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can Solstice® R-452A replace?
+      a: R-404A. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: Solstice® R-452A R-452A HFO Blend refrigerant, A1, GWP 2140. Distributed by ORAFON — request a quotation.

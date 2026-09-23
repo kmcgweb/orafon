@@ -1,0 +1,32 @@
+th:
+  id: r-22
+  number: R-22
+  class: HCFC
+  composition: CHClF₂ (Chlorodifluoromethane)
+  blend_type: pure
+  safety: A1
+  gwp_ar4: "1810"
+  gwp_ar5: "1760"
+  odp: "0.055"
+  boiling_point: −40.8
+  replaces: []
+  color: "#0F766E"
+  color2: "#0D9488"
+  order: 5
+  summary: สาร HCFC ชนิดเดี่ยว ไม่ติดไฟ (A1) เคยเป็นสารหลักของเครื่องปรับอากาศและห้องเย็นรุ่นเก่า มีค่า ODP จึงอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
+  applications:
+    - icon: home
+      label: แอร์บ้านรุ่นเดิม
+    - icon: ac
+      label: แอร์เชิงพาณิชย์รุ่นเดิม
+    - icon: snow
+      label: ห้องเย็น
+en:
+  summary: A single-component, non-flammable (A1) HCFC that was the mainstay of older air conditioners and cold rooms. Because it depletes ozone it is being phased out under the Montreal Protocol and is now mainly used to service existing systems.
+  applications:
+    - icon: home
+      label: Legacy residential AC
+    - icon: ac
+      label: Legacy commercial AC
+    - icon: snow
+      label: Cold rooms

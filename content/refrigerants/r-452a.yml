@@ -1,0 +1,33 @@
+th:
+  id: r-452a
+  number: R-452A
+  class: HFO Blend
+  composition: R-32 / R-125 / R-1234yf (11/59/30)
+  blend_type: zeotropic
+  safety: A1
+  gwp_ar4: "2140"
+  gwp_ar5: "1945"
+  odp: "0"
+  boiling_point: −47.0
+  replaces:
+    - R-404A
+  color: "#0369A1"
+  color2: "#4F46E5"
+  order: 64
+  summary: สาร HFO/HFC ผสม ไม่ติดไฟ (A1) ออกแบบสำหรับระบบทำความเย็นในการขนส่ง เช่น รถห้องเย็นและตู้คอนเทนเนอร์ ใช้แทน R-404A โดยให้อุณหภูมิขาออกคอมเพรสเซอร์ใกล้เคียงเดิม และค่า GWP ต่ำกว่า R-404A ราว 45%
+  applications:
+    - icon: truck
+      label: รถห้องเย็น
+    - icon: box
+      label: ตู้คอนเทนเนอร์ห้องเย็น
+    - icon: snow
+      label: ห้องเย็นขนาดเล็ก
+en:
+  summary: A non-flammable (A1) HFO/HFC blend designed for transport refrigeration such as reefer trucks and containers, replacing R-404A with similar compressor discharge temperatures and about 45% lower GWP.
+  applications:
+    - icon: truck
+      label: Refrigerated trucks
+    - icon: box
+      label: Reefer containers
+    - icon: snow
+      label: Small cold rooms

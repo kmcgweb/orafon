@@ -1,0 +1,33 @@
+th:
+  id: r-417a
+  number: R-417A
+  class: HFC Blend
+  composition: R-125 / R-134a / R-600 (46.6/50/3.4)
+  blend_type: zeotropic
+  safety: A1
+  gwp_ar4: "2346"
+  gwp_ar5: "2127"
+  odp: "0"
+  boiling_point: ""
+  replaces:
+    - R-22
+  color: "#0F766E"
+  color2: "#7C3AED"
+  order: 54
+  summary: สาร HFC ผสมแบบซีโอโทรป ไม่ติดไฟ (A1) ออกแบบเป็นสารรีโทรฟิตแทน R-22 ในระบบปรับอากาศและทำความเย็นเดิม ในหลายกรณีใช้กับน้ำมันคอมเพรสเซอร์เดิมได้ (ควรตรวจสอบกับผู้ผลิตอุปกรณ์)
+  applications:
+    - icon: ac
+      label: แอร์ระบบเดิม (รีโทรฟิต)
+    - icon: snow
+      label: ห้องเย็น
+    - icon: heatpump
+      label: ฮีตปั๊ม
+en:
+  summary: A zeotropic, non-flammable (A1) HFC blend designed as a retrofit replacement for R-22 in existing AC and refrigeration systems; in many cases it works with the existing compressor oil (confirm with the equipment manufacturer).
+  applications:
+    - icon: ac
+      label: Existing AC (retrofit)
+    - icon: snow
+      label: Cold rooms
+    - icon: heatpump
+      label: Heat pumps

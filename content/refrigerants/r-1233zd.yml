@@ -1,0 +1,35 @@
+th:
+  id: r-1233zd
+  number: R-1233zd(E)
+  class: HFO
+  composition: CF₃CH=CHCl — HCFO-1233zd(E)
+  blend_type: pure
+  safety: A1
+  gwp_ar4: "1"
+  gwp_ar5: "1"
+  odp: ~0.0003
+  boiling_point: "18.3"
+  replaces:
+    - R-141b
+    - R-245fa
+    - R-123
+  color: "#16A34A"
+  color2: "#0EA5E9"
+  order: 82
+  summary: สาร HCFO-1233zd(E) ชนิดเดี่ยว ไม่ติดไฟ (A1) ค่า GWP ประมาณ 1 และ ODP ใกล้ศูนย์ เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นสารเป่าโฟมฉนวน (Liquid Blowing Agent) และเป็นสารทำความเย็นในชิลเลอร์แรงดันต่ำ
+  applications:
+    - icon: foam
+      label: โฟมฉนวน PU
+    - icon: chiller
+      label: ชิลเลอร์แรงดันต่ำ
+    - icon: bolt
+      label: ระบบ ORC
+en:
+  summary: A single-component, non-flammable (A1) HCFO-1233zd(E) with GWP around 1 and near-zero ODP. Liquid at room temperature; used as a liquid blowing agent for insulation foam and as a refrigerant in low-pressure chillers.
+  applications:
+    - icon: foam
+      label: PU insulation foam
+    - icon: chiller
+      label: Low-pressure chillers
+    - icon: bolt
+      label: ORC systems

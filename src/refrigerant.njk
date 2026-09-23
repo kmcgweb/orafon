@@ -29,9 +29,9 @@ eleventyComputed:
       <div class="kv-grid">
         <div class="kv"><div class="k">{{ T.safety }}</div><div class="v">{{ T.safetyText[r.safety] or r.safety }}</div></div>
         <div class="kv"><div class="k">{{ T.gwp }}</div><div class="v">{{ r.gwp_ar4 }}</div></div>
-        <div class="kv"><div class="k">{{ T.gwpAr5 }}</div><div class="v">{{ r.gwp_ar5 }}</div></div>
+        <div class="kv"><div class="k">{{ T.gwpAr5 }}</div><div class="v">{{ r.gwp_ar5 or "—" }}</div></div>
         <div class="kv"><div class="k">{{ T.odp }}</div><div class="v">{{ r.odp }}</div></div>
-        <div class="kv"><div class="k">{{ T.boiling }}</div><div class="v">{{ r.boiling_point }}</div></div>
+        <div class="kv"><div class="k">{{ T.boiling }}</div><div class="v">{{ r.boiling_point or "—" }}</div></div>
         <div class="kv"><div class="k">{{ T.blendType }}</div><div class="v">{{ T.blend[r.blend_type] or r.blend_type }}</div></div>
       </div>
       <div class="kv" style="margin-top:12px"><div class="k">{{ T.composition }}</div><div class="v" style="font-size:15px">{{ r.composition }}</div></div>

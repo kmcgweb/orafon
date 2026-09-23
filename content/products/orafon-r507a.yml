@@ -1,0 +1,87 @@
+th:
+  id: orafon-r507a
+  brand: orafon
+  refrigerant: r-507a
+  featured: false
+  draft: false
+  order: 190
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-507A
+  tagline: สารทำความเย็น HFC Blend
+  tag: ""
+  badges:
+    - GWP 3985
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: ORAFON R-507A — สาร HFC ผสมแบบอะซีโอโทรป ไม่ติดไฟ (A1) เหมาะกับงานทำความเย็นอุณหภูมิต่ำ เช่น ห้องเย็นแช่แข็งและตู้แช่ มีค่า GWP สูง จึงมีสารทดแทน GWP ต่ำ เช่น R-448A และ R-449A
+  highlights:
+    - title: GWP 3985
+      text: ค่า GWP (AR4) 3985 · ODP 0
+    - title: HFC Blend
+      text: สารผสมอะซีโอโทรป · R-125 / R-143a (50/50)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-502, R-22
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: ห้องเย็นแช่แข็ง · คลังสินค้าห้องเย็น · ระบบทำความเย็นอุตสาหกรรม
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-507A เป็นสารทำความเย็นประเภท HFC Blend แบบสารผสมอะซีโอโทรป หมายเลข ASHRAE R-507A ส่วนผสม R-125 / R-143a (50/50) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 3985 และ ODP 0
+
+    สาร HFC ผสมแบบอะซีโอโทรป ไม่ติดไฟ (A1) เหมาะกับงานทำความเย็นอุณหภูมิต่ำ เช่น ห้องเย็นแช่แข็งและตู้แช่ มีค่า GWP สูง จึงมีสารทดแทน GWP ต่ำ เช่น R-448A และ R-449A
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-507A ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-502, R-22 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-507A สารทำความเย็น R-507A HFC Blend A1 GWP 3985 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-507A
+  tagline: HFC Blend refrigerant
+  tag: ""
+  badges:
+    - GWP 3985
+    - A1 non-flammable
+    - ODP = 0
+  short: ORAFON R-507A is an azeotropic, non-flammable (A1) HFC blend for low-temperature refrigeration such as freezer rooms and cabinets. Its high GWP has led to low-GWP alternatives such as R-448A and R-449A.
+  highlights:
+    - title: GWP 3985
+      text: GWP (AR4) 3985 · ODP 0
+    - title: HFC Blend
+      text: Azeotropic blend · R-125 / R-143a (50/50)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-502, R-22
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Freezer rooms · Cold storage · Industrial refrigeration
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-507A is an HFC Blend refrigerant (azeotropic blend), ASHRAE number R-507A, composition R-125 / R-143a (50/50). It is classified A1 under ASHRAE 34, with GWP (AR4) 3985 and ODP 0.
+
+    An azeotropic, non-flammable (A1) HFC blend for low-temperature refrigeration such as freezer rooms and cabinets. Its high GWP has led to low-GWP alternatives such as R-448A and R-449A.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-507A replace?
+      a: R-502, R-22. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-507A R-507A HFC Blend refrigerant, A1, GWP 3985. Distributed by ORAFON — request a quotation.

@@ -1,0 +1,87 @@
+th:
+  id: orafon-r508b
+  brand: orafon
+  refrigerant: r-508b
+  featured: false
+  draft: false
+  order: 230
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-508B
+  tagline: สารทำความเย็นอุณหภูมิต่ำพิเศษ HFC Blend
+  tag: ""
+  badges:
+    - GWP 13396
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: ORAFON R-508B — สาร HFC ผสมแบบอะซีโอโทรป ไม่ติดไฟ (A1) สำหรับงานอุณหภูมิต่ำพิเศษถึง −80 °C หรือต่ำกว่า เช่น ตู้แช่แข็งทางการแพทย์และห้องแล็บ ใช้ในภาคอุณหภูมิต่ำของระบบคาสเคด มีค่า GWP สูงมาก
+  highlights:
+    - title: GWP 13396
+      text: ค่า GWP (AR4) 13396 · ODP 0
+    - title: HFC Blend
+      text: สารผสมอะซีโอโทรป · R-23 / R-116 (46/54)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-503, R-13
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: ตู้แช่แข็งการแพทย์ / แล็บ · ระบบคาสเคด (ภาคอุณหภูมิต่ำ) · ห้องทดสอบ
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-508B เป็นสารทำความเย็นประเภท HFC Blend แบบสารผสมอะซีโอโทรป หมายเลข ASHRAE R-508B ส่วนผสม R-23 / R-116 (46/54) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 13396 และ ODP 0
+
+    สาร HFC ผสมแบบอะซีโอโทรป ไม่ติดไฟ (A1) สำหรับงานอุณหภูมิต่ำพิเศษถึง −80 °C หรือต่ำกว่า เช่น ตู้แช่แข็งทางการแพทย์และห้องแล็บ ใช้ในภาคอุณหภูมิต่ำของระบบคาสเคด มีค่า GWP สูงมาก
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-508B ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-503, R-13 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-508B สารทำความเย็น R-508B HFC Blend A1 GWP 13396 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-508B
+  tagline: Ultra-low-temperature HFC blend
+  tag: ""
+  badges:
+    - GWP 13396
+    - A1 non-flammable
+    - ODP = 0
+  short: ORAFON R-508B is an azeotropic, non-flammable (A1) HFC blend for ultra-low temperatures down to −80 °C and below — medical and laboratory freezers — used in the low stage of cascade systems. Very high GWP.
+  highlights:
+    - title: GWP 13396
+      text: GWP (AR4) 13396 · ODP 0
+    - title: HFC Blend
+      text: Azeotropic blend · R-23 / R-116 (46/54)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-503, R-13
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Medical & lab ULT freezers · Cascade low stage · Test chambers
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-508B is an HFC Blend refrigerant (azeotropic blend), ASHRAE number R-508B, composition R-23 / R-116 (46/54). It is classified A1 under ASHRAE 34, with GWP (AR4) 13396 and ODP 0.
+
+    An azeotropic, non-flammable (A1) HFC blend for ultra-low temperatures down to −80 °C and below — medical and laboratory freezers — used in the low stage of cascade systems. Very high GWP.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-508B replace?
+      a: R-503, R-13. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-508B R-508B HFC Blend refrigerant, A1, GWP 13396. Distributed by ORAFON — request a quotation.

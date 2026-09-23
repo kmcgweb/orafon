@@ -1,0 +1,91 @@
+th:
+  id: orafon-r32
+  brand: orafon
+  refrigerant: r-32
+  featured: true
+  draft: false
+  order: 10
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-32
+  tagline: สารทำความเย็น HFC
+  tag: ยอดนิยม
+  badges:
+    - ลด GWP 68% เทียบ R-410A
+    - A2L ติดไฟได้เล็กน้อย
+    - ODP = 0
+  short: ORAFON R-32 — สาร HFC ชนิดเดี่ยว ค่า GWP ต่ำกว่า R-410A ประมาณสองในสาม นิยมใช้ในเครื่องปรับอากาศบ้านและเชิงพาณิชย์รุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L) ต้องติดตั้งตามมาตรฐานความปลอดภัย
+  highlights:
+    - title: ลด GWP 68%
+      text: ค่า GWP (AR4) 675 ต่ำกว่า R-410A ราว 68% · ODP 0
+    - title: HFC
+      text: สารเดี่ยว · CH₂F₂ (Difluoromethane)
+    - title: A2L ติดไฟได้เล็กน้อย
+      text: ติดไฟได้เล็กน้อย ใช้กับอุปกรณ์ที่ออกแบบสำหรับสาร A2L เท่านั้น
+    - title: ใช้ทดแทน R-410A, R-22
+      text: ในอุปกรณ์ใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L (ไม่ใช่สารเติมแทน)
+    - title: งานที่เหมาะ
+      text: แอร์บ้าน · แอร์เชิงพาณิชย์ · ฮีตปั๊ม
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-32 เป็นสารทำความเย็นประเภท HFC แบบสารเดี่ยว หมายเลข ASHRAE R-32 ส่วนผสม CH₂F₂ (Difluoromethane) จัดอยู่ในกลุ่มความปลอดภัย A2L ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 675 และ ODP 0
+
+    สาร HFC ชนิดเดี่ยว ค่า GWP ต่ำกว่า R-410A ประมาณสองในสาม นิยมใช้ในเครื่องปรับอากาศบ้านและเชิงพาณิชย์รุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L) ต้องติดตั้งตามมาตรฐานความปลอดภัย
+
+    **ข้อควรระวัง:** R-32 จัดอยู่ในกลุ่ม A2L (ติดไฟได้เล็กน้อย) ต้องใช้กับอุปกรณ์ที่ออกแบบมาสำหรับสารกลุ่มนี้เท่านั้น ห้ามเติมแทนในระบบที่ออกแบบสำหรับสาร A1 และควรให้ช่างที่ผ่านการอบรมเป็นผู้ดำเนินการ
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-32 ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-410A, R-22 ในอุปกรณ์ที่ออกแบบสำหรับสารกลุ่ม A2L ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A2L ตามมาตรฐาน ASHRAE 34 ติดไฟได้เล็กน้อย ใช้กับอุปกรณ์ที่ออกแบบสำหรับสาร A2L เท่านั้น
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-32 สารทำความเย็น R-32 HFC A2L GWP 675 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-32
+  tagline: HFC refrigerant
+  tag: Popular
+  badges:
+    - 68% lower GWP vs R-410A
+    - A2L mildly flammable
+    - ODP = 0
+  short: ORAFON R-32 is a single-component HFC with roughly one-third the GWP of R-410A, widely used in new residential and commercial air conditioners. Classified as mildly flammable (A2L); install according to safety standards.
+  highlights:
+    - title: 68% lower GWP
+      text: GWP (AR4) 675, about 68% below R-410A · ODP 0
+    - title: HFC
+      text: Single component · CH₂F₂ (Difluoromethane)
+    - title: A2L mildly flammable
+      text: Mildly flammable — use only in equipment designed for A2L
+    - title: Replaces R-410A, R-22
+      text: In new equipment designed for A2L (not a drop-in)
+    - title: Applications
+      text: Residential AC · Commercial AC · Heat pumps
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-32 is an HFC refrigerant (single component), ASHRAE number R-32, composition CH₂F₂ (Difluoromethane). It is classified A2L under ASHRAE 34, with GWP (AR4) 675 and ODP 0.
+
+    A single-component HFC with roughly one-third the GWP of R-410A, widely used in new residential and commercial air conditioners. Classified as mildly flammable (A2L); install according to safety standards.
+
+    **Caution:** R-32 is classified A2L (mildly flammable). Use it only in equipment designed for this class, never as a replacement in systems designed for A1 refrigerants, and have trained technicians handle it.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-32 replace?
+      a: R-410A, R-22, in equipment designed for A2L refrigerants. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A2L under ASHRAE 34. Mildly flammable: use only in equipment designed for A2L."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-32 R-32 HFC refrigerant, A2L, GWP 675. Distributed by ORAFON — request a quotation.

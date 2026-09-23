@@ -143,8 +143,8 @@ eleventyComputed:
           <tr><th>{{ T.safety }}</th><td>{{ T.safetyText[r.safety] or r.safety }}</td></tr>
           <tr><th>{{ T.odp }}</th><td>{{ r.odp }}</td></tr>
           <tr><th>{{ T.gwp }}</th><td>{{ r.gwp_ar4 }}</td></tr>
-          <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 }}</td></tr>
-          <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point }}</td></tr>
+          <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
+          <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point or "—" }}</td></tr>
           {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
           {%- endif %}
           {%- if p.packages and p.packages.length %}
@@ -209,6 +209,11 @@ eleventyComputed:
         <span class="meta">{% if k.lb %}{{ k.lb | kg }} lb{% endif %}{% if k.lb and k.sku %} · {% endif %}{% if k.sku %}SKU {{ k.sku }}{% endif %}</span>
       </button>
       {%- endfor %}
+    </div>
+    {%- else %}
+    <div class="pkg-head">
+      <h2>{{ T.packages }} <span class="grad-text">{{ T.askSizesHi }}</span></h2>
+      <span class="pkg-hint">{{ T.askSizes }}</span>
     </div>
     {%- endif %}
     <div class="pkg-foot">

@@ -1,0 +1,87 @@
+th:
+  id: orafon-r134a
+  brand: orafon
+  refrigerant: r-134a
+  featured: true
+  draft: false
+  order: 40
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-134a
+  tagline: สารทำความเย็น HFC
+  tag: ยอดนิยม
+  badges:
+    - GWP 1430
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: ORAFON R-134a — สาร HFC ชนิดเดี่ยว ไม่ติดไฟ (A1) ใช้ในแอร์รถยนต์รุ่นเดิม ตู้เย็น ตู้แช่อุณหภูมิปานกลาง และชิลเลอร์
+  highlights:
+    - title: GWP 1430
+      text: ค่า GWP (AR4) 1430 · ODP 0
+    - title: HFC
+      text: สารเดี่ยว · CH₂FCF₃ (1,1,1,2-Tetrafluoroethane)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-12
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: แอร์รถยนต์ · ตู้เย็น / ตู้แช่ · ชิลเลอร์
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-134a เป็นสารทำความเย็นประเภท HFC แบบสารเดี่ยว หมายเลข ASHRAE R-134a ส่วนผสม CH₂FCF₃ (1,1,1,2-Tetrafluoroethane) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 1430 และ ODP 0
+
+    สาร HFC ชนิดเดี่ยว ไม่ติดไฟ (A1) ใช้ในแอร์รถยนต์รุ่นเดิม ตู้เย็น ตู้แช่อุณหภูมิปานกลาง และชิลเลอร์
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-134a ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-12 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-134a สารทำความเย็น R-134a HFC A1 GWP 1430 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-134a
+  tagline: HFC refrigerant
+  tag: Popular
+  badges:
+    - GWP 1430
+    - A1 non-flammable
+    - ODP = 0
+  short: ORAFON R-134a is a single-component, non-flammable (A1) HFC used in legacy automotive AC, domestic refrigerators, medium-temperature refrigeration and chillers.
+  highlights:
+    - title: GWP 1430
+      text: GWP (AR4) 1430 · ODP 0
+    - title: HFC
+      text: Single component · CH₂FCF₃ (1,1,1,2-Tetrafluoroethane)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-12
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Automotive AC · Refrigerators / display cases · Chillers
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-134a is an HFC refrigerant (single component), ASHRAE number R-134a, composition CH₂FCF₃ (1,1,1,2-Tetrafluoroethane). It is classified A1 under ASHRAE 34, with GWP (AR4) 1430 and ODP 0.
+
+    A single-component, non-flammable (A1) HFC used in legacy automotive AC, domestic refrigerators, medium-temperature refrigeration and chillers.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-134a replace?
+      a: R-12. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-134a R-134a HFC refrigerant, A1, GWP 1430. Distributed by ORAFON — request a quotation.

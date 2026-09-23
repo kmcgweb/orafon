@@ -1,0 +1,91 @@
+th:
+  id: orafon-r600a
+  brand: orafon
+  refrigerant: r-600a
+  featured: false
+  draft: false
+  order: 290
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-600a
+  tagline: สารทำความเย็นธรรมชาติ (Isobutane)
+  tag: ธรรมชาติ
+  badges:
+    - ลด GWP 99% เทียบ R-134a
+    - A3 ติดไฟได้สูง
+    - ODP = 0
+  short: ORAFON R-600a — สารทำความเย็นธรรมชาติกลุ่มไฮโดรคาร์บอน ค่า GWP ต่ำมาก ประสิทธิภาพดี ใช้ในตู้เย็นบ้านและตู้แช่ขนาดเล็กรุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้สูง (A3) ใช้เฉพาะกับอุปกรณ์ที่ออกแบบสำหรับสารนี้ และต้องให้ช่างที่ผ่านการอบรมดำเนินการ
+  highlights:
+    - title: ลด GWP 99%
+      text: ค่า GWP (AR4) 3 ต่ำกว่า R-134a ราว 99% · ODP 0
+    - title: HC
+      text: สารเดี่ยว · C₄H₁₀ (Isobutane)
+    - title: A3 ติดไฟได้สูง
+      text: ติดไฟได้สูง ใช้กับอุปกรณ์ที่ออกแบบสำหรับสาร A3 เท่านั้น และต้องให้ช่างที่ผ่านการอบรม
+    - title: ใช้ทดแทน R-134a, R-12
+      text: ในอุปกรณ์ใหม่ที่ออกแบบสำหรับสารกลุ่ม A3 (ไม่ใช่สารเติมแทน)
+    - title: งานที่เหมาะ
+      text: ตู้เย็นบ้าน · ตู้แช่แข็งขนาดเล็ก
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-600a เป็นสารทำความเย็นประเภท HC แบบสารเดี่ยว หมายเลข ASHRAE R-600a ส่วนผสม C₄H₁₀ (Isobutane) จัดอยู่ในกลุ่มความปลอดภัย A3 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 3 และ ODP 0
+
+    สารทำความเย็นธรรมชาติกลุ่มไฮโดรคาร์บอน ค่า GWP ต่ำมาก ประสิทธิภาพดี ใช้ในตู้เย็นบ้านและตู้แช่ขนาดเล็กรุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้สูง (A3) ใช้เฉพาะกับอุปกรณ์ที่ออกแบบสำหรับสารนี้ และต้องให้ช่างที่ผ่านการอบรมดำเนินการ
+
+    **ข้อควรระวัง:** R-600a จัดอยู่ในกลุ่ม A3 (ติดไฟได้สูง) ต้องใช้กับอุปกรณ์ที่ออกแบบมาสำหรับสารกลุ่มนี้เท่านั้น ห้ามเติมแทนในระบบที่ออกแบบสำหรับสาร A1 และควรให้ช่างที่ผ่านการอบรมเป็นผู้ดำเนินการ
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-600a ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-134a, R-12 ในอุปกรณ์ที่ออกแบบสำหรับสารกลุ่ม A3 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A3 ตามมาตรฐาน ASHRAE 34 ติดไฟได้สูง ใช้กับอุปกรณ์ที่ออกแบบสำหรับสาร A3 เท่านั้น และต้องให้ช่างที่ผ่านการอบรม
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-600a สารทำความเย็น R-600a HC A3 GWP 3 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-600a
+  tagline: Natural refrigerant (isobutane)
+  tag: Natural
+  badges:
+    - 99% lower GWP vs R-134a
+    - A3 highly flammable
+    - ODP = 0
+  short: "ORAFON R-600a is a natural hydrocarbon refrigerant with very low GWP and good efficiency, used in modern domestic refrigerators and small freezers. Highly flammable (A3): use only in equipment designed for it, handled by trained technicians."
+  highlights:
+    - title: 99% lower GWP
+      text: GWP (AR4) 3, about 99% below R-134a · ODP 0
+    - title: HC
+      text: Single component · C₄H₁₀ (Isobutane)
+    - title: A3 highly flammable
+      text: Highly flammable — only for equipment designed for A3, handled by trained technicians
+    - title: Replaces R-134a, R-12
+      text: In new equipment designed for A3 (not a drop-in)
+    - title: Applications
+      text: Domestic refrigerators · Small freezers
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-600a is an HC refrigerant (single component), ASHRAE number R-600a, composition C₄H₁₀ (Isobutane). It is classified A3 under ASHRAE 34, with GWP (AR4) 3 and ODP 0.
+
+    A natural hydrocarbon refrigerant with very low GWP and good efficiency, used in modern domestic refrigerators and small freezers. Highly flammable (A3): use only in equipment designed for it, handled by trained technicians.
+
+    **Caution:** R-600a is classified A3 (highly flammable). Use it only in equipment designed for this class, never as a replacement in systems designed for A1 refrigerants, and have trained technicians handle it.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-600a replace?
+      a: R-134a, R-12, in equipment designed for A3 refrigerants. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A3 under ASHRAE 34. Highly flammable: only for equipment designed for A3, handled by trained technicians."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-600a R-600a HC refrigerant, A3, GWP 3. Distributed by ORAFON — request a quotation.

@@ -1,0 +1,34 @@
+th:
+  id: r-245fa
+  number: R-245fa
+  class: HFC
+  composition: CF₃CH₂CHF₂ (1,1,1,3,3-Pentafluoropropane)
+  blend_type: pure
+  safety: B1
+  gwp_ar4: "1030"
+  gwp_ar5: "858"
+  odp: "0"
+  boiling_point: "15.1"
+  replaces:
+    - R-11
+    - R-123
+  color: "#6D28D9"
+  color2: "#8B5CF6"
+  order: 26
+  summary: สาร HFC แรงดันต่ำ ชนิดเดี่ยว ไม่ติดไฟ แต่จัดอยู่ในกลุ่มความเป็นพิษสูงกว่า (B1) ใช้ในชิลเลอร์แรงดันต่ำ ระบบ Organic Rankine Cycle (ORC) และเป็นสารเป่าโฟม ต้องจัดการตามข้อกำหนดความปลอดภัยอย่างเคร่งครัด
+  applications:
+    - icon: chiller
+      label: ชิลเลอร์แรงดันต่ำ
+    - icon: bolt
+      label: ระบบ ORC ผลิตไฟฟ้า
+    - icon: foam
+      label: สารเป่าโฟม
+en:
+  summary: A low-pressure, single-component HFC that is non-flammable but in the higher-toxicity group (B1). Used in low-pressure chillers, Organic Rankine Cycle (ORC) systems and as a foam blowing agent; handle strictly according to safety requirements.
+  applications:
+    - icon: chiller
+      label: Low-pressure chillers
+    - icon: bolt
+      label: ORC power generation
+    - icon: foam
+      label: Foam blowing

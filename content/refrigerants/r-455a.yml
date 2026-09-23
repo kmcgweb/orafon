@@ -1,0 +1,33 @@
+th:
+  id: r-455a
+  number: R-455A
+  class: HFO Blend
+  composition: R-744 / R-32 / R-1234yf (3/21.5/75.5)
+  blend_type: zeotropic
+  safety: A2L
+  gwp_ar4: "148"
+  gwp_ar5: "146"
+  odp: "0"
+  boiling_point: ""
+  replaces:
+    - R-404A
+  color: "#0D9488"
+  color2: "#6366F1"
+  order: 70
+  summary: สาร HFO ผสมที่มี CO₂ เป็นส่วนประกอบ ค่า GWP ต่ำมาก (ต่ำกว่า 150) สำหรับชุดคอนเดนซิ่งและระบบทำความเย็นเชิงพาณิชย์รุ่นใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L ใช้แทน R-404A
+  applications:
+    - icon: box
+      label: ชุดคอนเดนซิ่ง
+    - icon: fridge
+      label: ตู้แช่ / ตู้โชว์
+    - icon: snow
+      label: ห้องเย็นขนาดเล็ก
+en:
+  summary: An HFO blend containing CO₂ with very low GWP (below 150) for new condensing units and commercial refrigeration designed for A2L refrigerants, replacing R-404A.
+  applications:
+    - icon: box
+      label: Condensing units
+    - icon: fridge
+      label: Display cabinets
+    - icon: snow
+      label: Small cold rooms

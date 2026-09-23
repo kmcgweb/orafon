@@ -1,0 +1,33 @@
+th:
+  id: r-454c
+  number: R-454C
+  class: HFO Blend
+  composition: R-32 / R-1234yf (21.5/78.5)
+  blend_type: zeotropic
+  safety: A2L
+  gwp_ar4: "148"
+  gwp_ar5: "146"
+  odp: "0"
+  boiling_point: ""
+  replaces:
+    - R-404A
+  color: "#059669"
+  color2: "#4F46E5"
+  order: 68
+  summary: สาร HFO/HFC ผสม ค่า GWP ต่ำมาก (ต่ำกว่า 150) สำหรับระบบทำความเย็นเชิงพาณิชย์และฮีตปั๊มรุ่นใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L ใช้แทน R-404A ในงานติดตั้งใหม่
+  applications:
+    - icon: fridge
+      label: ตู้แช่เชิงพาณิชย์
+    - icon: box
+      label: ชุดคอนเดนซิ่ง
+    - icon: heatpump
+      label: ฮีตปั๊ม
+en:
+  summary: An HFO/HFC blend with very low GWP (below 150) for new commercial refrigeration and heat pumps designed for A2L refrigerants, replacing R-404A in new installations.
+  applications:
+    - icon: fridge
+      label: Commercial cabinets
+    - icon: box
+      label: Condensing units
+    - icon: heatpump
+      label: Heat pumps

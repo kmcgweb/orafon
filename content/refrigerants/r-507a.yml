@@ -1,0 +1,34 @@
+th:
+  id: r-507a
+  number: R-507A
+  class: HFC Blend
+  composition: R-125 / R-143a (50/50)
+  blend_type: azeotropic
+  safety: A1
+  gwp_ar4: "3985"
+  gwp_ar5: "3985"
+  odp: "0"
+  boiling_point: −47.1
+  replaces:
+    - R-502
+    - R-22
+  color: "#475569"
+  color2: "#0F766E"
+  order: 42
+  summary: สาร HFC ผสมแบบอะซีโอโทรป ไม่ติดไฟ (A1) เหมาะกับงานทำความเย็นอุณหภูมิต่ำ เช่น ห้องเย็นแช่แข็งและตู้แช่ มีค่า GWP สูง จึงมีสารทดแทน GWP ต่ำ เช่น R-448A และ R-449A
+  applications:
+    - icon: snow
+      label: ห้องเย็นแช่แข็ง
+    - icon: box
+      label: คลังสินค้าห้องเย็น
+    - icon: factory
+      label: ระบบทำความเย็นอุตสาหกรรม
+en:
+  summary: An azeotropic, non-flammable (A1) HFC blend for low-temperature refrigeration such as freezer rooms and cabinets. Its high GWP has led to low-GWP alternatives such as R-448A and R-449A.
+  applications:
+    - icon: snow
+      label: Freezer rooms
+    - icon: box
+      label: Cold storage
+    - icon: factory
+      label: Industrial refrigeration

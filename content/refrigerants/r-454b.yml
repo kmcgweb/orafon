@@ -1,0 +1,33 @@
+th:
+  id: r-454b
+  number: R-454B
+  class: HFO Blend
+  composition: R-32 / R-1234yf (68.9/31.1)
+  blend_type: zeotropic
+  safety: A2L
+  gwp_ar4: "466"
+  gwp_ar5: "467"
+  odp: "0"
+  boiling_point: −50.9
+  replaces:
+    - R-410A
+  color: "#EA580C"
+  color2: "#4F46E5"
+  order: 66
+  summary: สาร HFO/HFC ผสม ค่า GWP ต่ำกว่า R-410A ราว 78% สำหรับเครื่องปรับอากาศและฮีตปั๊มรุ่นใหม่ที่ออกแบบมาสำหรับสารนี้ จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L) ไม่ใช่สารเติมแทนในระบบ R-410A เดิม
+  applications:
+    - icon: home
+      label: แอร์บ้านรุ่นใหม่
+    - icon: ac
+      label: แอร์เชิงพาณิชย์รุ่นใหม่
+    - icon: heatpump
+      label: ฮีตปั๊ม
+en:
+  summary: An HFO/HFC blend with about 78% lower GWP than R-410A for new air conditioners and heat pumps designed for it. Mildly flammable (A2L); not a drop-in for existing R-410A systems.
+  applications:
+    - icon: home
+      label: New residential AC
+    - icon: ac
+      label: New commercial AC
+    - icon: heatpump
+      label: Heat pumps

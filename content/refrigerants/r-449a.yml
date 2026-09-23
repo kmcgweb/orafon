@@ -1,0 +1,35 @@
+th:
+  id: r-449a
+  number: R-449A
+  class: HFO Blend
+  composition: R-32 / R-125 / R-1234yf / R-134a (24.3/24.7/25.3/25.7)
+  blend_type: zeotropic
+  safety: A1
+  gwp_ar4: "1397"
+  gwp_ar5: "1282"
+  odp: "0"
+  boiling_point: −46.0
+  replaces:
+    - R-404A
+    - R-507A
+    - R-22
+  color: "#4338CA"
+  color2: "#0EA5E9"
+  order: 62
+  summary: สาร HFO/HFC ผสม ไม่ติดไฟ (A1) ทดแทน R-404A, R-507A และ R-22 ในงานทำความเย็นเชิงพาณิชย์อุณหภูมิต่ำถึงปานกลาง ค่า GWP ต่ำกว่า R-404A ราว 64% ใช้ได้ทั้งงานใหม่และรีโทรฟิต
+  applications:
+    - icon: store
+      label: ซูเปอร์มาร์เก็ต
+    - icon: snow
+      label: ห้องเย็น
+    - icon: fridge
+      label: ตู้แช่ / ตู้โชว์
+en:
+  summary: A non-flammable (A1) HFO/HFC blend replacing R-404A, R-507A and R-22 in low- and medium-temperature commercial refrigeration, with about 64% lower GWP than R-404A; for new systems and retrofits.
+  applications:
+    - icon: store
+      label: Supermarkets
+    - icon: snow
+      label: Cold rooms
+    - icon: fridge
+      label: Display cases

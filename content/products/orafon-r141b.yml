@@ -1,0 +1,99 @@
+th:
+  id: orafon-r141b
+  brand: orafon
+  refrigerant: r-141b
+  featured: false
+  draft: false
+  order: 110
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-141b
+  tagline: น้ำยาล้างระบบ / สารเป่าโฟม HCFC
+  tag: ""
+  badges:
+    - GWP 725
+    - A2 ติดไฟได้
+    - ODP = 0.11
+  short: ORAFON R-141b — สาร HCFC ชนิดเดี่ยวที่เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นน้ำยาล้างทำความสะอาดระบบท่อก่อนเติมน้ำยาใหม่ และเป็นสารเป่าโฟม จัดอยู่ในกลุ่มติดไฟได้ (A2) และอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+  highlights:
+    - title: GWP 725
+      text: ค่า GWP (AR4) 725 · ODP 0.11
+    - title: HCFC
+      text: สารเดี่ยว · CH₃CCl₂F (1,1-Dichloro-1-fluoroethane)
+    - title: A2 ติดไฟได้
+      text: ติดไฟได้ จัดเก็บห่างแหล่งความร้อนและประกายไฟ ใช้งานในที่อากาศถ่ายเท
+    - title: สำหรับซ่อมบำรุงระบบเดิม
+      text: อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+    - title: งานที่เหมาะ
+      text: ล้างระบบท่อ · สารเป่าโฟม
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-141b เป็นสารทำความเย็นประเภท HCFC แบบสารเดี่ยว หมายเลข ASHRAE R-141b ส่วนผสม CH₃CCl₂F (1,1-Dichloro-1-fluoroethane) จัดอยู่ในกลุ่มความปลอดภัย A2 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 725 และ ODP 0.11
+
+    สาร HCFC ชนิดเดี่ยวที่เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นน้ำยาล้างทำความสะอาดระบบท่อก่อนเติมน้ำยาใหม่ และเป็นสารเป่าโฟม จัดอยู่ในกลุ่มติดไฟได้ (A2) และอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+
+    **ข้อควรระวัง:** R-141b จัดอยู่ในกลุ่ม A2 (ติดไฟได้) ต้องใช้กับอุปกรณ์ที่ออกแบบมาสำหรับสารกลุ่มนี้เท่านั้น ห้ามเติมแทนในระบบที่ออกแบบสำหรับสาร A1 และควรให้ช่างที่ผ่านการอบรมเป็นผู้ดำเนินการ
+
+    **หมายเหตุ:** สาร HCFC อยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปริมาณการนำเข้าถูกควบคุม เหมาะสำหรับงานซ่อมบำรุงระบบเดิม และควรวางแผนเปลี่ยนไปใช้สารทดแทนในระยะยาว
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-141b ใช้ทำอะไร?
+      a: ล้างระบบท่อ · สารเป่าโฟม — ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A2 ตามมาตรฐาน ASHRAE 34 ติดไฟได้ จัดเก็บห่างแหล่งความร้อนและประกายไฟ ใช้งานในที่อากาศถ่ายเท
+    - q: ยังใช้ R-141b ได้อยู่หรือไม่?
+      a: ยังใช้ได้สำหรับซ่อมบำรุงระบบเดิม แต่อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออลและปริมาณนำเข้าถูกควบคุม ควรวางแผนเปลี่ยนไปใช้สารทดแทน
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-141b สารทำความเย็น R-141b HCFC A2 GWP 725 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-141b
+  tagline: HCFC flushing & blowing agent
+  tag: ""
+  badges:
+    - GWP 725
+    - A2 flammable
+    - ODP = 0.11
+  short: ORAFON R-141b is a single-component HCFC that is liquid at room temperature, used for flushing refrigeration piping before recharging and as a foam blowing agent. Flammable (A2) and being phased out under the Montreal Protocol.
+  highlights:
+    - title: GWP 725
+      text: GWP (AR4) 725 · ODP 0.11
+    - title: HCFC
+      text: Single component · CH₃CCl₂F (1,1-Dichloro-1-fluoroethane)
+    - title: A2 flammable
+      text: Flammable — store away from heat and ignition sources, use with good ventilation
+    - title: For servicing existing systems
+      text: Being phased out under the Montreal Protocol
+    - title: Applications
+      text: System flushing · Foam blowing
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-141b is an HCFC refrigerant (single component), ASHRAE number R-141b, composition CH₃CCl₂F (1,1-Dichloro-1-fluoroethane). It is classified A2 under ASHRAE 34, with GWP (AR4) 725 and ODP 0.11.
+
+    A single-component HCFC that is liquid at room temperature, used for flushing refrigeration piping before recharging and as a foam blowing agent. Flammable (A2) and being phased out under the Montreal Protocol.
+
+    **Caution:** R-141b is classified A2 (flammable). Use it only in equipment designed for this class, never as a replacement in systems designed for A1 refrigerants, and have trained technicians handle it.
+
+    **Note:** HCFCs are being phased out under the Montreal Protocol and imports are controlled. Use for servicing existing systems and plan a long-term move to alternatives.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: What is ORAFON R-141b used for?
+      a: System flushing · Foam blowing — now mainly for servicing existing systems.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A2 under ASHRAE 34. Flammable: store away from heat and ignition sources, use with good ventilation."
+    - q: Can R-141b still be used?
+      a: Yes, for servicing existing systems, but it is being phased out under the Montreal Protocol and imports are controlled. Plan a move to alternatives.
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-141b R-141b HCFC refrigerant, A2, GWP 725. Distributed by ORAFON — request a quotation.

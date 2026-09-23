@@ -1,0 +1,87 @@
+th:
+  id: solstice-lba
+  brand: solstice
+  refrigerant: r-1233zd
+  featured: false
+  draft: false
+  order: 282
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: Solstice® LBA (HFO-1233zd(E))
+  tagline: สารเป่าโฟมและสารทำความเย็น HFO
+  tag: GWP ≈ 1
+  badges:
+    - ลด GWP 99% เทียบ R-141b
+    - A1 ไม่ติดไฟ
+    - ODP = ~0.0003
+  short: Solstice® LBA (HFO-1233zd(E)) — สาร HCFO-1233zd(E) ชนิดเดี่ยว ไม่ติดไฟ (A1) ค่า GWP ประมาณ 1 และ ODP ใกล้ศูนย์ เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นสารเป่าโฟมฉนวน (Liquid Blowing Agent) และเป็นสารทำความเย็นในชิลเลอร์แรงดันต่ำ
+  highlights:
+    - title: ลด GWP 99%
+      text: ค่า GWP (AR4) 1 ต่ำกว่า R-141b ราว 99% · ODP ~0.0003
+    - title: HFO
+      text: สารเดี่ยว · CF₃CH=CHCl — HCFO-1233zd(E)
+    - title: A1 ไม่ติดไฟ
+      text: ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ใช้ทดแทน R-141b, R-245fa, R-123
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: โฟมฉนวน PU · ชิลเลอร์แรงดันต่ำ · ระบบ ORC
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    Solstice® LBA (HFO-1233zd(E)) เป็นสารทำความเย็นประเภท HFO แบบสารเดี่ยว หมายเลข ASHRAE R-1233zd(E) ส่วนผสม CF₃CH=CHCl — HCFO-1233zd(E) จัดอยู่ในกลุ่มความปลอดภัย A1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 1 และ ODP ~0.0003
+
+    สาร HCFO-1233zd(E) ชนิดเดี่ยว ไม่ติดไฟ (A1) ค่า GWP ประมาณ 1 และ ODP ใกล้ศูนย์ เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นสารเป่าโฟมฉนวน (Liquid Blowing Agent) และเป็นสารทำความเย็นในชิลเลอร์แรงดันต่ำ
+
+    จัดจำหน่ายในประเทศไทยโดย ORAFON (บริษัท โอราโนส จำกัด) ตัวแทนจำหน่าย Solstice® พร้อมเอกสาร TDS/SDS และคำปรึกษาทางเทคนิค ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: Solstice® LBA (HFO-1233zd(E)) ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-141b, R-245fa, R-123 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ ความเป็นพิษต่ำ จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: Solstice® LBA (HFO-1233zd(E)) สารทำความเย็น R-1233zd(E) HFO A1 GWP 1 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: Solstice® LBA (HFO-1233zd(E))
+  tagline: HFO liquid blowing agent & refrigerant
+  tag: GWP ≈ 1
+  badges:
+    - 99% lower GWP vs R-141b
+    - A1 non-flammable
+    - ODP = ~0.0003
+  short: Solstice® LBA (HFO-1233zd(E)) is a single-component, non-flammable (A1) HCFO-1233zd(E) with GWP around 1 and near-zero ODP. Liquid at room temperature; used as a liquid blowing agent for insulation foam and as a refrigerant in low-pressure chillers.
+  highlights:
+    - title: 99% lower GWP
+      text: GWP (AR4) 1, about 99% below R-141b · ODP ~0.0003
+    - title: HFO
+      text: Single component · CF₃CH=CHCl — HCFO-1233zd(E)
+    - title: A1 non-flammable
+      text: Non-flammable and lower toxicity — familiar handling practices
+    - title: Replaces R-141b, R-245fa, R-123
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: PU insulation foam · Low-pressure chillers · ORC systems
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    Solstice® LBA (HFO-1233zd(E)) is an HFO refrigerant (single component), ASHRAE number R-1233zd(E), composition CF₃CH=CHCl — HCFO-1233zd(E). It is classified A1 under ASHRAE 34, with GWP (AR4) 1 and ODP ~0.0003.
+
+    A single-component, non-flammable (A1) HCFO-1233zd(E) with GWP around 1 and near-zero ODP. Liquid at room temperature; used as a liquid blowing agent for insulation foam and as a refrigerant in low-pressure chillers.
+
+    Distributed in Thailand by ORAFON (Oranoss Co., Ltd.), an authorized Solstice® distributor, with TDS/SDS documents and technical support. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can Solstice® LBA (HFO-1233zd(E)) replace?
+      a: R-141b, R-245fa, R-123. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: Solstice® LBA (HFO-1233zd(E)) R-1233zd(E) HFO refrigerant, A1, GWP 1. Distributed by ORAFON — request a quotation.

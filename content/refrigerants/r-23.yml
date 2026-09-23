@@ -1,0 +1,33 @@
+th:
+  id: r-23
+  number: R-23
+  class: HFC
+  composition: CHF₃ (Trifluoromethane)
+  blend_type: pure
+  safety: A1
+  gwp_ar4: "14800"
+  gwp_ar5: "12400"
+  odp: "0"
+  boiling_point: −82.1
+  replaces:
+    - R-13
+  color: "#1E3A8A"
+  color2: "#3B82F6"
+  order: 24
+  summary: สาร HFC ชนิดเดี่ยว ไม่ติดไฟ (A1) จุดเดือดต่ำมาก ใช้ในระบบทำความเย็นอุณหภูมิต่ำพิเศษ เช่น ภาคอุณหภูมิต่ำของระบบคาสเคด ตู้แช่แข็งห้องแล็บ และห้องทดสอบ มีค่า GWP สูงมาก
+  applications:
+    - icon: flask
+      label: ตู้แช่แข็งห้องแล็บ
+    - icon: snow
+      label: ระบบคาสเคด (ภาคอุณหภูมิต่ำ)
+    - icon: factory
+      label: ห้องทดสอบสภาพแวดล้อม
+en:
+  summary: A single-component, non-flammable (A1) HFC with a very low boiling point, used for ultra-low-temperature refrigeration such as the low stage of cascade systems, laboratory freezers and test chambers. Very high GWP.
+  applications:
+    - icon: flask
+      label: Laboratory freezers
+    - icon: snow
+      label: Cascade low stage
+    - icon: factory
+      label: Environmental test chambers

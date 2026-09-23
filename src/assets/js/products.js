@@ -7,11 +7,14 @@
   var count = document.getElementById("count");
   var empty = document.getElementById("empty");
   var q = document.getElementById("q");
+  var ref = document.getElementById("ref");
   var state = { q: "", class: "", brand: "", ref: "" };
 
   var params = new URLSearchParams(location.search);
   Object.keys(state).forEach(function (k) { state[k] = params.get(k) || ""; });
   q.value = state.q;
+  ref.value = state.ref;
+  if (ref.value !== state.ref) state.ref = ""; // unknown grade in URL
 
   function syncButtons() {
     bar.querySelectorAll("[data-group]").forEach(function (row) {
@@ -50,6 +53,7 @@
     apply();
   });
   q.addEventListener("input", function () { state.q = q.value; apply(); });
+  ref.addEventListener("change", function () { state.ref = ref.value; apply(); });
 
   apply();
 })();

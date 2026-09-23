@@ -1,0 +1,28 @@
+th:
+  id: r-141b
+  number: R-141b
+  class: HCFC
+  composition: CH₃CCl₂F (1,1-Dichloro-1-fluoroethane)
+  blend_type: pure
+  safety: A2
+  gwp_ar4: "725"
+  gwp_ar5: "782"
+  odp: "0.11"
+  boiling_point: "32.0"
+  replaces: []
+  color: "#B45309"
+  color2: "#D97706"
+  order: 6
+  summary: สาร HCFC ชนิดเดี่ยวที่เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นน้ำยาล้างทำความสะอาดระบบท่อก่อนเติมน้ำยาใหม่ และเป็นสารเป่าโฟม จัดอยู่ในกลุ่มติดไฟได้ (A2) และอยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล
+  applications:
+    - icon: wrench
+      label: ล้างระบบท่อ
+    - icon: foam
+      label: สารเป่าโฟม
+en:
+  summary: A single-component HCFC that is liquid at room temperature, used for flushing refrigeration piping before recharging and as a foam blowing agent. Flammable (A2) and being phased out under the Montreal Protocol.
+  applications:
+    - icon: wrench
+      label: System flushing
+    - icon: foam
+      label: Foam blowing

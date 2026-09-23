@@ -1,0 +1,30 @@
+th:
+  id: r-600a
+  number: R-600a
+  class: HC
+  composition: C₄H₁₀ (Isobutane)
+  blend_type: pure
+  safety: A3
+  gwp_ar4: "3"
+  gwp_ar5: ""
+  odp: "0"
+  boiling_point: −11.7
+  replaces:
+    - R-134a
+    - R-12
+  color: "#DC2626"
+  color2: "#F97316"
+  order: 90
+  summary: สารทำความเย็นธรรมชาติกลุ่มไฮโดรคาร์บอน ค่า GWP ต่ำมาก ประสิทธิภาพดี ใช้ในตู้เย็นบ้านและตู้แช่ขนาดเล็กรุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้สูง (A3) ใช้เฉพาะกับอุปกรณ์ที่ออกแบบสำหรับสารนี้ และต้องให้ช่างที่ผ่านการอบรมดำเนินการ
+  applications:
+    - icon: fridge
+      label: ตู้เย็นบ้าน
+    - icon: snow
+      label: ตู้แช่แข็งขนาดเล็ก
+en:
+  summary: "A natural hydrocarbon refrigerant with very low GWP and good efficiency, used in modern domestic refrigerators and small freezers. Highly flammable (A3): use only in equipment designed for it, handled by trained technicians."
+  applications:
+    - icon: fridge
+      label: Domestic refrigerators
+    - icon: snow
+      label: Small freezers

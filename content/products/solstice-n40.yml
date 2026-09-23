@@ -4,7 +4,7 @@ th:
   refrigerant: r-448a
   featured: true
   draft: false
-  order: 10
+  order: 50
   images: []
   packages:
     - name: Jug

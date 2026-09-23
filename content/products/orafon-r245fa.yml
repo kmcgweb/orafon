@@ -1,0 +1,91 @@
+th:
+  id: orafon-r245fa
+  brand: orafon
+  refrigerant: r-245fa
+  featured: false
+  draft: false
+  order: 160
+  images: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+  name: ORAFON R-245fa
+  tagline: สาร HFC แรงดันต่ำ
+  tag: ""
+  badges:
+    - GWP 1030
+    - B1 ไม่ติดไฟ (ความเป็นพิษสูงกว่า)
+    - ODP = 0
+  short: ORAFON R-245fa — สาร HFC แรงดันต่ำ ชนิดเดี่ยว ไม่ติดไฟ แต่จัดอยู่ในกลุ่มความเป็นพิษสูงกว่า (B1) ใช้ในชิลเลอร์แรงดันต่ำ ระบบ Organic Rankine Cycle (ORC) และเป็นสารเป่าโฟม ต้องจัดการตามข้อกำหนดความปลอดภัยอย่างเคร่งครัด
+  highlights:
+    - title: GWP 1030
+      text: ค่า GWP (AR4) 1030 · ODP 0
+    - title: HFC
+      text: สารเดี่ยว · CF₃CH₂CHF₂ (1,1,1,3,3-Pentafluoropropane)
+    - title: B1 ไม่ติดไฟ (ความเป็นพิษสูงกว่า)
+      text: ไม่ติดไฟ แต่ความเป็นพิษสูงกว่า ต้องมีการระบายอากาศ ตรวจจับการรั่ว และอุปกรณ์ป้องกัน
+    - title: ใช้ทดแทน R-11, R-123
+      text: ทั้งงานติดตั้งใหม่และงานเปลี่ยนสาร (ตรวจสอบกับผู้ผลิตอุปกรณ์)
+    - title: งานที่เหมาะ
+      text: ชิลเลอร์แรงดันต่ำ · ระบบ ORC ผลิตไฟฟ้า · สารเป่าโฟม
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-245fa เป็นสารทำความเย็นประเภท HFC แบบสารเดี่ยว หมายเลข ASHRAE R-245fa ส่วนผสม CF₃CH₂CHF₂ (1,1,1,3,3-Pentafluoropropane) จัดอยู่ในกลุ่มความปลอดภัย B1 ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 1030 และ ODP 0
+
+    สาร HFC แรงดันต่ำ ชนิดเดี่ยว ไม่ติดไฟ แต่จัดอยู่ในกลุ่มความเป็นพิษสูงกว่า (B1) ใช้ในชิลเลอร์แรงดันต่ำ ระบบ Organic Rankine Cycle (ORC) และเป็นสารเป่าโฟม ต้องจัดการตามข้อกำหนดความปลอดภัยอย่างเคร่งครัด
+
+    **ข้อควรระวัง:** สารกลุ่ม B1 มีความเป็นพิษสูงกว่า ต้องติดตั้งระบบระบายอากาศและตรวจจับการรั่วไหล และใช้อุปกรณ์ป้องกันตามเอกสาร SDS
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
+  applications: []
+  faq:
+    - q: ORAFON R-245fa ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-11, R-123 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม B1 ตามมาตรฐาน ASHRAE 34 ไม่ติดไฟ แต่ความเป็นพิษสูงกว่า ต้องมีการระบายอากาศ ตรวจจับการรั่ว และอุปกรณ์ป้องกัน
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-245fa สารทำความเย็น R-245fa HFC B1 GWP 1030 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: ORAFON R-245fa
+  tagline: Low-pressure HFC
+  tag: ""
+  badges:
+    - GWP 1030
+    - B1 non-flammable (higher toxicity)
+    - ODP = 0
+  short: ORAFON R-245fa is a low-pressure, single-component HFC that is non-flammable but in the higher-toxicity group (B1). Used in low-pressure chillers, Organic Rankine Cycle (ORC) systems and as a foam blowing agent; handle strictly according to safety requirements.
+  highlights:
+    - title: GWP 1030
+      text: GWP (AR4) 1030 · ODP 0
+    - title: HFC
+      text: Single component · CF₃CH₂CHF₂ (1,1,1,3,3-Pentafluoropropane)
+    - title: B1 non-flammable (higher toxicity)
+      text: Non-flammable but higher toxicity — needs ventilation, leak detection and PPE
+    - title: Replaces R-11, R-123
+      text: New systems and conversions (confirm with the equipment manufacturer)
+    - title: Applications
+      text: Low-pressure chillers · ORC power generation · Foam blowing
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |-
+    ORAFON R-245fa is an HFC refrigerant (single component), ASHRAE number R-245fa, composition CF₃CH₂CHF₂ (1,1,1,3,3-Pentafluoropropane). It is classified B1 under ASHRAE 34, with GWP (AR4) 1030 and ODP 0.
+
+    A low-pressure, single-component HFC that is non-flammable but in the higher-toxicity group (B1). Used in low-pressure chillers, Organic Rankine Cycle (ORC) systems and as a foam blowing agent; handle strictly according to safety requirements.
+
+    **Caution:** B1 refrigerants have higher toxicity. Install ventilation and leak detection, and use protective equipment as specified in the SDS.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  faq:
+    - q: Which refrigerants can ORAFON R-245fa replace?
+      a: R-11, R-123. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: "It is classified B1 under ASHRAE 34. Non-flammable but higher toxicity: needs ventilation, leak detection and PPE."
+    - q: Which pack sizes are available, and how do I get a price?
+      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-245fa R-245fa HFC refrigerant, B1, GWP 1030. Distributed by ORAFON — request a quotation.
