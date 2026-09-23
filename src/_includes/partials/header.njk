@@ -41,11 +41,11 @@
               <a class="mg-title" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }} <span class="mg-count">{{ b.products.length }}</span></a>
               <span class="mg-sub">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
               <ul class="mg-list">
-                {%- for p in b.products | batch(8) | first %}
-                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a></li>
+                {%- for p in b.products | batch(9) | first %}
+                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ b.name }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.images[0] if p.images and p.images[0] else '' }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#4F46E5' }}" data-c2="{{ p.ref.color2 if p.ref else '#7C3AED' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a></li>
                 {%- endfor %}
               </ul>
-              {%- if b.products.length > 8 %}<a class="mg-more" href="{{ ('/products/?brand=' ~ b.slug) | u(lang) }}">{{ T.viewAll }} ({{ b.products.length }}) →</a>{% endif %}
+              {%- if b.products.length > 9 %}<a class="mg-more" href="{{ ('/products/?brand=' ~ b.slug) | u(lang) }}">{{ T.viewAll }} ({{ b.products.length }}) →</a>{% endif %}
             </div>
             {%- endif %}{% endfor %}
             <div class="mg-col">
@@ -56,11 +56,12 @@
               </ul>
             </div>
             {%- if feat %}
-            <a class="mg-feature" href="{{ ('/products/' ~ feat.slug ~ '/') | u(lang) }}">
-              <span class="mgf-art">{% if feat.images and feat.images[0] %}<img src="{{ feat.images[0] }}" alt="" loading="lazy">{% else %}{{ cylinder(feat.ref, "mega") }}{% endif %}</span>
-              <span class="mgf-kicker">{{ T.featured }}</span>
-              <b>{{ feat.name }}</b>
-              <span>{{ feat.tagline }}</span>
+            <a class="mg-feature" id="megaPreview" href="{{ ('/products/' ~ feat.slug ~ '/') | u(lang) }}" aria-live="polite">
+              <span class="mgf-art" data-role="art">{% if feat.images and feat.images[0] %}<img src="{{ feat.images[0] }}" alt="" loading="lazy">{% else %}{{ cylinder(feat.ref, "mega") }}{% endif %}</span>
+              <span class="mgf-kicker" data-role="kicker">{{ T.featured }}</span>
+              <b data-role="name">{{ feat.name }}</b>
+              <span class="mgf-tag" data-role="tag">{{ feat.tagline }}</span>
+              <span class="mgf-chips" data-role="chips">{% if feat.ref %}<i>{{ feat.ref.class }}</i><i>{{ feat.ref.safety }}</i><i>GWP {{ feat.ref.gwp_ar4 }}</i>{% endif %}</span>
               <em>{{ T.viewDetails }} →</em>
             </a>
             {%- endif %}

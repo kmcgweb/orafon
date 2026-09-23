@@ -27,7 +27,7 @@ th:
     - image: ""
       product: solstice-r454b
       url: ""
-      title: Solstice® R-454B
+      title: Solstice® 454B (R-454B)
       text: GWP ต่ำ สำหรับแอร์รุ่นใหม่
     - image: ""
       product: orafon-r290
@@ -81,7 +81,7 @@ en:
     - image: ""
       product: solstice-r454b
       url: ""
-      title: Solstice® R-454B
+      title: Solstice® 454B (R-454B)
       text: Low GWP for new air conditioners
     - image: ""
       product: orafon-r290

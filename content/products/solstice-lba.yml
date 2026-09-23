@@ -42,6 +42,8 @@ th:
 
     สาร HCFO-1233zd(E) ชนิดเดี่ยว ไม่ติดไฟ (A1) ค่า GWP ประมาณ 1 และ ODP ใกล้ศูนย์ เป็นของเหลวที่อุณหภูมิห้อง ใช้เป็นสารเป่าโฟมฉนวน (Liquid Blowing Agent) และเป็นสารทำความเย็นในชิลเลอร์แรงดันต่ำ
 
+    **หมายเหตุ:** Solstice® LBA คือเกรดสำหรับเป่าโฟม (Liquid Blowing Agent) ส่วนเกรดสำหรับใช้เป็นสารทำความเย็น เช่น Chiller แรงดันต่ำ จำหน่ายในชื่อ **Solstice® zd (R-1233zd(E))** สอบถามทีมงานเพื่อเลือกเกรดให้ตรงกับงาน
+
     จัดจำหน่ายในประเทศไทยโดย ORAFON (บริษัท โอราโนส จำกัด) ตัวแทนจำหน่าย Solstice® พร้อมเอกสาร TDS/SDS และคำปรึกษาทางเทคนิค ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
   applications: []
   faq:
@@ -78,6 +80,8 @@ en:
     Solstice® LBA (HFO-1233zd(E)) is an HFO refrigerant (single component), ASHRAE number R-1233zd(E), composition CF₃CH=CHCl — HCFO-1233zd(E). It is classified A1 under ASHRAE 34, with GWP (AR4) 1 and ODP ~0.0003.
 
     A single-component, non-flammable (A1) HCFO-1233zd(E) with GWP around 1 and near-zero ODP. Liquid at room temperature; used as a liquid blowing agent for insulation foam and as a refrigerant in low-pressure chillers.
+
+    **Note:** Solstice® LBA is the liquid blowing agent grade; the refrigerant grade for applications such as low-pressure chillers is sold as **Solstice® zd (R-1233zd(E))**. Ask our team to choose the right grade.
 
     Distributed in Thailand by ORAFON (Oranoss Co., Ltd.), an authorized Solstice® distributor, with TDS/SDS documents and technical support. Contact us for pack sizes, stock and a quotation.
   faq:

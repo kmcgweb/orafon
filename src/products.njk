@@ -52,7 +52,7 @@ eleventyComputed:
 <section style="padding-bottom:64px"><div class="container">
   <div class="count" id="count" data-tpl="{{ T.showing }} {n} {{ T.items }}">{{ T.showing }} {{ D.products.length }} {{ T.items }}</div>
   <div class="prod-grid" id="grid">
-    {%- for p in D.products %}{{ productCard(p, lang, T) }}{% endfor %}
+    {%- for p in D.productsAZ %}{{ productCard(p, lang, T) }}{% endfor %}
   </div>
   <div class="table-wrap" id="tableView" hidden>
     <table class="data-table prod-table">
@@ -60,7 +60,7 @@ eleventyComputed:
         <th>{{ T.products }}</th><th>{{ T.brand }}</th><th>{{ T.refrigerant }}</th><th>{{ T.type }}</th><th>ASHRAE</th><th>{{ T.gwp }}</th><th>{{ T.packages }}</th><th></th>
       </tr></thead>
       <tbody>
-        {%- for p in D.products %}
+        {%- for p in D.productsAZ %}
         {%- set href = ('/products/' ~ p.slug ~ '/') | u(lang) %}
         <tr class="prod-row" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
           <td>

@@ -90,7 +90,10 @@ function buildDb() {
         .filter((o) => (o.replaces || []).some((x) => norm(x) === norm(r.number)))
         .map((o) => ({ number: o.number, slug: o.slug }));
     }
-    for (const b of brands) b.products = products.filter((p) => p.brand === b.slug);
+    // A–Z with natural number order (R-22 before R-134a); "order" is still used for featured/home
+    const az = (a, b) => String(a.name).localeCompare(String(b.name), "en", { numeric: true, sensitivity: "base" });
+    const productsAZ = [...products].sort(az);
+    for (const b of brands) b.products = productsAZ.filter((p) => p.brand === b.slug);
 
     const articles = L(folders.articles)
       .filter((a) => !a.draft)
@@ -100,6 +103,7 @@ function buildDb() {
     db[lang] = {
       refrigerants, brands, products, articles, refMap, brandMap,
       productMap: Object.fromEntries(products.map((p) => [p.slug, p])),
+      productsAZ,
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
       classCounts: CLASS_ORDER.map((c) => ({ class: c, n: products.filter((p) => p.ref && p.ref.class === c).length })).filter((x) => x.n),

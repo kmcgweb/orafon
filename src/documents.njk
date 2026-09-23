@@ -30,7 +30,7 @@ eleventyComputed:
   <div class="count" data-f-count data-tpl="{{ T.showing }} {n} {{ T.items }}"></div>
 
   <div class="doc-grid">
-    {%- for p in D.products %}{% if p.documents and p.documents.length %}
+    {%- for p in D.productsAZ %}{% if p.documents and p.documents.length %}
     <div class="doc-card" data-f-item data-brand="{{ p.brand }}" data-text="{{ p.searchText }}">
       <div class="dc-head">
         <span class="dc-ic" style="--c:{{ p.ref.color if p.ref else '#4F46E5' }}">{{ (p.ref.number | shortNum) if p.ref }}</span>

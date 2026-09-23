@@ -14,16 +14,16 @@ th:
       label: Safety Data Sheet (SDS)
       file: ""
     - type: Sales
-      label: Sales Sheet — Solstice® R-454C
+      label: Sales Sheet — Solstice® 454C (R-454C)
       file: ""
-  name: Solstice® R-454C
+  name: Solstice® 454C (R-454C)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก
   badges:
     - ลด GWP 96% เทียบ R-404A
     - A2L ติดไฟได้เล็กน้อย
     - ODP = 0
-  short: Solstice® R-454C — สาร HFO/HFC ผสม ค่า GWP ต่ำมาก (ต่ำกว่า 150) สำหรับระบบทำความเย็นเชิงพาณิชย์และฮีตปั๊มรุ่นใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L ใช้แทน R-404A ในงานติดตั้งใหม่
+  short: Solstice® 454C (R-454C) — สาร HFO/HFC ผสม ค่า GWP ต่ำมาก (ต่ำกว่า 150) สำหรับระบบทำความเย็นเชิงพาณิชย์และฮีตปั๊มรุ่นใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L ใช้แทน R-404A ในงานติดตั้งใหม่
   highlights:
     - title: ลด GWP 96%
       text: ค่า GWP (AR4) 148 ต่ำกว่า R-404A ราว 96% · ODP 0
@@ -38,7 +38,7 @@ th:
     - title: เอกสาร TDS/SDS
       text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
   description: |-
-    Solstice® R-454C เป็นสารทำความเย็นประเภท HFO Blend แบบ Zeotropic หมายเลข ASHRAE R-454C ส่วนผสม R-32 / R-1234yf (21.5/78.5) จัดอยู่ในกลุ่มความปลอดภัย A2L ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 148 และ ODP 0
+    Solstice® 454C (R-454C) เป็นสารทำความเย็นประเภท HFO Blend แบบ Zeotropic หมายเลข ASHRAE R-454C ส่วนผสม R-32 / R-1234yf (21.5/78.5) จัดอยู่ในกลุ่มความปลอดภัย A2L ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 148 และ ODP 0
 
     สาร HFO/HFC ผสม ค่า GWP ต่ำมาก (ต่ำกว่า 150) สำหรับระบบทำความเย็นเชิงพาณิชย์และฮีตปั๊มรุ่นใหม่ที่ออกแบบสำหรับสารกลุ่ม A2L ใช้แทน R-404A ในงานติดตั้งใหม่
 
@@ -47,22 +47,22 @@ th:
     จัดจำหน่ายในประเทศไทยโดย ORAFON (บริษัท โอราโนส จำกัด) ตัวแทนจำหน่าย Solstice® พร้อมเอกสาร TDS/SDS และคำปรึกษาทางเทคนิค ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
   applications: []
   faq:
-    - q: Solstice® R-454C ใช้ทดแทนสารตัวไหนได้บ้าง?
+    - q: Solstice® 454C (R-454C) ใช้ทดแทนสารตัวไหนได้บ้าง?
       a: ใช้ทดแทน R-404A ในอุปกรณ์ที่ออกแบบสำหรับสารกลุ่ม A2L ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
     - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
       a: จัดอยู่ในกลุ่ม A2L ตามมาตรฐาน ASHRAE 34 ติดไฟได้เล็กน้อย ใช้กับอุปกรณ์ที่ออกแบบสำหรับสาร A2L เท่านั้น
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
-  seo_description: Solstice® R-454C สารทำความเย็น R-454C HFO Blend A2L GWP 148 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  seo_description: Solstice® 454C (R-454C) สารทำความเย็น R-454C HFO Blend A2L GWP 148 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
 en:
-  name: Solstice® R-454C
+  name: Solstice® 454C (R-454C)
   tagline: HFO Blend refrigerant
   tag: Ultra-low GWP
   badges:
     - 96% lower GWP vs R-404A
     - A2L mildly flammable
     - ODP = 0
-  short: Solstice® R-454C is an HFO/HFC blend with very low GWP (below 150) for new commercial refrigeration and heat pumps designed for A2L refrigerants, replacing R-404A in new installations.
+  short: Solstice® 454C (R-454C) is an HFO/HFC blend with very low GWP (below 150) for new commercial refrigeration and heat pumps designed for A2L refrigerants, replacing R-404A in new installations.
   highlights:
     - title: 96% lower GWP
       text: GWP (AR4) 148, about 96% below R-404A · ODP 0
@@ -77,7 +77,7 @@ en:
     - title: TDS/SDS available
       text: Request them from the "Documents" tab or the ORAFON team
   description: |-
-    Solstice® R-454C is an HFO Blend refrigerant (zeotropic blend), ASHRAE number R-454C, composition R-32 / R-1234yf (21.5/78.5). It is classified A2L under ASHRAE 34, with GWP (AR4) 148 and ODP 0.
+    Solstice® 454C (R-454C) is an HFO Blend refrigerant (zeotropic blend), ASHRAE number R-454C, composition R-32 / R-1234yf (21.5/78.5). It is classified A2L under ASHRAE 34, with GWP (AR4) 148 and ODP 0.
 
     An HFO/HFC blend with very low GWP (below 150) for new commercial refrigeration and heat pumps designed for A2L refrigerants, replacing R-404A in new installations.
 
@@ -85,10 +85,10 @@ en:
 
     Distributed in Thailand by ORAFON (Oranoss Co., Ltd.), an authorized Solstice® distributor, with TDS/SDS documents and technical support. Contact us for pack sizes, stock and a quotation.
   faq:
-    - q: Which refrigerants can Solstice® R-454C replace?
+    - q: Which refrigerants can Solstice® 454C (R-454C) replace?
       a: R-404A, in equipment designed for A2L refrigerants. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
     - q: Is it flammable? How safe is it?
       a: "It is classified A2L under ASHRAE 34. Mildly flammable: use only in equipment designed for A2L."
     - q: Which pack sizes are available, and how do I get a price?
       a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
-  seo_description: Solstice® R-454C R-454C HFO Blend refrigerant, A2L, GWP 148. Distributed by ORAFON — request a quotation.
+  seo_description: Solstice® 454C (R-454C) R-454C HFO Blend refrigerant, A2L, GWP 148. Distributed by ORAFON — request a quotation.
