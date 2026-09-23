@@ -1,0 +1,32 @@
+th:
+  id: r-404a
+  number: R-404A
+  class: HFC Blend
+  composition: R-125 / R-143a / R-134a (44/52/4)
+  blend_type: near-azeotropic
+  safety: A1
+  gwp_ar4: "3922"
+  gwp_ar5: "3943"
+  odp: "0"
+  boiling_point: "−46.2"
+  replaces: [R-502, R-22]
+  color: "#334155"
+  color2: "#0F766E"
+  order: 40
+  summary: สาร HFC ผสม ไม่ติดไฟ (A1) สำหรับงานทำความเย็นอุณหภูมิต่ำถึงปานกลาง มีค่า GWP สูง หลายประเทศจึงกำลังทยอยเปลี่ยนไปใช้สารทดแทน GWP ต่ำ เช่น R-448A
+  applications:
+    - icon: snow
+      label: ห้องเย็น / แช่แข็ง
+    - icon: store
+      label: ซูเปอร์มาร์เก็ต
+    - icon: truck
+      label: รถห้องเย็น
+en:
+  summary: A non-flammable (A1) HFC blend for low- and medium-temperature refrigeration. Its high GWP means many markets are moving to low-GWP alternatives such as R-448A.
+  applications:
+    - icon: snow
+      label: Cold rooms / freezing
+    - icon: store
+      label: Supermarkets
+    - icon: truck
+      label: Transport refrigeration

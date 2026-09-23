@@ -1,0 +1,19 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/thanks/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /thanks/
+noindex: true
+eleventyComputed:
+  title: "{{ i18n[lang].thanksTitle }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set S = db[lang].site -%}
+<section class="center-msg"><div class="container">
+  <h1 class="display" style="font-size:40px"><span class="grad-text">{{ T.thanksTitle }}</span></h1>
+  <p>{{ T.thanksText }}</p>
+  <div class="hero-cta" style="justify-content:center">
+    <a class="btn btn-primary grad-bg" href="{{ '/' | u(lang) }}">{{ T.backHome }}</a>
+    {%- if S.line_id %}<a class="btn btn-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE {{ S.line_id }}</a>{% endif %}
+  </div>
+</div></section>

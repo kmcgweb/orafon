@@ -1,0 +1,32 @@
+th:
+  id: r-134a
+  number: R-134a
+  class: HFC
+  composition: CH₂FCF₃ (1,1,1,2-Tetrafluoroethane)
+  blend_type: pure
+  safety: A1
+  gwp_ar4: "1430"
+  gwp_ar5: "1300"
+  odp: "0"
+  boiling_point: "−26.1"
+  replaces: [R-12]
+  color: "#059669"
+  color2: "#0D9488"
+  order: 30
+  summary: สาร HFC ชนิดเดี่ยว ไม่ติดไฟ (A1) ใช้ในแอร์รถยนต์รุ่นเดิม ตู้เย็น ตู้แช่อุณหภูมิปานกลาง และชิลเลอร์
+  applications:
+    - icon: car
+      label: แอร์รถยนต์
+    - icon: fridge
+      label: ตู้เย็น / ตู้แช่
+    - icon: chiller
+      label: ชิลเลอร์
+en:
+  summary: A single-component, non-flammable (A1) HFC used in legacy automotive AC, domestic refrigerators, medium-temperature refrigeration and chillers.
+  applications:
+    - icon: car
+      label: Automotive AC
+    - icon: fridge
+      label: Refrigerators / display cases
+    - icon: chiller
+      label: Chillers

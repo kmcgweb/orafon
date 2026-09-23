@@ -1,0 +1,28 @@
+th:
+  id: r-1234yf
+  number: R-1234yf
+  class: HFO
+  composition: CH₂=CFCF₃ (2,3,3,3-Tetrafluoropropene)
+  blend_type: pure
+  safety: A2L
+  gwp_ar4: "4"
+  gwp_ar5: "<1"
+  odp: "0"
+  boiling_point: "−29.4"
+  replaces: [R-134a]
+  color: "#0EA5E9"
+  color2: "#4F46E5"
+  order: 80
+  summary: สาร HFO ชนิดเดี่ยว ค่า GWP ต่ำมาก ใช้เป็นมาตรฐานในแอร์รถยนต์รุ่นใหม่แทน R-134a จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L)
+  applications:
+    - icon: car
+      label: แอร์รถยนต์รุ่นใหม่
+    - icon: fridge
+      label: ตู้แช่เชิงพาณิชย์บางประเภท
+en:
+  summary: A single-component HFO with ultra-low GWP, now the standard refrigerant in new automotive AC in place of R-134a. Classified as mildly flammable (A2L).
+  applications:
+    - icon: car
+      label: New automotive AC
+    - icon: fridge
+      label: Selected commercial refrigeration

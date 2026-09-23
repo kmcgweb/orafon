@@ -1,0 +1,14 @@
+th:
+  id: orafon
+  name: ORAFON
+  own_brand: true
+  logo: /assets/img/orafon-logo.png
+  website: ""
+  order: 1
+  tagline: แบรนด์สารทำความเย็นของเราเอง
+  description: |
+    ORAFON คือแบรนด์สารทำความเย็นของ บริษัท โอราโนส จำกัด ครอบคลุมเบอร์น้ำยาที่ใช้งานบ่อยในงานปรับอากาศและงานทำความเย็น พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงาน
+en:
+  tagline: Our own refrigerant brand
+  description: |
+    ORAFON is the refrigerant brand of Oranoss Co., Ltd., covering the most widely used grades for air-conditioning and refrigeration, backed by TDS/SDS documents and technical support from our team.

@@ -1,0 +1,63 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/contact/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /contact/
+section: contact
+pageScript: contact.js
+eleventyComputed:
+  title: "{{ i18n[lang].contact }}"
+  description: "{{ i18n[lang].contactLead }}"
+---
+{%- from "partials/macros.njk" import icon -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set S = D.site -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ S.brand_name }}</a><span>›</span>{{ T.contact }}</nav></div>
+<div class="container"><div class="ct-grid">
+  <div class="ct-info">
+    <h1 class="display">{{ T.contact }} <span class="grad-text">{{ S.brand_name }}</span></h1>
+    <p>{{ T.contactLead }}</p>
+    <div class="ct-list">
+      {%- if S.phone %}<a class="ct-item" href="tel:{{ S.phone }}"><span class="e">{{ icon("phone") }}</span><span><span class="k">{{ T.call }}</span><br><span class="v">{{ S.phone_display }}</span></span></a>{% endif %}
+      {%- if S.email %}<a class="ct-item" href="mailto:{{ S.email }}"><span class="e">{{ icon("mail") }}</span><span><span class="k">{{ T.email }}</span><br><span class="v">{{ S.email }}</span></span></a>{% endif %}
+      {%- if S.line_id %}<a class="ct-item" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener"><span class="e">{{ icon("chat") }}</span><span><span class="k">LINE Official</span><br><span class="v">{{ S.line_id }}</span></span></a>{% endif %}
+      {%- if S.address %}<div class="ct-item"><span class="e">{{ icon("pin") }}</span><span><span class="k">{{ T.address }}</span><br><span class="v">{{ S.company_name }}<br>{{ S.address }}</span></span></div>{% endif %}
+      {%- if S.hours %}<div class="ct-item"><span class="e">{{ icon("clock") }}</span><span><span class="k">{{ T.hours }}</span><br><span class="v">{{ S.hours }}</span></span></div>{% endif %}
+    </div>
+    {%- if S.map_url %}<p style="margin-top:20px"><a class="btn btn-ghost" href="{{ S.map_url }}" target="_blank" rel="noopener">Google Maps</a></p>{% endif %}
+  </div>
+
+  <form class="ct-form" id="quoteForm" method="post" action="/contact.php" data-line="{{ S.line_id }}" data-linemsg="{{ T.lineMsg }}">
+    <h2>{{ T.formTitle }}</h2>
+    <p class="sub">{{ T.formSub }}</p>
+    <div class="form-msg err" id="formErr" hidden>{{ T.formError }}</div>
+    <input type="hidden" name="lang" value="{{ lang }}">
+    <input type="hidden" name="ts" id="ts" value="">
+    <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="row2">
+      <div class="field"><label for="f-name">{{ T.fName }} <span class="req">*</span></label><input id="f-name" name="name" required maxlength="120" autocomplete="name"></div>
+      <div class="field"><label for="f-company">{{ T.fCompany }}</label><input id="f-company" name="company" maxlength="160" autocomplete="organization"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="f-phone">{{ T.fPhone }} <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" required maxlength="40" autocomplete="tel"></div>
+      <div class="field"><label for="f-email">{{ T.fEmail }}</label><input id="f-email" name="email" type="email" maxlength="160" autocomplete="email"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="f-type">{{ T.fType }}</label>
+        <select id="f-type" name="ctype">{% for o in T.fTypes %}<option>{{ o }}</option>{% endfor %}</select></div>
+      <div class="field"><label for="f-product">{{ T.fProduct }}</label>
+        <input id="f-product" name="product" maxlength="200" list="product-list">
+        <datalist id="product-list">{% for p in D.products %}<option value="{{ p.name }}">{% endfor %}{% for r in D.refrigerants %}<option value="{{ r.number }}">{% endfor %}</datalist></div>
+    </div>
+    <div class="field"><label for="f-message">{{ T.fMessage }}</label><textarea id="f-message" name="message" maxlength="3000"></textarea></div>
+    <label class="consent"><input type="checkbox" name="consent" value="1" required> <span>{{ T.fConsent }} <a href="{{ '/privacy/' | u(lang) }}" target="_blank">{{ T.privacy }}</a></span></label>
+    <button class="btn btn-primary grad-bg" type="submit">{{ T.fSend }}</button>
+    <p class="muted" style="font-size:13px;margin-top:16px;text-align:center">{{ T.orContact }}</p>
+    <div class="quick-btns" style="justify-content:center;margin-top:10px">
+      {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE</a>{% endif %}
+      {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
+      {%- if S.email %}<a class="btn btn-ghost js-mail" href="mailto:{{ S.email }}">{{ T.email }}</a>{% endif %}
+    </div>
+  </form>
+</div></div>

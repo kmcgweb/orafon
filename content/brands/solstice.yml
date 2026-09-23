@@ -1,0 +1,18 @@
+th:
+  id: solstice
+  name: Solstice®
+  own_brand: false
+  logo: ""
+  website: ""
+  order: 2
+  tagline: ตัวแทนจำหน่ายสารทำความเย็นเทคโนโลยี HFO
+  description: |
+    ORAFON เป็นตัวแทนจำหน่ายสารทำความเย็น Solstice® จาก Solstice Advanced Materials ซึ่งเป็นสารทำความเย็นเทคโนโลยี HFO และ HFO blend ที่มีค่า GWP ต่ำ เหมาะกับงานติดตั้งใหม่และงานรีโทรฟิต
+
+    Solstice® เป็นเครื่องหมายการค้าของเจ้าของแบรนด์
+en:
+  tagline: Authorized distributor of HFO-technology refrigerants
+  description: |
+    ORAFON is a distributor of Solstice® refrigerants from Solstice Advanced Materials — low-GWP HFO and HFO-blend refrigerants for new installations and retrofits.
+
+    Solstice® is a trademark of its respective owner.

@@ -1,0 +1,44 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/about/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /about/
+section: about
+eleventyComputed:
+  title: "{{ i18n[lang].about }}"
+  description: "{{ db[lang].about.lead }}"
+---
+{%- from "partials/macros.njk" import ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set A = D.about -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.about }}</nav></div>
+<section class="ab-hero"><div class="container">
+  <h1 class="display">{{ A.title }} <span class="grad-text">{{ A.highlight }}</span></h1>
+  <p class="lead" style="font-size:18px;color:var(--text-muted);max-width:65ch;margin-top:18px;line-height:1.8">{{ A.lead }}</p>
+  <p style="margin-top:12px;font-weight:600">{{ D.site.company_name }}</p>
+</div></section>
+{%- if A.cards and A.cards.length %}
+<section class="section" style="padding-top:20px"><div class="container">
+  <div class="ab-grid">
+    {%- for c in A.cards %}<div class="ab-card"><h3>{{ c.title }}</h3><p>{{ c.text }}</p></div>{% endfor %}
+  </div>
+</div></section>
+{%- endif %}
+{%- if A.body %}
+<section class="section" style="padding-top:0"><div class="container"><div class="prose">{{ A.body | md | safe }}</div></div></section>
+{%- endif %}
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.ourBrands }}</h2>
+  <div class="brand-cards" style="margin-top:24px">
+    {%- for b in D.brands %}
+    <a class="brand-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
+      <span class="bl">{% if b.logo %}<img src="{{ b.logo }}" alt="">{% else %}{{ b.name | first }}{% endif %}</span>
+      <span><span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span><h3>{{ b.name }}</h3><p>{{ b.tagline }}</p></span>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="container">
+  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
+</div></section>

@@ -1,0 +1,32 @@
+th:
+  id: r-410a
+  number: R-410A
+  class: HFC Blend
+  composition: R-32 / R-125 (50/50)
+  blend_type: near-azeotropic
+  safety: A1
+  gwp_ar4: "2088"
+  gwp_ar5: "1924"
+  odp: "0"
+  boiling_point: "−51.6"
+  replaces: [R-22]
+  color: "#7C3AED"
+  color2: "#DB2777"
+  order: 20
+  summary: สาร HFC ผสมเกือบอะซีโอโทรป ไม่ติดไฟ (A1) ใช้แพร่หลายในเครื่องปรับอากาศและฮีตปั๊มที่ออกแบบมาสำหรับ R-410A โดยเฉพาะ ทำงานที่แรงดันสูงกว่า R-22
+  applications:
+    - icon: home
+      label: แอร์บ้าน
+    - icon: ac
+      label: แอร์เชิงพาณิชย์ / VRF
+    - icon: heatpump
+      label: ฮีตปั๊ม
+en:
+  summary: A near-azeotropic, non-flammable (A1) HFC blend widely used in air conditioners and heat pumps designed for R-410A. Operates at higher pressure than R-22.
+  applications:
+    - icon: home
+      label: Residential AC
+    - icon: ac
+      label: Commercial AC / VRF
+    - icon: heatpump
+      label: Heat pumps

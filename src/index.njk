@@ -1,0 +1,92 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /
+section: home
+---
+{%- from "partials/macros.njk" import cylinder, productCard, ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set H = D.home -%}
+{%- set hp = null -%}
+{%- for p in D.products %}{% if p.slug == H.hero_product %}{% set hp = p %}{% endif %}{% endfor -%}
+{%- if not hp and D.products.length %}{% set hp = D.products[0] %}{% endif -%}
+{%- set featured = D.featured -%}
+
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <h1 class="display">{{ H.hero_title }} <span class="grad-text">{{ H.hero_highlight }}</span></h1>
+    <p class="lead">{{ H.hero_lead }}</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary grad-bg" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }}</a>
+      <a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+    </div>
+  </div>
+  {%- if hp %}
+  <div class="hero-visual"><div class="hero-card grad-bg">
+    {%- if hp.ref %}
+    <div class="hero-float hf1"><div class="k">ASHRAE</div><div class="v">{{ hp.ref.number }}</div></div>
+    <div class="hero-float hf2"><div class="k">GWP (AR4)</div><div class="v">{{ hp.ref.gwp_ar4 }}</div></div>
+    {%- endif %}
+    <a class="inner" href="{{ ('/products/' ~ hp.slug ~ '/') | u(lang) }}">
+      {%- if hp.images and hp.images[0] %}<img src="{{ hp.images[0] }}" alt="{{ hp.name }}">{% else %}{{ cylinder(hp.ref, "hero") }}{% endif %}
+      <div class="hn">{{ hp.name }}</div>
+      <div class="hs">{{ hp.tagline }}</div>
+    </a>
+  </div></div>
+  {%- endif %}
+</div></section>
+
+<section class="section" style="padding-top:24px"><div class="container">
+  <h2 class="display">{{ T.byType }}</h2>
+  <p class="lead">{{ T.byTypeLead }}</p>
+  <div class="cats">
+    {%- for r in D.refrigerants %}
+    <a class="cat-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">
+      <div class="e" style="color:{{ r.color }}">{{ r.number | shortNum }}</div>
+      <div class="t">{{ r.number }}</div>
+      <div class="d">{{ r.class }} · {{ r.safety }}</div>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+
+{%- set showList = featured if featured.length else D.products %}
+{%- if showList.length %}
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.featured }}</h2>
+  <p class="lead">{{ T.featuredLead }}</p>
+  <div class="prod-grid">
+    {%- for p in showList | batch(8) | first %}{{ productCard(p, lang, T) }}{% endfor %}
+  </div>
+  <div style="margin-top:28px"><a class="btn btn-ghost" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }} →</a></div>
+</div></section>
+{%- endif %}
+
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.ourBrands }}</h2>
+  <div class="brand-cards" style="margin-top:24px">
+    {%- for b in D.brands %}
+    <a class="brand-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
+      <span class="bl">{% if b.logo %}<img src="{{ b.logo }}" alt="">{% else %}{{ b.name | first }}{% endif %}</span>
+      <span><span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
+      <h3>{{ b.name }}</h3><p>{{ b.tagline }}</p></span>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+
+{%- if H.stats and H.stats.length %}
+<section class="section" style="padding-top:0"><div class="container"><div class="trust">
+  <div class="trust-grid">
+    {%- for s in H.stats %}
+    <div class="trust-item"><div class="n grad-text">{{ s.num }}</div><div class="l">{{ s.label }}</div></div>
+    {%- endfor %}
+  </div>
+</div></div></section>
+{%- endif %}
+
+<section class="section" style="padding-top:0"><div class="container">
+  {{ ctaBand(lang, T, D.site, H.cta_title, H.cta_text) }}
+</div></section>

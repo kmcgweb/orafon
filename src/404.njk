@@ -1,0 +1,18 @@
+---
+permalink: /404.html
+layout: layouts/base.njk
+lang: th
+pathKey: /
+noindex: true
+title: "404"
+---
+{#- One bilingual page, served by .htaccess ErrorDocument for every missing URL -#}
+<section class="center-msg"><div class="container">
+  <h1 class="display"><span class="grad-text">404</span></h1>
+  <p>{{ i18n.th.notFound }}<br>{{ i18n.en.notFound }}</p>
+  <div class="hero-cta" style="justify-content:center">
+    <a class="btn btn-primary grad-bg" href="/">{{ i18n.th.backHome }}</a>
+    <a class="btn btn-ghost" href="/en/">{{ i18n.en.backHome }}</a>
+    <a class="btn btn-ghost" href="/products/">{{ i18n.th.allProducts }}</a>
+  </div>
+</div></section>

@@ -1,0 +1,24 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/brands/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /brands/
+section: brands
+eleventyComputed:
+  title: "{{ i18n[lang].brands }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.brands }}</nav></div>
+<section class="page-head"><div class="container"><h1 class="display">{{ T.ourBrands }}</h1></div></section>
+<section class="section" style="padding-top:24px"><div class="container">
+  <div class="brand-cards">
+    {%- for b in D.brands %}
+    <a class="brand-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
+      <span class="bl">{% if b.logo %}<img src="{{ b.logo }}" alt="">{% else %}{{ b.name | first }}{% endif %}</span>
+      <span><span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
+      <h3>{{ b.name }}</h3><p>{{ b.tagline }}</p><p>{{ b.products.length }} {{ T.items }}</p></span>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>

@@ -1,0 +1,32 @@
+th:
+  id: r-32
+  number: R-32
+  class: HFC
+  composition: CH₂F₂ (Difluoromethane)
+  blend_type: pure
+  safety: A2L
+  gwp_ar4: "675"
+  gwp_ar5: "677"
+  odp: "0"
+  boiling_point: "−51.7"
+  replaces: [R-410A, R-22]
+  color: "#EA580C"
+  color2: "#DB2777"
+  order: 10
+  summary: สาร HFC ชนิดเดี่ยว ค่า GWP ต่ำกว่า R-410A ประมาณสองในสาม นิยมใช้ในเครื่องปรับอากาศบ้านและเชิงพาณิชย์รุ่นใหม่ จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L) ต้องติดตั้งตามมาตรฐานความปลอดภัย
+  applications:
+    - icon: home
+      label: แอร์บ้าน
+    - icon: ac
+      label: แอร์เชิงพาณิชย์
+    - icon: heatpump
+      label: ฮีตปั๊ม
+en:
+  summary: A single-component HFC with roughly one-third the GWP of R-410A, widely used in new residential and commercial air conditioners. Classified as mildly flammable (A2L); install according to safety standards.
+  applications:
+    - icon: home
+      label: Residential AC
+    - icon: ac
+      label: Commercial AC
+    - icon: heatpump
+      label: Heat pumps

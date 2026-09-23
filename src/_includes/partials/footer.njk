@@ -1,0 +1,40 @@
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set S = D.site -%}
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img class="foot-logo" src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="120" height="32" loading="lazy">
+        <p class="foot-about">{{ S.footer_about }}</p>
+        <p class="foot-company"><strong>{{ S.company_name }}</strong><br>{{ S.address }}</p>
+      </div>
+      <div class="foot-col"><h4>{{ T.products }}</h4><ul>
+        <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a></li>
+        {%- for b in D.brands %}
+        <li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>
+        {%- endfor %}
+        <li><a href="{{ '/refrigerants/' | u(lang) }}">{{ T.refrigerants }}</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>{{ T.contactSales }}</h4><ul>
+        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
+        <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
+        <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
+        {%- if S.phone %}<li><a href="tel:{{ S.phone }}">{{ T.call }} {{ S.phone_display }}</a></li>{% endif %}
+        {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" rel="noopener" target="_blank">LINE {{ S.line_id }}</a></li>{% endif %}
+      </ul></div>
+      <div class="foot-col"><h4>{{ S.brand_name }}</h4><ul>
+        <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a></li>
+        {%- if D.articles.length %}<li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a></li>{% endif %}
+        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.contact }}</a></li>
+        <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="container">
+      <span>© {{ buildYear }} {{ S.company_name }} · {{ S.brand_name }}</span>
+      <span>{{ T.trademark }}</span>
+    </div>
+  </div>
+</footer>

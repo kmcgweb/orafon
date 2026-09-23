@@ -1,0 +1,40 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/retrofit/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /retrofit/
+section: retrofit
+eleventyComputed:
+  title: "{{ i18n[lang].retrofit }}"
+  description: "{{ i18n[lang].retrofitLead }}"
+---
+{#- Built from each refrigerant's "replaces" list: old refrigerant -> the grades that replace it -#}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set olds = [] -%}
+{%- for r in D.refrigerants %}{% for x in r.replaces %}{% if x not in olds %}{% set olds = olds.concat([x]) %}{% endif %}{% endfor %}{% endfor -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.retrofit }}</nav></div>
+<section class="page-head"><div class="container">
+  <h1 class="display">{{ T.retrofit }}</h1>
+  <p>{{ T.retrofitLead }}</p>
+</div></section>
+<section class="section" style="padding-top:24px"><div class="container">
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>{{ T.oldRef }}</th><th>{{ T.newRef }}</th></tr></thead>
+      <tbody>
+        {%- for old in olds | sort %}
+        <tr>
+          <td><strong>{{ old }}</strong></td>
+          <td><div class="link-list">
+            {%- for r in D.refrigerants %}{% if old in r.replaces %}
+            <a class="filter" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">{{ r.number }} · {{ r.class }} · GWP {{ r.gwp_ar4 }}{% if r.products.length %} · {{ r.products.length }} {{ T.items }}{% endif %}</a>
+            {%- endif %}{% endfor %}
+          </div></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="note">{{ T.dataNote }}</p>
+</div></section>

@@ -1,0 +1,52 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/products/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /products/
+section: products
+pageScript: products.js
+eleventyComputed:
+  title: "{{ i18n[lang].allProducts }}"
+  description: "{{ i18n[lang].productsLead }}"
+---
+{%- from "partials/macros.njk" import productCard -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.allProducts }}</nav></div>
+<section class="page-head"><div class="container">
+  <h1 class="display">{{ T.allProducts }}</h1>
+  <p>{{ T.productsLead }}</p>
+
+  <div class="filter-bar" id="filters">
+    <div class="filter-row">
+      <label class="sr-only" for="q">{{ T.search }}</label>
+      <input class="q-input" id="q" type="search" placeholder="{{ T.searchPh }}">
+    </div>
+    <div class="filter-row" data-group="class">
+      <span class="lbl">{{ T.type }}</span>
+      <button class="filter active" data-v="">{{ T.all }}</button>
+      {%- for c in D.classes %}<button class="filter" data-v="{{ c }}">{{ c }}</button>{% endfor %}
+    </div>
+    <div class="filter-row" data-group="brand">
+      <span class="lbl">{{ T.brand }}</span>
+      <button class="filter active" data-v="">{{ T.all }}</button>
+      {%- for b in D.brands %}{% if b.products.length %}<button class="filter" data-v="{{ b.slug }}">{{ b.name }}</button>{% endif %}{% endfor %}
+    </div>
+    <div class="filter-row" data-group="ref">
+      <span class="lbl">{{ T.refrigerant }}</span>
+      <button class="filter active" data-v="">{{ T.all }}</button>
+      {%- for r in D.refrigerants %}{% if r.products.length %}<button class="filter" data-v="{{ r.slug }}">{{ r.number }}</button>{% endif %}{% endfor %}
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-bottom:64px"><div class="container">
+  <div class="count" id="count" data-tpl="{{ T.showing }} {n} {{ T.items }}">{{ T.showing }} {{ D.products.length }} {{ T.items }}</div>
+  <div class="prod-grid" id="grid">
+    {%- for p in D.products %}{{ productCard(p, lang, T) }}{% endfor %}
+  </div>
+  <div class="card empty" id="empty" {% if D.products.length %}hidden{% endif %}>
+    {{ T.noResults if D.products.length else T.comingSoon }}
+    <div style="margin-top:16px"><a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}">{{ T.contactSales }}</a></div>
+  </div>
+</div></section>

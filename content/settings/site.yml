@@ -1,0 +1,21 @@
+th:
+  site_url: https://orafon.co.th
+  brand_name: ORAFON
+  company_name: บริษัท โอราโนส จำกัด
+  tagline: สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®
+  footer_about: ผู้จัดจำหน่ายสารทำความเย็นแบรนด์ ORAFON ของเราเอง และตัวแทนจำหน่าย Solstice® พร้อมคำปรึกษาทางเทคนิคสำหรับงานปรับอากาศและทำความเย็น
+  address: "(กรอกที่อยู่บริษัท)"
+  hours: จันทร์–ศุกร์ 08:30–17:30 น.
+  phone: "+66000000000"
+  phone_display: 0X-XXX-XXXX
+  email: sales@orafon.co.th
+  form_email: sales@orafon.co.th
+  line_id: "@orafon"
+  facebook_url: ""
+  map_url: ""
+en:
+  company_name: Oranoss Co., Ltd.
+  tagline: ORAFON refrigerants and authorized Solstice® distributor
+  footer_about: Supplier of our own ORAFON refrigerants and authorized distributor of Solstice®, with technical support for air-conditioning and refrigeration projects.
+  address: "(Company address)"
+  hours: Mon–Fri 08:30–17:30

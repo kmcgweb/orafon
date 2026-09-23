@@ -1,0 +1,10 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Disallow: /admin/
+Disallow: /thanks/
+Disallow: /en/thanks/
+
+Sitemap: {{ "/sitemap.xml" | absUrl(db.th.site.site_url) }}

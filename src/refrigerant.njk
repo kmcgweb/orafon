@@ -1,0 +1,84 @@
+---
+pagination: { data: refrigerantPages, size: 1, alias: entry }
+permalink: "{{ ('/refrigerants/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
+layout: layouts/base.njk
+section: refrigerants
+extraCss: product.css
+eleventyComputed:
+  lang: "{{ entry.lang }}"
+  pathKey: "/refrigerants/{{ entry.item.slug }}/"
+  title: "{{ entry.item.number }} — {{ entry.item.class }}"
+  description: "{{ entry.item.summary }}"
+---
+{%- from "partials/macros.njk" import icon, cylinder, productCard, ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set r = entry.item -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/refrigerants/' | u(lang) }}">{{ T.refrigerants }}</a><span>›</span>{{ r.number }}
+</nav></div>
+
+<section><div class="container">
+  <div class="ref-hero">
+    <div class="cyl">{{ cylinder(r, "ref") }}</div>
+    <div>
+      <span class="chip i">{{ r.class }}</span>
+      <h1 class="display">{{ r.number }}</h1>
+      <p class="sum">{{ r.summary }}</p>
+      <div class="kv-grid">
+        <div class="kv"><div class="k">{{ T.safety }}</div><div class="v">{{ T.safetyText[r.safety] or r.safety }}</div></div>
+        <div class="kv"><div class="k">{{ T.gwp }}</div><div class="v">{{ r.gwp_ar4 }}</div></div>
+        <div class="kv"><div class="k">{{ T.gwpAr5 }}</div><div class="v">{{ r.gwp_ar5 }}</div></div>
+        <div class="kv"><div class="k">{{ T.odp }}</div><div class="v">{{ r.odp }}</div></div>
+        <div class="kv"><div class="k">{{ T.boiling }}</div><div class="v">{{ r.boiling_point }}</div></div>
+        <div class="kv"><div class="k">{{ T.blendType }}</div><div class="v">{{ T.blend[r.blend_type] or r.blend_type }}</div></div>
+      </div>
+      <div class="kv" style="margin-top:12px"><div class="k">{{ T.composition }}</div><div class="v" style="font-size:15px">{{ r.composition }}</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:8px"><div class="container">
+  <div class="brand-cards">
+    {%- if r.replacesLinks.length %}
+    <div class="card" style="padding:24px">
+      <h3 style="font-size:16px;margin-bottom:12px">{{ T.replaces }}</h3>
+      <div class="link-list">{% for x in r.replacesLinks %}{% if x.slug %}<a class="filter" href="{{ ('/refrigerants/' ~ x.slug ~ '/') | u(lang) }}">{{ x.number }}</a>{% else %}<span class="filter">{{ x.number }}</span>{% endif %}{% endfor %}</div>
+    </div>
+    {%- endif %}
+    {%- if r.replacedBy.length %}
+    <div class="card" style="padding:24px">
+      <h3 style="font-size:16px;margin-bottom:12px">{{ T.replacedBy }}</h3>
+      <div class="link-list">{% for x in r.replacedBy %}<a class="filter" href="{{ ('/refrigerants/' ~ x.slug ~ '/') | u(lang) }}">{{ x.number }}</a>{% endfor %}</div>
+    </div>
+    {%- endif %}
+  </div>
+</div></section>
+
+{%- if r.applications and r.applications.length %}
+<div class="container"><section class="section" style="padding-top:0">
+  <div class="apps-band">
+    <h2 style="margin-bottom:0">{{ T.applications }}</h2>
+    <div class="apps-grid">
+      {%- for a in r.applications %}<div class="app-card"><span class="emoji">{{ icon(a.icon) }}</span><div class="t">{{ a.label }}</div></div>{% endfor %}
+    </div>
+  </div>
+</section></div>
+{%- endif %}
+
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.productsOfRef }} {{ r.number }}</h2>
+  {%- if r.products.length %}
+  <div class="prod-grid" style="margin-top:24px">{% for p in r.products %}{{ productCard(p, lang, T) }}{% endfor %}</div>
+  {%- else %}
+  <div class="card empty" style="margin-top:24px">{{ T.noProductsYet }}
+    <div style="margin-top:16px"><a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}?product={{ r.number | urlencode }}">{{ T.requestQuote }}</a></div>
+  </div>
+  {%- endif %}
+  <p class="note">{{ T.dataNote }}</p>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="container">
+  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
+</div></section>

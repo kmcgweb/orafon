@@ -1,0 +1,39 @@
+{%- from "partials/macros.njk" import icon -%}
+<header class="site">
+  <div class="container nav">
+    <a class="logo" href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }} — {{ T.home }}"><img src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="120" height="32"></a>
+    <form class="search" action="{{ '/products/' | u(lang) }}" method="get" role="search">
+      <input type="search" name="q" placeholder="{{ T.searchPh }}" aria-label="{{ T.search }}">
+      <button type="submit" aria-label="{{ T.search }}">{{ icon("search") }}</button>
+    </form>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language">
+        {%- for l in langs %}
+        {%- if l == lang %}<span aria-current="true">{{ l | upper }}</span>
+        {%- else %}<a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ l | upper }}</a>{% endif %}
+        {%- endfor %}
+      </div>
+      <a class="nav-cta grad-bg" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+    </div>
+  </div>
+  <nav class="catbar" aria-label="{{ T.home }}">
+    <div class="container">
+      {%- set nav = [
+        ["home", "/", T.home],
+        ["products", "/products/", T.allProducts],
+        ["refrigerants", "/refrigerants/", T.refrigerants],
+        ["brands", "/brands/", T.brands],
+        ["retrofit", "/retrofit/", T.retrofit],
+        ["documents", "/documents/", T.documents],
+        ["articles", "/articles/", T.articles],
+        ["about", "/about/", T.about],
+        ["contact", "/contact/", T.contact]
+      ] %}
+      {%- for item in nav %}
+      {%- if item[0] != "articles" or D.articles.length %}
+      <a href="{{ item[1] | u(lang) }}"{% if section == item[0] %} class="active" aria-current="page"{% endif %}>{{ item[2] }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </nav>
+</header>

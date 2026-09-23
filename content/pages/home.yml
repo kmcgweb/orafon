@@ -1,0 +1,31 @@
+th:
+  hero_title: สารทำความเย็น
+  hero_highlight: ที่ทีมงานมืออาชีพไว้วางใจ
+  hero_lead: ORAFON จำหน่ายสารทำความเย็นแบรนด์ของเราเองและ Solstice® พร้อมข้อมูลทางเทคนิคและคำปรึกษาสำหรับงานปรับอากาศ เชิงพาณิชย์ และอุตสาหกรรม
+  hero_product: solstice-n40
+  stats:
+    - num: "100%"
+      label: สินค้าของแท้
+    - num: "2"
+      label: แบรนด์ ORAFON และ Solstice®
+    - num: TDS/SDS
+      label: เอกสารทางเทคนิคครบ
+    - num: B2B · B2C
+      label: ผู้รับเหมา ร้านค้า และผู้ใช้ทั่วไป
+  cta_title: พร้อมช่วยวางแผนสารทำความเย็นสำหรับงานของคุณ
+  cta_text: ทีมงาน ORAFON พร้อมให้คำปรึกษาการเลือกสาร ตรวจสอบสต็อก และจัดทำใบเสนอราคา
+en:
+  hero_title: Refrigerants
+  hero_highlight: trusted by professionals
+  hero_lead: ORAFON supplies our own refrigerant brand and Solstice®, with technical data and advice for air-conditioning, commercial and industrial refrigeration.
+  stats:
+    - num: "100%"
+      label: Genuine products
+    - num: "2"
+      label: Brands — ORAFON and Solstice®
+    - num: TDS/SDS
+      label: Full technical documents
+    - num: B2B · B2C
+      label: Contractors, dealers and end users
+  cta_title: Let us help plan the right refrigerant for your job
+  cta_text: The ORAFON team can advise on refrigerant selection, check stock and prepare a quotation.

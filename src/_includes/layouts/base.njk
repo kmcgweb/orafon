@@ -1,0 +1,52 @@
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set S = D.site -%}
+{%- set pageTitle = (title ~ " — " ~ S.brand_name) if title else (S.brand_name ~ " — " ~ S.tagline) -%}
+{%- set pageDesc = description or S.tagline -%}
+{%- set canonical = (pathKey | u(lang)) | absUrl(S.site_url) -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+{%- if noindex %}
+<meta name="robots" content="noindex">
+{%- else %}
+<link rel="canonical" href="{{ canonical }}">
+{%- for l in langs %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ (pathKey | u(l)) | absUrl(S.site_url) }}">
+{%- endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ pathKey | absUrl(S.site_url) }}">
+{%- endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ S.brand_name }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ (ogImage or '/assets/img/orafon-logo.png') | absUrl(S.site_url) }}">
+<meta property="og:locale" content="{{ 'th_TH' if lang == 'th' else 'en_US' }}">
+<link rel="icon" type="image/png" href="/assets/img/orafon-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/orafon.css">
+{%- if extraCss %}
+<link rel="stylesheet" href="/assets/css/{{ extraCss }}">
+{%- endif %}
+{%- if jsonLd %}
+<script type="application/ld+json">{{ jsonLd | safe }}</script>
+{%- endif %}
+</head>
+<body class="{{ bodyClass }}">
+<div class="blobs" aria-hidden="true"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
+{% include "partials/header.njk" %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+{%- if pageScript %}
+<script src="/assets/js/{{ pageScript }}" defer></script>
+{%- endif %}
+</body>
+</html>

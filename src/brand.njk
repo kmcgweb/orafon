@@ -1,0 +1,38 @@
+---
+pagination: { data: brandPages, size: 1, alias: entry }
+permalink: "{{ ('/brands/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
+layout: layouts/base.njk
+section: brands
+eleventyComputed:
+  lang: "{{ entry.lang }}"
+  pathKey: "/brands/{{ entry.item.slug }}/"
+  title: "{{ entry.item.name }}"
+  description: "{{ entry.item.tagline }}"
+---
+{%- from "partials/macros.njk" import productCard, ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set b = entry.item -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/brands/' | u(lang) }}">{{ T.brands }}</a><span>›</span>{{ b.name }}
+</nav></div>
+<section class="page-head"><div class="container">
+  <span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
+  <h1 class="display" style="margin-top:10px">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}" style="height:44px;display:block;margin-bottom:10px">{% endif %}{{ b.name }}</h1>
+  <div class="prose muted" style="margin-top:12px">{{ b.description | md | safe }}</div>
+  {%- if b.website %}<p><a href="{{ b.website }}" target="_blank" rel="noopener">{{ b.website }}</a></p>{% endif %}
+</div></section>
+<section class="section" style="padding-top:24px"><div class="container">
+  <h2 class="display">{{ T.brandPage }} {{ b.name }}</h2>
+  {%- if b.products.length %}
+  <div class="prod-grid" style="margin-top:24px">{% for p in b.products %}{{ productCard(p, lang, T) }}{% endfor %}</div>
+  {%- else %}
+  <div class="card empty" style="margin-top:24px">{{ T.comingSoon }}
+    <div style="margin-top:16px"><a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}?product={{ b.name | urlencode }}">{{ T.contactSales }}</a></div>
+  </div>
+  {%- endif %}
+</div></section>
+<section class="section" style="padding-top:0"><div class="container">
+  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
+</div></section>

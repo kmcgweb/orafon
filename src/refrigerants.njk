@@ -1,0 +1,40 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/refrigerants/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /refrigerants/
+section: refrigerants
+eleventyComputed:
+  title: "{{ i18n[lang].refrigerants }}"
+  description: "{{ i18n[lang].refsLead }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.refrigerants }}</nav></div>
+<section class="page-head"><div class="container">
+  <h1 class="display">{{ T.refrigerants }}</h1>
+  <p>{{ T.refsLead }}</p>
+</div></section>
+<section class="section" style="padding-top:24px"><div class="container">
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr>
+        <th>{{ T.ashrae }}</th><th>{{ T.refType }}</th><th>{{ T.safety }}</th><th>{{ T.gwp }}</th><th>{{ T.odp }}</th><th>{{ T.replaces }}</th><th>{{ T.products }}</th>
+      </tr></thead>
+      <tbody>
+        {%- for r in D.refrigerants %}
+        <tr>
+          <td><a href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">{{ r.number }}</a></td>
+          <td>{{ r.class }}</td>
+          <td><span class="chip {{ 'o' if 'A2' in r.safety or 'A3' in r.safety else 'v' }}">{{ r.safety }}</span></td>
+          <td>{{ r.gwp_ar4 }}</td>
+          <td>{{ r.odp }}</td>
+          <td>{{ r.replaces | join(", ") }}</td>
+          <td>{{ r.products.length or "—" }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="note">{{ T.dataNote }}</p>
+</div></section>

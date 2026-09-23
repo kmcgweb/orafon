@@ -1,0 +1,26 @@
+th:
+  title: เราคือ
+  highlight: ORAFON
+  lead: ORAFON เป็นแบรนด์สารทำความเย็นของ บริษัท โอราโนส จำกัด และเป็นตัวแทนจำหน่าย Solstice® เรามุ่งให้ข้อมูลทางเทคนิคที่ถูกต้อง เพื่อช่วยให้ช่างและผู้รับเหมาเลือกสารทำความเย็นได้เหมาะกับงาน ทั้งด้านประสิทธิภาพ ความปลอดภัย และสิ่งแวดล้อม
+  cards:
+    - title: พันธกิจของเรา
+      text: ส่งมอบสารทำความเย็นคุณภาพและคำแนะนำที่เชื่อถือได้ ช่วยลูกค้าวางแผนระบบอย่างคุ้มค่าและยั่งยืน
+    - title: แบรนด์ ORAFON
+      text: สารทำความเย็นแบรนด์ของเราเอง ครอบคลุมเบอร์น้ำยาที่ใช้งานบ่อยในงานปรับอากาศและทำความเย็น
+    - title: ตัวแทนจำหน่าย Solstice®
+      text: จัดจำหน่ายสารทำความเย็นเทคโนโลยี HFO จาก Solstice® Advanced Materials
+    - title: ใส่ใจสิ่งแวดล้อม
+      text: สนับสนุนการเปลี่ยนผ่านสู่สารทำความเย็น GWP ต่ำ ลดผลกระทบต่อภาวะโลกร้อน
+  body: ""
+en:
+  title: We are
+  lead: ORAFON is the refrigerant brand of Oranoss Co., Ltd. and an authorized distributor of Solstice®. We focus on accurate technical information so technicians and contractors can choose the right refrigerant for performance, safety and the environment.
+  cards:
+    - title: Our mission
+      text: Deliver quality refrigerants and trustworthy advice that help customers plan cost-effective, sustainable systems.
+    - title: The ORAFON brand
+      text: Our own refrigerant brand, covering the most widely used grades for air-conditioning and refrigeration.
+    - title: Solstice® distributor
+      text: We distribute HFO-technology refrigerants from Solstice® Advanced Materials.
+    - title: Caring for the environment
+      text: We support the transition to low-GWP refrigerants to reduce climate impact.

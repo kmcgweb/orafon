@@ -1,0 +1,36 @@
+th:
+  id: r-448a
+  number: R-448A
+  class: HFO Blend
+  composition: R-32 / R-125 / R-1234yf / R-134a / R-1234ze(E) (26/26/20/21/7)
+  blend_type: zeotropic
+  safety: A1
+  gwp_ar4: "1387"
+  gwp_ar5: "1273"
+  odp: "0"
+  boiling_point: "−45.9"
+  replaces: [R-404A, R-507A, R-22]
+  color: "#4F46E5"
+  color2: "#7C3AED"
+  order: 60
+  summary: สาร HFO/HFC ผสม ไม่ติดไฟ (A1) ออกแบบเพื่อทดแทน R-404A, R-507A และ R-22 ในงานทำความเย็นเชิงพาณิชย์อุณหภูมิต่ำถึงปานกลาง ค่า GWP ต่ำกว่า R-404A ราว 65–68%
+  applications:
+    - icon: store
+      label: ซูเปอร์มาร์เก็ต
+    - icon: snow
+      label: ห้องเย็น
+    - icon: fridge
+      label: ตู้แช่ / ตู้โชว์
+    - icon: factory
+      label: ระบบ DX อุตสาหกรรม
+en:
+  summary: A non-flammable (A1) HFO/HFC blend designed to replace R-404A, R-507A and R-22 in low- and medium-temperature commercial refrigeration, with around 65–68% lower GWP than R-404A.
+  applications:
+    - icon: store
+      label: Supermarkets
+    - icon: snow
+      label: Cold rooms
+    - icon: fridge
+      label: Display cases / freezers
+    - icon: factory
+      label: Industrial DX systems

@@ -1,0 +1,24 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+{%- set site = db.th.site.site_url -%}
+{%- set paths = ["/", "/products/", "/refrigerants/", "/brands/", "/retrofit/", "/documents/", "/about/", "/contact/", "/privacy/"] -%}
+{%- if db.th.articles.length %}{% set paths = paths.concat(["/articles/"]) %}{% endif -%}
+{%- for p in db.th.products %}{% set paths = paths.concat(["/products/" ~ p.slug ~ "/"]) %}{% endfor -%}
+{%- for r in db.th.refrigerants %}{% set paths = paths.concat(["/refrigerants/" ~ r.slug ~ "/"]) %}{% endfor -%}
+{%- for b in db.th.brands %}{% set paths = paths.concat(["/brands/" ~ b.slug ~ "/"]) %}{% endfor -%}
+{%- for a in db.th.articles %}{% set paths = paths.concat(["/articles/" ~ a.slug ~ "/"]) %}{% endfor -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for p in paths %}
+{%- for l in langs %}
+  <url>
+    <loc>{{ (p | u(l)) | absUrl(site) }}</loc>
+    {%- for l2 in langs %}
+    <xhtml:link rel="alternate" hreflang="{{ l2 }}" href="{{ (p | u(l2)) | absUrl(site) }}"/>
+    {%- endfor %}
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>

@@ -1,0 +1,281 @@
+# ORAFON admin (Sveltia CMS) — edits are saved as commits to GitHub (branch main).
+# GitHub Actions then rebuilds the site and Plesk deploys it (about 1–2 minutes).
+# Log in with a GitHub fine-grained personal access token (Contents: read & write on kmcgweb/orafon).
+
+backend:
+  name: github
+  repo: kmcgweb/orafon
+  branch: main
+  commit_messages:
+    create: "เพิ่ม {{collection}}: {{slug}}"
+    update: "แก้ไข {{collection}}: {{slug}}"
+    delete: "ลบ {{collection}}: {{slug}}"
+    uploadMedia: "อัปโหลดไฟล์ {{path}}"
+    deleteMedia: "ลบไฟล์ {{path}}"
+
+site_url: https://orafon.co.th
+display_url: https://orafon.co.th
+logo_url: /assets/img/orafon-logo.png
+
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+
+# Images are converted to WebP and resized in the browser before upload
+media_libraries:
+  default:
+    config:
+      max_file_size: 20000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1600
+          height: 1600
+
+i18n:
+  structure: single_file
+  locales: [th, en]
+  default_locale: th
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ------------------------------------------------------------ PRODUCTS
+  - name: products
+    label: "สินค้า (Products)"
+    label_singular: "สินค้า"
+    description: "สินค้าแต่ละรายการ = แบรนด์ + เบอร์น้ำยา + ขนาดบรรจุ ข้อมูลเทคนิค (GWP, ASHRAE) ดึงจาก 'เบอร์น้ำยา' อัตโนมัติ"
+    folder: content/products
+    extension: yml
+    format: yaml
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{id}}"
+    identifier_field: name
+    summary: "{{name}} · {{brand}} · {{refrigerant}}{{draft | ternary(' · (ซ่อน)', '')}}"
+    sortable_fields: [order, name]
+    view_groups:
+      - { label: "แบรนด์", field: brand }
+    fields:
+      - { name: id, label: "รหัส URL", hint: "ภาษาอังกฤษตัวเล็ก ตัวเลข และ - เช่น orafon-r32 (ห้ามเปลี่ยนหลังเผยแพร่)", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
+      - { name: name, label: "ชื่อสินค้า", widget: string, i18n: true }
+      - { name: brand, label: "แบรนด์", widget: relation, collection: brands, value_field: "{{slug}}", search_fields: [name], display_fields: [name] }
+      - { name: refrigerant, label: "เบอร์น้ำยา", widget: relation, collection: refrigerants, value_field: "{{slug}}", search_fields: [number], display_fields: [number] }
+      - { name: tagline, label: "คำโปรยใต้ชื่อ", hint: "เช่น สารทำความเย็น HFO Blend", widget: string, required: false, i18n: true }
+      - { name: tag, label: "ป้ายบนการ์ด", hint: "เช่น แนะนำ / ใหม่ (เว้นว่างได้)", widget: string, required: false, i18n: true }
+      - { name: images, label: "รูปสินค้า", hint: "รูปแรกคือรูปหลัก ถ้าไม่มีรูปจะแสดงภาพถังตามสีของเบอร์น้ำยา", widget: list, required: false, field: { name: image, label: "รูป", widget: image } }
+      - name: packages
+        label: "ขนาดบรรจุ"
+        widget: list
+        required: false
+        summary: "{{name}} — {{kg}} kg"
+        fields:
+          - { name: name, label: "ชื่อขนาด", hint: "เช่น ถัง 13.6 kg / Cylinder", widget: string }
+          - { name: kg, label: "น้ำหนัก (kg)", widget: number, value_type: float }
+          - { name: lb, label: "น้ำหนัก (lb) ถ้ามี", widget: number, value_type: float, required: false }
+          - { name: sku, label: "SKU", widget: string, required: false }
+      - { name: badges, label: "จุดเด่นสั้น ๆ (ป้ายสี)", widget: list, required: false, i18n: true }
+      - { name: short, label: "คำอธิบายสั้น", widget: text, required: false, i18n: true }
+      - name: highlights
+        label: "จุดเด่น (กล่องในแท็บรายละเอียด)"
+        widget: list
+        required: false
+        i18n: true
+        summary: "{{title}}"
+        fields:
+          - { name: title, label: "หัวข้อ", widget: string }
+          - { name: text, label: "รายละเอียด", widget: string }
+      - { name: description, label: "รายละเอียดสินค้า", widget: markdown, required: false, i18n: true }
+      - name: applications
+        label: "การใช้งาน (เว้นว่าง = ใช้ของเบอร์น้ำยา)"
+        widget: list
+        required: false
+        i18n: true
+        summary: "{{label}}"
+        fields: &appFields
+          - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, heatpump, snow, store, box, car, fridge, chiller, truck, factory], i18n: duplicate }
+          - { name: label, label: "ข้อความ", widget: string }
+      - name: documents
+        label: "เอกสาร (TDS/SDS)"
+        widget: list
+        required: false
+        summary: "{{type}} — {{label}}"
+        fields:
+          - { name: type, label: "ประเภท", widget: select, options: [TDS, SDS, Sales, Other] }
+          - { name: label, label: "ชื่อเอกสาร", widget: string }
+          - { name: file, label: "ไฟล์ PDF (เว้นว่าง = ให้ลูกค้ากดขอเอกสาร)", widget: file, required: false }
+      - name: faq
+        label: "คำถามที่พบบ่อย"
+        widget: list
+        required: false
+        i18n: true
+        summary: "{{q}}"
+        fields:
+          - { name: q, label: "คำถาม", widget: string }
+          - { name: a, label: "คำตอบ", widget: text }
+      - { name: seo_description, label: "คำอธิบายสำหรับ Google", widget: text, required: false, i18n: true }
+      - { name: featured, label: "แสดงในสินค้าแนะนำหน้าแรก", widget: boolean, default: false }
+      - { name: draft, label: "ซ่อนจากเว็บไซต์ (ฉบับร่าง)", widget: boolean, default: false }
+      - { name: order, label: "ลำดับการแสดง (น้อย = ก่อน)", widget: number, value_type: int, default: 100 }
+
+  # ------------------------------------------------------------ REFRIGERANTS
+  - name: refrigerants
+    label: "เบอร์น้ำยา (Refrigerants)"
+    label_singular: "เบอร์น้ำยา"
+    description: "ข้อมูลสากลของแต่ละเบอร์ กรอกครั้งเดียว สินค้าทุกแบรนด์ของเบอร์นั้นจะใช้ข้อมูลนี้"
+    folder: content/refrigerants
+    extension: yml
+    format: yaml
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{id}}"
+    identifier_field: number
+    summary: "{{number}} · {{class}} · {{safety}} · GWP {{gwp_ar4}}"
+    sortable_fields: [order, number]
+    fields:
+      - { name: id, label: "รหัส URL", hint: "เช่น r-32, r-410a", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
+      - { name: number, label: "เบอร์ ASHRAE", hint: "เช่น R-32", widget: string }
+      - { name: class, label: "ประเภท", widget: select, options: [HFO, HFO Blend, HFC, HFC Blend, HCFC, HC, Natural] }
+      - { name: composition, label: "ส่วนผสม", widget: string, required: false }
+      - { name: blend_type, label: "ลักษณะสาร", widget: select, options: [pure, azeotropic, near-azeotropic, zeotropic] }
+      - { name: safety, label: "ASHRAE safety", widget: select, options: [A1, A2L, A2, A3, B1, B2L] }
+      - { name: gwp_ar4, label: "GWP (AR4)", widget: string }
+      - { name: gwp_ar5, label: "GWP (AR5)", widget: string, required: false }
+      - { name: odp, label: "ODP", widget: string, default: "0" }
+      - { name: boiling_point, label: "จุดเดือด / Bubble point (°C)", widget: string, required: false }
+      - { name: replaces, label: "ใช้ทดแทนสาร", hint: "เช่น R-22, R-404A (ใช้สร้างตารางสารทดแทนอัตโนมัติ)", widget: list, required: false }
+      - { name: color, label: "สีหลักของรูปถัง", widget: color, default: "#4F46E5" }
+      - { name: color2, label: "สีรองของรูปถัง", widget: color, default: "#7C3AED" }
+      - { name: summary, label: "คำอธิบาย", widget: text, i18n: true }
+      - name: applications
+        label: "การใช้งานทั่วไป"
+        widget: list
+        required: false
+        i18n: true
+        summary: "{{label}}"
+        fields: *appFields
+      - { name: order, label: "ลำดับการแสดง", widget: number, value_type: int, default: 100 }
+
+  # ------------------------------------------------------------ BRANDS
+  - name: brands
+    label: "แบรนด์ (Brands)"
+    label_singular: "แบรนด์"
+    folder: content/brands
+    extension: yml
+    format: yaml
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{id}}"
+    identifier_field: name
+    summary: "{{name}}"
+    fields:
+      - { name: id, label: "รหัส URL", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
+      - { name: name, label: "ชื่อแบรนด์", widget: string }
+      - { name: logo, label: "โลโก้", widget: image, required: false }
+      - { name: own_brand, label: "แบรนด์ของเราเอง", widget: boolean, default: false }
+      - { name: website, label: "เว็บไซต์", widget: string, required: false }
+      - { name: tagline, label: "คำโปรย", widget: string, i18n: true }
+      - { name: description, label: "รายละเอียด", widget: markdown, i18n: true }
+      - { name: order, label: "ลำดับการแสดง", widget: number, value_type: int, default: 100 }
+
+  # ------------------------------------------------------------ ARTICLES
+  - name: articles
+    label: "บทความ (Articles)"
+    label_singular: "บทความ"
+    folder: content/articles
+    extension: yml
+    format: yaml
+    create: true
+    delete: true
+    i18n: true
+    slug: "{{id}}"
+    identifier_field: title
+    summary: "{{title}} · {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: [date, title]
+    fields:
+      - { name: id, label: "รหัส URL", hint: "ภาษาอังกฤษ เช่น r404a-alternatives", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
+      - { name: title, label: "หัวข้อ", widget: string, i18n: true }
+      - { name: date, label: "วันที่", widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+      - { name: cover, label: "รูปหน้าปก", widget: image, required: false }
+      - { name: excerpt, label: "เกริ่นนำ", widget: text, required: false, i18n: true }
+      - { name: body, label: "เนื้อหา", widget: markdown, i18n: true }
+      - { name: draft, label: "ซ่อน (ฉบับร่าง)", widget: boolean, default: false }
+
+  # ------------------------------------------------------------ PAGES
+  - name: pages
+    label: "หน้าเว็บ (Pages)"
+    i18n: true
+    files:
+      - name: home
+        label: "หน้าแรก"
+        file: content/pages/home.yml
+        i18n: true
+        fields:
+          - { name: hero_title, label: "หัวข้อใหญ่", widget: string, i18n: true }
+          - { name: hero_highlight, label: "หัวข้อใหญ่ (ส่วนสีไล่เฉด)", widget: string, i18n: true }
+          - { name: hero_lead, label: "คำอธิบายใต้หัวข้อ", widget: text, i18n: true }
+          - { name: hero_product, label: "สินค้าที่แสดงในภาพหลัก", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false }
+          - name: stats
+            label: "ตัวเลขความน่าเชื่อถือ"
+            widget: list
+            i18n: true
+            fields:
+              - { name: num, label: "ตัวเลข/คำ", widget: string }
+              - { name: label, label: "คำอธิบาย", widget: string }
+          - { name: cta_title, label: "หัวข้อแถบติดต่อ", widget: string, i18n: true }
+          - { name: cta_text, label: "ข้อความแถบติดต่อ", widget: text, i18n: true }
+      - name: about
+        label: "เกี่ยวกับเรา"
+        file: content/pages/about.yml
+        i18n: true
+        fields:
+          - { name: title, label: "หัวข้อ", widget: string, i18n: true }
+          - { name: highlight, label: "หัวข้อ (ส่วนสีไล่เฉด)", widget: string }
+          - { name: lead, label: "คำอธิบาย", widget: text, i18n: true }
+          - name: cards
+            label: "การ์ดข้อมูล"
+            widget: list
+            i18n: true
+            fields:
+              - { name: title, label: "หัวข้อ", widget: string }
+              - { name: text, label: "ข้อความ", widget: text }
+          - { name: body, label: "เนื้อหาเพิ่มเติม", widget: markdown, required: false, i18n: true }
+      - name: privacy
+        label: "นโยบายความเป็นส่วนตัว"
+        file: content/pages/privacy.yml
+        i18n: true
+        fields:
+          - { name: title, label: "หัวข้อ", widget: string, i18n: true }
+          - { name: updated, label: "ปรับปรุงล่าสุด", widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+          - { name: body, label: "เนื้อหา", widget: markdown, i18n: true }
+
+  # ------------------------------------------------------------ SETTINGS
+  - name: settings
+    label: "ตั้งค่าเว็บไซต์ (Settings)"
+    i18n: true
+    files:
+      - name: site
+        label: "ข้อมูลบริษัทและช่องทางติดต่อ"
+        file: content/settings/site.yml
+        i18n: true
+        fields:
+          - { name: site_url, label: "URL เว็บไซต์", widget: string, default: "https://orafon.co.th" }
+          - { name: brand_name, label: "ชื่อแบรนด์", widget: string, default: "ORAFON" }
+          - { name: company_name, label: "ชื่อบริษัท", widget: string, i18n: true }
+          - { name: tagline, label: "สโลแกน (ใช้ใน title และ Google)", widget: string, i18n: true }
+          - { name: footer_about, label: "ข้อความใน footer", widget: text, i18n: true }
+          - { name: address, label: "ที่อยู่", widget: text, i18n: true }
+          - { name: hours, label: "เวลาทำการ", widget: string, i18n: true }
+          - { name: phone, label: "เบอร์โทร (สำหรับกดโทร)", hint: "รูปแบบสากล เช่น +6621234567", widget: string }
+          - { name: phone_display, label: "เบอร์โทร (แสดงผล)", hint: "เช่น 02-123-4567", widget: string }
+          - { name: email, label: "อีเมลที่แสดงบนเว็บ", widget: string }
+          - { name: form_email, label: "อีเมลรับแบบฟอร์มขอใบเสนอราคา", widget: string }
+          - { name: line_id, label: "LINE Official ID", hint: "รวม @ เช่น @orafon", widget: string, required: false }
+          - { name: facebook_url, label: "Facebook URL", widget: string, required: false }
+          - { name: map_url, label: "Google Maps URL", widget: string, required: false }

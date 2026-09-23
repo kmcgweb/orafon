@@ -1,0 +1,243 @@
+---
+pagination: { data: productPages, size: 1, alias: entry }
+permalink: "{{ ('/products/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
+layout: layouts/base.njk
+section: products
+extraCss: product.css
+pageScript: product.js
+bodyClass: has-sticky
+eleventyComputed:
+  lang: "{{ entry.lang }}"
+  pathKey: "/products/{{ entry.item.slug }}/"
+  title: "{{ entry.item.name }}"
+  description: "{{ entry.item.seo_description or entry.item.short }}"
+  ogImage: "{{ entry.item.images[0] if entry.item.images and entry.item.images[0] else '' }}"
+---
+{%- from "partials/macros.njk" import icon, cylinder, productCard, ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set S = D.site -%}
+{%- set p = entry.item -%}
+{%- set r = p.ref -%}
+{%- set b = p.brandObj -%}
+{%- set apps = p.applications if (p.applications and p.applications.length) else (r.applications if r else []) -%}
+{%- set hlIcons = ["gwp", "bolt", "shield", "cube", "grid", "doc"] -%}
+{%- set contactUrl = '/contact/' | u(lang) -%}
+
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="{{ '/' | u(lang) }}">{{ S.brand_name }}</a><span>›</span>
+  <a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a><span>›</span>
+  {%- if b %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a><span>›</span>{% endif %}
+  {{ p.name }}
+</nav></div>
+
+<div class="container">
+  <div class="product" id="product"
+       data-name="{{ p.name }}" data-line="{{ S.line_id }}" data-contact="{{ contactUrl }}" data-linemsg="{{ T.lineMsg }}">
+    <!-- gallery -->
+    <div class="gallery">
+      <div class="main-wrap"><div class="main-img">
+        {%- if p.images and p.images[0] %}<img id="mainImg" src="{{ p.images[0] }}" alt="{{ p.name }}">{% else %}{{ cylinder(r, "main") }}{% endif %}
+      </div></div>
+      {%- if p.images and p.images.length > 1 %}
+      <div class="thumbs">
+        {%- for img in p.images %}
+        <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+
+    <!-- info -->
+    <div class="info">
+      <div class="brand-badge">
+        {%- if r %}<span class="tag grad-bg">{{ r.class }}</span>{% endif %}
+        <span class="txt">{% if b %}{{ b.name }}{% if not b.own_brand %} · {{ T.distributedBy }} {{ S.brand_name }}{% endif %}{% endif %}</span>
+      </div>
+      <h1 class="pname">{{ p.name }}{% if p.tagline %}<br><span class="grad-text">{{ p.tagline }}</span>{% endif %}</h1>
+      {%- if r %}<div class="pinfo-sku">ASHRAE: {{ r.number }}{% if p.packages and p.packages[0] %} · {{ T.sku }}: {{ p.packages[0].sku }}{% endif %}</div>{% endif %}
+
+      {%- if p.badges and p.badges.length %}
+      <div class="badge-row">
+        {%- set bc = ["green", "indigo", "violet"] %}
+        {%- for x in p.badges %}<span class="badge {{ bc[loop.index0 % 3] }}">{{ x }}</span>{% endfor %}
+      </div>
+      {%- endif %}
+
+      {%- if r %}
+      <div class="stat-row">
+        <div class="stat"><div class="num grad-text">{{ r.gwp_ar4 }}</div><div class="lbl">{{ T.gwp }}</div></div>
+        <div class="stat"><div class="num grad-text">{{ r.safety }}</div><div class="lbl">ASHRAE</div></div>
+        <div class="stat"><div class="num grad-text">{{ r.odp }}</div><div class="lbl">{{ T.odp }}</div></div>
+      </div>
+      {%- endif %}
+
+      {%- if p.short %}<div class="short-desc">{{ p.short }}</div>{% endif %}
+
+      {%- if r %}
+      <ul class="specs">
+        <li><span class="ico">▸</span><span class="k">{{ T.refType }}</span><span class="v">{{ r.class }}{% if r.blend_type %} ({{ T.blend[r.blend_type] or r.blend_type }}){% endif %}</span></li>
+        <li><span class="ico">▸</span><span class="k">{{ T.safety }}</span><span class="v">{{ T.safetyText[r.safety] or r.safety }}</span></li>
+        <li><span class="ico">▸</span><span class="k">{{ T.ashrae }}</span><span class="v"><a href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">{{ r.number }}</a></span></li>
+        <li><span class="ico">▸</span><span class="k">{{ T.odp }}</span><span class="v">{{ r.odp }}</span></li>
+        <li><span class="ico">▸</span><span class="k">{{ T.gwp }}</span><span class="v">{{ r.gwp_ar4 }}</span></li>
+        {%- if r.replaces and r.replaces.length %}<li><span class="ico">▸</span><span class="k">{{ T.replaces }}</span><span class="v">{{ r.replaces | join(", ") }}</span></li>{% endif %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+</div>
+
+{%- if apps.length %}
+<div class="container"><section class="section" style="padding-top:0">
+  <div class="apps-band">
+    <h2 style="margin-bottom:14px">{{ T.applications }}</h2>
+    <p class="lead" style="margin-bottom:0">{{ T.appsLead }}</p>
+    <div class="apps-grid">
+      {%- for a in apps %}<div class="app-card"><span class="emoji">{{ icon(a.icon) }}</span><div class="t">{{ a.label }}</div></div>{% endfor %}
+    </div>
+  </div>
+</section></div>
+{%- endif %}
+
+<div class="container"><section class="section" id="details" style="padding-top:0">
+  <div class="tabs-card">
+    <div class="tabs-nav" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="desc">{{ T.tabDesc }}</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="specs">{{ T.tabSpecs }}</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="docs">{{ T.tabDocs }}</button>
+      {%- if p.faq and p.faq.length %}<button class="tab-btn" role="tab" aria-selected="false" data-tab="faq">{{ T.tabFaq }}</button>{% endif %}
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="related">{{ T.tabRelated }}</button>
+    </div>
+
+    <div class="tab-pane active" data-pane="desc" role="tabpanel">
+      {%- if p.highlights and p.highlights.length %}
+      <div class="hl-grid">
+        {%- for h in p.highlights %}
+        <div class="hl"><span class="ic">{{ icon(hlIcons[loop.index0 % 6]) }}</span><div><h5>{{ h.title }}</h5><p>{{ h.text }}</p></div></div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if p.description %}
+      <div class="tab-collapse clamped prose" id="descCollapse">{{ p.description | md | safe }}</div>
+      <div class="collapse-toggle">
+        <button type="button" data-collapse="descCollapse" aria-expanded="false" data-more="{{ T.showMore }}" data-less="{{ T.showLess }}">
+          <span class="lbl">{{ T.showMore }}</span><span class="ci">{{ icon("chev") }}</span>
+        </button>
+      </div>
+      {%- endif %}
+    </div>
+
+    <div class="tab-pane" data-pane="specs" role="tabpanel">
+      <table class="spec-table">
+        <tbody>
+          <tr class="grp"><td colspan="2">{{ T.specGroupBrand }}</td></tr>
+          {%- if b %}<tr><th>{{ T.brand }}</th><td>{{ b.name }}</td></tr>{% endif %}
+          <tr><th>{{ T.distributedBy }}</th><td>{{ S.company_name }} ({{ S.brand_name }})</td></tr>
+          {%- if r %}
+          <tr class="grp"><td colspan="2">{{ T.specGroupData }}</td></tr>
+          <tr><th>{{ T.ashrae }}</th><td>{{ r.number }}</td></tr>
+          <tr><th>{{ T.refType }}</th><td>{{ r.class }}</td></tr>
+          <tr><th>{{ T.blendType }}</th><td>{{ T.blend[r.blend_type] or r.blend_type }}</td></tr>
+          <tr><th>{{ T.composition }}</th><td>{{ r.composition }}</td></tr>
+          <tr><th>{{ T.safety }}</th><td>{{ T.safetyText[r.safety] or r.safety }}</td></tr>
+          <tr><th>{{ T.odp }}</th><td>{{ r.odp }}</td></tr>
+          <tr><th>{{ T.gwp }}</th><td>{{ r.gwp_ar4 }}</td></tr>
+          <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 }}</td></tr>
+          <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point }}</td></tr>
+          {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
+          {%- endif %}
+          {%- if p.packages and p.packages.length %}
+          <tr class="grp"><td colspan="2">{{ T.specGroupPack }}</td></tr>
+          {%- for k in p.packages %}<tr><th>{{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}</td></tr>{% endfor %}
+          {%- endif %}
+        </tbody>
+      </table>
+      <p class="note">{{ T.dataNote }}</p>
+    </div>
+
+    <div class="tab-pane" data-pane="docs" role="tabpanel">
+      <p class="muted" style="margin-bottom:16px">{{ T.docsLead }}</p>
+      {%- if p.documents and p.documents.length %}
+        {%- for d in p.documents %}
+        <div class="doc-row">
+          <div class="doc-ic">{{ d.type or "PDF" }}</div>
+          <div class="doc-meta"><div class="dt">{{ d.label }}</div><div class="dd">{{ p.name }} · PDF</div></div>
+          {%- if d.file %}<a class="doc-dl" href="{{ d.file }}" target="_blank" rel="noopener">{{ T.download }}</a>
+          {%- else %}<a class="doc-dl" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ T.requestDoc }}</a>{% endif %}
+        </div>
+        {%- endfor %}
+      {%- else %}<p class="muted">{{ T.noDocs }}</p>{% endif %}
+    </div>
+
+    {%- if p.faq and p.faq.length %}
+    <div class="tab-pane" data-pane="faq" role="tabpanel">
+      <div class="faq">
+        {%- for f in p.faq %}
+        <details{% if loop.first %} open{% endif %}><summary>{{ f.q }}<span class="chev">{{ icon("chev") }}</span></summary><div class="ans">{{ f.a }}</div></details>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif %}
+
+    <div class="tab-pane" data-pane="related" role="tabpanel">
+      <div class="rel-grid">
+        {%- if r %}<a class="rel-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ T.moreOf }} {{ r.number }}</span><br><span class="rd">{{ r.class }} · {{ r.safety }}</span></span></a>{% endif %}
+        {%- if b %}<a class="rel-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ b.name | first }}</span><span><span class="rt">{{ T.brandPage }} {{ b.name }}</span><br><span class="rd">{{ b.tagline }}</span></span></a>{% endif %}
+        {%- if r %}{% for o in r.products %}{% if o.slug != p.slug %}<a class="rel-card" href="{{ ('/products/' ~ o.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ o.name }}</span><br><span class="rd">{{ o.brandObj.name if o.brandObj }}</span></span></a>{% endif %}{% endfor %}{% endif %}
+        <a class="rel-card" href="{{ '/retrofit/' | u(lang) }}"><span class="rel-ic">↔</span><span><span class="rt">{{ T.retrofit }}</span></span></a>
+        <a class="rel-card" href="{{ '/products/' | u(lang) }}"><span class="rel-ic">＋</span><span><span class="rt">{{ T.allProducts }}</span></span></a>
+      </div>
+    </div>
+  </div>
+</section></div>
+
+<div class="container"><section class="section" id="packages" style="padding-top:0">
+  <div class="buy-card">
+    {%- if p.packages and p.packages.length %}
+    <div class="pkg-head">
+      <h2>{{ T.packages }} <span class="grad-text">{{ T.packagesHi }}</span></h2>
+      <span class="pkg-hint">{{ T.pickOne }}</span>
+    </div>
+    <div class="pkg-opts" id="pkgOpts">
+      {%- for k in p.packages %}
+      <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
+              data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}">
+        <span class="check">{{ icon("check") }}</span>
+        <span class="name">{{ k.name }}</span>
+        <span class="kg">{{ k.kg | kg }} <small>kg</small></span>
+        <span class="meta">{% if k.lb %}{{ k.lb | kg }} lb{% endif %}{% if k.lb and k.sku %} · {% endif %}{% if k.sku %}SKU {{ k.sku }}{% endif %}</span>
+      </button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    <div class="pkg-foot">
+      <div class="quote-note">{{ T.quoteNote }}</div>
+      <div class="cta-row">
+        <a class="btn btn-primary grad-bg js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
+        {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ T.askLine }}</a>{% endif %}
+        {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section></div>
+
+<div class="container"><section class="section" style="padding-top:0">
+  {{ ctaBand(lang, T, S, D.home.cta_title, D.home.cta_text) }}
+</section></div>
+
+<div class="sticky-cta">
+  {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE</a>{% else %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
+  <a class="btn btn-primary grad-bg js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
+</div>
+
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": p.name,
+  "description": p.short,
+  "brand": { "@type": "Brand", "name": b.name if b else S.brand_name },
+  "sku": p.packages[0].sku if (p.packages and p.packages[0]) else "",
+  "category": "Refrigerant",
+  "image": ((p.images[0] if (p.images and p.images[0]) else "/assets/img/orafon-logo.png") | absUrl(S.site_url))
+} | json | safe }}</script>

@@ -1,0 +1,144 @@
+th:
+  id: solstice-n40
+  brand: solstice
+  refrigerant: r-448a
+  featured: true
+  draft: false
+  order: 10
+  images: []
+  packages:
+    - name: Jug
+      kg: 11.3
+      lb: 25
+      sku: "10637999"
+    - name: Cylinder
+      kg: 45
+      lb: 100
+      sku: "10637061"
+    - name: Half Ton
+      kg: 386
+      lb: 850
+      sku: "10657578"
+    - name: Ton
+      kg: 658
+      lb: 1450
+      sku: "10655356"
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ""
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ""
+    - type: Sales
+      label: Sales Sheet — Solstice N40
+      file: ""
+  name: Solstice® N40 (R-448A)
+  tagline: สารทำความเย็น HFO Blend
+  tag: แนะนำ
+  badges:
+    - ลด GWP 68% เทียบ R-404A
+    - A1 ไม่ติดไฟ
+    - ODP = 0
+  short: Solstice® N40 (R-448A) คือสารทำความเย็นชนิด HFO blend ที่ไม่ติดไฟ ออกแบบมาเพื่อทดแทน R-404A, R-507, R-22 และ R-407 ในงานทำความเย็นเชิงพาณิชย์ เหมาะทั้งการติดตั้งใหม่และงานรีโทรฟิต ให้ค่า GWP ต่ำลงและช่วยลดการใช้พลังงานในระบบที่เข้าเงื่อนไข
+  highlights:
+    - title: ลด GWP 68%
+      text: เทียบกับ R-404A รองรับการเปลี่ยนจาก HFC/HCFC รุ่นเก่า
+    - title: ประหยัดพลังงาน
+      text: ลดการใช้พลังงานในระบบที่เข้าเงื่อนไข
+    - title: A1 ไม่ติดไฟ
+      text: จัดการได้ตามแนวทางที่ช่างคุ้นเคย
+    - title: ติดตั้งใหม่ / รีโทรฟิต
+      text: ใช้ได้ทั้งระบบใหม่และงานเปลี่ยนจาก R-404A
+    - title: อุณหภูมิต่ำ–ปานกลาง
+      text: ค้าปลีกอาหาร ห้องเย็น ตู้โชว์ ระบบ DX
+    - title: เอกสาร TDS/SDS ครบ
+      text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
+  description: |
+    Solstice® N40 (R-448A) เป็นสารทำความเย็นชนิด HFO blend ที่ไม่ติดไฟ ออกแบบมาเป็นทางเลือกทดแทน R-404A, R-507, R-22 และ R-407 series รวมถึง interim blends ในงานทำความเย็นเชิงพาณิชย์ เหมาะกับผู้รับเหมา ตัวแทนจำหน่าย ทีมบริการ และผู้ดูแลอาคาร ทั้งงานติดตั้งใหม่และงานรีโทรฟิต สำหรับระบบทำความเย็นอุณหภูมิต่ำและปานกลาง
+
+    ด้วยการจำแนก A1 ไม่ติดไฟ จึงรองรับแนวทางการจัดการที่ช่างคุ้นเคย ขณะที่โปรไฟล์ประสิทธิภาพช่วยสนับสนุนการทำงานของระบบทำความเย็นที่ไว้วางใจได้ ครอบคลุมงานคลังเย็นและค้าปลีกอาหารทั่วไป
+
+    เมื่อเทียบกับ R-404A แล้ว Solstice N40 ให้ค่า GWP ต่ำลง 68% และช่วยลดการใช้พลังงานในระบบที่เข้าเงื่อนไข จึงเป็นจุดขายด้านประสิทธิภาพและต้นทุนการดำเนินงานสำหรับทีมที่วางแผนสารทำความเย็นระยะยาว
+  applications:
+    - icon: fridge
+      label: ตู้แช่เชิงพาณิชย์ อุณหภูมิต่ำ–ปานกลาง
+    - icon: factory
+      label: ระบบ DX อุตสาหกรรม
+    - icon: box
+      label: ชุดคอนเดนซิ่งค้าปลีก
+    - icon: snow
+      label: ตู้แช่แข็งและตู้โชว์
+    - icon: store
+      label: ตู้แช่ร้านสะดวกซื้อ
+    - icon: store
+      label: ซูเปอร์มาร์เก็ต
+    - icon: box
+      label: คลังห้องเย็น
+    - icon: snow
+      label: ชุดคอนเดนซิ่ง Self-contained
+  faq:
+    - q: Solstice N40 ใช้ทดแทนสารตัวไหนได้บ้าง?
+      a: ใช้ทดแทน R-404A, R-507, R-22 และ R-407 series รวมถึง interim blends ในงานทำความเย็นเชิงพาณิชย์ รองรับทั้งงานติดตั้งใหม่และงานรีโทรฟิต
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A1 (nonflammable) ตามมาตรฐาน ASHRAE คือไม่ติดไฟ รองรับแนวทางการจัดการที่ช่างและทีมบริการคุ้นเคยอยู่แล้ว
+    - q: ช่วยลด GWP และประหยัดพลังงานได้จริงไหม?
+      a: เทียบกับ R-404A ให้ค่า GWP ต่ำลง 68% และช่วยลดการใช้พลังงานในระบบที่เข้าเงื่อนไข ช่วยลดต้นทุนการดำเนินงานระยะยาว
+    - q: มีขนาดบรรจุอะไรบ้าง?
+      a: มี 4 ขนาด ได้แก่ Jug 11.3 kg, Cylinder 45 kg, Half Ton 386 kg และ Ton 658 kg ติดต่อ ORAFON เพื่อตรวจสอบสต็อกและขอใบเสนอราคา
+  seo_description: Solstice® N40 (R-448A) สารทำความเย็น HFO Blend ไม่ติดไฟ A1 ทดแทน R-404A ลด GWP 68% จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+en:
+  name: Solstice® N40 (R-448A)
+  tagline: HFO blend refrigerant
+  tag: Recommended
+  badges:
+    - 68% lower GWP vs R-404A
+    - A1 non-flammable
+    - ODP = 0
+  short: Solstice® N40 (R-448A) is a non-flammable HFO blend designed to replace R-404A, R-507, R-22 and R-407 series in commercial refrigeration — for new systems and retrofits — offering lower GWP and energy savings in qualifying systems.
+  highlights:
+    - title: 68% lower GWP
+      text: Compared with R-404A; supports the move away from older HFCs/HCFCs
+    - title: Energy savings
+      text: Reduced energy use in qualifying systems
+    - title: A1 non-flammable
+      text: Familiar handling practices for technicians
+    - title: New build / retrofit
+      text: Suitable for new systems and R-404A conversions
+    - title: Low–medium temperature
+      text: Food retail, cold rooms, display cases, DX systems
+    - title: TDS/SDS available
+      text: Request them from the "Documents" tab or the ORAFON team
+  description: |
+    Solstice® N40 (R-448A) is a non-flammable HFO blend developed as an alternative to R-404A, R-507, R-22 and the R-407 series, including interim blends, in commercial refrigeration. It suits contractors, distributors, service teams and building operators for both new installations and retrofits of low- and medium-temperature systems.
+
+    With an A1 non-flammable classification it supports familiar handling practices, while its performance profile supports reliable operation across cold storage and food retail.
+
+    Compared with R-404A, Solstice N40 offers 68% lower GWP and can reduce energy use in qualifying systems — a strong efficiency and operating-cost case for teams planning long-term refrigerant strategy.
+  applications:
+    - icon: fridge
+      label: Low/medium-temp commercial cabinets
+    - icon: factory
+      label: Industrial DX systems
+    - icon: box
+      label: Retail condensing units
+    - icon: snow
+      label: Freezers and display cases
+    - icon: store
+      label: Convenience-store cabinets
+    - icon: store
+      label: Supermarkets
+    - icon: box
+      label: Cold storage warehouses
+    - icon: snow
+      label: Self-contained condensing units
+  faq:
+    - q: Which refrigerants can Solstice N40 replace?
+      a: R-404A, R-507, R-22 and the R-407 series, including interim blends, in commercial refrigeration — for both new systems and retrofits.
+    - q: Is it flammable? How safe is it?
+      a: It is classified A1 (non-flammable) under ASHRAE, so technicians and service teams can use familiar handling practices.
+    - q: Does it really lower GWP and save energy?
+      a: Compared with R-404A it has 68% lower GWP and can reduce energy consumption in qualifying systems, lowering long-term operating costs.
+    - q: Which pack sizes are available?
+      a: Four sizes — Jug 11.3 kg, Cylinder 45 kg, Half Ton 386 kg and Ton 658 kg. Contact ORAFON to check stock and request a quotation.
+  seo_description: Solstice® N40 (R-448A) non-flammable A1 HFO blend refrigerant replacing R-404A with 68% lower GWP. Distributed by ORAFON — request a quotation.

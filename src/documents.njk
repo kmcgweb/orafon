@@ -1,0 +1,30 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/documents/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /documents/
+section: documents
+eleventyComputed:
+  title: "{{ i18n[lang].documents }}"
+  description: "{{ i18n[lang].documentsLead }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set contactUrl = '/contact/' | u(lang) -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.documents }}</nav></div>
+<section class="page-head"><div class="container">
+  <h1 class="display">{{ T.documents }}</h1>
+  <p>{{ T.documentsLead }}</p>
+</div></section>
+<section class="section" style="padding-top:24px"><div class="container" style="max-width:900px">
+  {%- for d in D.documents %}
+  <div class="doc-row">
+    <div class="doc-ic">{{ d.type or "PDF" }}</div>
+    <div class="doc-meta"><div class="dt">{{ d.label }}</div><div class="dd"><a href="{{ ('/products/' ~ d.product.slug ~ '/') | u(lang) }}">{{ d.product.name }}</a></div></div>
+    {%- if d.file %}<a class="doc-dl" href="{{ d.file }}" target="_blank" rel="noopener">{{ T.download }}</a>
+    {%- else %}<a class="doc-dl" href="{{ contactUrl }}?product={{ (d.product.name ~ ' — ' ~ d.label) | urlencode }}">{{ T.requestDoc }}</a>{% endif %}
+  </div>
+  {%- else %}
+  <div class="card empty">{{ T.noDocs }}</div>
+  {%- endfor %}
+</div></section>
