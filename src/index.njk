@@ -38,23 +38,9 @@ section: home
   {%- endif %}
 </div></section>
 
-<section class="section" style="padding-top:24px"><div class="container">
-  <h2 class="display">{{ T.byType }}</h2>
-  <p class="lead">{{ T.byTypeLead }}</p>
-  <div class="cats">
-    {%- for r in D.refrigerants %}{% if r.products.length %}
-    <a class="cat-card" href="{{ r.url | u(lang) }}">
-      <div class="e" style="color:{{ r.color }}">{{ r.number | shortNum }}</div>
-      <div class="t">{{ r.number }}</div>
-      <div class="d">{{ r.class }} · {{ r.safety }}</div>
-    </a>
-    {%- endif %}{% endfor %}
-  </div>
-</div></section>
-
 {%- set showList = featured if featured.length else D.products %}
 {%- if showList.length %}
-<section class="section" style="padding-top:0"><div class="container">
+<section class="section" style="padding-top:24px"><div class="container">
   <h2 class="display">{{ T.featured }}</h2>
   <p class="lead">{{ T.featuredLead }}</p>
   <div class="prod-grid">
