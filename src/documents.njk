@@ -3,28 +3,53 @@ pagination: { data: langs, size: 1, alias: lang }
 permalink: "{{ '/documents/' | u(lang) }}"
 layout: layouts/base.njk
 pathKey: /documents/
-section: documents
+section: technical
+pageScript: filter.js
 eleventyComputed:
-  title: "{{ i18n[lang].documents }}"
+  title: "{{ i18n[lang].documents }} — {{ i18n[lang].technical }}"
   description: "{{ i18n[lang].documentsLead }}"
 ---
+{%- from "partials/macros.njk" import icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set contactUrl = '/contact/' | u(lang) -%}
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.documents }}</nav></div>
-<section class="page-head"><div class="container">
-  <h1 class="display">{{ T.documents }}</h1>
-  <p>{{ T.documentsLead }}</p>
-</div></section>
-<section class="section" style="padding-top:24px"><div class="container" style="max-width:900px">
-  {%- for d in D.documents %}
-  <div class="doc-row">
-    <div class="doc-ic">{{ d.type or "PDF" }}</div>
-    <div class="doc-meta"><div class="dt">{{ d.label }}</div><div class="dd"><a href="{{ ('/products/' ~ d.product.slug ~ '/') | u(lang) }}">{{ d.product.name }}</a></div></div>
-    {%- if d.file %}<a class="doc-dl" href="{{ d.file }}" target="_blank" rel="noopener">{{ T.download }}</a>
-    {%- else %}<a class="doc-dl" href="{{ contactUrl }}?product={{ (d.product.name ~ ' — ' ~ d.label) | urlencode }}">{{ T.requestDoc }}</a>{% endif %}
+{%- set techTab = "documents" -%}
+{%- set techTitle = T.documents -%}
+{%- set techLead = T.documentsLead -%}
+{% include "partials/tech-head.njk" %}
+
+<section class="section" style="padding-top:28px" data-filter><div class="container">
+  <div class="filter-bar" style="margin-top:0">
+    <div class="filter-row"><input class="q-input" type="search" data-f-search placeholder="{{ T.searchDocs }}" aria-label="{{ T.search }}"></div>
+    <div class="filter-row" data-f-group="brand">
+      <span class="lbl">{{ T.brand }}</span>
+      <button class="filter active" data-v="">{{ T.all }}</button>
+      {%- for b in D.brands %}{% if b.products.length %}<button class="filter" data-v="{{ b.slug }}">{{ b.name }}</button>{% endif %}{% endfor %}
+    </div>
   </div>
-  {%- else %}
-  <div class="card empty">{{ T.noDocs }}</div>
-  {%- endfor %}
+  <div class="count" data-f-count data-tpl="{{ T.showing }} {n} {{ T.items }}"></div>
+
+  <div class="doc-grid">
+    {%- for p in D.products %}{% if p.documents and p.documents.length %}
+    <div class="doc-card" data-f-item data-brand="{{ p.brand }}" data-text="{{ p.searchText }}">
+      <div class="dc-head">
+        <span class="dc-ic" style="--c:{{ p.ref.color if p.ref else '#4F46E5' }}">{{ (p.ref.number | shortNum) if p.ref }}</span>
+        <div>
+          <a class="dc-name" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a>
+          <div class="dc-meta">{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }} · {{ p.ref.safety }}{% endif %}</div>
+        </div>
+      </div>
+      <div class="dc-docs">
+        {%- for d in p.documents %}
+        {%- if d.file %}
+        <a class="dc-doc ready" href="{{ d.file }}" target="_blank" rel="noopener">{{ icon("doc") }}<span>{{ d.type or d.label }}</span><em>{{ T.download }}</em></a>
+        {%- else %}
+        <a class="dc-doc" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ icon("doc") }}<span>{{ d.type or d.label }}</span><em>{{ T.requestDoc }}</em></a>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endif %}{% endfor %}
+  </div>
+  <div class="card empty" data-f-empty hidden>{{ T.noDocs }}</div>
 </div></section>

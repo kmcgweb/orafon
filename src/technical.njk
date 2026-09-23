@@ -1,0 +1,82 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/technical/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /technical/
+section: technical
+eleventyComputed:
+  title: "{{ i18n[lang].technical }}"
+  description: "{{ i18n[lang].techLead }}"
+---
+{%- from "partials/macros.njk" import icon, ctaBand -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+{%- set techTab = "overview" -%}
+{%- set techTitle = T.technical -%}
+{%- set techLead = T.techLead -%}
+{% include "partials/tech-head.njk" %}
+
+<section class="section" style="padding-top:28px"><div class="container">
+  <div class="tech-cards">
+    <a class="tech-card" href="{{ '/refrigerants/' | u(lang) }}">
+      <span class="tc-ic">{{ icon("flask") }}</span>
+      <span class="tc-num">{{ D.refrigerants.length }} <small>{{ T.grades }}</small></span>
+      <h3>{{ T.refrigerants }}</h3>
+      <p>{{ T.techRefDesc }}</p>
+      <span class="tc-go">{{ T.open }} →</span>
+    </a>
+    <a class="tech-card" href="{{ '/retrofit/' | u(lang) }}">
+      <span class="tc-ic">{{ icon("cube") }}</span>
+      <span class="tc-num">{{ D.retrofitPairs }} <small>{{ T.pairs }}</small></span>
+      <h3>{{ T.retrofit }}</h3>
+      <p>{{ T.techRetroDesc }}</p>
+      <span class="tc-go">{{ T.open }} →</span>
+    </a>
+    <a class="tech-card" href="{{ '/documents/' | u(lang) }}">
+      <span class="tc-ic">{{ icon("doc") }}</span>
+      <span class="tc-num">{{ D.documents.length }} <small>{{ T.docsCount }}</small></span>
+      <h3>{{ T.documents }}</h3>
+      <p>{{ T.techDocsDesc }}</p>
+      <span class="tc-go">{{ T.open }} →</span>
+    </a>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.finder }}</h2>
+  <p class="lead">{{ T.finderLead }}</p>
+  <div class="class-groups">
+    {%- for g in D.refsByClass %}
+    <div class="class-group">
+      <div class="cg-head"><span class="chip i">{{ g.class }}</span><span class="muted">{{ g.items.length }} {{ T.grades }}</span></div>
+      <p class="cg-desc">{{ T.classDesc[g.class] }}</p>
+      <div class="cg-grades">
+        {%- for r in g.items %}
+        <a class="grade-chip" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
+          <b>{{ r.number }}</b><span>{{ r.safety }} · GWP {{ r.gwp_ar4 }}</span>
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ T.safetyGuide }}</h2>
+  <p class="lead">{{ T.safetyGuideLead }}</p>
+  <div class="safety-grid">
+    {%- for s in ["A1", "A2L", "A2", "A3", "B1"] %}
+    <div class="safety-card sf-{{ s }}">
+      <div class="sf-code">{{ s }}</div>
+      <div class="sf-name">{{ T.safetyText[s] | replace(s ~ " — ", "") }}</div>
+      <p>{{ T.safetyDesc[s] }}</p>
+      {%- if D.safetyCounts[s] %}<a class="sf-count" href="{{ '/refrigerants/' | u(lang) }}?safety={{ s }}">{{ D.safetyCounts[s] }} {{ T.grades }} →</a>{% endif %}
+    </div>
+    {%- endfor %}
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="container">
+  {{ ctaBand(lang, T, D.site, T.needHelp, T.needHelpText) }}
+</div></section>

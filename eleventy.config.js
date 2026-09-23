@@ -7,6 +7,7 @@ const LANGS = ["th", "en"];
 const DEFAULT_LANG = "th";
 const CONTENT = "content";
 const LABELS = ["recommended", "popular", "bestseller", "new"];
+const CLASS_ORDER = ["HFO", "HFO Blend", "HFC", "HFC Blend", "HCFC", "HC", "Natural"];
 const md = markdownIt({ html: false, linkify: true, breaks: true });
 
 /* ---------- content loading ----------
@@ -98,6 +99,9 @@ function buildDb() {
       refrigerants, brands, products, articles, refMap, brandMap,
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
+      refsByClass: CLASS_ORDER.map((c) => ({ class: c, items: refrigerants.filter((r) => r.class === c) })).filter((g) => g.items.length),
+      safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s).length])),
+      retrofitPairs: refrigerants.reduce((n, r) => n + (r.replaces || []).length, 0),
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
       site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"),
       classes: [...new Set(refrigerants.filter((r) => r.products.length).map((r) => r.class))],
@@ -132,6 +136,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("mdInline", (s) => (s ? md.renderInline(String(s)) : ""));
   eleventyConfig.addFilter("shortNum", (num) => String(num || "").replace(/^R-?/i, ""));
   eleventyConfig.addFilter("kg", (n) => (n === undefined || n === null || n === "" ? "" : Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 })));
+  // GWP spans 1 … ~15,000, so bars use a log scale (0–100%)
+  eleventyConfig.addFilter("gwpBar", (g) => {
+    const n = parseFloat(String(g).replace(/[^0-9.]/g, "")) || 0;
+    return Math.max(3, Math.min(100, Math.round((Math.log10(n + 1) / Math.log10(15000)) * 100)));
+  });
+  // % GWP reduction from old -> new (capped at 99 so tiny values never read as "100%")
+  eleventyConfig.addFilter("gwpSaving", (oldG, newG) => {
+    const o = parseFloat(String(oldG).replace(/[^0-9.]/g, "")), n = parseFloat(String(newG).replace(/[^0-9.]/g, ""));
+    return o > 0 && n >= 0 && n < o ? Math.min(99, Math.round((1 - n / o) * 100)) : 0;
+  });
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v).replace(/</g, "\\u003c"));
   eleventyConfig.addFilter("dateFmt", (d, lang) => {
     if (!d) return "";

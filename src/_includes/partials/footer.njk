@@ -14,12 +14,12 @@
         {%- for b in D.brands %}
         <li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>
         {%- endfor %}
-        <li><a href="{{ '/refrigerants/' | u(lang) }}">{{ T.refrigerants }}</a></li>
       </ul></div>
-      <div class="foot-col"><h4>{{ T.contactSales }}</h4><ul>
-        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
-        <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
+      <div class="foot-col"><h4>{{ T.technical }}</h4><ul>
+        <li><a href="{{ '/refrigerants/' | u(lang) }}">{{ T.refrigerants }}</a></li>
         <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
+        <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
+        <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
         {%- if S.phone %}<li><a href="tel:{{ S.phone }}">{{ T.call }} {{ S.phone_display }}</a></li>{% endif %}
         {%- if S.line_id %}<li><a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" rel="noopener" target="_blank">LINE {{ S.line_id }}</a></li>{% endif %}
       </ul></div>

@@ -2,7 +2,7 @@
 pagination: { data: brandPages, size: 1, alias: entry }
 permalink: "{{ ('/brands/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
 layout: layouts/base.njk
-section: brands
+section: about
 eleventyComputed:
   lang: "{{ entry.lang }}"
   pathKey: "/brands/{{ entry.item.slug }}/"
@@ -15,7 +15,8 @@ eleventyComputed:
 {%- set b = entry.item -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
   <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
-  <a href="{{ '/brands/' | u(lang) }}">{{ T.brands }}</a><span>›</span>{{ b.name }}
+  <a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a><span>›</span>
+  <a href="{{ '/about/' | u(lang) }}#brands">{{ T.brands }}</a><span>›</span>{{ b.name }}
 </nav></div>
 <section class="page-head"><div class="container">
   <span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>

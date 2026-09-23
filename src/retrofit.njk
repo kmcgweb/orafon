@@ -3,38 +3,54 @@ pagination: { data: langs, size: 1, alias: lang }
 permalink: "{{ '/retrofit/' | u(lang) }}"
 layout: layouts/base.njk
 pathKey: /retrofit/
-section: retrofit
+section: technical
+pageScript: filter.js
 eleventyComputed:
-  title: "{{ i18n[lang].retrofit }}"
+  title: "{{ i18n[lang].retrofit }} — {{ i18n[lang].technical }}"
   description: "{{ i18n[lang].retrofitLead }}"
 ---
 {#- Built from each refrigerant's "replaces" list: old refrigerant -> the grades that replace it -#}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
+{%- set techTab = "retrofit" -%}
+{%- set techTitle = T.retrofit -%}
+{%- set techLead = T.retrofitLead -%}
 {%- set olds = [] -%}
 {%- for r in D.refrigerants %}{% for x in r.replaces %}{% if x not in olds %}{% set olds = olds.concat([x]) %}{% endif %}{% endfor %}{% endfor -%}
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.retrofit }}</nav></div>
-<section class="page-head"><div class="container">
-  <h1 class="display">{{ T.retrofit }}</h1>
-  <p>{{ T.retrofitLead }}</p>
-</div></section>
-<section class="section" style="padding-top:24px"><div class="container">
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead><tr><th>{{ T.oldRef }}</th><th>{{ T.newRef }}</th></tr></thead>
-      <tbody>
-        {%- for old in olds | sort %}
-        <tr>
-          <td><strong>{{ old }}</strong></td>
-          <td><div class="link-list">
-            {%- for r in D.refrigerants %}{% if old in r.replaces %}
-            <a class="filter" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}">{{ r.number }} · {{ r.class }} · GWP {{ r.gwp_ar4 }}{% if r.products.length %} · {{ r.products.length }} {{ T.items }}{% endif %}</a>
-            {%- endif %}{% endfor %}
-          </div></td>
-        </tr>
-        {%- endfor %}
-      </tbody>
-    </table>
+{% include "partials/tech-head.njk" %}
+
+<section class="section" style="padding-top:28px" data-filter><div class="container">
+  <div class="filter-bar" style="margin-top:0">
+    <div class="filter-row"><input class="q-input" type="search" data-f-search placeholder="{{ T.searchGrade }}" aria-label="{{ T.search }}"></div>
   </div>
+  <div class="count" data-f-count data-tpl="{{ T.showing }} {n} {{ T.items }}"></div>
+
+  <div class="retro-list">
+    {%- for old in olds | sort %}
+    {%- set oldRef = null %}{% for r in D.refrigerants %}{% if r.number == old %}{% set oldRef = r %}{% endif %}{% endfor %}
+    {%- set alts = [] %}{% for r in D.refrigerants %}{% if old in r.replaces %}{% set alts = alts.concat([r]) %}{% endif %}{% endfor %}
+    <div class="retro-row" data-f-item data-text="{{ (old ~ ' ' ~ (alts | join(' ', 'number'))) | lower }}">
+      <div class="retro-old">
+        <span class="ro-label">{{ T.oldRef }}</span>
+        {%- if oldRef %}<a class="ro-num" href="{{ ('/refrigerants/' ~ oldRef.slug ~ '/') | u(lang) }}">{{ old }}</a>
+        <span class="ro-meta">{{ oldRef.class }} · GWP {{ oldRef.gwp_ar4 }}</span>
+        {%- else %}<span class="ro-num">{{ old }}</span>{% endif %}
+      </div>
+      <div class="retro-arrow" aria-hidden="true">→</div>
+      <div class="retro-alts">
+        {%- for r in alts %}
+        {%- set save = (oldRef.gwp_ar4 | gwpSaving(r.gwp_ar4)) if oldRef else 0 %}
+        <a class="alt-card" href="{{ ('/refrigerants/' ~ r.slug ~ '/') | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
+          <span class="ac-top"><b>{{ r.number }}</b><span class="chip sfc sf-{{ r.safety }}">{{ r.safety }}</span></span>
+          <span class="ac-meta">{{ r.class }} · GWP {{ r.gwp_ar4 }}</span>
+          {%- if save >= 10 %}<span class="ac-save">−{{ save }}% GWP</span>{% endif %}
+          {%- if r.products.length %}<span class="ac-prod">{{ r.products.length }} {{ T.items }}</span>{% endif %}
+        </a>
+        {%- endfor %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+  <div class="card empty" data-f-empty hidden>{{ T.noResults }}</div>
   <p class="note">{{ T.dataNote }}</p>
 </div></section>

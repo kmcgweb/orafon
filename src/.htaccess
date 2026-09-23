@@ -15,6 +15,10 @@ Redirect 301 /contact.html /contact/
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Brands index merged into About (brand detail pages /brands/<name>/ still exist)
+  RewriteRule ^brands/?$ /about/#brands [R=301,NE,L]
+  RewriteRule ^en/brands/?$ /en/about/#brands [R=301,NE,L]
 </IfModule>
 
 # Security headers

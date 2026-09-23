@@ -2,7 +2,7 @@
 pagination: { data: refrigerantPages, size: 1, alias: entry }
 permalink: "{{ ('/refrigerants/' ~ entry.item.slug ~ '/') | u(entry.lang) }}"
 layout: layouts/base.njk
-section: refrigerants
+section: technical
 extraCss: product.css
 eleventyComputed:
   lang: "{{ entry.lang }}"
@@ -16,6 +16,7 @@ eleventyComputed:
 {%- set r = entry.item -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
   <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/technical/' | u(lang) }}">{{ T.technical }}</a><span>›</span>
   <a href="{{ '/refrigerants/' | u(lang) }}">{{ T.refrigerants }}</a><span>›</span>{{ r.number }}
 </nav></div>
 
@@ -67,7 +68,7 @@ eleventyComputed:
 </section></div>
 {%- endif %}
 
-<section class="section" style="padding-top:0"><div class="container">
+<section class="section" id="products" style="padding-top:0"><div class="container">
   <h2 class="display">{{ T.productsOfRef }} {{ r.number }}</h2>
   {%- if r.products.length %}
   <div class="prod-grid" style="margin-top:24px">{% for p in r.products %}{{ productCard(p, lang, T) }}{% endfor %}</div>

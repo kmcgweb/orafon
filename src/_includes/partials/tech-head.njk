@@ -1,0 +1,27 @@
+{#- Shared header for Technical Center pages. Needs: lang, T, D, techTab ("overview"|"refrigerants"|"retrofit"|"documents"), techTitle, techLead -#}
+{%- from "partials/macros.njk" import icon -%}
+{%- set tabs = [
+  ["overview", "/technical/", T.techOverview, "grid"],
+  ["refrigerants", "/refrigerants/", T.refrigerants, "flask"],
+  ["retrofit", "/retrofit/", T.retrofit, "cube"],
+  ["documents", "/documents/", T.documents, "doc"]
+] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  {%- if techTab == "overview" %}{{ T.technical }}{% else %}<a href="{{ '/technical/' | u(lang) }}">{{ T.technical }}</a><span>›</span>{{ techTitle }}{% endif %}
+</nav></div>
+<section class="tech-hero"><div class="container">
+  <div class="tech-band">
+    <div class="tb-glow tb1"></div><div class="tb-glow tb2"></div>
+    <div class="tb-inner">
+      <span class="tb-kicker">{{ icon("flask") }} {{ T.technical }}</span>
+      <h1 class="display">{{ techTitle }}</h1>
+      <p>{{ techLead }}</p>
+    </div>
+  </div>
+  <nav class="tech-tabs" aria-label="{{ T.technical }}">
+    {%- for t in tabs %}
+    <a href="{{ t[1] | u(lang) }}"{% if techTab == t[0] %} class="active" aria-current="page"{% endif %}>{{ icon(t[3]) }}<span>{{ t[2] }}</span></a>
+    {%- endfor %}
+  </nav>
+</div></section>

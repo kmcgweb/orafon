@@ -28,14 +28,28 @@ eleventyComputed:
 {%- if A.body %}
 <section class="section" style="padding-top:0"><div class="container"><div class="prose">{{ A.body | md | safe }}</div></div></section>
 {%- endif %}
-<section class="section" style="padding-top:0"><div class="container">
+<section class="section" id="brands" style="padding-top:0"><div class="container">
   <h2 class="display">{{ T.ourBrands }}</h2>
-  <div class="brand-cards" style="margin-top:24px">
+  <div class="brand-panels">
     {%- for b in D.brands %}
-    <a class="brand-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
-      <span class="bl">{% if b.logo %}<img src="{{ b.logo }}" alt="">{% else %}{{ b.name | first }}{% endif %}</span>
-      <span><span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span><h3>{{ b.name }}</h3><p>{{ b.tagline }}</p></span>
-    </a>
+    <article class="brand-panel {{ 'own' if b.own_brand else 'dist' }}">
+      <div class="bp-side">
+        <span class="bp-logo">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}">{% else %}{{ b.name }}{% endif %}</span>
+        <span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
+        <div class="bp-count"><b>{{ b.products.length }}</b> {{ T.items }}</div>
+      </div>
+      <div class="bp-body">
+        <h3>{{ b.name }}</h3>
+        <p class="bp-tag">{{ b.tagline }}</p>
+        <div class="prose muted">{{ b.description | md | safe }}</div>
+        {%- if b.products.length %}
+        <div class="bp-grades">
+          {%- for p in b.products %}<a class="grade-mini" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" style="--c:{{ p.ref.color if p.ref else '#4F46E5' }}">{{ p.ref.number if p.ref else p.name }}</a>{% endfor %}
+        </div>
+        {%- endif %}
+        <a class="btn btn-ghost" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ T.brandPage }} {{ b.name }} →</a>
+      </div>
+    </article>
     {%- endfor %}
   </div>
 </div></section>
