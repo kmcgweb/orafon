@@ -53,29 +53,25 @@
   <h1 class="display">สินค้าทั้งหมด</h1>
   <p>สารทำความเย็นแบรนด์ ORAFON และ Solstice® ที่เราจัดจำหน่าย</p>
 
-  <div class="filter-bar" id="filters">
-    <div class="filter-row">
+  <div class="toolbar" id="filters">
+    <div class="tb-search">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <label class="sr-only" for="q">ค้นหา</label>
-      <input class="q-input" id="q" type="search" placeholder="ค้นหาสินค้า เบอร์น้ำยา เช่น R-32">
+      <input id="q" type="search" placeholder="ค้นหาสินค้า เบอร์น้ำยา เช่น R-32">
     </div>
-    <div class="filter-row" data-group="label">
-      <span class="lbl">ป้าย</span>
-      <button class="filter active" data-v="">ทั้งหมด</button><button class="filter" data-v="recommended">แนะนำ</button><button class="filter" data-v="popular">ยอดนิยม</button>
-    </div>
-    <div class="filter-row" data-group="class">
-      <span class="lbl">ประเภท</span>
-      <button class="filter active" data-v="">ทั้งหมด</button><button class="filter" data-v="HCFC">HCFC</button><button class="filter" data-v="HFC">HFC</button><button class="filter" data-v="HFC Blend">HFC Blend</button><button class="filter" data-v="HFO Blend">HFO Blend</button><button class="filter" data-v="HFO">HFO</button><button class="filter" data-v="HC">HC</button>
-    </div>
-    <div class="filter-row" data-group="brand">
-      <span class="lbl">แบรนด์</span>
-      <button class="filter active" data-v="">ทั้งหมด</button><button class="filter" data-v="orafon">ORAFON</button><button class="filter" data-v="solstice">Solstice®</button>
-    </div>
-    <div class="filter-row">
-      <label class="lbl" for="ref">เบอร์น้ำยา</label>
-      <select class="q-input" id="ref" style="min-width:200px">
-        <option value="">ทั้งหมด</option><option value="r-22">R-22 · HCFC</option><option value="r-141b">R-141b · HCFC</option><option value="r-32">R-32 · HFC</option><option value="r-410a">R-410A · HFC Blend</option><option value="r-152a">R-152a · HFC</option><option value="r-23">R-23 · HFC</option><option value="r-245fa">R-245fa · HFC</option><option value="r-134a">R-134a · HFC</option><option value="r-404a">R-404A · HFC Blend</option><option value="r-507a">R-507A · HFC Blend</option><option value="r-407c">R-407C · HFC Blend</option><option value="r-407f">R-407F · HFC Blend</option><option value="r-417a">R-417A · HFC Blend</option><option value="r-508b">R-508B · HFC Blend</option><option value="r-448a">R-448A · HFO Blend</option><option value="r-449a">R-449A · HFO Blend</option><option value="r-452a">R-452A · HFO Blend</option><option value="r-454b">R-454B · HFO Blend</option><option value="r-454c">R-454C · HFO Blend</option><option value="r-455a">R-455A · HFO Blend</option><option value="r-513a">R-513A · HFO Blend</option><option value="r-515b">R-515B · HFO Blend</option><option value="r-1233zd">R-1233zd(E) · HFO</option><option value="r-600a">R-600a · HC</option><option value="r-290">R-290 · HC</option>
-      </select>
-    </div>
+    <select class="tb-select" data-key="label" aria-label="ป้าย">
+      <option value="">ทุกป้าย</option><option value="recommended">แนะนำ</option><option value="popular">ยอดนิยม</option>
+    </select>
+    <select class="tb-select" data-key="class" aria-label="ประเภท">
+      <option value="">ทุกประเภท</option><option value="HCFC">HCFC</option><option value="HFC">HFC</option><option value="HFC Blend">HFC Blend</option><option value="HFO Blend">HFO Blend</option><option value="HFO">HFO</option><option value="HC">HC</option>
+    </select>
+    <select class="tb-select" data-key="brand" aria-label="แบรนด์">
+      <option value="">ทุกแบรนด์</option><option value="orafon">ORAFON</option><option value="solstice">Solstice®</option>
+    </select>
+    <select class="tb-select" data-key="ref" aria-label="เบอร์น้ำยา">
+      <option value="">ทุกเบอร์น้ำยา</option><option value="r-22">R-22</option><option value="r-141b">R-141b</option><option value="r-32">R-32</option><option value="r-410a">R-410A</option><option value="r-152a">R-152a</option><option value="r-23">R-23</option><option value="r-245fa">R-245fa</option><option value="r-134a">R-134a</option><option value="r-404a">R-404A</option><option value="r-507a">R-507A</option><option value="r-407c">R-407C</option><option value="r-407f">R-407F</option><option value="r-417a">R-417A</option><option value="r-508b">R-508B</option><option value="r-448a">R-448A</option><option value="r-449a">R-449A</option><option value="r-452a">R-452A</option><option value="r-454b">R-454B</option><option value="r-454c">R-454C</option><option value="r-455a">R-455A</option><option value="r-513a">R-513A</option><option value="r-515b">R-515B</option><option value="r-1233zd">R-1233zd(E)</option><option value="r-600a">R-600a</option><option value="r-290">R-290</option>
+    </select>
+    <button type="button" class="tb-reset" id="reset" hidden>✕ ล้างตัวกรอง</button>
   </div>
 </div></section>
 
