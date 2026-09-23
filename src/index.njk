@@ -8,7 +8,7 @@ pageScript: home.js
 ---
 {#- Home: banner slider → promo tiles → featured products → wide banner → brands → stats → CTA.
     Every image slot is edited in /admin (หน้าเว็บ → หน้าแรก). Empty slots render a designed placeholder with the recommended size. -#}
-{%- from "partials/macros.njk" import cylinder, productCard, ctaBand, icon -%}
+{%- from "partials/macros.njk" import cylinder, productCard, icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set H = D.home -%}
@@ -143,6 +143,3 @@ pageScript: home.js
 </div></div></section>
 {%- endif %}
 
-<section class="section" style="padding-top:0"><div class="container">
-  {{ ctaBand(lang, T, D.site, H.cta_title, H.cta_text) }}
-</div></section>

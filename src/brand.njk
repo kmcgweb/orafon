@@ -9,7 +9,7 @@ eleventyComputed:
   title: "{{ entry.item.name }}"
   description: "{{ entry.item.tagline }}"
 ---
-{%- from "partials/macros.njk" import productCard, ctaBand -%}
+{%- from "partials/macros.njk" import productCard -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set b = entry.item -%}
@@ -33,7 +33,4 @@ eleventyComputed:
     <div style="margin-top:16px"><a class="btn btn-ghost" href="{{ '/contact/' | u(lang) }}?product={{ b.name | urlencode }}">{{ T.contactSales }}</a></div>
   </div>
   {%- endif %}
-</div></section>
-<section class="section" style="padding-top:0"><div class="container">
-  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
 </div></section>

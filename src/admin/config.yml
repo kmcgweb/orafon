@@ -279,8 +279,6 @@ collections:
             fields:
               - { name: num, label: "ตัวเลข/คำ", widget: string }
               - { name: label, label: "คำอธิบาย", widget: string }
-          - { name: cta_title, label: "หัวข้อแถบติดต่อ", widget: string, i18n: true }
-          - { name: cta_text, label: "ข้อความแถบติดต่อ", widget: text, i18n: true }
       - name: about
         label: "เกี่ยวกับเรา"
         file: content/pages/about.yml

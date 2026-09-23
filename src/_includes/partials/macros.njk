@@ -71,21 +71,3 @@
 </article>
 {%- endmacro -%}
 
-{%- macro ctaBand(lang, T, S, title, text) -%}
-<div class="final-cta">
-  <div class="fb fb1"></div><div class="fb fb2"></div>
-  <div class="inner">
-    <h2 class="display">{{ title }}</h2>
-    <p>{{ text }}</p>
-    <div class="btns">
-      <a class="btn btn-white" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
-      {%- if S.line_id %}<a class="btn btn-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ T.askLine }}</a>{% endif %}
-    </div>
-    <div class="contact-row">
-      {%- if S.phone %}<a href="tel:{{ S.phone }}">{{ T.call }} {{ S.phone_display }}</a>{% endif %}
-      {%- if S.email %}<a href="mailto:{{ S.email }}">{{ S.email }}</a>{% endif %}
-      {%- if S.line_id %}<span>LINE {{ S.line_id }}</span>{% endif %}
-    </div>
-  </div>
-</div>
-{%- endmacro -%}

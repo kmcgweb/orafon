@@ -13,7 +13,7 @@ eleventyComputed:
   description: "{{ entry.item.seo_description or entry.item.short }}"
   ogImage: "{{ entry.item.images[0] if entry.item.images and entry.item.images[0] else '' }}"
 ---
-{%- from "partials/macros.njk" import icon, cylinder, productCard, ctaBand -%}
+{%- from "partials/macros.njk" import icon, cylinder, productCard -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set S = D.site -%}
@@ -232,9 +232,6 @@ eleventyComputed:
   </div>
 </section></div>
 
-<div class="container"><section class="section" style="padding-top:0">
-  {{ ctaBand(lang, T, S, D.home.cta_title, D.home.cta_text) }}
-</section></div>
 
 <div class="sticky-cta">
   {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE</a>{% else %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}

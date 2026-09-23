@@ -8,7 +8,7 @@ eleventyComputed:
   title: "{{ i18n[lang].technical }}"
   description: "{{ i18n[lang].techLead }}"
 ---
-{%- from "partials/macros.njk" import icon, ctaBand -%}
+{%- from "partials/macros.njk" import icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set techTab = "overview" -%}
@@ -80,6 +80,3 @@ eleventyComputed:
   </div>
 </div></section>
 
-<section class="section" style="padding-top:0"><div class="container">
-  {{ ctaBand(lang, T, D.site, T.needHelp, T.needHelpText) }}
-</div></section>

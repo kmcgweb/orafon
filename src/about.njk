@@ -8,7 +8,6 @@ eleventyComputed:
   title: "{{ i18n[lang].about }}"
   description: "{{ db[lang].about.lead }}"
 ---
-{%- from "partials/macros.njk" import ctaBand -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set A = D.about -%}
@@ -52,7 +51,4 @@ eleventyComputed:
     </article>
     {%- endfor %}
   </div>
-</div></section>
-<section class="section" style="padding-top:0"><div class="container">
-  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
 </div></section>

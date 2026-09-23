@@ -10,7 +10,6 @@ eleventyComputed:
   description: "{{ entry.item.excerpt }}"
   ogImage: "{{ entry.item.cover or '' }}"
 ---
-{%- from "partials/macros.njk" import ctaBand -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set a = entry.item -%}
@@ -24,6 +23,3 @@ eleventyComputed:
   {%- if a.cover %}<img src="{{ a.cover }}" alt="" style="border-radius:20px;margin-bottom:24px;width:100%">{% endif %}
   <div class="prose">{{ a.body | md | safe }}</div>
 </div></article>
-<section class="section" style="padding-top:0"><div class="container">
-  {{ ctaBand(lang, T, D.site, D.home.cta_title, D.home.cta_text) }}
-</div></section>
