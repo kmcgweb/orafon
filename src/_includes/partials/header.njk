@@ -1,5 +1,13 @@
-{%- from "partials/macros.njk" import icon -%}
-<header class="site">
+{%- from "partials/macros.njk" import icon, cylinder -%}
+{#- Desktop (≥1024px): mega menu under the top bar. Mobile/tablet: slide-in drawer (#navDrawer). Behaviour: /assets/js/nav.js -#}
+{%- set feat = D.featured[0] if D.featured.length else (D.products[0] if D.products.length else null) -%}
+{%- set techLinks = [
+  ["/technical/", T.techOverview, "grid", T.techLead],
+  ["/retrofit/", T.retrofit, "cube", T.techRetroDesc],
+  ["/documents/", T.documents, "doc", T.techDocsDesc],
+  ["/articles/", T.articles, "list", T.articlesLead]
+] -%}
+<header class="site" id="siteHeader">
   <div class="container nav">
     <a class="logo" href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }} — {{ T.home }}"><img src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="120" height="32"></a>
     <form class="search" action="{{ '/products/' | u(lang) }}" method="get" role="search">
@@ -14,20 +22,148 @@
         {%- endfor %}
       </div>
       <a class="nav-cta grad-bg" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+      <button class="nav-icon-btn m-only" type="button" data-drawer-open data-focus="drawerSearch" aria-label="{{ T.search }}">{{ icon("search") }}</button>
+      <button class="burger m-only" type="button" data-drawer-open aria-controls="navDrawer" aria-expanded="false" aria-label="{{ T.menu }}"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <nav class="catbar" aria-label="{{ T.home }}">
-    <div class="container">
-      {%- set nav = [
-        ["home", "/", T.home],
-        ["products", "/products/", T.allProducts],
-        ["technical", "/technical/", T.technical],
-        ["about", "/about/", T.about],
-        ["contact", "/contact/", T.contact]
-      ] %}
-      {%- for item in nav %}
-      <a href="{{ item[1] | u(lang) }}"{% if section == item[0] %} class="active" aria-current="page"{% endif %}>{{ item[2] }}</a>
-      {%- endfor %}
+
+  {#- ===== desktop mega menu ===== -#}
+  <nav class="mainnav" aria-label="{{ T.menu }}">
+    <div class="container mn-row">
+      <a class="mn-link{% if section == 'home' %} active{% endif %}" href="{{ '/' | u(lang) }}"{% if section == 'home' %} aria-current="page"{% endif %}>{{ T.home }}</a>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link{% if section == 'products' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-products">{{ T.products }}{{ icon("chev") }}</button>
+        <div class="mega" id="mega-products">
+          <div class="container mega-grid mg-products">
+            {%- for b in D.brands %}{% if b.products.length %}
+            <div class="mg-col">
+              <a class="mg-title" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }} <span class="mg-count">{{ b.products.length }}</span></a>
+              <span class="mg-sub">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
+              <ul class="mg-list">
+                {%- for p in b.products | batch(8) | first %}
+                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a></li>
+                {%- endfor %}
+              </ul>
+              {%- if b.products.length > 8 %}<a class="mg-more" href="{{ ('/products/?brand=' ~ b.slug) | u(lang) }}">{{ T.viewAll }} ({{ b.products.length }}) →</a>{% endif %}
+            </div>
+            {%- endif %}{% endfor %}
+            <div class="mg-col">
+              <span class="mg-title">{{ T.byClass }}</span>
+              <span class="mg-sub">{{ T.byClassSub }}</span>
+              <ul class="mg-list mg-classes">
+                {%- for g in D.classCounts %}<li><a href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}"><b>{{ g.class }}</b><span class="mg-count">{{ g.n }}</span></a></li>{% endfor %}
+              </ul>
+            </div>
+            {%- if feat %}
+            <a class="mg-feature" href="{{ ('/products/' ~ feat.slug ~ '/') | u(lang) }}">
+              <span class="mgf-art">{% if feat.images and feat.images[0] %}<img src="{{ feat.images[0] }}" alt="" loading="lazy">{% else %}{{ cylinder(feat.ref, "mega") }}{% endif %}</span>
+              <span class="mgf-kicker">{{ T.featured }}</span>
+              <b>{{ feat.name }}</b>
+              <span>{{ feat.tagline }}</span>
+              <em>{{ T.viewDetails }} →</em>
+            </a>
+            {%- endif %}
+          </div>
+          <div class="mega-foot"><div class="container">
+            <a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }} ({{ D.products.length }}) →</a>
+            <a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }} →</a>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link{% if section == 'technical' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-tech">{{ T.technical }}{{ icon("chev") }}</button>
+        <div class="mega" id="mega-tech">
+          <div class="container mega-grid mg-tech">
+            <div class="mg-cards">
+              {%- for t in techLinks %}
+              <a class="mg-card" href="{{ t[0] | u(lang) }}"><span class="mgc-ic">{{ icon(t[2]) }}</span><span><b>{{ t[1] }}</b><span>{{ t[3] }}</span></span></a>
+              {%- endfor %}
+            </div>
+            {%- if D.articles.length %}
+            <div class="mg-col mg-articles">
+              <span class="mg-title">{{ T.latestArticles }}</span>
+              <ul>
+                {%- for a in D.articles | batch(3) | first %}
+                <li><a href="{{ ('/articles/' ~ a.slug ~ '/') | u(lang) }}"><time>{{ a.date | dateFmt(lang) }}</time><b>{{ a.title }}</b></a></li>
+                {%- endfor %}
+              </ul>
+              <a class="mg-more" href="{{ '/articles/' | u(lang) }}">{{ T.allArticles }} →</a>
+            </div>
+            {%- endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link{% if section == 'about' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-about">{{ T.about }}{{ icon("chev") }}</button>
+        <div class="mega mega-sm" id="mega-about">
+          <div class="container mega-grid mg-about">
+            <a class="mg-card" href="{{ '/about/' | u(lang) }}"><span class="mgc-ic">{{ icon("home") }}</span><span><b>{{ T.about }}</b><span>{{ S.company_name }}</span></span></a>
+            {%- for b in D.brands %}
+            <a class="mg-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="mgc-ic">{{ icon("shield") }}</span><span><b>{{ b.name }}</b><span>{{ b.tagline }}</span></span></a>
+            {%- endfor %}
+            <a class="mg-card" href="{{ '/contact/' | u(lang) }}"><span class="mgc-ic">{{ icon("chat") }}</span><span><b>{{ T.contact }}</b><span>{{ S.phone_display }}{% if S.line_id %} · LINE {{ S.line_id }}{% endif %}</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <a class="mn-link{% if section == 'contact' %} active{% endif %}" href="{{ '/contact/' | u(lang) }}"{% if section == 'contact' %} aria-current="page"{% endif %}>{{ T.contact }}</a>
     </div>
   </nav>
 </header>
+
+{#- ===== mobile / tablet drawer ===== -#}
+<div class="drawer-backdrop" data-drawer-close hidden></div>
+<aside class="drawer" id="navDrawer" aria-label="{{ T.menu }}" aria-hidden="true">
+  <div class="dr-head">
+    <img src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="110" height="30">
+    <button class="dr-close" type="button" data-drawer-close aria-label="{{ T.close }}">✕</button>
+  </div>
+  <form class="dr-search" action="{{ '/products/' | u(lang) }}" method="get" role="search">
+    {{ icon("search") }}<input id="drawerSearch" type="search" name="q" placeholder="{{ T.searchPh }}" aria-label="{{ T.search }}">
+  </form>
+  <nav class="dr-nav">
+    <a class="dr-link{% if section == 'home' %} active{% endif %}" href="{{ '/' | u(lang) }}">{{ icon("home") }}{{ T.home }}</a>
+    <details class="dr-group"{% if section == 'products' %} open{% endif %}>
+      <summary>{{ icon("box") }}{{ T.products }}<span class="chev">{{ icon("chev") }}</span></summary>
+      <div class="dr-sub">
+        <a href="{{ '/products/' | u(lang) }}"><b>{{ T.allProducts }}</b><span class="mg-count">{{ D.products.length }}</span></a>
+        {%- for b in D.brands %}{% if b.products.length %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}<span class="mg-count">{{ b.products.length }}</span></a>{% endif %}{% endfor %}
+        <span class="dr-label">{{ T.byClass }}</span>
+        <div class="dr-chips">
+          {%- for g in D.classCounts %}<a href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}">{{ g.class }}</a>{% endfor %}
+        </div>
+      </div>
+    </details>
+    <details class="dr-group"{% if section == 'technical' %} open{% endif %}>
+      <summary>{{ icon("flask") }}{{ T.technical }}<span class="chev">{{ icon("chev") }}</span></summary>
+      <div class="dr-sub">
+        {%- for t in techLinks %}<a href="{{ t[0] | u(lang) }}">{{ t[1] }}</a>{% endfor %}
+      </div>
+    </details>
+    <details class="dr-group"{% if section == 'about' %} open{% endif %}>
+      <summary>{{ icon("shield") }}{{ T.about }}<span class="chev">{{ icon("chev") }}</span></summary>
+      <div class="dr-sub">
+        <a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a>
+        {%- for b in D.brands %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a>{% endfor %}
+        <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
+      </div>
+    </details>
+    <a class="dr-link{% if section == 'contact' %} active{% endif %}" href="{{ '/contact/' | u(lang) }}">{{ icon("chat") }}{{ T.contact }}</a>
+  </nav>
+  <div class="dr-foot">
+    <div class="dr-lang">
+      {%- for l in langs %}
+      {%- if l == lang %}<span aria-current="true">{{ i18n[l].langName }}</span>
+      {%- else %}<a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ i18n[l].langName }}</a>{% endif %}
+      {%- endfor %}
+    </div>
+    <a class="btn btn-primary grad-bg" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
+    <div class="dr-quick">
+      {%- if S.line_id %}<a class="btn btn-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }} LINE</a>{% endif %}
+      {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ icon("phone") }} {{ T.call }}</a>{% endif %}
+    </div>
+  </div>
+</aside>

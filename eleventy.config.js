@@ -102,6 +102,7 @@ function buildDb() {
       productMap: Object.fromEntries(products.map((p) => [p.slug, p])),
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
+      classCounts: CLASS_ORDER.map((c) => ({ class: c, n: products.filter((p) => p.ref && p.ref.class === c).length })).filter((x) => x.n),
       refsByClass: CLASS_ORDER.map((c) => ({ class: c, items: refrigerants.filter((r) => r.class === c) })).filter((g) => g.items.length),
       safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s && r.products.length).length])),
       retrofitPairs: refrigerants.reduce((n, r) => n + (r.replaces || []).length, 0),
