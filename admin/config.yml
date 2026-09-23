@@ -56,7 +56,7 @@ collections:
     i18n: true
     slug: "{{id}}"
     identifier_field: name
-    summary: "{{name}} · {{brand}} · {{refrigerant}}{{draft | ternary(' · (ซ่อน)', '')}}"
+    summary: "{{name}} · {{brand}}{{draft | ternary(' · (ซ่อน)', '')}}"
     sortable_fields: [order, name]
     view_groups:
       - { label: "แบรนด์", field: brand }
@@ -66,7 +66,7 @@ collections:
       - { name: brand, label: "แบรนด์", widget: relation, collection: brands, value_field: "{{slug}}", search_fields: [name], display_fields: [name] }
       - { name: refrigerant, label: "เบอร์น้ำยา", widget: relation, collection: refrigerants, value_field: "{{slug}}", search_fields: [number], display_fields: [number] }
       - { name: tagline, label: "คำโปรยใต้ชื่อ", hint: "เช่น สารทำความเย็น HFO Blend", widget: string, required: false, i18n: true }
-      - { name: tag, label: "ป้ายบนการ์ด", hint: "เช่น แนะนำ / ใหม่ (เว้นว่างได้)", widget: string, required: false, i18n: true }
+      - { name: tag, label: "ป้ายข้อความเพิ่มเติม", hint: "ข้อความอิสระบนการ์ด เช่น GWP ต่ำ (เว้นว่างได้) — ป้าย แนะนำ/ยอดนิยม/ขายดี/ใหม่ ให้เลือกในช่อง 'ป้ายสินค้า'", widget: string, required: false, i18n: true }
       - { name: images, label: "รูปสินค้า", hint: "รูปแรกคือรูปหลัก ถ้าไม่มีรูปจะแสดงภาพถังตามสีของเบอร์น้ำยา", widget: list, required: false, field: { name: image, label: "รูป", widget: image } }
       - name: packages
         label: "ขนาดบรรจุ"
@@ -118,7 +118,17 @@ collections:
           - { name: q, label: "คำถาม", widget: string }
           - { name: a, label: "คำตอบ", widget: text }
       - { name: seo_description, label: "คำอธิบายสำหรับ Google", widget: text, required: false, i18n: true }
-      - { name: featured, label: "แสดงในสินค้าแนะนำหน้าแรก", widget: boolean, default: false }
+      - name: labels
+        label: "ป้ายสินค้า"
+        hint: "เลือกได้หลายป้าย — 'แนะนำ' จะแสดงในส่วนสินค้าแนะนำหน้าแรกด้วย"
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: "แนะนำ (แสดงหน้าแรก)", value: recommended }
+          - { label: "ยอดนิยม", value: popular }
+          - { label: "ขายดี", value: bestseller }
+          - { label: "สินค้าใหม่", value: new }
       - { name: draft, label: "ซ่อนจากเว็บไซต์ (ฉบับร่าง)", widget: boolean, default: false }
       - { name: order, label: "ลำดับการแสดง (น้อย = ก่อน)", widget: number, value_type: int, default: 100 }
 

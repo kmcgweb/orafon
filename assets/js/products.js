@@ -8,7 +8,7 @@
   var empty = document.getElementById("empty");
   var q = document.getElementById("q");
   var ref = document.getElementById("ref");
-  var state = { q: "", class: "", brand: "", ref: "" };
+  var state = { q: "", label: "", class: "", brand: "", ref: "" };
 
   var params = new URLSearchParams(location.search);
   Object.keys(state).forEach(function (k) { state[k] = params.get(k) || ""; });
@@ -30,6 +30,7 @@
     var n = 0;
     cards.forEach(function (c) {
       var ok =
+        (!state.label || (" " + c.dataset.labels + " ").indexOf(" " + state.label + " ") !== -1) &&
         (!state.class || c.dataset.class === state.class) &&
         (!state.brand || c.dataset.brand === state.brand) &&
         (!state.ref || c.dataset.ref === state.ref) &&
