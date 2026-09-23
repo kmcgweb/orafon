@@ -25,16 +25,11 @@
       <div class="foot-brand">
         <a href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }}"><img class="foot-logo" src="/assets/img/orafon-logo-white.png" alt="{{ S.brand_name }}" width="200" height="59" loading="lazy"></a>
         <p class="foot-about">{{ S.footer_about }}</p>
-        <dl class="foot-brands">
-          {%- for b in D.brands %}<dt>{{ T.ownBrand if b.own_brand else T.distributor }}</dt><dd><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></dd>{% endfor %}
-        </dl>
-        <p class="foot-motto">COOLER TOMORROW<br>TOGETHER <span></span></p>
         <div class="foot-social">
           {%- if S.line_id %}<a class="fs-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}<b>LINE</b> <span>{{ S.line_id }}</span>{{ chev | safe }}</a>{% endif %}
           {%- if S.phone %}<a href="tel:{{ S.phone }}" aria-label="{{ T.call }}">{{ icon("phone") }}</a>{% endif %}
           {%- if S.email %}<a href="mailto:{{ S.email }}" aria-label="{{ T.email }}">{{ icon("mail") }}</a>{% endif %}
         </div>
-        <p class="foot-slogan"><span></span>{{ T.footSlogan }}<span></span></p>
       </div>
 
       <div class="foot-col">
