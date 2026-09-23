@@ -24,7 +24,7 @@
 </head>
 <body class="has-sticky">
 <div class="blobs" aria-hidden="true"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
-<header class="site">
+<header class="site" id="siteHeader">
   <div class="container nav">
     <a class="logo" href="/" aria-label="ORAFON — หน้าแรก"><img src="/assets/img/orafon-logo.png" alt="ORAFON" width="120" height="32"></a>
     <form class="search" action="/products/" method="get" role="search">
@@ -35,18 +35,146 @@
       <div class="lang-switch" aria-label="Language"><span aria-current="true">TH</span><a href="/en/products/solstice-r515b/" hreflang="en" lang="en">EN</a>
       </div>
       <a class="nav-cta grad-bg" href="/contact/">ขอใบเสนอราคา</a>
+      <button class="nav-icon-btn m-only" type="button" data-drawer-open data-focus="drawerSearch" aria-label="ค้นหา"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button class="burger m-only" type="button" data-drawer-open aria-controls="navDrawer" aria-expanded="false" aria-label="เมนู"><span></span><span></span><span></span></button>
     </div>
-  </div>
-  <nav class="catbar" aria-label="หน้าแรก">
-    <div class="container">
-      <a href="/">หน้าแรก</a>
-      <a href="/products/" class="active" aria-current="page">สินค้าทั้งหมด</a>
-      <a href="/technical/">ศูนย์ข้อมูลเทคนิค</a>
-      <a href="/about/">เกี่ยวกับเรา</a>
-      <a href="/contact/">ติดต่อเรา</a>
+  </div><nav class="mainnav" aria-label="เมนู">
+    <div class="container mn-row">
+      <a class="mn-link" href="/">หน้าแรก</a>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link active" type="button" aria-expanded="false" aria-controls="mega-products">สินค้า<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="mega" id="mega-products">
+          <div class="container mega-grid mg-products">
+            <div class="mg-col">
+              <a class="mg-title" href="/brands/orafon/">ORAFON <span class="mg-count">16</span></a>
+              <span class="mg-sub">แบรนด์ของเรา</span>
+              <ul class="mg-list">
+                <li><a href="/products/orafon-r32/"><span class="dot" style="background:#EA580C"></span>ORAFON R-32</a></li>
+                <li><a href="/products/orafon-r410a/"><span class="dot" style="background:#7C3AED"></span>ORAFON R-410A</a></li>
+                <li><a href="/products/orafon-r22/"><span class="dot" style="background:#0F766E"></span>ORAFON R-22</a></li>
+                <li><a href="/products/orafon-r134a/"><span class="dot" style="background:#059669"></span>ORAFON R-134a</a></li>
+                <li><a href="/products/orafon-r141b/"><span class="dot" style="background:#B45309"></span>ORAFON R-141b</a></li>
+                <li><a href="/products/orafon-r152a/"><span class="dot" style="background:#0891B2"></span>ORAFON R-152a</a></li>
+                <li><a href="/products/orafon-r23/"><span class="dot" style="background:#1E3A8A"></span>ORAFON R-23</a></li>
+                <li><a href="/products/orafon-r245fa/"><span class="dot" style="background:#6D28D9"></span>ORAFON R-245fa</a></li>
+              </ul><a class="mg-more" href="/products/?brand=orafon">ดูสินค้าทั้งหมด (16) →</a>
+            </div>
+            <div class="mg-col">
+              <a class="mg-title" href="/brands/solstice/">Solstice® <span class="mg-count">9</span></a>
+              <span class="mg-sub">ตัวแทนจำหน่าย</span>
+              <ul class="mg-list">
+                <li><a href="/products/solstice-n40/"><span class="dot" style="background:#4F46E5"></span>Solstice® N40 (R-448A)</a></li>
+                <li><a href="/products/solstice-r449a/"><span class="dot" style="background:#4338CA"></span>Solstice® R-449A</a></li>
+                <li><a href="/products/solstice-r452a/"><span class="dot" style="background:#0369A1"></span>Solstice® R-452A</a></li>
+                <li><a href="/products/solstice-r454b/"><span class="dot" style="background:#EA580C"></span>Solstice® R-454B</a></li>
+                <li><a href="/products/solstice-r454c/"><span class="dot" style="background:#059669"></span>Solstice® R-454C</a></li>
+                <li><a href="/products/solstice-r455a/"><span class="dot" style="background:#0D9488"></span>Solstice® R-455A</a></li>
+                <li><a href="/products/solstice-r513a/"><span class="dot" style="background:#0EA5E9"></span>Solstice® R-513A</a></li>
+                <li><a href="/products/solstice-r515b/"><span class="dot" style="background:#0284C7"></span>Solstice® R-515B</a></li>
+              </ul><a class="mg-more" href="/products/?brand=solstice">ดูสินค้าทั้งหมด (9) →</a>
+            </div>
+            <div class="mg-col">
+              <span class="mg-title">ตามประเภทสาร</span>
+              <span class="mg-sub">HFO, HFC, HCFC และสารธรรมชาติ</span>
+              <ul class="mg-list mg-classes"><li><a href="/products/?class=HFO"><b>HFO</b><span class="mg-count">1</span></a></li><li><a href="/products/?class=HFO%20Blend"><b>HFO Blend</b><span class="mg-count">8</span></a></li><li><a href="/products/?class=HFC"><b>HFC</b><span class="mg-count">5</span></a></li><li><a href="/products/?class=HFC%20Blend"><b>HFC Blend</b><span class="mg-count">7</span></a></li><li><a href="/products/?class=HCFC"><b>HCFC</b><span class="mg-count">2</span></a></li><li><a href="/products/?class=HC"><b>HC</b><span class="mg-count">2</span></a></li>
+              </ul>
+            </div>
+            <a class="mg-feature" href="/products/orafon-r32/">
+              <span class="mgf-art"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="R-32"><defs><linearGradient id="g-mega" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EA580C"/><stop offset="1" stop-color="#DB2777"/></linearGradient></defs><rect x="74" y="40" width="52" height="130" rx="16" fill="#fff" stroke="#EA580C" stroke-width="3"/><rect x="74" y="40" width="52" height="34" rx="16" fill="url(#g-mega)"/><rect x="90" y="24" width="20" height="20" rx="5" fill="#EA580C"/><text x="100" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="22" font-weight="800" fill="#EA580C" text-anchor="middle">32</text><text x="100" y="142" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="600" fill="#DB2777" text-anchor="middle">R-32</text></svg></span>
+              <span class="mgf-kicker">สินค้าแนะนำ</span>
+              <b>ORAFON R-32</b>
+              <span>สารทำความเย็น HFC</span>
+              <em>ดูรายละเอียด →</em>
+            </a>
+          </div>
+          <div class="mega-foot"><div class="container">
+            <a href="/products/">สินค้าทั้งหมด (25) →</a>
+            <a href="/contact/">ขอใบเสนอราคา →</a>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link" type="button" aria-expanded="false" aria-controls="mega-tech">ศูนย์ข้อมูลเทคนิค<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="mega" id="mega-tech">
+          <div class="container mega-grid mg-tech">
+            <div class="mg-cards">
+              <a class="mg-card" href="/technical/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></span><span><b>ภาพรวม</b><span>ศูนย์ข้อมูลทางเทคนิคสารทำความเย็น — ตารางสารทดแทน เอกสาร TDS/SDS และคู่มือความปลอดภัย สำหรับช่าง ผู้รับเหมา และวิศวกร</span></span></a>
+              <a class="mg-card" href="/retrofit/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><span><b>ตารางสารทดแทน</b><span>หาสารทดแทนสำหรับระบบเดิม เปรียบเทียบ GWP ของแต่ละทางเลือก</span></span></a>
+              <a class="mg-card" href="/documents/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span><span><b>เอกสาร TDS/SDS</b><span>ขอรับหรือดาวน์โหลดเอกสารข้อมูลทางเทคนิคและความปลอดภัย</span></span></a>
+              <a class="mg-card" href="/articles/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg></span><span><b>บทความ</b><span>ความรู้และข่าวสารเกี่ยวกับสารทำความเย็น สำหรับช่าง ผู้รับเหมา และผู้ดูแลระบบ</span></span></a>
+            </div>
+            <div class="mg-col mg-articles">
+              <span class="mg-title">บทความล่าสุด</span>
+              <ul>
+                <li><a href="/articles/r22-replacement-guide/"><time>23 กันยายน 2569</time><b>เลือกสารทดแทน R-22 อย่างไรให้เหมาะกับระบบ</b></a></li>
+                <li><a href="/articles/ashrae-safety-classes/"><time>22 กันยายน 2569</time><b>A1, A2L, A3 คืออะไร? ทำความเข้าใจระดับความปลอดภัยของสารทำความเย็น</b></a></li>
+                <li><a href="/articles/gwp-odp-explained/"><time>21 กันยายน 2569</time><b>GWP และ ODP คืออะไร? ทำไมตัวเลขในเอกสารแต่ละฉบับถึงไม่เท่ากัน</b></a></li>
+              </ul>
+              <a class="mg-more" href="/articles/">บทความทั้งหมด →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mn-item" data-mega>
+        <button class="mn-link" type="button" aria-expanded="false" aria-controls="mega-about">เกี่ยวกับเรา<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="mega mega-sm" id="mega-about">
+          <div class="container mega-grid mg-about">
+            <a class="mg-card" href="/about/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg></span><span><b>เกี่ยวกับเรา</b><span>บริษัท โอราโนส จำกัด</span></span></a>
+            <a class="mg-card" href="/brands/orafon/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span><b>ORAFON</b><span>แบรนด์สารทำความเย็นของเราเอง</span></span></a>
+            <a class="mg-card" href="/brands/solstice/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span><b>Solstice®</b><span>ตัวแทนจำหน่ายสารทำความเย็นเทคโนโลยี HFO</span></span></a>
+            <a class="mg-card" href="/contact/"><span class="mgc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span><span><b>ติดต่อเรา</b><span>0X-XXX-XXXX · LINE @orafon</span></span></a>
+          </div>
+        </div>
+      </div>
+
+      <a class="mn-link" href="/contact/">ติดต่อเรา</a>
     </div>
   </nav>
-</header>
+</header><div class="drawer-backdrop" data-drawer-close hidden></div>
+<aside class="drawer" id="navDrawer" aria-label="เมนู" aria-hidden="true">
+  <div class="dr-head">
+    <img src="/assets/img/orafon-logo.png" alt="ORAFON" width="110" height="30">
+    <button class="dr-close" type="button" data-drawer-close aria-label="ปิด">✕</button>
+  </div>
+  <form class="dr-search" action="/products/" method="get" role="search">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="drawerSearch" type="search" name="q" placeholder="ค้นหาสินค้า เบอร์น้ำยา เช่น R-32" aria-label="ค้นหา">
+  </form>
+  <nav class="dr-nav">
+    <a class="dr-link" href="/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 9v12h14V9"/><path d="M10 21v-6h4v6"/></svg>หน้าแรก</a>
+    <details class="dr-group" open>
+      <summary><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>สินค้า<span class="chev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="dr-sub">
+        <a href="/products/"><b>สินค้าทั้งหมด</b><span class="mg-count">25</span></a><a href="/brands/orafon/">ORAFON<span class="mg-count">16</span></a><a href="/brands/solstice/">Solstice®<span class="mg-count">9</span></a>
+        <span class="dr-label">ตามประเภทสาร</span>
+        <div class="dr-chips"><a href="/products/?class=HFO">HFO</a><a href="/products/?class=HFO%20Blend">HFO Blend</a><a href="/products/?class=HFC">HFC</a><a href="/products/?class=HFC%20Blend">HFC Blend</a><a href="/products/?class=HCFC">HCFC</a><a href="/products/?class=HC">HC</a>
+        </div>
+      </div>
+    </details>
+    <details class="dr-group">
+      <summary><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2h6M10 2v6L4 19a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 19l-6-11V2"/><path d="M7 15h10"/></svg>ศูนย์ข้อมูลเทคนิค<span class="chev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="dr-sub"><a href="/technical/">ภาพรวม</a><a href="/retrofit/">ตารางสารทดแทน</a><a href="/documents/">เอกสาร TDS/SDS</a><a href="/articles/">บทความ</a>
+      </div>
+    </details>
+    <details class="dr-group">
+      <summary><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>เกี่ยวกับเรา<span class="chev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+      <div class="dr-sub">
+        <a href="/about/">เกี่ยวกับเรา</a><a href="/brands/orafon/">ORAFON</a><a href="/brands/solstice/">Solstice®</a>
+        <a href="/privacy/">นโยบายความเป็นส่วนตัว</a>
+      </div>
+    </details>
+    <a class="dr-link" href="/contact/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>ติดต่อเรา</a>
+  </nav>
+  <div class="dr-foot">
+    <div class="dr-lang"><span aria-current="true">ไทย</span><a href="/en/products/solstice-r515b/" hreflang="en" lang="en">English</a>
+    </div>
+    <a class="btn btn-primary grad-bg" href="/contact/">ขอใบเสนอราคา</a>
+    <div class="dr-quick"><a class="btn btn-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg> LINE</a><a class="btn btn-ghost" href="tel:+66000000000"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> โทร</a>
+    </div>
+  </div>
+</aside>
 
 <main id="main">
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
@@ -246,6 +374,7 @@
   </div>
 </footer>
 
+<script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/product.js" defer></script>
 </body>
 </html>
