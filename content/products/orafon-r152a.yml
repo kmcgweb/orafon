@@ -2,7 +2,7 @@ th:
   id: orafon-r152a
   brand: orafon
   refrigerant: r-152a
-  featured: false
+  labels: []
   draft: false
   order: 140
   images: []

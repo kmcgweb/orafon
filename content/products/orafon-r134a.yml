@@ -2,7 +2,9 @@ th:
   id: orafon-r134a
   brand: orafon
   refrigerant: r-134a
-  featured: true
+  labels:
+    - recommended
+    - popular
   draft: false
   order: 40
   images: []
@@ -15,7 +17,7 @@ th:
       file: ""
   name: ORAFON R-134a
   tagline: สารทำความเย็น HFC
-  tag: ยอดนิยม
+  tag: ""
   badges:
     - GWP 1430
     - A1 ไม่ติดไฟ
@@ -52,7 +54,7 @@ th:
 en:
   name: ORAFON R-134a
   tagline: HFC refrigerant
-  tag: Popular
+  tag: ""
   badges:
     - GWP 1430
     - A1 non-flammable

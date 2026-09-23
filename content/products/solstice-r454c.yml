@@ -2,7 +2,7 @@ th:
   id: solstice-r454c
   brand: solstice
   refrigerant: r-454c
-  featured: false
+  labels: []
   draft: false
   order: 268
   images: []

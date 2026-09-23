@@ -2,7 +2,7 @@ th:
   id: orafon-r507a
   brand: orafon
   refrigerant: r-507a
-  featured: false
+  labels: []
   draft: false
   order: 190
   images: []

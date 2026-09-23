@@ -2,7 +2,8 @@ th:
   id: solstice-r449a
   brand: solstice
   refrigerant: r-449a
-  featured: true
+  labels:
+    - recommended
   draft: false
   order: 262
   images: []

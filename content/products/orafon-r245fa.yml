@@ -2,7 +2,7 @@ th:
   id: orafon-r245fa
   brand: orafon
   refrigerant: r-245fa
-  featured: false
+  labels: []
   draft: false
   order: 160
   images: []

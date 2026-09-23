@@ -109,8 +109,13 @@ footer.site{border-top:1px solid var(--border);background:#fff;margin-top:24px}
 .prod-media{aspect-ratio:4/3;background:linear-gradient(135deg,#eef2ff,#f5f3ff);display:flex;align-items:center;justify-content:center;position:relative}
 .prod-media svg{width:64%;height:64%}
 .prod-media img{width:100%;height:100%;object-fit:contain;padding:18px}
-.prod-tag{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;color:#fff;padding:4px 10px;border-radius:999px}
-.prod-body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod-tags{position:absolute;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}
+.prod-tag{font-size:11px;font-weight:700;color:#fff;padding:4px 10px;border-radius:999px;line-height:1.3}
+.lb-recommended{background:linear-gradient(135deg,var(--primary),var(--secondary))}
+.lb-popular{background:#EA580C}
+.lb-bestseller{background:#DC2626}
+.lb-new{background:#059669}
+.lb-custom{background:#fff;color:var(--text);border:1px solid var(--border)}.prod-body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
 .prod-brand{font-size:12px;font-weight:600;color:var(--text-muted)}
 .prod-name{font-size:17px;font-weight:700;color:var(--text);line-height:1.35}
 .prod-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}

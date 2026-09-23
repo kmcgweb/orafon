@@ -2,7 +2,7 @@ th:
   id: solstice-r455a
   brand: solstice
   refrigerant: r-455a
-  featured: false
+  labels: []
   draft: false
   order: 270
   images: []

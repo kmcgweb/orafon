@@ -2,7 +2,7 @@ th:
   id: solstice-r452a
   brand: solstice
   refrigerant: r-452a
-  featured: false
+  labels: []
   draft: false
   order: 264
   images: []

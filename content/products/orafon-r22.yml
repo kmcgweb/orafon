@@ -2,7 +2,8 @@ th:
   id: orafon-r22
   brand: orafon
   refrigerant: r-22
-  featured: true
+  labels:
+    - recommended
   draft: false
   order: 30
   images: []

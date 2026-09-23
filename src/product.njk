@@ -54,6 +54,11 @@ eleventyComputed:
         {%- if r %}<span class="tag grad-bg">{{ r.class }}</span>{% endif %}
         <span class="txt">{% if b %}{{ b.name }}{% if not b.own_brand %} · {{ T.distributedBy }} {{ S.brand_name }}{% endif %}{% endif %}</span>
       </div>
+      {%- if p.labels.length %}
+      <div class="prod-tags" style="position:static;margin-bottom:12px">
+        {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
+      </div>
+      {%- endif %}
       <h1 class="pname">{{ p.name }}{% if p.tagline %}<br><span class="grad-text">{{ p.tagline }}</span>{% endif %}</h1>
       {%- if r %}<div class="pinfo-sku">ASHRAE: {{ r.number }}{% if p.packages and p.packages[0] %} · {{ T.sku }}: {{ p.packages[0].sku }}{% endif %}</div>{% endif %}
 

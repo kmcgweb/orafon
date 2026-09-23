@@ -2,7 +2,9 @@ th:
   id: orafon-r32
   brand: orafon
   refrigerant: r-32
-  featured: true
+  labels:
+    - recommended
+    - popular
   draft: false
   order: 10
   images: []
@@ -15,7 +17,7 @@ th:
       file: ""
   name: ORAFON R-32
   tagline: สารทำความเย็น HFC
-  tag: ยอดนิยม
+  tag: ""
   badges:
     - ลด GWP 68% เทียบ R-410A
     - A2L ติดไฟได้เล็กน้อย
@@ -54,7 +56,7 @@ th:
 en:
   name: ORAFON R-32
   tagline: HFC refrigerant
-  tag: Popular
+  tag: ""
   badges:
     - 68% lower GWP vs R-410A
     - A2L mildly flammable

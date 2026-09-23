@@ -2,7 +2,7 @@ th:
   id: solstice-r515b
   brand: solstice
   refrigerant: r-515b
-  featured: false
+  labels: []
   draft: false
   order: 274
   images: []

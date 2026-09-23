@@ -2,7 +2,8 @@ th:
   id: solstice-n40
   brand: solstice
   refrigerant: r-448a
-  featured: true
+  labels:
+    - recommended
   draft: false
   order: 50
   images: []
@@ -35,7 +36,7 @@ th:
       file: ""
   name: Solstice® N40 (R-448A)
   tagline: สารทำความเย็น HFO Blend
-  tag: แนะนำ
+  tag: ""
   badges:
     - ลด GWP 68% เทียบ R-404A
     - A1 ไม่ติดไฟ
@@ -90,7 +91,7 @@ th:
 en:
   name: Solstice® N40 (R-448A)
   tagline: HFO blend refrigerant
-  tag: Recommended
+  tag: ""
   badges:
     - 68% lower GWP vs R-404A
     - A1 non-flammable

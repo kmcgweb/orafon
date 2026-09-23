@@ -2,7 +2,7 @@ th:
   id: solstice-r513a
   brand: solstice
   refrigerant: r-513a
-  featured: false
+  labels: []
   draft: false
   order: 272
   images: []

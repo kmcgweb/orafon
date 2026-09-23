@@ -46,9 +46,12 @@
 
 {%- macro productCard(p, lang, T) -%}
 {%- set href = ("/products/" ~ p.slug ~ "/") | u(lang) -%}
-<article class="prod-card" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+<article class="prod-card" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
-    {%- if p.tag %}<span class="prod-tag grad-bg">{{ p.tag }}</span>{% endif %}
+    {%- if p.labels.length or p.tag %}<span class="prod-tags">
+      {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
+      {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
+    </span>{% endif %}
     {%- if p.images and p.images[0] %}<img src="{{ p.images[0] }}" alt="" loading="lazy">{% else %}{{ cylinder(p.ref, "card-" ~ p.slug) }}{% endif -%}
   </a>
   <div class="prod-body">

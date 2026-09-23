@@ -2,7 +2,7 @@ th:
   id: orafon-r141b
   brand: orafon
   refrigerant: r-141b
-  featured: false
+  labels: []
   draft: false
   order: 110
   images: []

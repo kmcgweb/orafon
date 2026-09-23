@@ -2,7 +2,7 @@ th:
   id: orafon-r508b
   brand: orafon
   refrigerant: r-508b
-  featured: false
+  labels: []
   draft: false
   order: 230
   images: []

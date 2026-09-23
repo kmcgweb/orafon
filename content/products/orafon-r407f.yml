@@ -2,7 +2,7 @@ th:
   id: orafon-r407f
   brand: orafon
   refrigerant: r-407f
-  featured: false
+  labels: []
   draft: false
   order: 210
   images: []

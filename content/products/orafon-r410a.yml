@@ -2,7 +2,9 @@ th:
   id: orafon-r410a
   brand: orafon
   refrigerant: r-410a
-  featured: true
+  labels:
+    - recommended
+    - popular
   draft: false
   order: 20
   images: []
@@ -15,7 +17,7 @@ th:
       file: ""
   name: ORAFON R-410A
   tagline: สารทำความเย็น HFC Blend
-  tag: ยอดนิยม
+  tag: ""
   badges:
     - GWP 2088
     - A1 ไม่ติดไฟ
@@ -52,7 +54,7 @@ th:
 en:
   name: ORAFON R-410A
   tagline: HFC Blend refrigerant
-  tag: Popular
+  tag: ""
   badges:
     - GWP 2088
     - A1 non-flammable

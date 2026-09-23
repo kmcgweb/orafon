@@ -2,7 +2,7 @@ th:
   id: orafon-r23
   brand: orafon
   refrigerant: r-23
-  featured: false
+  labels: []
   draft: false
   order: 150
   images: []

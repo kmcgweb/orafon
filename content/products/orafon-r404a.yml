@@ -2,7 +2,7 @@ th:
   id: orafon-r404a
   brand: orafon
   refrigerant: r-404a
-  featured: false
+  labels: []
   draft: false
   order: 180
   images: []

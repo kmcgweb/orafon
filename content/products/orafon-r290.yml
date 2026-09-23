@@ -2,7 +2,8 @@ th:
   id: orafon-r290
   brand: orafon
   refrigerant: r-290
-  featured: true
+  labels:
+    - recommended
   draft: false
   order: 292
   images: []

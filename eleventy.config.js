@@ -6,6 +6,7 @@ import markdownIt from "markdown-it";
 const LANGS = ["th", "en"];
 const DEFAULT_LANG = "th";
 const CONTENT = "content";
+const LABELS = ["recommended", "popular", "bestseller", "new"];
 const md = markdownIt({ html: false, linkify: true, breaks: true });
 
 /* ---------- content loading ----------
@@ -72,7 +73,9 @@ function buildDb() {
         const brandObj = brandMap[p.brand] || null;
         const searchText = [p.name, p.tagline, ref?.number, ref?.class, brandObj?.name, ...(p.packages || []).map((k) => k.sku)]
           .filter(Boolean).join(" ").toLowerCase();
-        return { ...p, ref, brandObj, searchText };
+        // labels: recommended | popular | bestseller | new  (old "featured: true" counts as recommended)
+        const labels = LABELS.filter((l) => (p.labels || []).includes(l) || (l === "recommended" && p.featured));
+        return { ...p, ref, brandObj, searchText, labels };
       })
       .sort(byOrder);
 
@@ -93,7 +96,8 @@ function buildDb() {
     const one = (k) => localize(singles[k], lang);
     db[lang] = {
       refrigerants, brands, products, articles, refMap, brandMap,
-      featured: products.filter((p) => p.featured),
+      featured: products.filter((p) => p.labels.includes("recommended")),
+      usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
       site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"),
       classes: [...new Set(refrigerants.filter((r) => r.products.length).map((r) => r.class))],
