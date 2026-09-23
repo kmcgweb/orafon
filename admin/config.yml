@@ -97,7 +97,7 @@ collections:
         i18n: true
         summary: "{{label}}"
         fields: &appFields
-          - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, heatpump, snow, store, box, car, fridge, chiller, truck, factory], i18n: duplicate }
+          - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, heatpump, snow, store, box, car, fridge, chiller, truck, factory, foam, spray, flask, wrench, bolt], i18n: duplicate }
           - { name: label, label: "ข้อความ", widget: string }
       - name: documents
         label: "เอกสาร (TDS/SDS)"
