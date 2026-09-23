@@ -42,12 +42,10 @@
   body[data-theme="dark"] .catbar{background:rgba(17,24,39,.6)}
   body[data-theme="dark"] .main-img,
   body[data-theme="dark"] .thumb,
-  body[data-theme="dark"] .feature,
   body[data-theme="dark"] .specs,
   body[data-theme="dark"] .buy-card,
   body[data-theme="dark"] .pkg-opt,
   body[data-theme="dark"] .app-card,
-  body[data-theme="dark"] .pkg-tile,
   body[data-theme="dark"] footer,
   body[data-theme="dark"] .search input,
   body[data-theme="dark"] .brand-badge{background:var(--surface)}
@@ -161,25 +159,29 @@
   .specs .ico{color:var(--primary);flex:0 0 auto}
 
   /* ---- ENQUIRY CARD ---- */
-  .buy-card{background:#fff;border:1px solid var(--border-soft);border-radius:calc(var(--radius) + 8px);padding:24px;box-shadow:var(--shadow-lift)}
-  .enquiry-wrap{max-width:100%;margin:36px auto 0}
-  .pkg-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px}
-  .pkg-label{font-size:15px;color:var(--text);font-weight:700}
-  .pkg-hint{font-size:12px;color:var(--text-muted);font-weight:500}
-  .pkg-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
-  @media (max-width:560px){.pkg-opts{grid-template-columns:1fr}}
+  .buy-card{background:#fff;border:1px solid var(--border-soft);border-radius:calc(var(--radius) + 8px);padding:28px;box-shadow:var(--shadow-soft)}
+  .pkg-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-bottom:18px}
+  .pkg-head h2{font-size:24px!important;margin:0!important}
+  .pkg-hint{font-size:13px;color:var(--text-muted);font-weight:500}
+  .pkg-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  @media (max-width:768px){.pkg-opts{grid-template-columns:1fr 1fr}}
   .pkg-opt{
-    position:relative;border:1.5px solid var(--border);border-radius:calc(var(--radius) + 2px);padding:16px 44px 16px 18px;
-    background:#fff;transition:.2s ease;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:8px;
+    position:relative;border:1.5px solid var(--border);border-radius:calc(var(--radius) + 2px);padding:14px 16px;
+    background:#fff;transition:.2s ease;text-align:left;display:flex;flex-direction:column;gap:2px;font-family:inherit;cursor:pointer;
   }
-  .pkg-opt .name{font-size:15px;font-weight:700;color:var(--text)}
-  .pkg-opt .meta{font-size:13px;color:var(--text-muted);font-weight:500;white-space:nowrap}
-  .pkg-opt .check{position:absolute;top:50%;right:14px;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:.2s;opacity:0}
+  .pkg-opt .name{font-size:13px;font-weight:600;color:var(--primary)}
+  .pkg-opt .kg{font-size:24px;font-weight:800;color:var(--text);line-height:1.2}
+  .pkg-opt .kg small{font-size:15px;font-weight:700}
+  .pkg-opt .meta{font-size:12px;color:var(--text-muted);font-weight:500}
+  .pkg-opt .check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:.2s;opacity:0}
   .pkg-opt.active{border-color:var(--primary);background:var(--primary-soft);box-shadow:0 0 0 3px rgba(var(--primary-rgb),.12)}
-  .pkg-opt.active .name{color:var(--primary)}
+  .pkg-opt.active .kg{color:var(--primary)}
   .pkg-opt.active .check{opacity:1;background:var(--primary);border-color:var(--primary)}
   .pkg-opt:hover{border-color:var(--primary);transform:translateY(-2px)}
-  .quote-note{font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.6}
+  .pkg-foot{display:flex;align-items:center;gap:20px}
+  .pkg-foot .cta-row{flex:0 0 420px}
+  @media (max-width:900px){.pkg-foot{flex-direction:column;align-items:stretch}.pkg-foot .cta-row{flex:none}}
+  .quote-note{flex:1;font-size:13px;color:var(--text-muted);line-height:1.6}
 
   .cta-row{display:flex;gap:12px}
   .btn{
@@ -199,16 +201,18 @@
   @media (min-width:640px){.hbr{display:inline}}
   .section .lead{font-size:18px;color:var(--text-muted);max-width:640px;line-height:1.7;margin-bottom:40px}
 
-  /* why / benefit cards */
-  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-  .feature{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-soft);transition:.2s ease}
-  .feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-  .feature .ic{width:56px;height:56px;border-radius:calc(var(--radius) + 2px);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  /* highlights (inside description tab) */
+  .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+  @media (max-width:900px){.hl-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.hl-grid{grid-template-columns:1fr}}
+  .hl{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--border-soft);border-radius:var(--radius)}
+  .hl .ic{width:36px;height:36px;flex:0 0 auto;border-radius:10px;display:flex;align-items:center;justify-content:center}
+  .hl .ic svg{width:18px;height:18px}
   .ic.i-indigo{background:#eef2ff;color:var(--primary)}
   .ic.i-emerald{background:#ecfdf5;color:var(--success)}
   .ic.i-violet{background:#f5f3ff;color:var(--secondary)}
-  .feature h3{font-size:18px;font-weight:600;margin-bottom:8px}
-  .feature p{font-size:14px;color:var(--text-muted);line-height:1.7}
+  .hl h5{font-size:14px;font-weight:700;margin-bottom:2px}
+  .hl p{font-size:13px;color:var(--text-muted);line-height:1.55}
 
   /* applications band */
   .apps-band{background:linear-gradient(135deg,#eef2ff,#f5f3ff);border:1px solid #e0e7ff;border-radius:calc(var(--radius) + 12px);padding:48px}
@@ -221,15 +225,6 @@
   .app-card .t{font-size:12.5px;font-weight:600;color:#334155;line-height:1.4}
   @media (max-width:1023px){.apps-grid{grid-template-columns:repeat(4,1fr)}.app-card:nth-child(4){border-right:none}.app-card:nth-child(-n+4){border-bottom:1px solid var(--border-soft)}}
   @media (max-width:560px){.apps-grid{grid-template-columns:repeat(2,1fr)}.app-card{border-right:1px solid var(--border-soft)}.app-card:nth-child(odd){border-right:1px solid var(--border-soft)}.app-card:nth-child(even){border-right:none}.app-card{border-bottom:1px solid var(--border-soft)}}
-
-  /* packages */
-  .pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-  .pkg-tile{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-soft);transition:.2s ease}
-  .pkg-tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-  .pkg-tile .type{font-size:14px;font-weight:600;color:var(--primary)}
-  .pkg-tile .size{font-size:26px;font-weight:800;margin-top:8px}
-  .pkg-tile .kg{color:var(--text-muted)}
-  .pkg-tile .sku{margin-top:16px;padding-top:16px;border-top:1px solid var(--border-soft);font-size:13px;color:var(--text-muted)}
 
   /* final cta */
   .final-cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#312e81,#1e1b4b);border-radius:calc(var(--radius) + 16px);padding:72px 32px;text-align:center;color:#fff}
@@ -457,10 +452,10 @@
         </div>
       </div>
       <div class="thumbs" role="tablist">
-        <button class="thumb active" role="tab" aria-label="ถังบรรจุ 25 ปอนด์"><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='28' y='16' width='24' height='52' rx='5' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;rect x='28' y='16' width='24' height='12' rx='5' fill='%234F46E5'/&gt;&lt;text x='40' y='50' font-size='9' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;25lb&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
-        <button class="thumb" role="tab" aria-label="ถังบรรจุ 100 ปอนด์"><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='26' y='12' width='28' height='58' rx='6' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;rect x='26' y='12' width='28' height='14' rx='6' fill='%234F46E5'/&gt;&lt;text x='40' y='52' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;100lb&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
-        <button class="thumb" role="tab" aria-label="ถังครึ่งตัน"><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='20' y='24' width='40' height='42' rx='7' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;text x='40' y='50' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;850lb&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
-        <button class="thumb" role="tab" aria-label="ถังหนึ่งตัน"><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='16' y='22' width='48' height='46' rx='7' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;text x='40' y='50' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;1450lb&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
+        <button class="thumb active" role="tab" aria-label="ถังบรรจุ 11.3 กก."><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='28' y='16' width='24' height='52' rx='5' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;rect x='28' y='16' width='24' height='12' rx='5' fill='%234F46E5'/&gt;&lt;text x='40' y='50' font-size='9' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;11.3kg&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
+        <button class="thumb" role="tab" aria-label="ถังบรรจุ 45 กก."><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='26' y='12' width='28' height='58' rx='6' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;rect x='26' y='12' width='28' height='14' rx='6' fill='%234F46E5'/&gt;&lt;text x='40' y='52' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;45kg&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
+        <button class="thumb" role="tab" aria-label="ถัง Half Ton 386 กก."><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='20' y='24' width='40' height='42' rx='7' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;text x='40' y='50' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;386kg&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
+        <button class="thumb" role="tab" aria-label="ถัง Ton 658 กก."><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='16' y='22' width='48' height='46' rx='7' fill='%23eef2ff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;text x='40' y='50' font-size='8' fill='%234F46E5' text-anchor='middle' font-family='sans-serif'&gt;658kg&lt;/text&gt;&lt;/svg&gt;" alt=""></button>
         <button class="thumb" role="tab" aria-label="ฉลากข้อมูลผลิตภัณฑ์"><img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'&gt;&lt;rect x='18' y='20' width='44' height='40' rx='4' fill='%23fff' stroke='%234F46E5' stroke-width='2'/&gt;&lt;line x1='24' y1='30' x2='56' y2='30' stroke='%237C3AED' stroke-width='2'/&gt;&lt;line x1='24' y1='38' x2='50' y2='38' stroke='%23E2E8F0' stroke-width='2'/&gt;&lt;line x1='24' y1='46' x2='54' y2='46' stroke='%23E2E8F0' stroke-width='2'/&gt;&lt;/svg&gt;" alt=""></button>
       </div>
       <div class="title-dropzone" id="titleDropzone">⇩ ลากชื่อสินค้ามาวางที่นี่ (เหนือ/ใต้รูป)</div>
@@ -506,6 +501,27 @@
 </div>
 
 <div id="dragZone">
+<!-- APPS -->
+<div class="container drag-block" data-block="apps">
+  <span class="drag-handle" draggable="true">⣿ การใช้งาน</span>
+  <section class="section" id="apps">
+    <div class="apps-band">
+      <h2 style="margin-bottom:14px">การใช้งาน <span class="grad-text">ครอบคลุมทั้งคลังเย็น</span></h2>
+      <p class="lead" style="margin-bottom:0">เหมาะกับงานทำความเย็นอุณหภูมิต่ำถึงปานกลางหลายรูปแบบ</p>
+      <div class="apps-grid">
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg></span><div class="t">ตู้แช่เชิงพาณิชย์<br>อุณหภูมิต่ำ–ปานกลาง</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l6 4V8l6 4V8l4 3v9"/></svg></span><div class="t">ระบบ DX<br>อุตสาหกรรม</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M5 9h4M5 15h4"/></svg></span><div class="t">ชุดคอนเดนซิ่ง<br>ค้าปลีก</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 12h16M10 6h1M10 16h1"/></svg></span><div class="t">ตู้แช่แข็ง<br>และตู้โชว์</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16"/><path d="M9 20v-5h6v5"/></svg></span><div class="t">ตู้แช่<br>ร้านสะดวกซื้อ</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-6h6v6M7 10h.01M12 10h.01M17 10h.01"/></svg></span><div class="t">ซูเปอร์มาร์เก็ต</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="t">คลังห้องเย็น</div></div>
+        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10M12 2v10l7 7"/></svg></span><div class="t">ชุดคอนเดนซิ่ง<br>Self-contained</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- PRODUCT TABS -->
 <div class="container drag-block" data-block="tabs">
   <span class="drag-handle" draggable="true">⣿ ข้อมูลเพิ่มเติม</span>
@@ -522,6 +538,14 @@
 
         <!-- TAB: DESCRIPTION -->
         <div class="tab-pane active" data-pane="desc">
+          <div class="hl-grid">
+            <div class="hl"><span class="ic i-indigo"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span><div><h5>ลด GWP 68%</h5><p>เทียบกับ R-404A รองรับการเปลี่ยนจาก HFC/HCFC รุ่นเก่า</p></div></div>
+            <div class="hl"><span class="ic i-emerald"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span><div><h5>ประหยัดพลังงาน</h5><p>ลดการใช้พลังงานในระบบที่เข้าเงื่อนไข</p></div></div>
+            <div class="hl"><span class="ic i-violet"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><h5>A1 ไม่ติดไฟ</h5><p>จัดการได้ตามแนวทางที่ช่างคุ้นเคย</p></div></div>
+            <div class="hl"><span class="ic i-indigo"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><div><h5>ติดตั้งใหม่ / รีโทรฟิต</h5><p>ใช้ได้ทั้งระบบใหม่และงานเปลี่ยนจาก R-404A</p></div></div>
+            <div class="hl"><span class="ic i-emerald"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></span><div><h5>อุณหภูมิต่ำ–ปานกลาง</h5><p>ค้าปลีกอาหาร ห้องเย็น ตู้โชว์ ระบบ DX</p></div></div>
+            <div class="hl"><span class="ic i-violet"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span><div><h5>เอกสาร TDS/SDS ครบ</h5><p>ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON</p></div></div>
+          </div>
           <div class="tab-collapse clamped" id="descCollapse">
             <h4>ข้อมูลสินค้า</h4>
             <p>Solstice® N40 (R-448A) เป็นสารทำความเย็นชนิด HFO blend ที่ไม่ติดไฟ ออกแบบมาเป็นทางเลือกทดแทน R-404A, R-507, R-22 และ R-407 series รวมถึง interim blends ในงานทำความเย็นเชิงพาณิชย์ เหมาะกับผู้รับเหมา ตัวแทนจำหน่าย ทีมบริการ และผู้ดูแลอาคาร ทั้งงานติดตั้งใหม่และงานรีโทรฟิต สำหรับระบบทำความเย็นอุณหภูมิต่ำและปานกลาง</p>
@@ -558,10 +582,10 @@
               <tr><th>Global Warming Potential</th><td>อ้างอิงเอกสาร PIM/TDS ฉบับล่าสุด</td></tr>
               <tr><th>Alternative To</th><td>R-404A, R-507, R-22, R-407 series และ interim blends</td></tr>
               <tr class="grp"><td colspan="2">ขนาดบรรจุ &amp; SKU</td></tr>
-              <tr><th>Jug</th><td>25 lb / 11.3 kg · SKU 10637999</td></tr>
-              <tr><th>Cylinder</th><td>100 lb / 45 kg · SKU 10637061</td></tr>
-              <tr><th>Half Ton</th><td>850 lb / 386.46 kg · SKU 10657578</td></tr>
-              <tr><th>Ton</th><td>1450 lb / 657.7 kg · SKU 10655356</td></tr>
+              <tr><th>Jug</th><td>11.3 kg (25 lb) · SKU 10637999</td></tr>
+              <tr><th>Cylinder</th><td>45 kg (100 lb) · SKU 10637061</td></tr>
+              <tr><th>Half Ton</th><td>386 kg (850 lb) · SKU 10657578</td></tr>
+              <tr><th>Ton</th><td>658 kg (1450 lb) · SKU 10655356</td></tr>
             </tbody>
           </table>
         </div>
@@ -604,7 +628,7 @@
             </details>
             <details>
               <summary>มีขนาดบรรจุอะไรบ้าง?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="ans">มี 4 ขนาด: Jug 25 lb, Cylinder 100 lb, Half Ton 850 lb และ Ton 1450 lb — ติดต่อ ORAFON เพื่อตรวจสอบสต็อกและขอใบเสนอราคา</div>
+              <div class="ans">มี 4 ขนาด: Jug 11.3 kg, Cylinder 45 kg, Half Ton 386 kg และ Ton 658 kg — ติดต่อ ORAFON เพื่อตรวจสอบสต็อกและขอใบเสนอราคา</div>
             </details>
             <details>
               <summary>สั่งซื้อและขอใบเสนอราคาอย่างไร?<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
@@ -629,115 +653,43 @@
   </section>
 </div>
 
-<!-- WHY -->
-<div class="container drag-block" data-block="why">
-  <span class="drag-handle" draggable="true">⣿ จุดเด่น</span>
-  <section class="section" id="why">
-    <h2>ทำไมทีมงานระบบทำความเย็น<br class="hbr"><span class="grad-text">จึงเลือก Solstice N40</span></h2>
-    <p class="lead">จัดการทั้งเรื่องประสิทธิภาพพลังงาน การลดค่า GWP และการวางแผนระบบได้ในโซลูชันเดียว เหมาะกับผู้รับเหมา ตัวแทนจำหน่าย ทีมบริการ และผู้ดูแลอาคาร</p>
-    <div class="card-grid">
-      <div class="feature">
-        <div class="ic i-indigo"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
-        <h3>ลด GWP 68% จากรุ่นเก่า</h3>
-        <p>เทียบกับ R-404A ช่วยลดผลกระทบต่อภาวะโลกร้อน พร้อมสนับสนุนการเปลี่ยนจาก HFC และ HCFC รุ่นเก่า</p>
-      </div>
-      <div class="feature">
-        <div class="ic i-emerald"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
-        <h3>เสริมเรื่องประสิทธิภาพพลังงาน</h3>
-        <p>ช่วยลดการใช้พลังงานในระบบที่เข้าเงื่อนไข ให้จุดขายด้านต้นทุนการดำเนินงานที่แข็งแรงกว่า</p>
-      </div>
-      <div class="feature">
-        <div class="ic i-violet"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>A1 ไม่ติดไฟ จัดการคุ้นเคย</h3>
-        <p>การจำแนกความปลอดภัย A1 รองรับแนวทางการจัดการที่ช่างและทีมบริการคุ้นเคยอยู่แล้ว</p>
-      </div>
-      <div class="feature">
-        <div class="ic i-indigo"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <h3>รองรับติดตั้งใหม่และรีโทรฟิต</h3>
-        <p>ทางเลือกที่ใช้งานได้จริงทั้งระบบใหม่และการวางแผนเปลี่ยนจาก R-404A ในงานเชิงพาณิชย์</p>
-      </div>
-      <div class="feature">
-        <div class="ic i-emerald"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
-        <h3>ใช้ได้หลากหลายงานคลังเย็น</h3>
-        <p>ครอบคลุมค้าปลีกอาหาร ห้องเย็น ชุดคอนเดนซิ่ง ตู้โชว์ และระบบ DX เชิงพาณิชย์</p>
-      </div>
-      <div class="feature">
-        <div class="ic i-violet"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
-        <h3>เอกสาร TDS/SDS ครบถ้วน</h3>
-        <p>พร้อมเอกสารทางเทคนิคสำหรับงานติดตั้ง ตรวจสอบ และการจัดการวัตถุอันตราย ขอรับจากทีม ORAFON</p>
-      </div>
-    </div>
-    <div class="enquiry-wrap">
-    <!-- ENQUIRY CARD -->
-    <div class="buy-card" data-item="enquiry">
-      <div class="pkg-head">
-        <span class="pkg-label">เลือกขนาดบรรจุที่สนใจ</span>
-        <span class="pkg-hint">เลือกได้ 1 ขนาด</span>
-      </div>
-      <div class="pkg-opts" id="pkgOpts">
-        <button class="pkg-opt active" data-sku="10637999" data-label="Jug — 25 lb / 11.3 kg">
-        <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span class="name">Jug</span><span class="meta">25 lb / 11.3 kg</span>
-        </button>
-        <button class="pkg-opt" data-sku="10637061" data-label="Cylinder — 100 lb / 45 kg">
-        <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span class="name">Cylinder</span><span class="meta">100 lb / 45 kg</span>
-        </button>
-        <button class="pkg-opt" data-sku="10657578" data-label="Half Ton — 850 lb / 386 kg">
-        <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span class="name">Half Ton</span><span class="meta">850 lb / 386 kg</span>
-        </button>
-        <button class="pkg-opt" data-sku="10655356" data-label="Ton — 1450 lb / 658 kg">
-        <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span class="name">Ton</span><span class="meta">1450 lb / 658 kg</span>
-        </button>
-      </div>
-      <div class="quote-note">ติดต่อทีมงาน ORAFON เพื่อรับใบเสนอราคาและตรวจสอบสต็อกตามขนาดบรรจุที่ต้องการ</div>
-      <div class="cta-row">
-        <button class="btn btn-quote grad-bg" onclick="requestQuote()">📄 ขอใบเสนอราคา</button>
-        <button class="btn btn-ask" onclick="contactUs()">💬 สอบถามข้อมูล</button>
-      </div>
-    </div>
-    </div>
-  </section>
-</div>
-
-<!-- APPS -->
-<div class="container drag-block" data-block="apps">
-  <span class="drag-handle" draggable="true">⣿ การใช้งาน</span>
-  <section class="section" id="apps">
-    <div class="apps-band">
-      <h2 style="margin-bottom:14px">การใช้งาน <span class="grad-text">ครอบคลุมทั้งคลังเย็น</span></h2>
-      <p class="lead" style="margin-bottom:0">เหมาะกับงานทำความเย็นอุณหภูมิต่ำถึงปานกลางหลายรูปแบบ</p>
-      <div class="apps-grid">
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg></span><div class="t">ตู้แช่เชิงพาณิชย์<br>อุณหภูมิต่ำ–ปานกลาง</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l6 4V8l6 4V8l4 3v9"/></svg></span><div class="t">ระบบ DX<br>อุตสาหกรรม</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M5 9h4M5 15h4"/></svg></span><div class="t">ชุดคอนเดนซิ่ง<br>ค้าปลีก</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 12h16M10 6h1M10 16h1"/></svg></span><div class="t">ตู้แช่แข็ง<br>และตู้โชว์</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9h16"/><path d="M9 20v-5h6v5"/></svg></span><div class="t">ตู้แช่<br>ร้านสะดวกซื้อ</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14M3 21h18M9 21v-6h6v6M7 10h.01M12 10h.01M17 10h.01"/></svg></span><div class="t">ซูเปอร์มาร์เก็ต</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="t">คลังห้องเย็น</div></div>
-        <div class="app-card"><span class="emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10M12 2v10l7 7"/></svg></span><div class="t">ชุดคอนเดนซิ่ง<br>Self-contained</div></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- PACKAGES -->
+<!-- PACKAGES + ENQUIRY -->
 <div class="container drag-block" data-block="packages">
   <span class="drag-handle" draggable="true">⣿ ขนาดบรรจุ</span>
-  <section class="section" id="packages">
-    <h2>ขนาดบรรจุ <span class="grad-text">ที่พร้อมจัดจำหน่าย</span></h2>
-    <p class="lead">เลือกขนาดที่เหมาะกับหน้างาน แล้วขอใบเสนอราคาจากทีม ORAFON</p>
-    <div class="pkg-grid">
-      <div class="pkg-tile"><div class="type">Jug</div><div class="size">25 lb</div><div class="kg">11.3 kg</div><div class="sku">SKU 10637999</div></div>
-      <div class="pkg-tile"><div class="type">Cylinder</div><div class="size">100 lb</div><div class="kg">45 kg</div><div class="sku">SKU 10637061</div></div>
-      <div class="pkg-tile"><div class="type">Half Ton</div><div class="size">850 lb</div><div class="kg">386.46 kg</div><div class="sku">SKU 10657578</div></div>
-      <div class="pkg-tile"><div class="type">Ton</div><div class="size">1450 lb</div><div class="kg">657.7 kg</div><div class="sku">SKU 10655356</div></div>
+  <section class="section" id="packages" style="padding-top:16px">
+    <div class="buy-card" data-item="enquiry">
+      <div class="pkg-head">
+        <h2>ขนาดบรรจุ <span class="grad-text">ที่พร้อมจัดจำหน่าย</span></h2>
+        <span class="pkg-hint">เลือก 1 ขนาด แล้วกดขอใบเสนอราคา</span>
+      </div>
+      <div class="pkg-opts" id="pkgOpts">
+        <button class="pkg-opt active" data-sku="10637999" data-label="Jug — 11.3 kg (25 lb)">
+          <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="name">Jug</span><span class="kg">11.3 <small>kg</small></span><span class="meta">25 lb · SKU 10637999</span>
+        </button>
+        <button class="pkg-opt" data-sku="10637061" data-label="Cylinder — 45 kg (100 lb)">
+          <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="name">Cylinder</span><span class="kg">45 <small>kg</small></span><span class="meta">100 lb · SKU 10637061</span>
+        </button>
+        <button class="pkg-opt" data-sku="10657578" data-label="Half Ton — 386 kg (850 lb)">
+          <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="name">Half Ton</span><span class="kg">386 <small>kg</small></span><span class="meta">850 lb · SKU 10657578</span>
+        </button>
+        <button class="pkg-opt" data-sku="10655356" data-label="Ton — 658 kg (1450 lb)">
+          <span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="name">Ton</span><span class="kg">658 <small>kg</small></span><span class="meta">1450 lb · SKU 10655356</span>
+        </button>
+      </div>
+      <div class="pkg-foot">
+        <div class="quote-note">ติดต่อทีมงาน ORAFON เพื่อรับใบเสนอราคาและตรวจสอบสต็อกตามขนาดบรรจุที่ต้องการ</div>
+        <div class="cta-row">
+          <button class="btn btn-quote grad-bg" onclick="requestQuote()">📄 ขอใบเสนอราคา</button>
+          <button class="btn btn-ask" onclick="contactUs()">💬 สอบถามข้อมูล</button>
+        </div>
+      </div>
     </div>
   </section>
 </div>
-
 <!-- QUOTE -->
 <div class="container drag-block" data-block="quote">
   <span class="drag-handle" draggable="true">⣿ ปุ่มติดต่อ</span>
