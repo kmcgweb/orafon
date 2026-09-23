@@ -104,7 +104,6 @@
             {%- for b in D.brands %}
             <a class="mg-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="mgc-ic">{{ icon("shield") }}</span><span><b>{{ b.name }}</b><span>{{ b.tagline }}</span></span></a>
             {%- endfor %}
-            <a class="mg-card" href="{{ '/contact/' | u(lang) }}"><span class="mgc-ic">{{ icon("chat") }}</span><span><b>{{ T.contact }}</b><span>{{ S.phone_display }}{% if S.line_id %} · LINE {{ S.line_id }}{% endif %}</span></span></a>
           </div>
         </div>
       </div>
