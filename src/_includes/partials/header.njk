@@ -97,17 +97,7 @@
         </div>
       </div>
 
-      <div class="mn-item" data-mega>
-        <button class="mn-link{% if section == 'about' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-about">{{ T.about }}{{ icon("chev") }}</button>
-        <div class="mega mega-sm" id="mega-about">
-          <div class="container mega-grid mg-about">
-            <a class="mg-card" href="{{ '/about/' | u(lang) }}"><span class="mgc-ic">{{ icon("home") }}</span><span><b>{{ T.about }}</b><span>{{ S.company_name }}</span></span></a>
-            {%- for b in D.brands %}
-            <a class="mg-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="mgc-ic">{{ icon("shield") }}</span><span><b>{{ b.name }}</b><span>{{ b.tagline }}</span></span></a>
-            {%- endfor %}
-          </div>
-        </div>
-      </div>
+      <a class="mn-link{% if section == 'about' %} active{% endif %}" href="{{ '/about/' | u(lang) }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ T.about }}</a>
 
       <a class="mn-link{% if section == 'contact' %} active{% endif %}" href="{{ '/contact/' | u(lang) }}"{% if section == 'contact' %} aria-current="page"{% endif %}>{{ T.contact }}</a>
     </div>
@@ -147,7 +137,6 @@
       <summary>{{ icon("shield") }}{{ T.about }}<span class="chev">{{ icon("chev") }}</span></summary>
       <div class="dr-sub">
         <a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a>
-        {%- for b in D.brands %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a>{% endfor %}
         <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
         <a href="{{ '/terms/' | u(lang) }}">{{ T.terms }}</a>
       </div>
