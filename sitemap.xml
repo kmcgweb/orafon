@@ -81,6 +81,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/privacy/"/>
   </url>
   <url>
+    <loc>https://orafon.co.th/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/terms/"/>
+  </url>
+  <url>
     <loc>https://orafon.co.th/articles/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/"/>

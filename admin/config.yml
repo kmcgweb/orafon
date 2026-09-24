@@ -303,6 +303,14 @@ collections:
           - { name: title, label: "หัวข้อ", widget: string, i18n: true }
           - { name: updated, label: "ปรับปรุงล่าสุด", widget: datetime, time_format: false, format: "YYYY-MM-DD" }
           - { name: body, label: "เนื้อหา", widget: markdown, i18n: true }
+      - name: terms
+        label: "ข้อตกลงและเงื่อนไข"
+        file: content/pages/terms.yml
+        i18n: true
+        fields:
+          - { name: title, label: "หัวข้อ", widget: string, i18n: true }
+          - { name: updated, label: "ปรับปรุงล่าสุด", widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+          - { name: body, label: "เนื้อหา", widget: markdown, i18n: true }
 
   # ------------------------------------------------------------ SETTINGS
   - name: settings
