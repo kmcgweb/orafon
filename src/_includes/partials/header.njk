@@ -149,6 +149,7 @@
         <a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a>
         {%- for b in D.brands %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a>{% endfor %}
         <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
+        <a href="{{ '/terms/' | u(lang) }}">{{ T.terms }}</a>
       </div>
     </details>
     <a class="dr-link{% if section == 'contact' %} active{% endif %}" href="{{ '/contact/' | u(lang) }}">{{ icon("chat") }}{{ T.contact }}</a>

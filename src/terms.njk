@@ -1,0 +1,18 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/terms/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /terms/
+section: terms
+eleventyComputed:
+  title: "{{ db[lang].terms.title }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ D.terms.title }}</nav></div>
+<section class="section" style="padding-top:24px"><div class="container" style="max-width:860px">
+  <h1 class="display" style="font-size:36px;font-weight:800;margin-bottom:8px">{{ D.terms.title }}</h1>
+  {%- if D.terms.updated %}<p class="muted" style="margin-bottom:24px">{{ T.updated }}: {{ D.terms.updated | dateFmt(lang) }}</p>{% endif %}
+  <div class="prose">{{ D.terms.body | md | safe }}</div>
+  <p style="margin-top:24px"><strong>{{ D.site.company_name }}</strong><br>{{ D.site.address }}<br>{{ D.site.email }}</p>
+</div></section>

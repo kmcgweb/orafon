@@ -4,7 +4,7 @@ th:
   company_name: บริษัท โอราโนส จำกัด
   tagline: สารทำความเย็นแบรนด์ ORAFON และตัวแทนจำหน่าย Solstice®
   footer_about: ผู้จัดจำหน่ายสารทำความเย็นแบรนด์ ORAFON ของเราเอง และตัวแทนจำหน่าย Solstice® พร้อมคำปรึกษาทางเทคนิคสำหรับงานปรับอากาศและทำความเย็น
-  address: "(กรอกที่อยู่บริษัท)"
+  address: "89 หมู่ 12 ซอยไร่ขิง 42 ถนนพุทธมณฑลสาย 5 ตำบลไร่ขิง อำเภอสามพราน จังหวัดนครปฐม 73210"
   hours: จันทร์–ศุกร์ 08:30–17:30 น.
   phone: "1263"
   phone_display: "1263"
@@ -14,8 +14,8 @@ th:
   facebook_url: ""
   map_url: ""
 en:
-  company_name: Oranoss Co., Ltd.
+  company_name: ORANOSS COMPANY LIMITED
   tagline: ORAFON refrigerants and authorized Solstice® distributor
   footer_about: Supplier of our own ORAFON refrigerants and authorized distributor of Solstice®, with technical support for air-conditioning and refrigeration projects.
-  address: "(Company address)"
+  address: "89 Moo 12, Soi Raikhing 42, Phutthamonthon Sai 5 Road, Tambol Raikhing, Ampur Sampran, Nakhonpathom 73210"
   hours: Mon–Fri 08:30–17:30

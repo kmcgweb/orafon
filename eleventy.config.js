@@ -57,6 +57,7 @@ function buildDb() {
     home: file("pages/home.yml"),
     about: file("pages/about.yml"),
     privacy: file("pages/privacy.yml"),
+    terms: file("pages/terms.yml"),
   };
 
   const db = {};
@@ -111,7 +112,7 @@ function buildDb() {
       safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s && r.products.length).length])),
       retrofitPairs: refrigerants.reduce((n, r) => n + (r.replaces || []).length, 0),
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
-      site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"),
+      site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"), terms: one("terms"),
       classes: [...new Set(refrigerants.filter((r) => r.products.length).map((r) => r.class))],
     };
   }

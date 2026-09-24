@@ -1,39 +1,221 @@
 th:
   title: นโยบายความเป็นส่วนตัว
-  updated: 2026-09-23
+  updated: 2026-09-24
   body: |
-    บริษัท โอราโนส จำกัด ("บริษัท") ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของท่านตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)
+    นโยบายการคุ้มครองข้อมูลส่วนบุคคลฉบับนี้ถูกจัดทำขึ้นเพื่อจัดให้มีวิธีการจัดการข้อมูลส่วนบุคคลที่เหมาะสม และมีมาตรการรักษาความปลอดภัยที่เหมาะสมสำหรับการปกป้องข้อมูลส่วนบุคคลของลูกค้าที่บริษัท ทำการรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคลให้ถูกต้องตามกฎหมายว่าด้วยการคุ้มครองข้อมูลส่วนบุคคล กฎหมายและกฎเกณฑ์ทางการอื่น ๆ ที่เกี่ยวข้อง
 
-    ## ข้อมูลที่เราเก็บ
-    เมื่อท่านส่งแบบฟอร์มขอใบเสนอราคาหรือติดต่อเรา เราจะเก็บข้อมูลที่ท่านกรอก ได้แก่ ชื่อ บริษัท เบอร์โทรศัพท์ อีเมล และรายละเอียดที่ท่านสอบถาม
+    ## 1. นิยาม
 
-    ## วัตถุประสงค์
-    เราใช้ข้อมูลเพื่อติดต่อกลับ จัดทำใบเสนอราคา และให้บริการที่ท่านร้องขอเท่านั้น เราจะไม่ขายหรือเปิดเผยข้อมูลของท่านให้บุคคลภายนอกเพื่อการตลาด
+    - **บริษัท** หมายถึง บริษัท โอราโนส จำกัด
+    - **เจ้าของข้อมูลส่วนบุคคล** หมายถึง บุคคลซึ่งเป็นเจ้าของข้อมูลส่วนบุคคลซึ่งบริษัทมีการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล
+    - **ข้อมูล** หมายถึง ข้อมูลส่วนบุคคล ข้อมูลซึ่งไม่ใช่ข้อมูลส่วนบุคคล ข้อมูลระบบ ข้อมูลที่ตั้ง คุกกี้
+    - **ข้อมูลส่วนบุคคล** หมายถึง ข้อมูลเกี่ยวกับบุคคลซึ่งทำให้สามารถระบุตัวบุคคลนั้นได้ไม่ว่าทางตรงหรือทางอ้อมตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 และที่จะมีการแก้ไขเพิ่มเติม และกฎหมายอื่นที่เกี่ยวข้อง
+    - **ข้อมูลส่วนบุคคลที่มีความอ่อนไหว** หมายถึง ข้อมูลส่วนบุคคลเกี่ยวกับเชื้อชาติ เผ่าพันธุ์ ความคิดเห็นทางการเมือง ความเชื่อในลัทธิ ศาสนาหรือปรัชญา พฤติกรรมทางเพศ ประวัติอาชญากรรม ข้อมูลสุขภาพ ความพิการ ข้อมูลสหภาพแรงงาน ข้อมูลพันธุกรรม ข้อมูลชีวภาพหรือข้อมูลอื่นใดซึ่งกระทบต่อเจ้าของข้อมูลส่วนบุคคลในทำนองเดียวกันตามที่คณะกรรมการประกาศกำหนด
+    - **ข้อมูลชีวภาพ** หมายถึง ข้อมูลส่วนบุคคลที่เกิดจากการใช้เทคนิคหรือเทคโนโลยีที่เกี่ยวข้องกับการนำลักษณะเด่นทางกายภาพหรือทางพฤติกรรมของบุคคลมาใช้ทำให้สามารถยืนยันตัวตนของบุคคลนั้นที่ไม่เหมือนกับบุคคลอื่นได้ เช่น ข้อมูลจำลองภาพใบหน้า ข้อมูลจำลองม่านตา หรือข้อมูลจำลองลายนิ้วมือ
+    - **ข้อมูลสาธารณะ** หมายถึง ข้อมูลส่วนบุคคลที่เจ้าของข้อมูลส่วนบุคคลได้เปิดเผยต่อสาธารณชน เช่น ข้อมูลโปรไฟล์สื่อสังคมออนไลน์ เมื่อมีการใช้ข้อมูลและรหัสการเข้าระบบของสื่อสังคมออนไลน์ (social media credential) เช่น Facebook, Instagram, Twitter, Line และรูปแบบแพลตฟอร์มออนไลน์อื่น ๆ เพื่อเชื่อมต่อหรือเข้าสู่บริการใด ๆ ของบริษัท เช่น บัญชีสื่อสังคมออนไลน์ (social media account ID) สิ่งที่สนใจ (interests) รายการที่ชอบ (likes) และรายชื่อเพื่อนของเจ้าของข้อมูลส่วนบุคคล ซึ่งเจ้าของข้อมูลส่วนบุคคลสามารถควบคุมการจัดเก็บความเป็นส่วนตัวนี้ผ่านการตั้งค่าบัญชีสื่อสังคมออนไลน์ที่จัดทำไว้ให้โดยผู้ให้บริการสื่อสังคมออนไลน์ดังกล่าว
+    - **ผู้ควบคุมข้อมูลส่วนบุคคล** หมายถึง ผู้ที่มีอำนาจหน้าที่ตัดสินใจเกี่ยวกับการรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล
+    - **ผู้ประมวลผลข้อมูลส่วนบุคคล** หมายถึง ผู้ซึ่งดำเนินการเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลตามคำสั่งหรือในนามของผู้ควบคุมข้อมูลส่วนบุคคล
+    - **การประมวลผลข้อมูล** หมายถึง การดำเนินการใด ๆ ซึ่งกระทำต่อข้อมูลส่วนบุคคลหรือชุดข้อมูลส่วนบุคคล ไม่ว่าจะโดยวิธีการอัตโนมัติหรือไม่ เช่น การเก็บ บันทึก จัดระบบ จัดโครงสร้าง เก็บรักษา เปลี่ยนแปลงหรือปรับเปลี่ยน การรับ พิจารณา ใช้ เปิดเผยด้วยการส่งต่อ เผยแพร่ หรือการกระทำอื่นใดซึ่งทำให้เกิดความพร้อมใช้งาน การจัดวางหรือผสมเข้าด้วยกัน การจำกัด การลบ หรือการทำลาย
+    - **แอปพลิเคชัน** หมายถึง โปรแกรม หรือชุดคำสั่งที่ใช้ควบคุมการทำงานของคอมพิวเตอร์เคลื่อนที่และอุปกรณ์ต่อพ่วงต่าง ๆ เพื่อให้ทำงานตามคำสั่ง และตอบสนองความต้องการของผู้ใช้ โดยแอปพลิเคชัน (Application) ต้องมีสิ่งที่เรียกว่า ส่วนติดต่อกับผู้ใช้ (User Interface หรือ UI) เพื่อเป็นตัวกลางการใช้งานต่าง ๆ
+    - **IP Address** หมายถึง สัญลักษณ์เชิงหมายเลขที่กำหนดให้แก่อุปกรณ์แต่ละชนิด เช่น คอมพิวเตอร์ หรือเครื่องพิมพ์ ที่มีส่วนร่วมอยู่ในเครือข่ายคอมพิวเตอร์หนึ่ง ๆ ที่ใช้อินเทอร์เน็ตโพรโทคอลในการสื่อสาร
+    - **คุกกี้ (Cookie)** หมายถึง ข้อมูลขนาดเล็กที่เว็บไซต์ของบริษัท ส่งไปยังคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ที่เชื่อมต่ออินเทอร์เน็ต เพื่อเก็บข้อมูลส่วนบุคคล โดยคุกกี้จะถูกส่งกลับไปที่เว็บไซต์ต้นทางในแต่ละครั้งที่กลับเข้ามาดูที่เว็บไซต์ดังกล่าว
+    - **Log** หมายถึง ข้อมูลที่เกิดจากการใช้งานแอปพลิเคชัน ซึ่งรวมถึงแหล่งกำเนิด ต้นทาง ปลายทาง เส้นทาง เวลา วันที่ ปริมาณ ระยะเวลา ชนิดของบริการ หรืออื่น ๆ ที่เกี่ยวข้องกับการใช้งานของแอปพลิเคชัน
+    - **ข้อมูลที่ไม่สามารถระบุตัวบุคคลได้** หมายถึง ข้อมูลที่ผ่านกระบวนการจัดทำข้อมูลนิรนามแล้ว
+    - **สำนักงาน** หมายถึง สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล
 
-    ## ระยะเวลาการเก็บ
-    เราเก็บข้อมูลเท่าที่จำเป็นต่อการให้บริการและตามที่กฎหมายกำหนด
+    ## นโยบายคุ้มครองข้อมูลส่วนบุคคล
 
-    ## สิทธิของท่าน
-    ท่านมีสิทธิขอเข้าถึง แก้ไข ลบ หรือคัดค้านการประมวลผลข้อมูลส่วนบุคคลของท่าน โดยติดต่อบริษัทตามช่องทางในหน้า "ติดต่อเรา"
+    บริษัทตระหนักและให้ความสำคัญอย่างยิ่งกับสิทธิและความเป็นส่วนตัวของเจ้าของข้อมูลส่วนบุคคล และบริษัทจะดำเนินมาตรการที่เข้มงวดในการรักษาความมั่นคงปลอดภัย การรักษาความลับตลอดจนการป้องกันมิให้มีการนำข้อมูลส่วนบุคคลไปใช้โดยมิได้รับอนุญาตจากเจ้าของข้อมูลส่วนบุคคลก่อน โดยบริษัทจะดำเนินการตามวัตถุประสงค์และความยินยอมจากเจ้าของข้อมูลส่วนบุคคลที่ให้ไว้กับบริษัทในเรื่องเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลนั้น หรือตามที่กฎหมายกำหนดและสอดคล้องกับมาตรฐานสากล
 
-    ## คุกกี้
-    เว็บไซต์นี้ไม่ใช้คุกกี้เพื่อการติดตามหรือโฆษณา
+    ## 2. วิธีที่ได้มา
+
+    บริษัทมีการจัดเก็บรวบรวมข้อมูลส่วนบุคคลด้วยกระบวนการต่อไปนี้
+
+    - บริการอื่น ๆ นอกเหนือจากที่กำหนดในเว็บไซต์ของบริษัท เช่น สินค้าหรือบริการอื่น ๆ ซึ่งดำเนินการโดยบริษัท ซึ่งไม่ได้ระบุโดยชัดแจ้งว่าอยู่ภายใต้บังคับของนโยบายนี้
+    - ข้อมูลส่วนบุคคลจากบุคคลที่สาม เช่น ตัวแทน ร้านค้า หรือบริษัทที่ให้การบริการจัดเก็บรวบรวมข้อมูล คู่ค้า พันธมิตร เป็นต้น
+    - ข้อมูลส่วนบุคคลที่ได้รับจากการเข้าเยี่ยมชมเว็บไซต์ เช่น ชื่อของผู้ให้บริการอินเทอร์เน็ต และที่อยู่ไอพี (IP Address) ผ่านการเข้าใช้อินเทอร์เน็ต วันที่และเวลาของการเข้าเยี่ยมชมเว็บไซต์ หน้าเพจที่เข้าเยี่ยมชมขณะเข้าเว็บไซต์ และที่อยู่ของเว็บไซต์ ซึ่งเชื่อมโยงโดยตรงกับเว็บไซต์ของบริษัท
+    - พฤติกรรมการใช้งานแอปพลิเคชัน โดยจะมีการเก็บ log การใช้งานของท่านจากบนแอปพลิเคชันของทางบริษัท
+    - ข้อมูลส่วนบุคคลที่ได้รับจากข้อมูลสาธารณะ (Public Records) และที่ไม่ใช่สาธารณะ (Non-Public Records) ที่บริษัทมีสิทธิเก็บรวบรวมได้ตามกฎหมาย
+    - ข้อมูลส่วนบุคคลที่ได้รับจากหน่วยงานภาครัฐ หรือหน่วยงานกำกับดูแลที่ใช้อำนาจตามกฎหมาย
+
+    ## 3. วัตถุประสงค์ในการเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคล
+
+    บริษัทมีวัตถุประสงค์ในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล ดังนี้
+
+    - เพื่อการให้บริการ การปรับปรุงบริการของบริษัท รวมถึงบริการอื่น ๆ ที่จะมีในอนาคต ตลอดจนการดูแล การบำรุงรักษา และการดำเนินการที่เกี่ยวข้องกับการให้บริการดังกล่าว
+    - เพื่อการดำเนินธุรกรรมต่าง ๆ ที่เกี่ยวข้องกับการบริหารงานนิติบุคคลอาคารชุด นิติบุคคลหมู่บ้านจัดสรร เป็นต้น
+    - เพื่อการบริหารความสัมพันธ์ระหว่างบริษัทกับเจ้าของข้อมูลส่วนบุคคล
+    - เพื่อยืนยัน และ/หรือ ระบุตัวตนของเจ้าของข้อมูลส่วนบุคคลในการเข้าใช้บริการผ่านช่องทางต่าง ๆ หรือการติดต่อกับบริษัท
+    - เพื่อการติดต่อสื่อสาร แจ้ง และ/หรือ รับข้อมูลข่าวสารต่าง ๆ จากบริษัท หรือการเปลี่ยนแปลงต่าง ๆ ที่เกิดขึ้นของบริษัท
+    - เพื่อการดำเนินการตามความประสงค์ของเจ้าของข้อมูลส่วนบุคคลที่ได้แจ้งไว้กับบริษัท
+    - เพื่อการนำเสนอสิทธิประโยชน์ต่าง ๆ และ/หรือ บริการอื่น ๆ ของบริษัท อาทิ การให้คำแนะนำ และ/หรือ ข้อเสนอเกี่ยวกับการบริการ รวมถึงการทำธุรกรรมที่เกี่ยวข้องกับการใช้บริการของบริษัท
+    - เพื่อการดำเนินธุรกิจของบริษัท เช่น การวิเคราะห์ข้อมูล การตรวจสอบ การพัฒนาปรับปรุงหรือเปลี่ยนแปลงการบริการ
+    - เพื่อการดำเนินการใด ๆ ที่จำเป็นและเหมาะสมในการ
+      - ตรวจสอบและป้องกันการกระทำที่ละเมิดหรืออาจจะละเมิดต่อกฎหมาย
+      - ตอบสนองต่อคำขอจากหน่วยงานรัฐหรือรัฐบาล รวมถึงหน่วยงานของรัฐหรือรัฐบาลต่างประเทศที่เจ้าของข้อมูลส่วนบุคคลอาศัยอยู่
+      - บังคับใช้ข้อกำหนดในการให้บริการและนโยบายที่เกี่ยวข้องกับข้อมูลส่วนบุคคลของบริษัท
+      - ปกป้องการดำเนินธุรกิจของบริษัท
+      - ปกป้องสิทธิความเป็นส่วนตัว ความปลอดภัยหรือทรัพย์สินของบริษัท บุคลากร และเจ้าของข้อมูลส่วนบุคคล หรือบุคคลอื่น
+      - เยียวยา ป้องกัน หรือจำกัดความเสียหายที่อาจเกิดขึ้น
+    - เพื่อปฏิบัติตามกฎหมาย การสืบสวนของเจ้าพนักงาน หรือหน่วยงานกำกับดูแล หรือเพื่อให้เป็นไปตามกฎ ข้อบังคับ หรือข้อผูกพันที่กฎหมายหรือภาครัฐกำหนด
+
+    ทั้งนี้ วัตถุประสงค์อื่น ๆ ที่ไม่ได้ระบุไว้ข้างต้น เจ้าของข้อมูลส่วนบุคคลจะได้รับการแจ้งเมื่อบริษัทมีการขอเก็บรวบรวมข้อมูลส่วนบุคคล อนึ่ง ในการได้ข้อมูลส่วนบุคคลของท่านมานั้น บริษัทจะเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่านภายใต้วัตถุประสงค์ตามข้อ 3. เฉพาะเมื่อเข้าเงื่อนไขดังต่อไปนี้
+
+    - ท่านได้ให้ความยินยอมไว้กับบริษัทตามกฎหมาย
+    - เป็นการป้องกันหรือระงับอันตรายต่อชีวิต ร่างกาย หรือสุขภาพของบุคคล
+    - เป็นการจำเป็นเพื่อการปฏิบัติหน้าที่ในการดำเนินภารกิจเพื่อประโยชน์สาธารณะของบริษัท หรือปฏิบัติหน้าที่ในการใช้อำนาจที่รัฐได้มอบหมายให้แก่บริษัท
+    - เป็นการจำเป็นเพื่อประโยชน์โดยชอบด้วยกฎหมายของบริษัทหรือของบุคคลหรือนิติบุคคลอื่น เว้นแต่ประโยชน์ดังกล่าวมีความสำคัญน้อยกว่าสิทธิขั้นพื้นฐานในข้อมูลส่วนบุคคลของท่าน
+    - เป็นความจำเป็นเพื่อปฏิบัติตามกฎหมาย
+    - มีการจัดทำเอกสารประวัติศาสตร์หรือจดหมายเหตุเพื่อประโยชน์สาธารณะ หรือที่เกี่ยวกับการศึกษาวิจัยหรือสถิติ โดยบริษัทจะจัดให้มีมาตรการปกป้องที่เหมาะสมเพื่อคุ้มครองสิทธิและเสรีภาพของท่าน
+
+    ## 4. วัตถุประสงค์ในการประมวลผลข้อมูลส่วนบุคคล
+
+    ### ข้อมูลส่วนบุคคล
+
+    ชื่อ, อีเมล, ที่อยู่, ที่อยู่สำนักงาน, เบอร์โทรศัพท์, เลขที่บัตรประชาชน, หมายเลขหนังสือเดินทาง, วันเดือนปีเกิด, สัญชาติ, เพศ, การตั้งค่าต่าง ๆ, การตั้งค่าความปลอดภัยในบัญชีของท่าน และข้อมูลอื่น ๆ ที่เกี่ยวข้องที่มีการจัดเก็บเพิ่มเติมเพื่อประโยชน์ตามวัตถุประสงค์
+
+    เมื่อท่านเยี่ยมชมเว็บไซต์ของบริษัท ท่านอาจถูกร้องขอให้ลงทะเบียนกับบริษัท และ/หรือท่านอาจจำเป็นต้องแจ้งข้อมูลส่วนบุคคลของท่านให้กับบริษัท เพื่อวัตถุประสงค์ในการเก็บข้อมูลเพื่อการตลาดของบริษัท เช่น
+
+    - เพื่อติดต่อและเสนอบริการของบริษัทหรือข้อเสนออื่น ๆ ซึ่งท่านอาจเคยแสดงถึงความสนใจไว้กับบริษัท
+    - เพื่อแจ้งท่านเกี่ยวกับข่าวสาร ผลิตภัณฑ์ และจดหมายข่าว
+    - เพื่อตรวจสอบตัวตนของท่าน
+    - เพื่อรักษาความปลอดภัยต่อบัญชีผู้ใช้ของท่าน
+    - เพื่อแจ้งท่านเกี่ยวกับการเปลี่ยนแปลงที่จะเกิดขึ้น
+
+    ### ไอพี แอดเดรส (IP Address)
+
+    - เพื่อตรวจสอบตัวตนของท่าน
+
+    ### ข้อมูลพฤติกรรมการสืบค้น
+
+    ประเภทเบราว์เซอร์, โดเมน, เว็บไซต์ที่เยี่ยมชม, เวลาเข้าเว็บไซต์, ที่อยู่เว็บไซต์อ้างอิง, ข้อมูลเพื่อการสนับสนุนลูกค้า และ Log
+
+    - เพื่อให้ข้อมูลในการเข้าและใช้เว็บไซต์ รวมถึงแอปพลิเคชันของบริษัท
+    - เพื่อจัดการเว็บไซต์และแอปพลิเคชัน
+    - เพื่อการดำเนินการภายใน แก้ไขปัญหาของเว็บไซต์ วิเคราะห์ข้อมูล ทดสอบ วิจัย เพื่อความปลอดภัย การตรวจสอบการบิดเบือน และการจัดการบัญชีผู้ใช้
+    - เพื่อแก้ไขและสำรวจปัญหาข้อมูลระบบ
+    - เพื่อพัฒนาประสบการณ์ของผู้ใช้
+
+    ### ข้อมูลที่ตั้ง
+
+    - เว็บไซต์จะใช้ข้อมูลที่คุกกี้ได้เก็บรวบรวมเพื่อการวิเคราะห์ทางสถิติ หรือกิจกรรมอื่นของบริษัทเพื่อพัฒนาบริการของบริษัทต่อ ๆ ไป
+
+    ### คุกกี้
+
+    - เว็บไซต์จะใช้ข้อมูลที่คุกกี้ได้เก็บรวบรวมเพื่อการวิเคราะห์ทางสถิติ หรือกิจกรรมอื่นของบริษัทเพื่อพัฒนาบริการของบริษัทต่อ ๆ ไป
+
+    ## 5. ข้อมูลส่วนบุคคลที่จัดเก็บ
+
+    บริษัทจะทำการเก็บรวบรวมข้อมูลที่เจ้าของข้อมูลส่วนบุคคลได้ให้ไว้กับบริษัทโดยตรง หรือข้อมูลส่วนบุคคลที่บริษัทได้รับจากการให้บริการหรือการดำเนินงานของบริษัทผ่านทุกช่องทาง
+
+    **คุกกี้** หมายถึง ข้อมูลที่ถูกวางในคอมพิวเตอร์ของท่านโดยเว็บเซิร์ฟเวอร์ หลังจากคุกกี้ได้ถูกวางในคอมพิวเตอร์ของท่าน คุกกี้จะเก็บหรือจดจำข้อมูลของผู้ใช้จนกว่าผู้ใช้จะปิดเบราว์เซอร์นั้น หรือจนกว่าผู้ใช้จะลบหรือปฏิเสธคุกกี้ อย่างไรก็ตาม ท่านจะพบว่าจะเป็นการสะดวกในการนำทางการใช้เว็บไซต์ได้อย่างง่ายดาย เพราะคุกกี้จะช่วยเก็บข้อมูลเว็บไซต์ซึ่งท่านเยี่ยมชมหรือเปิดขึ้น
 en:
   title: Privacy Policy
   body: |
-    Oranoss Co., Ltd. ("the Company") respects your privacy and protects your personal data in accordance with Thailand's Personal Data Protection Act B.E. 2562 (PDPA).
+    This Personal Data Protection Policy sets out appropriate methods for handling personal data and appropriate security measures to protect the personal data of customers that the Company collects, uses and discloses, in compliance with personal data protection law and other applicable laws and regulations.
 
-    ## Data we collect
-    When you submit a quotation request or contact form, we collect the details you provide: name, company, phone number, email and your enquiry.
+    ## 1. Definitions
 
-    ## Purpose
-    We use this data only to reply to you, prepare quotations and provide the services you request. We do not sell or disclose your data to third parties for marketing.
+    - **Company** means Oranoss Company Limited.
+    - **Data subject** means a person who owns personal data that the Company collects, uses or discloses.
+    - **Data** means personal data, non-personal data, system data, location data and cookies.
+    - **Personal data** means information about a person that identifies that person, directly or indirectly, under the Personal Data Protection Act B.E. 2562 (2019), as amended, and other related laws.
+    - **Sensitive personal data** means personal data about race, ethnicity, political opinions, cult, religious or philosophical beliefs, sexual behaviour, criminal records, health data, disability, trade union data, genetic data, biometric data, or any other data that affects the data subject in a similar way as announced by the Committee.
+    - **Biometric data** means personal data resulting from technical processing of a person's physical or behavioural characteristics that allows the unique identification of that person, such as facial images, iris data or fingerprint data.
+    - **Public data** means personal data that the data subject has made public, such as social media profile data used when signing in to any Company service with social media credentials (e.g. Facebook, Instagram, Twitter, Line or other platforms), including the social media account ID, interests, likes and friend lists. The data subject can control this through the account settings provided by the social media provider.
+    - **Data controller** means a person with the authority to decide on the collection, use or disclosure of personal data.
+    - **Data processor** means a person who collects, uses or discloses personal data on the instructions of, or on behalf of, a data controller.
+    - **Data processing** means any operation performed on personal data or sets of personal data, whether automated or not, such as collection, recording, organisation, structuring, storage, alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.
+    - **Application** means a program or set of instructions that controls mobile computers and peripheral devices to perform tasks and meet user needs, with a User Interface (UI) as the means of interaction.
+    - **IP address** means a numerical label assigned to each device, such as a computer or printer, on a computer network that uses the Internet Protocol to communicate.
+    - **Cookie** means a small piece of data that the Company's website sends to an internet-connected computer or electronic device to store information. The cookie is sent back to the originating website each time you return to it.
+    - **Log** means data generated by using an application, including origin, source, destination, route, time, date, volume, duration, type of service and other information related to its use.
+    - **Non-identifiable data** means data that has been anonymised.
+    - **Office** means the Office of the Personal Data Protection Committee.
 
-    ## Retention
-    We keep data only as long as necessary to provide the service and as required by law.
+    ## Personal data protection policy
 
-    ## Your rights
-    You may request access to, correction or deletion of, or object to the processing of your personal data by contacting us through the Contact page.
+    The Company recognises and places great importance on the rights and privacy of data subjects. The Company applies strict measures to maintain security and confidentiality and to prevent the use of personal data without the data subject's prior permission. The Company acts in line with the purposes and consent given by data subjects regarding the collection, use or disclosure of their personal data, or as required by law and in line with international standards.
 
-    ## Cookies
-    This website does not use tracking or advertising cookies.
+    ## 2. How we obtain data
+
+    The Company collects personal data through the following:
+
+    - Other services beyond those set out on the Company's website, such as other products or services operated by the Company that are not expressly stated to be subject to this policy.
+    - Personal data from third parties, such as agents, shops, data collection service providers, business partners and alliances.
+    - Personal data received when you visit the website, such as your internet service provider and IP address, the date and time of your visit, the pages you view, and the address of any website that links directly to the Company's website.
+    - Application usage behaviour, through logs of your use of the Company's applications.
+    - Personal data from public records and non-public records that the Company is legally entitled to collect.
+    - Personal data received from government agencies or regulators exercising legal authority.
+
+    ## 3. Purposes of collection, use and disclosure
+
+    The Company collects, uses or discloses personal data for the following purposes:
+
+    - To provide and improve the Company's services, including future services, and to maintain and operate those services.
+    - To carry out transactions related to the management of condominium juristic persons, housing estate juristic persons and similar.
+    - To manage the relationship between the Company and the data subject.
+    - To verify and/or identify the data subject when using services through various channels or contacting the Company.
+    - To communicate, notify and/or send news and information from the Company, or changes affecting the Company.
+    - To act on requests that the data subject has made to the Company.
+    - To offer benefits and/or other Company services, such as advice and/or offers about services, including transactions related to the use of Company services.
+    - To run the Company's business, such as data analysis, auditing, and developing, improving or changing services.
+    - To take any necessary and appropriate action to:
+      - detect and prevent actual or potential breaches of the law;
+      - respond to requests from government authorities, including foreign government authorities where the data subject lives;
+      - enforce the Company's terms of service and personal data policies;
+      - protect the Company's business operations;
+      - protect the privacy, safety or property of the Company, its staff, data subjects or others;
+      - remedy, prevent or limit potential damage.
+    - To comply with the law, investigations by officials or regulators, or rules, regulations or obligations imposed by law or the government.
+
+    Data subjects will be informed of any other purposes not listed above when the Company requests to collect their personal data. The Company will collect, use or disclose your personal data for the purposes in section 3 only when one of the following conditions applies:
+
+    - You have given your consent to the Company in accordance with the law.
+    - It is to prevent or suppress a danger to a person's life, body or health.
+    - It is necessary to carry out a task in the public interest or to exercise official authority vested in the Company.
+    - It is necessary for the legitimate interests of the Company or another person or legal entity, unless those interests are overridden by your fundamental rights in your personal data.
+    - It is necessary to comply with the law.
+    - It is for historical documents or archives in the public interest, or for research or statistics, with appropriate safeguards to protect your rights and freedoms.
+
+    ## 4. Purposes of processing personal data
+
+    ### Personal data
+
+    Name, email, address, office address, phone number, national ID number, passport number, date of birth, nationality, gender, settings, account security settings, and other related data collected for the stated purposes.
+
+    When you visit the Company's website, you may be asked to register with the Company and/or provide your personal data for the Company's marketing purposes, such as:
+
+    - to contact you and offer Company services or other offers you may have shown interest in;
+    - to inform you about news, products and newsletters;
+    - to verify your identity;
+    - to keep your user account secure;
+    - to inform you about upcoming changes.
+
+    ### IP address
+
+    - To verify your identity.
+
+    ### Browsing behaviour data
+
+    Browser type, domain, websites visited, time of visit, referring website address, customer support data and logs.
+
+    - To provide access to and use of the Company's website and applications.
+    - To manage the website and applications.
+    - For internal operations, troubleshooting, data analysis, testing, research, security, fraud detection and user account management.
+    - To fix and investigate system issues.
+    - To improve the user experience.
+
+    ### Location data
+
+    - The website uses data collected by cookies for statistical analysis or other Company activities to improve its services.
+
+    ### Cookies
+
+    - The website uses data collected by cookies for statistical analysis or other Company activities to improve its services.
+
+    ## 5. Personal data collected
+
+    The Company collects data that data subjects provide directly, or personal data the Company receives from its services or operations through any channel.
+
+    **Cookies** are data placed on your computer by a web server. Once placed, a cookie stores or remembers user information until you close the browser or delete or refuse the cookie. Cookies make it easier to navigate the website, as they help store information about the pages you visit.

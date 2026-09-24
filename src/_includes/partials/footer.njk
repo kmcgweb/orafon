@@ -24,6 +24,7 @@
     <div class="foot-wide foot-main">
       <div class="foot-brand">
         <a href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }}"><img class="foot-logo" src="/assets/img/orafon-logo-white.png" alt="{{ S.brand_name }}" width="200" height="59" loading="lazy"></a>
+        <p class="foot-promo">WE SERVE <span>YOU BEST</span></p>
         <p class="foot-about">{{ S.footer_about }}</p>
         <div class="foot-social">
           {%- if S.line_id %}<a class="fs-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}<b>LINE</b> <span>{{ S.line_id }}</span>{{ chev | safe }}</a>{% endif %}
@@ -33,7 +34,7 @@
       </div>
 
       <div class="foot-col">
-        <div class="fc-head">{{ icon("cube") }}<div><h4>{{ T.products }}</h4><small>OUR PRODUCTS</small></div></div>
+        <div class="fc-head">{{ icon("cube") }}<div><h4>Products</h4></div></div>
         <ul>
           <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}{{ chev | safe }}</a></li>
           {%- for b in D.brands %}<li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}{{ chev | safe }}</a></li>{% endfor %}
@@ -42,7 +43,7 @@
       </div>
 
       <div class="foot-col">
-        <div class="fc-head">{{ icon("doc") }}<div><h4>{{ T.technical }}</h4><small>TECHNICAL CENTER</small></div></div>
+        <div class="fc-head">{{ icon("doc") }}<div><h4>Technical Center</h4></div></div>
         <ul>
           <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}{{ chev | safe }}</a></li>
           <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}{{ chev | safe }}</a></li>
@@ -52,16 +53,17 @@
       </div>
 
       <div class="foot-col">
-        <div class="fc-head">{{ icon("building") }}<div><h4>{{ T.company }}</h4><small>OUR COMPANY</small></div></div>
+        <div class="fc-head">{{ icon("building") }}<div><h4>Company</h4></div></div>
         <ul>
           <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}{{ chev | safe }}</a></li>
           <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}{{ chev | safe }}</a></li>
           <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}{{ chev | safe }}</a></li>
+          <li><a href="{{ '/terms/' | u(lang) }}">{{ T.terms }}{{ chev | safe }}</a></li>
         </ul>
       </div>
 
       <div class="foot-col foot-contact">
-        <div class="fc-head">{{ icon("headset") }}<div><h4>{{ T.contact }}</h4><small>GET IN TOUCH</small></div></div>
+        <div class="fc-head">{{ icon("headset") }}<div><h4>Contact</h4></div></div>
         <ul>
           {%- if S.phone %}<li><a href="tel:{{ S.phone }}"><i>{{ icon("phone") }}</i><span>{{ S.phone_display }}</span></a></li>{% endif %}
           {%- if S.email %}<li><a href="mailto:{{ S.email }}"><i>{{ icon("mail") }}</i><span>{{ S.email }}</span></a></li>{% endif %}
@@ -76,11 +78,9 @@
       <div class="foot-wide">
         <div class="fb-left">
           <span>© {{ buildYear }} {{ S.company_name }} · {{ T.rights }}</span>
-          <span class="fb-tm">{{ T.trademark }}</span>
         </div>
         <span class="fb-links">
-          <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a>
-          {%- for l in langs %}{% if l != lang %}<i></i><a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ i18n[l].langName }}</a>{% endif %}{% endfor %}
+          <a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a><i></i><a href="{{ '/terms/' | u(lang) }}">{{ T.terms }}</a>
         </span>
       </div>
     </div>

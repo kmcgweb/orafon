@@ -13,6 +13,7 @@ export default {
     about: "เกี่ยวกับเรา",
     contact: "ติดต่อเรา",
     privacy: "นโยบายความเป็นส่วนตัว",
+    terms: "ข้อตกลงและเงื่อนไข",
     requestQuote: "ขอใบเสนอราคา",
     searchPh: "ค้นหาสินค้า เบอร์น้ำยา เช่น R-32",
     search: "ค้นหา",
@@ -172,7 +173,6 @@ export default {
     notFound: "ไม่พบหน้าที่คุณต้องการ",
     lineMsg: "สวัสดีครับ ขอสอบถามสินค้า",
     updated: "ปรับปรุงล่าสุด",
-    trademark: "Solstice® เป็นเครื่องหมายการค้าของเจ้าของแบรนด์",
   },
   en: {
     langName: "English",
@@ -187,6 +187,7 @@ export default {
     about: "About us",
     contact: "Contact",
     privacy: "Privacy policy",
+    terms: "Terms and conditions",
     requestQuote: "Request a quote",
     searchPh: "Search products or grades, e.g. R-32",
     search: "Search",
@@ -340,6 +341,5 @@ export default {
     notFound: "Page not found",
     lineMsg: "Hello, I'd like to ask about",
     updated: "Last updated",
-    trademark: "Solstice® is a trademark of its respective owner.",
   },
 };
