@@ -78,7 +78,7 @@ eleventyComputed:
       <p class="cg-desc">{{ T.classDesc[g.class] }}</p>
       <div class="cg-grades">
         {%- for r in sold %}
-        <a class="grade-chip" href="{{ r.url | u(lang) }}" style="--c:{{ r.color or '#4F46E5' }}">
+        <a class="grade-chip" href="{{ r.url | u(lang) }}" style="--c:{{ r.color or '#1F3F9F' }}">
           <b>{{ r.number }}</b><span>{{ r.safety }} · GWP {{ r.gwp_ar4 }}</span>
         </a>
         {%- endfor %}

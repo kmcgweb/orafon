@@ -43,8 +43,8 @@
 
 {#- Placeholder cylinder drawing, coloured per refrigerant. Used until a real photo is uploaded. -#}
 {%- macro cylinder(ref, uid, label) -%}
-{%- set c1 = (ref.color if ref and ref.color) or "#4F46E5" -%}
-{%- set c2 = (ref.color2 if ref and ref.color2) or "#7C3AED" -%}
+{%- set c1 = (ref.color if ref and ref.color) or "#1F3F9F" -%}
+{%- set c2 = (ref.color2 if ref and ref.color2) or "#2A6FDB" -%}
 {%- set big = label or ((ref.number | shortNum) if ref else "") -%}
 {%- set gid = "g-" ~ uid -%}
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ ref.number if ref }}"><defs><linearGradient id="{{ gid }}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{{ c1 }}"/><stop offset="1" stop-color="{{ c2 }}"/></linearGradient></defs><rect x="74" y="40" width="52" height="130" rx="16" fill="#fff" stroke="{{ c1 }}" stroke-width="3"/><rect x="74" y="40" width="52" height="34" rx="16" fill="url(#{{ gid }})"/><rect x="90" y="24" width="20" height="20" rx="5" fill="{{ c1 }}"/><text x="100" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="{{ 22 if big.length <= 3 else (17 if big.length <= 4 else 13) }}" font-weight="800" fill="{{ c1 }}" text-anchor="middle">{{ big }}</text><text x="100" y="142" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="600" fill="{{ c2 }}" text-anchor="middle">{{ ref.number if ref }}</text></svg>

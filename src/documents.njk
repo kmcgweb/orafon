@@ -33,7 +33,7 @@ eleventyComputed:
     {%- for p in D.productsAZ %}{% if p.documents and p.documents.length %}
     <div class="doc-card" data-f-item data-brand="{{ p.brand }}" data-text="{{ p.searchText }}">
       <div class="dc-head">
-        <span class="dc-ic" style="--c:{{ p.ref.color if p.ref else '#4F46E5' }}">{{ (p.ref.number | shortNum) if p.ref }}</span>
+        <span class="dc-ic" style="--c:{{ p.ref.color if p.ref else '#1F3F9F' }}">{{ (p.ref.number | shortNum) if p.ref }}</span>
         <div>
           <a class="dc-name" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a>
           <div class="dc-meta">{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }} · {{ p.ref.safety }}{% endif %}</div>

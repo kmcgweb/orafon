@@ -42,7 +42,7 @@
               <span class="mg-sub">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
               <ul class="mg-list">
                 {%- for p in b.products | batch(9) | first %}
-                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ b.name }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.images[0] if p.images and p.images[0] else '' }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#4F46E5' }}" data-c2="{{ p.ref.color2 if p.ref else '#7C3AED' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a></li>
+                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ b.name }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.images[0] if p.images and p.images[0] else '' }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#1F3F9F' }}" data-c2="{{ p.ref.color2 if p.ref else '#2A6FDB' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#1F3F9F' }}"></span>{{ p.name }}</a></li>
                 {%- endfor %}
               </ul>
               {%- if b.products.length > 9 %}<a class="mg-more" href="{{ ('/products/?brand=' ~ b.slug) | u(lang) }}">{{ T.viewAll }} ({{ b.products.length }}) →</a>{% endif %}

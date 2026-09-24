@@ -43,7 +43,7 @@ eleventyComputed:
         <div class="prose muted">{{ b.description | md | safe }}</div>
         {%- if b.products.length %}
         <div class="bp-grades">
-          {%- for p in b.products %}<a class="grade-mini" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" style="--c:{{ p.ref.color if p.ref else '#4F46E5' }}">{{ p.ref.number if p.ref else p.name }}</a>{% endfor %}
+          {%- for p in b.products %}<a class="grade-mini" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" style="--c:{{ p.ref.color if p.ref else '#1F3F9F' }}">{{ p.ref.number if p.ref else p.name }}</a>{% endfor %}
         </div>
         {%- endif %}
         <a class="btn btn-ghost" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ T.brandPage }} {{ b.name }} →</a>

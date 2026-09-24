@@ -42,7 +42,7 @@ eleventyComputed:
         {%- for r in alts %}
         {%- set save = (oldRef.gwp_ar4 | gwpSaving(r.gwp_ar4)) if oldRef else 0 %}
         {%- set altHref = (r.url | u(lang)) if r.products.length else (('/contact/' | u(lang)) ~ '?product=' ~ (r.number | urlencode)) %}
-        <a class="alt-card{% if not r.products.length %} no-prod{% endif %}" href="{{ altHref }}" style="--c:{{ r.color or '#4F46E5' }}">
+        <a class="alt-card{% if not r.products.length %} no-prod{% endif %}" href="{{ altHref }}" style="--c:{{ r.color or '#1F3F9F' }}">
           <span class="ac-top"><b>{{ r.number }}</b><span class="chip sfc sf-{{ r.safety }}">{{ r.safety }}</span></span>
           <span class="ac-meta">{{ r.class }} · GWP {{ r.gwp_ar4 }}</span>
           {%- if save >= 10 %}<span class="ac-save">−{{ save }}% GWP</span>{% endif %}

@@ -64,7 +64,7 @@ eleventyComputed:
         {%- set href = ('/products/' ~ p.slug ~ '/') | u(lang) %}
         <tr class="prod-row" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
           <td>
-            <a class="pt-name" href="{{ href }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#4F46E5' }}"></span>{{ p.name }}</a>
+            <a class="pt-name" href="{{ href }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#1F3F9F' }}"></span>{{ p.name }}</a>
             {%- if p.labels.length %}<div class="pt-tags">{% for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}</div>{% endif %}
           </td>
           <td>{{ p.brandObj.name if p.brandObj }}</td>
