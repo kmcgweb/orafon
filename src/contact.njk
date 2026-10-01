@@ -48,7 +48,7 @@ eleventyComputed:
         <select id="f-type" name="ctype">{% for o in T.fTypes %}<option>{{ o }}</option>{% endfor %}</select></div>
       <div class="field"><label for="f-product">{{ T.fProduct }}</label>
         <input id="f-product" name="product" maxlength="200" list="product-list">
-        <datalist id="product-list">{% for p in D.products %}<option value="{{ p.name }}">{% endfor %}{% for r in D.refrigerants %}<option value="{{ r.number }}">{% endfor %}</datalist></div>
+        <datalist id="product-list">{% for p in D.productsAZ %}{% if p.brandObj %}<option value="{{ p.name }}">{% endif %}{% endfor %}</datalist></div>
     </div>
     <div class="field"><label for="f-message">{{ T.fMessage }}</label><textarea id="f-message" name="message" maxlength="3000"></textarea></div>
     <label class="consent"><input type="checkbox" name="consent" value="1" required> <span>{{ T.fConsent }} <a href="{{ '/privacy/' | u(lang) }}" target="_blank">{{ T.privacy }}</a></span></label>
