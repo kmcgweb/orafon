@@ -77,7 +77,11 @@ function buildDb() {
           .filter(Boolean).join(" ").toLowerCase();
         // labels: recommended | popular | bestseller | new  (old "featured: true" counts as recommended)
         const labels = LABELS.filter((l) => (p.labels || []).includes(l) || (l === "recommended" && p.featured));
-        return { ...p, ref, brandObj, searchText, labels };
+        // cover = the image shown on cards, menus and first on the product page (falls back to the first gallery image)
+        const imgs = (p.images || []).filter(Boolean);
+        const coverImage = p.cover || imgs[0] || "";
+        const gallery = coverImage ? [coverImage, ...imgs.filter((i) => i !== coverImage)] : [];
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery };
       })
       .sort(byOrder);
 

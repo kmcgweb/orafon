@@ -58,7 +58,7 @@
       {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
       {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
     </span>{% endif %}
-    {%- if p.images and p.images[0] %}<img src="{{ p.images[0] }}" alt="" loading="lazy">{% else %}{{ cylinder(p.ref, "card-" ~ p.slug) }}{% endif -%}
+    {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(p.ref, "card-" ~ p.slug) }}{% endif -%}
   </a>
   <div class="prod-body">
     <span class="prod-brand">{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}</span>

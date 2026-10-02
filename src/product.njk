@@ -11,7 +11,7 @@ eleventyComputed:
   pathKey: "/products/{{ entry.item.slug }}/"
   title: "{{ entry.item.name }}"
   description: "{{ entry.item.seo_description or entry.item.short }}"
-  ogImage: "{{ entry.item.images[0] if entry.item.images and entry.item.images[0] else '' }}"
+  ogImage: "{{ entry.item.coverImage }}"
 ---
 {%- from "partials/macros.njk" import icon, cylinder, productCard -%}
 {%- set T = i18n[lang] -%}
@@ -37,11 +37,11 @@ eleventyComputed:
     <!-- gallery -->
     <div class="gallery">
       <div class="main-wrap"><div class="main-img">
-        {%- if p.images and p.images[0] %}<img id="mainImg" src="{{ p.images[0] }}" alt="{{ p.name }}">{% else %}{{ cylinder(r, "main") }}{% endif %}
+        {%- if p.coverImage %}<img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}">{% else %}{{ cylinder(r, "main") }}{% endif %}
       </div></div>
-      {%- if p.images and p.images.length > 1 %}
+      {%- if p.gallery.length > 1 %}
       <div class="thumbs">
-        {%- for img in p.images %}
+        {%- for img in p.gallery %}
         <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
         {%- endfor %}
       </div>
@@ -246,5 +246,5 @@ eleventyComputed:
   "brand": { "@type": "Brand", "name": b.name if b else S.brand_name },
   "sku": p.packages[0].sku if (p.packages and p.packages[0]) else "",
   "category": "Refrigerant",
-  "image": ((p.images[0] if (p.images and p.images[0]) else "/assets/img/orafon-logo.png") | absUrl(S.site_url))
+  "image": ((p.coverImage or "/assets/img/orafon-logo.png") | absUrl(S.site_url))
 } | json | safe }}</script>
