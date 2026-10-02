@@ -1,25 +1,14 @@
 th:
   id: orafon-r22
+  name: ORAFON R-22
   brand: orafon
   refrigerant: r-22
-  labels:
-    - recommended
-  draft: false
-  order: 30
-  images: []
-  documents:
-    - type: TDS
-      label: Technical Data Sheet (TDS)
-      file: ""
-    - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
-    - type: Sales
-      label: Sales Sheet — ORAFON R-22
-      file: ""
-  name: ORAFON R-22
   tagline: สารทำความเย็น HCFC
-  tag: ""
+  tag: ''
+  images:
+    - /assets/uploads/R-22-front.webp
+    - /assets/uploads/R-22-back.webp
+  packages: []
   badges:
     - GWP 1810
     - A1 ไม่ติดไฟ
@@ -47,6 +36,16 @@ th:
 
     สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
   applications: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ''
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ''
+    - type: Sales
+      label: Sales Sheet — ORAFON R-22
+      file: ''
   faq:
     - q: ORAFON R-22 ใช้ทำอะไร?
       a: แอร์บ้านรุ่นเดิม · แอร์เชิงพาณิชย์รุ่นเดิม · ห้องเย็น — ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
@@ -57,10 +56,14 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: ORAFON R-22 สารทำความเย็น R-22 HCFC A1 GWP 1810 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  labels:
+    - recommended
+  draft: false
+  order: 30
 en:
   name: ORAFON R-22
   tagline: HCFC refrigerant
-  tag: ""
+  tag: ''
   badges:
     - GWP 1810
     - A1 non-flammable
@@ -87,11 +90,12 @@ en:
     **Note:** HCFCs are being phased out under the Montreal Protocol and imports are controlled. Use for servicing existing systems and plan a long-term move to alternatives.
 
     An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  applications: []
   faq:
     - q: What is ORAFON R-22 used for?
       a: Legacy residential AC · Legacy commercial AC · Cold rooms — now mainly for servicing existing systems.
     - q: Is it flammable? How safe is it?
-      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+      a: 'It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices.'
     - q: Can R-22 still be used?
       a: Yes, for servicing existing systems, but it is being phased out under the Montreal Protocol and imports are controlled. Plan a move to alternatives.
     - q: Which pack sizes are available, and how do I get a price?
