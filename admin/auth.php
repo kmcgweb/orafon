@@ -53,6 +53,13 @@ if (!is_array($cfg) || empty($cfg['token']) || empty($cfg['users']) || empty($cf
     http_response_code(500);
     if ($cfg === null) {
         $why = 'ไม่พบไฟล์ตั้งค่า ระบบค้นหาที่:<br>' . implode('<br>', array_map(fn($c) => '<code>' . h($c) . '/config.php</code>', array_unique($candidates)));
+        $why .= '<br><br>โฟลเดอร์ orafon-admin: ' . (@is_dir($dir) ? 'พบ' : 'ไม่พบ');
+        if (@is_dir($dir)) {
+            $files = @scandir($dir) ?: [];
+            $why .= '<br>ไฟล์ในโฟลเดอร์: ' . h(implode(', ', array_diff($files, ['.', '..'])) ?: '(ว่าง)');
+        }
+        $ob = (string) ini_get('open_basedir');
+        if ($ob !== '') { $why .= '<br>open_basedir: <code>' . h($ob) . '</code>'; }
     } elseif (!is_array($cfg)) {
         $why = 'พบไฟล์ config.php แล้ว แต่รูปแบบไม่ถูกต้อง (ต้องขึ้นต้นด้วย &lt;?php return [ และปิดด้วย ];)';
     } else {
