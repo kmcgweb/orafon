@@ -7,6 +7,7 @@ th:
   tag: ''
   images:
     - /assets/uploads/R-134a-front.webp
+    - /assets/uploads/R-134a-back.webp
   packages: []
   badges:
     - GWP 1430
