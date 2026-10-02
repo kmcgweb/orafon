@@ -1,24 +1,14 @@
 th:
   id: orafon-r407c
+  name: ORAFON R-407C
   brand: orafon
   refrigerant: r-407c
-  labels: []
-  draft: false
-  order: 200
-  images: []
-  documents:
-    - type: TDS
-      label: Technical Data Sheet (TDS)
-      file: ""
-    - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
-    - type: Sales
-      label: Sales Sheet — ORAFON R-407C
-      file: ""
-  name: ORAFON R-407C
   tagline: สารทำความเย็น HFC Blend
-  tag: ""
+  tag: ''
+  images:
+    - /assets/uploads/R-407C-front.webp
+    - /assets/uploads/R-407C-back.webp
+  packages: []
   badges:
     - GWP 1774
     - A1 ไม่ติดไฟ
@@ -44,6 +34,16 @@ th:
 
     สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
   applications: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ''
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ''
+    - type: Sales
+      label: Sales Sheet — ORAFON R-407C
+      file: ''
   faq:
     - q: ORAFON R-407C ใช้ทดแทนสารตัวไหนได้บ้าง?
       a: ใช้ทดแทน R-22 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
@@ -52,10 +52,13 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: ORAFON R-407C สารทำความเย็น R-407C HFC Blend A1 GWP 1774 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 200
 en:
   name: ORAFON R-407C
   tagline: HFC Blend refrigerant
-  tag: ""
+  tag: ''
   badges:
     - GWP 1774
     - A1 non-flammable
@@ -80,11 +83,12 @@ en:
     A zeotropic, non-flammable (A1) HFC blend with properties close to R-22, commonly used to replace R-22 in air conditioning and chillers. Charge as liquid because of its temperature glide.
 
     An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for pack sizes, stock and a quotation.
+  applications: []
   faq:
     - q: Which refrigerants can ORAFON R-407C replace?
       a: R-22. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
     - q: Is it flammable? How safe is it?
-      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+      a: 'It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices.'
     - q: Which pack sizes are available, and how do I get a price?
       a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
   seo_description: ORAFON R-407C R-407C HFC Blend refrigerant, A1, GWP 1774. Distributed by ORAFON — request a quotation.
