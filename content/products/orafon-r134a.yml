@@ -5,8 +5,8 @@ th:
   refrigerant: r-134a
   tagline: สารทำความเย็น HFC
   tag: ''
+  cover: /assets/uploads/R-134a-front-box.webp
   images:
-    - /assets/uploads/R-134a-front-box.webp
     - /assets/uploads/R-134a-front.webp
     - /assets/uploads/R-134a-back.webp
   packages: []
