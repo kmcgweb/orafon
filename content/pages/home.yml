@@ -45,8 +45,8 @@ th:
   stats:
     - num: "100%"
       label: สินค้าของแท้
-    - num: "2"
-      label: แบรนด์ ORAFON และ Solstice®
+    - num: "{years} ปี"
+      label: ประสบการณ์ นับจาก 26 กุมภาพันธ์ 2539
     - num: TDS/SDS
       label: เอกสารทางเทคนิคครบ
     - num: B2B · B2C
@@ -99,8 +99,8 @@ en:
   stats:
     - num: "100%"
       label: Genuine products
-    - num: "2"
-      label: Brands — ORAFON and Solstice®
+    - num: "{years} years"
+      label: Experience since 26 February 1996
     - num: TDS/SDS
       label: Full technical documents
     - num: B2B · B2C

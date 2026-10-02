@@ -1,11 +1,15 @@
 # ORAFON admin (Sveltia CMS) — edits are saved as commits to GitHub (branch main).
 # GitHub Actions then rebuilds the site and Plesk deploys it (about 1–2 minutes).
-# Log in with a GitHub fine-grained personal access token (Contents: read & write on kmcgweb/orafon).
+# Sign in with a username/password (see auth.php) or paste a GitHub fine-grained token
+# (Contents: read & write on kmcgweb/orafon).
 
 backend:
   name: github
   repo: kmcgweb/orafon
   branch: main
+  # Username/password sign-in: /admin/auth.php hands over the token stored on the server
+  base_url: https://orafon.co.th
+  auth_endpoint: admin/auth.php
   commit_messages:
     create: "เพิ่ม {{collection}}: {{slug}}"
     update: "แก้ไข {{collection}}: {{slug}}"
@@ -274,6 +278,7 @@ collections:
               - { name: button, label: "ข้อความปุ่ม", widget: string, required: false }
           - name: stats
             label: "ตัวเลขความน่าเชื่อถือ"
+            hint: "แสดงทั้งหน้าแรกและหน้าเกี่ยวกับเรา · พิมพ์ {years} เพื่อแสดงจำนวนปีนับจากวันก่อตั้ง (ตั้งค่าในหน้าตั้งค่าเว็บไซต์) เช่น {years} ปี"
             widget: list
             i18n: true
             fields:
@@ -324,6 +329,7 @@ collections:
         fields:
           - { name: site_url, label: "URL เว็บไซต์", widget: string, default: "https://orafon.co.th" }
           - { name: brand_name, label: "ชื่อแบรนด์", widget: string, default: "ORAFON" }
+          - { name: founded, label: "วันก่อตั้งบริษัท", hint: "ใช้คำนวณจำนวนปีประสบการณ์ ({years}) อัตโนมัติ", widget: datetime, time_format: false, format: "YYYY-MM-DD", required: false }
           - { name: company_name, label: "ชื่อบริษัท", widget: string, i18n: true }
           - { name: tagline, label: "สโลแกน (ใช้ใน title และ Google)", widget: string, i18n: true }
           - { name: footer_about, label: "ข้อความใน footer", widget: text, i18n: true }

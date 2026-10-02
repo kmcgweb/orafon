@@ -149,6 +149,14 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("md", (s) => (s ? md.render(String(s)) : ""));
   eleventyConfig.addFilter("mdInline", (s) => (s ? md.renderInline(String(s)) : ""));
+  // "{years}" in text -> full years since the founding date (counted at build time)
+  eleventyConfig.addFilter("withYears", (text, founded) => {
+    if (!founded) return text;
+    const f = new Date(founded), now = new Date();
+    let y = now.getFullYear() - f.getFullYear();
+    if (now.getMonth() < f.getMonth() || (now.getMonth() === f.getMonth() && now.getDate() < f.getDate())) y--;
+    return String(text || "").replace(/{years}/g, String(y));
+  });
   eleventyConfig.addFilter("shortNum", (num) => String(num || "").replace(/^R-?/i, ""));
   eleventyConfig.addFilter("kg", (n) => (n === undefined || n === null || n === "" ? "" : Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 })));
   // GWP spans 1 … ~15,000, so bars use a log scale (0–100%)

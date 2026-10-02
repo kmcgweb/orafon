@@ -15,8 +15,9 @@ eleventyComputed:
 <section class="ab-hero"><div class="container">
   <h1 class="display">{{ A.title }} <span class="grad-text">{{ A.highlight }}</span></h1>
   <p class="lead" style="font-size:18px;color:var(--text-muted);max-width:65ch;margin-top:18px;line-height:1.8">{{ A.lead }}</p>
-  <p style="margin-top:12px;font-weight:600">{{ D.site.company_name }}</p>
+  <p style="margin-top:12px;font-weight:600">{{ D.site.company_name }}{% if D.site.founded %} <span class="muted" style="font-weight:500">· {{ T.founded }} {{ D.site.founded | dateFmt(lang) }}</span>{% endif %}</p>
 </div></section>
+{% include "partials/stats.njk" %}
 {%- if A.cards and A.cards.length %}
 <section class="section" style="padding-top:20px"><div class="container">
   <div class="ab-grid">

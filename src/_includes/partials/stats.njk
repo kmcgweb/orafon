@@ -1,0 +1,11 @@
+{#- Trust numbers strip (data: home.yml → stats). "{years}" = years since site.founded -#}
+{%- set H = db[lang].home -%}
+{%- if H.stats and H.stats.length %}
+<section class="section" style="padding-top:0"><div class="container"><div class="trust">
+  <div class="trust-grid">
+    {%- for s in H.stats %}
+    <div class="trust-item"><div class="n grad-text">{{ s.num | withYears(db[lang].site.founded) }}</div><div class="l">{{ s.label | withYears(db[lang].site.founded) }}</div></div>
+    {%- endfor %}
+  </div>
+</div></div></section>
+{%- endif %}

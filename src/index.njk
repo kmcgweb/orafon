@@ -133,13 +133,5 @@ pageScript: home.js
   </div>
 </div></section>
 
-{%- if H.stats and H.stats.length %}
-<section class="section" style="padding-top:0"><div class="container"><div class="trust">
-  <div class="trust-grid">
-    {%- for s in H.stats %}
-    <div class="trust-item"><div class="n grad-text">{{ s.num }}</div><div class="l">{{ s.label }}</div></div>
-    {%- endfor %}
-  </div>
-</div></div></section>
-{%- endif %}
+{% include "partials/stats.njk" %}
 
