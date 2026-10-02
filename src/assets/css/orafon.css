@@ -77,8 +77,9 @@ a.mg-title:hover{color:var(--primary)}
 .mg-more{margin-top:10px;font-size:13.5px;font-weight:700}
 .mg-feature{display:flex;flex-direction:column;justify-content:flex-end;gap:4px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#EDF2FB,#EAF6EE);border:1px solid #DCE6F7;color:var(--text);transition:.2s}
 .mg-feature:hover{box-shadow:var(--shadow-lift);transform:translateY(-2px)}
-.mgf-art{position:relative;height:150px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:14px}
-.mgf-art svg,.mgf-art img{position:relative;z-index:1;height:100%;width:auto}
+.mgf-art{position:relative;flex:1 1 auto;min-height:160px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:14px}
+.mgf-art svg,.mgf-art img{position:absolute;z-index:1;left:50%;top:0;bottom:0;height:100%;width:auto;max-width:100%;transform:translateX(-50%)}
+.mgf-art img{left:0;width:100%;transform:none;object-fit:contain;object-position:center bottom}
 .mgf-kicker{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary)}
 .mg-feature b{font-size:16px}
 .mgf-tag{font-size:13px;color:var(--text-muted)}
@@ -255,7 +256,8 @@ footer.site{margin-top:56px;background:#fff;border-top:1px solid var(--border-so
 .prod-media img{width:100%;height:100%;object-fit:contain;padding:18px}
 /* product image shadow (cylinder SVG / transparent photos) */
 .prod-media svg,.prod-media img,.mgf-art svg,.mgf-art img,.gallery .main-img img,.gallery .main-img svg{filter:drop-shadow(0 12px 14px rgba(15,23,42,.16)) drop-shadow(0 3px 4px rgba(15,23,42,.10))}
-.mgf-art::after{content:"";position:absolute;left:50%;bottom:-6px;width:96px;height:14px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(15,23,42,.22),transparent);z-index:0}
+.mgf-art::after{content:"";position:absolute;left:50%;bottom:calc(15% - 7px);width:130px;height:14px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(15,23,42,.22),transparent);z-index:0}
+.mgf-art:has(img)::after{bottom:-6px}
 .prod-tags{position:absolute;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}
 /* labels: soft tints with coloured text */
 .prod-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;line-height:1.35;border:1px solid transparent;background:#fff}
