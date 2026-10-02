@@ -22,9 +22,16 @@ header('X-Frame-Options: DENY');
 header("Content-Security-Policy: frame-ancestors 'none'");
 header('Referrer-Policy: no-referrer');
 
-$dir = getenv('ORAFON_ADMIN_DIR') ?: dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__ . '/../..') . '/orafon-admin';
+// Look for orafon-admin/ next to httpdocs (this file is httpdocs/admin/auth.php)
+$candidates = array_filter([
+    getenv('ORAFON_ADMIN_DIR') ?: null,
+    dirname(__DIR__, 2) . '/orafon-admin',
+    isset($_SERVER['DOCUMENT_ROOT']) ? dirname($_SERVER['DOCUMENT_ROOT']) . '/orafon-admin' : null,
+]);
+$dir = reset($candidates);
+foreach ($candidates as $c) { if (@is_file($c . '/config.php')) { $dir = $c; break; } }
 $cfgFile = $dir . '/config.php';
-$cfg = is_file($cfgFile) ? require $cfgFile : null;
+$cfg = @is_file($cfgFile) ? require $cfgFile : null;
 
 function h(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
@@ -44,7 +51,15 @@ function page(string $title, string $body, string $script = ''): void {
 
 if (!is_array($cfg) || empty($cfg['token']) || empty($cfg['users']) || empty($cfg['origin'])) {
     http_response_code(500);
-    page('ORAFON Admin', '<h1>ยังไม่ได้ตั้งค่าระบบล็อกอิน</h1><p class="ok">ไม่พบไฟล์ตั้งค่า orafon-admin/config.php บนเซิร์ฟเวอร์</p>');
+    if ($cfg === null) {
+        $why = 'ไม่พบไฟล์ตั้งค่า ระบบค้นหาที่:<br>' . implode('<br>', array_map(fn($c) => '<code>' . h($c) . '/config.php</code>', array_unique($candidates)));
+    } elseif (!is_array($cfg)) {
+        $why = 'พบไฟล์ config.php แล้ว แต่รูปแบบไม่ถูกต้อง (ต้องขึ้นต้นด้วย &lt;?php return [ และปิดด้วย ];)';
+    } else {
+        $missing = array_keys(array_filter(['origin' => empty($cfg['origin']), 'token' => empty($cfg['token']), 'users' => empty($cfg['users'])]));
+        $why = 'พบไฟล์ config.php แล้ว แต่ยังขาดค่า: <b>' . h(implode(', ', $missing)) . '</b>';
+    }
+    page('ORAFON Admin', '<h1>ยังไม่ได้ตั้งค่าระบบล็อกอิน</h1><p class="ok" style="text-align:left;word-break:break-all">' . $why . '</p>');
 }
 
 /* ---- rate limit: 5 failed attempts per IP per 15 minutes ---- */
