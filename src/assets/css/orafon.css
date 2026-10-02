@@ -251,14 +251,15 @@ footer.site{margin-top:56px;background:#fff;border-top:1px solid var(--border-so
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
 .prod-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border-soft);border-radius:20px;box-shadow:var(--shadow-soft);overflow:hidden;transition:.2s ease}
 .prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-.prod-media{aspect-ratio:4/3;background:linear-gradient(135deg,#EDF2FB,#EAF6EE);display:flex;align-items:center;justify-content:center;position:relative}
-.prod-media svg{width:64%;height:64%}
-.prod-media img{width:100%;height:100%;object-fit:contain;padding:18px}
+.prod-media{aspect-ratio:4/3;background:linear-gradient(135deg,#EDF2FB,#EAF6EE);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.prod-media svg{width:60%;height:60%;margin-top:22px}
+/* photo fits under the label row (top 44px), never grows the card */
+.prod-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:46px 20px 14px}
 /* product image shadow (cylinder SVG / transparent photos) */
 .prod-media svg,.prod-media img,.mgf-art svg,.mgf-art img,.gallery .main-img img,.gallery .main-img svg{filter:drop-shadow(0 12px 14px rgba(15,23,42,.16)) drop-shadow(0 3px 4px rgba(15,23,42,.10))}
 .mgf-art::after{content:"";position:absolute;left:50%;bottom:calc(15% - 7px);width:130px;height:14px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(15,23,42,.22),transparent);z-index:0}
 .mgf-art:has(img)::after{bottom:-6px}
-.prod-tags{position:absolute;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}
+.prod-tags{position:absolute;z-index:2;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}
 /* labels: soft tints with coloured text */
 .prod-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;line-height:1.35;border:1px solid transparent;background:#fff}
 .lb-recommended{background:#EDF2FB;color:#1F3F9F;border-color:#C3D2F0}
