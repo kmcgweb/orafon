@@ -5,7 +5,8 @@ th:
   refrigerant: r-134a
   tagline: สารทำความเย็น HFC
   tag: ''
-  images: []
+  images:
+    - /assets/uploads/R-134a-front.webp
   packages: []
   badges:
     - GWP 1430
