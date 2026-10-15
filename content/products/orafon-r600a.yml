@@ -3,6 +3,7 @@ th:
   name: ORAFON R-600a
   brand: orafon
   refrigerant: r-600a
+  tank_color: "#af2e1b"
   tagline: สารทำความเย็นธรรมชาติ (Isobutane)
   tag: ธรรมชาติ
   cover: ''

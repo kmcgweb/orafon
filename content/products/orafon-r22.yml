@@ -3,6 +3,7 @@ th:
   name: ORAFON R-22
   brand: orafon
   refrigerant: r-22
+  tank_color: "#4dcd78"
   tagline: สารทำความเย็น HCFC
   tag: ''
   images:

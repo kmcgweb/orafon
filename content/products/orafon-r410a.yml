@@ -3,6 +3,7 @@ th:
   name: ORAFON R-410A
   brand: orafon
   refrigerant: r-410a
+  tank_color: "#b05e6a"
   tagline: สารทำความเย็น HFC Blend
   tag: ''
   cover: ''

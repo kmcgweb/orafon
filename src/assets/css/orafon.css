@@ -251,12 +251,20 @@ footer.site{margin-top:56px;background:#fff;border-top:1px solid var(--border-so
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
 .prod-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border-soft);border-radius:20px;box-shadow:var(--shadow-soft);overflow:hidden;transition:.2s ease}
 .prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-.prod-media{aspect-ratio:4/3;background:linear-gradient(135deg,#EDF2FB,#EAF6EE);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.prod-media svg{width:60%;height:60%;margin-top:22px}
-/* photo fits under the label row (top 44px), never grows the card */
-.prod-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:46px 20px 14px}
+.prod-media{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(180deg,color-mix(in srgb,var(--c,#1F3F9F) 42%,#fff) 0%,color-mix(in srgb,var(--c,#1F3F9F) 16%,#fff) 72%)}
+/* snow scene: mountains + snowy ground + falling snow, tinted by --c (tank colour) */
+.snow{position:absolute;inset:0;z-index:0;pointer-events:none}
+.snow-mtn{position:absolute;left:0;bottom:14%;width:100%;height:44%;color:color-mix(in srgb,var(--c,#1F3F9F) 70%,#1e293b)}
+.snow-ground{position:absolute;left:-12%;right:-12%;bottom:-14%;height:32%;border-radius:50% 50% 0 0;background:linear-gradient(#fff,color-mix(in srgb,var(--c,#1F3F9F) 8%,#fff));box-shadow:0 -6px 18px rgba(255,255,255,.75)}
+.snow-fall{position:absolute;left:0;right:0;top:-120px;bottom:0;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'120'%20height%3D'120'%3E%3Cg%20fill%3D'white'%20opacity%3D'0.9'%3E%3Ccircle%20cx%3D'12'%20cy%3D'18'%20r%3D'2'%2F%3E%3Ccircle%20cx%3D'58'%20cy%3D'9'%20r%3D'1.4'%2F%3E%3Ccircle%20cx%3D'96'%20cy%3D'30'%20r%3D'2.4'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'60'%20r%3D'1.2'%2F%3E%3Ccircle%20cx%3D'78'%20cy%3D'70'%20r%3D'1.8'%2F%3E%3Ccircle%20cx%3D'110'%20cy%3D'96'%20r%3D'1.3'%2F%3E%3Ccircle%20cx%3D'50'%20cy%3D'100'%20r%3D'2.2'%2F%3E%3Ccircle%20cx%3D'8'%20cy%3D'92'%20r%3D'1.5'%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D'white'%20stroke-width%3D'1.2'%20stroke-linecap%3D'round'%20opacity%3D'0.9'%20fill%3D'none'%3E%3Cpath%20d%3D'M70%2040v10M65%2045h10M66.5%2041.5l7%207M73.5%2041.5l-7%207'%2F%3E%3Cpath%20d%3D'M22%20108v8M18%20112h8M19%20109l6%206M25%20109l-6%206'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 0 0/120px 120px;animation:snowfall 9s linear infinite}
+.snow-fall2{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'120'%20height%3D'120'%3E%3Cg%20fill%3D'white'%20opacity%3D'0.6'%3E%3Ccircle%20cx%3D'12'%20cy%3D'18'%20r%3D'2'%2F%3E%3Ccircle%20cx%3D'58'%20cy%3D'9'%20r%3D'1.4'%2F%3E%3Ccircle%20cx%3D'96'%20cy%3D'30'%20r%3D'2.4'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'60'%20r%3D'1.2'%2F%3E%3Ccircle%20cx%3D'78'%20cy%3D'70'%20r%3D'1.8'%2F%3E%3Ccircle%20cx%3D'110'%20cy%3D'96'%20r%3D'1.3'%2F%3E%3Ccircle%20cx%3D'50'%20cy%3D'100'%20r%3D'2.2'%2F%3E%3Ccircle%20cx%3D'8'%20cy%3D'92'%20r%3D'1.5'%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D'white'%20stroke-width%3D'1.2'%20stroke-linecap%3D'round'%20opacity%3D'0.6'%20fill%3D'none'%3E%3Cpath%20d%3D'M70%2040v10M65%2045h10M66.5%2041.5l7%207M73.5%2041.5l-7%207'%2F%3E%3Cpath%20d%3D'M22%20108v8M18%20112h8M19%20109l6%206M25%20109l-6%206'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 40px 20px/70px 70px;animation-duration:14s;opacity:.8}
+@keyframes snowfall{to{transform:translateY(120px)}}
+@media (prefers-reduced-motion:reduce){.snow-fall{animation:none}}
+.prod-media > svg{position:relative;z-index:1;width:60%;height:60%;margin-top:22px}
+.prod-media img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;padding:44px 18px 8px;transition:transform .35s}
+.prod-card:hover .prod-media img,.prod-card:hover .prod-media > svg{transform:translateY(-6px)}
 /* product image shadow (cylinder SVG / transparent photos) */
-.prod-media svg,.prod-media img,.mgf-art svg,.mgf-art img,.gallery .main-img img,.gallery .main-img svg{filter:drop-shadow(0 12px 14px rgba(15,23,42,.16)) drop-shadow(0 3px 4px rgba(15,23,42,.10))}
+.prod-media > svg,.prod-media img,.mgf-art svg,.mgf-art img,.gallery .main-img img,.gallery .main-img svg{filter:drop-shadow(0 12px 14px rgba(15,23,42,.16)) drop-shadow(0 3px 4px rgba(15,23,42,.10))}
 .mgf-art::after{content:"";position:absolute;left:50%;bottom:calc(15% - 7px);width:130px;height:14px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(15,23,42,.22),transparent);z-index:0}
 .mgf-art:has(img)::after{bottom:-6px}
 .prod-tags{position:absolute;z-index:2;top:12px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:6px}

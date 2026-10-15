@@ -3,6 +3,7 @@ th:
   name: ORAFON R-134a
   brand: orafon
   refrigerant: r-134a
+  tank_color: "#6dacaa"
   tagline: สารทำความเย็น HFC
   tag: ''
   cover: /assets/uploads/R-134a-front-box.webp

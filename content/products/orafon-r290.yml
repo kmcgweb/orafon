@@ -3,6 +3,7 @@ th:
   name: ORAFON R-290
   brand: orafon
   refrigerant: r-290
+  tank_color: "#e44409"
   tagline: สารทำความเย็นธรรมชาติ (Propane)
   tag: ธรรมชาติ
   images:

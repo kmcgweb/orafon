@@ -81,7 +81,9 @@ function buildDb() {
         const imgs = (p.images || []).filter(Boolean);
         const coverImage = p.cover || imgs[0] || "";
         const gallery = coverImage ? [coverImage, ...imgs.filter((i) => i !== coverImage)] : [];
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery };
+        // tank colour drives the card background (falls back to the refrigerant colour)
+        const tankColor = p.tank_color || ref?.color || "#1F3F9F";
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor };
       })
       .sort(byOrder);
 

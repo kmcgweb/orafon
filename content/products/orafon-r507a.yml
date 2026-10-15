@@ -3,6 +3,7 @@ th:
   name: ORAFON R-507A
   brand: orafon
   refrigerant: r-507a
+  tank_color: "#5abaa8"
   tagline: สารทำความเย็น HFC Blend
   tag: ''
   cover: ''

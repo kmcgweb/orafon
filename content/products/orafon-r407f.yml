@@ -3,6 +3,7 @@ th:
   name: ORAFON R-407F
   brand: orafon
   refrigerant: r-407f
+  tank_color: "#95b66b"
   tagline: สารทำความเย็น HFC Blend
   tag: ''
   cover: ''

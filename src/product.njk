@@ -37,13 +37,26 @@ eleventyComputed:
     <!-- gallery -->
     <div class="gallery">
       <div class="main-wrap"><div class="main-img">
-        {%- if p.coverImage %}<img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}">{% else %}{{ cylinder(r, "main") }}{% endif %}
+        {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
+        {%- if p.gallery.length > 1 %}
+        <button class="gal-nav gal-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button>
+        <button class="gal-nav gal-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>
+        <span class="gal-count"><b id="galIdx">1</b> / {{ p.gallery.length }}</span>
+        {%- endif %}
       </div></div>
       {%- if p.gallery.length > 1 %}
       <div class="thumbs">
         {%- for img in p.gallery %}
         <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
         {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if p.coverImage %}
+      <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="{{ p.name }}">
+        <button class="lb-close" type="button" aria-label="{{ T.close }}">✕</button>
+        {%- if p.gallery.length > 1 %}<button class="lb-nav lb-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button><button class="lb-nav lb-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>{% endif %}
+        <img id="lbImg" src="{{ p.coverImage }}" alt="{{ p.name }}">
+        {%- if p.gallery.length > 1 %}<span class="lb-count"><b id="lbIdx">1</b> / {{ p.gallery.length }}</span>{% endif %}
       </div>
       {%- endif %}
     </div>

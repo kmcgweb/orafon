@@ -3,6 +3,7 @@ th:
   name: ORAFON R-23
   brand: orafon
   refrigerant: r-23
+  tank_color: "#7c8480"
   tagline: สารทำความเย็นอุณหภูมิต่ำพิเศษ HFC
   tag: ''
   images:

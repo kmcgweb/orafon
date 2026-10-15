@@ -52,8 +52,9 @@
 
 {%- macro productCard(p, lang, T) -%}
 {%- set href = ("/products/" ~ p.slug ~ "/") | u(lang) -%}
-<article class="prod-card" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
+    <span class="snow"><svg class="snow-mtn" viewBox="0 0 300 120" preserveAspectRatio="none"><path d="M0 120V70l40-30 30 22 50-50 40 36 30-18 50 40 60-30v80z" fill="currentColor" opacity=".35"/><path d="M0 120V92l60-26 40 18 60-34 50 30 40-14 50 24v30z" fill="currentColor" opacity=".55"/></svg><span class="snow-ground"></span><span class="snow-fall"></span><span class="snow-fall snow-fall2"></span></span>
     {%- if p.labels.length or p.tag %}<span class="prod-tags">
       {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
       {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}

@@ -3,6 +3,7 @@ th:
   name: ORAFON R-32
   brand: orafon
   refrigerant: r-32
+  tank_color: "#ae3968"
   tagline: สารทำความเย็น HFC
   tag: ''
   images:

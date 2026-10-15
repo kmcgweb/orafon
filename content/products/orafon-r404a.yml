@@ -3,6 +3,7 @@ th:
   name: ORAFON R-404A
   brand: orafon
   refrigerant: r-404a
+  tank_color: "#bb5028"
   tagline: สารทำความเย็น HFC Blend
   tag: ''
   images:

@@ -3,6 +3,7 @@ th:
   name: ORAFON R-508B
   brand: orafon
   refrigerant: r-508b
+  tank_color: "#848b8c"
   tagline: สารทำความเย็นอุณหภูมิต่ำพิเศษ HFC Blend
   tag: ''
   cover: ''
