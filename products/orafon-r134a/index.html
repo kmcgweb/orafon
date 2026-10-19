@@ -18,12 +18,16 @@
 <meta property="og:locale" content="th_TH">
 <link rel="icon" type="image/png" href="/assets/img/orafon-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/orafon.css">
 <link rel="stylesheet" href="/assets/css/product.css">
 </head>
 <body class="has-sticky">
-<div class="blobs" aria-hidden="true"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+<div class="topbar"><div class="container"><a href="tel:1263"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>โทร 1263</a><a href="mailto:sales@orafon.co.th"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>sales@orafon.co.th</a><a href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>LINE @orafon</a>
+  <div class="tb-right"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>จันทร์–ศุกร์ 08:30–17:30 น.</span>
+  </div>
+</div></div>
 <header class="site" id="siteHeader">
   <div class="container nav">
     <a class="logo" href="/" aria-label="ORAFON — หน้าแรก"><img src="/assets/img/orafon-logo.png" alt="ORAFON" width="120" height="32"></a>
@@ -182,12 +186,19 @@
        data-name="ORAFON R-134a" data-line="@orafon" data-contact="/contact/" data-linemsg="สวัสดีครับ ขอสอบถามสินค้า">
     <!-- gallery -->
     <div class="gallery">
-      <div class="main-wrap"><div class="main-img"><img id="mainImg" src="/assets/uploads/R-134a-front-box.webp" alt="ORAFON R-134a">
+      <div class="main-wrap"><div class="main-img"><button class="gal-open" type="button" aria-label="ดูรูปขยาย"><img id="mainImg" src="/assets/uploads/R-134a-front-box.webp" alt="ORAFON R-134a"><span class="gal-zoom" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span></button>
+        <button class="gal-nav gal-prev" type="button" aria-label="รูปก่อนหน้า"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="gal-nav gal-next" type="button" aria-label="รูปถัดไป"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <span class="gal-count"><b id="galIdx">1</b> / 3</span>
       </div></div>
       <div class="thumbs">
         <button class="thumb active" type="button" data-src="/assets/uploads/R-134a-front-box.webp" aria-label="ORAFON R-134a 1"><img src="/assets/uploads/R-134a-front-box.webp" alt="" loading="lazy"></button>
         <button class="thumb" type="button" data-src="/assets/uploads/R-134a-front.webp" aria-label="ORAFON R-134a 2"><img src="/assets/uploads/R-134a-front.webp" alt="" loading="lazy"></button>
         <button class="thumb" type="button" data-src="/assets/uploads/R-134a-back.webp" aria-label="ORAFON R-134a 3"><img src="/assets/uploads/R-134a-back.webp" alt="" loading="lazy"></button>
+      </div>
+      <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="ORAFON R-134a">
+        <button class="lb-close" type="button" aria-label="ปิด">✕</button><button class="lb-nav lb-prev" type="button" aria-label="รูปก่อนหน้า"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button class="lb-nav lb-next" type="button" aria-label="รูปถัดไป"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <img id="lbImg" src="/assets/uploads/R-134a-front-box.webp" alt="ORAFON R-134a"><span class="lb-count"><b id="lbIdx">1</b> / 3</span>
       </div>
     </div>
 
@@ -220,7 +231,7 @@
   <div class="apps-band">
     <h2 style="margin-bottom:14px">การใช้งาน</h2>
     <p class="lead" style="margin-bottom:0">เหมาะกับงานเหล่านี้</p>
-    <div class="apps-grid"><div class="app-card"><span class="emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17v-4l2-5h14l2 5v4H3z"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg></span><div class="t">แอร์รถยนต์</div></div><div class="app-card"><span class="emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M9 5v2M9 13v3"/></svg></span><div class="t">ตู้เย็น / ตู้แช่</div></div><div class="app-card"><span class="emoji"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8" cy="12" r="3"/><circle cx="16" cy="12" r="3"/></svg></span><div class="t">ชิลเลอร์</div></div>
+    <div class="apps-grid"><div class="app-card"><span class="emoji"><img src="/assets/img/icons/car.svg" alt="" width="48" height="48" loading="lazy"></span><div class="t">แอร์รถยนต์</div></div><div class="app-card"><span class="emoji"><img src="/assets/img/icons/fridge.svg" alt="" width="48" height="48" loading="lazy"></span><div class="t">ตู้เย็น / ตู้แช่</div></div><div class="app-card"><span class="emoji"><img src="/assets/img/icons/chiller.svg" alt="" width="48" height="48" loading="lazy"></span><div class="t">ชิลเลอร์</div></div>
     </div>
   </div>
 </section></div>
@@ -387,6 +398,9 @@
   </div>
 </footer>
 
+<div class="fab">
+  <button class="fab-top" type="button" id="toTop" aria-label="กลับขึ้นด้านบน" hidden><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><a class="fab-phone" href="tel:1263" aria-label="โทร 1263"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a><a class="fab-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener" aria-label="LINE @orafon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></a>
+</div>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/product.js" defer></script>
 </body>
