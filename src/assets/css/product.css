@@ -208,3 +208,6 @@ h1.pname{font-weight:700}
 .rel-card:hover{transform:none;box-shadow:none;border-color:var(--primary)}
 .rel-ic{font-family:var(--mono)}
 .sticky-cta{box-shadow:0 -1px 0 var(--border);background:#fff}
+.app-card .emoji{width:60px;height:60px;background:none;border-radius:0}
+.app-card .emoji img{width:60px;height:60px;display:block}
+.app-card:hover .emoji img{transform:translateY(-2px);transition:transform .2s}

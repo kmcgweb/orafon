@@ -104,6 +104,7 @@ collections:
         summary: "{{label}}"
         fields: &appFields
           - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, heatpump, snow, store, box, car, fridge, chiller, truck, factory, foam, spray, flask, wrench, bolt], i18n: duplicate }
+          - { name: icon_image, label: "รูปไอคอนเอง (ไม่บังคับ — ถ้าใส่จะใช้แทนไอคอนที่เลือก, SVG/PNG พื้นใส 96×96 px ขึ้นไป)", widget: image, required: false, i18n: duplicate }
           - { name: label, label: "ข้อความ", widget: string }
       - name: documents
         label: "เอกสาร (TDS/SDS)"

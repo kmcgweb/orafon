@@ -2,8 +2,8 @@ th:
   id: solstice
   name: Solstice®
   own_brand: false
-  logo: ""
-  website: ""
+  logo: /assets/uploads/solstice-logo.png
+  website: https://www.solstice.com
   order: 2
   tagline: ตัวแทนจำหน่ายสารทำความเย็นเทคโนโลยี HFO
   description: |

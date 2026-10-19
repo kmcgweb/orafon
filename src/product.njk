@@ -112,7 +112,7 @@ eleventyComputed:
     <h2 style="margin-bottom:14px">{{ T.applications }}</h2>
     <p class="lead" style="margin-bottom:0">{{ T.appsLead }}</p>
     <div class="apps-grid">
-      {%- for a in apps %}<div class="app-card"><span class="emoji">{{ icon(a.icon) }}</span><div class="t">{{ a.label }}</div></div>{% endfor %}
+      {%- for a in apps %}<div class="app-card"><span class="emoji"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="" width="48" height="48" loading="lazy"></span><div class="t">{{ a.label }}</div></div>{% endfor %}
     </div>
   </div>
 </section></div>

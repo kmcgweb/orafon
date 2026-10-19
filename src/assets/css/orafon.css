@@ -919,3 +919,4 @@ body.has-sticky .fab{bottom:90px}
   .class-tiles{grid-template-columns:1fr 1fr}
 }
 @media (max-width:768px){body.has-sticky .fab-phone,body.has-sticky .fab-line{display:none}}
+.brand-card .bl{width:128px;background:#fff}
