@@ -39,11 +39,18 @@
 {%- endif %}
 </head>
 <body class="{{ bodyClass }}">
+<a class="skip-link" href="#main">{{ T.skipToContent }}</a>
 {% include "partials/header.njk" %}
 <main id="main">
 {{ content | safe }}
 </main>
 {% include "partials/footer.njk" %}
+{%- from "partials/macros.njk" import icon %}
+<div class="fab">
+  <button class="fab-top" type="button" id="toTop" aria-label="{{ T.backToTop }}" hidden>{{ icon("chev") }}</button>
+  {%- if S.phone %}<a class="fab-phone" href="tel:{{ S.phone }}" aria-label="{{ T.call }} {{ S.phone_display }}">{{ icon("phone") }}</a>{% endif %}
+  {%- if S.line_id %}<a class="fab-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener" aria-label="LINE {{ S.line_id }}">{{ icon("chat") }}</a>{% endif %}
+</div>
 <script src="/assets/js/nav.js" defer></script>
 {%- if pageScript %}
 <script src="/assets/js/{{ pageScript }}" defer></script>

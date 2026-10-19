@@ -132,3 +132,13 @@
     if (m.matches && document.body.classList.contains("drawer-open")) closeDrawer();
   });
 })();
+
+// Back-to-top button (shown after scrolling one screen)
+(function () {
+  var btn = document.getElementById("toTop");
+  if (!btn) return;
+  function sync() { btn.hidden = window.scrollY < window.innerHeight; }
+  window.addEventListener("scroll", sync, { passive: true });
+  sync();
+  btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+})();

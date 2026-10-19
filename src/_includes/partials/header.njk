@@ -7,6 +7,14 @@
   ["/documents/", T.documents, "doc", T.techDocsDesc],
   ["/articles/", T.articles, "list", T.articlesLead]
 ] -%}
+<div class="topbar"><div class="container">
+  {%- if S.phone %}<a href="tel:{{ S.phone }}">{{ icon("phone") }}{{ T.call }} {{ S.phone_display }}</a>{% endif %}
+  {%- if S.email %}<a href="mailto:{{ S.email }}">{{ icon("mail") }}{{ S.email }}</a>{% endif %}
+  {%- if S.line_id %}<a href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}LINE {{ S.line_id }}</a>{% endif %}
+  <div class="tb-right">
+    {%- if S.hours %}<span>{{ icon("clock") }}{{ S.hours }}</span>{% endif %}
+  </div>
+</div></div>
 <header class="site" id="siteHeader">
   <div class="container nav">
     <a class="logo" href="{{ '/' | u(lang) }}" aria-label="{{ S.brand_name }} — {{ T.home }}"><img src="/assets/img/orafon-logo.png" alt="{{ S.brand_name }}" width="120" height="32"></a>

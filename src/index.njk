@@ -99,6 +99,23 @@ pageScript: home.js
 </div></section>
 {%- endif %}
 
+{%- if D.classCounts.length %}
+<section class="section" style="padding-top:0"><div class="container">
+  <span class="kicker">{{ T.byClass }}</span>
+  <h2 class="display">{{ T.browseByClass }}</h2>
+  <p class="lead" style="margin-bottom:0">{{ T.browseByClassLead }}</p>
+  <div class="class-tiles">
+    {%- for g in D.classCounts %}
+    <a class="class-tile" href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}">
+      <span class="ct-top"><b>{{ g.class }}</b><span>{{ g.n }} {{ T.productsN }}</span></span>
+      <p>{{ T.classDesc[g.class] }}</p>
+      <em>{{ T.viewAll }} →</em>
+    </a>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}
+
 {%- set w = H.wide_banner %}
 {%- if w and (w.image or w.title) %}
 <section class="section" style="padding-top:0"><div class="container">
