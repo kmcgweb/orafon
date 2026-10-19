@@ -52,8 +52,8 @@
         '<defs><linearGradient id="g-mega-p" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + c1 + '"/><stop offset="1" stop-color="' + c2 + '"/></linearGradient></defs>' +
         '<rect x="74" y="40" width="52" height="130" rx="16" fill="#fff" stroke="' + c1 + '" stroke-width="3"/>' +
         '<rect x="74" y="40" width="52" height="34" rx="16" fill="url(#g-mega-p)"/><rect x="90" y="24" width="20" height="20" rx="5" fill="' + c1 + '"/>' +
-        '<text x="100" y="120" font-family="Plus Jakarta Sans,sans-serif" font-size="' + fs + '" font-weight="800" fill="' + c1 + '" text-anchor="middle">' + esc(big) + '</text>' +
-        '<text x="100" y="142" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="600" fill="' + c2 + '" text-anchor="middle">' + esc(num) + '</text></svg>';
+        '<text x="100" y="120" font-family="IBM Plex Sans,sans-serif" font-size="' + fs + '" font-weight="700" fill="' + c1 + '" text-anchor="middle">' + esc(big) + '</text>' +
+        '<text x="100" y="142" font-family="IBM Plex Sans,sans-serif" font-size="11" font-weight="600" fill="' + c2 + '" text-anchor="middle">' + esc(num) + '</text></svg>';
     };
     var current = null, swapTimer = null;
     var show = function (a) {

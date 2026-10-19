@@ -29,7 +29,7 @@
 <meta property="og:locale" content="{{ 'th_TH' if lang == 'th' else 'en_US' }}">
 <link rel="icon" type="image/png" href="/assets/img/orafon-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/orafon.css">
 {%- if extraCss %}
 <link rel="stylesheet" href="/assets/css/{{ extraCss }}">
@@ -39,7 +39,6 @@
 {%- endif %}
 </head>
 <body class="{{ bodyClass }}">
-<div class="blobs" aria-hidden="true"><div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div></div>
 {% include "partials/header.njk" %}
 <main id="main">
 {{ content | safe }}
