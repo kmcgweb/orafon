@@ -51,25 +51,38 @@
 {%- endmacro -%}
 
 {%- macro productCard(p, lang, T) -%}
+{#- Spec card: tank-colour media with the grade watermark, safety badge, 3-cell spec strip, pack sizes, details + quote actions -#}
 {%- set href = ("/products/" ~ p.slug ~ "/") | u(lang) -%}
-<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+{%- set r = p.ref -%}
+<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
-    <span class="snow"><svg class="snow-mtn" viewBox="0 0 300 120" preserveAspectRatio="none"><path d="M0 120V70l40-30 30 22 50-50 40 36 30-18 50 40 60-30v80z" fill="currentColor" opacity=".35"/><path d="M0 120V92l60-26 40 18 60-34 50 30 40-14 50 24v30z" fill="currentColor" opacity=".55"/></svg><span class="snow-ground"></span><span class="snow-fall"></span><span class="snow-fall snow-fall2"></span></span>
+    <span class="pc-grid"></span>
+    {%- if r %}<span class="pc-num">{{ r.number | shortNum }}</span>{% endif %}
+    <span class="snow-fall"></span>
     {%- if p.labels.length or p.tag %}<span class="prod-tags">
       {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
       {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
     </span>{% endif %}
-    {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(p.ref, "card-" ~ p.slug) }}{% endif -%}
+    {%- if r and r.safety %}<span class="pc-safety sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}
+    {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "card-" ~ p.slug) }}{% endif -%}
   </a>
   <div class="prod-body">
-    <span class="prod-brand">{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}</span>
-    <a class="prod-name" href="{{ href }}">{{ p.name }}</a>
-    <div class="prod-badges">
-      {%- if p.ref %}<span class="chip i">{{ p.ref.number }}</span><span class="chip {{ 'o' if 'A2' in p.ref.safety or 'A3' in p.ref.safety else 'v' }}">{{ p.ref.safety }}</span><span class="chip g">GWP {{ p.ref.gwp_ar4 }}</span>{% endif -%}
-    </div>
+    <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
+    <h3 class="prod-name"><a href="{{ href }}">{{ p.name }}</a></h3>
+    {%- if p.tagline %}<p class="pc-tag">{{ p.tagline }}</p>{% endif %}
+    {%- if r %}
+    <dl class="pc-specs">
+      <div><dt>GWP</dt><dd>{{ r.gwp_ar4 or "—" }}</dd></div>
+      <div><dt>ODP</dt><dd>{{ r.odp or "—" }}</dd></div>
+      <div><dt>ASHRAE</dt><dd>{{ r.safety or "—" }}</dd></div>
+    </dl>
+    {%- endif %}
+    {%- if p.packages and p.packages.length %}
+    <div class="pc-pack">{% for k in p.packages %}<span>{{ k.kg | kg }} kg</span>{% endfor %}</div>
+    {%- endif %}
     <div class="prod-foot">
-      <span class="sku">{% if p.packages and p.packages.length %}{% for k in p.packages %}{{ k.kg | kg }}{% if not loop.last %} · {% endif %}{% endfor %} kg{% endif %}</span>
-      <a href="{{ href }}">{{ T.viewDetails }} →</a>
+      <a class="pc-go" href="{{ href }}">{{ T.viewDetails }} <span aria-hidden="true">→</span></a>
+      <a class="pc-quote" href="{{ ('/contact/' | u(lang)) ~ '?product=' ~ (p.name | urlencode) }}">{{ T.quoteShort }}</a>
     </div>
   </div>
 </article>
