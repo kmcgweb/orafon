@@ -61,7 +61,7 @@ eleventyComputed:
     <section class="pd-hero" id="pd-top">
       <div class="gallery">
         <div class="main-wrap"><div class="main-img">
-          {%- if r %}<span class="pd-num" aria-hidden="true">{{ r.number | shortNum }}</span>{% endif %}
+          {%- if p.brandObj and p.brandObj.logo %}<span class="pd-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
           {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
           {%- if p.gallery.length > 1 %}
           <button class="gal-nav gal-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button>

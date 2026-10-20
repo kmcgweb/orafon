@@ -52,7 +52,7 @@ pageScript: home.js
       {%- else %}<a class="hs-link" href="{{ href }}" aria-label="{{ s.title or D.site.brand_name }}"></a>{% endif %}
 
       {%- elif p %}
-      <div class="hx-bg" aria-hidden="true">{% if r %}<span class="hx-num">{{ r.number | shortNum }}</span>{% endif %}</div>
+      <div class="hx-bg" aria-hidden="true">{% if p.brandObj and p.brandObj.logo %}<span class="hx-logo" style="background-image:url('{{ p.brandObj.logo }}')"></span>{% endif %}</div>
       <div class="hx-grid">
         <div class="hx-text">
           <span class="hx-kicker">{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
@@ -124,7 +124,7 @@ pageScript: home.js
     {%- else %}
     <a class="promo-tile is-prod" href="{{ m | bannerHref(lang) }}" style="--c:{{ p.tankColor }}">
       <span class="pp-art">
-        {%- if r %}<span class="pp-num">{{ r.number | shortNum }}</span>{% endif %}
+        {%- if p.brandObj and p.brandObj.logo %}<span class="pp-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
         {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "promo-" ~ loop.index) }}{% endif %}
       </span>
       <span class="pp-body">

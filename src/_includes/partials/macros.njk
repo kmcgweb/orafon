@@ -56,9 +56,7 @@
 {%- set r = p.ref -%}
 <article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
-    <span class="pc-grid"></span>
-    {%- if r %}<span class="pc-num">{{ r.number | shortNum }}</span>{% endif %}
-    <span class="snow-fall"></span>
+    {%- if p.brandObj and p.brandObj.logo %}<span class="pc-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
     {%- if p.labels.length or p.tag %}<span class="prod-tags">
       {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
       {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
