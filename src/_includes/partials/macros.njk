@@ -68,7 +68,7 @@
   </a>
   <div class="prod-body">
     <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
-    <h3 class="prod-name"><a href="{{ href }}">{{ p.name }}</a></h3>
+    <h3 class="prod-name"><a href="{{ href }}">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</a></h3>
     {%- if p.tagline %}<p class="pc-tag">{{ p.tagline }}</p>{% endif %}
     {%- if r %}
     <dl class="pc-specs">

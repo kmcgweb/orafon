@@ -979,3 +979,4 @@ body.has-sticky .fab{bottom:90px}
   .prod-media img{padding:34px 12px 10px}
 }
 @media (prefers-reduced-motion:reduce){.prod-card,.prod-card:hover{transform:none}}
+.pc-ref{color:color-mix(in srgb,var(--c,var(--primary)) 82%,#0F1A2E)}
