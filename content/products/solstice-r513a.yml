@@ -13,7 +13,7 @@ th:
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r513a-sales.pdf
-  cover: /assets/uploads/solstice-r513a-cyl.webp
+  cover: /assets/uploads/solstice-r513a-photo-main.webp
   packages:
     - name: Cylinder
       kg: 50
