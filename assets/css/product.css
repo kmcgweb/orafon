@@ -349,3 +349,7 @@ html{scroll-padding-top:130px}
 .pd-num{display:none}
 .pd-logo{left:18px;top:16px;width:120px;height:36px}
 .thumb{background:var(--prod-bg)}
+.gallery .main-img img[src*="-photo-"]{padding:0;object-fit:cover;filter:none}
+.thumb img[src*="-photo-"]{object-fit:cover;border-radius:3px}
+.thumb:has(img[src*="-photo-"]){padding:3px}
+.main-img:has(img[src*="-photo-"]) .pd-logo{width:136px;height:44px}
