@@ -16,40 +16,80 @@ pageScript: home.js
 
 {%- set imgIcon = icon("image") -%}
 
+{#- Hero slider. A slide with an uploaded image shows the image; a slide linked to a product (no image)
+    is built from that product's data: tank colour, cover photo, grade, specs, replaces. -#}
+{%- macro specRow(r, T) -%}
+{%- if r %}
+<dl class="hx-specs">
+  <div><dt>GWP</dt><dd>{{ r.gwp_ar4 or "—" }}</dd></div>
+  <div><dt>ODP</dt><dd>{{ r.odp or "—" }}</dd></div>
+  <div><dt>ASHRAE</dt><dd>{{ r.safety or "—" }}</dd></div>
+  {%- if r.replaces and r.replaces.length %}<div><dt>{{ T.replaces }}</dt><dd>{{ r.replaces | join(", ") }}</dd></div>{% endif %}
+</dl>
+{%- endif %}
+{%- endmacro -%}
+
 {%- if H.slides and H.slides.length %}
 <h1 class="sr-only">{{ H.hero_title }} {{ H.hero_highlight }} — {{ D.site.brand_name }}</h1>
 <section class="hero-slider-wrap"><div class="container">
   <div class="hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="{{ D.site.brand_name }}">
     {%- for s in H.slides %}
     {%- set p = D.productMap[s.product] if s.product else null %}
-    <div class="hs-slide{% if loop.first %} active{% endif %}{% if not s.image %} is-ph{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
+    {%- set r = p.ref if p else null %}
+    {%- set href = s | bannerHref(lang) %}
+    <div class="hs-slide{% if loop.first %} active{% endif %}{% if not s.image %}{% if p %} is-prod{% else %} is-ph{% endif %}{% endif %}"{% if p %} style="--c:{{ p.tankColor }}"{% endif %} role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
       {%- if s.image %}
       <picture>
         {%- if s.image_mobile %}<source media="(max-width:768px)" srcset="{{ s.image_mobile }}">{% endif %}
         <img src="{{ s.image }}" alt="{{ s.title }}"{% if not loop.first %} loading="lazy"{% endif %}>
       </picture>
-      {%- else %}
-      <div class="hs-ph">
-        <div class="hs-ph-art{% if not p %} is-icon{% endif %}">{% if p %}{{ cylinder(p.ref, "slide-" ~ loop.index) }}{% else %}{{ icon("doc") }}{% endif %}</div>
-        <span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} <i class="d">1920×720 px</i><i class="m">1080×1350 px</i></span>
-      </div>
-      {%- endif %}
       {%- if s.title or s.text %}
       <div class="hs-content">
         {%- if s.title %}<h2>{{ s.title }}</h2>{% endif %}
         {%- if s.text %}<p>{{ s.text }}</p>{% endif %}
-        {%- if s.button %}<a class="btn btn-white" href="{{ s | bannerHref(lang) }}">{{ s.button }} →</a>{% endif %}
+        {%- if s.button %}<a class="btn btn-white" href="{{ href }}">{{ s.button }} →</a>{% endif %}
       </div>
-      {%- elif s.product or s.url %}
-      <a class="hs-link" href="{{ s | bannerHref(lang) }}" aria-label="{{ s.title or D.site.brand_name }}"></a>
+      {%- else %}<a class="hs-link" href="{{ href }}" aria-label="{{ s.title or D.site.brand_name }}"></a>{% endif %}
+
+      {%- elif p %}
+      <div class="hx-bg" aria-hidden="true">{% if r %}<span class="hx-num">{{ r.number | shortNum }}</span>{% endif %}</div>
+      <div class="hx-grid">
+        <div class="hx-text">
+          <span class="hx-kicker">{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
+          <h2>{{ s.title or p.name }}</h2>
+          <p>{{ s.text or p.tagline }}</p>
+          {{ specRow(r, T) }}
+          <div class="hx-cta">
+            <a class="btn hx-btn" href="{{ href }}">{{ s.button or T.viewDetails }} →</a>
+            <a class="btn hx-btn-o" href="{{ ('/contact/' | u(lang)) ~ '?product=' ~ (p.name | urlencode) }}">{{ T.requestQuote }}</a>
+          </div>
+        </div>
+        <a class="hx-art" href="{{ href }}" tabindex="-1" aria-hidden="true">
+          <span class="hx-disc"></span>
+          {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt=""{% if not loop.first %} loading="lazy"{% endif %}>{% else %}{{ cylinder(r, "slide-" ~ loop.index) }}{% endif %}
+        </a>
+      </div>
+
+      {%- else %}
+      <div class="hs-ph">
+        <div class="hs-ph-art is-icon">{{ icon("doc") }}</div>
+        <span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} <i class="d">1920×720 px</i><i class="m">1080×1350 px</i></span>
+      </div>
+      <div class="hs-content">
+        {%- if s.title %}<h2>{{ s.title }}</h2>{% endif %}
+        {%- if s.text %}<p>{{ s.text }}</p>{% endif %}
+        {%- if s.button %}<a class="btn btn-white" href="{{ href }}">{{ s.button }} →</a>{% endif %}
+      </div>
       {%- endif %}
     </div>
     {%- endfor %}
     {%- if H.slides.length > 1 %}
-    <button class="hs-nav prev" type="button" aria-label="Previous">{{ icon("chev") }}</button>
-    <button class="hs-nav next" type="button" aria-label="Next">{{ icon("chev") }}</button>
-    <div class="hs-dots" role="tablist">
-      {%- for s in H.slides %}<button type="button" class="{{ 'active' if loop.first }}" aria-label="{{ loop.index }}"></button>{% endfor %}
+    <div class="hs-bar">
+      <div class="hs-dots" role="tablist">
+        {%- for s in H.slides %}<button type="button" class="{{ 'active' if loop.first }}" aria-label="{{ loop.index }}"><span></span></button>{% endfor %}
+      </div>
+      <button class="hs-nav prev" type="button" aria-label="Previous">{{ icon("chev") }}</button>
+      <button class="hs-nav next" type="button" aria-label="Next">{{ icon("chev") }}</button>
     </div>
     {%- endif %}
   </div>
@@ -71,17 +111,31 @@ pageScript: home.js
   <div class="promo-grid">
     {%- for m in H.promos %}
     {%- set p = D.productMap[m.product] if m.product else null %}
+    {%- set r = p.ref if p else null %}
+    {%- if m.image or not p %}
     <a class="promo-tile{% if not m.image %} is-ph{% endif %}" href="{{ m | bannerHref(lang) }}">
       {%- if m.image %}<img src="{{ m.image }}" alt="{{ m.title }}" loading="lazy">
       {%- else %}
-      <span class="pt-ph">{{ cylinder(p.ref if p else null, "promo-" ~ loop.index) }}</span>
+      <span class="pt-ph">{{ cylinder(null, "promo-" ~ loop.index) }}</span>
       <span class="ph-hint">{{ imgIcon | safe }} {{ T.imgSlot }} 800×600 px</span>
       {%- endif %}
-      <span class="pt-text">
-        <b>{{ m.title }}</b>
-        {%- if m.text %}<span>{{ m.text }}</span>{% endif %}
+      <span class="pt-text"><b>{{ m.title }}</b>{% if m.text %}<span>{{ m.text }}</span>{% endif %}</span>
+    </a>
+    {%- else %}
+    <a class="promo-tile is-prod" href="{{ m | bannerHref(lang) }}" style="--c:{{ p.tankColor }}">
+      <span class="pp-art">
+        {%- if r %}<span class="pp-num">{{ r.number | shortNum }}</span>{% endif %}
+        {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "promo-" ~ loop.index) }}{% endif %}
+      </span>
+      <span class="pp-body">
+        <span class="pp-kicker">{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
+        <b>{{ m.title or p.name }}</b>
+        <span class="pp-text">{{ m.text or p.tagline }}</span>
+        {%- if r %}<span class="pp-chips"><i>GWP {{ r.gwp_ar4 }}</i><i class="sf-{{ r.safety }}">{{ r.safety }}</i>{% if r.replaces and r.replaces.length %}<i>{{ T.replaces }} {{ r.replaces[0] }}</i>{% endif %}</span>{% endif %}
+        <em>{{ T.viewDetails }} <span aria-hidden="true">→</span></em>
       </span>
     </a>
+    {%- endif %}
     {%- endfor %}
   </div>
 </div></section>
