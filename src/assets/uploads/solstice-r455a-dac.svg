@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Solstice L40X R-455A">
+  <defs><linearGradient id="bd" x1="0" x2="1">
+      <stop offset="0" stop-color="#0C4B4F"/><stop offset=".1" stop-color="#0C6F6B"/>
+      <stop offset=".3" stop-color="#42ACA2"/><stop offset=".42" stop-color="#1C9A8F"/>
+      <stop offset=".7" stop-color="#0D847C"/><stop offset=".9" stop-color="#0C6260"/><stop offset="1" stop-color="#0C454A"/></linearGradient><linearGradient id="mt" x1="0" x2="1">
+      <stop offset="0" stop-color="#6B7280"/><stop offset=".35" stop-color="#E5E7EB"/><stop offset=".55" stop-color="#F9FAFB"/><stop offset="1" stop-color="#4B5563"/></linearGradient><linearGradient id="lb" x1="0" x2="1">
+      <stop offset="0" stop-color="#C9D2E0"/><stop offset=".12" stop-color="#F1F4F8"/><stop offset=".35" stop-color="#FFFFFF"/>
+      <stop offset=".8" stop-color="#EEF1F6"/><stop offset="1" stop-color="#C5CEDC"/></linearGradient><linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="bl" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+  <ellipse cx="300" cy="752" rx="190" ry="20" fill="#0F172A" opacity=".22" filter="url(#bl)"/>
+  <!-- valve (seen through the handle) -->
+  <rect x="268" y="96" width="64" height="104" rx="8" fill="url(#mt)"/>
+  <ellipse cx="300" cy="98" rx="46" ry="12" fill="url(#mt)" stroke="#6B7280" stroke-width="2"/>
+  <rect x="290" y="70" width="20" height="30" rx="4" fill="url(#mt)"/>
+  <!-- carry handle / valve guard with two hand holes -->
+  <path fill-rule="evenodd" fill="url(#bd)" stroke="#0C5959" stroke-width="3"
+        d="M186 214 L198 104 Q203 74 236 74 L364 74 Q397 74 402 104 L414 214 Z
+           M222 104 Q222 96 232 96 L262 96 Q272 96 272 104 L272 166 Q272 176 262 176 L232 176 Q222 176 222 166 Z
+           M328 104 Q328 96 338 96 L368 96 Q378 96 378 104 L378 166 Q378 176 368 176 L338 176 Q328 176 328 166 Z"/>
+  <!-- foot ring -->
+  <rect x="146" y="690" width="308" height="52" rx="14" fill="url(#bd)" stroke="#0C5254" stroke-width="3"/>
+  <rect x="170" y="706" width="40" height="18" rx="6" fill="#0C454A" opacity=".6"/>
+  <rect x="390" y="706" width="40" height="18" rx="6" fill="#0C454A" opacity=".6"/>
+  <!-- body + shoulder -->
+  <rect x="116" y="270" width="368" height="438" rx="64" fill="url(#bd)"/>
+  <path d="M116 360 Q116 236 214 208 L386 208 Q484 236 484 360 Z" fill="url(#bd)"/>
+  <path d="M120 360 Q122 244 214 214" fill="none" stroke="#62B9B2" stroke-width="3" opacity=".5"/>
+  <line x1="122" y1="318" x2="478" y2="318" stroke="#0C6664" stroke-width="3" opacity=".45"/>
+  <line x1="122" y1="664" x2="478" y2="664" stroke="#0C6664" stroke-width="3" opacity=".45"/>
+  <!-- label -->
+  <rect x="146" y="372" width="308" height="262" rx="16" fill="url(#lb)"/>
+  <path d="M146 388 Q146 372 162 372 L438 372 Q454 372 454 388 L454 432 L146 432 Z" fill="#5155C7"/>
+  <text x="300" y="413" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#fff" letter-spacing="1">Solstice<tspan font-size="15" dy="-11">®</tspan></text>
+  <text x="300" y="526" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="80" font-weight="800" fill="#0D8078" letter-spacing="-2">L40X</text>
+  <text x="300" y="574" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700" fill="#1F2937">R-455A</text>
+  <text x="300" y="606" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="600" fill="#6B7280" letter-spacing="2">HFO BLEND REFRIGERANT</text>
+  <rect x="146" y="620" width="308" height="14" fill="#6366F1" opacity=".85"/>
+  <!-- shine -->
+  <rect x="196" y="230" width="46" height="460" rx="23" fill="url(#sh)" opacity=".55"/>
+</svg>

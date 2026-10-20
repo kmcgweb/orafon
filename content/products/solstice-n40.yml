@@ -34,6 +34,7 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice N40
       file: ""
+  cover: /assets/uploads/solstice-n40-dac.svg
   name: Solstice® N40 (R-448A)
   tagline: สารทำความเย็น HFO Blend
   tag: ""

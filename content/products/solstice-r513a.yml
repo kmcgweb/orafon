@@ -16,6 +16,7 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® 513A (R-513A)
       file: ""
+  cover: /assets/uploads/solstice-r513a-dac.svg
   name: Solstice® 513A (R-513A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

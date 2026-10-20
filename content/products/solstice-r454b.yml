@@ -20,6 +20,7 @@ th:
   packages:
     - name: Cylinder
       kg: 74
+  cover: /assets/uploads/solstice-r454b-dac.svg
   name: Solstice® 454B (R-454B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

@@ -20,6 +20,7 @@ th:
     - name: ISO Tank
       kg: 15000
       special: true
+  cover: /assets/uploads/solstice-lba-dac.svg
   name: Solstice® LBA (HFO-1233zd(E))
   tagline: สารเป่าโฟมและสารทำความเย็น HFO
   tag: GWP ≈ 1

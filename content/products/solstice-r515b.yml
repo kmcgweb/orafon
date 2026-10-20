@@ -19,6 +19,7 @@ th:
   packages:
     - name: DAC
       kg: 10
+  cover: /assets/uploads/solstice-r515b-dac.svg
   name: Solstice® N15 (R-515B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

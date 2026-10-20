@@ -21,6 +21,7 @@ th:
       kg: 9.4
     - name: Cylinder
       kg: 38.5
+  cover: /assets/uploads/solstice-r455a-dac.svg
   name: Solstice® L40X (R-455A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก
