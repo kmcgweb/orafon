@@ -10,7 +10,16 @@ th:
   images:
     - /assets/uploads/R-600a-front.webp
     - /assets/uploads/R-600a-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 6.5
+    - name: Cylinder
+      kg: 50
+    - name: Ton Tank
+      kg: 450
+    - name: ISO Tank
+      kg: 12000
+      special: true
   badges:
     - ลด GWP 99% เทียบ R-134a
     - A3 ติดไฟได้สูง

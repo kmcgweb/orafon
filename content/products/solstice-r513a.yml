@@ -14,6 +14,9 @@ th:
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r513a-sales.pdf
   cover: /assets/uploads/solstice-r513a-studio.webp
+  packages:
+    - name: Cylinder
+      kg: 50
   name: Solstice® 513A (R-513A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

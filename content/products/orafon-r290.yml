@@ -9,7 +9,16 @@ th:
   images:
     - /assets/uploads/R-290-front.webp
     - /assets/uploads/R-290-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 5
+    - name: Cylinder
+      kg: 40
+    - name: Ton Tank
+      kg: 380
+    - name: ISO Tank
+      kg: 10000
+      special: true
   badges:
     - ลด GWP 99% เทียบ R-22
     - A3 ติดไฟได้สูง

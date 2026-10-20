@@ -10,6 +10,11 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
+  packages:
+    - name: DAC
+      kg: 13.6
+      lb: 30
+      special: true
   name: ORAFON R-245fa
   tagline: สาร HFC แรงดันต่ำ
   tag: ""

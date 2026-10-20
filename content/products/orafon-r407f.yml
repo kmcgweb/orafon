@@ -10,7 +10,13 @@ th:
   images:
     - /assets/uploads/R-407F-front.webp
     - /assets/uploads/R-407F-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
+    - name: Cylinder
+      kg: 52
+      special: true
   badges:
     - ลด GWP 53% เทียบ R-404A
     - A1 ไม่ติดไฟ

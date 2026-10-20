@@ -9,7 +9,13 @@ th:
   images:
     - /assets/uploads/R-404A-front.webp
     - /assets/uploads/R-404A-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 10.9
+    - name: Cylinder
+      kg: 45
+    - name: Ton Tank
+      kg: 650
   badges:
     - GWP 3922
     - A1 ไม่ติดไฟ

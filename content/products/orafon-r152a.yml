@@ -10,6 +10,15 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
+  packages:
+    - name: Cylinder
+      kg: 50
+      special: true
+    - name: Ton Tank
+      kg: 730
+    - name: ISO Tank
+      kg: 18000
+      special: true
   name: ORAFON R-152a
   tagline: สาร HFC สำหรับสเปรย์และส่วนผสม
   tag: ""

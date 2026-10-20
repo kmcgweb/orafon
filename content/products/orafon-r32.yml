@@ -9,7 +9,20 @@ th:
   images:
     - /assets/uploads/R-32-front.webp
     - /assets/uploads/R-32-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 3
+    - name: DAC
+      kg: 7
+    - name: Cylinder
+      kg: 45
+    - name: Cylinder
+      kg: 75
+    - name: Ton Tank
+      kg: 700
+    - name: ISO Tank
+      kg: 18000
+      special: true
   badges:
     - ลด GWP 68% เทียบ R-410A
     - A2L ติดไฟได้เล็กน้อย

@@ -10,7 +10,24 @@ th:
   images:
     - /assets/uploads/R-134a-front.webp
     - /assets/uploads/R-134a-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 3
+    - name: DAC
+      kg: 13.6
+      lb: 30
+    - name: Cylinder
+      kg: 56
+    - name: Cylinder
+      kg: 100
+    - name: Ton Tank
+      kg: 950
+    - name: ISO Tank
+      kg: 18000
+      special: true
+    - name: ISO Tank
+      kg: 20000
+      special: true
   badges:
     - GWP 1430
     - A1 ไม่ติดไฟ

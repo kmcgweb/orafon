@@ -9,7 +9,16 @@ th:
   images:
     - /assets/uploads/R-407C-front.webp
     - /assets/uploads/R-407C-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
+    - name: Cylinder
+      kg: 45
+    - name: Cylinder
+      kg: 80
+    - name: Ton Tank
+      kg: 840
   badges:
     - GWP 1774
     - A1 ไม่ติดไฟ

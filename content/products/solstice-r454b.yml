@@ -17,6 +17,8 @@ th:
   packages:
     - name: Cylinder
       kg: 74
+    - name: Ton Tank
+      kg: 685
   cover: /assets/uploads/solstice-r454b-studio.webp
   name: Solstice® 454B (R-454B)
   tagline: สารทำความเย็น HFO Blend

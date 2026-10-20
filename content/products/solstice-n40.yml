@@ -12,22 +12,12 @@ th:
     - /assets/uploads/solstice-n40-photo-4.webp
     - /assets/uploads/solstice-n40-photo-5.webp
   packages:
-    - name: Jug
+    - name: DAC
       kg: 11.3
       lb: 25
       sku: "10637999"
     - name: Cylinder
-      kg: 45
-      lb: 100
-      sku: "10637061"
-    - name: Half Ton
-      kg: 386
-      lb: 850
-      sku: "10657578"
-    - name: Ton
-      kg: 658
-      lb: 1450
-      sku: "10655356"
+      kg: 43
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)

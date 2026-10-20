@@ -8,7 +8,9 @@ th:
   tag: ''
   images:
     - /assets/uploads/R-23-front.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 8
   badges:
     - GWP 14800
     - A1 ไม่ติดไฟ

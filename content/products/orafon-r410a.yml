@@ -10,7 +10,21 @@ th:
   images:
     - /assets/uploads/R-410A-front.webp
     - /assets/uploads/R-410A-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 2.8
+    - name: DAC
+      kg: 11.3
+      lb: 25
+    - name: Cylinder
+      kg: 45
+    - name: Cylinder
+      kg: 80
+    - name: Ton Tank
+      kg: 740
+    - name: ISO Tank
+      kg: 18000
+      special: true
   badges:
     - GWP 2088
     - A1 ไม่ติดไฟ

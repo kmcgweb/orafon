@@ -10,6 +10,7 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
+  packages: []
   name: ORAFON R-141b
   tagline: น้ำยาล้างระบบ / สารเป่าโฟม HCFC
   tag: ""
