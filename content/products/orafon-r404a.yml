@@ -39,12 +39,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
-    - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ''
-    - type: Sales
-      label: Sales Sheet — ORAFON R-404A
-      file: ''
   faq:
     - q: ORAFON R-404A ใช้ทดแทนสารตัวไหนได้บ้าง?
       a: ใช้ทดแทน R-502, R-22 ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON

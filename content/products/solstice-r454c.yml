@@ -13,12 +13,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r454c-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r454c-sds-en.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — ภาษาไทย
-      file: /assets/uploads/docs/solstice-r454c-sds-th.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r454c-sales.pdf

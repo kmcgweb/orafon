@@ -41,12 +41,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
-    - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ''
-    - type: Sales
-      label: Sales Sheet — ORAFON R-22
-      file: ''
   faq:
     - q: ORAFON R-22 ใช้ทำอะไร?
       a: แอร์บ้านรุ่นเดิม · แอร์เชิงพาณิชย์รุ่นเดิม · ห้องเย็น — ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก

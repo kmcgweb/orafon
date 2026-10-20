@@ -40,9 +40,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
-    - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ''
   faq:
     - q: ใช้ R-1234yf เติมแทนในแอร์รถที่ใช้ R-134a ได้ไหม?
       a: ไม่แนะนำ R-1234yf ใช้กับระบบที่ออกแบบมาสำหรับสารนี้โดยเฉพาะ (หัวเติมและอุปกรณ์ต่างกัน) ควรตรวจสอบป้ายระบุสารในห้องเครื่องหรือปรึกษาทีม ORAFON

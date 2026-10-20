@@ -32,12 +32,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-n40-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-n40-sds-en.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — ภาษาไทย
-      file: /assets/uploads/docs/solstice-n40-sds-th.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-n40-sales.pdf

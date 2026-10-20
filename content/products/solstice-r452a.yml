@@ -10,12 +10,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r452a-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r452a-sds-en.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — ภาษาไทย
-      file: /assets/uploads/docs/solstice-r452a-sds-th.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r452a-sales.pdf
@@ -23,7 +17,7 @@ th:
     - name: DAC
       kg: 11.3
       lb: 25
-  cover: /assets/uploads/solstice-r452a-dac.svg
+  cover: /assets/uploads/solstice-dac-generic.webp
   name: Solstice® 452A (R-452A)
   tagline: สารทำความเย็น HFO Blend
   tag: ""

@@ -11,16 +11,13 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r454b-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r454b-sds-en.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r454b-sales.pdf
   packages:
     - name: Cylinder
       kg: 74
-  cover: /assets/uploads/solstice-r454b-dac.svg
+  cover: /assets/uploads/solstice-r454b-studio.webp
   name: Solstice® 454B (R-454B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

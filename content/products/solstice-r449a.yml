@@ -11,9 +11,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r449a-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r449a-sds-en.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r449a-sales.pdf
@@ -21,7 +18,7 @@ th:
     - name: DAC
       kg: 11.3
       lb: 25
-  cover: /assets/uploads/solstice-r449a-dac.svg
+  cover: /assets/uploads/solstice-dac-generic.webp
   name: Solstice® 449A (R-449A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

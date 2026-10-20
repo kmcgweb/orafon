@@ -6,6 +6,7 @@ th:
   draft: false
   order: 270
   images:
+    - /assets/uploads/solstice-r455a-photo-1.webp
     - /assets/uploads/solstice-r455a-photo-2.webp
     - /assets/uploads/solstice-r455a-photo-3.webp
     - /assets/uploads/solstice-r455a-photo-4.webp
@@ -16,12 +17,6 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r455a-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r455a-sds-en.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — ภาษาไทย
-      file: /assets/uploads/docs/solstice-r455a-sds-th.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r455a-sales.pdf
@@ -30,7 +25,7 @@ th:
       kg: 9.4
     - name: Cylinder
       kg: 38.5
-  cover: /assets/uploads/solstice-r455a-photo-1.webp
+  cover: /assets/uploads/solstice-r455a-studio.webp
   name: Solstice® L40X (R-455A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก

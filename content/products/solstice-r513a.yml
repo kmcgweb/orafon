@@ -10,13 +10,10 @@ th:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: /assets/uploads/docs/solstice-r513a-tds.pdf
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-r513a-sds-en.pdf
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-r513a-sales.pdf
-  cover: /assets/uploads/solstice-r513a-dac.svg
+  cover: /assets/uploads/solstice-r513a-studio.webp
   name: Solstice® 513A (R-513A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

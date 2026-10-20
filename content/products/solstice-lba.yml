@@ -6,10 +6,7 @@ th:
   draft: false
   order: 282
   images: []
-  documents:
-    - type: SDS
-      label: Safety Data Sheet (SDS) — English
-      file: /assets/uploads/docs/solstice-lba-sds-en.pdf
+  documents: []
   packages:
     - name: ISO Tank
       kg: 15000
