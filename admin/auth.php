@@ -38,12 +38,12 @@ function h(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8')
 function page(string $title, string $body, string $script = ''): void {
     echo '<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        . '<meta name="robots" content="noindex,nofollow"><title>' . h($title) . '</title><style>'
-       . 'body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui,"Noto Sans Thai",sans-serif;background:linear-gradient(135deg,#EDF2FB,#EAF6EE);color:#0f172a}'
+       . 'body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui,"Noto Sans Thai",sans-serif;background:linear-gradient(135deg,#EDEEF9,#EEF3FA);color:#0f172a}'
        . '.box{width:min(360px,92vw);background:#fff;border-radius:18px;padding:32px 28px;box-shadow:0 20px 40px -20px rgba(31,63,159,.35)}'
        . 'img{height:34px;display:block;margin:0 auto 18px}h1{font-size:18px;text-align:center;margin:0 0 20px}'
        . 'label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}input{width:100%;box-sizing:border-box;height:44px;border:1px solid #cbd5e1;border-radius:10px;padding:0 12px;font-size:15px}'
-       . 'input:focus{outline:none;border-color:#1F3F9F;box-shadow:0 0 0 3px rgba(31,63,159,.15)}'
-       . 'button{width:100%;height:46px;margin-top:22px;border:0;border-radius:10px;background:linear-gradient(135deg,#1F3F9F,#2A6FDB);color:#fff;font-size:15px;font-weight:700;cursor:pointer}'
+       . 'input:focus{outline:none;border-color:#2F3192;box-shadow:0 0 0 3px rgba(31,63,159,.15)}'
+       . 'button{width:100%;height:46px;margin-top:22px;border:0;border-radius:10px;background:linear-gradient(135deg,#2F3192,#4A4DC4);color:#fff;font-size:15px;font-weight:700;cursor:pointer}'
        . '.err{background:#fef2f2;color:#b91c1c;border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:6px}.ok{text-align:center;color:#475569;font-size:14px}'
        . '</style></head><body><div class="box"><img src="/assets/img/orafon-logo.png" alt="ORAFON">' . $body . '</div>' . $script . '</body></html>';
     exit;

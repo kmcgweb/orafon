@@ -141,6 +141,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r134a/"/>
   </url>
   <url>
+    <loc>https://orafon.co.th/products/orafon-r1234yf/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r1234yf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r1234yf/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/products/orafon-r1234yf/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r1234yf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r1234yf/"/>
+  </url>
+  <url>
     <loc>https://orafon.co.th/products/solstice-n40/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/solstice-n40/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/solstice-n40/"/>
