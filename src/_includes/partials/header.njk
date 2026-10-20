@@ -77,7 +77,7 @@
               <span class="mg-sub">&nbsp;</span>
               <ul class="mg-list">
                 {%- for p in pickList | batch(8) | first %}
-                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#1F3F9F' }}" data-c2="{{ p.ref.color2 if p.ref else '#2A6FDB' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{{ p.name }}</a></li>
+                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#2F3192' }}" data-c2="{{ p.ref.color2 if p.ref else '#4A4DC4' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{{ p.name }}</a></li>
                 {%- endfor %}
               </ul>
             </div>

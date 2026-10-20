@@ -82,7 +82,7 @@ function buildDb() {
         const coverImage = p.cover || imgs[0] || "";
         const gallery = coverImage ? [coverImage, ...imgs.filter((i) => i !== coverImage)] : [];
         // tank colour drives the card background (falls back to the refrigerant colour)
-        const tankColor = p.tank_color || ref?.color || "#1F3F9F";
+        const tankColor = p.tank_color || ref?.color || "#2F3192";
         // applications: the product's own list, else the refrigerant's (keyed by icon for the menu + ?app= filter)
         const apps = (p.applications && p.applications.length ? p.applications : ref?.applications) || [];
         const appKeys = [...new Set(apps.map((a) => a.icon).filter(Boolean))].join(" ");
