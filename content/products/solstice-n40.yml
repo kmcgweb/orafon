@@ -7,6 +7,7 @@ th:
   draft: false
   order: 50
   images:
+    - /assets/uploads/solstice-n40-photo-1.webp
     - /assets/uploads/solstice-n40-photo-2.webp
     - /assets/uploads/solstice-n40-photo-3.webp
     - /assets/uploads/solstice-n40-photo-4.webp
@@ -25,7 +26,7 @@ th:
     - type: Sales
       label: Sales Sheet
       file: /assets/uploads/docs/solstice-n40-sales.pdf
-  cover: /assets/uploads/solstice-n40-photo-1.webp
+  cover: /assets/uploads/solstice-n40-studio.webp
   name: Solstice® N40 (R-448A)
   tagline: สารทำความเย็น HFO Blend
   tag: ""
