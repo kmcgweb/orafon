@@ -6,6 +6,7 @@ th:
   draft: false
   order: 268
   images:
+    - /assets/uploads/solstice-r454c-photo-1.webp
     - /assets/uploads/solstice-r454c-photo-2.webp
     - /assets/uploads/solstice-r454c-photo-3.webp
     - /assets/uploads/solstice-r454c-photo-4.webp
@@ -21,7 +22,7 @@ th:
       kg: 9.6
     - name: Cylinder
       kg: 40
-  cover: /assets/uploads/solstice-r454c-photo-1.webp
+  cover: /assets/uploads/solstice-r454c-cyl.webp
   name: Solstice® 454C (R-454C)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก
