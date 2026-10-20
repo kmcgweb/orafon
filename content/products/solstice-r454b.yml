@@ -17,6 +17,9 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® 454B (R-454B)
       file: ""
+  packages:
+    - name: Cylinder
+      kg: 74
   name: Solstice® 454B (R-454B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

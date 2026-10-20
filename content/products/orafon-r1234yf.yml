@@ -1,0 +1,96 @@
+th:
+  id: orafon-r1234yf
+  name: ORAFON R-1234yf
+  brand: orafon
+  refrigerant: r-1234yf
+  tagline: สารทำความเย็น HFO สำหรับแอร์รถยนต์รุ่นใหม่
+  tag: ''
+  images: []
+  packages:
+    - name: DAC
+      kg: 5
+  badges:
+    - GWP 4
+    - A2L ติดไฟได้เล็กน้อย
+    - ODP = 0
+  short: ORAFON R-1234yf — สาร HFO ชนิดเดี่ยว ค่า GWP ต่ำมาก (4) ใช้เป็นมาตรฐานในแอร์รถยนต์รุ่นใหม่แทน R-134a จัดอยู่ในกลุ่มติดไฟได้เล็กน้อย (A2L)
+  highlights:
+    - title: GWP 4
+      text: ค่า GWP (AR4) 4 ต่ำกว่า R-134a มากกว่า 99% · ODP 0
+    - title: HFO
+      text: สารเดี่ยว · CH₂=CFCF₃ (2,3,3,3-Tetrafluoropropene)
+    - title: A2L ติดไฟได้เล็กน้อย
+      text: ใช้กับอุปกรณ์ที่ออกแบบมาสำหรับสารกลุ่ม A2L และช่างที่ผ่านการอบรม
+    - title: แทน R-134a ในรถรุ่นใหม่
+      text: ใช้กับระบบที่ออกแบบมาสำหรับ R-1234yf เท่านั้น ไม่ใช่สารเติมแทนในระบบ R-134a เดิม
+    - title: งานที่เหมาะ
+      text: แอร์รถยนต์รุ่นใหม่ · ตู้แช่เชิงพาณิชย์บางประเภท
+    - title: เอกสาร TDS/SDS
+      text: ขอรับได้ที่หัวข้อ "เอกสาร" หรือทีม ORAFON
+  description: |-
+    ORAFON R-1234yf เป็นสารทำความเย็นประเภท HFO แบบสารเดี่ยว หมายเลข ASHRAE R-1234yf ส่วนผสม CH₂=CFCF₃ (2,3,3,3-Tetrafluoropropene) จัดอยู่ในกลุ่มความปลอดภัย A2L ตามมาตรฐาน ASHRAE 34 มีค่า GWP (AR4) 4 และ ODP 0
+
+    เป็นสารมาตรฐานในแอร์รถยนต์รุ่นใหม่ที่ใช้แทน R-134a ค่า GWP ต่ำมาก ช่วยให้ผู้ผลิตรถยนต์และอู่ซ่อมรองรับกฎระเบียบด้านสิ่งแวดล้อม ใช้ได้กับระบบที่ออกแบบมาสำหรับ R-1234yf เท่านั้น
+
+    **ข้อควรระวัง:** R-1234yf จัดอยู่ในกลุ่ม A2L (ติดไฟได้เล็กน้อย) ต้องใช้กับอุปกรณ์และเครื่องมือที่รองรับ และช่างที่ผ่านการอบรมการจัดการสารกลุ่มนี้
+
+    สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามสต็อกและขอใบเสนอราคา
+  applications: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ''
+    - type: SDS
+      label: Safety Data Sheet (SDS)
+      file: ''
+  faq:
+    - q: ใช้ R-1234yf เติมแทนในแอร์รถที่ใช้ R-134a ได้ไหม?
+      a: ไม่แนะนำ R-1234yf ใช้กับระบบที่ออกแบบมาสำหรับสารนี้โดยเฉพาะ (หัวเติมและอุปกรณ์ต่างกัน) ควรตรวจสอบป้ายระบุสารในห้องเครื่องหรือปรึกษาทีม ORAFON
+    - q: ติดไฟหรือไม่ ปลอดภัยแค่ไหน?
+      a: จัดอยู่ในกลุ่ม A2L ตามมาตรฐาน ASHRAE 34 ติดไฟได้เล็กน้อย ต้องใช้อุปกรณ์ที่รองรับและช่างที่ผ่านการอบรม
+    - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
+      a: มีถัง DAC ขนาด 5 kg ติดต่อทีม ORAFON เพื่อสอบถามสต็อกและขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+  seo_description: ORAFON R-1234yf สารทำความเย็น HFO สำหรับแอร์รถยนต์รุ่นใหม่ A2L GWP 4 ถัง DAC 5 kg จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  labels:
+    - new
+  draft: false
+  order: 45
+en:
+  name: ORAFON R-1234yf
+  tagline: HFO refrigerant for new automotive AC
+  tag: ''
+  badges:
+    - GWP 4
+    - A2L mildly flammable
+    - ODP = 0
+  short: ORAFON R-1234yf is a single-component HFO with ultra-low GWP (4), the standard refrigerant in new automotive AC in place of R-134a. Classified as mildly flammable (A2L).
+  highlights:
+    - title: GWP 4
+      text: GWP (AR4) 4, over 99% lower than R-134a · ODP 0
+    - title: HFO
+      text: Single component · CH₂=CFCF₃ (2,3,3,3-Tetrafluoropropene)
+    - title: A2L mildly flammable
+      text: Use with equipment designed for A2L refrigerants and trained technicians
+    - title: Replaces R-134a in new vehicles
+      text: For systems designed for R-1234yf only, not a drop-in for existing R-134a systems
+    - title: Applications
+      text: New automotive AC · Selected commercial refrigeration
+    - title: TDS/SDS available
+      text: Request them from the "Documents" section or the ORAFON team
+  description: |-
+    ORAFON R-1234yf is an HFO refrigerant (single component), ASHRAE number R-1234yf, composition CH₂=CFCF₃ (2,3,3,3-Tetrafluoropropene). It is classified A2L under ASHRAE 34, with GWP (AR4) 4 and ODP 0.
+
+    It is the standard refrigerant in new automotive AC in place of R-134a. Its ultra-low GWP helps carmakers and workshops meet environmental regulations. Use it only in systems designed for R-1234yf.
+
+    **Caution:** R-1234yf is classified A2L (mildly flammable). Use compatible equipment and tools, and technicians trained to handle this class of refrigerant.
+
+    An ORAFON-brand product from Oranoss Co., Ltd., backed by TDS/SDS documents and technical advice on choosing the right refrigerant. Contact us for stock and a quotation.
+  applications: []
+  faq:
+    - q: Can R-1234yf be used to top up a car AC that runs on R-134a?
+      a: Not recommended. R-1234yf is for systems designed for it (fittings and components differ). Check the refrigerant label under the bonnet or ask the ORAFON team.
+    - q: Is it flammable? How safe is it?
+      a: It is classified A2L under ASHRAE 34 (mildly flammable). Use compatible equipment and trained technicians.
+    - q: Which pack sizes are available, and how do I get a price?
+      a: A 5 kg DAC cylinder. Contact the ORAFON team for stock and a quotation via the "Request a quote" button, LINE or phone.
+  seo_description: ORAFON R-1234yf HFO refrigerant for new automotive AC, A2L, GWP 4, 5 kg DAC cylinder. Distributed by ORAFON — request a quotation.
