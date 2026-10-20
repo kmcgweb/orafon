@@ -31,13 +31,16 @@ th:
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
-      file: ""
+      file: /assets/uploads/docs/solstice-n40-tds.pdf
     - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
+      label: Safety Data Sheet (SDS) — English
+      file: /assets/uploads/docs/solstice-n40-sds-en.pdf
+    - type: SDS
+      label: Safety Data Sheet (SDS) — ภาษาไทย
+      file: /assets/uploads/docs/solstice-n40-sds-th.pdf
     - type: Sales
-      label: Sales Sheet — Solstice N40
-      file: ""
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-n40-sales.pdf
   cover: /assets/uploads/solstice-n40-photo-1.webp
   name: Solstice® N40 (R-448A)
   tagline: สารทำความเย็น HFO Blend

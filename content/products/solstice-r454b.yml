@@ -10,13 +10,13 @@ th:
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
-      file: ""
+      file: /assets/uploads/docs/solstice-r454b-tds.pdf
     - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
+      label: Safety Data Sheet (SDS) — English
+      file: /assets/uploads/docs/solstice-r454b-sds-en.pdf
     - type: Sales
-      label: Sales Sheet — Solstice® 454B (R-454B)
-      file: ""
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-r454b-sales.pdf
   packages:
     - name: Cylinder
       kg: 74

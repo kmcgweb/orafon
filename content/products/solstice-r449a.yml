@@ -10,13 +10,13 @@ th:
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
-      file: ""
+      file: /assets/uploads/docs/solstice-r449a-tds.pdf
     - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
+      label: Safety Data Sheet (SDS) — English
+      file: /assets/uploads/docs/solstice-r449a-sds-en.pdf
     - type: Sales
-      label: Sales Sheet — Solstice® 449A (R-449A)
-      file: ""
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-r449a-sales.pdf
   packages:
     - name: DAC
       kg: 11.3

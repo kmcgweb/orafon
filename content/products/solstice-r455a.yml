@@ -15,13 +15,16 @@ th:
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
-      file: ""
+      file: /assets/uploads/docs/solstice-r455a-tds.pdf
     - type: SDS
-      label: Safety Data Sheet (SDS)
-      file: ""
+      label: Safety Data Sheet (SDS) — English
+      file: /assets/uploads/docs/solstice-r455a-sds-en.pdf
+    - type: SDS
+      label: Safety Data Sheet (SDS) — ภาษาไทย
+      file: /assets/uploads/docs/solstice-r455a-sds-th.pdf
     - type: Sales
-      label: Sales Sheet — Solstice® L40X (R-455A)
-      file: ""
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-r455a-sales.pdf
   packages:
     - name: DAC
       kg: 9.4
