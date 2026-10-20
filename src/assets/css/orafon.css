@@ -1151,3 +1151,12 @@ body.has-sticky .fab{bottom:90px}
 .brand-h1{margin-top:14px;line-height:1}
 .brand-h1 img{display:block;height:60px;width:auto;max-width:100%}
 @media (max-width:768px){.brand-h1 img{height:44px}}
+
+/* real product photos (file name contains "-photo-"): fill the frame instead of floating on the background */
+.prod-media img[src*="-photo-"]{padding:0;object-fit:cover;object-position:center;filter:none}
+.prod-card:hover .prod-media img[src*="-photo-"]{transform:scale(1.03)}
+.pp-art img[src*="-photo-"]{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;filter:none}
+.hx-art img[src*="-photo-"]{max-height:80%;aspect-ratio:1;object-fit:cover;border-radius:var(--r-lg);border:6px solid #fff;box-shadow:0 24px 40px -18px rgba(15,23,42,.45);filter:none}
+.mgf-art img[src*="-photo-"]{object-fit:cover;border-radius:var(--r);filter:none}
+.prod-media:has(img[src*="-photo-"]) .pc-logo,.main-img:has(img[src*="-photo-"]) .pd-logo{background-color:rgba(255,255,255,.92);background-origin:content-box;border-radius:4px;padding:5px 8px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
+.prod-media:has(img[src*="-photo-"]) .pc-logo{width:92px;height:32px}

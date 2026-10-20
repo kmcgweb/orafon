@@ -5,7 +5,13 @@ th:
   labels: []
   draft: false
   order: 274
-  images: []
+  images:
+    - /assets/uploads/solstice-r515b-photo-2.webp
+    - /assets/uploads/solstice-r515b-photo-3.webp
+    - /assets/uploads/solstice-r515b-photo-4.webp
+    - /assets/uploads/solstice-r515b-photo-5.webp
+    - /assets/uploads/solstice-r515b-photo-6.webp
+    - /assets/uploads/solstice-r515b-photo-7.webp
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
@@ -19,7 +25,7 @@ th:
   packages:
     - name: DAC
       kg: 10
-  cover: /assets/uploads/solstice-r515b-dac.svg
+  cover: /assets/uploads/solstice-r515b-photo-1.webp
   name: Solstice® N15 (R-515B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

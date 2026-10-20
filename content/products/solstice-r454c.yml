@@ -5,7 +5,10 @@ th:
   labels: []
   draft: false
   order: 268
-  images: []
+  images:
+    - /assets/uploads/solstice-r454c-photo-2.webp
+    - /assets/uploads/solstice-r454c-photo-3.webp
+    - /assets/uploads/solstice-r454c-photo-4.webp
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
@@ -21,7 +24,7 @@ th:
       kg: 9.6
     - name: Cylinder
       kg: 40
-  cover: /assets/uploads/solstice-r454c-dac.svg
+  cover: /assets/uploads/solstice-r454c-photo-1.webp
   name: Solstice® 454C (R-454C)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก
