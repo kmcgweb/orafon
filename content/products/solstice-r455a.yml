@@ -16,6 +16,11 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® L40X (R-455A)
       file: ""
+  packages:
+    - name: DAC
+      kg: 9.4
+    - name: Cylinder
+      kg: 38.5
   name: Solstice® L40X (R-455A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก

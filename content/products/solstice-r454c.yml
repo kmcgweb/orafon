@@ -16,6 +16,11 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® 454C (R-454C)
       file: ""
+  packages:
+    - name: DAC
+      kg: 9.6
+    - name: Cylinder
+      kg: 40
   name: Solstice® 454C (R-454C)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก

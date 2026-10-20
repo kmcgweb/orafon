@@ -9,7 +9,9 @@ th:
   cover: ''
   images:
     - /assets/uploads/R-508B-front.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 8
   badges:
     - GWP 13396
     - A1 ไม่ติดไฟ

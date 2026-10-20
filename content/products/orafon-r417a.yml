@@ -10,7 +10,10 @@ th:
   images:
     - /assets/uploads/R417A-front.webp
     - /assets/uploads/R417A-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
   badges:
     - GWP 2346
     - A1 ไม่ติดไฟ

@@ -16,6 +16,10 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® 452A (R-452A)
       file: ""
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
   name: Solstice® 452A (R-452A)
   tagline: สารทำความเย็น HFO Blend
   tag: ""

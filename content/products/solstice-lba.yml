@@ -16,6 +16,10 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® LBA (HFO-1233zd(E))
       file: ""
+  packages:
+    - name: ISO Tank
+      kg: 15000
+      special: true
   name: Solstice® LBA (HFO-1233zd(E))
   tagline: สารเป่าโฟมและสารทำความเย็น HFO
   tag: GWP ≈ 1

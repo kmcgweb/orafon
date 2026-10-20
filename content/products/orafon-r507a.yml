@@ -10,7 +10,14 @@ th:
   images:
     - /assets/uploads/R-507A-front.webp
     - /assets/uploads/R-507A-back.webp
-  packages: []
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
+    - name: Cylinder
+      kg: 50
+    - name: Ton Tank
+      kg: 690
   badges:
     - GWP 3985
     - A1 ไม่ติดไฟ

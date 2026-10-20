@@ -84,6 +84,7 @@ collections:
           - { name: kg, label: "น้ำหนัก (kg)", widget: number, value_type: float }
           - { name: lb, label: "น้ำหนัก (lb) ถ้ามี", widget: number, value_type: float, required: false }
           - { name: sku, label: "SKU", widget: string, required: false }
+          - { name: special, label: "สั่งพิเศษ (ต้องสั่งล่วงหน้า)", hint: "ติ๊กถ้าขนาดนี้ไม่มีสต็อกประจำ", widget: boolean, required: false, default: false }
       - { name: badges, label: "จุดเด่นสั้น ๆ (ป้ายสี)", widget: list, required: false, i18n: true }
       - { name: short, label: "คำอธิบายสั้น", widget: text, required: false, i18n: true }
       - name: highlights

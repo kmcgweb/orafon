@@ -16,6 +16,9 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® N15 (R-515B)
       file: ""
+  packages:
+    - name: DAC
+      kg: 10
   name: Solstice® N15 (R-515B)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

@@ -17,6 +17,10 @@ th:
     - type: Sales
       label: Sales Sheet — Solstice® 449A (R-449A)
       file: ""
+  packages:
+    - name: DAC
+      kg: 11.3
+      lb: 25
   name: Solstice® 449A (R-449A)
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำ

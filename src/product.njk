@@ -118,9 +118,9 @@ eleventyComputed:
       <div class="pd-packs" id="pkgOpts" role="radiogroup" aria-label="{{ T.packages }}">
         {%- for k in p.packages %}
         <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" role="radio" aria-checked="{{ 'true' if loop.first else 'false' }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
-                data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}">
+                data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}{% if k.special %} ({{ T.specialOrder }}){% endif %}">
           <span class="pk-radio" aria-hidden="true"></span>
-          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} kg</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}</span>
+          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} kg</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}{% if k.special %}<span class="pk-special">{{ T.specialOrder }}</span>{% endif %}</span>
         </button>
         {%- endfor %}
       </div>
@@ -173,7 +173,7 @@ eleventyComputed:
             <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
             <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point or "—" }}</td></tr>
             {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
-            {%- for k in p.packages %}<tr><th>{{ T.packages }} · {{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}</td></tr>{% endfor %}
+            {%- for k in p.packages %}<tr><th>{{ T.packages }} · {{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}{% if k.special %} · {{ T.specialOrder }}{% endif %}</td></tr>{% endfor %}
           </tbody></table>
           <p class="note">{{ T.dataNote }}</p>
         </div>
