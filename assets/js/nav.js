@@ -17,7 +17,8 @@
   items.forEach(function (item) {
     var btn = item.querySelector("button");
     btn.addEventListener("click", function () {
-      var open = !item.classList.contains("open");
+      // with a mouse the menu is already open from hover, so a click must not toggle it shut
+      var open = canHover.matches || !item.classList.contains("open");
       closeAll(item);
       setOpen(item, open);
     });
