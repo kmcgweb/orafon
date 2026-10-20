@@ -82,9 +82,13 @@
   var contact = root.getAttribute("data-contact");
   var lineMsg = root.getAttribute("data-linemsg");
 
+  var qty = document.getElementById("qty");
+  function qtyVal() { var n = parseInt(qty && qty.value, 10); return n > 0 ? Math.min(n, 999) : 1; }
   function currentSize() {
     var a = document.querySelector(".pkg-opt.active");
-    return a ? a.getAttribute("data-label") : "";
+    var s = a ? a.getAttribute("data-label") : "";
+    var n = qtyVal();
+    return n > 1 ? (s ? s + " × " + n : "× " + n) : s;
   }
   function updateLinks() {
     var size = currentSize();
@@ -102,9 +106,36 @@
       document.querySelectorAll(".pkg-opt").forEach(function (x) {
         x.classList.toggle("active", x === o);
         x.setAttribute("aria-pressed", x === o);
+        x.setAttribute("aria-checked", x === o);
       });
       updateLinks();
     });
   });
+  // quantity stepper
+  if (qty) {
+    document.querySelectorAll("[data-qty]").forEach(function (b) {
+      b.addEventListener("click", function () { qty.value = Math.max(1, qtyVal() + parseInt(b.getAttribute("data-qty"), 10)); updateLinks(); });
+    });
+    qty.addEventListener("input", updateLinks);
+    qty.addEventListener("blur", function () { qty.value = qtyVal(); });
+  }
   updateLinks();
+
+  // side menu: a link to a collapsed section opens it; highlight the section in view
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll(".pd-side-link"));
+  sideLinks.forEach(function (a) {
+    a.addEventListener("click", function () {
+      var el = document.querySelector(a.getAttribute("href"));
+      if (el && el.tagName === "DETAILS") el.open = true;
+    });
+  });
+  if ("IntersectionObserver" in window && sideLinks.length) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        sideLinks.forEach(function (a) { a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id); });
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    sideLinks.forEach(function (a) { var el = document.querySelector(a.getAttribute("href")); if (el) io.observe(el); });
+  }
 })();
