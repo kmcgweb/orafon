@@ -19,7 +19,7 @@ eleventyComputed:
 </nav></div>
 <section class="page-head"><div class="container">
   <span class="chip {{ 'i' if b.own_brand else 'v' }}">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
-  <h1 class="display" style="margin-top:10px">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}" style="height:44px;display:block;margin-bottom:10px">{% endif %}{{ b.name }}</h1>
+  <h1 class="display brand-h1">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}">{% else %}{{ b.name }}{% endif %}</h1>
   <div class="prose muted" style="margin-top:12px">{{ b.description | md | safe }}</div>
   {%- if b.website %}<p><a href="{{ b.website }}" target="_blank" rel="noopener">{{ b.website }}</a></p>{% endif %}
 </div></section>
