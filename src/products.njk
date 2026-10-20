@@ -37,6 +37,12 @@ eleventyComputed:
       <option value="">{{ T.allBrands }}</option>
       {%- for b in D.brands %}{% if b.products.length %}<option value="{{ b.slug }}">{{ b.name }}</option>{% endif %}{% endfor %}
     </select>
+    {%- if D.appCounts.length %}
+    <select class="tb-select" data-key="app" aria-label="{{ T.byApp }}">
+      <option value="">{{ T.allApps }}</option>
+      {%- for a in D.appCounts %}<option value="{{ a.key }}">{{ a.label }}</option>{% endfor %}
+    </select>
+    {%- endif %}
     <select class="tb-select" data-key="ref" aria-label="{{ T.refrigerant }}">
       <option value="">{{ T.allGrades }}</option>
       {%- for r in D.refrigerants %}{% if r.products.length %}<option value="{{ r.slug }}">{{ r.number }}</option>{% endif %}{% endfor %}
@@ -62,7 +68,7 @@ eleventyComputed:
       <tbody>
         {%- for p in D.productsAZ %}
         {%- set href = ('/products/' ~ p.slug ~ '/') | u(lang) %}
-        <tr class="prod-row" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+        <tr class="prod-row" data-labels="{{ p.labels | join(' ') }}" data-class="{{ p.ref.class if p.ref }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-text="{{ p.searchText }}">
           <td>
             <a class="pt-name" href="{{ href }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#1F3F9F' }}"></span>{{ p.name }}</a>
             {%- if p.labels.length %}<div class="pt-tags">{% for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}</div>{% endif %}

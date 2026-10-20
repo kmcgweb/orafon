@@ -83,7 +83,10 @@ function buildDb() {
         const gallery = coverImage ? [coverImage, ...imgs.filter((i) => i !== coverImage)] : [];
         // tank colour drives the card background (falls back to the refrigerant colour)
         const tankColor = p.tank_color || ref?.color || "#1F3F9F";
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor };
+        // applications: the product's own list, else the refrigerant's (keyed by icon for the menu + ?app= filter)
+        const apps = (p.applications && p.applications.length ? p.applications : ref?.applications) || [];
+        const appKeys = [...new Set(apps.map((a) => a.icon).filter(Boolean))].join(" ");
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys };
       })
       .sort(byOrder);
 
@@ -113,6 +116,11 @@ function buildDb() {
       productsAZ,
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
+      appCounts: Object.values(products.reduce((acc, p) => {
+        const seen = new Set();
+        for (const a of p.apps) if (a.icon && !seen.has(a.icon)) { seen.add(a.icon); (acc[a.icon] ||= { key: a.icon, label: a.label, n: 0 }).n++; }
+        return acc;
+      }, {})).sort((a, b) => b.n - a.n),
       classCounts: CLASS_ORDER.map((c) => ({ class: c, n: products.filter((p) => p.ref && p.ref.class === c).length })).filter((x) => x.n),
       refsByClass: CLASS_ORDER.map((c) => ({ class: c, items: refrigerants.filter((r) => r.class === c) })).filter((g) => g.items.length),
       safetyCounts: Object.fromEntries(["A1", "A2L", "A2", "A3", "B1", "B2L"].map((s) => [s, refrigerants.filter((r) => r.safety === s && r.products.length).length])),

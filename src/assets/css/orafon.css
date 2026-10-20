@@ -980,3 +980,36 @@ body.has-sticky .fab{bottom:90px}
 }
 @media (prefers-reduced-motion:reduce){.prod-card,.prod-card:hover{transform:none}}
 .pc-ref{color:color-mix(in srgb,var(--c,var(--primary)) 82%,#0F1A2E)}
+
+/* ---------- Main menu v2 ---------- */
+.mn-row{gap:4px}
+.mg-products{grid-template-columns:1.15fr 1fr .85fr 1.1fr 250px;gap:28px}
+.mg-sub{min-height:1.4em}
+.mg-brands{gap:8px}
+.mg-brands .mg-title{margin-bottom:6px}
+.mg-brand{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid var(--border);border-radius:var(--r);color:var(--text);transition:border-color .15s,background .15s}
+.mg-brand:hover{border-color:var(--primary);background:var(--panel)}
+.mgb-logo{width:76px;height:40px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border-radius:var(--r-sm);background:#fff;border:1px solid var(--border-soft);font-weight:700;color:var(--primary)}
+.mgb-logo img{max-width:64px;max-height:28px;object-fit:contain}
+.mgb-txt{display:flex;flex-direction:column;min-width:0}
+.mgb-txt b{font-size:14.5px}
+.mgb-txt span{font-size:12px;color:var(--text-muted)}
+.mg-all{display:flex;align-items:center;gap:8px;margin-top:4px;padding:10px 12px;border-radius:var(--r);background:var(--primary);color:#fff!important;font-weight:600;font-size:14px}
+.mg-all .mg-count{background:rgba(255,255,255,.18);border-color:transparent;color:#fff}
+.mg-all .mg-arrow{margin-left:auto;transition:transform .15s}
+.mg-all:hover{background:var(--primary-dark)}
+.mg-all:hover .mg-arrow{transform:translateX(3px)}
+.mg-apps a{gap:10px}
+.mg-apps img{width:26px;height:26px;flex:0 0 auto}
+.mg-apps a span:not(.mg-count){flex:1}
+.mega-foot .container{justify-content:flex-start;gap:28px}
+.mega-foot .container a:last-child{margin-left:auto}
+@media (max-width:1200px){
+  .mg-products{grid-template-columns:1.1fr 1fr .9fr 1.1fr;gap:22px}
+  .mg-products .mg-feature{display:none}
+}
+/* drawer: application shortcuts */
+.dr-apps{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.dr-apps a{display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border-soft);border-radius:var(--r-sm);font-size:13.5px;color:#2B3A55}
+.dr-apps img{width:24px;height:24px;flex:0 0 auto}
+.dr-link.dr-hl{color:var(--primary)}

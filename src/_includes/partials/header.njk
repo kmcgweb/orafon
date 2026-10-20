@@ -36,31 +36,49 @@
   </div>
 
   {#- ===== desktop mega menu ===== -#}
+  {%- set onRetrofit = pathKey == '/retrofit/' -%}
+  {%- set pickList = D.featured if D.featured.length else D.products -%}
   <nav class="mainnav" aria-label="{{ T.menu }}">
     <div class="container mn-row">
-      <a class="mn-link{% if section == 'home' %} active{% endif %}" href="{{ '/' | u(lang) }}"{% if section == 'home' %} aria-current="page"{% endif %}>{{ T.home }}</a>
-
       <div class="mn-item" data-mega>
         <button class="mn-link{% if section == 'products' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-products">{{ T.products }}{{ icon("chev") }}</button>
         <div class="mega" id="mega-products">
           <div class="container mega-grid mg-products">
-            {%- for b in D.brands %}{% if b.products.length %}
+            <div class="mg-col mg-brands">
+              <span class="mg-title">{{ T.byBrand }}</span>
+              {%- for b in D.brands %}{% if b.products.length %}
+              <a class="mg-brand" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
+                <span class="mgb-logo">{% if b.logo %}<img src="{{ b.logo }}" alt="" loading="lazy">{% else %}{{ b.name | first }}{% endif %}</span>
+                <span class="mgb-txt"><b>{{ b.name }}</b><span>{{ T.ownBrand if b.own_brand else T.distributor }} · {{ b.products.length }} {{ T.productsN }}</span></span>
+              </a>
+              {%- endif %}{% endfor %}
+              <a class="mg-all" href="{{ '/products/' | u(lang) }}">{{ T.allProducts }} <span class="mg-count">{{ D.products.length }}</span><span class="mg-arrow" aria-hidden="true">→</span></a>
+            </div>
+            {%- if D.appCounts.length %}
             <div class="mg-col">
-              <a class="mg-title" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }} <span class="mg-count">{{ b.products.length }}</span></a>
-              <span class="mg-sub">{{ T.ownBrand if b.own_brand else T.distributor }}</span>
-              <ul class="mg-list">
-                {%- for p in b.products | batch(9) | first %}
-                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ b.name }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#1F3F9F' }}" data-c2="{{ p.ref.color2 if p.ref else '#2A6FDB' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.ref.color if p.ref else '#1F3F9F' }}"></span>{{ p.name }}</a></li>
+              <span class="mg-title">{{ T.byApp }}</span>
+              <span class="mg-sub">{{ T.byAppSub }}</span>
+              <ul class="mg-list mg-apps">
+                {%- for a in D.appCounts | batch(8) | first %}
+                <li><a href="{{ ('/products/?app=' ~ a.key) | u(lang) }}"><img src="/assets/img/icons/{{ a.key }}.svg" alt="" width="26" height="26" loading="lazy"><span>{{ a.label }}</span><span class="mg-count">{{ a.n }}</span></a></li>
                 {%- endfor %}
               </ul>
-              {%- if b.products.length > 9 %}<a class="mg-more" href="{{ ('/products/?brand=' ~ b.slug) | u(lang) }}">{{ T.viewAll }} ({{ b.products.length }}) →</a>{% endif %}
             </div>
-            {%- endif %}{% endfor %}
+            {%- endif %}
             <div class="mg-col">
               <span class="mg-title">{{ T.byClass }}</span>
               <span class="mg-sub">{{ T.byClassSub }}</span>
               <ul class="mg-list mg-classes">
                 {%- for g in D.classCounts %}<li><a href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}"><b>{{ g.class }}</b><span class="mg-count">{{ g.n }}</span></a></li>{% endfor %}
+              </ul>
+            </div>
+            <div class="mg-col">
+              <span class="mg-title">{{ T.featured }}</span>
+              <span class="mg-sub">&nbsp;</span>
+              <ul class="mg-list">
+                {%- for p in pickList | batch(8) | first %}
+                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#1F3F9F' }}" data-c2="{{ p.ref.color2 if p.ref else '#2A6FDB' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{{ p.name }}</a></li>
+                {%- endfor %}
               </ul>
             </div>
             {%- if feat %}
@@ -76,13 +94,17 @@
           </div>
           <div class="mega-foot"><div class="container">
             <a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }} ({{ D.products.length }}) →</a>
+            <a href="{{ '/retrofit/' | u(lang) }}">{{ T.findReplacement }} →</a>
+            <a href="{{ '/documents/' | u(lang) }}">{{ T.documents }} →</a>
             <a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }} →</a>
           </div></div>
         </div>
       </div>
 
+      <a class="mn-link{% if onRetrofit %} active{% endif %}" href="{{ '/retrofit/' | u(lang) }}"{% if onRetrofit %} aria-current="page"{% endif %}>{{ T.findReplacement }}</a>
+
       <div class="mn-item" data-mega>
-        <button class="mn-link{% if section == 'technical' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-tech">{{ T.technical }}{{ icon("chev") }}</button>
+        <button class="mn-link{% if section == 'technical' and not onRetrofit %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-tech">{{ T.techShort }}{{ icon("chev") }}</button>
         <div class="mega" id="mega-tech">
           <div class="container mega-grid mg-tech">
             <div class="mg-cards">
@@ -106,8 +128,8 @@
       </div>
 
       <a class="mn-link{% if section == 'about' %} active{% endif %}" href="{{ '/about/' | u(lang) }}"{% if section == 'about' %} aria-current="page"{% endif %}>{{ T.about }}</a>
-
       <a class="mn-link{% if section == 'contact' %} active{% endif %}" href="{{ '/contact/' | u(lang) }}"{% if section == 'contact' %} aria-current="page"{% endif %}>{{ T.contact }}</a>
+
     </div>
   </nav>
 </header>
@@ -129,14 +151,21 @@
       <div class="dr-sub">
         <a href="{{ '/products/' | u(lang) }}"><b>{{ T.allProducts }}</b><span class="mg-count">{{ D.products.length }}</span></a>
         {%- for b in D.brands %}{% if b.products.length %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}<span class="mg-count">{{ b.products.length }}</span></a>{% endif %}{% endfor %}
+        {%- if D.appCounts.length %}
+        <span class="dr-label">{{ T.byApp }}</span>
+        <div class="dr-apps">
+          {%- for a in D.appCounts | batch(8) | first %}<a href="{{ ('/products/?app=' ~ a.key) | u(lang) }}"><img src="/assets/img/icons/{{ a.key }}.svg" alt="" width="24" height="24" loading="lazy">{{ a.label }}</a>{% endfor %}
+        </div>
+        {%- endif %}
         <span class="dr-label">{{ T.byClass }}</span>
         <div class="dr-chips">
           {%- for g in D.classCounts %}<a href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}">{{ g.class }}</a>{% endfor %}
         </div>
       </div>
     </details>
-    <details class="dr-group"{% if section == 'technical' %} open{% endif %}>
-      <summary>{{ icon("flask") }}{{ T.technical }}<span class="chev">{{ icon("chev") }}</span></summary>
+    <a class="dr-link dr-hl{% if pathKey == '/retrofit/' %} active{% endif %}" href="{{ '/retrofit/' | u(lang) }}">{{ icon("wrench") }}{{ T.findReplacement }}</a>
+    <details class="dr-group"{% if section == 'technical' and pathKey != '/retrofit/' %} open{% endif %}>
+      <summary>{{ icon("flask") }}{{ T.techShort }}<span class="chev">{{ icon("chev") }}</span></summary>
       <div class="dr-sub">
         {%- for t in techLinks %}<a href="{{ t[0] | u(lang) }}">{{ t[1] }}</a>{% endfor %}
       </div>

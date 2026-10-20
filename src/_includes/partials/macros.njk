@@ -54,7 +54,7 @@
 {#- Spec card: tank-colour media with the grade watermark, safety badge, 3-cell spec strip, pack sizes, details + quote actions -#}
 {%- set href = ("/products/" ~ p.slug ~ "/") | u(lang) -%}
 {%- set r = p.ref -%}
-<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-text="{{ p.searchText }}">
+<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
     <span class="pc-grid"></span>
     {%- if r %}<span class="pc-num">{{ r.number | shortNum }}</span>{% endif %}
