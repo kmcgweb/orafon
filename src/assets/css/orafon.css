@@ -929,10 +929,10 @@ body.has-sticky .fab{bottom:90px}
 /* media: tank-colour tint, fine grid, grade watermark */
 .prod-media{aspect-ratio:1/1;background:radial-gradient(120% 90% at 50% 100%,color-mix(in srgb,var(--c,#1F49B6) 30%,#fff),color-mix(in srgb,var(--c,#1F49B6) 8%,#fff) 70%)}
 .pc-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(color-mix(in srgb,var(--c,#1F49B6) 10%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--c,#1F49B6) 10%,transparent) 1px,transparent 1px);background-size:24px 24px;-webkit-mask:linear-gradient(#000,transparent 85%);mask:linear-gradient(#000,transparent 85%)}
-.pc-num{position:absolute;z-index:0;left:0;right:0;top:50%;transform:translateY(-58%);text-align:center;font-family:var(--mono);font-weight:600;font-size:clamp(56px,7vw,92px);letter-spacing:-.04em;line-height:1;color:color-mix(in srgb,var(--c,#1F49B6) 13%,transparent);pointer-events:none;white-space:nowrap}
+.pc-num{position:absolute;z-index:0;left:0;right:0;top:7%;text-align:center;font-family:var(--mono);font-weight:600;font-size:clamp(44px,5vw,66px);letter-spacing:-.04em;line-height:1;color:color-mix(in srgb,var(--c,#1F49B6) 55%,#fff);opacity:.9;font-weight:700;-webkit-text-stroke:1px rgba(255,255,255,.6);pointer-events:none;white-space:nowrap}
 .prod-media .snow-fall{opacity:.55}
-.prod-media img{padding:40px 22px 14px}
-.prod-media > svg{margin-top:12px}
+.prod-media img{padding:27% 22px 12px}
+.prod-media > svg{margin-top:22%;height:56%}
 .prod-card:hover .prod-media img,.prod-card:hover .prod-media > svg{transform:translateY(-6px) scale(1.02)}
 .prod-tags{top:14px;left:14px;right:70px}
 .prod-tag{background:rgba(255,255,255,.92);backdrop-filter:blur(4px)}
@@ -966,10 +966,11 @@ body.has-sticky .fab{bottom:90px}
   .prod-body{padding:12px 12px 14px;gap:7px}
   .prod-name{font-size:15px}
   .pc-tag,.pc-pack{display:none}
-  .pc-specs{grid-template-columns:1fr 1.25fr 1fr}
-  .pc-specs div{padding:6px 6px}
+  .pc-specs{grid-template-columns:repeat(3,1fr)}
+  .pc-specs div{padding:6px 4px 6px 6px}
   .pc-specs dt{font-size:9px;letter-spacing:.06em}
-  .pc-specs dd{font-size:12.5px}
+  .pc-specs dd{font-size:11.5px;letter-spacing:-.02em}
+  .pc-num{top:auto;bottom:6px;left:8px;right:auto;font-size:26px;z-index:2;-webkit-text-stroke:0;color:color-mix(in srgb,var(--c,#1F49B6) 80%,#0F1A2E);opacity:.85}
   .pc-go{flex:none}
   .prod-brand{font-size:10px;letter-spacing:.05em}
   .prod-foot{flex-direction:column;align-items:stretch;gap:6px}
