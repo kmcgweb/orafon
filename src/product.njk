@@ -24,231 +24,219 @@ eleventyComputed:
 {%- set hlIcons = ["gwp", "bolt", "shield", "cube", "grid", "doc"] -%}
 {%- set contactUrl = '/contact/' | u(lang) -%}
 
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
-  <a href="{{ '/' | u(lang) }}">{{ S.brand_name }}</a><span>›</span>
-  <a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a><span>›</span>
-  {%- if b %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a><span>›</span>{% endif %}
-  {{ p.name }}
-</nav></div>
+{%- set lowGwp = r and (r.gwp_ar4 | int) < 150 -%}
+{%- set rel = [] -%}
+{%- for o in D.products %}{% if o.slug != p.slug and r and o.ref and o.ref.class == r.class and rel.length < 4 %}{% set _ = rel.push(o) %}{% endif %}{% endfor -%}
+{%- for o in D.products %}{% if o.slug != p.slug and rel.indexOf(o) < 0 and o.brand == p.brand and rel.length < 4 %}{% set _ = rel.push(o) %}{% endif %}{% endfor -%}
 
-<div class="container">
-  <div class="product" id="product"
-       data-name="{{ p.name }}" data-line="{{ S.line_id }}" data-contact="{{ contactUrl }}" data-linemsg="{{ T.lineMsg }}">
-    <!-- gallery -->
-    <div class="gallery">
-      <div class="main-wrap"><div class="main-img">
-        {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
+<div class="container pd-crumbs">
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="{{ '/' | u(lang) }}">{{ S.brand_name }}</a><span>›</span>
+    <a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a><span>›</span>
+    {%- if b %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a><span>›</span>{% endif %}
+    {{ p.name }}
+  </nav>
+  <a class="pd-back" href="{{ '/products/' | u(lang) }}"><span aria-hidden="true">←</span> {{ T.backToProducts }}</a>
+</div>
+
+<div class="container pd" id="product" style="--c:{{ p.tankColor }}"
+     data-name="{{ p.name }}" data-line="{{ S.line_id }}" data-contact="{{ contactUrl }}" data-linemsg="{{ T.lineMsg }}">
+
+  {#- ===== left: sticky section menu ===== -#}
+  <aside class="pd-side" aria-label="{{ T.onThisPage }}">
+    <div class="pd-side-top">
+      <a href="#pd-top" class="pd-side-link is-top">{{ T.tabDesc }}</a>
+      <a class="pd-side-quote js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ icon("doc") }}{{ T.quoteShort }}</a>
+    </div>
+    <a href="#pd-quote" class="pd-side-link">{{ T.packages }}</a>
+    {%- if r %}<a href="#pd-specs" class="pd-side-link" data-open>{{ T.tabSpecs }}</a>{% endif %}
+    <a href="#pd-docs" class="pd-side-link" data-open>{{ T.docsTitle }}</a>
+    {%- if apps.length %}<a href="#pd-apps" class="pd-side-link" data-open>{{ T.applications }}</a>{% endif %}
+    {%- if p.faq and p.faq.length %}<a href="#pd-faq" class="pd-side-link" data-open>{{ T.tabFaq }}</a>{% endif %}
+    {%- if rel.length %}<a href="#pd-related" class="pd-side-link">{{ T.relatedProducts }}</a>{% endif %}
+  </aside>
+
+  <div class="pd-main">
+    {#- ===== hero: gallery + summary ===== -#}
+    <section class="pd-hero" id="pd-top">
+      <div class="gallery">
+        <div class="main-wrap"><div class="main-img">
+          {%- if r %}<span class="pd-num" aria-hidden="true">{{ r.number | shortNum }}</span>{% endif %}
+          {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
+          {%- if p.gallery.length > 1 %}
+          <button class="gal-nav gal-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button>
+          <button class="gal-nav gal-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>
+          <span class="gal-count"><b id="galIdx">1</b> / {{ p.gallery.length }}</span>
+          {%- endif %}
+        </div></div>
         {%- if p.gallery.length > 1 %}
-        <button class="gal-nav gal-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button>
-        <button class="gal-nav gal-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>
-        <span class="gal-count"><b id="galIdx">1</b> / {{ p.gallery.length }}</span>
+        <div class="thumbs">
+          {%- for img in p.gallery %}
+          <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
+          {%- endfor %}
+        </div>
         {%- endif %}
-      </div></div>
-      {%- if p.gallery.length > 1 %}
-      <div class="thumbs">
-        {%- for img in p.gallery %}
-        <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
+        {%- if p.coverImage %}
+        <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="{{ p.name }}">
+          <button class="lb-close" type="button" aria-label="{{ T.close }}">✕</button>
+          {%- if p.gallery.length > 1 %}<button class="lb-nav lb-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button><button class="lb-nav lb-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>{% endif %}
+          <img id="lbImg" src="{{ p.coverImage }}" alt="{{ p.name }}">
+          {%- if p.gallery.length > 1 %}<span class="lb-count"><b id="lbIdx">1</b> / {{ p.gallery.length }}</span>{% endif %}
+        </div>
+        {%- endif %}
+      </div>
+
+      <div class="pd-info">
+        <h1 class="pd-title">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</h1>
+        <div class="pd-chips">
+          {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span><span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}
+          {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
+        </div>
+        <div class="pd-iconrow">
+          {%- set seenIc = [] %}
+          {%- for a in apps %}{% if a.icon_image or seenIc.indexOf(a.icon) < 0 %}{% set _ = seenIc.push(a.icon) %}<span class="pd-ic" title="{{ a.label }}"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="{{ a.label }}" width="30" height="30"></span>{% endif %}{% endfor %}
+          {%- if lowGwp %}<span class="pd-eco" title="{{ T.lowGwp }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></svg>{{ T.lowGwp }}</span>{% endif %}
+        </div>
+        {%- if p.tagline %}<p class="pd-tagline">{{ p.tagline }}</p>{% endif %}
+        {%- if p.short %}<p class="pd-short">{{ p.short }}</p>{% endif %}
+        {%- if r %}
+        <dl class="pd-specs">
+          <div><dt>GWP</dt><dd>{{ r.gwp_ar4 or "—" }}</dd></div>
+          <div><dt>ODP</dt><dd>{{ r.odp or "—" }}</dd></div>
+          <div><dt>ASHRAE</dt><dd>{{ r.safety or "—" }}</dd></div>
+          {%- if r.replaces and r.replaces.length %}<div><dt>{{ T.replaces }}</dt><dd>{{ r.replaces | join(", ") }}</dd></div>{% endif %}
+        </dl>
+        {%- endif %}
+        {%- if b %}<p class="pd-brand">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}" height="22">{% endif %}<span>{{ b.name }}{% if not b.own_brand %} · {{ T.distributedBy }} {{ S.brand_name }}{% endif %}</span></p>{% endif %}
+      </div>
+    </section>
+
+    {#- ===== quotation: pack size + quantity ===== -#}
+    <section class="pd-quote" id="pd-quote">
+      <h2>{{ T.selectForQuote }}</h2>
+      {%- if p.packages and p.packages.length %}
+      <div class="pd-packs" id="pkgOpts" role="radiogroup" aria-label="{{ T.packages }}">
+        {%- for k in p.packages %}
+        <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" role="radio" aria-checked="{{ 'true' if loop.first else 'false' }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
+                data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}">
+          <span class="pk-radio" aria-hidden="true"></span>
+          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} kg</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}</span>
+        </button>
         {%- endfor %}
       </div>
+      {%- else %}
+      <p class="muted">{{ T.askSizes }}</p>
       {%- endif %}
-      {%- if p.coverImage %}
-      <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="{{ p.name }}">
-        <button class="lb-close" type="button" aria-label="{{ T.close }}">✕</button>
-        {%- if p.gallery.length > 1 %}<button class="lb-nav lb-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button><button class="lb-nav lb-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>{% endif %}
-        <img id="lbImg" src="{{ p.coverImage }}" alt="{{ p.name }}">
-        {%- if p.gallery.length > 1 %}<span class="lb-count"><b id="lbIdx">1</b> / {{ p.gallery.length }}</span>{% endif %}
+      <div class="pd-buy">
+        <div class="pd-qty" role="group" aria-label="{{ T.qty }}">
+          <button type="button" data-qty="-1" aria-label="−">−</button>
+          <input id="qty" type="number" inputmode="numeric" min="1" max="999" value="1" aria-label="{{ T.qty }}">
+          <button type="button" data-qty="1" aria-label="+">+</button>
+        </div>
+        <a class="btn btn-primary js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ icon("doc") }} {{ T.requestQuote }}</a>
+        {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }} {{ T.askLine }}</a>{% endif %}
+        {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ icon("phone") }} {{ S.phone_display }}</a>{% endif %}
       </div>
+      <p class="pd-note">{{ T.quoteNote }}</p>
+    </section>
+
+    {#- ===== accordions ===== -#}
+    <div class="pd-acc">
+      {%- if p.description or (p.highlights and p.highlights.length) %}
+      <details id="pd-desc" open>
+        <summary><h2>{{ T.tabDesc }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
+        <div class="pd-acc-body">
+          {%- if p.highlights and p.highlights.length %}
+          <div class="hl-grid">
+            {%- for h in p.highlights %}<div class="hl"><span class="ic">{{ icon(hlIcons[loop.index0 % 6]) }}</span><div><h5>{{ h.title }}</h5><p>{{ h.text }}</p></div></div>{% endfor %}
+          </div>
+          {%- endif %}
+          {%- if p.description %}<div class="prose">{{ p.description | md | safe }}</div>{% endif %}
+        </div>
+      </details>
+      {%- endif %}
+
+      {%- if r %}
+      <details id="pd-specs">
+        <summary><h2>{{ T.tabSpecs }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
+        <div class="pd-acc-body">
+          <table class="spec-table"><tbody>
+            {%- if b %}<tr><th>{{ T.brand }}</th><td>{{ b.name }}</td></tr>{% endif %}
+            <tr><th>{{ T.distributedBy }}</th><td>{{ S.company_name }} ({{ S.brand_name }})</td></tr>
+            <tr><th>{{ T.ashrae }}</th><td>{{ r.number }}</td></tr>
+            <tr><th>{{ T.refType }}</th><td>{{ r.class }}</td></tr>
+            {%- if r.blend_type %}<tr><th>{{ T.blendType }}</th><td>{{ T.blend[r.blend_type] or r.blend_type }}</td></tr>{% endif %}
+            {%- if r.composition %}<tr><th>{{ T.composition }}</th><td>{{ r.composition }}</td></tr>{% endif %}
+            <tr><th>{{ T.safety }}</th><td>{{ T.safetyText[r.safety] or r.safety }}</td></tr>
+            <tr><th>{{ T.odp }}</th><td>{{ r.odp }}</td></tr>
+            <tr><th>{{ T.gwp }}</th><td>{{ r.gwp_ar4 }}</td></tr>
+            <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
+            <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point or "—" }}</td></tr>
+            {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
+            {%- for k in p.packages %}<tr><th>{{ T.packages }} · {{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}</td></tr>{% endfor %}
+          </tbody></table>
+          <p class="note">{{ T.dataNote }}</p>
+        </div>
+      </details>
+      {%- endif %}
+
+      <details id="pd-docs">
+        <summary><h2>{{ T.docsTitle }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
+        <div class="pd-acc-body">
+          <p class="muted" style="margin-bottom:14px">{{ T.docsLead }}</p>
+          {%- if p.documents and p.documents.length %}
+            {%- for d in p.documents %}
+            <div class="doc-row">
+              <div class="doc-ic">{{ d.type or "PDF" }}</div>
+              <div class="doc-meta"><div class="dt">{{ d.label }}</div><div class="dd">{{ p.name }} · PDF</div></div>
+              {%- if d.file %}<a class="doc-dl" href="{{ d.file }}" target="_blank" rel="noopener">{{ T.download }}</a>
+              {%- else %}<a class="doc-dl" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ T.requestDoc }}</a>{% endif %}
+            </div>
+            {%- endfor %}
+          {%- else %}<p class="muted">{{ T.noDocs }}</p>{% endif %}
+        </div>
+      </details>
+
+      {%- if apps.length %}
+      <details id="pd-apps">
+        <summary><h2>{{ T.applications }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
+        <div class="pd-acc-body">
+          <div class="pd-apps">
+            {%- for a in apps %}<div class="pd-app"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="" width="44" height="44" loading="lazy"><span>{{ a.label }}</span></div>{% endfor %}
+          </div>
+        </div>
+      </details>
+      {%- endif %}
+
+      {%- if p.faq and p.faq.length %}
+      <details id="pd-faq">
+        <summary><h2>{{ T.tabFaq }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
+        <div class="pd-acc-body faq">
+          {%- for f in p.faq %}<details{% if loop.first %} open{% endif %}><summary>{{ f.q }}<span class="chev">{{ icon("chev") }}</span></summary><div class="ans">{{ f.a }}</div></details>{% endfor %}
+        </div>
+      </details>
       {%- endif %}
     </div>
 
-    <!-- info -->
-    <div class="info">
-      <div class="brand-badge">
-        {%- if r %}<span class="tag grad-bg">{{ r.class }}</span>{% endif %}
-        <span class="txt">{% if b %}{{ b.name }}{% if not b.own_brand %} · {{ T.distributedBy }} {{ S.brand_name }}{% endif %}{% endif %}</span>
-      </div>
-      {%- if p.labels.length %}
-      <div class="prod-tags" style="position:static;margin-bottom:12px">
-        {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
-      </div>
-      {%- endif %}
-      <h1 class="pname">{{ p.name }}{% if p.tagline %}<br><span class="grad-text">{{ p.tagline }}</span>{% endif %}</h1>
-      {%- if r %}<div class="pinfo-sku">ASHRAE: {{ r.number }}{% if p.packages and p.packages[0] %} · {{ T.sku }}: {{ p.packages[0].sku }}{% endif %}</div>{% endif %}
-
-      {%- if p.badges and p.badges.length %}
-      <div class="badge-row">
-        {%- set bc = ["green", "indigo", "violet"] %}
-        {%- for x in p.badges %}<span class="badge {{ bc[loop.index0 % 3] }}">{{ x }}</span>{% endfor %}
-      </div>
-      {%- endif %}
-
-      {%- if r %}
-      <div class="stat-row">
-        <div class="stat"><div class="num grad-text">{{ r.gwp_ar4 }}</div><div class="lbl">{{ T.gwp }}</div></div>
-        <div class="stat"><div class="num grad-text">{{ r.safety }}</div><div class="lbl">ASHRAE</div></div>
-        <div class="stat"><div class="num grad-text">{{ r.odp }}</div><div class="lbl">{{ T.odp }}</div></div>
-      </div>
-      {%- endif %}
-
-      {%- if p.short %}<div class="short-desc">{{ p.short }}</div>{% endif %}
-
-      {%- if r %}
-      <ul class="specs">
-        <li><span class="ico">▸</span><span class="k">{{ T.refType }}</span><span class="v">{{ r.class }}{% if r.blend_type %} ({{ T.blend[r.blend_type] or r.blend_type }}){% endif %}</span></li>
-        <li><span class="ico">▸</span><span class="k">{{ T.safety }}</span><span class="v">{{ T.safetyText[r.safety] or r.safety }}</span></li>
-        <li><span class="ico">▸</span><span class="k">{{ T.ashrae }}</span><span class="v">{{ r.number }}</span></li>
-        <li><span class="ico">▸</span><span class="k">{{ T.odp }}</span><span class="v">{{ r.odp }}</span></li>
-        <li><span class="ico">▸</span><span class="k">{{ T.gwp }}</span><span class="v">{{ r.gwp_ar4 }}</span></li>
-        {%- if r.replaces and r.replaces.length %}<li><span class="ico">▸</span><span class="k">{{ T.replaces }}</span><span class="v">{{ r.replaces | join(", ") }}</span></li>{% endif %}
-      </ul>
-      {%- endif %}
-    </div>
+    {%- if rel.length %}
+    <section class="pd-related" id="pd-related">
+      <h2>{{ T.relatedProducts }}</h2>
+      <div class="prod-grid">{% for o in rel %}{{ productCard(o, lang, T) }}{% endfor %}</div>
+    </section>
+    {%- endif %}
   </div>
 </div>
 
-{%- if apps.length %}
-<div class="container"><section class="section" style="padding-top:0">
-  <div class="apps-band">
-    <h2 style="margin-bottom:14px">{{ T.applications }}</h2>
-    <p class="lead" style="margin-bottom:0">{{ T.appsLead }}</p>
-    <div class="apps-grid">
-      {%- for a in apps %}<div class="app-card"><span class="emoji"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="" width="48" height="48" loading="lazy"></span><div class="t">{{ a.label }}</div></div>{% endfor %}
-    </div>
-  </div>
-</section></div>
-{%- endif %}
-
-<div class="container"><section class="section" id="details" style="padding-top:0">
-  <div class="tabs-card">
-    <div class="tabs-nav" role="tablist">
-      <button class="tab-btn active" role="tab" aria-selected="true" data-tab="desc">{{ T.tabDesc }}</button>
-      <button class="tab-btn" role="tab" aria-selected="false" data-tab="specs">{{ T.tabSpecs }}</button>
-      <button class="tab-btn" role="tab" aria-selected="false" data-tab="docs">{{ T.tabDocs }}</button>
-      {%- if p.faq and p.faq.length %}<button class="tab-btn" role="tab" aria-selected="false" data-tab="faq">{{ T.tabFaq }}</button>{% endif %}
-      <button class="tab-btn" role="tab" aria-selected="false" data-tab="related">{{ T.tabRelated }}</button>
-    </div>
-
-    <div class="tab-pane active" data-pane="desc" role="tabpanel">
-      {%- if p.highlights and p.highlights.length %}
-      <div class="hl-grid">
-        {%- for h in p.highlights %}
-        <div class="hl"><span class="ic">{{ icon(hlIcons[loop.index0 % 6]) }}</span><div><h5>{{ h.title }}</h5><p>{{ h.text }}</p></div></div>
-        {%- endfor %}
-      </div>
-      {%- endif %}
-      {%- if p.description %}
-      <div class="tab-collapse clamped prose" id="descCollapse">{{ p.description | md | safe }}</div>
-      <div class="collapse-toggle">
-        <button type="button" data-collapse="descCollapse" aria-expanded="false" data-more="{{ T.showMore }}" data-less="{{ T.showLess }}">
-          <span class="lbl">{{ T.showMore }}</span><span class="ci">{{ icon("chev") }}</span>
-        </button>
-      </div>
-      {%- endif %}
-    </div>
-
-    <div class="tab-pane" data-pane="specs" role="tabpanel">
-      <table class="spec-table">
-        <tbody>
-          <tr class="grp"><td colspan="2">{{ T.specGroupBrand }}</td></tr>
-          {%- if b %}<tr><th>{{ T.brand }}</th><td>{{ b.name }}</td></tr>{% endif %}
-          <tr><th>{{ T.distributedBy }}</th><td>{{ S.company_name }} ({{ S.brand_name }})</td></tr>
-          {%- if r %}
-          <tr class="grp"><td colspan="2">{{ T.specGroupData }}</td></tr>
-          <tr><th>{{ T.ashrae }}</th><td>{{ r.number }}</td></tr>
-          <tr><th>{{ T.refType }}</th><td>{{ r.class }}</td></tr>
-          <tr><th>{{ T.blendType }}</th><td>{{ T.blend[r.blend_type] or r.blend_type }}</td></tr>
-          <tr><th>{{ T.composition }}</th><td>{{ r.composition }}</td></tr>
-          <tr><th>{{ T.safety }}</th><td>{{ T.safetyText[r.safety] or r.safety }}</td></tr>
-          <tr><th>{{ T.odp }}</th><td>{{ r.odp }}</td></tr>
-          <tr><th>{{ T.gwp }}</th><td>{{ r.gwp_ar4 }}</td></tr>
-          <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
-          <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point or "—" }}</td></tr>
-          {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
-          {%- endif %}
-          {%- if p.packages and p.packages.length %}
-          <tr class="grp"><td colspan="2">{{ T.specGroupPack }}</td></tr>
-          {%- for k in p.packages %}<tr><th>{{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}</td></tr>{% endfor %}
-          {%- endif %}
-        </tbody>
-      </table>
-      <p class="note">{{ T.dataNote }}</p>
-    </div>
-
-    <div class="tab-pane" data-pane="docs" role="tabpanel">
-      <p class="muted" style="margin-bottom:16px">{{ T.docsLead }}</p>
-      {%- if p.documents and p.documents.length %}
-        {%- for d in p.documents %}
-        <div class="doc-row">
-          <div class="doc-ic">{{ d.type or "PDF" }}</div>
-          <div class="doc-meta"><div class="dt">{{ d.label }}</div><div class="dd">{{ p.name }} · PDF</div></div>
-          {%- if d.file %}<a class="doc-dl" href="{{ d.file }}" target="_blank" rel="noopener">{{ T.download }}</a>
-          {%- else %}<a class="doc-dl" href="{{ contactUrl }}?product={{ (p.name ~ ' — ' ~ d.label) | urlencode }}">{{ T.requestDoc }}</a>{% endif %}
-        </div>
-        {%- endfor %}
-      {%- else %}<p class="muted">{{ T.noDocs }}</p>{% endif %}
-    </div>
-
-    {%- if p.faq and p.faq.length %}
-    <div class="tab-pane" data-pane="faq" role="tabpanel">
-      <div class="faq">
-        {%- for f in p.faq %}
-        <details{% if loop.first %} open{% endif %}><summary>{{ f.q }}<span class="chev">{{ icon("chev") }}</span></summary><div class="ans">{{ f.a }}</div></details>
-        {%- endfor %}
-      </div>
-    </div>
-    {%- endif %}
-
-    <div class="tab-pane" data-pane="related" role="tabpanel">
-      <div class="rel-grid">
-        {%- if r and r.products.length > 1 %}<a class="rel-card" href="{{ ('/products/?ref=' ~ r.slug) | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ T.productsOfRef }} {{ r.number }}</span><br><span class="rd">{{ r.products.length }} {{ T.items }}</span></span></a>{% endif %}
-        {%- if b %}<a class="rel-card" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ b.name | first }}</span><span><span class="rt">{{ T.brandPage }} {{ b.name }}</span><br><span class="rd">{{ b.tagline }}</span></span></a>{% endif %}
-        {%- if r %}{% for o in r.products %}{% if o.slug != p.slug %}<a class="rel-card" href="{{ ('/products/' ~ o.slug ~ '/') | u(lang) }}"><span class="rel-ic">{{ r.number | shortNum }}</span><span><span class="rt">{{ o.name }}</span><br><span class="rd">{{ o.brandObj.name if o.brandObj }}</span></span></a>{% endif %}{% endfor %}{% endif %}
-        <a class="rel-card" href="{{ '/retrofit/' | u(lang) }}"><span class="rel-ic">↔</span><span><span class="rt">{{ T.retrofit }}</span></span></a>
-        <a class="rel-card" href="{{ '/products/' | u(lang) }}"><span class="rel-ic">＋</span><span><span class="rt">{{ T.allProducts }}</span></span></a>
-      </div>
-    </div>
-  </div>
-</section></div>
-
-<div class="container"><section class="section" id="packages" style="padding-top:0">
-  <div class="buy-card">
-    {%- if p.packages and p.packages.length %}
-    <div class="pkg-head">
-      <h2>{{ T.packages }} <span class="grad-text">{{ T.packagesHi }}</span></h2>
-      <span class="pkg-hint">{{ T.pickOne }}</span>
-    </div>
-    <div class="pkg-opts" id="pkgOpts">
-      {%- for k in p.packages %}
-      <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
-              data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}">
-        <span class="check">{{ icon("check") }}</span>
-        <span class="name">{{ k.name }}</span>
-        <span class="kg">{{ k.kg | kg }} <small>kg</small></span>
-        <span class="meta">{% if k.lb %}{{ k.lb | kg }} lb{% endif %}{% if k.lb and k.sku %} · {% endif %}{% if k.sku %}SKU {{ k.sku }}{% endif %}</span>
-      </button>
-      {%- endfor %}
-    </div>
-    {%- else %}
-    <div class="pkg-head">
-      <h2>{{ T.packages }} <span class="grad-text">{{ T.askSizesHi }}</span></h2>
-      <span class="pkg-hint">{{ T.askSizes }}</span>
-    </div>
-    {%- endif %}
-    <div class="pkg-foot">
-      <div class="quote-note">{{ T.quoteNote }}</div>
-      <div class="cta-row">
-        <a class="btn btn-primary grad-bg js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
-        {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ T.askLine }}</a>{% endif %}
-        {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
-      </div>
-    </div>
-  </div>
-</section></div>
-
+{#- ===== bottom: three help tiles ===== -#}
+<section class="container pd-help">
+  <a class="pd-help-tile" href="{{ '/technical/' | u(lang) }}"><span class="ph-ic">{{ icon("flask") }}</span><b>{{ T.technical }}</b><span>{{ T.techLead }}</span><em>→</em></a>
+  <a class="pd-help-tile" href="{{ '/retrofit/' | u(lang) }}"><span class="ph-ic">{{ icon("wrench") }}</span><b>{{ T.findReplacement }}</b><span>{{ T.techRetroDesc }}</span><em>→</em></a>
+  <a class="pd-help-tile is-accent" href="{{ contactUrl }}"><span class="ph-ic">{{ icon("headset") }}</span><b>{{ T.contact }}</b><span>{{ T.needHelpText }}</span><em>→</em></a>
+</section>
 
 <div class="sticky-cta">
   {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE</a>{% else %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
-  <a class="btn btn-primary grad-bg js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
+  <a class="btn btn-primary js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
 </div>
 
 <script type="application/ld+json">{{ {
