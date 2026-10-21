@@ -74,13 +74,12 @@
                       <a class="mg3-oil-head" href="{{ ('/products/?cat=' ~ c.key ~ '&class=' ~ sec.type) | u(lang) }}">
                         <b>{{ sec.type }}</b>
                         <span><em>{{ sec.full }}</em><small>{{ T.oilUse[sec.type] }}</small></span>
-                        <span class="mg-count">{{ sec.products.length }}</span>
                       </a>
-                      <div class="mg3-grades">
+                      <ul class="mg3-oil-rows">
                         {%- for p in sec.products %}{% set r = p.ref %}
-                        <a class="mg3-grade" href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }} · {{ p.kind or T.cats[p.category] }}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ p.previewChips | join('|') }}">{{ p.oilGrade or p.menuName }}</a>
+                        <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }} · {{ p.kind or T.cats[p.category] }}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ p.previewChips | join('|') }}"><span class="dot"></span><span class="nm">{{ p.menuName }}</span><small>{{ p.packText }}</small></a></li>
                         {%- endfor %}
-                      </div>
+                      </ul>
                     </div>
                     {%- endfor %}
                   </div>

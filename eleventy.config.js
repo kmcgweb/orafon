@@ -119,7 +119,9 @@ function buildDb() {
         const eco = isEco(p, ref);
         // badges shown on cards, the product page and in the label filter
         const tags = [...(eco ? ["eco"] : []), ...labels.filter((l) => !HIDDEN_LABELS.includes(l))];
-        return { ...p, ref, brandObj, searchText, labels, eco, tags, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        // pack sizes as one short line for the mega menu ("250 ml · 1 L")
+        const packText = (p.packages || []).map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
+        return { ...p, ref, brandObj, searchText, labels, eco, tags, packText, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 
