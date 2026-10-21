@@ -1,32 +1,22 @@
 th:
   id: solstice-r515b
+  name: Solstice® N15 (R-515B)
   brand: solstice
+  category: refrigerant
+  oil_type: ''
   refrigerant: r-515b
-  labels: []
-  draft: false
-  order: 274
-  images:
-    - /assets/uploads/solstice-r515b-photo-1.webp
-    - /assets/uploads/solstice-r515b-photo-2.webp
-    - /assets/uploads/solstice-r515b-photo-3.webp
-    - /assets/uploads/solstice-r515b-photo-4.webp
-    - /assets/uploads/solstice-r515b-photo-5.webp
-    - /assets/uploads/solstice-r515b-photo-6.webp
-    - /assets/uploads/solstice-r515b-photo-7.webp
-  documents:
-    - type: TDS
-      label: Technical Data Sheet (TDS)
-      file: /assets/uploads/docs/solstice-r515b-tds.pdf
-    - type: Sales
-      label: Sales Sheet
-      file: /assets/uploads/docs/solstice-r515b-sales.pdf
+  tagline: สารทำความเย็น HFO Blend
+  tag: GWP ต่ำ
+  cover: /assets/uploads/515B.webp
+  tank_color: ''
   packages:
     - name: DAC
       kg: 10
-  cover: /assets/uploads/solstice-r515b-dac.webp
-  name: Solstice® N15 (R-515B)
-  tagline: สารทำความเย็น HFO Blend
-  tag: GWP ต่ำ
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
+  specs: []
   badges:
     - ลด GWP 80% เทียบ R-134a
     - A1 ไม่ติดไฟ
@@ -52,6 +42,13 @@ th:
 
     จัดจำหน่ายในประเทศไทยโดย ORAFON (บริษัท โอราโนส จำกัด) ตัวแทนจำหน่าย Solstice® พร้อมเอกสาร TDS/SDS และคำปรึกษาทางเทคนิค ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
   applications: []
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: /assets/uploads/docs/solstice-r515b-tds.pdf
+    - type: Sales
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-r515b-sales.pdf
   faq:
     - q: Solstice® N15 (R-515B) ใช้ทดแทนสารตัวไหนได้บ้าง?
       a: ใช้ทดแทน R-134a ก่อนเปลี่ยนสารควรตรวจสอบความเข้ากันได้ของน้ำมันคอมเพรสเซอร์และอุปกรณ์กับผู้ผลิต หรือปรึกษาทีม ORAFON
@@ -60,10 +57,14 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: Solstice® N15 (R-515B) สารทำความเย็น R-515B HFO Blend A1 GWP 293 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 274
 en:
   name: Solstice® N15 (R-515B)
   tagline: HFO Blend refrigerant
   tag: Low GWP
+  specs: []
   badges:
     - 80% lower GWP vs R-134a
     - A1 non-flammable
@@ -88,11 +89,12 @@ en:
     An azeotropic, non-flammable (A1) HFO blend with about 80% lower GWP than R-134a, used in new water- and air-cooled chillers.
 
     Distributed in Thailand by ORAFON (Oranoss Co., Ltd.), an authorized Solstice® distributor, with TDS/SDS documents and technical support. Contact us for pack sizes, stock and a quotation.
+  applications: []
   faq:
     - q: Which refrigerants can Solstice® N15 (R-515B) replace?
       a: R-134a. Before converting, check compressor oil and equipment compatibility with the manufacturer or ask the ORAFON team.
     - q: Is it flammable? How safe is it?
-      a: "It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices."
+      a: 'It is classified A1 under ASHRAE 34. Non-flammable and lower toxicity: familiar handling practices.'
     - q: Which pack sizes are available, and how do I get a price?
       a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
   seo_description: Solstice® N15 (R-515B) R-515B HFO Blend refrigerant, A1, GWP 293. Distributed by ORAFON — request a quotation.
