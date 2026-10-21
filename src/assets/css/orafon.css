@@ -100,8 +100,6 @@ a.mg-title:hover{color:var(--primary)}
 .mg-articles time{font-size:12px;color:var(--text-muted)}
 .mg-articles b{font-size:14px;font-weight:600;line-height:1.45}
 .mg-articles li a:hover b{color:var(--primary)}
-.mega-foot{border-top:1px solid var(--border-soft);background:var(--bg)}
-.mega-foot .container{display:flex;gap:24px;justify-content:flex-end;padding:12px 24px;font-size:13.5px;font-weight:700}
 
 /* ---------- mobile / tablet drawer (<1024px) ---------- */
 .m-only{display:none}
@@ -1002,8 +1000,6 @@ body.has-sticky .fab{bottom:90px}
 .mg-apps a{gap:10px}
 .mg-apps img{width:26px;height:26px;flex:0 0 auto}
 .mg-apps a span:not(.mg-count){flex:1}
-.mega-foot .container{justify-content:flex-start;gap:28px}
-.mega-foot .container a:last-child{margin-left:auto}
 @media (max-width:1200px){
   .mg-products{grid-template-columns:1.1fr 1fr .9fr 1.1fr;gap:22px}
   .mg-products .mg-feature{display:none}
