@@ -1197,3 +1197,8 @@ body.has-sticky .fab{bottom:90px}
 .mg3-bh + .mg3-type{margin-top:4px}
 /* ORAFON's logo is taller than wide-format Solstice's: give it more height so both read the same width (~100px) */
 .mg3-bh[data-brand="orafon"] .mgb-logo img{height:40px;max-height:none}
+/* products mega v3: bigger product preview — taller art area, cut-out images zoomed past their transparent padding */
+.mg3 .mg-feature{margin:14px;padding:14px 16px 16px}
+.mg3 .mgf-art{min-height:250px;margin-bottom:10px}
+.mg3 .mgf-art img:not([src*="-photo-"]){transform:scale(1.22);transform-origin:50% 92%}
+.mg3 .mgf-art::after{width:170px}
