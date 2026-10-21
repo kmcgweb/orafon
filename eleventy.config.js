@@ -100,7 +100,13 @@ function buildDb() {
         const menuName = bn && String(p.name).toLowerCase().startsWith(bn.toLowerCase())
           ? String(p.name).slice(bn.length).replace(/^®?\s+/, "") || p.name
           : p.name;
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind };
+        // oils in the mega menu show just the grade under their type card ("POE 68" -> "68")
+        const oilGrade = oilType ? menuName.replace(new RegExp("^" + oilType + "\\s*"), "") : "";
+        // chips on the mega-menu preview card: refrigerant facts, else oil type + pack sizes
+        const previewChips = ref
+          ? [ref.class, ref.safety, "GWP " + ref.gwp_ar4]
+          : [oilType, ...(p.packages || []).map((k) => `${k.kg} ${k.unit || "kg"}`)].filter(Boolean);
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 
