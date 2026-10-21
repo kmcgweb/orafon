@@ -1198,21 +1198,23 @@ body.has-sticky .fab{bottom:90px}
 .mg3 .mgf-art{min-height:250px;margin-bottom:10px}
 .mg3 .mgf-art img:not([src*="-photo-"]){transform:scale(1.22);transform-origin:50% 92%}
 .mg3 .mgf-art::after{width:170px}
-/* products mega v3, oils: one card per base oil, grades as chips (colours match the can artwork) */
-.mg3-oils{display:grid;grid-template-columns:1fr 1.45fr 1fr;gap:14px;margin-top:4px}
-.mg3-oil{--oc:#2F3192;--ob:#EEEFFA;display:flex;flex-direction:column;border:1px solid var(--border-soft);border-radius:14px;background:#fff;overflow:hidden}
-.mg3-oil[data-oil="PAG"]{--oc:#2A9FD8;--ob:#E8F5FC}
-.mg3-oil[data-oil="PVE"]{--oc:#0F766E;--ob:#E6F4F2}
-.mg3-oil-head{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--ob);border-bottom:1px solid var(--border-soft);color:var(--text)}
-.mg3-oil-head b{display:grid;place-items:center;min-width:48px;height:34px;padding:0 8px;border-radius:9px;background:var(--oc);color:#fff;font-size:14px;letter-spacing:.05em}
-.mg3-oil-head span{display:flex;flex-direction:column;line-height:1.3;min-width:0}
-.mg3-oil-head em{font-style:normal;font-size:13.5px;font-weight:600}
-.mg3-oil-head small{font-size:12px;color:var(--muted)}
-.mg3-oil-head .mg-count{margin-left:auto;flex-direction:row}
+/* products mega v3, oils: one column per base oil (PAG / POE / PVE), grades listed with their pack sizes */
+.mg3-oils{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,30px);margin-top:4px}
+.mg3-oil{--oc:#2F3192;--ob:#E8F2FB;min-width:0}
+.mg3-oil[data-oil="PAG"]{--oc:#2A9FD8}
+.mg3-oil[data-oil="PVE"]{--oc:#0F766E}
+.mg3-oil-head{display:flex;align-items:center;gap:12px;padding:4px 0 12px;margin-bottom:6px;border-bottom:2px solid var(--border-soft);color:var(--text)}
+.mg3-oil-head b{display:grid;place-items:center;min-width:46px;height:32px;padding:0 8px;border-radius:8px;background:var(--oc);color:#fff;font-size:13.5px;letter-spacing:.04em}
+.mg3-oil-head span{display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.mg3-oil-head em{font-style:normal;font-size:13.5px;font-weight:700}
+.mg3-oil-head small{font-size:12.5px;color:var(--muted)}
 .mg3-oil-head:hover em{color:var(--oc)}
-.mg3-grades{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;padding:14px}
-.mg3-grade{min-width:64px;padding:8px 12px;border:1px solid var(--border-soft);border-radius:10px;background:#fff;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--text);transition:.15s}
-.mg3-grade:hover,.mg3-grade.previewing{border-color:var(--oc);background:var(--ob);color:var(--oc)}
+.mg3-oil-rows{list-style:none;margin:0;padding:0}
+.mg3-oil-rows a{display:grid;grid-template-columns:8px minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 8px;border-radius:9px;font-size:14.5px;color:var(--text)}
+.mg3-oil-rows .dot{width:8px;height:8px;border-radius:50%;background:var(--oc)}
+.mg3-oil-rows .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg3-oil-rows small{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.mg3-oil-rows a:hover,.mg3-oil-rows a.previewing{background:var(--ob);color:var(--oc)}
 
 /* ===== quote list ("cart" for quotations): header button, toast, /quote/ page ===== */
 .nav-quote{position:relative;display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 14px;border:1px solid var(--border);border-radius:var(--r-pill);background:#fff;color:var(--primary);font-size:14px;font-weight:600;white-space:nowrap}
@@ -1256,3 +1258,7 @@ body.has-sticky .fab{bottom:90px}
 .qt .pd-qty input::-webkit-outer-spin-button,.qt .pd-qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 @media (max-width:900px){.qt{grid-template-columns:1fr;gap:24px}.qt-form{position:static}}
 @media (max-width:560px){.qt-head h1{font-size:23px}.qt-item{grid-template-columns:56px minmax(0,1fr) auto;gap:10px}.qt-img{width:56px;height:56px}.qt-item .pd-qty{grid-column:2;justify-self:start}.qt-del{grid-row:1;grid-column:3}}
+/* eco badge: leaf + green, for products with GWP < 150 and no ozone depletion */
+.prod-tag.lb-eco{display:inline-flex;align-items:center;gap:4px;background:#ECFDF3;color:#067647;border-color:#ABEFC6}
+.prod-tag.lb-eco svg{width:13px;height:13px;flex:none;stroke-width:2.2}
+.prod-media .prod-tag.lb-eco{background:rgba(236,253,243,.95)}
