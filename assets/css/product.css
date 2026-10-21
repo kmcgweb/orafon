@@ -214,7 +214,7 @@ h1.pname{font-weight:700}
 
 /* ---------- Product page v2: side menu + summary + quote + accordions (Climalife-style) ---------- */
 html{scroll-padding-top:130px}
-.pd-crumbs{display:flex;flex-direction:column;gap:2px}
+.pd-crumbs{display:flex;flex-direction:column;gap:2px;margin-bottom:22px}
 .pd{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:start;padding-bottom:24px}
 
 /* side menu */

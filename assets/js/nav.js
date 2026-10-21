@@ -60,7 +60,7 @@
     var show = function (a) {
       if (a === current) return;
       current = a;
-      header.querySelectorAll(".mg-list a.previewing").forEach(function (x) { x.classList.remove("previewing"); });
+      header.querySelectorAll("a.previewing").forEach(function (x) { x.classList.remove("previewing"); });
       preview.classList.add("swap");
       clearTimeout(swapTimer);
       swapTimer = setTimeout(function () {
@@ -84,7 +84,7 @@
         preview.classList.remove("swap");
       }, 90);
     };
-    header.querySelectorAll(".mg-list a[data-prev]").forEach(function (a) {
+    header.querySelectorAll("a[data-prev]").forEach(function (a) {
       a.addEventListener("mouseenter", function () { show(a); });
       a.addEventListener("focus", function () { show(a); });
     });
