@@ -7,7 +7,7 @@
   ["articles", "/articles/", T.articles, "list"]
 ] -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
-  <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>
   {%- if techTab == "overview" %}{{ T.technical }}{% else %}<a href="{{ '/technical/' | u(lang) }}">{{ T.technical }}</a><span>›</span>{{ techTitle }}{% endif %}
 </nav></div>
 <section class="tech-hero"><div class="container">

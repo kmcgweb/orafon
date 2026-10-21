@@ -11,7 +11,7 @@ eleventyComputed:
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set A = D.about -%}
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.about }}</nav></div>
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>{{ T.about }}</nav></div>
 <section class="ab-hero"><div class="container">
   <h1 class="display">{{ A.title }} <span class="grad-text">{{ A.highlight }}</span></h1>
   <p class="lead" style="font-size:18px;color:var(--text-muted);max-width:65ch;margin-top:18px;line-height:1.8">{{ A.lead }}</p>

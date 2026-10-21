@@ -14,7 +14,7 @@ eleventyComputed:
 {%- set D = db[lang] -%}
 {%- set b = entry.item -%}
 <div class="container"><nav class="breadcrumb" aria-label="breadcrumb">
-  <a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>
+  <a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>
   <a href="{{ '/products/' | u(lang) }}">{{ T.products }}</a><span>›</span>{{ b.name }}
 </nav></div>
 <section class="page-head"><div class="container">

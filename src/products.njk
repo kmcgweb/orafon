@@ -12,7 +12,7 @@ eleventyComputed:
 {%- from "partials/macros.njk" import productCard, icon -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
-<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ D.site.brand_name }}</a><span>›</span>{{ T.allProducts }}</nav></div>
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>{{ T.allProducts }}</nav></div>
 <section class="page-head"><div class="container">
   <h1 class="display">{{ T.allProducts }}</h1>
   <p>{{ T.productsLead }}</p>
