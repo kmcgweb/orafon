@@ -69,6 +69,7 @@ collections:
       - { name: name, label: "ชื่อสินค้า", widget: string, i18n: true }
       - { name: brand, label: "แบรนด์", widget: relation, collection: brands, value_field: "{{slug}}", search_fields: [name], display_fields: [name] }
       - { name: category, label: "หมวดสินค้า", widget: select, default: refrigerant, options: [{ label: "สารทำความเย็น", value: refrigerant }, { label: "น้ำมันคอม", value: oil }, { label: "ผลิตภัณฑ์อื่นๆ", value: other }], required: false }
+      - { name: oil_type, label: "ชนิดน้ำมัน (เฉพาะน้ำมันคอม)", hint: "ถ้าเว้นว่าง จะอ่านจากชื่อสินค้า (PAG / POE / PVE)", widget: select, options: [{ label: "PAG — Polyalkylene Glycol", value: PAG }, { label: "POE — Polyol Ester", value: POE }, { label: "PVE — Polyvinyl Ether", value: PVE }], required: false }
       - { name: refrigerant, label: "เบอร์น้ำยา (เฉพาะสารทำความเย็น)", widget: relation, collection: refrigerants, value_field: "{{slug}}", search_fields: [number], display_fields: [number], required: false }
       - { name: tagline, label: "คำโปรยใต้ชื่อ", hint: "เช่น สารทำความเย็น HFO Blend", widget: string, required: false, i18n: true }
       - { name: tag, label: "ป้ายข้อความเพิ่มเติม", hint: "ข้อความอิสระบนการ์ด เช่น GWP ต่ำ (เว้นว่างได้) — ป้าย แนะนำ/ยอดนิยม/ขายดี/ใหม่ ให้เลือกในช่อง 'ป้ายสินค้า'", widget: string, required: false, i18n: true }

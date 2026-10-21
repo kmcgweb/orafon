@@ -44,6 +44,9 @@ function localize(raw, lang) {
 const byOrder = (a, b) =>
   (a.order ?? 999) - (b.order ?? 999) || String(a.name || a.number || a.title).localeCompare(String(b.name || b.number || b.title));
 
+// base oils for compressor oils (category "oil")
+const OIL_TYPES = { PAG: "Polyalkylene Glycol", POE: "Polyol Ester", PVE: "Polyvinyl Ether" };
+
 function buildDb() {
   const folders = {
     refrigerants: loadFolder("refrigerants"),
@@ -88,12 +91,16 @@ function buildDb() {
         const appKeys = [...new Set(apps.map((a) => a.icon).filter(Boolean))].join(" ");
         // category: refrigerant (default) | oil | other — drives the mega menu and the ?cat= filter
         const category = ["refrigerant", "oil", "other"].includes(p.category) ? p.category : "refrigerant";
+        // compressor oils are grouped by base oil (PAG / POE / PVE): the CMS field, else read from the name
+        const oilType = category === "oil" ? (OIL_TYPES[p.oil_type] ? p.oil_type : (String(p.name).match(/\b(PAG|POE|PVE)\b/) || [])[1] || "") : "";
+        // "type" used by the class filter + card line: refrigerant class (HFC…) or oil type
+        const kind = ref?.class || oilType;
         // mega menu lists products under a brand heading, so the brand prefix is dropped there ("ORAFON R-32" -> "R-32")
         const bn = String(brandObj?.name || "").replace(/®/g, "").trim();
         const menuName = bn && String(p.name).toLowerCase().startsWith(bn.toLowerCase())
           ? String(p.name).slice(bn.length).replace(/^®?\s+/, "") || p.name
           : p.name;
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName };
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind };
       })
       .sort(byOrder);
 
@@ -128,7 +135,12 @@ function buildDb() {
       catGroups: ["refrigerant", "oil", "other"].map((key) => ({
         key,
         brands: brands
-          .map((b) => ({ brand: b, products: products.filter((p) => p.category === key && p.brand === b.slug) }))
+          .map((b) => {
+            const ps = products.filter((p) => p.category === key && p.brand === b.slug);
+            // oils: one sub-list per oil type
+            const types = key === "oil" ? Object.keys(OIL_TYPES).map((t) => ({ type: t, full: OIL_TYPES[t], products: ps.filter((p) => p.oilType === t) })).filter((t) => t.products.length) : null;
+            return { brand: b, products: ps, types };
+          })
           .filter((g) => g.products.length),
       })).filter((c) => c.brands.length),
       appCounts: Object.values(products.reduce((acc, p) => {
@@ -143,6 +155,7 @@ function buildDb() {
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
       site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"), terms: one("terms"),
       classes: [...new Set(refrigerants.filter((r) => r.products.length).map((r) => r.class))],
+      oilTypes: Object.keys(OIL_TYPES).filter((t) => products.some((p) => p.oilType === t)).map((t) => ({ type: t, full: OIL_TYPES[t] })),
     };
   }
   return db;

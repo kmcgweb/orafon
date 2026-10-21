@@ -65,12 +65,18 @@
                     <span class="mg3-sub">{{ T.ownBrand if g.brand.own_brand else T.distributor }} · {{ g.products.length }} {{ T.productsN }}</span>
                     <a class="mg3-more" href="{{ ('/products/?cat=' ~ c.key ~ '&brand=' ~ g.brand.slug) | u(lang) }}">{{ T.viewAll }} →</a>
                   </div>
+                  {#- oils get one sub-list per oil type (PAG / POE / PVE); everything else is a single list -#}
+                  {%- for sec in (g.types or [{ type: "", products: g.products }]) %}
+                  {%- if sec.type %}
+                  <a class="mg3-type" href="{{ ('/products/?cat=' ~ c.key ~ '&class=' ~ sec.type) | u(lang) }}"><b>{{ sec.type }}</b><span>{{ sec.full }}</span><span class="mg-count">{{ sec.products.length }}</span></a>
+                  {%- endif %}
                   <ul class="mg-list mg3-links">
-                    {%- for p in g.products %}
+                    {%- for p in sec.products %}
                     {%- set r = p.ref %}
-                    <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% else %} · {{ T.cats[p.category] }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ ([r.class, r.safety, 'GWP ' ~ r.gwp_ar4] | join('|')) if r }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{% if r and r.number and r.number in p.menuName %}{{ (p.menuName | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.menuName }}{% endif %}</a></li>
+                    <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }} · {{ p.kind or T.cats[p.category] }}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ ([r.class, r.safety, 'GWP ' ~ r.gwp_ar4] | join('|')) if r }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{% if r and r.number and r.number in p.menuName %}{{ (p.menuName | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.menuName }}{% endif %}</a></li>
                     {%- endfor %}
                   </ul>
+                  {%- endfor %}
                 </div>
                 {%- endfor %}
               </div>
