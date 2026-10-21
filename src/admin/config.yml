@@ -138,15 +138,16 @@ collections:
           - { name: q, label: "คำถาม", widget: string }
           - { name: a, label: "คำตอบ", widget: text }
       - { name: seo_description, label: "คำอธิบายสำหรับ Google", widget: text, required: false, i18n: true }
+      - { name: eco, label: "ป้ายรักษ์โลก (ใบไม้)", hint: "อัตโนมัติ = แสดงเมื่อค่า GWP ต่ำกว่า 150 และไม่ทำลายโอโซน", widget: select, default: "", options: [{ label: "อัตโนมัติ", value: "" }, { label: "แสดงเสมอ", value: "yes" }, { label: "ไม่แสดง", value: "no" }], required: false }
       - name: labels
         label: "ป้ายสินค้า"
-        hint: "เลือกได้หลายป้าย — 'แนะนำ' จะแสดงในส่วนสินค้าแนะนำหน้าแรกด้วย"
+        hint: "เลือกได้หลายป้าย — 'แนะนำ' ใช้เลือกสินค้าที่แสดงในหน้าแรกและเมนู (ป้าย แนะนำ/ยอดนิยม ไม่แสดงบนการ์ดแล้ว)"
         widget: select
         multiple: true
         required: false
         options:
-          - { label: "แนะนำ (แสดงหน้าแรก)", value: recommended }
-          - { label: "ยอดนิยม", value: popular }
+          - { label: "แนะนำ (เลือกแสดงหน้าแรก · ไม่แสดงป้าย)", value: recommended }
+          - { label: "ยอดนิยม (ไม่แสดงป้าย)", value: popular }
           - { label: "ขายดี", value: bestseller }
           - { label: "สินค้าใหม่", value: new }
       - { name: draft, label: "ซ่อนจากเว็บไซต์ (ฉบับร่าง)", widget: boolean, default: false }

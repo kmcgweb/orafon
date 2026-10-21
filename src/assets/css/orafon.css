@@ -1256,3 +1256,7 @@ body.has-sticky .fab{bottom:90px}
 .qt .pd-qty input::-webkit-outer-spin-button,.qt .pd-qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 @media (max-width:900px){.qt{grid-template-columns:1fr;gap:24px}.qt-form{position:static}}
 @media (max-width:560px){.qt-head h1{font-size:23px}.qt-item{grid-template-columns:56px minmax(0,1fr) auto;gap:10px}.qt-img{width:56px;height:56px}.qt-item .pd-qty{grid-column:2;justify-self:start}.qt-del{grid-row:1;grid-column:3}}
+/* eco badge: leaf + green, for products with GWP < 150 and no ozone depletion */
+.prod-tag.lb-eco{display:inline-flex;align-items:center;gap:4px;background:#ECFDF3;color:#067647;border-color:#ABEFC6}
+.prod-tag.lb-eco svg{width:13px;height:13px;flex:none;stroke-width:2.2}
+.prod-media .prod-tag.lb-eco{background:rgba(236,253,243,.95)}

@@ -13,7 +13,7 @@ eleventyComputed:
   description: "{{ entry.item.seo_description or entry.item.short }}"
   ogImage: "{{ entry.item.coverImage }}"
 ---
-{%- from "partials/macros.njk" import icon, cylinder, productCard -%}
+{%- from "partials/macros.njk" import icon, cylinder, productCard, tagBadge -%}
 {%- set T = i18n[lang] -%}
 {%- set D = db[lang] -%}
 {%- set S = D.site -%}
@@ -91,7 +91,7 @@ eleventyComputed:
         <h1 class="pd-title">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</h1>
         <div class="pd-chips">
           {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span><span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% else %}<span class="pd-chip is-fill">{{ T.cats[p.category] }}</span>{% if p.oilType %}<span class="pd-chip">{{ p.oilType }}</span>{% endif %}{% endif %}
-          {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
+          {%- for l in p.tags %}{{ tagBadge(l, T) }}{% endfor %}
         </div>
         <div class="pd-iconrow">
           {%- set seenIc = [] %}

@@ -7,6 +7,16 @@ const LANGS = ["th", "en"];
 const DEFAULT_LANG = "th";
 const CONTENT = "content";
 const LABELS = ["recommended", "popular", "bestseller", "new"];
+// labels kept in the CMS but no longer shown as badges ("recommended" still picks the featured products)
+const HIDDEN_LABELS = ["recommended", "popular"];
+// eco badge (leaf): GWP (AR4) below 150 and practically no ozone depletion; the CMS "eco" field can force it on/off
+const isEco = (p, ref) => {
+  if (p.eco === "yes") return true;
+  if (p.eco === "no" || !ref) return false;
+  const gwp = parseFloat(String(ref.gwp_ar4 ?? "").replace(/[^0-9.]/g, ""));
+  const odp = parseFloat(String(ref.odp ?? "").replace(/[^0-9.]/g, ""));
+  return gwp < 150 && !(odp >= 0.001);
+};
 const CLASS_ORDER = ["HFO", "HFO Blend", "HFC", "HFC Blend", "HCFC", "HC", "Natural"];
 const md = markdownIt({ html: false, linkify: true, breaks: true });
 
@@ -106,7 +116,10 @@ function buildDb() {
         const previewChips = ref
           ? [ref.class, ref.safety, "GWP " + ref.gwp_ar4]
           : [oilType, ...(p.packages || []).map((k) => `${k.kg} ${k.unit || "kg"}`)].filter(Boolean);
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        const eco = isEco(p, ref);
+        // badges shown on cards, the product page and in the label filter
+        const tags = [...(eco ? ["eco"] : []), ...labels.filter((l) => !HIDDEN_LABELS.includes(l))];
+        return { ...p, ref, brandObj, searchText, labels, eco, tags, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 
@@ -135,7 +148,7 @@ function buildDb() {
       productMap: Object.fromEntries(products.map((p) => [p.slug, p])),
       productsAZ,
       featured: products.filter((p) => p.labels.includes("recommended")),
-      usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
+      usedLabels: ["eco", ...LABELS].filter((l) => products.some((p) => p.tags.includes(l))),
       catCounts: ["refrigerant", "oil", "other"].map((key) => ({ key, n: products.filter((p) => p.category === key).length })).filter((c) => c.n),
       // mega menu: category -> brands -> products
       catGroups: ["refrigerant", "oil", "other"].map((key) => ({
