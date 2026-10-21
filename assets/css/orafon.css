@@ -1189,3 +1189,9 @@ body.has-sticky .fab{bottom:90px}
 .dr-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 6px}
 .dr-cats a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border:1px solid var(--border-soft);border-radius:var(--r-sm);background:var(--prod-bg,#E8F2FB);font-size:13px;font-weight:600;text-align:center;color:#2B3A55}
 .dr-cats img{width:40px;height:40px;object-fit:contain}
+/* oil-type sub-headings inside the products mega menu */
+.mg3-type{display:flex;align-items:baseline;gap:8px;margin:10px 0 2px;padding:0 10px;font-size:12.5px;color:var(--muted)}
+.mg3-type b{font-size:13px;letter-spacing:.04em;color:var(--primary,#2F3192)}
+.mg3-type .mg-count{margin-left:2px}
+.mg3-type:hover b{text-decoration:underline}
+.mg3-bh + .mg3-type{margin-top:4px}
