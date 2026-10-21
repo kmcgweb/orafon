@@ -1262,3 +1262,10 @@ body.has-sticky .fab{bottom:90px}
 .prod-tag.lb-eco{display:inline-flex;align-items:center;gap:4px;background:#ECFDF3;color:#067647;border-color:#ABEFC6}
 .prod-tag.lb-eco svg{width:13px;height:13px;flex:none;stroke-width:2.2}
 .prod-media .prod-tag.lb-eco{background:rgba(236,253,243,.95)}
+/* products mega v3, other products: two columns of rows with type / pack sizes on the right */
+.mg3-rows2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px clamp(16px,2vw,30px)}
+.mg3-rows2 a{display:grid;grid-template-columns:8px minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 10px;border-radius:9px;font-size:14.5px;color:var(--text)}
+.mg3-rows2 .dot{width:8px;height:8px;border-radius:50%}
+.mg3-rows2 .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg3-rows2 small{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.mg3-rows2 a:hover,.mg3-rows2 a.previewing{background:var(--prod-bg,#E8F2FB);color:var(--primary)}
