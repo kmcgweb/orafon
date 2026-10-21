@@ -1178,8 +1178,8 @@ body.has-sticky .fab{bottom:90px}
 .mg3-mid{padding:22px 26px;min-width:0}
 .mg3-brand + .mg3-brand{margin-top:18px}
 .mg3-bh{display:flex;align-items:center;gap:10px;padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--border-soft)}
-.mg3-bh .mgb-logo{width:auto;height:28px;padding:0;background:none;border:0}
-.mg3-bh .mgb-logo img{height:26px;width:auto;max-width:120px;object-fit:contain}
+.mg3-bh .mgb-logo{width:auto;height:auto;padding:0;background:none;border:0}
+.mg3-bh .mgb-logo img{height:26px;width:auto;max-width:120px;max-height:none;object-fit:contain}
 .mg3-sub{color:var(--muted);font-size:12.5px}
 .mg3-more{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--primary,#2F3192)}
 .mg3-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px 16px}
@@ -1195,3 +1195,5 @@ body.has-sticky .fab{bottom:90px}
 .mg3-type .mg-count{margin-left:2px}
 .mg3-type:hover b{text-decoration:underline}
 .mg3-bh + .mg3-type{margin-top:4px}
+/* ORAFON's logo is taller than wide-format Solstice's: give it more height so both read the same width (~100px) */
+.mg3-bh[data-brand="orafon"] .mgb-logo img{height:40px;max-height:none}
