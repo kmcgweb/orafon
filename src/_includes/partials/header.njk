@@ -29,6 +29,7 @@
         {%- else %}<a href="{{ (pathKey or '/') | u(l) }}" hreflang="{{ l }}" lang="{{ l }}">{{ l | upper }}</a>{% endif %}
         {%- endfor %}
       </div>
+      <a class="nav-quote" href="{{ '/quote/' | u(lang) }}" aria-label="{{ T.quoteList }}">{{ icon("quote") }}<span class="nq-txt">{{ T.quoteList }}</span><span class="nq-count" data-quote-count hidden>0</span></a>
       <a class="nav-cta grad-bg" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
       <button class="nav-icon-btn m-only" type="button" data-drawer-open data-focus="drawerSearch" aria-label="{{ T.search }}">{{ icon("search") }}</button>
       <button class="burger m-only" type="button" data-drawer-open aria-controls="navDrawer" aria-expanded="false" aria-label="{{ T.menu }}"><span></span><span></span><span></span></button>

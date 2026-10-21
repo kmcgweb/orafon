@@ -1,0 +1,63 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/quote/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /quote/
+section: products
+pageScript: quote.js
+noindex: true
+eleventyComputed:
+  title: "{{ i18n[lang].quoteTitle }}"
+  description: "{{ i18n[lang].quoteLead }}"
+---
+{%- from "partials/macros.njk" import icon -%}
+{%- set T = i18n[lang] -%}
+{%- set S = db[lang].site -%}
+{#- The list itself lives in the browser (assets/js/cart.js); quote.js renders it and fills the hidden "items" field. -#}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>{{ T.quoteTitle }}</nav></div>
+
+<div class="container qt">
+  <section class="qt-list" aria-labelledby="qtTitle">
+    <div class="qt-head">
+      <h1 id="qtTitle">{{ T.quoteTitle }} <span class="qt-n" id="qtCount"></span></h1>
+      <button type="button" class="qt-clear" id="qtClear" hidden>{{ T.clearList }}</button>
+    </div>
+    <p class="qt-lead">{{ T.quoteLead }}</p>
+
+    <div class="qt-empty" id="qtEmpty" hidden>
+      <span class="qt-empty-ic">{{ icon("quote") }}</span>
+      <b>{{ T.quoteEmpty }}</b>
+      <p>{{ T.quoteEmptyText }}</p>
+      <a class="btn btn-primary" href="{{ '/products/' | u(lang) }}">{{ T.browseProducts }} →</a>
+    </div>
+
+    <ul class="qt-items" id="qtItems"
+        data-size-none="{{ T.sizeNotSet }}" data-remove="{{ T.remove }}" data-qty="{{ T.qty }}"></ul>
+    <a class="qt-more" id="qtMore" href="{{ '/products/' | u(lang) }}" hidden>+ {{ T.addMore }}</a>
+  </section>
+
+  <form class="ct-form qt-form" id="qtForm" method="post" action="/contact.php" hidden>
+    <h2>{{ T.yourDetails }}</h2>
+    <div class="form-msg err" id="formErr" hidden>{{ T.formError }}</div>
+    <input type="hidden" name="lang" value="{{ lang }}">
+    <input type="hidden" name="kind" value="quote">
+    <input type="hidden" name="ts" id="ts" value="">
+    <input type="hidden" name="product" id="qtProduct" value="">
+    <textarea name="items" id="qtItemsField" hidden></textarea>
+    <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="row2">
+      <div class="field"><label for="f-name">{{ T.fName }} <span class="req">*</span></label><input id="f-name" name="name" required maxlength="120" autocomplete="name"></div>
+      <div class="field"><label for="f-company">{{ T.fCompany }}</label><input id="f-company" name="company" maxlength="160" autocomplete="organization"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="f-phone">{{ T.fPhone }} <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" required maxlength="40" autocomplete="tel"></div>
+      <div class="field"><label for="f-email">{{ T.fEmail }}</label><input id="f-email" name="email" type="email" maxlength="160" autocomplete="email"></div>
+    </div>
+    <div class="field"><label for="f-type">{{ T.fType }}</label>
+      <select id="f-type" name="ctype">{% for o in T.fTypes %}<option>{{ o }}</option>{% endfor %}</select></div>
+    <div class="field"><label for="f-message">{{ T.fMessage }}</label><textarea id="f-message" name="message" maxlength="3000" placeholder="{{ T.quoteMsgPh }}"></textarea></div>
+    <label class="consent"><input type="checkbox" name="consent" value="1" required> <span>{{ T.fConsent }} <a href="{{ '/privacy/' | u(lang) }}" target="_blank">{{ T.privacy }}</a></span></label>
+    <button class="btn btn-primary grad-bg" type="submit">{{ icon("quote") }} {{ T.sendQuote }}</button>
+    <p class="pd-note">{{ T.quoteNote }}</p>
+  </form>
+</div>

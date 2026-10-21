@@ -39,13 +39,15 @@ eleventyComputed:
 </div>
 
 <div class="container pd" id="product" style="--c:{{ p.tankColor }}"
-     data-name="{{ p.name }}" data-line="{{ S.line_id }}" data-contact="{{ contactUrl }}" data-linemsg="{{ T.lineMsg }}">
+     data-name="{{ p.name }}" data-slug="{{ p.slug }}" data-url="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-img="{{ p.coverImage }}"
+     data-line="{{ S.line_id }}" data-contact="{{ contactUrl }}" data-linemsg="{{ T.lineMsg }}"
+     data-added="{{ T.addedToQuote }}" data-view="{{ T.viewQuoteList }}" data-quote-url="{{ '/quote/' | u(lang) }}">
 
   {#- ===== left: sticky section menu ===== -#}
   <aside class="pd-side" aria-label="{{ T.onThisPage }}">
     <div class="pd-side-top">
       <a href="#pd-top" class="pd-side-link is-top">{{ T.tabDesc }}</a>
-      <a class="pd-side-quote js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ icon("doc") }}{{ T.quoteShort }}</a>
+      <a class="pd-side-quote" href="#pd-quote">{{ icon("doc") }}{{ T.quoteShort }}</a>
     </div>
     <a href="#pd-quote" class="pd-side-link">{{ T.packages }}</a>
     {%- if r or (p.specs and p.specs.length) %}<a href="#pd-specs" class="pd-side-link" data-open>{{ T.tabSpecs }}</a>{% endif %}
@@ -117,26 +119,28 @@ eleventyComputed:
     {#- ===== quotation: pack size + quantity ===== -#}
     <section class="pd-quote" id="pd-quote">
       <h2>{{ T.selectForQuote }}</h2>
-      {%- if p.packages and p.packages.length %}
-      <div class="pd-packs" id="pkgOpts" role="radiogroup" aria-label="{{ T.packages }}">
-        {%- for k in p.packages %}
-        <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" role="radio" aria-checked="{{ 'true' if loop.first else 'false' }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
-                data-label="{{ k.name }} — {{ k.kg | kg }} {{ k.unit or "kg" }}{% if k.sku %} (SKU {{ k.sku }}){% endif %}{% if k.special %} ({{ T.specialOrder }}){% endif %}">
-          <span class="pk-radio" aria-hidden="true"></span>
-          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} {{ k.unit or "kg" }}</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}{% if k.special %}<span class="pk-special">{{ T.specialOrder }}</span>{% endif %}</span>
-        </button>
+      {#- one quantity per pack size; "add" puts every size with a quantity into the quote list (assets/js/cart.js) -#}
+      {%- set rows = p.packages if (p.packages and p.packages.length) else [{ name: "", kg: "" }] %}
+      <div class="pq-list" id="qList">
+        {%- for k in rows %}
+        {%- set label = (k.name ~ " — " ~ (k.kg | kg) ~ " " ~ (k.unit or "kg")) if k.kg !== "" else "" %}
+        <div class="pq-row" data-size="{{ label }}{% if k.special %} ({{ T.specialOrder }}){% endif %}">
+          <span class="pq-size">
+            {%- if label %}<b>{{ k.name }}</b><span class="kg">{{ k.kg | kg }} {{ k.unit or "kg" }}</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}{% if k.special %}<span class="pk-special">{{ T.specialOrder }}</span>{% endif %}
+            {%- else %}<b>{{ T.sizeNotSet }}</b><span class="meta">{{ T.askSizes }}</span>{% endif %}
+          </span>
+          <div class="pd-qty" role="group" aria-label="{{ T.qty }}{% if label %} {{ label }}{% endif %}">
+            <button type="button" data-step="-1" aria-label="−">−</button>
+            <input type="number" inputmode="numeric" min="0" max="9999" value="{{ 1 if rows.length == 1 else 0 }}" aria-label="{{ T.qty }}">
+            <button type="button" data-step="1" aria-label="+">+</button>
+          </div>
+        </div>
         {%- endfor %}
       </div>
-      {%- else %}
-      <p class="muted">{{ T.askSizes }}</p>
-      {%- endif %}
+      <p class="pq-err" id="qErr" role="alert" hidden>{{ T.pickQty }}</p>
       <div class="pd-buy">
-        <div class="pd-qty" role="group" aria-label="{{ T.qty }}">
-          <button type="button" data-qty="-1" aria-label="−">−</button>
-          <input id="qty" type="number" inputmode="numeric" min="1" max="999" value="1" aria-label="{{ T.qty }}">
-          <button type="button" data-qty="1" aria-label="+">+</button>
-        </div>
-        <a class="btn btn-primary js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ icon("doc") }} {{ T.requestQuote }}</a>
+        <button type="button" class="btn btn-primary" id="addQuote">{{ icon("quote") }} {{ T.addToQuote }}</button>
+        <a class="btn btn-ghost pq-view" href="{{ '/quote/' | u(lang) }}">{{ T.viewQuoteList }} <span class="nq-count" data-quote-count hidden>0</span></a>
         {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }} {{ T.askLine }}</a>{% endif %}
         {%- if S.phone %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ icon("phone") }} {{ S.phone_display }}</a>{% endif %}
       </div>
@@ -243,7 +247,7 @@ eleventyComputed:
 
 <div class="sticky-cta">
   {%- if S.line_id %}<a class="btn btn-line js-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">LINE</a>{% else %}<a class="btn btn-ghost" href="tel:{{ S.phone }}">{{ T.call }}</a>{% endif %}
-  <a class="btn btn-primary js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ T.requestQuote }}</a>
+  <a class="btn btn-primary" href="#pd-quote">{{ T.addToQuote }}</a>
 </div>
 
 <script type="application/ld+json">{{ {

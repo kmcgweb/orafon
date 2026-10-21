@@ -350,3 +350,16 @@ html{scroll-padding-top:130px}
 .thumb img[src*="-photo-"]{object-fit:cover;border-radius:3px}
 .thumb:has(img[src*="-photo-"]){padding:3px}
 .main-img:has(img[src*="-photo-"]) .pd-logo{width:136px;height:44px}
+
+/* quote list picker: one quantity row per pack size */
+.pq-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;max-width:640px}
+.pq-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;background:#fff;border:1px solid var(--border);border-radius:var(--r);transition:.15s}
+.pq-row.has-qty{border-color:var(--primary);background:var(--primary-soft);box-shadow:0 0 0 1px var(--primary)}
+.pq-size{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;min-width:0}
+.pq-size b{font-size:14.5px;color:var(--primary)}
+.pq-size .kg{font-family:var(--mono);font-size:14px;font-weight:600}
+.pq-size .meta{font-size:12px;color:var(--muted)}
+.pq-row .pd-qty{height:40px;flex:none}
+.pq-row .pd-qty button{width:38px}
+.pq-err{margin:-4px 0 12px;font-size:13.5px;font-weight:600;color:#B42318}
+.pq-view .nq-count{margin-left:4px}
