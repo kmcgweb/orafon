@@ -49,7 +49,7 @@ eleventyComputed:
       <a class="pd-side-quote js-quote" href="{{ contactUrl }}?product={{ p.name | urlencode }}">{{ icon("doc") }}{{ T.quoteShort }}</a>
     </div>
     <a href="#pd-quote" class="pd-side-link">{{ T.packages }}</a>
-    {%- if r %}<a href="#pd-specs" class="pd-side-link" data-open>{{ T.tabSpecs }}</a>{% endif %}
+    {%- if r or (p.specs and p.specs.length) %}<a href="#pd-specs" class="pd-side-link" data-open>{{ T.tabSpecs }}</a>{% endif %}
     <a href="#pd-docs" class="pd-side-link" data-open>{{ T.docsTitle }}</a>
     {%- if apps.length %}<a href="#pd-apps" class="pd-side-link" data-open>{{ T.applications }}</a>{% endif %}
     {%- if p.faq and p.faq.length %}<a href="#pd-faq" class="pd-side-link" data-open>{{ T.tabFaq }}</a>{% endif %}
@@ -89,7 +89,7 @@ eleventyComputed:
       <div class="pd-info">
         <h1 class="pd-title">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</h1>
         <div class="pd-chips">
-          {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span><span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}
+          {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span><span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% else %}<span class="pd-chip is-fill">{{ T.cats[p.category] }}</span>{% endif %}
           {%- for l in p.labels %}<span class="prod-tag lb-{{ l }}">{{ T.labels[l] }}</span>{% endfor %}
         </div>
         <div class="pd-iconrow">
@@ -106,6 +106,10 @@ eleventyComputed:
           <div><dt>ASHRAE</dt><dd>{{ r.safety or "—" }}</dd></div>
           {%- if r.replaces and r.replaces.length %}<div><dt>{{ T.replaces }}</dt><dd>{{ r.replaces | join(", ") }}</dd></div>{% endif %}
         </dl>
+        {%- elif p.specs and p.specs.length %}
+        <dl class="pd-specs">
+          {%- for sp in p.specs | batch(4) | first %}<div><dt>{{ sp.k }}</dt><dd>{{ sp.v }}</dd></div>{% endfor %}
+        </dl>
         {%- endif %}
         {%- if b %}<p class="pd-brand">{% if b.logo %}<img src="{{ b.logo }}" alt="{{ b.name }}" height="22">{% endif %}<span>{{ b.name }}{% if not b.own_brand %} · {{ T.distributedBy }} {{ S.brand_name }}{% endif %}</span></p>{% endif %}
       </div>
@@ -118,9 +122,9 @@ eleventyComputed:
       <div class="pd-packs" id="pkgOpts" role="radiogroup" aria-label="{{ T.packages }}">
         {%- for k in p.packages %}
         <button type="button" class="pkg-opt{% if loop.first %} active{% endif %}" role="radio" aria-checked="{{ 'true' if loop.first else 'false' }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"
-                data-label="{{ k.name }} — {{ k.kg | kg }} kg{% if k.sku %} (SKU {{ k.sku }}){% endif %}{% if k.special %} ({{ T.specialOrder }}){% endif %}">
+                data-label="{{ k.name }} — {{ k.kg | kg }} {{ k.unit or "kg" }}{% if k.sku %} (SKU {{ k.sku }}){% endif %}{% if k.special %} ({{ T.specialOrder }}){% endif %}">
           <span class="pk-radio" aria-hidden="true"></span>
-          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} kg</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}{% if k.special %}<span class="pk-special">{{ T.specialOrder }}</span>{% endif %}</span>
+          <span class="pk-txt"><span class="name">{{ k.name }}</span><span class="kg">{{ k.kg | kg }} {{ k.unit or "kg" }}</span>{% if k.sku %}<span class="meta">SKU {{ k.sku }}</span>{% endif %}{% if k.special %}<span class="pk-special">{{ T.specialOrder }}</span>{% endif %}</span>
         </button>
         {%- endfor %}
       </div>
@@ -156,13 +160,15 @@ eleventyComputed:
       </details>
       {%- endif %}
 
-      {%- if r %}
+      {%- if r or (p.specs and p.specs.length) %}
       <details id="pd-specs">
         <summary><h2>{{ T.tabSpecs }}</h2><span class="chev">{{ icon("chev") }}</span></summary>
         <div class="pd-acc-body">
           <table class="spec-table"><tbody>
             {%- if b %}<tr><th>{{ T.brand }}</th><td>{{ b.name }}</td></tr>{% endif %}
             <tr><th>{{ T.distributedBy }}</th><td>{{ S.company_name }} ({{ S.brand_name }})</td></tr>
+            <tr><th>{{ T.category }}</th><td>{{ T.cats[p.category] }}</td></tr>
+            {%- if r %}
             <tr><th>{{ T.ashrae }}</th><td>{{ r.number }}</td></tr>
             <tr><th>{{ T.refType }}</th><td>{{ r.class }}</td></tr>
             {%- if r.blend_type %}<tr><th>{{ T.blendType }}</th><td>{{ T.blend[r.blend_type] or r.blend_type }}</td></tr>{% endif %}
@@ -173,7 +179,9 @@ eleventyComputed:
             <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
             <tr><th>{{ T.boiling }}</th><td>{{ r.boiling_point or "—" }}</td></tr>
             {%- if r.replaces and r.replaces.length %}<tr><th>{{ T.replaces }}</th><td>{{ r.replaces | join(", ") }}</td></tr>{% endif %}
-            {%- for k in p.packages %}<tr><th>{{ T.packages }} · {{ k.name }}</th><td>{{ k.kg | kg }} kg{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}{% if k.special %} · {{ T.specialOrder }}{% endif %}</td></tr>{% endfor %}
+            {%- endif %}
+            {%- for sp in p.specs %}<tr><th>{{ sp.k }}</th><td>{{ sp.v }}</td></tr>{% endfor %}
+            {%- for k in p.packages %}<tr><th>{{ T.packages }} · {{ k.name }}</th><td>{{ k.kg | kg }} {{ k.unit or "kg" }}{% if k.lb %} ({{ k.lb | kg }} lb){% endif %}{% if k.sku %} · SKU {{ k.sku }}{% endif %}{% if k.special %} · {{ T.specialOrder }}{% endif %}</td></tr>{% endfor %}
           </tbody></table>
           <p class="note">{{ T.dataNote }}</p>
         </div>

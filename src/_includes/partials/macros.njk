@@ -54,7 +54,7 @@
 {#- Spec card: tank-colour media with the grade watermark, safety badge, 3-cell spec strip, pack sizes, details + quote actions -#}
 {%- set href = ("/products/" ~ p.slug ~ "/") | u(lang) -%}
 {%- set r = p.ref -%}
-<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-text="{{ p.searchText }}">
+<article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.labels | join(' ') }}" data-class="{{ r.class if r }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-cat="{{ p.category }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
     {%- if p.brandObj and p.brandObj.logo %}<span class="pc-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
     {%- if p.labels.length or p.tag %}<span class="prod-tags">
@@ -65,7 +65,7 @@
     {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "card-" ~ p.slug) }}{% endif -%}
   </a>
   <div class="prod-body">
-    <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>
+    <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% else %} · {{ T.cats[p.category] }}{% endif %}</span>
     <h3 class="prod-name"><a href="{{ href }}">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</a></h3>
     {%- if p.tagline %}<p class="pc-tag">{{ p.tagline }}</p>{% endif %}
     {%- if r %}
@@ -74,9 +74,13 @@
       <div><dt>ODP</dt><dd>{{ r.odp or "—" }}</dd></div>
       <div><dt>ASHRAE</dt><dd>{{ r.safety or "—" }}</dd></div>
     </dl>
+    {%- elif p.specs and p.specs.length %}
+    <dl class="pc-specs">
+      {%- for sp in p.specs | batch(3) | first %}<div><dt>{{ sp.k }}</dt><dd>{{ sp.v }}</dd></div>{% endfor %}
+    </dl>
     {%- endif %}
     {%- if p.packages and p.packages.length %}
-    <div class="pc-pack">{% for k in p.packages %}<span>{{ k.kg | kg }} kg</span>{% endfor %}</div>
+    <div class="pc-pack">{% for k in p.packages %}<span>{{ k.kg | kg }} {{ k.unit or "kg" }}</span>{% endfor %}</div>
     {%- endif %}
     <div class="prod-foot">
       <a class="pc-go" href="{{ href }}">{{ T.viewDetails }} <span aria-hidden="true">→</span></a>

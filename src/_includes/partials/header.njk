@@ -43,6 +43,14 @@
       <div class="mn-item" data-mega>
         <button class="mn-link{% if section == 'products' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-products">{{ T.products }}{{ icon("chev") }}</button>
         <div class="mega" id="mega-products">
+          {%- if D.catCounts.length %}
+          <div class="container mg-cats">
+            <span class="mg-title">{{ T.byCategory }}</span>
+            {%- for c in D.catCounts %}
+            <a class="mg-cat" href="{{ ('/products/?cat=' ~ c.key) | u(lang) }}"><img src="/assets/uploads/cat-{{ c.key }}.webp" alt="" width="56" height="56" loading="lazy"><b>{{ T.cats[c.key] }}</b><span class="mg-count">{{ c.n }}</span><span class="mg-arrow" aria-hidden="true">→</span></a>
+            {%- endfor %}
+          </div>
+          {%- endif %}
           <div class="container mega-grid mg-products">
             <div class="mg-col mg-brands">
               <span class="mg-title">{{ T.byBrand }}</span>
@@ -150,6 +158,13 @@
       <summary>{{ icon("box") }}{{ T.products }}<span class="chev">{{ icon("chev") }}</span></summary>
       <div class="dr-sub">
         <a href="{{ '/products/' | u(lang) }}"><b>{{ T.allProducts }}</b><span class="mg-count">{{ D.products.length }}</span></a>
+        {%- if D.catCounts.length %}
+        <span class="dr-label">{{ T.byCategory }}</span>
+        <div class="dr-cats">
+          {%- for c in D.catCounts %}<a href="{{ ('/products/?cat=' ~ c.key) | u(lang) }}"><img src="/assets/uploads/cat-{{ c.key }}.webp" alt="" width="40" height="40" loading="lazy">{{ T.cats[c.key] }}</a>{% endfor %}
+        </div>
+        <span class="dr-label">{{ T.byBrand }}</span>
+        {%- endif %}
         {%- for b in D.brands %}{% if b.products.length %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}<span class="mg-count">{{ b.products.length }}</span></a>{% endif %}{% endfor %}
         {%- if D.appCounts.length %}
         <span class="dr-label">{{ T.byApp }}</span>

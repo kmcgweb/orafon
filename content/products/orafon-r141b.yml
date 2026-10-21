@@ -2,15 +2,28 @@ th:
   id: orafon-r141b
   brand: orafon
   refrigerant: r-141b
+  category: other
   labels: []
   draft: false
-  order: 110
+  order: 710
+  cover: /assets/uploads/orafon-r141b-drum-photo-1.webp
   images: []
   documents:
     - type: TDS
       label: Technical Data Sheet (TDS)
       file: ''
-  packages: []
+  packages:
+    - name: Drum
+      kg: 30
+    - name: Drum
+      kg: 230
+    - name: Drum
+      kg: 250
+  specs:
+    - k: ขนาดวาล์ว
+      v: 5/8 นิ้ว (5 หุน)
+    - k: CAS Number
+      v: 1717-00-6
   name: ORAFON R-141b
   tagline: น้ำยาล้างระบบ / สารเป่าโฟม HCFC
   tag: ""
@@ -29,7 +42,7 @@ th:
     - title: สำหรับซ่อมบำรุงระบบเดิม
       text: อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออล
     - title: งานที่เหมาะ
-      text: ล้างระบบท่อ · สารเป่าโฟม
+      text: ล้างระบบทำความเย็น · กำจัดคราบโลหะ · ทำความสะอาดเครื่องทำความเย็น
     - title: เอกสาร TDS/SDS
       text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
   description: |-
@@ -42,7 +55,11 @@ th:
     **หมายเหตุ:** สาร HCFC อยู่ระหว่างการทยอยเลิกใช้ตามพิธีสารมอนทรีออล ปริมาณการนำเข้าถูกควบคุม เหมาะสำหรับงานซ่อมบำรุงระบบเดิม และควรวางแผนเปลี่ยนไปใช้สารทดแทนในระยะยาว
 
     สินค้าแบรนด์ ORAFON ของ บริษัท โอราโนส จำกัด พร้อมเอกสาร TDS/SDS และคำปรึกษาจากทีมงานในการเลือกสารให้เหมาะกับระบบ ติดต่อเพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา
-  applications: []
+  applications:
+    - icon: wrench
+      label: ล้างระบบทำความเย็น
+    - icon: flask
+      label: กำจัดคราบโลหะ / ทำความสะอาดเครื่องทำความเย็น
   faq:
     - q: ORAFON R-141b ใช้ทำอะไร?
       a: ล้างระบบท่อ · สารเป่าโฟม — ปัจจุบันใช้สำหรับงานซ่อมบำรุงระบบเดิมเป็นหลัก
@@ -51,7 +68,7 @@ th:
     - q: ยังใช้ R-141b ได้อยู่หรือไม่?
       a: ยังใช้ได้สำหรับซ่อมบำรุงระบบเดิม แต่อยู่ระหว่างทยอยเลิกใช้ตามพิธีสารมอนทรีออลและปริมาณนำเข้าถูกควบคุม ควรวางแผนเปลี่ยนไปใช้สารทดแทน
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
-      a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
+      a: มีขนาด 30 กก. และถัง 230, 250 กก. (วาล์ว 5/8 นิ้ว) ติดต่อทีม ORAFON เพื่อสอบถามสต็อกและขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: ORAFON R-141b สารทำความเย็น R-141b HCFC A2 GWP 725 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
 en:
   name: ORAFON R-141b
@@ -72,7 +89,7 @@ en:
     - title: For servicing existing systems
       text: Being phased out under the Montreal Protocol
     - title: Applications
-      text: System flushing · Foam blowing
+      text: System flushing · Metal residue removal · Equipment cleaning
     - title: TDS/SDS available
       text: Request them from the "Documents" tab or the ORAFON team
   description: |-
@@ -93,5 +110,15 @@ en:
     - q: Can R-141b still be used?
       a: Yes, for servicing existing systems, but it is being phased out under the Montreal Protocol and imports are controlled. Plan a move to alternatives.
     - q: Which pack sizes are available, and how do I get a price?
-      a: Contact the ORAFON team for pack sizes, stock and a quotation via the "Request a quote" button, LINE or phone.
+      a: 30 kg, plus 230 and 250 kg drums (5/8 in valve). Contact the ORAFON team for stock and a quotation via the "Request a quote" button, LINE or phone.
+  specs:
+    - k: Valve size
+      v: 5/8 in
+    - k: CAS Number
+      v: 1717-00-6
+  applications:
+    - icon: wrench
+      label: Refrigeration system flushing
+    - icon: flask
+      label: Metal residue removal / equipment cleaning
   seo_description: ORAFON R-141b R-141b HCFC refrigerant, A2, GWP 725. Distributed by ORAFON — request a quotation.

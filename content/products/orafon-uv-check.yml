@@ -1,0 +1,90 @@
+th:
+  id: orafon-uv-check
+  name: ORAFON UV CHECK
+  brand: orafon
+  category: other
+  tagline: สีตรวจสอบรอยรั่วระบบแอร์รถยนต์
+  tag: ''
+  cover: /assets/uploads/orafon-uvcheck-pack.webp
+  images:
+  - /assets/uploads/orafon-uvcheck-box.webp
+  - /assets/uploads/orafon-uvcheck-set.webp
+  - /assets/uploads/orafon-uvcheck-syringe.webp
+  - /assets/uploads/orafon-uvcheck-adapter.webp
+  - /assets/uploads/orafon-uvcheck-hose.webp
+  packages:
+  - name: หลอดสี
+    kg: 7.5
+    unit: ml
+  - name: แพ็ก
+    kg: 6
+    unit: ชิ้น
+  specs:
+  - k: ปริมาณต่อหลอด
+    v: 7.5 มล.
+  - k: ส่วนผสม
+    v: สารฟลูออเรสเซนต์ (Fluorescent)
+  - k: อุปกรณ์ในชุด
+    v: Adapter (Low Pressure Port), Flexible Hose, สติกเกอร์ 6 ชิ้น
+  short: ORAFON UV CHECK — สีตรวจสอบรอยรั่วระบบแอร์รถยนต์ ผสมสารฟลูออเรสเซนต์ ช่วยหารอยรั่วในระบบปรับอากาศรถยนต์ทุกสัญชาติได้ง่าย
+  highlights:
+  - title: หารอยรั่วง่าย
+    text: ส่วนผสมฟลูออเรสเซนต์ มองเห็นจุดรั่วชัดเมื่อส่องด้วยไฟ UV
+  - title: ใช้ได้ทุกรุ่น
+    text: ใช้กับระบบปรับอากาศรถยนต์ทุกสัญชาติ
+  - title: ครบในชุด
+    text: มี Adapter ต่อ Port Low Pressure, สาย Flexible Hose และสติกเกอร์ 6 ชิ้น
+  description: |-
+    ORAFON UV CHECK ผลิตภัณฑ์สีตรวจสอบรอยรั่วระบบแอร์รถยนต์ โดดเด่นด้วยส่วนผสมของสารฟลูออเรสเซนต์ (Fluorescent) ช่วยให้การตรวจหารอยรั่วในระบบปรับอากาศรถยนต์ทุกสัญชาติเป็นเรื่องง่าย
+
+    **อุปกรณ์ในชุด**
+
+    - Adapter สำหรับต่อ Port Low Pressure
+    - สาย Flexible Hose สำหรับเชื่อมต่อ Adapter กับหลอดสี
+    - สติกเกอร์ 6 ชิ้น สำหรับติดแสดงว่ารถได้ตรวจสอบรอยรั่วด้วยการฉีดสีเข้าไปในระบบแล้ว
+  applications:
+  - icon: car
+    label: แอร์รถยนต์
+  - icon: wrench
+    label: งานตรวจหารอยรั่ว
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON UV CHECK สีตรวจสอบรอยรั่วระบบแอร์รถยนต์ ผสมฟลูออเรสเซนต์ หลอด 7.5 มล. แพ็ก 6 ชิ้น พร้อม Adapter และสาย Flexible Hose
+  labels: []
+  draft: false
+  order: 700
+en:
+  name: ORAFON UV CHECK
+  tagline: UV leak-detection dye for automotive A/C
+  tag: ''
+  specs:
+  - k: Volume per tube
+    v: 7.5 ml
+  - k: Formula
+    v: Fluorescent dye
+  - k: In the kit
+    v: Adapter (low-pressure port), flexible hose, 6 stickers
+  short: ORAFON UV CHECK is a fluorescent leak-detection dye for automotive air-conditioning that makes finding leaks easy on vehicles of every make.
+  highlights:
+  - title: Easy leak finding
+    text: Fluorescent dye shows leaks clearly under UV light
+  - title: Fits all makes
+    text: For automotive A/C systems of every make
+  - title: Complete kit
+    text: Low-pressure port adapter, flexible hose and 6 stickers
+  description: |-
+    ORAFON UV CHECK is a leak-detection dye for automotive air-conditioning. Its fluorescent formula makes it easy to find leaks in the A/C systems of vehicles of every make.
+
+    **In the kit**
+
+    - Adapter for the low-pressure port
+    - Flexible hose connecting the adapter to the dye tube
+    - 6 stickers to mark vehicles whose system has been dyed for leak checking
+  applications:
+  - icon: car
+    label: Automotive A/C
+  - icon: wrench
+    label: Leak detection
+  seo_description: ORAFON UV CHECK fluorescent leak-detection dye for automotive A/C, 7.5 ml tubes, pack of 6, with adapter and flexible hose.

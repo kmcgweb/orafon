@@ -1,0 +1,78 @@
+th:
+  id: orafon-pag100a
+  name: ORAFON PREMIUM PAG 100 A
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์
+  tag: ''
+  cover: /assets/uploads/orafon-pag100a-1l.webp
+  images:
+  - /assets/uploads/orafon-pag100a-250ml.webp
+  packages:
+  - name: กระป๋อง
+    kg: 250
+    unit: ml
+  - name: กระป๋อง
+    kg: 1
+    unit: L
+  specs:
+  - k: ความหนืดที่ 40 °C
+    v: 100 cSt
+  - k: ความหนืดที่ 100 °C
+    v: 19 cSt
+  - k: VI
+    v: '212'
+  - k: Capping efficiency
+    v: 95%
+  short: ORAFON PREMIUM PAG 100 A — น้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับระบบแอร์รถยนต์ หล่อลื่นและป้องกันการสึกหรอได้ดีเยี่ยม ต้านทานการดูดความชื้นได้ดีกว่ามาตรฐาน 2 เท่า
+  highlights:
+  - title: สูตร PAG
+    text: มีส่วนผสมพิเศษจากโพลีแอลคีลีนไกลคอล (Polyalkylene Glycol)
+  - title: หล่อลื่นดีเยี่ยม
+    text: มีประสิทธิภาพในการหล่อลื่นและป้องกันการสึกหรอได้อย่างดีเยี่ยม
+  - title: ต้านความชื้น
+    text: ต้านทานการดูดกลืนความชื้นได้ดีกว่ามาตรฐาน 2 เท่า
+  description: |-
+    ORAFON PREMIUM PAG 100 A เป็นน้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับระบบปรับอากาศรถยนต์ มีส่วนผสมพิเศษจากโพลีแอลคีลีนไกลคอล ให้ประสิทธิภาพในการหล่อลื่นและป้องกันการสึกหรอได้อย่างดีเยี่ยม และต้านทานการดูดกลืนความชื้นได้ดีกว่ามาตรฐาน 2 เท่า
+
+    ความหนืดที่ 40 °C 100 cSt, ที่ 100 °C 19 cSt, VI 212, Capping efficiency 95% มีขนาดบรรจุ 250 มล. และ 1 ลิตร
+  applications:
+  - icon: car
+    label: แอร์รถยนต์
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON PREMIUM PAG 100 A น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ ขนาด 250 มล. และ 1 ลิตร จาก ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 601
+en:
+  name: ORAFON PREMIUM PAG 100 A
+  tagline: PAG compressor oil for automotive A/C
+  tag: ''
+  specs:
+  - k: Viscosity at 40 °C
+    v: 100 cSt
+  - k: Viscosity at 100 °C
+    v: 19 cSt
+  - k: VI
+    v: '212'
+  - k: Capping efficiency
+    v: 95%
+  short: ORAFON PREMIUM PAG 100 A is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning, with excellent lubrication and wear protection and twice the standard resistance to moisture absorption.
+  highlights:
+  - title: PAG formula
+    text: Special polyalkylene glycol blend
+  - title: Excellent lubrication
+    text: Outstanding lubrication and wear protection
+  - title: Moisture resistant
+    text: Resists moisture absorption twice as well as the standard
+  description: |-
+    ORAFON PREMIUM PAG 100 A is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning systems. Its special polyalkylene glycol blend gives excellent lubrication and wear protection, and it resists moisture absorption twice as well as the standard.
+
+    Viscosity 100 cSt at 40 °C and 19 cSt at 100 °C, VI 212, capping efficiency 95%. Available in 250 ml and 1 L cans.
+  applications:
+  - icon: car
+    label: Automotive A/C
+  seo_description: ORAFON PREMIUM PAG 100 A PAG compressor oil for automotive A/C, 250 ml and 1 L, from ORAFON — request a quotation.

@@ -1,0 +1,56 @@
+th:
+  id: orafon-poe68
+  name: ORAFON PREMIUM POE 68
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศ
+  tag: ''
+  cover: /assets/uploads/orafon-poe68-1l.webp
+  images: []
+  packages:
+  - name: กระป๋อง
+    kg: 1
+    unit: L
+  specs: []
+  short: ORAFON PREMIUM POE 68 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ใช้ร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง
+  highlights:
+  - title: เสถียรภาพสูง
+    text: มีเสถียรภาพทางเคมีและความร้อนสูง
+  - title: ป้องกันการสึกหรอ
+    text: ป้องกันการสึกหรอได้อย่างดีเยี่ยม
+  - title: สูตรเฉพาะ
+    text: คิดค้นสูตรเฉพาะ เพื่อการหล่อลื่นที่ดีขึ้น
+  description: ORAFON PREMIUM POE 68 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ทำงานร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง ป้องกันการสึกหรอได้อย่างดีเยี่ยม และคิดค้นสูตรเฉพาะเพื่อการหล่อลื่นที่ดีขึ้น ขนาดบรรจุ 1 ลิตร
+  applications:
+  - icon: ac
+    label: เครื่องปรับอากาศ
+  - icon: snow
+    label: ระบบที่ใช้สารทำความเย็น GWP ต่ำ
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON PREMIUM POE 68 น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศและสารทำความเย็น GWP ต่ำ ขนาด 1 ลิตร จาก ORAFON
+  labels: []
+  draft: false
+  order: 603
+en:
+  name: ORAFON PREMIUM POE 68
+  tagline: POE compressor oil for air-conditioning
+  tag: ''
+  specs: []
+  short: ORAFON PREMIUM POE 68 is a POE (polyol ester) compressor oil for air-conditioners and systems running low-GWP refrigerants, with high chemical and thermal stability.
+  highlights:
+  - title: High stability
+    text: High chemical and thermal stability
+  - title: Wear protection
+    text: Excellent protection against wear
+  - title: Dedicated formula
+    text: Specially formulated for better lubrication
+  description: ORAFON PREMIUM POE 68 is a POE (polyol ester) compressor oil for air-conditioners and systems that run on low-GWP refrigerants. It offers high chemical and thermal stability, excellent wear protection and a dedicated formula for better lubrication. Available in 1 L cans.
+  applications:
+  - icon: ac
+    label: Air-conditioners
+  - icon: snow
+    label: Low-GWP refrigerant systems
+  seo_description: ORAFON PREMIUM POE 68 POE compressor oil for air-conditioning and low-GWP refrigerants, 1 L, from ORAFON.
