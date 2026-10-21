@@ -1160,3 +1160,17 @@ body.has-sticky .fab{bottom:90px}
 .mgf-art img[src*="-photo-"]{object-fit:cover;border-radius:var(--r);filter:none}
 .prod-media:has(img[src*="-photo-"]) .pc-logo,.main-img:has(img[src*="-photo-"]) .pd-logo{background-color:rgba(255,255,255,.92);background-origin:content-box;border-radius:4px;padding:5px 8px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
 .prod-media:has(img[src*="-photo-"]) .pc-logo{width:92px;height:32px}
+
+/* ===== product categories: strip on top of the products mega menu + drawer ===== */
+.mg-cats{display:grid;grid-template-columns:auto repeat(3,1fr);align-items:center;gap:14px;padding:20px 24px 0}
+.mg-cats .mg-title{margin:0 8px 0 0;white-space:nowrap}
+.mg-cat{display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--border-soft);border-radius:var(--r);background:var(--prod-bg,#E8F2FB);color:var(--text);transition:.2s}
+.mg-cat img{width:48px;height:48px;object-fit:contain;flex:0 0 auto}
+.mg-cat b{flex:1;font-size:15px}
+.mg-cat .mg-arrow{color:var(--primary,#2F3192);opacity:0;transform:translateX(-4px);transition:.2s}
+.mg-cat:hover{border-color:var(--primary,#2F3192);box-shadow:0 6px 18px rgba(47,49,146,.12)}
+.mg-cat:hover .mg-arrow{opacity:1;transform:none}
+.mg-cats + .mega-grid{padding-top:22px}
+.dr-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 6px}
+.dr-cats a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border:1px solid var(--border-soft);border-radius:var(--r-sm);background:var(--prod-bg,#E8F2FB);font-size:13px;font-weight:600;text-align:center;color:#2B3A55}
+.dr-cats img{width:40px;height:40px;object-fit:contain}
