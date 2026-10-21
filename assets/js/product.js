@@ -76,50 +76,48 @@
     });
   });
 
-  // pack size picker -> quote / LINE links carry the chosen size
-  var name = root.getAttribute("data-name");
-  var lineId = root.getAttribute("data-line");
-  var contact = root.getAttribute("data-contact");
-  var lineMsg = root.getAttribute("data-linemsg");
-
-  var qty = document.getElementById("qty");
-  function qtyVal() { var n = parseInt(qty && qty.value, 10); return n > 0 ? Math.min(n, 999) : 1; }
-  function currentSize() {
-    var a = document.querySelector(".pkg-opt.active");
-    var s = a ? a.getAttribute("data-label") : "";
-    var n = qtyVal();
-    return n > 1 ? (s ? s + " × " + n : "× " + n) : s;
+  // quote list: a quantity per pack size -> "add" puts them in the shared list (cart.js); LINE message carries the same picks
+  var d = root.dataset;
+  var lineId = d.line, lineMsg = d.linemsg;
+  var rows = Array.prototype.slice.call(document.querySelectorAll(".pq-row"));
+  var err = document.getElementById("qErr");
+  function qtyOf(input) { var n = parseInt(input.value, 10); return n > 0 ? Math.min(n, 9999) : 0; }
+  function picks() {
+    return rows.map(function (r) { return { size: r.getAttribute("data-size"), qty: qtyOf(r.querySelector("input")) }; })
+      .filter(function (x) { return x.qty > 0; });
   }
-  function updateLinks() {
-    var size = currentSize();
-    var qs = "?product=" + encodeURIComponent(name) + (size ? "&size=" + encodeURIComponent(size) : "");
-    document.querySelectorAll(".js-quote").forEach(function (a) { a.href = contact + qs; });
-    if (lineId) {
-      var text = lineMsg + " " + name + (size ? " — " + size : "");
-      document.querySelectorAll(".js-line").forEach(function (a) {
-        a.href = "https://line.me/R/oaMessage/" + encodeURIComponent(lineId) + "/?" + encodeURIComponent(text);
-      });
-    }
-  }
-  document.querySelectorAll(".pkg-opt").forEach(function (o) {
-    o.addEventListener("click", function () {
-      document.querySelectorAll(".pkg-opt").forEach(function (x) {
-        x.classList.toggle("active", x === o);
-        x.setAttribute("aria-pressed", x === o);
-        x.setAttribute("aria-checked", x === o);
-      });
-      updateLinks();
+  function updateLine() {
+    if (!lineId) return;
+    var what = picks().map(function (x) { return (x.size ? x.size + " " : "") + "× " + x.qty; }).join(", ");
+    var text = lineMsg + " " + d.name + (what ? " — " + what : "");
+    document.querySelectorAll(".js-line").forEach(function (a) {
+      a.href = "https://line.me/R/oaMessage/" + encodeURIComponent(lineId) + "/?" + encodeURIComponent(text);
     });
+  }
+  rows.forEach(function (r) {
+    var input = r.querySelector("input");
+    function sync() { r.classList.toggle("has-qty", qtyOf(input) > 0); if (err) err.hidden = true; updateLine(); }
+    r.querySelectorAll("[data-step]").forEach(function (b) {
+      b.addEventListener("click", function () { input.value = Math.max(0, qtyOf(input) + parseInt(b.getAttribute("data-step"), 10)); sync(); });
+    });
+    input.addEventListener("input", sync);
+    input.addEventListener("blur", function () { input.value = qtyOf(input); });
+    sync();
   });
-  // quantity stepper
-  if (qty) {
-    document.querySelectorAll("[data-qty]").forEach(function (b) {
-      b.addEventListener("click", function () { qty.value = Math.max(1, qtyVal() + parseInt(b.getAttribute("data-qty"), 10)); updateLinks(); });
+  var addBtn = document.getElementById("addQuote");
+  if (addBtn && window.QuoteCart) {
+    addBtn.addEventListener("click", function () {
+      var list = picks();
+      if (!list.length) { if (err) err.hidden = false; return; }
+      QuoteCart.add(list.map(function (x) { return { slug: d.slug, name: d.name, url: d.url, img: d.img, size: x.size, qty: x.qty }; }));
+      var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+      QuoteCart.toast('<span>' + esc(d.added) + ': <b>' + esc(d.name) + '</b></span><a href="' + esc(d.quoteUrl) + '">' + esc(d.view) + ' →</a>');
+      // reset the pickers (a single size keeps 1)
+      rows.forEach(function (r) { var i = r.querySelector("input"); i.value = rows.length === 1 ? 1 : 0; r.classList.toggle("has-qty", rows.length === 1); });
+      updateLine();
     });
-    qty.addEventListener("input", updateLinks);
-    qty.addEventListener("blur", function () { qty.value = qtyVal(); });
   }
-  updateLinks();
+  updateLine();
 
   // side menu: a link to a collapsed section opens it; highlight the section in view
   var sideLinks = Array.prototype.slice.call(document.querySelectorAll(".pd-side-link"));

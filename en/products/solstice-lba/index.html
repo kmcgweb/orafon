@@ -39,6 +39,7 @@
     <div class="nav-actions">
       <div class="lang-switch" aria-label="Language"><a href="/products/solstice-lba/" hreflang="th" lang="th">TH</a><span aria-current="true">EN</span>
       </div>
+      <a class="nav-quote" href="/en/quote/" aria-label="Quote list"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/></svg><span class="nq-txt">Quote list</span><span class="nq-count" data-quote-count hidden>0</span></a>
       <a class="nav-cta grad-bg" href="/en/contact/">Request a quote</a>
       <button class="nav-icon-btn m-only" type="button" data-drawer-open data-focus="drawerSearch" aria-label="Search"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
       <button class="burger m-only" type="button" data-drawer-open aria-controls="navDrawer" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -287,10 +288,12 @@
 </div>
 
 <div class="container pd" id="product" style="--c:#16A34A"
-     data-name="Solstice® LBA (HFO-1233zd(E))" data-line="@orafon" data-contact="/en/contact/" data-linemsg="Hello, I&#39;d like to ask about"><aside class="pd-side" aria-label="On this page">
+     data-name="Solstice® LBA (HFO-1233zd(E))" data-slug="solstice-lba" data-url="/en/products/solstice-lba/" data-img="/assets/uploads/solstice-lba-dac.svg"
+     data-line="@orafon" data-contact="/en/contact/" data-linemsg="Hello, I&#39;d like to ask about"
+     data-added="Added to your quote list" data-view="View quote list" data-quote-url="/en/quote/"><aside class="pd-side" aria-label="On this page">
     <div class="pd-side-top">
       <a href="#pd-top" class="pd-side-link is-top">Description</a>
-      <a class="pd-side-quote js-quote" href="/en/contact/?product=Solstice%C2%AE%20LBA%20(HFO-1233zd(E))"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Get a quote</a>
+      <a class="pd-side-quote" href="#pd-quote"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Get a quote</a>
     </div>
     <a href="#pd-quote" class="pd-side-link">Pack sizes</a><a href="#pd-specs" class="pd-side-link" data-open>Specifications</a>
     <a href="#pd-docs" class="pd-side-link" data-open>Technical documents</a><a href="#pd-apps" class="pd-side-link" data-open>Applications</a><a href="#pd-faq" class="pd-side-link" data-open>FAQ</a><a href="#pd-related" class="pd-side-link">Other products you may be interested in</a>
@@ -320,20 +323,21 @@
       </div>
     </section><section class="pd-quote" id="pd-quote">
       <h2>Select your pack size for a quotation</h2>
-      <div class="pd-packs" id="pkgOpts" role="radiogroup" aria-label="Pack sizes">
-        <button type="button" class="pkg-opt active" role="radio" aria-checked="true" aria-pressed="true"
-                data-label="ISO Tank — 15,000 kg (Special order)">
-          <span class="pk-radio" aria-hidden="true"></span>
-          <span class="pk-txt"><span class="name">ISO Tank</span><span class="kg">15,000 kg</span><span class="pk-special">Special order</span></span>
-        </button>
-      </div>
-      <div class="pd-buy">
-        <div class="pd-qty" role="group" aria-label="Quantity">
-          <button type="button" data-qty="-1" aria-label="−">−</button>
-          <input id="qty" type="number" inputmode="numeric" min="1" max="999" value="1" aria-label="Quantity">
-          <button type="button" data-qty="1" aria-label="+">+</button>
+      <div class="pq-list" id="qList">
+        <div class="pq-row" data-size="ISO Tank — 15,000 kg (Special order)">
+          <span class="pq-size"><b>ISO Tank</b><span class="kg">15,000 kg</span><span class="pk-special">Special order</span>
+          </span>
+          <div class="pd-qty" role="group" aria-label="Quantity ISO Tank — 15,000 kg">
+            <button type="button" data-step="-1" aria-label="−">−</button>
+            <input type="number" inputmode="numeric" min="0" max="9999" value="1" aria-label="Quantity">
+            <button type="button" data-step="1" aria-label="+">+</button>
+          </div>
         </div>
-        <a class="btn btn-primary js-quote" href="/en/contact/?product=Solstice%C2%AE%20LBA%20(HFO-1233zd(E))"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg> Request a quote</a><a class="btn btn-line js-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg> Ask on LINE</a><a class="btn btn-ghost" href="tel:1263"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> 1263</a>
+      </div>
+      <p class="pq-err" id="qErr" role="alert" hidden>Set a quantity for at least one size first</p>
+      <div class="pd-buy">
+        <button type="button" class="btn btn-primary" id="addQuote"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h6M9 18h3"/></svg> Add to quote list</button>
+        <a class="btn btn-ghost pq-view" href="/en/quote/">View quote list <span class="nq-count" data-quote-count hidden>0</span></a><a class="btn btn-line js-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg> Ask on LINE</a><a class="btn btn-ghost" href="tel:1263"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> 1263</a>
       </div>
       <p class="pd-note">Prices are not shown online. Contact the ORAFON team for a quotation and stock check.</p>
     </section><div class="pd-acc">
@@ -401,7 +405,7 @@
     <div class="pc-pack"><span>5 kg</span></div>
     <div class="prod-foot">
       <a class="pc-go" href="/en/products/orafon-r1234yf/">View details <span aria-hidden="true">→</span></a>
-      <a class="pc-quote" href="/en/contact/?product=ORAFON%20R-1234yf">Get a quote</a>
+      <a class="pc-quote" href="/en/products/orafon-r1234yf/#pd-quote">Get a quote</a>
     </div>
   </div>
 </article><article class="prod-card" style="--c:#4F46E5" data-labels="recommended" data-class="HFO Blend" data-brand="solstice" data-ref="r-448a" data-app="fridge factory box snow store" data-cat="refrigerant" data-text="solstice® n40 (r-448a) hfo blend refrigerant r-448a hfo blend solstice® 10637999">
@@ -418,7 +422,7 @@
     <div class="pc-pack"><span>11.3 kg</span><span>43 kg</span></div>
     <div class="prod-foot">
       <a class="pc-go" href="/en/products/solstice-n40/">View details <span aria-hidden="true">→</span></a>
-      <a class="pc-quote" href="/en/contact/?product=Solstice%C2%AE%20N40%20(R-448A)">Get a quote</a>
+      <a class="pc-quote" href="/en/products/solstice-n40/#pd-quote">Get a quote</a>
     </div>
   </div>
 </article><article class="prod-card" style="--c:#4338CA" data-labels="recommended" data-class="HFO Blend" data-brand="solstice" data-ref="r-449a" data-app="store snow fridge" data-cat="refrigerant" data-text="solstice® 449a (r-449a) hfo blend refrigerant r-449a hfo blend solstice®">
@@ -435,7 +439,7 @@
     <div class="pc-pack"><span>11.3 kg</span></div>
     <div class="prod-foot">
       <a class="pc-go" href="/en/products/solstice-r449a/">View details <span aria-hidden="true">→</span></a>
-      <a class="pc-quote" href="/en/contact/?product=Solstice%C2%AE%20449A%20(R-449A)">Get a quote</a>
+      <a class="pc-quote" href="/en/products/solstice-r449a/#pd-quote">Get a quote</a>
     </div>
   </div>
 </article><article class="prod-card" style="--c:#0369A1" data-labels="" data-class="HFO Blend" data-brand="solstice" data-ref="r-452a" data-app="truck box snow" data-cat="refrigerant" data-text="solstice® 452a (r-452a) hfo blend refrigerant r-452a hfo blend solstice®">
@@ -451,7 +455,7 @@
     <div class="pc-pack"><span>11.3 kg</span></div>
     <div class="prod-foot">
       <a class="pc-go" href="/en/products/solstice-r452a/">View details <span aria-hidden="true">→</span></a>
-      <a class="pc-quote" href="/en/contact/?product=Solstice%C2%AE%20452A%20(R-452A)">Get a quote</a>
+      <a class="pc-quote" href="/en/products/solstice-r452a/#pd-quote">Get a quote</a>
     </div>
   </div>
 </article></div>
@@ -464,7 +468,7 @@
 </section>
 
 <div class="sticky-cta"><a class="btn btn-line js-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener">LINE</a>
-  <a class="btn btn-primary js-quote" href="/en/contact/?product=Solstice%C2%AE%20LBA%20(HFO-1233zd(E))">Request a quote</a>
+  <a class="btn btn-primary" href="#pd-quote">Add to quote list</a>
 </div>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Solstice® LBA (HFO-1233zd(E))","description":"Solstice® LBA (HFO-1233zd(E)) is a single-component, non-flammable (A1) HCFO-1233zd(E) with GWP around 1 and near-zero ODP. Liquid at room temperature; used as a liquid blowing agent for insulation foam and as a refrigerant in low-pressure chillers.","brand":{"@type":"Brand","name":"Solstice®"},"category":"Refrigerant","image":"https://orafon.co.th/assets/uploads/solstice-lba-dac.svg"}</script>
@@ -531,6 +535,7 @@
 <div class="fab">
   <button class="fab-top" type="button" id="toTop" aria-label="Back to top" hidden><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><a class="fab-phone" href="tel:1263" aria-label="Call 1263"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a><a class="fab-line" href="https://line.me/R/ti/p/%40orafon" target="_blank" rel="noopener" aria-label="LINE @orafon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 20l1.1-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></a>
 </div>
+<script src="/assets/js/cart.js" defer></script>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/product.js" defer></script>
 </body>

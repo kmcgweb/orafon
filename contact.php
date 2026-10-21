@@ -10,11 +10,14 @@ const MAX_PER_HOUR = 5;
 
 $lang = (isset($_POST['lang']) && $_POST['lang'] === 'en') ? 'en' : 'th';
 $base = $lang === 'en' ? '/en' : '';
+// "quote" = sent from the quote list page (/quote/) with an item list; errors go back there
+$isQuote = isset($_POST['kind']) && $_POST['kind'] === 'quote';
+$back = $isQuote ? '/quote/' : '/contact/';
 
 function go($url) { header('Location: ' . $url, true, 303); exit; }
-function done($base, $ok) { go($base . ($ok ? '/thanks/' : '/contact/?error=1')); }
+function done($base, $ok) { global $back; go($base . ($ok ? '/thanks/' : $back . '?error=1')); }
 
-if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') go($base . '/contact/');
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') go($base . $back);
 
 // Honeypot filled or submitted too fast: pretend success, send nothing.
 if (!empty($_POST['website'])) done($base, true);
@@ -35,9 +38,11 @@ $email   = oneLine(field('email', 160));
 $ctype   = oneLine(field('ctype', 80));
 $product = oneLine(field('product', 200));
 $message = field('message', 3000);
+$items   = $isQuote ? trim(field('items', 6000)) : '';
 $consent = !empty($_POST['consent']);
 
 if ($name === '' || $phone === '' || !$consent) done($base, false);
+if ($isQuote && $items === '') done($base, false);
 if (!preg_match('/^[0-9+\-\s().]{6,40}$/', $phone)) done($base, false);
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) done($base, false);
 
@@ -58,8 +63,11 @@ if (count($hits) >= MAX_PER_HOUR) done($base, false);
 $hits[] = $now;
 @file_put_contents($file, implode(',', $hits), LOCK_EX);
 
-$subject = 'ORAFON Website: ' . ($product !== '' ? $product : $name);
-$body = "มีการส่งแบบฟอร์มจากเว็บไซต์ / New website enquiry\n"
+$itemCount = $items === '' ? 0 : count(preg_split('/\r\n|\r|\n/', $items));
+$subject = $isQuote
+    ? 'ORAFON ขอใบเสนอราคา / Quote request: ' . ($company !== '' ? $company : $name) . " ($itemCount)"
+    : 'ORAFON Website: ' . ($product !== '' ? $product : $name);
+$body = ($isQuote ? "คำขอใบเสนอราคาจากเว็บไซต์ / Website quote request\n" : "มีการส่งแบบฟอร์มจากเว็บไซต์ / New website enquiry\n")
       . "----------------------------------------\n"
       . "Name:     $name\n"
       . "Company:  $company\n"
@@ -69,6 +77,7 @@ $body = "มีการส่งแบบฟอร์มจากเว็บ�
       . "Product:  $product\n"
       . "Language: $lang\n"
       . "----------------------------------------\n"
+      . ($isQuote ? "รายการสินค้า / Items ($itemCount):\n" . $items . "\n----------------------------------------\n" : '')
       . $message . "\n\n"
       . "PDPA consent: yes\n"
       . 'Sent: ' . date('Y-m-d H:i:s') . ' · IP: ' . $ip . "\n";
