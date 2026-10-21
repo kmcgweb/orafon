@@ -7,7 +7,7 @@ th:
   refrigerant: r-455a
   tagline: สารทำความเย็น HFO Blend
   tag: GWP ต่ำมาก
-  cover: ''
+  cover: /assets/uploads/455A.webp
   tank_color: ''
   packages:
     - name: DAC
