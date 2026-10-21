@@ -7,7 +7,13 @@ th:
   tag: ''
   cover: /assets/uploads/orafon-pve32-can.svg
   images: []
-  packages: []
+  packages:
+  - name: กระป๋อง
+    kg: 1
+    unit: L
+  - name: แกลลอน
+    kg: 5
+    unit: L
   specs:
   - k: ชนิดน้ำมัน
     v: PVE (Polyvinyl Ether)
@@ -20,11 +26,11 @@ th:
   - title: เกรด 32
     text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
   - title: ปรึกษาทีมงาน
-    text: สอบถามขนาดบรรจุและเอกสารทางเทคนิคได้ที่ทีม ORAFON
+    text: ขนาดบรรจุ 1 ลิตร และ 5 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
   description: |-
     ORAFON PVE 32 เป็นน้ำมันคอมเพรสเซอร์ชนิด PVE (Polyvinyl Ether) สำหรับคอมเพรสเซอร์เครื่องปรับอากาศที่ใช้สารทำความเย็น HFC เกรดความหนืด 32
 
-    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1 ลิตร และ 5 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
   - icon: ac
     label: เครื่องปรับอากาศ
@@ -54,11 +60,11 @@ en:
   - title: Grade 32
     text: Choose the viscosity grade specified by the compressor maker
   - title: Ask our team
-    text: Contact ORAFON for pack sizes and technical documents
+    text: 1 L and 5 L packs; contact ORAFON for technical documents
   description: |-
     ORAFON PVE 32 is a PVE (polyvinyl ether) compressor oil for air-conditioning compressors running HFC refrigerants, viscosity grade 32.
 
-    Always use the oil type and grade specified by the compressor manufacturer. Contact the ORAFON team for pack sizes, stock, technical data and a quotation.
+    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L and 5 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
   - icon: ac
     label: Air-conditioners
