@@ -37,57 +37,44 @@
 
   {#- ===== desktop mega menu ===== -#}
   {%- set onRetrofit = pathKey == '/retrofit/' -%}
-  {%- set pickList = D.featured if D.featured.length else D.products -%}
   <nav class="mainnav" aria-label="{{ T.menu }}">
     <div class="container mn-row">
       <div class="mn-item" data-mega>
         <button class="mn-link{% if section == 'products' %} active{% endif %}" type="button" aria-expanded="false" aria-controls="mega-products">{{ T.products }}{{ icon("chev") }}</button>
         <div class="mega" id="mega-products">
-          {%- if D.catCounts.length %}
-          <div class="container mg-cats">
-            <span class="mg-title">{{ T.byCategory }}</span>
-            {%- for c in D.catCounts %}
-            <a class="mg-cat" href="{{ ('/products/?cat=' ~ c.key) | u(lang) }}"><img src="/assets/uploads/cat-{{ c.key }}.webp" alt="" width="56" height="56" loading="lazy"><b>{{ T.cats[c.key] }}</b><span class="mg-count">{{ c.n }}</span><span class="mg-arrow" aria-hidden="true">→</span></a>
-            {%- endfor %}
-          </div>
-          {%- endif %}
-          <div class="container mega-grid mg-products">
-            <div class="mg-col mg-brands">
-              <span class="mg-title">{{ T.byBrand }}</span>
-              {%- for b in D.brands %}{% if b.products.length %}
-              <a class="mg-brand" href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">
-                <span class="mgb-logo">{% if b.logo %}<img src="{{ b.logo }}" alt="" loading="lazy">{% else %}{{ b.name | first }}{% endif %}</span>
-                <span class="mgb-txt"><b>{{ b.name }}</b><span>{{ T.ownBrand if b.own_brand else T.distributor }} · {{ b.products.length }} {{ T.productsN }}</span></span>
+          {#- left: categories (hover switches the middle panel) · middle: that category's products by brand · right: preview of the hovered product -#}
+          <div class="container mega-grid mg3">
+            <div class="mg3-cats">
+              <span class="mg-title">{{ T.byCategory }}</span>
+              {%- for c in D.catGroups %}
+              <a class="mg3-cat{% if loop.first %} is-on{% endif %}" href="{{ ('/products/?cat=' ~ c.key) | u(lang) }}" data-cat-tab="{{ c.key }}">
+                <img src="/assets/uploads/cat-{{ c.key }}.webp" alt="" width="46" height="46" loading="lazy">
+                <span><b>{{ T.cats[c.key] }}</b><small>{% for cc in D.catCounts %}{% if cc.key == c.key %}{{ cc.n }}{% endif %}{% endfor %} {{ T.productsN }}</small></span>
+                <span class="mg-arrow" aria-hidden="true">→</span>
               </a>
-              {%- endif %}{% endfor %}
+              {%- endfor %}
               <a class="mg-all" href="{{ '/products/' | u(lang) }}">{{ T.allProducts }} <span class="mg-count">{{ D.products.length }}</span><span class="mg-arrow" aria-hidden="true">→</span></a>
             </div>
-            {%- if D.appCounts.length %}
-            <div class="mg-col">
-              <span class="mg-title">{{ T.byApp }}</span>
-              <span class="mg-sub">{{ T.byAppSub }}</span>
-              <ul class="mg-list mg-apps">
-                {%- for a in D.appCounts | batch(8) | first %}
-                <li><a href="{{ ('/products/?app=' ~ a.key) | u(lang) }}"><img src="/assets/img/icons/{{ a.key }}.svg" alt="" width="26" height="26" loading="lazy"><span>{{ a.label }}</span><span class="mg-count">{{ a.n }}</span></a></li>
+            <div class="mg3-mid">
+              {%- for c in D.catGroups %}
+              <div class="mg3-panel" data-cat-panel="{{ c.key }}"{% if not loop.first %} hidden{% endif %}>
+                {%- for g in c.brands %}
+                <div class="mg3-brand">
+                  <div class="mg3-bh">
+                    <span class="mgb-logo">{% if g.brand.logo %}<img src="{{ g.brand.logo }}" alt="{{ g.brand.name }}" loading="lazy">{% else %}{{ g.brand.name }}{% endif %}</span>
+                    <span class="mg3-sub">{{ T.ownBrand if g.brand.own_brand else T.distributor }} · {{ g.products.length }} {{ T.productsN }}</span>
+                    <a class="mg3-more" href="{{ ('/products/?cat=' ~ c.key ~ '&brand=' ~ g.brand.slug) | u(lang) }}">{{ T.viewAll }} →</a>
+                  </div>
+                  <ul class="mg-list mg3-links">
+                    {%- for p in g.products %}
+                    {%- set r = p.ref %}
+                    <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% else %} · {{ T.cats[p.category] }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ ([r.class, r.safety, 'GWP ' ~ r.gwp_ar4] | join('|')) if r }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{% if r and r.number and r.number in p.menuName %}{{ (p.menuName | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.menuName }}{% endif %}</a></li>
+                    {%- endfor %}
+                  </ul>
+                </div>
                 {%- endfor %}
-              </ul>
-            </div>
-            {%- endif %}
-            <div class="mg-col">
-              <span class="mg-title">{{ T.byClass }}</span>
-              <span class="mg-sub">{{ T.byClassSub }}</span>
-              <ul class="mg-list mg-classes">
-                {%- for g in D.classCounts %}<li><a href="{{ ('/products/?class=' ~ (g.class | urlencode)) | u(lang) }}"><b>{{ g.class }}</b><span class="mg-count">{{ g.n }}</span></a></li>{% endfor %}
-              </ul>
-            </div>
-            <div class="mg-col">
-              <span class="mg-title">{{ T.featured }}</span>
-              <span class="mg-sub">&nbsp;</span>
-              <ul class="mg-list">
-                {%- for p in pickList | batch(8) | first %}
-                <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }}{% if p.ref %} · {{ p.ref.class }}{% endif %}" data-img="{{ p.coverImage }}" data-num="{{ p.ref.number if p.ref }}" data-c1="{{ p.ref.color if p.ref else '#2F3192' }}" data-c2="{{ p.ref.color2 if p.ref else '#4A4DC4' }}" data-chips="{{ ([p.ref.class, p.ref.safety, 'GWP ' ~ p.ref.gwp_ar4] | join('|')) if p.ref }}"><span class="dot" style="background:{{ p.tankColor }}"></span>{{ p.name }}</a></li>
-                {%- endfor %}
-              </ul>
+              </div>
+              {%- endfor %}
             </div>
             {%- if feat %}
             <a class="mg-feature" id="megaPreview" href="{{ ('/products/' ~ feat.slug ~ '/') | u(lang) }}" aria-live="polite">

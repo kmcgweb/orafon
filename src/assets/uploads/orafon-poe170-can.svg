@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<rect x="112" y="58" width="176" height="290" rx="14" fill="#fff" stroke="#C9D3E3" stroke-width="3"/>
+<rect x="112" y="58" width="176" height="22" rx="10" fill="#DDE4EF"/>
+<rect x="176" y="36" width="48" height="26" rx="6" fill="#3A4256"/>
+<text x="200" y="126" font-family="IBM Plex Sans,Arial,sans-serif" font-size="30" font-weight="700" fill="#2F3192" text-anchor="middle" letter-spacing="2">ORAFON</text>
+<rect x="132" y="146" width="136" height="3" fill="#2F3192"/>
+<text x="200" y="196" font-family="IBM Plex Sans,Arial,sans-serif" font-size="34" font-weight="700" fill="#2F3192" text-anchor="middle">POE</text>
+<text x="200" y="250" font-family="IBM Plex Sans,Arial,sans-serif" font-size="52" font-weight="700" fill="#1B2440" text-anchor="middle">170</text>
+<rect x="112" y="300" width="176" height="48" rx="0" fill="#2F3192"/>
+<rect x="112" y="334" width="176" height="14" rx="10" fill="#2F3192"/>
+<text x="200" y="330" font-family="IBM Plex Sans,Arial,sans-serif" font-size="13" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="1">COMPRESSOR OIL</text>
+</svg>

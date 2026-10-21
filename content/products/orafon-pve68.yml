@@ -1,0 +1,67 @@
+th:
+  id: orafon-pve68
+  name: ORAFON PVE 68
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ PVE สำหรับเครื่องปรับอากาศ
+  tag: ''
+  cover: /assets/uploads/orafon-pve68-can.svg
+  images: []
+  packages: []
+  specs:
+  - k: ชนิดน้ำมัน
+    v: PVE (Polyvinyl Ether)
+  - k: เกรดความหนืด
+    v: '68'
+  short: ORAFON PVE 68 — น้ำมันคอมเพรสเซอร์ชนิด PVE (Polyvinyl Ether) สำหรับคอมเพรสเซอร์เครื่องปรับอากาศที่ใช้สารทำความเย็น HFC เกรดความหนืด 68
+  highlights:
+  - title: ชนิด PVE
+    text: Polyvinyl Ether
+  - title: เกรด 68
+    text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
+  - title: ปรึกษาทีมงาน
+    text: สอบถามขนาดบรรจุและเอกสารทางเทคนิคได้ที่ทีม ORAFON
+  description: |-
+    ORAFON PVE 68 เป็นน้ำมันคอมเพรสเซอร์ชนิด PVE (Polyvinyl Ether) สำหรับคอมเพรสเซอร์เครื่องปรับอากาศที่ใช้สารทำความเย็น HFC เกรดความหนืด 68
+
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+  applications:
+  - icon: ac
+    label: เครื่องปรับอากาศ
+  - icon: heatpump
+    label: VRF / ฮีตปั๊ม
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON PVE 68 น้ำมันคอมเพรสเซอร์ PVE สำหรับเครื่องปรับอากาศ จาก ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 622
+en:
+  name: ORAFON PVE 68
+  tagline: PVE compressor oil for air-conditioning
+  tag: ''
+  specs:
+  - k: Oil type
+    v: PVE (Polyvinyl Ether)
+  - k: Viscosity grade
+    v: '68'
+  short: ORAFON PVE 68 is a PVE (polyvinyl ether) compressor oil for air-conditioning compressors running HFC refrigerants, viscosity grade 68.
+  highlights:
+  - title: PVE type
+    text: Polyvinyl Ether
+  - title: Grade 68
+    text: Choose the viscosity grade specified by the compressor maker
+  - title: Ask our team
+    text: Contact ORAFON for pack sizes and technical documents
+  description: |-
+    ORAFON PVE 68 is a PVE (polyvinyl ether) compressor oil for air-conditioning compressors running HFC refrigerants, viscosity grade 68.
+
+    Always use the oil type and grade specified by the compressor manufacturer. Contact the ORAFON team for pack sizes, stock, technical data and a quotation.
+  applications:
+  - icon: ac
+    label: Air-conditioners
+  - icon: heatpump
+    label: VRF / heat pumps
+  seo_description: ORAFON PVE 68 PVE compressor oil for air-conditioning from ORAFON — request a quotation.

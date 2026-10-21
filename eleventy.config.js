@@ -88,7 +88,12 @@ function buildDb() {
         const appKeys = [...new Set(apps.map((a) => a.icon).filter(Boolean))].join(" ");
         // category: refrigerant (default) | oil | other — drives the mega menu and the ?cat= filter
         const category = ["refrigerant", "oil", "other"].includes(p.category) ? p.category : "refrigerant";
-        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category };
+        // mega menu lists products under a brand heading, so the brand prefix is dropped there ("ORAFON R-32" -> "R-32")
+        const bn = String(brandObj?.name || "").replace(/®/g, "").trim();
+        const menuName = bn && String(p.name).toLowerCase().startsWith(bn.toLowerCase())
+          ? String(p.name).slice(bn.length).replace(/^®?\s+/, "") || p.name
+          : p.name;
+        return { ...p, ref, brandObj, searchText, labels, coverImage, gallery, tankColor, apps, appKeys, category, menuName };
       })
       .sort(byOrder);
 
@@ -119,6 +124,13 @@ function buildDb() {
       featured: products.filter((p) => p.labels.includes("recommended")),
       usedLabels: LABELS.filter((l) => products.some((p) => p.labels.includes(l))),
       catCounts: ["refrigerant", "oil", "other"].map((key) => ({ key, n: products.filter((p) => p.category === key).length })).filter((c) => c.n),
+      // mega menu: category -> brands -> products
+      catGroups: ["refrigerant", "oil", "other"].map((key) => ({
+        key,
+        brands: brands
+          .map((b) => ({ brand: b, products: products.filter((p) => p.category === key && p.brand === b.slug) }))
+          .filter((g) => g.products.length),
+      })).filter((c) => c.brands.length),
       appCounts: Object.values(products.reduce((acc, p) => {
         const seen = new Set();
         for (const a of p.apps) if (a.icon && !seen.has(a.icon)) { seen.add(a.icon); (acc[a.icon] ||= { key: a.icon, label: a.label, n: 0 }).n++; }

@@ -88,9 +88,26 @@
       a.addEventListener("mouseenter", function () { show(a); });
       a.addEventListener("focus", function () { show(a); });
     });
-    // reopening the menu starts again from the featured product
+    // left column: hovering a category swaps the middle panel and previews its first product
+    var tabs = header.querySelectorAll("[data-cat-tab]");
+    var setCat = function (key, withPreview) {
+      tabs.forEach(function (t) { t.classList.toggle("is-on", t.getAttribute("data-cat-tab") === key); });
+      header.querySelectorAll("[data-cat-panel]").forEach(function (p) {
+        var on = p.getAttribute("data-cat-panel") === key;
+        p.hidden = !on;
+        if (on && withPreview) show(p.querySelector("a[data-prev]"));
+      });
+    };
+    tabs.forEach(function (t) {
+      var go = function () { if (!t.classList.contains("is-on")) setCat(t.getAttribute("data-cat-tab"), true); };
+      t.addEventListener("mouseenter", go);
+      t.addEventListener("focus", go);
+    });
+    // reopening the menu starts again from the first category and the featured product
     var productsItem = preview.closest("[data-mega]");
-    new MutationObserver(function () { if (!productsItem.classList.contains("open")) show(null); })
+    new MutationObserver(function () {
+      if (!productsItem.classList.contains("open")) { show(null); if (tabs.length) setCat(tabs[0].getAttribute("data-cat-tab"), false); }
+    })
       .observe(productsItem, { attributes: true, attributeFilter: ["class"] });
   }
 

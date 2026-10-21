@@ -1,0 +1,67 @@
+th:
+  id: orafon-poe220
+  name: ORAFON POE 220
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ POE สำหรับระบบสารทำความเย็น HFC/HFO
+  tag: ''
+  cover: /assets/uploads/orafon-poe220-can.svg
+  images: []
+  packages: []
+  specs:
+  - k: ชนิดน้ำมัน
+    v: POE (Polyol Ester)
+  - k: เกรดความหนืด
+    v: '220'
+  short: ORAFON POE 220 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 220
+  highlights:
+  - title: ชนิด POE
+    text: Polyol Ester
+  - title: เกรด 220
+    text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
+  - title: ปรึกษาทีมงาน
+    text: สอบถามขนาดบรรจุและเอกสารทางเทคนิคได้ที่ทีม ORAFON
+  description: |-
+    ORAFON POE 220 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 220
+
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+  applications:
+  - icon: chiller
+    label: ชิลเลอร์
+  - icon: factory
+    label: ระบบทำความเย็นอุตสาหกรรม
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON POE 220 น้ำมันคอมเพรสเซอร์ POE สำหรับระบบสารทำความเย็น HFC/HFO จาก ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 616
+en:
+  name: ORAFON POE 220
+  tagline: POE compressor oil for HFC/HFO systems
+  tag: ''
+  specs:
+  - k: Oil type
+    v: POE (Polyol Ester)
+  - k: Viscosity grade
+    v: '220'
+  short: ORAFON POE 220 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 220.
+  highlights:
+  - title: POE type
+    text: Polyol Ester
+  - title: Grade 220
+    text: Choose the viscosity grade specified by the compressor maker
+  - title: Ask our team
+    text: Contact ORAFON for pack sizes and technical documents
+  description: |-
+    ORAFON POE 220 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 220.
+
+    Always use the oil type and grade specified by the compressor manufacturer. Contact the ORAFON team for pack sizes, stock, technical data and a quotation.
+  applications:
+  - icon: chiller
+    label: Chillers
+  - icon: factory
+    label: Industrial refrigeration
+  seo_description: ORAFON POE 220 POE compressor oil for HFC/HFO systems from ORAFON — request a quotation.

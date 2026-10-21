@@ -1,0 +1,67 @@
+th:
+  id: orafon-pag150
+  name: ORAFON PAG 150
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์
+  tag: ''
+  cover: /assets/uploads/orafon-pag150-can.svg
+  images: []
+  packages: []
+  specs:
+  - k: ชนิดน้ำมัน
+    v: PAG (Polyalkylene Glycol)
+  - k: เกรดความหนืด
+    v: '150'
+  short: ORAFON PAG 150 — น้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
+  highlights:
+  - title: ชนิด PAG
+    text: Polyalkylene Glycol
+  - title: เกรด 150
+    text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
+  - title: ปรึกษาทีมงาน
+    text: สอบถามขนาดบรรจุและเอกสารทางเทคนิคได้ที่ทีม ORAFON
+  description: |-
+    ORAFON PAG 150 เป็นน้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
+
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+  applications:
+  - icon: car
+    label: แอร์รถยนต์
+  - icon: truck
+    label: แอร์รถบรรทุก / รถโดยสาร
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON PAG 150 น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ จาก ORAFON ขอใบเสนอราคาได้
+  labels: []
+  draft: false
+  order: 602
+en:
+  name: ORAFON PAG 150
+  tagline: PAG compressor oil for automotive A/C
+  tag: ''
+  specs:
+  - k: Oil type
+    v: PAG (Polyalkylene Glycol)
+  - k: Viscosity grade
+    v: '150'
+  short: ORAFON PAG 150 is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
+  highlights:
+  - title: PAG type
+    text: Polyalkylene Glycol
+  - title: Grade 150
+    text: Choose the viscosity grade specified by the compressor maker
+  - title: Ask our team
+    text: Contact ORAFON for pack sizes and technical documents
+  description: |-
+    ORAFON PAG 150 is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
+
+    Always use the oil type and grade specified by the compressor manufacturer. Contact the ORAFON team for pack sizes, stock, technical data and a quotation.
+  applications:
+  - icon: car
+    label: Automotive A/C
+  - icon: truck
+    label: Truck and bus A/C
+  seo_description: ORAFON PAG 150 PAG compressor oil for automotive A/C from ORAFON — request a quotation.
