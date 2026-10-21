@@ -7,7 +7,7 @@ th:
   refrigerant: r-448a
   tagline: สารทำความเย็น HFO Blend
   tag: ''
-  cover: /assets/uploads/Solstice_N40_R-448A.webp
+  cover: /assets/uploads/N40.webp
   tank_color: ''
   packages:
     - name: DAC
