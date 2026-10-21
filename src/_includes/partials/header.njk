@@ -83,6 +83,13 @@
                     </div>
                     {%- endfor %}
                   </div>
+                  {%- elif c.key == "other" %}
+                  {#- other products: two columns of rows, each with its type or pack sizes on the right -#}
+                  <ul class="mg3-rows2">
+                    {%- for p in g.products %}{% set r = p.ref %}
+                    <li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}" data-prev data-name="{{ p.name }}" data-tag="{{ p.tagline }}" data-kicker="{{ p.brandObj.name if p.brandObj }} · {{ p.kind or T.cats[p.category] }}" data-img="{{ p.coverImage }}" data-num="{{ r.number if r }}" data-c1="{{ r.color if r else '#2F3192' }}" data-c2="{{ r.color2 if r else '#4A4DC4' }}" data-chips="{{ p.previewChips | join('|') }}"><span class="dot" style="background:{{ p.tankColor }}"></span><span class="nm">{% if r and r.number and r.number in p.menuName %}{{ (p.menuName | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.menuName }}{% endif %}</span><small>{{ r.class if r else p.packText }}</small></a></li>
+                    {%- endfor %}
+                  </ul>
                   {%- else %}
                   <ul class="mg-list mg3-links">
                     {%- for p in g.products %}
