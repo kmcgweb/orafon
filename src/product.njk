@@ -36,7 +36,6 @@ eleventyComputed:
     {%- if b %}<a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a><span>›</span>{% endif %}
     {{ p.name }}
   </nav>
-  <a class="pd-back" href="{{ '/products/' | u(lang) }}"><span aria-hidden="true">←</span> {{ T.backToProducts }}</a>
 </div>
 
 <div class="container pd" id="product" style="--c:{{ p.tankColor }}"

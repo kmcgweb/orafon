@@ -215,9 +215,6 @@ h1.pname{font-weight:700}
 /* ---------- Product page v2: side menu + summary + quote + accordions (Climalife-style) ---------- */
 html{scroll-padding-top:130px}
 .pd-crumbs{display:flex;flex-direction:column;gap:2px}
-.pd-back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--primary);margin:2px 0 10px}
-.pd-back:hover span{transform:translateX(-3px)}
-.pd-back span{transition:transform .15s}
 .pd{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:start;padding-bottom:24px}
 
 /* side menu */
