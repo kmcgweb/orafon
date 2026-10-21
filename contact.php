@@ -4,7 +4,7 @@
  * GENERATED at build time from content/settings/site.yml — edit the settings in /admin, not this file.
  * Works on PHP 7.0+. Sends plain-text mail through the server's mail() (Plesk mail server).
  */
-const MAIL_TO = 'sales@orafon.co.th';
+const MAIL_TO = 'it@km-chemical.co.th';
 const MAIL_FROM = 'no-reply@orafon.co.th';
 const MAX_PER_HOUR = 5;
 
