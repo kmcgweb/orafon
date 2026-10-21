@@ -1161,16 +1161,31 @@ body.has-sticky .fab{bottom:90px}
 .prod-media:has(img[src*="-photo-"]) .pc-logo,.main-img:has(img[src*="-photo-"]) .pd-logo{background-color:rgba(255,255,255,.92);background-origin:content-box;border-radius:4px;padding:5px 8px;box-shadow:0 2px 8px rgba(15,23,42,.15)}
 .prod-media:has(img[src*="-photo-"]) .pc-logo{width:92px;height:32px}
 
-/* ===== product categories: strip on top of the products mega menu + drawer ===== */
-.mg-cats{display:grid;grid-template-columns:auto repeat(3,1fr);align-items:center;gap:14px;padding:20px 24px 0}
-.mg-cats .mg-title{margin:0 8px 0 0;white-space:nowrap}
-.mg-cat{display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--border-soft);border-radius:var(--r);background:var(--prod-bg,#E8F2FB);color:var(--text);transition:.2s}
-.mg-cat img{width:48px;height:48px;object-fit:contain;flex:0 0 auto}
-.mg-cat b{flex:1;font-size:15px}
-.mg-cat .mg-arrow{color:var(--primary,#2F3192);opacity:0;transform:translateX(-4px);transition:.2s}
-.mg-cat:hover{border-color:var(--primary,#2F3192);box-shadow:0 6px 18px rgba(47,49,146,.12)}
-.mg-cat:hover .mg-arrow{opacity:1;transform:none}
-.mg-cats + .mega-grid{padding-top:22px}
+/* ===== products mega v3: categories | products by brand | preview (widths agreed from the mockup) ===== */
+.mg3{grid-template-columns:255px minmax(0,1fr) 310px;gap:0;padding:0;min-height:320px}
+.mg3-cats{display:flex;flex-direction:column;gap:6px;padding:22px 18px;background:#F5F8FC;border-right:1px solid var(--border-soft)}
+.mg3-cats .mg-title{margin-bottom:6px}
+.mg3-cat{display:flex;align-items:center;gap:12px;padding:9px 12px;border:1px solid transparent;border-radius:12px;color:var(--text);transition:.15s}
+.mg3-cat img{width:46px;height:46px;object-fit:contain;flex:none}
+.mg3-cat b{display:block;font-size:15px}
+.mg3-cat small{color:var(--muted);font-size:12.5px}
+.mg3-cat .mg-arrow{margin-left:auto;color:var(--primary,#2F3192);opacity:0;transition:.15s}
+.mg3-cat:hover{background:#fff;border-color:var(--border-soft)}
+.mg3-cat.is-on{background:#fff;border-color:var(--primary,#2F3192);box-shadow:0 4px 14px rgba(47,49,146,.12)}
+.mg3-cat.is-on b{color:var(--primary,#2F3192)}
+.mg3-cat.is-on .mg-arrow{opacity:1}
+.mg3-cats .mg-all{margin-top:auto}
+.mg3-mid{padding:22px 26px;min-width:0}
+.mg3-brand + .mg3-brand{margin-top:18px}
+.mg3-bh{display:flex;align-items:center;gap:10px;padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--border-soft)}
+.mg3-bh .mgb-logo{width:auto;height:28px;padding:0;background:none;border:0}
+.mg3-bh .mgb-logo img{height:26px;width:auto;max-width:120px;object-fit:contain}
+.mg3-sub{color:var(--muted);font-size:12.5px}
+.mg3-more{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--primary,#2F3192)}
+.mg3-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px 16px}
+.mg3-links a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg3 .mg-feature{margin:18px;border-left:0}
+@media (max-width:1279px){.mg3{grid-template-columns:230px minmax(0,1fr) 270px}.mg3-cat{gap:9px;padding:8px 9px}.mg3-cat img{width:36px;height:36px}.mg3-cat b{font-size:14px;white-space:nowrap}.mg3-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .dr-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:4px 0 6px}
 .dr-cats a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border:1px solid var(--border-soft);border-radius:var(--r-sm);background:var(--prod-bg,#E8F2FB);font-size:13px;font-weight:600;text-align:center;color:#2B3A55}
 .dr-cats img{width:40px;height:40px;object-fit:contain}
