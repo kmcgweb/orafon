@@ -1,35 +1,28 @@
 th:
   id: solstice-n40
+  name: Solstice® N40 (R-448A)
   brand: solstice
+  category: refrigerant
+  oil_type: ''
   refrigerant: r-448a
-  labels:
-    - recommended
-  draft: false
-  order: 50
-  images:
-    - /assets/uploads/solstice-n40-photo-1.webp
-    - /assets/uploads/solstice-n40-photo-2.webp
-    - /assets/uploads/solstice-n40-photo-3.webp
-    - /assets/uploads/solstice-n40-photo-4.webp
-    - /assets/uploads/solstice-n40-photo-5.webp
+  tagline: สารทำความเย็น HFO Blend
+  tag: ''
+  cover: /assets/uploads/Solstice_N40_R-448A.webp
+  tank_color: ''
   packages:
     - name: DAC
       kg: 11.3
+      unit: kg
       lb: 25
-      sku: "10637999"
+      sku: '10637999'
+      special: false
     - name: Cylinder
       kg: 43
-  documents:
-    - type: TDS
-      label: Technical Data Sheet (TDS)
-      file: /assets/uploads/docs/solstice-n40-tds.pdf
-    - type: Sales
-      label: Sales Sheet
-      file: /assets/uploads/docs/solstice-n40-sales.pdf
-  cover: /assets/uploads/solstice-n40-dac.webp
-  name: Solstice® N40 (R-448A)
-  tagline: สารทำความเย็น HFO Blend
-  tag: ""
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
+  specs: []
   badges:
     - ลด GWP 68% เทียบ R-404A
     - A1 ไม่ติดไฟ
@@ -48,7 +41,7 @@ th:
       text: ค้าปลีกอาหาร ห้องเย็น ตู้โชว์ ระบบ DX
     - title: เอกสาร TDS/SDS ครบ
       text: ขอรับได้ที่แท็บ "เอกสาร" หรือทีม ORAFON
-  description: |
+  description: |-
     Solstice® N40 (R-448A) เป็นสารทำความเย็นชนิด HFO blend ที่ไม่ติดไฟ ออกแบบมาเป็นทางเลือกทดแทน R-404A, R-507, R-22 และ R-407 series รวมถึง interim blends ในงานทำความเย็นเชิงพาณิชย์ เหมาะกับผู้รับเหมา ตัวแทนจำหน่าย ทีมบริการ และผู้ดูแลอาคาร ทั้งงานติดตั้งใหม่และงาน Retrofit สำหรับระบบทำความเย็นอุณหภูมิต่ำและปานกลาง
 
     ด้วยการจำแนก A1 ไม่ติดไฟ จึงรองรับแนวทางการจัดการที่ช่างคุ้นเคย ขณะที่โปรไฟล์ประสิทธิภาพช่วยสนับสนุนการทำงานของระบบทำความเย็นที่ไว้วางใจได้ ครอบคลุมงานคลังเย็นและค้าปลีกอาหารทั่วไป
@@ -56,21 +49,36 @@ th:
     เมื่อเทียบกับ R-404A แล้ว Solstice N40 ให้ค่า GWP ต่ำลง 68% และช่วยลดการใช้พลังงานในระบบที่เข้าเงื่อนไข จึงเป็นจุดขายด้านประสิทธิภาพและต้นทุนการดำเนินงานสำหรับทีมที่วางแผนสารทำความเย็นระยะยาว
   applications:
     - icon: fridge
+      icon_image: ''
       label: ตู้แช่เชิงพาณิชย์ อุณหภูมิต่ำ–ปานกลาง
     - icon: factory
+      icon_image: ''
       label: ระบบ DX อุตสาหกรรม
     - icon: box
+      icon_image: ''
       label: ชุดคอนเดนซิ่งค้าปลีก
     - icon: snow
+      icon_image: ''
       label: ตู้แช่แข็งและตู้โชว์
     - icon: store
+      icon_image: ''
       label: ตู้แช่ร้านสะดวกซื้อ
     - icon: store
+      icon_image: ''
       label: ซูเปอร์มาร์เก็ต
     - icon: box
+      icon_image: ''
       label: คลังห้องเย็น
     - icon: snow
+      icon_image: ''
       label: ชุดคอนเดนซิ่ง Self-contained
+  documents:
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: /assets/uploads/docs/solstice-n40-tds.pdf
+    - type: Sales
+      label: Sales Sheet
+      file: /assets/uploads/docs/solstice-n40-sales.pdf
   faq:
     - q: Solstice N40 ใช้ทดแทนสารตัวไหนได้บ้าง?
       a: ใช้ทดแทน R-404A, R-507, R-22 และ R-407 series รวมถึง interim blends ในงานทำความเย็นเชิงพาณิชย์ รองรับทั้งงานติดตั้งใหม่และงาน Retrofit
@@ -81,10 +89,15 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง?
       a: มี 4 ขนาด ได้แก่ Jug 11.3 kg, Cylinder 45 kg, Half Ton 386 kg และ Ton 658 kg ติดต่อ ORAFON เพื่อตรวจสอบสต็อกและขอใบเสนอราคา
   seo_description: Solstice® N40 (R-448A) สารทำความเย็น HFO Blend ไม่ติดไฟ A1 ทดแทน R-404A ลด GWP 68% จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  labels:
+    - recommended
+  draft: false
+  order: 50
 en:
   name: Solstice® N40 (R-448A)
   tagline: HFO blend refrigerant
-  tag: ""
+  tag: ''
+  specs: []
   badges:
     - 68% lower GWP vs R-404A
     - A1 non-flammable
@@ -103,7 +116,7 @@ en:
       text: Food retail, cold rooms, display cases, DX systems
     - title: TDS/SDS available
       text: Request them from the "Documents" tab or the ORAFON team
-  description: |
+  description: |-
     Solstice® N40 (R-448A) is a non-flammable HFO blend developed as an alternative to R-404A, R-507, R-22 and the R-407 series, including interim blends, in commercial refrigeration. It suits contractors, distributors, service teams and building operators for both new installations and retrofits of low- and medium-temperature systems.
 
     With an A1 non-flammable classification it supports familiar handling practices, while its performance profile supports reliable operation across cold storage and food retail.
@@ -111,20 +124,28 @@ en:
     Compared with R-404A, Solstice N40 offers 68% lower GWP and can reduce energy use in qualifying systems — a strong efficiency and operating-cost case for teams planning long-term refrigerant strategy.
   applications:
     - icon: fridge
+      icon_image: ''
       label: Low/medium-temp commercial cabinets
     - icon: factory
+      icon_image: ''
       label: Industrial DX systems
     - icon: box
+      icon_image: ''
       label: Retail condensing units
     - icon: snow
+      icon_image: ''
       label: Freezers and display cases
     - icon: store
+      icon_image: ''
       label: Convenience-store cabinets
     - icon: store
+      icon_image: ''
       label: Supermarkets
     - icon: box
+      icon_image: ''
       label: Cold storage warehouses
     - icon: snow
+      icon_image: ''
       label: Self-contained condensing units
   faq:
     - q: Which refrigerants can Solstice N40 replace?
