@@ -2,32 +2,60 @@ th:
   id: orafon-r134a
   name: ORAFON R-134a
   brand: orafon
+  category: refrigerant
+  oil_type: ''
   refrigerant: r-134a
-  tank_color: "#6dacaa"
   tagline: สารทำความเย็น HFC
   tag: ''
-  cover: /assets/uploads/R-134a-front-box.webp
+  cover: /assets/uploads/R-134a-front-box-1.webp
   images:
     - /assets/uploads/R-134a-front.webp
     - /assets/uploads/R-134a-back.webp
+  tank_color: '#6dacaa'
   packages:
     - name: DAC
       kg: 3
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
     - name: DAC
       kg: 13.6
+      unit: kg
       lb: 30
+      sku: ''
+      special: false
     - name: Cylinder
       kg: 56
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
     - name: Cylinder
       kg: 100
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
     - name: Ton Tank
       kg: 950
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
     - name: ISO Tank
       kg: 18000
+      unit: kg
+      lb: null
+      sku: ''
       special: true
     - name: ISO Tank
       kg: 20000
+      unit: kg
+      lb: null
+      sku: ''
       special: true
+  specs: []
   badges:
     - GWP 1430
     - A1 ไม่ติดไฟ
@@ -74,6 +102,7 @@ en:
   name: ORAFON R-134a
   tagline: HFC refrigerant
   tag: ''
+  specs: []
   badges:
     - GWP 1430
     - A1 non-flammable
