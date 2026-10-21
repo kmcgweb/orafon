@@ -60,7 +60,7 @@
               <div class="mg3-panel" data-cat-panel="{{ c.key }}"{% if not loop.first %} hidden{% endif %}>
                 {%- for g in c.brands %}
                 <div class="mg3-brand">
-                  <div class="mg3-bh">
+                  <div class="mg3-bh" data-brand="{{ g.brand.slug }}">
                     <span class="mgb-logo">{% if g.brand.logo %}<img src="{{ g.brand.logo }}" alt="{{ g.brand.name }}" loading="lazy">{% else %}{{ g.brand.name }}{% endif %}</span>
                     <span class="mg3-sub">{{ T.ownBrand if g.brand.own_brand else T.distributor }} · {{ g.products.length }} {{ T.productsN }}</span>
                     <a class="mg3-more" href="{{ ('/products/?cat=' ~ c.key ~ '&brand=' ~ g.brand.slug) | u(lang) }}">{{ T.viewAll }} →</a>
