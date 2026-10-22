@@ -128,7 +128,11 @@ function buildDb() {
         const tags = [...(eco ? ["eco"] : []), ...labels.filter((l) => !HIDDEN_LABELS.includes(l))];
         // pack sizes as one short line for the mega menu ("0.25 L · 1 L")
         const packText = packages.map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
-        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        // compact form for the table view: one unit at the end when all sizes share it ("0.25 · 1 ลิตร")
+        const units = [...new Set(packages.map((k) => k.unit || "kg"))];
+        const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
+        const packShort = units.length === 1 ? packages.map((k) => fmt(k.kg)).join(" · ") + " " + units[0] : packages.map((k) => `${fmt(k.kg)} ${k.unit || "kg"}`).join(" · ");
+        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 

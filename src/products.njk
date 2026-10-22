@@ -83,10 +83,10 @@ eleventyComputed:
           </td>
           <td>{{ p.brandObj.name if p.brandObj }}</td>
           <td><strong>{{ p.ref.number if p.ref }}</strong></td>
-          <td>{{ p.ref.class if p.ref }}</td>
+          <td>{{ p.kind }}</td>
           <td>{% if p.ref %}<span class="chip sfc sf-{{ p.ref.safety }}">{{ p.ref.safety }}</span>{% endif %}</td>
           <td>{% if p.ref %}<span class="gwp-bar" style="--w:{{ p.ref.gwp_ar4 | gwpBar }}%"></span>{{ p.ref.gwp_ar4 }}{% endif %}</td>
-          <td class="muted">{% if p.packages and p.packages.length %}{% for k in p.packages %}{{ k.kg | kg }}{% if not loop.last %} · {% endif %}{% endfor %} kg{% else %}{{ T.askSizesHi }}{% endif %}</td>
+          <td class="muted">{% if p.packages and p.packages.length %}{{ p.packShort }}{% else %}{{ T.askSizesHi }}{% endif %}</td>
           <td><a class="pt-go" href="{{ href }}">{{ T.viewDetails }} →</a></td>
         </tr>
         {%- endfor %}
