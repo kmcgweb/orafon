@@ -9,6 +9,12 @@ const CONTENT = "content";
 const LABELS = ["recommended", "popular", "bestseller", "new"];
 // labels kept in the CMS but no longer shown as badges ("recommended" still picks the featured products)
 const HIDDEN_LABELS = ["recommended", "popular"];
+// pack names / units are entered once (Thai) in the CMS; English pages get these words instead
+const PACK_WORDS = {
+  en: { "กระป๋อง": "Can", "แกลลอน": "Gallon", "หลอดสี": "Tube", "แพ็ก": "Pack", "ถัง": "Drum", "ชิ้น": "pcs", "pcs": "pcs" },
+  th: { "pcs": "ชิ้น" },
+};
+const packWord = (w, lang) => (w && PACK_WORDS[lang] && PACK_WORDS[lang][w]) || w;
 // eco badge (leaf): GWP (AR4) below 150 and practically no ozone depletion; the CMS "eco" field can force it on/off
 const isEco = (p, ref) => {
   if (p.eco === "yes") return true;
@@ -112,16 +118,17 @@ function buildDb() {
           : p.name;
         // oils in the mega menu show just the grade under their type card ("POE 68" -> "68")
         const oilGrade = oilType ? menuName.replace(new RegExp("^" + oilType + "\\s*"), "") : "";
+        const packages = (p.packages || []).map((k) => ({ ...k, name: packWord(k.name, lang), unit: packWord(k.unit, lang) }));
         // chips on the mega-menu preview card: refrigerant facts, else oil type + pack sizes
         const previewChips = ref
           ? [ref.class, ref.safety, "GWP " + ref.gwp_ar4]
-          : [oilType, ...(p.packages || []).map((k) => `${k.kg} ${k.unit || "kg"}`)].filter(Boolean);
+          : [oilType, ...packages.map((k) => `${k.kg} ${k.unit || "kg"}`)].filter(Boolean);
         const eco = isEco(p, ref);
         // badges shown on cards, the product page and in the label filter
         const tags = [...(eco ? ["eco"] : []), ...labels.filter((l) => !HIDDEN_LABELS.includes(l))];
-        // pack sizes as one short line for the mega menu ("250 ml · 1 L")
-        const packText = (p.packages || []).map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
-        return { ...p, ref, brandObj, searchText, labels, eco, tags, packText, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        // pack sizes as one short line for the mega menu ("0.25 L · 1 L")
+        const packText = packages.map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
+        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 

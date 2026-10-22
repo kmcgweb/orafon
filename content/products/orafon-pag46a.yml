@@ -10,8 +10,8 @@ th:
   - /assets/uploads/orafon-pag46a-250ml.webp
   packages:
   - name: กระป๋อง
-    kg: 250
-    unit: ml
+    kg: 0.25
+    unit: L
   - name: กระป๋อง
     kg: 1
     unit: L
@@ -35,7 +35,7 @@ th:
   description: |-
     ORAFON PAG 46 A เป็นน้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับระบบปรับอากาศรถยนต์ มีส่วนผสมพิเศษจากโพลีแอลคีลีนไกลคอล ให้ประสิทธิภาพในการหล่อลื่นและป้องกันการสึกหรอได้อย่างดีเยี่ยม และต้านทานการดูดกลืนความชื้นได้ดีกว่ามาตรฐาน 2 เท่า
 
-    ความหนืดที่ 40 °C 46 cSt, ที่ 100 °C 8.6 cSt, VI 184, Capping efficiency 95% มีขนาดบรรจุ 250 มล. และ 1 ลิตร
+    ความหนืดที่ 40 °C 46 cSt, ที่ 100 °C 8.6 cSt, VI 184, Capping efficiency 95% มีขนาดบรรจุ 0.25 ลิตร และ 1 ลิตร
   applications:
   - icon: car
     label: แอร์รถยนต์
@@ -43,7 +43,7 @@ th:
   - type: TDS
     label: Technical Data Sheet (TDS)
     file: ''
-  seo_description: ORAFON PAG 46 A น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ ขนาด 250 มล. และ 1 ลิตร จาก ORAFON ขอใบเสนอราคาได้
+  seo_description: ORAFON PAG 46 A น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ ขนาด 0.25 ลิตร และ 1 ลิตร จาก ORAFON ขอใบเสนอราคาได้
   labels: []
   draft: false
   order: 600
@@ -71,8 +71,8 @@ en:
   description: |-
     ORAFON PAG 46 A is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning systems. Its special polyalkylene glycol blend gives excellent lubrication and wear protection, and it resists moisture absorption twice as well as the standard.
 
-    Viscosity 46 cSt at 40 °C and 8.6 cSt at 100 °C, VI 184, capping efficiency 95%. Available in 250 ml and 1 L cans.
+    Viscosity 46 cSt at 40 °C and 8.6 cSt at 100 °C, VI 184, capping efficiency 95%. Available in 0.25 L and 1 L cans.
   applications:
   - icon: car
     label: Automotive A/C
-  seo_description: ORAFON PAG 46 A PAG compressor oil for automotive A/C, 250 ml and 1 L, from ORAFON — request a quotation.
+  seo_description: ORAFON PAG 46 A PAG compressor oil for automotive A/C, 0.25 L and 1 L, from ORAFON — request a quotation.

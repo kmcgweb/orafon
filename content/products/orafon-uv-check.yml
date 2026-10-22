@@ -18,7 +18,7 @@ th:
     unit: ml
   - name: แพ็ก
     kg: 6
-    unit: ชิ้น
+    unit: pcs
   specs:
   - k: ปริมาณต่อหลอด
     v: 7.5 มล.
