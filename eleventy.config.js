@@ -12,7 +12,7 @@ const HIDDEN_LABELS = ["recommended", "popular"];
 // pack names / units are entered once (Thai) in the CMS; English pages get these words instead
 const PACK_WORDS = {
   en: { "กระป๋อง": "Can", "แกลลอน": "Gallon", "หลอดสี": "Tube", "แพ็ก": "Pack", "ถัง": "Drum", "ชิ้น": "pcs", "pcs": "pcs" },
-  th: { "pcs": "ชิ้น" },
+  th: { "pcs": "ชิ้น", "L": "ลิตร" },
 };
 const packWord = (w, lang) => (w && PACK_WORDS[lang] && PACK_WORDS[lang][w]) || w;
 // eco badge (leaf): GWP (AR4) below 150 and practically no ozone depletion; the CMS "eco" field can force it on/off
