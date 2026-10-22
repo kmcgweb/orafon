@@ -5,8 +5,9 @@ th:
   category: oil
   tagline: น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศ
   tag: ''
-  cover: /assets/uploads/orafon-poe68-1l.webp
-  images: []
+  cover: /assets/uploads/orafon-poe68-tin.webp
+  images:
+  - /assets/uploads/orafon-poe68-1l.webp
   packages:
   - name: กระป๋อง
     kg: 1
