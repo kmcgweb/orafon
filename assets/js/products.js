@@ -4,6 +4,8 @@
   var grid = document.getElementById("grid");
   if (!bar || !grid) return;
   var tableView = document.getElementById("tableView");
+  var mainTable = document.getElementById("mainTable");
+  var oilTable = document.getElementById("oilTable");
   // cards and table rows carry the same data-* attributes, so one pass filters both views
   var cards = Array.prototype.slice.call(document.querySelectorAll("#grid .prod-card, #tableView .prod-row"));
   var cardCount = grid.querySelectorAll(".prod-card").length;
@@ -39,6 +41,9 @@
       if (ok && c.classList.contains("prod-card")) n++;
     });
     count.textContent = count.dataset.tpl.replace("{n}", n);
+    // compressor oils get their own comparison columns in the table view
+    var oils = state.cat === "oil";
+    if (mainTable && oilTable) { mainTable.hidden = oils; oilTable.hidden = !oils; }
     if (cardCount) empty.hidden = n > 0;
     var active = false;
     selects.forEach(function (s) { var on = !!s.value; s.classList.toggle("on", on); active = active || on; });
