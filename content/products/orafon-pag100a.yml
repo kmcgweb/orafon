@@ -5,10 +5,8 @@ th:
   category: oil
   tagline: น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์
   tag: ''
-  cover: /assets/uploads/orafon-pag100a-tin.webp
-  images:
-  - /assets/uploads/orafon-pag100a-1l.webp
-  - /assets/uploads/orafon-pag100a-250ml.webp
+  cover: /assets/uploads/orafon-pag100a-can1l.webp
+  images: []
   packages:
   - name: กระป๋อง
     kg: 0.25
