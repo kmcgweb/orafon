@@ -69,7 +69,7 @@ eleventyComputed:
     {%- for p in D.productsAZ %}{{ productCard(p, lang, T) }}{% endfor %}
   </div>
   <div class="table-wrap" id="tableView" hidden>
-    <table class="data-table prod-table">
+    <table class="data-table prod-table" id="mainTable">
       <thead><tr>
         <th>{{ T.products }}</th><th>{{ T.brand }}</th><th>{{ T.refrigerant }}</th><th>{{ T.type }}</th><th>ASHRAE</th><th>{{ T.gwp }}</th><th>{{ T.packages }}</th><th></th>
       </tr></thead>
@@ -90,6 +90,28 @@ eleventyComputed:
           <td><a class="pt-go" href="{{ href }}">{{ T.viewDetails }} →</a></td>
         </tr>
         {%- endfor %}
+      </tbody>
+    </table>
+    {#- shown instead of the table above while the category filter is "oil" (assets/js/products.js) -#}
+    <table class="data-table prod-table oil-table" id="oilTable" hidden>
+      <thead><tr>
+        <th>{{ T.products }}</th><th>{{ T.oilTypeCol }}</th><th>{{ T.viscGrade }}</th><th>{{ T.visc40 }}</th><th>{{ T.visc100 }}</th><th>VI</th><th>{{ T.usedFor }}</th><th>{{ T.packages }}</th><th></th>
+      </tr></thead>
+      <tbody>
+        {%- for p in D.productsAZ %}{% if p.category == "oil" %}
+        {%- set href = ('/products/' ~ p.slug ~ '/') | u(lang) %}
+        <tr class="prod-row" data-labels="{{ p.tags | join(' ') }}" data-class="{{ p.kind }}" data-brand="{{ p.brand }}" data-ref="" data-app="{{ p.appKeys }}" data-cat="oil" data-text="{{ p.searchText }}">
+          <td><a class="pt-name" href="{{ href }}"><span class="dot ot-{{ p.oilType }}"></span>{{ p.name }}</a></td>
+          <td><span class="ot-badge ot-{{ p.oilType }}">{{ p.oilType }}</span></td>
+          <td class="num">{{ p.oilGrade or "—" }}</td>
+          <td class="num">{{ p.oilData.v40 or "—" }}</td>
+          <td class="num">{{ p.oilData.v100 or "—" }}</td>
+          <td class="num">{{ p.oilData.vi or "—" }}</td>
+          <td>{{ T.oilUse[p.oilType] }}</td>
+          <td class="muted">{% if p.packages and p.packages.length %}{{ p.packShort }}{% else %}{{ T.askSizesHi }}{% endif %}</td>
+          <td><a class="pt-go" href="{{ href }}">{{ T.viewDetails }} →</a></td>
+        </tr>
+        {%- endif %}{% endfor %}
       </tbody>
     </table>
   </div>

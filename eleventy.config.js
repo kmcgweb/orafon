@@ -128,11 +128,14 @@ function buildDb() {
         const tags = [...(eco ? ["eco"] : []), ...labels.filter((l) => !HIDDEN_LABELS.includes(l))];
         // pack sizes as one short line for the mega menu ("0.25 L · 1 L")
         const packText = packages.map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
+        // oil comparison table: viscosity figures from the spec list (keys are free text, Thai or English)
+        const spec = (re) => ((p.specs || []).find((s) => re.test(String(s.k))) || {}).v || "";
+        const oilData = oilType ? { v40: spec(/40\s*°?\s*C/i), v100: spec(/100\s*°?\s*C/i), vi: spec(/^\s*VI\s*$/i) } : null;
         // compact form for the table view: one unit at the end when all sizes share it ("0.25 · 1 ลิตร")
         const units = [...new Set(packages.map((k) => k.unit || "kg"))];
         const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
         const packShort = units.length === 1 ? packages.map((k) => fmt(k.kg)).join(" · ") + " " + units[0] : packages.map((k) => `${fmt(k.kg)} ${k.unit || "kg"}`).join(" · ");
-        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 

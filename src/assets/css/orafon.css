@@ -1269,3 +1269,9 @@ body.has-sticky .fab{bottom:90px}
 .mg3-rows2 .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mg3-rows2 small{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
 .mg3-rows2 a:hover,.mg3-rows2 a.previewing{background:var(--prod-bg,#E8F2FB);color:var(--primary)}
+/* products table view: compressor-oil comparison (PAG / POE / PVE colours match the menu) */
+.oil-table .num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.oil-table .dot{background:#2F3192}
+.ot-badge{display:inline-grid;place-items:center;min-width:42px;height:24px;padding:0 8px;border-radius:6px;background:#2F3192;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
+.ot-PAG.ot-badge,.oil-table .dot.ot-PAG{background:#2A9FD8}
+.ot-PVE.ot-badge,.oil-table .dot.ot-PVE{background:#0F766E}
