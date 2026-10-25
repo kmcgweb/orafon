@@ -12,8 +12,9 @@
   if (size && !message.value) message.value = size + "\n";
   if (params.get("error")) document.getElementById("formErr").hidden = false;
 
-  // time the form was opened (simple bot check on the server)
-  document.getElementById("ts").value = Math.floor(Date.now() / 1000);
+
+  // spam guard: signed token + "a person used the form" flag (cart.js)
+  if (window.FormGuard) window.FormGuard(form);
 
   var lineId = form.getAttribute("data-line");
   var lineMsg = form.getAttribute("data-linemsg");
