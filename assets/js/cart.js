@@ -63,6 +63,37 @@
     toastTimer = setTimeout(function () { t.classList.remove("show"); }, 4000);
   };
 
+  // Spam guard for the forms that post to /contact.php: fetch a signed one-time token and note that a person
+  // actually used the form (key, tap or click inside it). Without both, the server does not send the message.
+  window.FormGuard = function (form) {
+    function hidden(name) {
+      var i = form.querySelector('input[name="' + name + '"]');
+      if (!i) { i = document.createElement("input"); i.type = "hidden"; i.name = name; form.appendChild(i); }
+      return i;
+    }
+    var t = hidden("t"), n = hidden("n"), s = hidden("s"), hi = hidden("hi");
+    var loading = null;
+    function load() {
+      loading = fetch("/contact.php?token=1", { cache: "no-store", credentials: "same-origin" })
+        .then(function (r) { return r.json(); })
+        .then(function (d) { t.value = d.t; n.value = d.n; s.value = d.s; })
+        .catch(function () {});
+      return loading;
+    }
+    load();
+    ["keydown", "pointerdown", "touchstart", "input"].forEach(function (ev) {
+      form.addEventListener(ev, function () { hi.value = "1"; }, { passive: true });
+    });
+    // a token is used once: if the visitor comes back with the browser's Back button, get a fresh one
+    window.addEventListener("pageshow", function (e) { if (e.persisted) load(); });
+    form.addEventListener("submit", function (e) {
+      if (s.value) return;
+      // token not here yet (slow network): wait for it once, then send
+      e.preventDefault();
+      (loading || load()).then(function () { if (s.value) HTMLFormElement.prototype.submit.call(form); else load(); });
+    });
+  };
+
   // thanks page after a quote was sent: empty the list
   if (document.body.classList.contains("page-thanks")) {
     try { if (sessionStorage.getItem(SENT)) { sessionStorage.removeItem(SENT); api.clear(); } } catch (e) {}

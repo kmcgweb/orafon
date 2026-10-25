@@ -56,7 +56,8 @@
     document.getElementById("formErr").hidden = false;
     try { sessionStorage.removeItem("orafon-quote-sent"); } catch (e) {}
   }
-  document.getElementById("ts").value = Math.floor(Date.now() / 1000);
+  // spam guard: signed token + "a person used the form" flag (cart.js)
+  if (window.FormGuard) window.FormGuard(form);
   form.addEventListener("submit", function () { fill(QuoteCart.items()); QuoteCart.markSent(); });
   render();
 })();
