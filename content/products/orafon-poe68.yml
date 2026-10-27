@@ -11,6 +11,12 @@ th:
   - name: กระป๋อง
     kg: 1
     unit: L
+  - name: แกลลอน
+    kg: 5
+    unit: L
+  - name: ถัง
+    kg: 18.9
+    unit: L
   specs: []
   short: ORAFON POE 68 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ใช้ร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง
   highlights:

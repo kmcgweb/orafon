@@ -16,8 +16,6 @@ th:
     - name: Drum
       kg: 30
     - name: Drum
-      kg: 230
-    - name: Drum
       kg: 250
   specs:
     - k: ขนาดวาล์ว

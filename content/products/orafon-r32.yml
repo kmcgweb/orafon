@@ -10,6 +10,10 @@ th:
     - /assets/uploads/orafon-r32-front.webp
     - /assets/uploads/orafon-r32-back.webp
   packages:
+    - name: กระป๋อง
+      kg: 500
+      unit: g
+      special: true
     - name: DAC
       kg: 3
     - name: DAC

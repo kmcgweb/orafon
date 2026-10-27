@@ -11,6 +11,12 @@ th:
   - name: กระป๋อง
     kg: 1
     unit: L
+  - name: แกลลอน
+    kg: 5
+    unit: L
+  - name: ถัง
+    kg: 18.9
+    unit: L
   specs:
   - k: ความหนืดที่ 40 °C
     v: 32 cSt

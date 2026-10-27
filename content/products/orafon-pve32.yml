@@ -14,6 +14,9 @@ th:
   - name: แกลลอน
     kg: 5
     unit: L
+  - name: ถัง
+    kg: 18.9
+    unit: L
   specs:
   - k: ชนิดน้ำมัน
     v: PVE (Polyvinyl Ether)

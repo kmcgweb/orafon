@@ -13,6 +13,10 @@ th:
     - /assets/uploads/orafon-r134a-back.webp
   tank_color: '#6dacaa'
   packages:
+    - name: กระป๋อง
+      kg: 500
+      unit: g
+      special: true
     - name: DAC
       kg: 3
       unit: kg

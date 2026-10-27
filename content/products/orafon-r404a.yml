@@ -10,6 +10,10 @@ th:
     - /assets/uploads/orafon-r404a-front.webp
     - /assets/uploads/orafon-r404a-back.webp
   packages:
+    - name: กระป๋อง
+      kg: 650
+      unit: g
+      special: true
     - name: DAC
       kg: 10.9
     - name: Cylinder

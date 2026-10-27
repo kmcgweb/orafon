@@ -11,6 +11,10 @@ th:
     - /assets/uploads/orafon-r600a-front.webp
     - /assets/uploads/orafon-r600a-back.webp
   packages:
+    - name: กระป๋อง
+      kg: 420
+      unit: g
+      special: true
     - name: DAC
       kg: 6.5
     - name: Cylinder
