@@ -84,7 +84,7 @@ collections:
         fields:
           - { name: name, label: "ชื่อขนาด", hint: "เช่น ถัง 13.6 kg / Cylinder", widget: string }
           - { name: kg, label: "ขนาด (ตัวเลข)", widget: number, value_type: float }
-          - { name: unit, label: "หน่วย", widget: select, options: [{ label: "kg", value: kg }, { label: "ml", value: ml }, { label: "L (ลิตร)", value: L }, { label: "ชิ้น (pcs)", value: pcs }], default: kg, required: false }
+          - { name: unit, label: "หน่วย", widget: select, options: [{ label: "kg", value: kg }, { label: "g", value: g }, { label: "ml", value: ml }, { label: "L (ลิตร)", value: L }, { label: "ชิ้น (pcs)", value: pcs }], default: kg, required: false }
           - { name: lb, label: "น้ำหนัก (lb) ถ้ามี", widget: number, value_type: float, required: false }
           - { name: sku, label: "SKU", widget: string, required: false }
           - { name: special, label: "สั่งพิเศษ (ต้องสั่งล่วงหน้า)", hint: "ติ๊กถ้าขนาดนี้ไม่มีสต็อกประจำ", widget: boolean, required: false, default: false }
