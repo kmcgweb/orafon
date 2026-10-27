@@ -9,8 +9,8 @@ th:
   tag: ''
   cover: ''
   images:
-    - /assets/uploads/R-134a-front.webp
-    - /assets/uploads/R-134a-back.webp
+    - /assets/uploads/orafon-r134a-front.webp
+    - /assets/uploads/orafon-r134a-back.webp
   tank_color: '#6dacaa'
   packages:
     - name: DAC

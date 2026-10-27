@@ -8,7 +8,7 @@ th:
   tag: ''
   cover: ''
   images:
-    - /assets/uploads/R-508B-front.webp
+    - /assets/uploads/orafon-r508b-front.webp
   packages:
     - name: DAC
       kg: 8

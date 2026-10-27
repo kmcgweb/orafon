@@ -66,7 +66,7 @@ pageScript: home.js
         </div>
         <a class="hx-art" href="{{ href }}" tabindex="-1" aria-hidden="true">
           <span class="hx-disc"></span>
-          {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt=""{% if not loop.first %} loading="lazy"{% endif %}>{% else %}{{ cylinder(r, "slide-" ~ loop.index) }}{% endif %}
+          {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="{{ p.imageAlt }}"{% if not loop.first %} loading="lazy"{% endif %}>{% else %}{{ cylinder(r, "slide-" ~ loop.index) }}{% endif %}
         </a>
       </div>
 
@@ -125,7 +125,7 @@ pageScript: home.js
     <a class="promo-tile is-prod" href="{{ m | bannerHref(lang) }}" style="--c:{{ p.tankColor }}">
       <span class="pp-art">
         {%- if p.brandObj and p.brandObj.logo %}<span class="pp-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
-        {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "promo-" ~ loop.index) }}{% endif %}
+        {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="{{ p.imageAlt }}" loading="lazy">{% else %}{{ cylinder(r, "promo-" ~ loop.index) }}{% endif %}
       </span>
       <span class="pp-body">
         <span class="pp-kicker">{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% endif %}</span>

@@ -8,8 +8,8 @@ th:
   tag: ''
   cover: ''
   images:
-    - /assets/uploads/R-507A-front.webp
-    - /assets/uploads/R-507A-back.webp
+    - /assets/uploads/orafon-r507a-front.webp
+    - /assets/uploads/orafon-r507a-back.webp
   packages:
     - name: DAC
       kg: 11.3

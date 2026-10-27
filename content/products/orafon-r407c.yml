@@ -7,8 +7,8 @@ th:
   tagline: สารทำความเย็น HFC Blend
   tag: ''
   images:
-    - /assets/uploads/R-407C-front.webp
-    - /assets/uploads/R-407C-back.webp
+    - /assets/uploads/orafon-r407c-front.webp
+    - /assets/uploads/orafon-r407c-back.webp
   packages:
     - name: DAC
       kg: 11.3

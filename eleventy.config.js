@@ -135,7 +135,10 @@ function buildDb() {
         const units = [...new Set(packages.map((k) => k.unit || "kg"))];
         const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
         const packShort = units.length === 1 ? packages.map((k) => fmt(k.kg)).join(" · ") + " " + units[0] : packages.map((k) => `${fmt(k.kg)} ${k.unit || "kg"}`).join(" · ");
-        return { ...p, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        // image alt text and page title carry the product's own words (helps Google Images match "ORAFON …")
+        const imageAlt = [p.name, p.tagline].filter(Boolean).join(" – ");
+        const seoTitle = p.tagline ? `${p.name} | ${p.tagline}` : p.name;
+        return { ...p, imageAlt, seoTitle, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 

@@ -9,9 +9,11 @@ bodyClass: has-sticky
 eleventyComputed:
   lang: "{{ entry.lang }}"
   pathKey: "/products/{{ entry.item.slug }}/"
-  title: "{{ entry.item.name }}"
+  title: "{{ entry.item.seoTitle }}"
   description: "{{ entry.item.seo_description or entry.item.short }}"
   ogImage: "{{ entry.item.coverImage }}"
+  ogImageAlt: "{{ entry.item.imageAlt }}"
+  ogType: product
 ---
 {%- from "partials/macros.njk" import icon, cylinder, productCard, tagBadge -%}
 {%- set T = i18n[lang] -%}
@@ -63,7 +65,7 @@ eleventyComputed:
       <div class="gallery">
         <div class="main-wrap"><div class="main-img">
           {%- if p.brandObj and p.brandObj.logo %}<span class="pd-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
-          {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.name }}"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
+          {%- if p.coverImage %}<button class="gal-open" type="button" aria-label="{{ T.zoomImg }}"><img id="mainImg" src="{{ p.coverImage }}" alt="{{ p.imageAlt }}" fetchpriority="high" decoding="async"><span class="gal-zoom" aria-hidden="true">{{ icon("search") }}</span></button>{% else %}{{ cylinder(r, "main") }}{% endif %}
           {%- if p.gallery.length > 1 %}
           <button class="gal-nav gal-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button>
           <button class="gal-nav gal-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>
@@ -73,7 +75,7 @@ eleventyComputed:
         {%- if p.gallery.length > 1 %}
         <div class="thumbs">
           {%- for img in p.gallery %}
-          <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="" loading="lazy"></button>
+          <button class="thumb{% if loop.first %} active{% endif %}" type="button" data-src="{{ img }}" aria-label="{{ p.name }} {{ loop.index }}"><img src="{{ img }}" alt="{{ p.imageAlt }} ({{ loop.index }})" loading="lazy"></button>
           {%- endfor %}
         </div>
         {%- endif %}
@@ -81,7 +83,7 @@ eleventyComputed:
         <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="{{ p.name }}">
           <button class="lb-close" type="button" aria-label="{{ T.close }}">✕</button>
           {%- if p.gallery.length > 1 %}<button class="lb-nav lb-prev" type="button" aria-label="{{ T.prevImg }}">{{ icon("chev") }}</button><button class="lb-nav lb-next" type="button" aria-label="{{ T.nextImg }}">{{ icon("chev") }}</button>{% endif %}
-          <img id="lbImg" src="{{ p.coverImage }}" alt="{{ p.name }}">
+          <img id="lbImg" src="{{ p.coverImage }}" alt="{{ p.imageAlt }}">
           {%- if p.gallery.length > 1 %}<span class="lb-count"><b id="lbIdx">1</b> / {{ p.gallery.length }}</span>{% endif %}
         </div>
         {%- endif %}
@@ -250,13 +252,17 @@ eleventyComputed:
   <a class="btn btn-primary" href="#pd-quote">{{ T.addToQuote }}</a>
 </div>
 
+{%- set imageUrls = [] -%}
+{%- for img in p.gallery %}{% set _ = imageUrls.push(img | absUrl(S.site_url)) %}{% endfor -%}
 <script type="application/ld+json">{{ {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": p.name,
   "description": p.short,
+  "url": (("/products/" ~ p.slug ~ "/") | u(lang)) | absUrl(S.site_url),
   "brand": { "@type": "Brand", "name": b.name if b else S.brand_name },
-  "sku": p.packages[0].sku if (p.packages and p.packages[0]) else "",
-  "category": "Refrigerant",
-  "image": ((p.coverImage or "/assets/img/orafon-logo.png") | absUrl(S.site_url))
+  "category": T.cats[p.category],
+  "image": imageUrls if imageUrls.length else [("/assets/img/orafon-logo.png" | absUrl(S.site_url))],
+  "manufacturer": { "@type": "Organization", "name": S.company_name or S.brand_name, "url": S.site_url } if (b and b.own_brand) else undefined,
+  "sku": p.packages[0].sku if (p.packages and p.packages[0] and p.packages[0].sku) else undefined
 } | json | safe }}</script>

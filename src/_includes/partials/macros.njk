@@ -68,7 +68,7 @@
       {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
     </span>{% endif %}
     {%- if r and r.safety %}<span class="pc-safety sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}
-    {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="" loading="lazy">{% else %}{{ cylinder(r, "card-" ~ p.slug) }}{% endif -%}
+    {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="{{ p.imageAlt }}" loading="lazy">{% else %}{{ cylinder(r, "card-" ~ p.slug) }}{% endif -%}
   </a>
   <div class="prod-body">
     <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if p.kind %} · {{ p.kind }}{% else %} · {{ T.cats[p.category] }}{% endif %}</span>

@@ -8,8 +8,8 @@ th:
   tag: ธรรมชาติ
   cover: ''
   images:
-    - /assets/uploads/R-600a-front.webp
-    - /assets/uploads/R-600a-back.webp
+    - /assets/uploads/orafon-r600a-front.webp
+    - /assets/uploads/orafon-r600a-back.webp
   packages:
     - name: DAC
       kg: 6.5

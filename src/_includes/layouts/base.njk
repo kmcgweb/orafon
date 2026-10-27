@@ -20,12 +20,14 @@
 {%- endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ pathKey | absUrl(S.site_url) }}">
 {%- endif %}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ ogType or 'website' }}">
 <meta property="og:site_name" content="{{ S.brand_name }}">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDesc }}">
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:image" content="{{ (ogImage or '/assets/img/orafon-logo.png') | absUrl(S.site_url) }}">
+{%- if ogImageAlt %}<meta property="og:image:alt" content="{{ ogImageAlt }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="{{ 'th_TH' if lang == 'th' else 'en_US' }}">
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/favicon.png">
@@ -35,6 +37,15 @@
 {%- if extraCss %}
 <link rel="stylesheet" href="/assets/css/{{ extraCss }}">
 {%- endif %}
+{#- who publishes this site: Google uses it to tie the brand, logo and pages together -#}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": (S.site_url ~ "/#org"), "name": S.brand_name, "legalName": S.company_name, "url": S.site_url,
+      "logo": ("/assets/img/orafon-logo.png" | absUrl(S.site_url)), "email": S.email, "telephone": S.phone },
+    { "@type": "WebSite", "@id": (S.site_url ~ "/#site"), "name": S.brand_name, "url": S.site_url, "inLanguage": lang, "publisher": { "@id": (S.site_url ~ "/#org") } }
+  ]
+} | json | safe }}</script>
 {%- if jsonLd %}
 <script type="application/ld+json">{{ jsonLd | safe }}</script>
 {%- endif %}

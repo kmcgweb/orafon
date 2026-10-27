@@ -7,7 +7,7 @@ th:
   tagline: สารทำความเย็นอุณหภูมิต่ำพิเศษ HFC
   tag: ''
   images:
-    - /assets/uploads/R-23-front.webp
+    - /assets/uploads/orafon-r23-front.webp
   packages:
     - name: DAC
       kg: 8

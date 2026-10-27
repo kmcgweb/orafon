@@ -7,8 +7,8 @@ th:
   tagline: สารทำความเย็น HCFC
   tag: ''
   images:
-    - /assets/uploads/R-22-front.webp
-    - /assets/uploads/R-22-back.webp
+    - /assets/uploads/orafon-r22-front.webp
+    - /assets/uploads/orafon-r22-back.webp
   packages:
     - name: DAC
       kg: 3

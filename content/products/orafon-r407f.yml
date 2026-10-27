@@ -8,8 +8,8 @@ th:
   tag: ''
   cover: ''
   images:
-    - /assets/uploads/R-407F-front.webp
-    - /assets/uploads/R-407F-back.webp
+    - /assets/uploads/orafon-r407f-front.webp
+    - /assets/uploads/orafon-r407f-back.webp
   packages:
     - name: DAC
       kg: 11.3
