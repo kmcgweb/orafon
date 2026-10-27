@@ -7,7 +7,7 @@ th:
   refrigerant: r-134a
   tagline: สารทำความเย็น HFC
   tag: ''
-  cover: /assets/uploads/R-134a-front-box-1.webp
+  cover: ''
   images:
     - /assets/uploads/R-134a-front.webp
     - /assets/uploads/R-134a-back.webp
@@ -93,6 +93,7 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: ติดต่อทีม ORAFON เพื่อสอบถามขนาดบรรจุ สต็อก และขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: ORAFON R-134a สารทำความเย็น R-134a HFC A1 GWP 1430 จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  eco: ''
   labels:
     - recommended
     - popular
