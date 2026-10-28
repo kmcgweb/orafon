@@ -1275,3 +1275,15 @@ body.has-sticky .fab{bottom:90px}
 .ot-badge{display:inline-grid;place-items:center;min-width:42px;height:24px;padding:0 8px;border-radius:6px;background:#2F3192;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
 .ot-PAG.ot-badge,.oil-table .dot.ot-PAG{background:#2A9FD8}
 .ot-PVE.ot-badge,.oil-table .dot.ot-PVE{background:#0F766E}
+
+/* about: brand products grouped by category */
+.bp-groups{display:flex;flex-direction:column;gap:14px;margin:18px 0 22px;padding:18px 20px;background:var(--panel);border:1px solid var(--border-soft);border-radius:var(--r)}
+.bp-group{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:start}
+.bp-group+.bp-group{padding-top:14px;border-top:1px dashed var(--border)}
+.bp-group-h{font-size:13px;font-weight:700;color:var(--primary);padding-top:6px;letter-spacing:.02em}
+.bp-group-h i{font-style:normal;font-weight:600;font-size:11.5px;color:var(--text-muted);background:#fff;border:1px solid var(--border-soft);border-radius:10px;padding:1px 7px;margin-left:4px}
+.bp-groups .bp-grades{margin:0;gap:8px}
+.bp-groups .grade-mini{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--border);border-radius:var(--r-sm);padding:6px 11px;font-family:var(--font);font-size:13px;font-weight:600;color:var(--text);transition:border-color .15s,transform .15s,box-shadow .15s}
+.bp-groups .grade-mini::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.bp-groups .grade-mini:hover{border-color:var(--c);transform:translateY(-1px);box-shadow:0 4px 10px -6px rgba(var(--primary-rgb),.5);color:var(--primary)}
+@media (max-width:640px){.bp-group{grid-template-columns:1fr;gap:8px}.bp-group-h{padding-top:0}.bp-groups{padding:14px}}
