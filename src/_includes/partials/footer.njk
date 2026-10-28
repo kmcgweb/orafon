@@ -26,11 +26,7 @@
     <div class="ft-col">
       <h4>Products</h4>
       <ul>
-        {#- grades with the highest worldwide demand, ORAFON first: R-32 / R-410A / R-454B (AC), R-134a (auto & chillers), R-1234yf (new cars),
-            R-290 / R-600a (natural, commercial & domestic), R-448A (low-GWP R-404A replacement) -#}
-        {%- for slug in ["orafon-r32", "orafon-r410a", "orafon-r134a", "orafon-r1234yf", "orafon-r290", "orafon-r600a", "solstice-r454b", "solstice-n40"] %}
-        {%- for p in D.products %}{% if p.slug == slug %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a></li>{% endif %}{% endfor %}
-        {%- endfor %}
+        {%- for c in D.catCounts %}<li><a href="{{ ('/products/?cat=' ~ c.key) | u(lang) }}">{{ T.cats[c.key] }}</a></li>{% endfor %}
       </ul>
     </div>
     <div class="ft-col">
