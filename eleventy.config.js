@@ -23,7 +23,7 @@ const isEco = (p, ref) => {
   const odp = parseFloat(String(ref.odp ?? "").replace(/[^0-9.]/g, ""));
   return gwp < 150 && !(odp >= 0.001);
 };
-const CLASS_ORDER = ["HFO", "HFO Blend", "HFC", "HFC Blend", "HCFC", "HC", "Natural"];
+const CLASS_ORDER = ["HFO", "HFO Blend", "HCFO", "HFC", "HFC Blend", "HCFC", "HC", "Natural"];
 const md = markdownIt({ html: false, linkify: true, breaks: true });
 
 /* ---------- content loading ----------

@@ -33,6 +33,8 @@ eleventyComputed:
 
     <ul class="qt-items" id="qtItems"
         data-size-none="{{ T.sizeNotSet }}" data-remove="{{ T.remove }}" data-qty="{{ T.qty }}"></ul>
+    {#- current cover image per product, so items saved before an image was renamed still show a picture -#}
+    <script type="application/json" id="qtImgs">{ {%- for p in db[lang].products %}"{{ p.slug }}": {{ (p.coverImage or "") | dump | safe }}{% if not loop.last %},{% endif %}{% endfor -%} }</script>
     <a class="qt-more" id="qtMore" href="{{ '/products/' | u(lang) }}" hidden>+ {{ T.addMore }}</a>
   </section>
 

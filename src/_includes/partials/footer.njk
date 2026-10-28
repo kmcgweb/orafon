@@ -28,7 +28,12 @@
       <ul>
         <li><a href="{{ '/products/' | u(lang) }}">{{ T.allProducts }}</a></li>
         {%- for b in D.brands %}<li><a href="{{ ('/brands/' ~ b.slug ~ '/') | u(lang) }}">{{ b.name }}</a></li>{% endfor %}
-        {%- for p in D.featured | batch(3) | first %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a></li>{% endfor %}
+        {#- grades with the highest worldwide demand: R-32 / R-410A / R-454B (AC), R-134a (auto & chillers), R-1234yf (new cars),
+            R-290 / R-600a (natural, commercial & domestic), R-448A (low-GWP R-404A replacement) -#}
+        {%- for slug in ["orafon-r32", "orafon-r410a", "solstice-r454b", "orafon-r134a", "orafon-r1234yf", "orafon-r290", "orafon-r600a", "solstice-n40"] %}
+        {%- for p in D.products %}{% if p.slug == slug %}<li><a href="{{ ('/products/' ~ p.slug ~ '/') | u(lang) }}">{{ p.name }}</a></li>{% endif %}{% endfor %}
+        {%- endfor %}
+        <li><a href="{{ '/products/?cat=oil' | u(lang) }}">{{ T.cats.oil }}</a></li>
       </ul>
     </div>
     <div class="ft-col">

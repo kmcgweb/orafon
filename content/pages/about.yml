@@ -9,6 +9,8 @@ th:
       text: สารทำความเย็นแบรนด์ของเราเอง ครอบคลุมเบอร์น้ำยาที่ใช้งานบ่อยในงานปรับอากาศและทำความเย็น
     - title: ตัวแทนจำหน่าย Solstice®
       text: จัดจำหน่ายสารทำความเย็นเทคโนโลยี HFO จาก Solstice® Advanced Materials
+    - title: ส่งออกต่างประเทศ
+      text: รับคำสั่งซื้อจากลูกค้าต่างประเทศ ติดต่อทีมงานเพื่อสอบถามสินค้า ขนาดบรรจุ และเงื่อนไขการส่งออก
     - title: ใส่ใจสิ่งแวดล้อม
       text: สนับสนุนการเปลี่ยนผ่านสู่สารทำความเย็น GWP ต่ำ ลดผลกระทบต่อภาวะโลกร้อน
   body: ""
@@ -22,5 +24,7 @@ en:
       text: Our own refrigerant brand, covering the most widely used grades for air-conditioning and refrigeration.
     - title: Solstice® distributor
       text: We distribute HFO-technology refrigerants from Solstice® Advanced Materials.
+    - title: Export worldwide
+      text: We supply customers outside Thailand. Contact our team about products, pack sizes and export terms.
     - title: Caring for the environment
       text: We support the transition to low-GWP refrigerants to reduce climate impact.

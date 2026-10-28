@@ -50,9 +50,9 @@ th:
     - num: TDS/SDS
       label: เอกสารทางเทคนิคครบ
     - num: B2B · B2C
-      label: ผู้รับเหมา ร้านค้า และผู้ใช้ทั่วไป
+      label: ผู้รับเหมา ร้านค้า ผู้ใช้ทั่วไป และส่งออกต่างประเทศ
   cta_title: พร้อมช่วยวางแผนสารทำความเย็นสำหรับงานของคุณ
-  cta_text: ทีมงาน ORAFON พร้อมให้คำปรึกษาการเลือกสาร ตรวจสอบสต็อก และจัดทำใบเสนอราคา
+  cta_text: ทีมงาน ORAFON พร้อมให้คำปรึกษาการเลือกสาร ตรวจสอบสต็อก และจัดทำใบเสนอราคา ทั้งลูกค้าในประเทศและส่งออกต่างประเทศ
 en:
   hero_title: Refrigerants
   hero_highlight: trusted by professionals
@@ -104,6 +104,6 @@ en:
     - num: TDS/SDS
       label: Full technical documents
     - num: B2B · B2C
-      label: Contractors, dealers and end users
+      label: Contractors, dealers, end users and export customers
   cta_title: Let us help plan the right refrigerant for your job
-  cta_text: The ORAFON team can advise on refrigerant selection, check stock and prepare a quotation.
+  cta_text: The ORAFON team can advise on refrigerant selection, check stock and prepare a quotation, for customers in Thailand and overseas.
