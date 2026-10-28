@@ -427,18 +427,6 @@
     <image:image><image:loc>https://orafon.co.th/assets/uploads/solstice-r515b.webp</image:loc></image:image>
   </url>
   <url>
-    <loc>https://orafon.co.th/products/solstice-lba/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/solstice-lba/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/solstice-lba/"/>
-    <image:image><image:loc>https://orafon.co.th/assets/uploads/solstice-lba-dac.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://orafon.co.th/en/products/solstice-lba/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/solstice-lba/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/solstice-lba/"/>
-    <image:image><image:loc>https://orafon.co.th/assets/uploads/solstice-lba-dac.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://orafon.co.th/products/orafon-r600a/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r600a/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r600a/"/>
