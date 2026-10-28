@@ -8,6 +8,8 @@
   var clearBtn = document.getElementById("qtClear");
   var count = document.getElementById("qtCount");
   var L = ul.dataset;
+  var imgs = {};
+  try { imgs = JSON.parse(document.getElementById("qtImgs").textContent); } catch (e) {}
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
 
   function render() {
@@ -17,7 +19,7 @@
     count.textContent = has ? "(" + items.length + ")" : "";
     ul.innerHTML = items.map(function (i) {
       return '<li class="qt-item" data-id="' + esc(i.id) + '">' +
-        '<a class="qt-img" href="' + esc(i.url) + '">' + (i.img ? '<img src="' + esc(i.img) + '" alt="" loading="lazy">' : "") + "</a>" +
+        '<a class="qt-img" href="' + esc(i.url) + '">' + ((imgs[i.slug] || i.img) ? '<img src="' + esc(imgs[i.slug] || i.img) + '" alt="" loading="lazy" onerror="this.remove()">' : "") + "</a>" +
         '<span class="qt-txt"><a href="' + esc(i.url) + '"><b>' + esc(i.name) + "</b></a><span>" + esc(i.size || L.sizeNone) + "</span></span>" +
         '<div class="pd-qty" role="group" aria-label="' + esc(L.qty) + '"><button type="button" data-step="-1" aria-label="−">−</button>' +
         '<input type="number" inputmode="numeric" min="1" max="9999" value="' + i.qty + '" aria-label="' + esc(L.qty) + '">' +

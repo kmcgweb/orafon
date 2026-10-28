@@ -171,7 +171,7 @@ collections:
     fields:
       - { name: id, label: "รหัส URL", hint: "เช่น r-32, r-410a", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
       - { name: number, label: "เบอร์ ASHRAE", hint: "เช่น R-32", widget: string }
-      - { name: class, label: "ประเภท", widget: select, options: [HFO, HFO Blend, HFC, HFC Blend, HCFC, HC, Natural] }
+      - { name: class, label: "ประเภท", widget: select, options: [HFO, HFO Blend, HCFO, HFC, HFC Blend, HCFC, HC, Natural] }
       - { name: composition, label: "ส่วนผสม", widget: string, required: false }
       - { name: blend_type, label: "ลักษณะสาร", widget: select, options: [pure, azeotropic, near-azeotropic, zeotropic] }
       - { name: safety, label: "ASHRAE safety", widget: select, options: [A1, A2L, A2, A3, B1, B2L] }
