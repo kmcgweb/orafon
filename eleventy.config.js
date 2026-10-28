@@ -155,7 +155,11 @@ function buildDb() {
     // A–Z with natural number order (R-22 before R-134a); "order" is still used for featured/home
     const az = (a, b) => String(a.name).localeCompare(String(b.name), "en", { numeric: true, sensitivity: "base" });
     const productsAZ = [...products].sort(az);
-    for (const b of brands) b.products = productsAZ.filter((p) => p.brand === b.slug);
+    for (const b of brands) {
+      b.products = productsAZ.filter((p) => p.brand === b.slug);
+      // about page: refrigerants first, then oils and other products
+      b.groups = ["refrigerant", "oil", "other"].map((key) => ({ key, products: b.products.filter((p) => p.category === key) })).filter((g) => g.products.length);
+    }
 
     const articles = L(folders.articles)
       .filter((a) => !a.draft)
