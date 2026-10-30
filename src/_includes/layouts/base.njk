@@ -49,6 +49,15 @@
 {%- if jsonLd %}
 <script type="application/ld+json">{{ jsonLd | safe }}</script>
 {%- endif %}
+{#- Google Analytics 4 (property "ORAFON (orafon.co.th)"): only on the live host, so dev and previews stay out of the reports -#}
+<script>
+if (location.hostname === "orafon.co.th") {
+  var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-LP2LN9853P"; document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date()); gtag("config", "G-LP2LN9853P");
+}
+</script>
 </head>
 <body class="{{ bodyClass }}">
 <a class="skip-link" href="#main">{{ T.skipToContent }}</a>
