@@ -25,7 +25,7 @@ eleventyComputed:
   </div>
 </div></section>
 {%- endif %}
-{%- if A.history and A.history.length %}
+{%- if A.history_show and A.history and A.history.length %}
 <section class="section" id="history" style="padding-top:0"><div class="container">
   <h2 class="display">{{ A.history_title }}</h2>
   {%- if A.history_lead %}<p class="lead">{{ A.history_lead }}</p>{% endif %}
