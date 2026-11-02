@@ -1,0 +1,94 @@
+th:
+  id: orafon-poe22
+  name: ORAFON POE 22
+  brand: orafon
+  category: oil
+  tagline: น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศ
+  tag: ''
+  cover: /assets/uploads/orafon-poe22-can1l.webp
+  images: []
+  packages:
+  - name: กระป๋อง
+    kg: 1
+    unit: L
+  - name: แกลลอน
+    kg: 5
+    unit: L
+  - name: ถัง
+    kg: 18.9
+    unit: L
+  specs:
+  - k: ความหนืดที่ 40 °C
+    v: '22 cSt'
+  - k: ความหนืดที่ 100 °C
+    v: '4.23 cSt'
+  - k: ดัชนีความหนืด (VI)
+    v: '130'
+  - k: จุดไหลเท
+    v: '-48 °C'
+  - k: จุดวาบไฟ
+    v: '250 °C'
+  - k: ความหนาแน่นที่ 15 °C
+    v: '0.95 g/cm³'
+  - k: ค่าความชื้น
+    v: '50 ppm'
+  - k: ค่าความเป็นกรด (TAN)
+    v: '0.03 mgKOH/g'
+  short: ORAFON POE 22 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ใช้ร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง
+  highlights:
+  - title: เสถียรภาพสูง
+    text: มีเสถียรภาพทางเคมีและความร้อนสูง
+  - title: ป้องกันการสึกหรอ
+    text: ป้องกันการสึกหรอได้อย่างดีเยี่ยม
+  - title: สูตรเฉพาะ
+    text: คิดค้นสูตรเฉพาะ เพื่อการหล่อลื่นที่ดีขึ้น
+  description: ORAFON POE 22 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ทำงานร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง ป้องกันการสึกหรอได้อย่างดีเยี่ยม และคิดค้นสูตรเฉพาะเพื่อการหล่อลื่นที่ดีขึ้น ขนาดบรรจุ 1, 5 และ 18.9 ลิตร
+  applications:
+  - icon: ac
+    label: เครื่องปรับอากาศ
+  - icon: snow
+    label: ระบบที่ใช้สารทำความเย็น GWP ต่ำ
+  documents:
+  - type: TDS
+    label: Technical Data Sheet (TDS)
+    file: ''
+  seo_description: ORAFON POE 22 น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศและสารทำความเย็น GWP ต่ำ ขนาด 1, 5 และ 18.9 ลิตร จาก ORAFON
+  labels: []
+  draft: false
+  order: 609
+en:
+  name: ORAFON POE 22
+  tagline: POE compressor oil for air-conditioning
+  tag: ''
+  specs:
+  - k: Viscosity at 40 °C
+    v: '22 cSt'
+  - k: Viscosity at 100 °C
+    v: '4.23 cSt'
+  - k: Viscosity index (VI)
+    v: '130'
+  - k: Pour point
+    v: '-48 °C'
+  - k: Flash point
+    v: '250 °C'
+  - k: Density at 15 °C
+    v: '0.95 g/cm³'
+  - k: Moisture
+    v: '50 ppm'
+  - k: Total acid number (TAN)
+    v: '0.03 mgKOH/g'
+  short: ORAFON POE 22 is a POE (polyol ester) compressor oil for air-conditioners and systems running low-GWP refrigerants, with high chemical and thermal stability.
+  highlights:
+  - title: High stability
+    text: High chemical and thermal stability
+  - title: Wear protection
+    text: Excellent protection against wear
+  - title: Dedicated formula
+    text: Specially formulated for better lubrication
+  description: ORAFON POE 22 is a POE (polyol ester) compressor oil for air-conditioners and systems that run on low-GWP refrigerants. It offers high chemical and thermal stability, excellent wear protection and a dedicated formula for better lubrication. Available in 1 L, 5 L and 18.9 L.
+  applications:
+  - icon: ac
+    label: Air-conditioners
+  - icon: snow
+    label: Low-GWP refrigerant systems
+  seo_description: ORAFON POE 22 POE compressor oil for air-conditioning and low-GWP refrigerants, 1 L, 5 L and 18.9 L, from ORAFON.

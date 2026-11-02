@@ -8,9 +8,6 @@ th:
   cover: /assets/uploads/orafon-poe100-can1l.webp
   images: []
   packages:
-  - name: กระป๋อง
-    kg: 1
-    unit: L
   - name: แกลลอน
     kg: 5
     unit: L
@@ -18,10 +15,22 @@ th:
     kg: 18.9
     unit: L
   specs:
-  - k: ชนิดน้ำมัน
-    v: POE (Polyol Ester)
-  - k: เกรดความหนืด
-    v: '100'
+  - k: ความหนืดที่ 40 °C
+    v: '100 cSt'
+  - k: ความหนืดที่ 100 °C
+    v: '11.51 cSt'
+  - k: ดัชนีความหนืด (VI)
+    v: '110'
+  - k: จุดไหลเท
+    v: '-36 °C'
+  - k: จุดวาบไฟ
+    v: '300 °C'
+  - k: ความหนาแน่นที่ 15 °C
+    v: '0.968 g/cm³'
+  - k: ค่าความชื้น
+    v: '75 ppm'
+  - k: ค่าความเป็นกรด (TAN)
+    v: '0.04 mgKOH/g'
   short: ORAFON POE 100 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 100
   highlights:
   - title: ชนิด POE
@@ -29,11 +38,11 @@ th:
   - title: เกรด 100
     text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
   - title: ปรึกษาทีมงาน
-    text: ขนาดบรรจุ 1 ลิตร และ 5 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
+    text: ขนาดบรรจุ 5 และ 18.9 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
   description: |-
     ORAFON POE 100 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 100
 
-    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1 ลิตร และ 5 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 5 และ 18.9 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
   - icon: chiller
     label: ชิลเลอร์
@@ -52,10 +61,22 @@ en:
   tagline: POE compressor oil for HFC/HFO systems
   tag: ''
   specs:
-  - k: Oil type
-    v: POE (Polyol Ester)
-  - k: Viscosity grade
-    v: '100'
+  - k: Viscosity at 40 °C
+    v: '100 cSt'
+  - k: Viscosity at 100 °C
+    v: '11.51 cSt'
+  - k: Viscosity index (VI)
+    v: '110'
+  - k: Pour point
+    v: '-36 °C'
+  - k: Flash point
+    v: '300 °C'
+  - k: Density at 15 °C
+    v: '0.968 g/cm³'
+  - k: Moisture
+    v: '75 ppm'
+  - k: Total acid number (TAN)
+    v: '0.04 mgKOH/g'
   short: ORAFON POE 100 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 100.
   highlights:
   - title: POE type
@@ -63,11 +84,11 @@ en:
   - title: Grade 100
     text: Choose the viscosity grade specified by the compressor maker
   - title: Ask our team
-    text: 1 L and 5 L packs; contact ORAFON for technical documents
+    text: 5 L and 18.9 L packs; contact ORAFON for technical documents
   description: |-
     ORAFON POE 100 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 100.
 
-    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L and 5 L. Contact the ORAFON team for stock, technical data and a quotation.
+    Always use the oil type and grade specified by the compressor manufacturer. Available in 5 L and 18.9 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
   - icon: chiller
     label: Chillers

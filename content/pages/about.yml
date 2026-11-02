@@ -13,6 +13,36 @@ th:
       text: รับคำสั่งซื้อจากลูกค้าต่างประเทศ ติดต่อทีมงานเพื่อสอบถามสินค้า ขนาดบรรจุ และเงื่อนไขการส่งออก
     - title: ใส่ใจสิ่งแวดล้อม
       text: สนับสนุนการเปลี่ยนผ่านสู่สารทำความเย็น GWP ต่ำ ลดผลกระทบต่อภาวะโลกร้อน
+  history_title: ประวัติความเป็นมา
+  history_lead: บริษัท โอราโนส จำกัด เจ้าของแบรนด์ ORAFON อยู่ในเครือ เค.เอ็ม. กรุ๊ป ซึ่งดำเนินธุรกิจนำเข้าและจัดจำหน่ายเคมีอุตสาหกรรม ทั้งโซลเว้นท์ น้ำยาแอร์ ผลิตภัณฑ์ฆ่าเชื้อและทำความสะอาด รวมถึงวัตถุดิบทางเคมีอีกหลายชนิด
+  history:
+    - year: "2539"
+      title: เริ่มต้น เค.เอ็ม. กรุ๊ป
+      text: ก่อตั้งบริษัท สเตชันเนอรี สแควร์ จำกัด
+    - year: "2540"
+      title: บริษัท เคเอ็มเคมิคอล คอร์ปอเรชัน จำกัด
+      text: เปลี่ยนชื่อบริษัท และนำเข้าจัดจำหน่ายจารบีแบรนด์ BECHEM จากประเทศเยอรมนี ซึ่งใช้กันแพร่หลายในอุตสาหกรรมยา อาหาร และอิเล็กทรอนิกส์
+    - year: "2546"
+      title: ก่อตั้งบริษัท โอราโนส จำกัด
+      text: ผู้นำเข้าและจัดจำหน่ายผลิตภัณฑ์หล่อลื่น SK ZIC แต่เพียงผู้เดียวในประเทศไทย และบุกเบิกธุรกิจสารทำความเย็นภายใต้แบรนด์ ORAFON
+    - year: "2551"
+      title: บริษัท เคเอ็ม อินโนเวท (1996) จำกัด
+      text: นำเข้าและจัดจำหน่ายน้ำยาฆ่าเชื้อแบรนด์ Amity สำหรับโรงพยาบาลและอุตสาหกรรมอาหาร
+    - year: "2552"
+      title: ได้รับการรับรอง ISO 9001
+      text: โอราโนสได้รับการรับรองระบบบริหารงานคุณภาพ ISO 9001 สร้างความมั่นใจให้ลูกค้าทั้งในประเทศและต่างประเทศ
+    - year: "2556"
+      title: บริษัท นพเก้า จำกัด
+      text: ขยายตลาดเคมีภัณฑ์สู่ลูกค้าต่างประเทศในภูมิภาคเอเชียใต้
+    - year: "2562"
+      title: บริษัท รูบิคอน ดิสทริบิวชั่น จำกัด
+      text: บริการขนส่งสินค้าภายในประเทศ พร้อมพื้นที่คลังสินค้าให้เช่า
+    - year: "2565"
+      title: รับรอง ISO 9001 อีกครั้ง
+      text: ยืนยันมาตรฐานระบบบริหารงานคุณภาพ ISO 9001 อย่างต่อเนื่อง
+    - year: "2569"
+      title: เปิดเว็บไซต์ orafon.co.th
+      text: รวมข้อมูลสินค้า ORAFON และ Solstice® พร้อมข้อมูลทางเทคนิคไว้ในที่เดียว
   body: ""
 en:
   title: We are
@@ -28,3 +58,33 @@ en:
       text: We supply customers outside Thailand. Contact our team about products, pack sizes and export terms.
     - title: Caring for the environment
       text: We support the transition to low-GWP refrigerants to reduce climate impact.
+  history_title: Our history
+  history_lead: Oranoss Co., Ltd., owner of the ORAFON brand, is part of K.M. Group, which imports and distributes industrial chemicals including solvents, refrigerants, disinfection and cleaning products, and many chemical raw materials.
+  history:
+    - year: "1996"
+      title: K.M. Group begins
+      text: Stationery Square Co., Ltd. is founded.
+    - year: "1997"
+      title: KM Chemical Corporation Co., Ltd.
+      text: The company is renamed and begins importing BECHEM greases from Germany, widely used in the pharmaceutical, food and electronics industries.
+    - year: "2003"
+      title: Oranoss Co., Ltd. is founded
+      text: Sole importer and distributor of SK ZIC lubricants in Thailand, and the start of the ORAFON refrigerant business.
+    - year: "2008"
+      title: KM Innovate (1996) Co., Ltd.
+      text: Imports and distributes Amity disinfectants for hospitals and the food industry.
+    - year: "2009"
+      title: ISO 9001 certified
+      text: Oranoss is certified to the ISO 9001 quality management standard, giving customers in Thailand and abroad added confidence.
+    - year: "2013"
+      title: Noppakao Co., Ltd.
+      text: Expands chemical sales to customers in South Asia.
+    - year: "2019"
+      title: Rubicon Distribution Co., Ltd.
+      text: Domestic transport services and warehouse space for rent.
+    - year: "2022"
+      title: ISO 9001 certified again
+      text: Continued certification to the ISO 9001 quality management standard.
+    - year: "2026"
+      title: orafon.co.th launches
+      text: ORAFON and Solstice® products and technical data in one place.

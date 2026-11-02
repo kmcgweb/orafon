@@ -17,7 +17,23 @@ th:
   - name: ถัง
     kg: 18.9
     unit: L
-  specs: []
+  specs:
+  - k: ความหนืดที่ 40 °C
+    v: '68 cSt'
+  - k: ความหนืดที่ 100 °C
+    v: '9.5 cSt'
+  - k: ดัชนีความหนืด (VI)
+    v: '140'
+  - k: จุดไหลเท
+    v: '-42 °C'
+  - k: จุดวาบไฟ
+    v: '234 °C'
+  - k: ความหนาแน่นที่ 15 °C
+    v: '0.975 g/cm³'
+  - k: ค่าความชื้น
+    v: '50 ppm'
+  - k: ค่าความเป็นกรด (TAN)
+    v: '0.03 mgKOH/g'
   short: ORAFON POE 68 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ใช้ร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง
   highlights:
   - title: เสถียรภาพสูง
@@ -26,7 +42,7 @@ th:
     text: ป้องกันการสึกหรอได้อย่างดีเยี่ยม
   - title: สูตรเฉพาะ
     text: คิดค้นสูตรเฉพาะ เพื่อการหล่อลื่นที่ดีขึ้น
-  description: ORAFON POE 68 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ทำงานร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง ป้องกันการสึกหรอได้อย่างดีเยี่ยม และคิดค้นสูตรเฉพาะเพื่อการหล่อลื่นที่ดีขึ้น ขนาดบรรจุ 1 ลิตร
+  description: ORAFON POE 68 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับเครื่องปรับอากาศ และระบบที่ทำงานร่วมกับสารทำความเย็นที่มีค่า GWP ต่ำ มีเสถียรภาพทางเคมีและความร้อนสูง ป้องกันการสึกหรอได้อย่างดีเยี่ยม และคิดค้นสูตรเฉพาะเพื่อการหล่อลื่นที่ดีขึ้น ขนาดบรรจุ 1, 5 และ 18.9 ลิตร
   applications:
   - icon: ac
     label: เครื่องปรับอากาศ
@@ -36,7 +52,7 @@ th:
   - type: TDS
     label: Technical Data Sheet (TDS)
     file: ''
-  seo_description: ORAFON POE 68 น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศและสารทำความเย็น GWP ต่ำ ขนาด 1 ลิตร จาก ORAFON
+  seo_description: ORAFON POE 68 น้ำมันคอมเพรสเซอร์ POE สำหรับเครื่องปรับอากาศและสารทำความเย็น GWP ต่ำ ขนาด 1, 5 และ 18.9 ลิตร จาก ORAFON
   labels: []
   draft: false
   order: 612
@@ -44,7 +60,23 @@ en:
   name: ORAFON POE 68
   tagline: POE compressor oil for air-conditioning
   tag: ''
-  specs: []
+  specs:
+  - k: Viscosity at 40 °C
+    v: '68 cSt'
+  - k: Viscosity at 100 °C
+    v: '9.5 cSt'
+  - k: Viscosity index (VI)
+    v: '140'
+  - k: Pour point
+    v: '-42 °C'
+  - k: Flash point
+    v: '234 °C'
+  - k: Density at 15 °C
+    v: '0.975 g/cm³'
+  - k: Moisture
+    v: '50 ppm'
+  - k: Total acid number (TAN)
+    v: '0.03 mgKOH/g'
   short: ORAFON POE 68 is a POE (polyol ester) compressor oil for air-conditioners and systems running low-GWP refrigerants, with high chemical and thermal stability.
   highlights:
   - title: High stability
@@ -53,10 +85,10 @@ en:
     text: Excellent protection against wear
   - title: Dedicated formula
     text: Specially formulated for better lubrication
-  description: ORAFON POE 68 is a POE (polyol ester) compressor oil for air-conditioners and systems that run on low-GWP refrigerants. It offers high chemical and thermal stability, excellent wear protection and a dedicated formula for better lubrication. Available in 1 L cans.
+  description: ORAFON POE 68 is a POE (polyol ester) compressor oil for air-conditioners and systems that run on low-GWP refrigerants. It offers high chemical and thermal stability, excellent wear protection and a dedicated formula for better lubrication. Available in 1 L, 5 L and 18.9 L.
   applications:
   - icon: ac
     label: Air-conditioners
   - icon: snow
     label: Low-GWP refrigerant systems
-  seo_description: ORAFON POE 68 POE compressor oil for air-conditioning and low-GWP refrigerants, 1 L, from ORAFON.
+  seo_description: ORAFON POE 68 POE compressor oil for air-conditioning and low-GWP refrigerants, 1 L, 5 L and 18.9 L, from ORAFON.

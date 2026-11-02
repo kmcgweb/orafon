@@ -61,7 +61,7 @@ const byOrder = (a, b) =>
   (a.order ?? 999) - (b.order ?? 999) || String(a.name || a.number || a.title).localeCompare(String(b.name || b.number || b.title));
 
 // base oils for compressor oils (category "oil")
-const OIL_TYPES = { PAG: "Polyalkylene Glycol", POE: "Polyol Ester", PVE: "Polyvinyl Ether" };
+const OIL_TYPES = { PAG: "Polyalkylene Glycol", POE: "Polyol Ester", PVE: "Polyvinyl Ether", MO: "Mineral Oil" };
 
 function buildDb() {
   const folders = {
@@ -107,8 +107,8 @@ function buildDb() {
         const appKeys = [...new Set(apps.map((a) => a.icon).filter(Boolean))].join(" ");
         // category: refrigerant (default) | oil | other — drives the mega menu and the ?cat= filter
         const category = ["refrigerant", "oil", "other"].includes(p.category) ? p.category : "refrigerant";
-        // compressor oils are grouped by base oil (PAG / POE / PVE): the CMS field, else read from the name
-        const oilType = category === "oil" ? (OIL_TYPES[p.oil_type] ? p.oil_type : (String(p.name).match(/\b(PAG|POE|PVE)\b/) || [])[1] || "") : "";
+        // compressor oils are grouped by base oil (PAG / POE / PVE / MO): the CMS field, else read from the name
+        const oilType = category === "oil" ? (OIL_TYPES[p.oil_type] ? p.oil_type : (String(p.name).match(/\b(PAG|POE|PVE|MO)\b/) || [])[1] || "") : "";
         // "type" used by the class filter + card line: refrigerant class (HFC…) or oil type
         const kind = ref?.class || oilType;
         // mega menu lists products under a brand heading, so the brand prefix is dropped there ("ORAFON R-32" -> "R-32")
@@ -130,7 +130,7 @@ function buildDb() {
         const packText = packages.map((k) => `${k.kg} ${k.unit || "kg"}`).join(" · ");
         // oil comparison table: viscosity figures from the spec list (keys are free text, Thai or English)
         const spec = (re) => ((p.specs || []).find((s) => re.test(String(s.k))) || {}).v || "";
-        const oilData = oilType ? { v40: spec(/40\s*°?\s*C/i), v100: spec(/100\s*°?\s*C/i), vi: spec(/^\s*VI\s*$/i) } : null;
+        const oilData = oilType ? { v40: spec(/40\s*°?\s*C/i), v100: spec(/100\s*°?\s*C/i), vi: spec(/\bVI\b/) } : null;
         // compact form for the table view: one unit at the end when all sizes share it ("0.25 · 1 ลิตร")
         const units = [...new Set(packages.map((k) => k.unit || "kg"))];
         const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });

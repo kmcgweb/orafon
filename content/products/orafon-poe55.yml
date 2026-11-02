@@ -18,10 +18,22 @@ th:
     kg: 18.9
     unit: L
   specs:
-  - k: ชนิดน้ำมัน
-    v: POE (Polyol Ester)
-  - k: เกรดความหนืด
-    v: '55'
+  - k: ความหนืดที่ 40 °C
+    v: '53.9 cSt'
+  - k: ความหนืดที่ 100 °C
+    v: '8.2 cSt'
+  - k: ดัชนีความหนืด (VI)
+    v: '123'
+  - k: จุดไหลเท
+    v: '-42 °C'
+  - k: จุดวาบไฟ
+    v: '240 °C'
+  - k: ความหนาแน่นที่ 15 °C
+    v: '0.965 g/cm³'
+  - k: ค่าความชื้น
+    v: '50 ppm'
+  - k: ค่าความเป็นกรด (TAN)
+    v: '0.03 mgKOH/g'
   short: ORAFON POE 55 — น้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 55
   highlights:
   - title: ชนิด POE
@@ -29,11 +41,11 @@ th:
   - title: เกรด 55
     text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
   - title: ปรึกษาทีมงาน
-    text: ขนาดบรรจุ 1 ลิตร และ 5 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
+    text: ขนาดบรรจุ 1, 5 และ 18.9 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
   description: |-
     ORAFON POE 55 เป็นน้ำมันคอมเพรสเซอร์ชนิด POE (Polyol Ester) สำหรับคอมเพรสเซอร์ในระบบปรับอากาศและระบบทำความเย็นที่ใช้สารทำความเย็น HFC และ HFO เกรดความหนืด 55
 
-    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1 ลิตร และ 5 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1, 5 และ 18.9 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
   - icon: ac
     label: เครื่องปรับอากาศ
@@ -52,10 +64,22 @@ en:
   tagline: POE compressor oil for HFC/HFO systems
   tag: ''
   specs:
-  - k: Oil type
-    v: POE (Polyol Ester)
-  - k: Viscosity grade
-    v: '55'
+  - k: Viscosity at 40 °C
+    v: '53.9 cSt'
+  - k: Viscosity at 100 °C
+    v: '8.2 cSt'
+  - k: Viscosity index (VI)
+    v: '123'
+  - k: Pour point
+    v: '-42 °C'
+  - k: Flash point
+    v: '240 °C'
+  - k: Density at 15 °C
+    v: '0.965 g/cm³'
+  - k: Moisture
+    v: '50 ppm'
+  - k: Total acid number (TAN)
+    v: '0.03 mgKOH/g'
   short: ORAFON POE 55 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 55.
   highlights:
   - title: POE type
@@ -63,11 +87,11 @@ en:
   - title: Grade 55
     text: Choose the viscosity grade specified by the compressor maker
   - title: Ask our team
-    text: 1 L and 5 L packs; contact ORAFON for technical documents
+    text: 1 L, 5 L and 18.9 L packs; contact ORAFON for technical documents
   description: |-
     ORAFON POE 55 is a POE (polyol ester) compressor oil for air-conditioning and refrigeration compressors running HFC and HFO refrigerants, viscosity grade 55.
 
-    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L and 5 L. Contact the ORAFON team for stock, technical data and a quotation.
+    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L, 5 L and 18.9 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
   - icon: ac
     label: Air-conditioners
