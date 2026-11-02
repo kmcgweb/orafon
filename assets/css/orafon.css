@@ -376,6 +376,15 @@ footer.site{margin-top:56px;background:#fff;border-top:1px solid var(--border-so
 .ab-card{background:#fff;border:1px solid var(--border-soft);border-radius:var(--r);padding:26px;box-shadow:var(--shadow-soft)}
 .ab-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
 .ab-card p{font-size:14px;color:var(--text-muted);line-height:1.7}
+.ab-timeline{list-style:none;margin:28px 0 0;padding:0;position:relative;max-width:860px}
+.ab-timeline:before{content:"";position:absolute;left:83px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.ab-timeline li{display:grid;grid-template-columns:72px 1fr;gap:32px;padding:0 0 26px;position:relative}
+.ab-timeline li:before{content:"";position:absolute;left:78px;top:7px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--primary)}
+.ab-timeline li:last-child:before{background:var(--primary)}
+.tl-year{font-family:var(--mono);font-weight:600;font-size:17px;color:var(--primary);text-align:right}
+.tl-body h3{font-size:17px;font-weight:600;margin-bottom:4px}
+.tl-body p{font-size:14px;color:var(--text-muted);line-height:1.7}
+@media (max-width:600px){.ab-timeline:before{left:59px}.ab-timeline li{grid-template-columns:50px 1fr;gap:28px}.ab-timeline li:before{left:54px}.tl-year{font-size:15px}}
 
 /* contact / form */
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding:24px 0 64px}
@@ -1199,10 +1208,11 @@ body.has-sticky .fab{bottom:90px}
 .mg3 .mgf-art img:not([src*="-photo-"]){transform:scale(1.22);transform-origin:50% 92%}
 .mg3 .mgf-art::after{width:170px}
 /* products mega v3, oils: one column per base oil (PAG / POE / PVE), grades listed with their pack sizes */
-.mg3-oils{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,30px);margin-top:4px}
+.mg3-oils{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,30px);margin-top:4px}
 .mg3-oil{--oc:#2F3192;--ob:#E8F2FB;min-width:0}
 .mg3-oil[data-oil="PAG"]{--oc:#2A9FD8}
 .mg3-oil[data-oil="PVE"]{--oc:#0F766E}
+.mg3-oil[data-oil="MO"]{--oc:#B45309}
 .mg3-oil-head{display:flex;align-items:center;gap:12px;padding:4px 0 12px;margin-bottom:6px;border-bottom:2px solid var(--border-soft);color:var(--text)}
 .mg3-oil-head b{display:grid;place-items:center;min-width:46px;height:32px;padding:0 8px;border-radius:8px;background:var(--oc);color:#fff;font-size:13.5px;letter-spacing:.04em}
 .mg3-oil-head span{display:flex;flex-direction:column;line-height:1.35;min-width:0}
@@ -1214,6 +1224,9 @@ body.has-sticky .fab{bottom:90px}
 .mg3-oil-rows .dot{width:8px;height:8px;border-radius:50%;background:var(--oc)}
 .mg3-oil-rows .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mg3-oil-rows small{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+/* four base oils side by side: pack sizes go under the grade name so the name never truncates */
+.mg3-oil-rows a{grid-template-columns:8px minmax(0,1fr);row-gap:1px;padding:7px 8px}
+.mg3-oil-rows small{grid-column:2;white-space:normal}
 .mg3-oil-rows a:hover,.mg3-oil-rows a.previewing{background:var(--ob);color:var(--oc)}
 
 /* ===== quote list ("cart" for quotations): header button, toast, /quote/ page ===== */
@@ -1275,6 +1288,7 @@ body.has-sticky .fab{bottom:90px}
 .ot-badge{display:inline-grid;place-items:center;min-width:42px;height:24px;padding:0 8px;border-radius:6px;background:#2F3192;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
 .ot-PAG.ot-badge,.oil-table .dot.ot-PAG{background:#2A9FD8}
 .ot-PVE.ot-badge,.oil-table .dot.ot-PVE{background:#0F766E}
+.ot-MO.ot-badge,.oil-table .dot.ot-MO{background:#B45309}
 
 /* about: brand products grouped by category */
 .bp-groups{display:flex;flex-direction:column;gap:14px;margin:18px 0 22px;padding:18px 20px;background:var(--panel);border:1px solid var(--border-soft);border-radius:var(--r)}

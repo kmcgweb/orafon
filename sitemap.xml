@@ -491,6 +491,18 @@
     <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-pag150-can1l.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://orafon.co.th/products/orafon-poe22/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-poe22/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-poe22/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-poe22-can1l.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/products/orafon-poe22/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-poe22/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-poe22/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-poe22-can1l.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://orafon.co.th/products/orafon-poe32/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-poe32/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-poe32/"/>
@@ -609,6 +621,26 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-pve68/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-pve68/"/>
     <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-pve68-can1l.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/products/orafon-mo46/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-mo46/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-mo46/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/products/orafon-mo46/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-mo46/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-mo46/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/products/orafon-mo68/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-mo68/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-mo68/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/products/orafon-mo68/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-mo68/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-mo68/"/>
   </url>
   <url>
     <loc>https://orafon.co.th/products/orafon-uv-check/</loc>
