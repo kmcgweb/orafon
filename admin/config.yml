@@ -316,6 +316,7 @@ collections:
             fields:
               - { name: title, label: "หัวข้อ", widget: string }
               - { name: text, label: "ข้อความ", widget: text }
+          - { name: history_show, label: "ประวัติ: แสดงบนเว็บ", hint: "ปิดไว้ = ซ่อนส่วนประวัติ (ข้อมูลยังเก็บอยู่)", widget: boolean, default: false, required: false }
           - { name: history_title, label: "ประวัติ: หัวข้อ", widget: string, required: false, i18n: true }
           - { name: history_lead, label: "ประวัติ: คำอธิบาย", widget: text, required: false, i18n: true }
           - name: history
