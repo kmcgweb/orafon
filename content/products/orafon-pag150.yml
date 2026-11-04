@@ -1,6 +1,6 @@
 th:
   id: orafon-pag150
-  name: ORAFON PAG 150
+  name: ORAFON PAG 150 A
   brand: orafon
   category: oil
   tagline: น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์
@@ -19,7 +19,7 @@ th:
     v: PAG (Polyalkylene Glycol)
   - k: เกรดความหนืด
     v: '150'
-  short: ORAFON PAG 150 — น้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
+  short: ORAFON PAG 150 A — น้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
   highlights:
   - title: ชนิด PAG
     text: Polyalkylene Glycol
@@ -28,7 +28,7 @@ th:
   - title: ปรึกษาทีมงาน
     text: ขนาดบรรจุ 1 ลิตร และ 5 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
   description: |-
-    ORAFON PAG 150 เป็นน้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
+    ORAFON PAG 150 A เป็นน้ำมันคอมเพรสเซอร์ชนิด PAG (Polyalkylene Glycol) สำหรับคอมเพรสเซอร์ระบบปรับอากาศรถยนต์ เกรดความหนืด 150
 
     ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1 ลิตร และ 5 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
@@ -40,12 +40,12 @@ th:
   - type: TDS
     label: Technical Data Sheet (TDS)
     file: ''
-  seo_description: ORAFON PAG 150 น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ จาก ORAFON ขอใบเสนอราคาได้
+  seo_description: ORAFON PAG 150 A น้ำมันคอมเพรสเซอร์ PAG สำหรับแอร์รถยนต์ จาก ORAFON ขอใบเสนอราคาได้
   labels: []
   draft: false
   order: 602
 en:
-  name: ORAFON PAG 150
+  name: ORAFON PAG 150 A
   tagline: PAG compressor oil for automotive A/C
   tag: ''
   specs:
@@ -53,7 +53,7 @@ en:
     v: PAG (Polyalkylene Glycol)
   - k: Viscosity grade
     v: '150'
-  short: ORAFON PAG 150 is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
+  short: ORAFON PAG 150 A is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
   highlights:
   - title: PAG type
     text: Polyalkylene Glycol
@@ -62,7 +62,7 @@ en:
   - title: Ask our team
     text: 1 L and 5 L packs; contact ORAFON for technical documents
   description: |-
-    ORAFON PAG 150 is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
+    ORAFON PAG 150 A is a PAG (polyalkylene glycol) compressor oil for automotive air-conditioning compressors, viscosity grade 150.
 
     Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L and 5 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
@@ -70,4 +70,4 @@ en:
     label: Automotive A/C
   - icon: truck
     label: Truck and bus A/C
-  seo_description: ORAFON PAG 150 PAG compressor oil for automotive A/C from ORAFON — request a quotation.
+  seo_description: ORAFON PAG 150 A PAG compressor oil for automotive A/C from ORAFON — request a quotation.
