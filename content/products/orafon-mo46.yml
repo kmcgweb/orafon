@@ -6,7 +6,7 @@ th:
   oil_type: MO
   tagline: น้ำมันคอมเพรสเซอร์ Mineral Oil สำหรับระบบ R-22 และงานทำความเย็น
   tag: ''
-  cover: ''
+  cover: /assets/uploads/orafon-mo-drum.webp
   images: []
   packages:
   - name: Drum
