@@ -4,56 +4,69 @@ th:
   brand: orafon
   category: oil
   oil_type: MO
+  refrigerant: ''
   tagline: น้ำมันคอมเพรสเซอร์ Mineral Oil สำหรับระบบ R-22 และงานทำความเย็น
   tag: ''
-  cover: /assets/uploads/orafon-mo-drum.webp
+  cover: /assets/uploads/exec-9e03140f-0009-42f1-80f9-45cb67a3d019.webp
   images: []
+  tank_color: ''
   packages:
-  - name: Drum
-    kg: 200
-    unit: L
-  - name: ถัง
-    kg: 18.9
-    unit: L
+    - name: Drum
+      kg: 200
+      unit: L
+      lb: null
+      sku: ''
+      special: false
+    - name: ถัง
+      kg: 18.9
+      unit: L
+      lb: null
+      sku: ''
+      special: false
   specs:
-  - k: ความหนืดที่ 40 °C
-    v: '68 cSt'
-  - k: ความหนืดที่ 100 °C
-    v: '6.6 cSt'
-  - k: ดัชนีความหนืด (VI)
-    v: '95'
-  - k: จุดไหลเท
-    v: '-30 °C'
-  - k: จุดวาบไฟ
-    v: '200 °C'
-  - k: ความหนาแน่นที่ 15 °C
-    v: '0.915 g/cm³'
-  - k: ค่าความชื้น
-    v: '17 ppm'
-  - k: ค่าความเป็นกรด (TAN)
-    v: '0.02 mgKOH/g'
+    - k: ความหนืดที่ 40 °C
+      v: 68 cSt
+    - k: ความหนืดที่ 100 °C
+      v: 6.6 cSt
+    - k: ดัชนีความหนืด (VI)
+      v: '95'
+    - k: จุดไหลเท
+      v: -30 °C
+    - k: จุดวาบไฟ
+      v: 200 °C
+    - k: ความหนาแน่นที่ 15 °C
+      v: 0.915 g/cm³
+    - k: ค่าความชื้น
+      v: 17 ppm
+    - k: ค่าความเป็นกรด (TAN)
+      v: 0.02 mgKOH/g
+  badges: []
   short: ORAFON MO 68 — น้ำมันคอมเพรสเซอร์ชนิด Mineral Oil เกรดความหนืด 68 สำหรับคอมเพรสเซอร์ที่ใช้สารทำความเย็น HCFC เช่น R-22 ในเครื่องปรับอากาศ ห้องเย็น และตู้แช่
   highlights:
-  - title: Mineral Oil
-    text: น้ำมันแร่สำหรับคอมเพรสเซอร์ เกรดความหนืด ISO VG 68
-  - title: ใช้กับ R-22 และสาร HCFC
-    text: สำหรับระบบที่ใช้ R-22 และสารทำความเย็นกลุ่ม HCFC
-  - title: ไม่ใช้กับสาร HFC
-    text: ระบบ R-32, R-410A, R-134a, R-404A ให้ใช้น้ำมัน POE แทน
+    - title: Mineral Oil
+      text: น้ำมันแร่สำหรับคอมเพรสเซอร์ เกรดความหนืด ISO VG 68
+    - title: ใช้กับ R-22 และสาร HCFC
+      text: สำหรับระบบที่ใช้ R-22 และสารทำความเย็นกลุ่ม HCFC
+    - title: ไม่ใช้กับสาร HFC
+      text: ระบบ R-32, R-410A, R-134a, R-404A ให้ใช้น้ำมัน POE แทน
   description: |-
     ORAFON MO 68 เป็นน้ำมันคอมเพรสเซอร์ชนิด Mineral Oil เกรดความหนืด ISO VG 68 สำหรับคอมเพรสเซอร์ที่ใช้สารทำความเย็น HCFC เช่น R-22 ในเครื่องปรับอากาศ ห้องเย็น และตู้แช่ ไม่เหมาะกับระบบที่ใช้สาร HFC เช่น R-32, R-410A, R-134a และ R-404A ซึ่งควรใช้น้ำมัน POE
 
     ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 200 ลิตร และ 18.9 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
-  - icon: ac
-    label: เครื่องปรับอากาศ R-22
-  - icon: snow
-    label: ห้องเย็นและตู้แช่
+    - icon: ac
+      icon_image: ''
+      label: เครื่องปรับอากาศ R-22
+    - icon: snow
+      icon_image: ''
+      label: ห้องเย็นและตู้แช่
   documents:
-  - type: TDS
-    label: Technical Data Sheet (TDS)
-    file: ''
+    - type: TDS
+      label: Technical Data Sheet (TDS)
+      file: ''
+  faq: []
   seo_description: ORAFON MO 68 น้ำมันคอมเพรสเซอร์ Mineral Oil สำหรับระบบ R-22 ห้องเย็น และตู้แช่ ขนาด 200 ลิตร และ 18.9 ลิตร จาก ORAFON
+  eco: ''
   labels: []
   draft: false
   order: 631
@@ -62,37 +75,41 @@ en:
   tagline: Mineral compressor oil for R-22 and refrigeration
   tag: ''
   specs:
-  - k: Viscosity at 40 °C
-    v: '68 cSt'
-  - k: Viscosity at 100 °C
-    v: '6.6 cSt'
-  - k: Viscosity index (VI)
-    v: '95'
-  - k: Pour point
-    v: '-30 °C'
-  - k: Flash point
-    v: '200 °C'
-  - k: Density at 15 °C
-    v: '0.915 g/cm³'
-  - k: Moisture
-    v: '17 ppm'
-  - k: Total acid number (TAN)
-    v: '0.02 mgKOH/g'
+    - k: Viscosity at 40 °C
+      v: 68 cSt
+    - k: Viscosity at 100 °C
+      v: 6.6 cSt
+    - k: Viscosity index (VI)
+      v: '95'
+    - k: Pour point
+      v: -30 °C
+    - k: Flash point
+      v: 200 °C
+    - k: Density at 15 °C
+      v: 0.915 g/cm³
+    - k: Moisture
+      v: 17 ppm
+    - k: Total acid number (TAN)
+      v: 0.02 mgKOH/g
+  badges: []
   short: ORAFON MO 68 is a mineral compressor oil, viscosity grade 68, for compressors running HCFC refrigerants such as R-22 in air-conditioners, cold rooms and display cabinets.
   highlights:
-  - title: Mineral oil
-    text: Mineral compressor oil, ISO VG 68
-  - title: For R-22 and HCFCs
-    text: For systems running R-22 and other HCFC refrigerants
-  - title: Not for HFCs
-    text: For R-32, R-410A, R-134a and R-404A systems, use POE oil
+    - title: Mineral oil
+      text: Mineral compressor oil, ISO VG 68
+    - title: For R-22 and HCFCs
+      text: For systems running R-22 and other HCFC refrigerants
+    - title: Not for HFCs
+      text: For R-32, R-410A, R-134a and R-404A systems, use POE oil
   description: |-
     ORAFON MO 68 is a mineral compressor oil, ISO VG 68, for compressors running HCFC refrigerants such as R-22 in air-conditioners, cold rooms and display cabinets. It is not suitable for HFC systems such as R-32, R-410A, R-134a and R-404A, which need POE oil.
 
     Always use the oil type and grade specified by the compressor manufacturer. Available in 200 L and 18.9 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
-  - icon: ac
-    label: R-22 air-conditioners
-  - icon: snow
-    label: Cold rooms and display cabinets
+    - icon: ac
+      icon_image: ''
+      label: R-22 air-conditioners
+    - icon: snow
+      icon_image: ''
+      label: Cold rooms and display cabinets
+  faq: []
   seo_description: ORAFON MO 68 mineral compressor oil for R-22, cold rooms and refrigeration, 200 L and 18.9 L, from ORAFON.
