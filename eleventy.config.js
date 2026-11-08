@@ -10,9 +10,11 @@ const LABELS = ["recommended", "popular", "bestseller", "new"];
 // labels kept in the CMS but no longer shown as badges ("recommended" still picks the featured products)
 const HIDDEN_LABELS = ["recommended", "popular"];
 // pack names / units are entered once (Thai) in the CMS; English pages get these words instead
+// pack types read in English in both languages (Can, Pail, Drum…); only the units stay Thai on Thai pages
+const PACK_EN = { "กระป๋อง": "Can", "แกลลอน": "Gallon", "หลอดสี": "Tube", "แพ็ก": "Pack", "ถัง": "Pail" };
 const PACK_WORDS = {
-  en: { "กระป๋อง": "Can", "แกลลอน": "Gallon", "หลอดสี": "Tube", "แพ็ก": "Pack", "ถัง": "Pail", "ชิ้น": "pcs", "pcs": "pcs" },
-  th: { "pcs": "ชิ้น", "L": "ลิตร" },
+  en: { ...PACK_EN, "ชิ้น": "pcs", "pcs": "pcs" },
+  th: { ...PACK_EN, "pcs": "ชิ้น", "L": "ลิตร" },
 };
 const packWord = (w, lang) => (w && PACK_WORDS[lang] && PACK_WORDS[lang][w]) || w;
 // eco badge (leaf): GWP (AR4) below 150 and practically no ozone depletion; the CMS "eco" field can force it on/off
