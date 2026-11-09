@@ -138,6 +138,7 @@ collections:
           - { name: q, label: "คำถาม", widget: string }
           - { name: a, label: "คำตอบ", widget: text }
       - { name: seo_description, label: "คำอธิบายสำหรับ Google", widget: text, required: false, i18n: true }
+      - { name: seo_keyword, label: "คำค้นหลัก (SEO)", hint: "เว้นว่าง = ระบบตั้งให้เอง (น้ำยาแอร์ R32 / น้ำมันคอมแอร์ POE68) · ใส่เองเมื่อสินค้าไม่ใช่น้ำยาหรือน้ำมัน เช่น น้ำยาล้างระบบแอร์ R141b", widget: string, required: false, i18n: true }
       - { name: eco, label: "ป้ายรักษ์โลก (ใบไม้)", hint: "อัตโนมัติ = แสดงเมื่อค่า GWP ต่ำกว่า 150 และไม่ทำลายโอโซน", widget: select, default: "", options: [{ label: "อัตโนมัติ", value: "" }, { label: "แสดงเสมอ", value: "yes" }, { label: "ไม่แสดง", value: "no" }], required: false }
       - name: labels
         label: "ป้ายสินค้า"

@@ -24,6 +24,7 @@ th:
       v: 1717-00-6
   name: ORAFON R-141b
   tagline: น้ำยาล้างระบบ / สารเป่าโฟม HCFC
+  seo_keyword: น้ำยาล้างระบบแอร์ R141b
   tag: ""
   badges:
     - GWP 725
@@ -71,6 +72,7 @@ th:
 en:
   name: ORAFON R-141b
   tagline: HCFC flushing & blowing agent
+  seo_keyword: R141b A/C flushing agent
   tag: ""
   badges:
     - GWP 725

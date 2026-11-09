@@ -138,9 +138,31 @@ function buildDb() {
         const fmt = (n) => Number(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
         const packShort = units.length === 1 ? packages.map((k) => fmt(k.kg)).join(" · ") + " " + units[0] : packages.map((k) => `${fmt(k.kg)} ${k.unit || "kg"}`).join(" · ");
         // image alt text and page title carry the product's own words (helps Google Images match "ORAFON …")
-        const imageAlt = [p.name, p.tagline].filter(Boolean).join(" – ");
-        const seoTitle = p.tagline ? `${p.name} | ${p.tagline}` : p.name;
-        return { ...p, imageAlt, seoTitle, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        // search phrases: Thai buyers type "น้ำยาแอร์ r32" / "น้ำมันคอมแอร์ poe68" (often without hyphen or space),
+        // so titles, alt text, descriptions and schema carry both spellings. A phrase typed in the CMS (seo_keyword) wins.
+        const refNo = category === "refrigerant" && ref && ref.number ? ref.number : "";
+        const refCompact = refNo.replace(/-/g, "");
+        const oilM = category === "oil" ? String(p.name).match(/\b(PAG|POE|PVE|MO)\s*(\d+)/) : null;
+        const oilGradeName = oilM ? `${oilM[1]} ${oilM[2]}` : "";
+        const oilWord = oilM && oilM[1] === "PAG" ? "น้ำมันคอมแอร์รถยนต์" : "น้ำมันคอมแอร์";
+        let seoKeyword = "", kwTitle = "";
+        if (p.seo_keyword) { seoKeyword = kwTitle = String(p.seo_keyword).trim(); }
+        else if (refNo) {
+          seoKeyword = lang === "th" ? `น้ำยาแอร์ ${refNo} (${refCompact})` : `${refNo} (${refCompact}) refrigerant`;
+          kwTitle = lang === "th" ? `น้ำยาแอร์ ${refCompact}` : `(${refCompact})`;
+        } else if (oilM) {
+          const compact = oilGradeName.replace(" ", "");
+          seoKeyword = lang === "th" ? `${oilWord} ${oilGradeName} (${compact})` : `${oilGradeName} (${compact}) compressor oil`;
+          kwTitle = lang === "th" ? `${oilWord} ${compact}` : `(${compact})`;
+        }
+        const imageAlt = seoKeyword && lang === "th"
+          ? [`${seoKeyword} ${p.name}`, p.tagline].filter(Boolean).join(" – ")
+          : [p.name, p.tagline].filter(Boolean).join(" – ");
+        const titleName = kwTitle ? `${p.name} ${kwTitle}` : p.name;
+        const seoTitle = p.tagline ? `${titleName} | ${p.tagline}` : titleName;
+        const baseDesc = p.seo_description || p.short || "";
+        const seoDescription = kwTitle && lang === "th" && !baseDesc.includes(kwTitle) ? `${kwTitle} · ${baseDesc}` : baseDesc;
+        return { ...p, imageAlt, seoTitle, seoKeyword, seoDescription, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 

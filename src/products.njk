@@ -6,8 +6,8 @@ pathKey: /products/
 section: products
 pageScript: products.js
 eleventyComputed:
-  title: "{{ i18n[lang].allProducts }}"
-  description: "{{ i18n[lang].productsLead }}"
+  title: "{{ i18n[lang].productsSeoTitle }}"
+  description: "{{ i18n[lang].productsSeoDesc }}"
 ---
 {%- from "partials/macros.njk" import productCard, icon, tagBadge -%}
 {%- set T = i18n[lang] -%}

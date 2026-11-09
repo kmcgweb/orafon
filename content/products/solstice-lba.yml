@@ -6,6 +6,7 @@ th:
   oil_type: ''
   refrigerant: r-1233zd
   tagline: สารเป่าโฟมและสารทำความเย็น HCFO
+  seo_keyword: สารเป่าโฟม R-1233zd (R1233zd)
   tag: GWP ≈ 1
   cover: /assets/uploads/solstice-lba-dac.svg
   images: []
@@ -61,6 +62,7 @@ th:
 en:
   name: Solstice® LBA (R-1233zd(E))
   tagline: HCFO liquid blowing agent & refrigerant
+  seo_keyword: R1233zd blowing agent
   tag: GWP ≈ 1
   specs: []
   badges:

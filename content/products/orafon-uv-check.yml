@@ -4,6 +4,7 @@ th:
   brand: orafon
   category: other
   tagline: สีตรวจสอบรอยรั่วระบบแอร์รถยนต์
+  seo_keyword: น้ำยาหารอยรั่วแอร์รถยนต์ UV
   tag: ''
   cover: /assets/uploads/orafon-uvcheck-pack.webp
   images:
@@ -58,6 +59,7 @@ th:
 en:
   name: ORAFON UV CHECK
   tagline: UV leak-detection dye for automotive A/C
+  seo_keyword: A/C UV leak detection dye
   tag: ''
   specs:
   - k: Volume per tube

@@ -9,10 +9,10 @@ bodyClass: has-sticky
 eleventyComputed:
   lang: "{{ entry.lang }}"
   pathKey: "/products/{{ entry.item.slug }}/"
-  title: "{{ entry.item.seoTitle }}"
-  description: "{{ entry.item.seo_description or entry.item.short }}"
+  title: "{{ entry.item.seoTitle | safe }}"
+  description: "{{ entry.item.seoDescription | safe }}"
   ogImage: "{{ entry.item.coverImage }}"
-  ogImageAlt: "{{ entry.item.imageAlt }}"
+  ogImageAlt: "{{ entry.item.imageAlt | safe }}"
   ogType: product
 ---
 {%- from "partials/macros.njk" import icon, cylinder, productCard, tagBadge -%}
@@ -100,7 +100,7 @@ eleventyComputed:
           {%- for a in apps %}{% if a.icon_image or seenIc.indexOf(a.icon) < 0 %}{% set _ = seenIc.push(a.icon) %}<span class="pd-ic" title="{{ a.label }}"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="{{ a.label }}" width="30" height="30"></span>{% endif %}{% endfor %}
           {%- if lowGwp %}<span class="pd-eco" title="{{ T.lowGwp }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></svg>{{ T.lowGwp }}</span>{% endif %}
         </div>
-        {%- if p.tagline %}<p class="pd-tagline">{{ p.tagline }}</p>{% endif %}
+        {%- if p.tagline or p.seoKeyword %}<p class="pd-tagline">{% if p.seoKeyword and lang == "th" %}{{ p.seoKeyword }}{% if p.tagline %} · {% endif %}{% endif %}{{ p.tagline }}</p>{% endif %}
         {%- if p.short %}<p class="pd-short">{{ p.short }}</p>{% endif %}
         {%- if r %}
         <dl class="pd-specs">
@@ -258,6 +258,7 @@ eleventyComputed:
   "@context": "https://schema.org",
   "@type": "Product",
   "name": p.name,
+  "alternateName": p.seoKeyword or undefined,
   "description": p.short,
   "url": (("/products/" ~ p.slug ~ "/") | u(lang)) | absUrl(S.site_url),
   "brand": { "@type": "Brand", "name": b.name if b else S.brand_name },
