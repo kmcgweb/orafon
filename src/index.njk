@@ -33,7 +33,7 @@ pageScript: home.js
       </picture>
       {%- else %}
       <span class="dk-studio"></span>
-      {%- if p and p.ref %}<span class="dk-num">{{ p.ref.number | shortNum }}</span>{% elif p and p.oilGrade %}<span class="dk-num">{{ p.oilGrade }}</span>{% endif %}
+      {%- if p and p.ref %}<span class="dk-num">{{ p.ref.number | shortNum }}</span>{% elif p and p.oilGrade %}<span class="dk-num">{{ p.oilGrade }}</span>{% elif p %}<span class="dk-num">{{ p.name | replace("ORAFON ", "") | replace("Solstice® ", "") }}</span>{% endif %}
       {%- if p and p.coverImage %}<img class="dk-prod" src="{{ p.coverImage }}" alt=""{% if not loop.first %} loading="lazy"{% endif %}>
       {%- elif p %}<span class="dk-prod">{{ cylinder(p.ref, "dk-" ~ loop.index) }}</span>
       {%- else %}<img class="dk-prod dk-mark" src="/assets/img/penguin-white.png" alt="">{% endif %}

@@ -6,8 +6,9 @@ th:
   tagline: น้ำยาทำความสะอาดชิ้นงานอุตสาหกรรม ไม่ติดไฟ
   seo_keyword: น้ำยาล้างคราบไขมันอุตสาหกรรม Vapor Degreasing
   tag: ''
-  cover: ''
-  images: []
+  cover: /assets/uploads/orafon-fa374-30kg.webp
+  images:
+  - /assets/uploads/orafon-fa374-30kg.webp
   packages:
   - name: Drum
     kg: 30
