@@ -17,9 +17,4 @@
       <p>{{ techLead }}</p>
     </div>
   </div>
-  <nav class="tech-tabs" aria-label="{{ T.technical }}">
-    {%- for t in tabs %}
-    <a href="{{ t[1] | u(lang) }}"{% if techTab == t[0] %} class="active" aria-current="page"{% endif %}>{{ icon(t[3]) }}<span>{{ t[2] }}</span></a>
-    {%- endfor %}
-  </nav>
 </div></section>

@@ -37,7 +37,7 @@ eleventyComputed:
     <ul class="qa-badges">{% for b in A.quality_badges %}<li>{{ b }}</li>{% endfor %}</ul>
     {%- endif %}
   </div>
-  {%- if A.lab and A.lab.length %}
+  {%- if A.lab_show and A.lab and A.lab.length %}
   <h3 class="qa-lab-h">{{ A.lab_title }}</h3>
   {%- if A.lab_lead %}<p class="muted qa-lab-lead">{{ A.lab_lead }}</p>{% endif %}
   <div class="lab-grid">
