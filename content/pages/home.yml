@@ -101,7 +101,8 @@ en:
       text: Non-flammable (A1) R-404A replacement with 68% lower GWP for commercial refrigeration
       button: View product
   wide_banner:
-    image: ""
+    image: /assets/img/solstice-banner-bg.svg
+    logo: /assets/uploads/solstice-logo-white.png
     image_mobile: ""
     product: ""
     url: /brands/solstice/
