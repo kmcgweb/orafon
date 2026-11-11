@@ -210,11 +210,13 @@
     <loc>https://orafon.co.th/products/orafon-r1234yf/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r1234yf/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r1234yf/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/R-1234yf.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://orafon.co.th/en/products/orafon-r1234yf/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-r1234yf/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-r1234yf/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/R-1234yf.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://orafon.co.th/products/solstice-n40/</loc>
