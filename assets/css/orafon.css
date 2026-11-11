@@ -1843,3 +1843,20 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .lab-img{height:280px}
 @media (max-width:860px){.lab-card.is-feature{grid-template-columns:1fr}.lab-card.is-feature .lab-img{min-height:260px}.lab-card.is-feature .lab-body{padding:22px}}
 @media (max-width:620px){.lab-grid{grid-template-columns:1fr}}
+/* client wall: centred rows (6 + 5 for 11 logos) and logos optically matched in weight */
+.client-wall{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.client-logo{flex:0 0 calc((100% - 5 * 14px) / 6);height:96px;padding:0}
+.client-logo img{width:var(--lw,64%);height:var(--lh,40px);max-width:none;max-height:none;object-fit:contain}
+.cl-lg{--lw:52%;--lh:42px}
+.cl-samsung{--lw:72%;--lh:26px}
+.cl-mitsubishi-heavy-industries{--lw:78%;--lh:40px}
+.cl-electrolux{--lw:72%;--lh:34px}
+.cl-toshiba{--lw:66%;--lh:22px}
+.cl-hitachi{--lw:66%;--lh:24px}
+.cl-sharp{--lw:62%;--lh:22px}
+.cl-beko{--lw:44%;--lh:40px}
+.cl-carrier{--lw:58%;--lh:40px}
+.cl-midea{--lw:54%;--lh:36px}
+.cl-haier{--lw:52%;--lh:32px}
+@media (max-width:1000px){.client-logo{flex-basis:calc((100% - 3 * 14px) / 4)}}
+@media (max-width:620px){.client-wall{gap:10px}.client-logo{flex-basis:calc((100% - 2 * 10px) / 3);height:76px}}
