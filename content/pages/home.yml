@@ -6,6 +6,20 @@ th:
   slides:
     - image: ""
       image_mobile: ""
+      product: orafon-fa374
+      url: ""
+      title: ORAFON FA-374
+      text: น้ำยาทำความสะอาดชิ้นงานอุตสาหกรรม ไม่ติดไฟ ODP 0 ใช้แทน TCE, nPB และ HCFC-141b
+      button: ดูรายละเอียดสินค้า
+    - image: ""
+      image_mobile: ""
+      product: orafon-r1234yf
+      url: ""
+      title: ORAFON R-1234yf
+      text: สาร HFO GWP ต่ำมาก มาตรฐานแอร์รถยนต์รุ่นใหม่แทน R-134a
+      button: ดูรายละเอียดสินค้า
+    - image: ""
+      image_mobile: ""
       product: solstice-r513a
       url: ""
       title: Solstice® 513A (R-513A)
@@ -17,13 +31,6 @@ th:
       url: ""
       title: Solstice® N40 (R-448A)
       text: สารทดแทน R-404A ไม่ติดไฟ A1 ลด GWP 68% สำหรับงานทำความเย็นเชิงพาณิชย์
-      button: ดูรายละเอียดสินค้า
-    - image: ""
-      image_mobile: ""
-      product: orafon-r1234yf
-      url: ""
-      title: ORAFON R-1234yf
-      text: สาร HFO GWP ต่ำมาก มาตรฐานแอร์รถยนต์รุ่นใหม่แทน R-134a
       button: ดูรายละเอียดสินค้า
   wide_banner:
     image: /assets/img/solstice-banner-bg.svg
@@ -67,6 +74,20 @@ en:
   slides:
     - image: ""
       image_mobile: ""
+      product: orafon-fa374
+      url: ""
+      title: ORAFON FA-374
+      text: Non-flammable industrial cleaning fluid, ODP 0, replacing TCE, nPB and HCFC-141b
+      button: View product
+    - image: ""
+      image_mobile: ""
+      product: orafon-r1234yf
+      url: ""
+      title: ORAFON R-1234yf
+      text: Ultra-low-GWP HFO, the standard for new automotive AC in place of R-134a
+      button: View product
+    - image: ""
+      image_mobile: ""
       product: solstice-r513a
       url: ""
       title: Solstice® 513A (R-513A)
@@ -78,13 +99,6 @@ en:
       url: ""
       title: Solstice® N40 (R-448A)
       text: Non-flammable (A1) R-404A replacement with 68% lower GWP for commercial refrigeration
-      button: View product
-    - image: ""
-      image_mobile: ""
-      product: orafon-r1234yf
-      url: ""
-      title: ORAFON R-1234yf
-      text: Ultra-low-GWP HFO, the standard for new automotive AC in place of R-134a
       button: View product
   wide_banner:
     image: ""

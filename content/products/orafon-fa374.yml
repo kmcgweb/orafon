@@ -3,27 +3,179 @@ th:
   name: ORAFON FA-374
   brand: orafon
   category: other
-  tagline: ''
-  seo_keyword: ''
+  tagline: น้ำยาทำความสะอาดชิ้นงานอุตสาหกรรม ไม่ติดไฟ
+  seo_keyword: น้ำยาล้างคราบไขมันอุตสาหกรรม Vapor Degreasing
   tag: ''
   cover: ''
   images: []
-  packages: []
-  specs: []
-  short: ''
-  highlights: []
-  description: ''
-  applications: []
+  packages:
+  - name: Drum
+    kg: 30
+  - name: Drum
+    kg: 250
+  specs:
+  - k: ลักษณะ
+    v: ของเหลวใส ไม่มีสี (Near-azeotropic mixture)
+  - k: จุดเดือด
+    v: 39 °C
+  - k: ความหนาแน่น @ 25 °C
+    v: 1.27 g/ml
+  - k: แรงตึงผิว
+    v: 20 mN/m
+  - k: ความดันไอ
+    v: 50 kPa
+  - k: ค่า KB (Kauri-butanol)
+    v: '70'
+  - k: จุดวาบไฟ (Flash point)
+    v: ไม่มี
+  - k: ODP
+    v: '0'
+  - k: GWP
+    v: ต่ำ (Low)
+  short: ORAFON FA-374 — น้ำยาทำความสะอาดชนิดพิเศษสำหรับงานอุตสาหกรรม ละลายคราบได้ดีมาก (KB 70) ไม่ติดไฟ ไม่ทำลายโอโซน และค่า GWP ต่ำ เหมาะกับงาน Vapor Degreasing และใช้ทดแทน TCE, nPB และ HCFC-141b
+  highlights:
+  - title: ละลายคราบได้ดีเยี่ยม
+    text: ค่า KB 70 สูงกว่า HCFC-141b (56) และ HCFC-225 (31) ล้างคราบน้ำมันและไขมันได้หมดจด
+  - title: แห้งเร็ว
+    text: จุดเดือด 39 °C ชิ้นงานแห้งเร็ว นำไปใช้งานต่อได้ทันที
+  - title: ไม่ติดไฟ
+    text: ไม่มีจุดวาบไฟ กลิ่นน้อย ความเป็นพิษต่ำ
+  - title: เป็นมิตรต่อสิ่งแวดล้อม
+    text: ODP 0 ไม่ใช่สารทำลายโอโซน และค่า GWP ต่ำ
+  - title: ดูแลง่าย
+    text: ส่วนผสมคงที่ (Azeotropic-like) ไม่ต้องเติมสารเพิ่มเสถียรภาพ ไม่ต้องใช้สารลดแรงตึงผิว ไม่ทิ้งคราบ
+  - title: ใช้กับเครื่องเดิมได้
+    text: ใช้กับเครื่อง Vapor Degreasing เดิมได้ โดยแทบไม่ต้องดัดแปลง นำกลับมาใช้ซ้ำได้ ช่วยลดต้นทุน
+  description: |-
+    ORAFON FA-374 เป็นน้ำยาทำความสะอาดชนิดพิเศษ พัฒนาขึ้นสำหรับงานทำความสะอาดในอุตสาหกรรมที่ต้องการน้ำยาที่ละลายคราบได้สูง มีความปลอดภัย ไม่ติดไฟ เป็นมิตรต่อสิ่งแวดล้อม และมีค่า GWP ต่ำ จึงได้รับความนิยมสูงในงานล้างคราบไขมันด้วยไอระเหย (Vapor Degreasing)
+
+    FA-374 เป็นส่วนผสมแบบ Near-azeotropic ละลายคราบได้ดีเยี่ยม แรงตึงผิวต่ำ จึงแทรกซึมล้างคราบไขมันได้ลึกและมีประสิทธิภาพ ใช้งานง่าย เชื่อถือได้ และแทบไม่ต้องบำรุงรักษา
+
+    **ใช้ทดแทนได้**
+
+    - ตัวทำละลายที่ละลายคราบสูง เช่น Trichloroethylene (TCE), n-Propyl Bromide (nPB), Aromatic Hydrocarbons, Perchloroethylene และ Dichloromethane
+    - ตัวทำละลายที่ละลายคราบต่ำถึงปานกลาง เช่น HCFC-225, HCFC-141b, PFC, CFC และน้ำยาล้างสูตรน้ำ
+
+    **เทียบคุณสมบัติ**
+
+    | คุณสมบัติ | FA-374 | HCFC-141b | HCFC-225 | nPB |
+    |---|---|---|---|---|
+    | จุดเดือด (°C) | 39 | 32 | 54 | 71 |
+    | ค่า KB | 70 | 56 | 31 | 125 |
+    | จุดวาบไฟ (°C) | ไม่มี | ไม่มี | ไม่มี | 25 |
+    | ODP | 0 | 0.1 | 0.03 | 0.02 |
+    | GWP | ต่ำ | 630 | 370 | – |
+
+    **วัสดุที่ใช้ร่วมได้**
+
+    - โลหะ: เหล็กหล่อ, เหล็กกล้าคาร์บอน, เหล็ก, ทองเหลือง, ทองแดง, สแตนเลส, อะลูมิเนียม และอะลูมิเนียมอัลลอย
+    - พลาสติก: PTFE, PVC, Nylon 6, Phenolic resin, Epoxy resin, Polyethylene, Polypropylene
+    - ยางและอีลาสโตเมอร์: ยางธรรมชาติ, Fluoro rubber
+
+    **การจัดเก็บ:** เก็บในคลังสินค้าที่สะอาด แห้ง และไม่ร้อน ห่างจากแสง ความร้อน แหล่งความร้อน กรด ด่างแก่ และสารออกซิไดซ์ ห้ามเก็บรวมกับสารที่เป็นกรดหรือด่าง หลีกเลี่ยงการเขย่าแรงระหว่างขนส่ง และห้ามวางกลับหัวเมื่อซ้อนกัน
+
+    **ข้อควรระวัง:** ผู้ใช้งานต้องมีประสบการณ์และสวมอุปกรณ์ป้องกันส่วนบุคคล (PPE) อาจทำให้ระคายเคืองตาอย่างรุนแรง (H320) อาจทำให้ง่วงซึมหรือเวียนศีรษะ (H336) เป็นอันตรายต่อสิ่งมีชีวิตในน้ำและมีผลระยะยาว (H412) หลีกเลี่ยงการสูดดมไอระเหย (P261)
+  applications:
+  - icon: factory
+    label: ล้างคราบไขมันด้วยไอระเหย (Vapor Degreasing)
+  - icon: flask
+    label: ทำความสะอาดชิ้นงานความแม่นยำสูง / แผงวงจร
   documents:
   - type: TDS
     label: Technical Data Sheet (TDS)
-    file: ''
-  - type: SDS
-    label: Safety Data Sheet (SDS)
-    file: ''
-  seo_description: ''
-  labels: []
-  draft: true
+    file: /assets/uploads/docs/orafon-fa374-tds.pdf
+  faq:
+  - q: ORAFON FA-374 ใช้ทำอะไร?
+    a: ใช้ทำความสะอาดชิ้นงานในอุตสาหกรรม เช่น ล้างคราบน้ำมันและไขมัน ล้าง Flux และ Solder paste บนแผงวงจร ล้างคราบซิลิโคน ล้างน้ำมันกลึงในงานโลหะความแม่นยำสูง และทำความสะอาดกระจกออปติคอล ทั้งแบบ Vapor Degreasing และแบบล้างเย็น (Cold cleaning)
+  - q: ใช้แทน HCFC-141b ได้ไหม?
+    a: ได้ FA-374 ละลายคราบได้ดีกว่า (KB 70 เทียบกับ 56) ไม่ทำลายโอโซน (ODP 0) และค่า GWP ต่ำ จึงเป็นทางเลือกแทน HCFC-141b ที่อยู่ระหว่างทยอยเลิกใช้
+  - q: ติดไฟหรือไม่?
+    a: ไม่มีจุดวาบไฟ (Flash point) และมีคุณสมบัติหน่วงการติดไฟ แต่ควรใช้งานในที่อากาศถ่ายเท สวมอุปกรณ์ป้องกัน และหลีกเลี่ยงการสูดดมไอระเหย
+  - q: มีขนาดบรรจุอะไรบ้าง?
+    a: ถังขนาด 30 กก. และ 250 กก. ติดต่อทีม ORAFON เพื่อสอบถามสต็อกและขอใบเสนอราคา
+  seo_description: ORAFON FA-374 น้ำยาทำความสะอาดชิ้นงานอุตสาหกรรม ไม่ติดไฟ KB 70 ODP 0 GWP ต่ำ ใช้แทน TCE, nPB, HCFC-141b สำหรับ Vapor Degreasing ถัง 30 และ 250 กก.
+  labels:
+  - new
+  draft: false
   order: 650
 en:
   name: ORAFON FA-374
+  tagline: Non-flammable industrial cleaning fluid
+  seo_keyword: Vapor degreasing solvent
+  short: ORAFON FA-374 is a specialty industrial cleaning fluid with very high solvency (KB 70). It is non-flammable, non-ozone-depleting and low-GWP, ideal for vapor degreasing and as a replacement for TCE, nPB and HCFC-141b.
+  specs:
+  - k: Appearance
+    v: Clear, colourless liquid (near-azeotropic mixture)
+  - k: Boiling point
+    v: 39 °C
+  - k: Density @ 25 °C
+    v: 1.27 g/ml
+  - k: Surface tension
+    v: 20 mN/m
+  - k: Vapor pressure
+    v: 50 kPa
+  - k: KB value (Kauri-butanol)
+    v: '70'
+  - k: Flash point
+    v: None
+  - k: ODP
+    v: '0'
+  - k: GWP
+    v: Low
+  highlights:
+  - title: Outstanding solvency
+    text: KB value 70, higher than HCFC-141b (56) and HCFC-225 (31), for thorough removal of oils and grease
+  - title: Fast drying
+    text: 39 °C boiling point, so cleaned parts are ready to use right away
+  - title: Non-flammable
+    text: No flash point, low odour and low toxicity
+  - title: Environmentally sound
+    text: ODP 0, not an ozone-depleting substance, and low GWP
+  - title: Low maintenance
+    text: Stable azeotropic-like blend, no stabiliser top-ups, no surfactants needed, residue-free
+  - title: Works in existing equipment
+    text: Runs in most existing vapor degreasers with little or no modification, and can be recovered and reused to cut costs
+  description: |-
+    ORAFON FA-374 is a specialty cleaning fluid designed for industrial cleaning that demands high solvency. It is safe, non-flammable, environmentally friendly and low-GWP, which makes it popular for vapor degreasing.
+
+    FA-374 is a near-azeotropic mixture with excellent solvency and low surface tension, so it penetrates and removes grease deeply and efficiently. It is easy to use, highly reliable and needs minimal maintenance.
+
+    **Replaces**
+
+    - High-solvency solvents such as trichloroethylene (TCE), n-propyl bromide (nPB), aromatic hydrocarbons, perchloroethylene and dichloromethane
+    - Low- to medium-solvency solvents such as HCFC-225, HCFC-141b, PFC, CFC and water-based cleaners
+
+    **Property comparison**
+
+    | Property | FA-374 | HCFC-141b | HCFC-225 | nPB |
+    |---|---|---|---|---|
+    | Boiling point (°C) | 39 | 32 | 54 | 71 |
+    | KB value | 70 | 56 | 31 | 125 |
+    | Flash point (°C) | None | None | None | 25 |
+    | ODP | 0 | 0.1 | 0.03 | 0.02 |
+    | GWP | Low | 630 | 370 | – |
+
+    **Material compatibility**
+
+    - Metals: cast iron, carbon steel, steel, brass, copper, stainless steel, aluminium and aluminium alloys
+    - Plastics: PTFE, PVC, nylon 6, phenolic resin, epoxy resin, polyethylene, polypropylene
+    - Rubber and elastomers: natural rubber, fluoro rubber
+
+    **Storage:** Keep in a clean, dry warehouse away from high temperatures, light, heat sources, acids, strong bases and oxidants. Do not store with acidic or alkaline substances. Avoid severe shaking in transport and do not stack upside down.
+
+    **Caution:** Must be used by experienced operators wearing personal protective equipment. May cause serious eye irritation (H320) and drowsiness or dizziness (H336); harmful to aquatic life with long-lasting effects (H412). Avoid breathing vapour (P261).
+  applications:
+  - icon: factory
+    label: Vapor degreasing
+  - icon: flask
+    label: Precision and PCB cleaning
+  faq:
+  - q: What is ORAFON FA-374 used for?
+    a: Industrial parts cleaning, such as removing oils and grease, flux and solder paste on circuit boards, silicone, machining oils in precision metalwork, and cleaning optical glass, in both vapor degreasing and cold cleaning.
+  - q: Can it replace HCFC-141b?
+    a: Yes. FA-374 has higher solvency (KB 70 vs 56), zero ODP and low GWP, making it an alternative to HCFC-141b, which is being phased out.
+  - q: Is it flammable?
+    a: It has no flash point and is flame retardant, but use it with good ventilation, wear protective equipment and avoid breathing the vapour.
+  - q: Which pack sizes are available?
+    a: 30 kg and 250 kg drums. Contact the ORAFON team for stock and a quotation.
+  seo_description: ORAFON FA-374 non-flammable industrial cleaning fluid, KB 70, ODP 0, low GWP. Replaces TCE, nPB and HCFC-141b in vapor degreasing. 30 and 250 kg drums.
