@@ -1,0 +1,20 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/search.json' if lang == 'th' else '/' ~ lang ~ '/search.json' }}"
+eleventyExcludeFromCollections: true
+---
+{#- Product index for the header's live search (assets/js/search.js): one small record per product -#}
+{%- set T = i18n[lang] -%}
+{%- set items = [] -%}
+{%- for p in db[lang].products -%}
+{%- set k = [p.searchText, p.seoKeyword, p.tagline, p.oilType, T.cats[p.category]] | join(" ") | lower -%}
+{%- set _ = items.push({
+  "n": p.name,
+  "u": ("/products/" ~ p.slug ~ "/") | u(lang),
+  "i": p.coverImage,
+  "t": p.tagline,
+  "c": (p.ref.class if p.ref else T.cats[p.category]),
+  "k": k
+}) -%}
+{%- endfor -%}
+{{ items | json | safe }}
