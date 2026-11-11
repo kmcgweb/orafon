@@ -6,7 +6,7 @@ th:
   blend_type: azeotropic
   safety: A1
   gwp_ar4: "293"
-  gwp_ar5: "288"
+  gwp_ar5: "299"
   odp: "0"
   boiling_point: −18.9
   replaces:

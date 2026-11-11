@@ -10,11 +10,6 @@
         <p class="ft-promo">WE SERVE YOU BEST</p>
         <p class="ft-band-sub">{{ T.footBand }}</p>
       </div>
-      <div class="ft-btns">
-        {%- if S.phone %}<a class="ft-btn ft-btn-w" href="tel:{{ S.phone }}">{{ icon("phone") }}{{ S.phone_display }}</a>{% endif %}
-        {%- if S.line_id %}<a class="ft-btn ft-btn-line" href="https://line.me/R/ti/p/{{ S.line_id | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}LINE {{ S.line_id }}</a>{% endif %}
-        <a class="ft-btn ft-btn-o" href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a>
-      </div>
     </div>
   </div>
 
@@ -32,9 +27,8 @@
     <div class="ft-col">
       <h4>Technical Center</h4>
       <ul>
-        <li><a href="{{ '/technical/' | u(lang) }}">{{ T.techOverview }}</a></li>
         <li><a href="{{ '/retrofit/' | u(lang) }}">{{ T.retrofit }}</a></li>
-        <li><a href="{{ '/documents/' | u(lang) }}">{{ T.documents }}</a></li>
+        <li><a href="{{ '/pictograms/' | u(lang) }}">{{ T.pictoTitle }}</a></li>
         <li><a href="{{ '/articles/' | u(lang) }}">{{ T.articles }}</a></li>
       </ul>
     </div>
@@ -42,9 +36,8 @@
       <h4>Company</h4>
       <ul>
         <li><a href="{{ '/about/' | u(lang) }}">{{ T.about }}</a></li>
+        <li><a href="{{ '/dealers/' | u(lang) }}">{{ T.dealers }}</a></li>
         <li><a href="{{ '/contact/' | u(lang) }}">{{ T.requestQuote }}</a></li>
-        <li><a href="{{ '/privacy/' | u(lang) }}">{{ T.privacy }}</a></li>
-        <li><a href="{{ '/terms/' | u(lang) }}">{{ T.terms }}</a></li>
       </ul>
     </div>
     <div class="ft-col ft-contact">

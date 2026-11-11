@@ -1,0 +1,101 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/dealers/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /dealers/
+section: dealers
+pageScript: dealers.js
+eleventyComputed:
+  title: "{{ i18n[lang].dealersTitle }}"
+  description: "{{ i18n[lang].dealersLead }}"
+---
+{#- Dealer locator. Shops are edited in /admin (ร้านตัวแทนจำหน่าย). The list is rendered here for search engines;
+    assets/js/dealers.js filters it, sorts it by distance ("near me") and drives the Leaflet map. -#}
+{%- from "partials/macros.njk" import icon -%}
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span>{{ T.dealers }}</nav></div>
+
+<section class="page-head ch-head"><div class="container">
+  <div class="ch dl-head">
+    <div class="ch-bg" aria-hidden="true">
+      <span class="ch-orb o1"></span><span class="ch-orb o2"></span><span class="ch-grid"></span>
+      {%- for d in D.dealers %}{% if d.lat and d.lng %}<i class="dl-ping" style="--x:{{ ((d.lng - 97.3) / 8.4 * 100) | round(1) }}%;--y:{{ ((20.5 - d.lat) / 15 * 100) | round(1) }}%;--t:{{ loop.index0 * 0.7 }}s"></i>{% endif %}{% endfor %}
+    </div>
+    <div class="ch-copy">
+      <span class="ch-kicker">ORAFON Dealer Network</span>
+      <h1 class="ch-title">{{ T.dealersTitle }}</h1>
+      <p>{{ T.dealersLead }}</p>
+      <div class="ch-meta">
+        <span class="ch-stat"><b>{{ D.dealers.length }}</b>{{ "ร้าน" if lang == "th" else "shops" }}</span>
+        <span class="ch-stat"><b>{{ D.dealerProvinces.length }}</b>{{ "จังหวัด" if lang == "th" else "provinces" }}</span>
+      </div>
+    </div>
+    <div class="dl-thai" aria-hidden="true"><img src="/assets/img/penguin-white.png" alt=""></div>
+  </div>
+</div></section>
+
+<section class="dl-wrap"><div class="container">
+  <div class="dl-tools">
+    <div class="tb-search">
+      {{ icon("search") }}
+      <label class="sr-only" for="dlq">{{ T.search }}</label>
+      <input id="dlq" type="search" placeholder="{{ T.dealerSearchPh }}" autocomplete="off">
+    </div>
+    <select class="tb-select" id="dlProv" aria-label="{{ T.allProvinces }}">
+      <option value="">{{ T.allProvinces }}</option>
+      {%- for p in D.dealerProvinces %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+    </select>
+    <button type="button" class="dl-near" id="dlNear" data-busy="{{ T.locating }}" data-fail="{{ T.locateFail }}">{{ icon("pin") }}<span>{{ T.nearMe }}</span></button>
+    <span class="dl-count" id="dlCount" data-tpl="{{ T.dealersFound }}">{{ T.dealersFound | replace("{n}", D.dealers.length) }}</span>
+  </div>
+  <p class="dl-msg" id="dlMsg" role="status" hidden></p>
+
+  <div class="dl-grid">
+    <ol class="dl-list" id="dlList">
+      {%- for d in D.dealers %}
+      {%- set dir = d.map_url or ('https://www.google.com/maps/dir/?api=1&destination=' ~ d.lat ~ ',' ~ d.lng if d.lat and d.lng else 'https://www.google.com/maps/search/?api=1&query=' ~ ((d.name ~ ' ' ~ d.address) | urlencode)) %}
+      <li class="dl-item" data-id="{{ d.slug }}" data-prov="{{ d.province }}" data-lat="{{ d.lat or '' }}" data-lng="{{ d.lng or '' }}" data-text="{{ [d.name, d.district, d.province, d.address] | join(' ') | lower }}" tabindex="0">
+        <div class="dl-top">
+          <span class="dl-pin">{{ icon("pin") }}</span>
+          <div>
+            <h3>{{ d.name }}{% if d.sample %} <em class="dl-sample">{{ T.sampleBadge }}</em>{% endif %}</h3>
+            <span class="dl-where">{% if d.district %}{{ d.district }} · {% endif %}{{ d.province }}</span>
+          </div>
+          <span class="dl-km" hidden></span>
+        </div>
+        <p class="dl-addr">{{ d.address }}</p>
+        {%- if d.hours %}<p class="dl-hours">{{ icon("clock") }}{{ d.hours }}</p>{% endif %}
+        <div class="dl-actions">
+          {%- if d.phone %}<a href="tel:{{ d.phone | replace(' ', '') | replace('-', '') }}">{{ icon("phone") }}{{ d.phone }}</a>{% endif %}
+          {%- if d.line %}<a href="https://line.me/R/ti/p/{{ d.line | urlencode }}" target="_blank" rel="noopener">{{ icon("chat") }}LINE</a>{% endif %}
+          <a class="go" href="{{ dir }}" target="_blank" rel="noopener">{{ T.directions }} <span aria-hidden="true">↗</span></a>
+        </div>
+      </li>
+      {%- endfor %}
+    </ol>
+    <div class="dl-empty" id="dlEmpty"{% if D.dealers.length %} hidden{% endif %} data-none="{{ T.dealersNoMatch }}">
+      {{ icon("store") }}
+      <p>{{ T.dealersEmpty if not D.dealers.length else T.dealersNoMatch }}</p>
+      <a class="lx-btn" href="tel:{{ D.site.phone }}">{{ icon("phone") }} {{ D.site.phone_display or D.site.phone }}</a>
+    </div>
+    <div class="dl-map-wrap"><div class="dl-map" id="dlMap" aria-label="{{ T.dealers }}"></div></div>
+  </div>
+</div></section>
+
+<section class="section dl-join"><div class="container">
+  <div class="dl-join-card">
+    <div>
+      <span class="ch-kicker">ORAFON Partner</span>
+      <h2>{{ T.becomeDealer }}</h2>
+      <p>{{ T.becomeDealerLead }}</p>
+    </div>
+    <div class="dl-join-cta">
+      <a class="lx-btn" href="{{ '/contact/' | u(lang) }}">{{ T.contactUs }} <span aria-hidden="true">→</span></a>
+      {%- if D.site.phone %}<a class="lx-btn ghost" href="tel:{{ D.site.phone }}">{{ icon("phone") }} {{ D.site.phone_display or D.site.phone }}</a>{% endif %}
+    </div>
+  </div>
+</div></section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>

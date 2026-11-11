@@ -18,7 +18,9 @@ th:
     - icon: home
       label: แอร์บ้าน
     - icon: ac
-      label: แอร์เชิงพาณิชย์ / VRF
+      label: แอร์เชิงพาณิชย์
+    - icon: vrf
+      label: ระบบ VRF
     - icon: heatpump
       label: ฮีตปั๊ม
 en:
@@ -27,6 +29,8 @@ en:
     - icon: home
       label: Residential AC
     - icon: ac
-      label: Commercial AC / VRF
+      label: Commercial AC
+    - icon: vrf
+      label: VRF systems
     - icon: heatpump
       label: Heat pumps

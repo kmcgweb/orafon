@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 {#- Pages in both languages, with hreflang alternates. Product pages also list their images
     (Google Images: image sitemap extension) so our own pages are the source Google ties the photos to. -#}
 {%- set site = db.th.site.site_url -%}
-{%- set paths = ["/", "/products/", "/technical/", "/retrofit/", "/documents/", "/about/", "/contact/", "/privacy/", "/terms/"] -%}
+{%- set paths = ["/", "/products/", "/retrofit/", "/about/", "/dealers/", "/contact/", "/privacy/", "/terms/"] -%}
 {%- if db.th.articles.length %}{% set paths = paths.concat(["/articles/"]) %}{% endif -%}
 {%- for b in db.th.brands %}{% set paths = paths.concat(["/brands/" ~ b.slug ~ "/"]) %}{% endfor -%}
 {%- for a in db.th.articles %}{% set paths = paths.concat(["/articles/" ~ a.slug ~ "/"]) %}{% endfor -%}

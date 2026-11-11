@@ -25,6 +25,47 @@ eleventyComputed:
   </div>
 </div></section>
 {%- endif %}
+{%- if A.quality_title %}
+<section class="section" id="quality" style="padding-top:0"><div class="container">
+  <div class="qa-band">
+    <div>
+      <h2 class="display">{{ A.quality_title }}</h2>
+      {%- if A.quality_lead %}<p class="lead">{{ A.quality_lead }}</p>{% endif %}
+      {%- if A.quality_quote %}<p class="qa-quote">“{{ A.quality_quote }}”</p>{% endif %}
+    </div>
+    {%- if A.quality_badges and A.quality_badges.length %}
+    <ul class="qa-badges">{% for b in A.quality_badges %}<li>{{ b }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </div>
+  {%- if A.lab and A.lab.length %}
+  <h3 class="qa-lab-h">{{ A.lab_title }}</h3>
+  {%- if A.lab_lead %}<p class="muted qa-lab-lead">{{ A.lab_lead }}</p>{% endif %}
+  <div class="lab-grid">
+    {%- for l in A.lab %}
+    <article class="lab-card{% if l.featured %} is-feature{% endif %}">
+      {%- if l.image %}<div class="lab-img"><img src="{{ l.image }}" alt="{{ l.title }}" loading="lazy"></div>{% endif %}
+      <div class="lab-body">
+        <h4>{{ l.title }}</h4>
+        <p>{{ l.text }}</p>
+        {%- if l.points and l.points.length %}
+        <ul class="lab-points">{% for pt in l.points %}<li><b>{{ pt.title }}</b> {{ pt.text }}</li>{% endfor %}</ul>
+        {%- endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</div></section>
+{%- endif %}
+{%- if A.clients and A.clients.length %}
+<section class="section" id="clients" style="padding-top:0"><div class="container">
+  <h2 class="display">{{ A.clients_title }}</h2>
+  {%- if A.clients_lead %}<p class="lead">{{ A.clients_lead }}</p>{% endif %}
+  <ul class="client-wall">
+    {%- for c in A.clients %}<li class="client-logo"><img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy"></li>{% endfor %}
+  </ul>
+</div></section>
+{%- endif %}
 {%- if A.history_show and A.history and A.history.length %}
 <section class="section" id="history" style="padding-top:0"><div class="container">
   <h2 class="display">{{ A.history_title }}</h2>

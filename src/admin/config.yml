@@ -116,7 +116,7 @@ collections:
         i18n: true
         summary: "{{label}}"
         fields: &appFields
-          - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, heatpump, snow, store, box, car, fridge, chiller, truck, factory, foam, spray, flask, wrench, bolt], i18n: duplicate }
+          - { name: icon, label: "ไอคอน", widget: select, options: [ac, home, vrf, heatpump, snow, store, box, car, fridge, chiller, truck, factory, foam, spray, flask, wrench, bolt], i18n: duplicate }
           - { name: icon_image, label: "รูปไอคอนเอง (ไม่บังคับ — ถ้าใส่จะใช้แทนไอคอนที่เลือก, SVG/PNG พื้นใส 96×96 px ขึ้นไป)", widget: image, required: false, i18n: duplicate }
           - { name: label, label: "ข้อความ", widget: string }
       - name: documents
@@ -239,6 +239,33 @@ collections:
       - { name: body, label: "เนื้อหา", widget: markdown, i18n: true }
       - { name: draft, label: "ซ่อน (ฉบับร่าง)", widget: boolean, default: false }
 
+  # ------------------------------------------------------------ DEALERS
+  - name: dealers
+    label: "ร้านตัวแทนจำหน่าย (Dealers)"
+    label_singular: "ร้านตัวแทน"
+    folder: content/dealers
+    extension: yml
+    format: yaml
+    create: true
+    delete: true
+    slug: "{{id}}"
+    identifier_field: name
+    summary: "{{name}} · {{province}}"
+    sortable_fields: [province, name]
+    fields:
+      - { name: id, label: "รหัส URL", hint: "ภาษาอังกฤษ เช่น cool-air-bangkapi", widget: string, pattern: ['^[a-z0-9-]+$', "ใช้ a-z 0-9 และ - เท่านั้น"] }
+      - { name: name, label: "ชื่อร้าน", widget: string }
+      - { name: province, label: "จังหวัด", widget: string, hint: "เขียนชื่อเต็ม เช่น กรุงเทพมหานคร, นครปฐม" }
+      - { name: district, label: "อำเภอ/เขต", widget: string, required: false }
+      - { name: address, label: "ที่อยู่", widget: text }
+      - { name: phone, label: "เบอร์โทร", widget: string, required: false }
+      - { name: line, label: "LINE ID", widget: string, required: false }
+      - { name: hours, label: "เวลาเปิด", widget: string, required: false }
+      - { name: lat, label: "ละติจูด (Latitude)", widget: number, value_type: float, required: false, hint: "จาก Google Maps: คลิกขวาที่ร้าน แล้วคัดลอกตัวเลขชุดแรก เช่น 13.7563" }
+      - { name: lng, label: "ลองจิจูด (Longitude)", widget: number, value_type: float, required: false, hint: "ตัวเลขชุดที่สอง เช่น 100.2526" }
+      - { name: map_url, label: "ลิงก์ Google Maps", widget: string, required: false }
+      - { name: draft, label: "ซ่อน", widget: boolean, default: false }
+
   # ------------------------------------------------------------ PAGES
   - name: pages
     label: "หน้าเว็บ (Pages)"
@@ -289,6 +316,7 @@ collections:
             fields:
               - { name: image, label: "รูป (คอม) 1920×480", widget: image, required: false, i18n: duplicate }
               - { name: image_mobile, label: "รูป (มือถือ) 1200×675", widget: image, required: false, i18n: duplicate }
+              - { name: logo, label: "โลโก้ด้านขวา (PNG/SVG พื้นใส)", widget: image, required: false, i18n: duplicate }
               - { name: product, label: "ลิงก์ไปสินค้า", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false, i18n: duplicate }
               - { name: url, label: "หรือลิงก์อื่น", widget: string, required: false, i18n: duplicate }
               - { name: title, label: "หัวข้อ", widget: string, required: false }
@@ -331,6 +359,41 @@ collections:
               - { name: year, label: "ปี", widget: string }
               - { name: title, label: "หัวข้อ", widget: string }
               - { name: text, label: "รายละเอียด", widget: text, required: false }
+          - { name: quality_title, label: "คุณภาพ: หัวข้อ", widget: string, required: false, i18n: true }
+          - { name: quality_lead, label: "คุณภาพ: คำอธิบาย", widget: text, required: false, i18n: true }
+          - { name: quality_badges, label: "คุณภาพ: มาตรฐาน", hint: "เช่น ISO 9001:2015", widget: list, required: false }
+          - { name: quality_quote, label: "คุณภาพ: สโลแกน", widget: string, required: false, i18n: true }
+          - { name: lab_title, label: "เครื่องมือตรวจสอบ: หัวข้อ", widget: string, required: false, i18n: true }
+          - { name: lab_lead, label: "เครื่องมือตรวจสอบ: คำอธิบาย", widget: text, required: false, i18n: true }
+          - name: lab
+            label: "เครื่องมือตรวจสอบ: รายการ"
+            widget: list
+            required: false
+            i18n: true
+            summary: "{{title}}"
+            fields:
+              - { name: title, label: "ชื่อเครื่อง", widget: string }
+              - { name: featured, label: "การ์ดใหญ่ (เด่น)", widget: boolean, required: false, i18n: duplicate }
+              - { name: image, label: "รูป", widget: image, required: false }
+              - { name: text, label: "รายละเอียด", widget: text }
+              - name: points
+                label: "หัวข้อย่อย"
+                widget: list
+                required: false
+                fields:
+                  - { name: title, label: "หัวข้อ", widget: string }
+                  - { name: text, label: "รายละเอียด", widget: text }
+          - { name: clients_title, label: "ลูกค้า: หัวข้อ", widget: string, required: false, i18n: true }
+          - { name: clients_lead, label: "ลูกค้า: คำอธิบาย", widget: text, required: false, i18n: true }
+          - name: clients
+            label: "ลูกค้า: โลโก้"
+            hint: "ใส่ครั้งเดียว ใช้ทั้งหน้าไทยและอังกฤษ"
+            widget: list
+            required: false
+            summary: "{{name}}"
+            fields:
+              - { name: name, label: "ชื่อบริษัท", widget: string }
+              - { name: logo, label: "โลโก้", widget: image }
           - { name: body, label: "เนื้อหาเพิ่มเติม", widget: markdown, required: false, i18n: true }
       - name: privacy
         label: "นโยบายความเป็นส่วนตัว"

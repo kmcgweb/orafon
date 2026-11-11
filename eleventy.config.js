@@ -72,6 +72,13 @@ function buildDb() {
     products: loadFolder("products"),
     articles: loadFolder("articles"),
   };
+  // dealers are one language (shop names and addresses as written). Files flagged "sample: true" are demo shops:
+  // they show only on the local dev server (eleventy --serve), never in the deployed build.
+  const dev = process.env.ELEVENTY_RUN_MODE === "serve";
+  const dealers = loadFolder("dealers")
+    .map(({ slug, raw }) => ({ ...raw, slug, lat: Number(raw.lat) || null, lng: Number(raw.lng) || null }))
+    .filter((d) => !d.draft && (!d.sample || dev))
+    .sort((a, b) => String(a.province).localeCompare(String(b.province), "th") || String(a.name).localeCompare(String(b.name), "th"));
   const file = (p) => (fs.existsSync(path.join(CONTENT, p)) ? readYaml(path.join(CONTENT, p)) : {});
   const singles = {
     site: file("settings/site.yml"),
@@ -123,7 +130,7 @@ function buildDb() {
         const packages = (p.packages || []).map((k) => ({ ...k, name: packWord(k.name, lang), unit: packWord(k.unit, lang) }));
         // chips on the mega-menu preview card: refrigerant facts, else oil type + pack sizes
         const previewChips = ref
-          ? [ref.class, ref.safety, "GWP " + ref.gwp_ar4]
+          ? [ref.class, ref.safety, "GWP " + ref.gwp_ar4].filter(Boolean)
           : [oilType, ...packages.map((k) => `${k.kg} ${k.unit || "kg"}`)].filter(Boolean);
         const eco = isEco(p, ref);
         // badges shown on cards, the product page and in the label filter
@@ -221,6 +228,20 @@ function buildDb() {
       documents: products.flatMap((p) => (p.documents || []).map((d) => ({ ...d, product: p }))),
       site: one("site"), home: one("home"), about: one("about"), privacy: one("privacy"), terms: one("terms"),
       classes: [...new Set(refrigerants.filter((r) => r.products.length).map((r) => r.class))],
+      // products page headers (?cat=): item count and up to three photos per category (recommended first);
+      // "all" shows one photo from each category
+      catShowcase: (() => {
+        const pics = (ps) => [...new Set([...ps.filter((p) => p.labels.includes("recommended")), ...ps])].filter((p) => p.coverImage);
+        const out = { all: { n: products.length, pics: [] } };
+        for (const k of ["refrigerant", "oil", "other"]) {
+          const ps = products.filter((p) => p.category === k);
+          out[k] = { n: ps.length, pics: pics(ps).slice(0, 3) };
+          if (out[k].pics[0]) out.all.pics.push(out[k].pics[0]);
+        }
+        return out;
+      })(),
+      dealers,
+      dealerProvinces: [...new Set(dealers.map((d) => d.province).filter(Boolean))],
       oilTypes: Object.keys(OIL_TYPES).filter((t) => products.some((p) => p.oilType === t)).map((t) => ({ type: t, full: OIL_TYPES[t] })),
     };
   }

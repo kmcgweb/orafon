@@ -29,16 +29,18 @@ th:
   - title: เกรด 56
     text: เลือกเกรดความหนืดตามที่ผู้ผลิตคอมเพรสเซอร์กำหนด
   - title: ปรึกษาทีมงาน
-    text: ขนาดบรรจุ 1 ลิตร และ 5 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
+    text: ขนาดบรรจุ 1, 5 และ 18.9 ลิตร สอบถามเอกสารทางเทคนิคได้ที่ทีม ORAFON
   description: |-
     ORAFON PVE 56 เป็นน้ำมันคอมเพรสเซอร์ชนิด PVE (Polyvinyl Ether) สำหรับคอมเพรสเซอร์เครื่องปรับอากาศที่ใช้สารทำความเย็น HFC เกรดความหนืด 56
 
-    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1 ลิตร และ 5 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
+    ควรเลือกชนิดและเกรดน้ำมันให้ตรงกับที่ผู้ผลิตคอมเพรสเซอร์กำหนด มีขนาดบรรจุ 1, 5 และ 18.9 ลิตร ติดต่อทีม ORAFON เพื่อสอบถามสต็อก ข้อมูลทางเทคนิค และขอใบเสนอราคา
   applications:
   - icon: ac
     label: เครื่องปรับอากาศ
+  - icon: vrf
+    label: ระบบ VRF
   - icon: heatpump
-    label: VRF / ฮีตปั๊ม
+    label: ฮีตปั๊ม
   documents:
   - type: TDS
     label: Technical Data Sheet (TDS)
@@ -63,14 +65,16 @@ en:
   - title: Grade 56
     text: Choose the viscosity grade specified by the compressor maker
   - title: Ask our team
-    text: 1 L and 5 L packs; contact ORAFON for technical documents
+    text: 1 L, 5 L and 18.9 L packs; contact ORAFON for technical documents
   description: |-
     ORAFON PVE 56 is a PVE (polyvinyl ether) compressor oil for air-conditioning compressors running HFC refrigerants, viscosity grade 56.
 
-    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L and 5 L. Contact the ORAFON team for stock, technical data and a quotation.
+    Always use the oil type and grade specified by the compressor manufacturer. Available in 1 L, 5 L and 18.9 L. Contact the ORAFON team for stock, technical data and a quotation.
   applications:
   - icon: ac
     label: Air-conditioners
+  - icon: vrf
+    label: VRF systems
   - icon: heatpump
-    label: VRF / heat pumps
+    label: Heat pumps
   seo_description: ORAFON PVE 56 PVE compressor oil for air-conditioning from ORAFON — request a quotation.

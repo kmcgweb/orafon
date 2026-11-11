@@ -1,0 +1,90 @@
+th:
+  id: compressor-oil-types
+  date: 2026-11-09
+  cover: ""
+  draft: false
+  title: น้ำมันคอมเพรสเซอร์มีกี่ประเภท? เลือกให้เหมาะกับสารทำความเย็น
+  excerpt: รู้จักน้ำมันคอมเพรสเซอร์ 5 ประเภท Mineral, AB, POE, PAG และ PVE พร้อมวิธีจับคู่กับสารทำความเย็น และจุดเด่นของ ORAFON PREMIUM PAG และ POE
+  body: |
+    น้ำมันคอมเพรสเซอร์ช่วยหล่อลื่น ระบายความร้อน และลดแรงเสียดทานที่เกิดจากการทำงานภายในคอมเพรสเซอร์ แบ่งออกได้เป็น 5 ประเภท
+
+    | ประเภท | ชื่อเต็ม |
+    |---|---|
+    | Mineral | Mineral Oil |
+    | AB | Alkylbenzene |
+    | POE | Polyol Ester |
+    | PAG | Polyalkylene Glycol |
+    | PVE | Polyvinyl Ether |
+
+    ## เลือกน้ำมันให้เหมาะกับสารทำความเย็น
+    เพื่อประสิทธิภาพสูงสุดของคอมเพรสเซอร์ และเพื่อยืดอายุการใช้งานให้ยาวนานขึ้น การเลือกน้ำมันให้เหมาะกับสารทำความเย็นจึงสำคัญมาก เช่น
+
+    - สารทำความเย็นประเภท **HCFC และ HC** เหมาะกับน้ำมันคอมเพรสเซอร์ประเภท **Mineral Oil**
+    - สารทำความเย็นประเภท **HFC** เหมาะกับน้ำมันคอมเพรสเซอร์ประเภทสังเคราะห์ ได้แก่ **POE**, **PAG** (สำหรับรถยนต์) และ **PVE**
+
+    ## ทำไมต้องเป็นน้ำมันสังเคราะห์ (Synthetic)
+    น้ำมันคอมเพรสเซอร์สังเคราะห์อย่าง PAG และ POE ได้รับความนิยมมากขึ้น ทั้งในอุตสาหกรรมและในกลุ่มผู้ใช้ทั่วไป เพราะมีเสถียรภาพดีกว่า ใช้งานได้นานก่อนเสื่อมสภาพ ช่วยลดต้นทุนและค่าแรงในการซ่อมบำรุง และเพิ่มประสิทธิภาพการทำงานของคอมเพรสเซอร์
+
+    ## ORAFON PREMIUM น้ำมันคอมเพรสเซอร์สังเคราะห์แท้
+    โดดเด่นด้านการผสมผสานกันได้ดีกับสารทำความเย็น ไม่เกิดการแยกชั้น
+
+    ### ORAFON PREMIUM PAG
+    น้ำมันหล่อลื่นประเภท PAG (Polyalkylene Glycol) ที่พัฒนาขึ้นสำหรับคอมเพรสเซอร์ของยานยนต์ ผสมสารเติมแต่งสูตรพิเศษ เพื่อการหล่อลื่นและเสถียรภาพทางความร้อนที่ดียิ่งขึ้น และป้องกันการสึกหรอได้ดีเยี่ยม
+
+    - เหมาะกับคอมเพรสเซอร์รถยนต์ที่ใช้สารทำความเย็น R-1234yf และ R-134a
+    - มีส่วนผสมทางเคมีแบบ Double-End-Capped ช่วยเพิ่มความทนทานต่อการดูดกลืนความชื้นได้ถึง 2 เท่า เมื่อเทียบกับน้ำมัน PAG ทั่วไป
+    - เหมาะกับคอมเพรสเซอร์ทุกประเภท รวมถึงคอมเพรสเซอร์ไฟฟ้าในรถยนต์ไฮบริด
+
+    สินค้า: [ORAFON PAG 46](/products/orafon-pag46a/) · [ORAFON PAG 100](/products/orafon-pag100a/)
+
+    ### ORAFON PREMIUM POE
+    น้ำมันหล่อลื่นสังเคราะห์ประเภท POE (Polyol Ester) ที่พัฒนาขึ้นสำหรับคอมเพรสเซอร์ของเครื่องปรับอากาศ โดยเฉพาะระบบความเย็นในที่พักอาศัย มีเสถียรภาพทางเคมีและความร้อนสูง เข้ากันได้ดีกับสารเติมแต่งสูตรเฉพาะ เพื่อการหล่อลื่นที่ดีขึ้นและป้องกันการสึกหรอได้ดีเยี่ยม
+
+    - เหมาะกับระบบแอร์ที่ใช้สารทำความเย็น GWP ต่ำ เช่น R-32
+
+    สินค้า: [ORAFON POE 32](/products/orafon-poe32/) · [ORAFON POE 68](/products/orafon-poe68/) · [น้ำมันคอมเพรสเซอร์ทั้งหมด](/products/)
+
+    ไม่แน่ใจว่าระบบของคุณควรใช้น้ำมันชนิดไหน [ติดต่อทีมงาน ORAFON](/contact/) ได้เลย
+en:
+  title: How many types of compressor oil are there? Matching oil to refrigerant
+  excerpt: The five types of compressor oil (Mineral, AB, POE, PAG and PVE), how to match them to refrigerants, and the strengths of ORAFON PREMIUM PAG and POE.
+  body: |
+    Compressor oil lubricates, carries away heat and reduces friction inside the compressor. There are five types:
+
+    | Type | Full name |
+    |---|---|
+    | Mineral | Mineral Oil |
+    | AB | Alkylbenzene |
+    | POE | Polyol Ester |
+    | PAG | Polyalkylene Glycol |
+    | PVE | Polyvinyl Ether |
+
+    ## Match the oil to the refrigerant
+    For the best compressor performance and a longer service life, choosing the right oil for the refrigerant matters. For example:
+
+    - **HCFC and HC** refrigerants suit **Mineral Oil**
+    - **HFC** refrigerants suit synthetic oils: **POE**, **PAG** (automotive) and **PVE**
+
+    ## Why synthetic oil
+    Synthetic compressor oils such as PAG and POE are increasingly popular in industry and with everyday users. They are more stable and last longer before breaking down, which lowers maintenance cost and labour and improves compressor efficiency.
+
+    ## ORAFON PREMIUM: fully synthetic compressor oil
+    Mixes well with refrigerant without separating into layers.
+
+    ### ORAFON PREMIUM PAG
+    A PAG (Polyalkylene Glycol) lubricant developed for automotive compressors, with a special additive package for better lubrication and thermal stability and excellent wear protection.
+
+    - For car compressors using R-1234yf and R-134a
+    - Double-End-Capped chemistry gives up to twice the resistance to moisture absorption of ordinary PAG oil
+    - Suits all compressor types, including electric compressors in hybrid cars
+
+    Products: [ORAFON PAG 46](/en/products/orafon-pag46a/) · [ORAFON PAG 100](/en/products/orafon-pag100a/)
+
+    ### ORAFON PREMIUM POE
+    A synthetic POE (Polyol Ester) lubricant developed for air-conditioner compressors, especially residential cooling systems. It has high chemical and thermal stability and works with a dedicated additive package for better lubrication and excellent wear protection.
+
+    - For air-conditioning systems using low-GWP refrigerants such as R-32
+
+    Products: [ORAFON POE 32](/en/products/orafon-poe32/) · [ORAFON POE 68](/en/products/orafon-poe68/) · [all compressor oils](/en/products/)
+
+    Not sure which oil your system needs? [Contact the ORAFON team](/en/contact/).

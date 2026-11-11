@@ -92,12 +92,12 @@ eleventyComputed:
       <div class="pd-info">
         <h1 class="pd-title">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</h1>
         <div class="pd-chips">
-          {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span><span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% else %}<span class="pd-chip is-fill">{{ T.cats[p.category] }}</span>{% if p.oilType %}<span class="pd-chip">{{ p.oilType }}</span>{% endif %}{% endif %}
+          {%- if r %}<span class="pd-chip is-fill">{{ r.class }}</span><span class="pd-chip">{{ r.number }}</span>{% if r.safety %}<span class="pd-chip sf sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}{% else %}<span class="pd-chip is-fill">{{ T.cats[p.category] }}</span>{% if p.oilType %}<span class="pd-chip">{{ p.oilType }}</span>{% endif %}{% endif %}
           {%- for l in p.tags %}{{ tagBadge(l, T) }}{% endfor %}
         </div>
         <div class="pd-iconrow">
           {%- set seenIc = [] %}
-          {%- for a in apps %}{% if a.icon_image or seenIc.indexOf(a.icon) < 0 %}{% set _ = seenIc.push(a.icon) %}<span class="pd-ic" title="{{ a.label }}"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="{{ a.label }}" width="30" height="30"></span>{% endif %}{% endfor %}
+          {%- for a in apps %}{% if a.icon_image or seenIc.indexOf(a.icon) < 0 %}{% set _ = seenIc.push(a.icon) %}<a class="pd-ic" href="{{ ('/pictograms/#' ~ (a.icon or 'snow')) | u(lang) }}" title="{{ a.label }}"><img src="{{ a.icon_image or ('/assets/img/icons/' ~ (a.icon or 'snow') ~ '.svg') }}" alt="{{ a.label }}" width="48" height="48"></a>{% endif %}{% endfor %}
           {%- if lowGwp %}<span class="pd-eco" title="{{ T.lowGwp }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></svg>{{ T.lowGwp }}</span>{% endif %}
         </div>
         {%- if p.tagline %}<p class="pd-tagline">{{ p.tagline }}</p>{% endif %}
@@ -178,7 +178,7 @@ eleventyComputed:
             <tr><th>{{ T.refType }}</th><td>{{ r.class }}</td></tr>
             {%- if r.blend_type %}<tr><th>{{ T.blendType }}</th><td>{{ T.blend[r.blend_type] or r.blend_type }}</td></tr>{% endif %}
             {%- if r.composition %}<tr><th>{{ T.composition }}</th><td>{{ r.composition }}</td></tr>{% endif %}
-            <tr><th>{{ T.safety }}</th><td>{{ T.safetyText[r.safety] or r.safety }}</td></tr>
+            <tr><th>{{ T.safety }}</th><td>{{ (T.safetyText[r.safety] or r.safety) if r.safety else "—" }}</td></tr>
             <tr><th>{{ T.odp }}</th><td>{{ r.odp }}</td></tr>
             <tr><th>{{ T.gwp }}</th><td>{{ r.gwp_ar4 }}</td></tr>
             <tr><th>{{ T.gwpAr5 }}</th><td>{{ r.gwp_ar5 or "—" }}</td></tr>
@@ -242,7 +242,7 @@ eleventyComputed:
 
 {#- ===== bottom: three help tiles ===== -#}
 <section class="container pd-help">
-  <a class="pd-help-tile" href="{{ '/technical/' | u(lang) }}"><span class="ph-ic">{{ icon("flask") }}</span><b>{{ T.technical }}</b><span>{{ T.techLead }}</span><em>→</em></a>
+  <a class="pd-help-tile" href="{{ '/articles/' | u(lang) }}"><span class="ph-ic">{{ icon("flask") }}</span><b>{{ T.articles }}</b><span>{{ T.articlesLead }}</span><em>→</em></a>
   <a class="pd-help-tile" href="{{ '/retrofit/' | u(lang) }}"><span class="ph-ic">{{ icon("wrench") }}</span><b>{{ T.findReplacement }}</b><span>{{ T.techRetroDesc }}</span><em>→</em></a>
   <a class="pd-help-tile is-accent" href="{{ contactUrl }}"><span class="ph-ic">{{ icon("headset") }}</span><b>{{ T.contact }}</b><span>{{ T.needHelpText }}</span><em>→</em></a>
 </section>

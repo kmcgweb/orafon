@@ -1,0 +1,28 @@
+---
+pagination: { data: langs, size: 1, alias: lang }
+permalink: "{{ '/pictograms/' | u(lang) }}"
+layout: layouts/base.njk
+pathKey: /pictograms/
+section: products
+eleventyComputed:
+  title: "{{ i18n[lang].pictoTitle }}"
+  description: "{{ i18n[lang].pictoLead }}"
+---
+{%- set T = i18n[lang] -%}
+{%- set D = db[lang] -%}
+<div class="container"><nav class="breadcrumb" aria-label="breadcrumb"><a href="{{ '/' | u(lang) }}">{{ T.home }}</a><span>›</span><a href="{{ '/products/' | u(lang) }}">{{ T.products }}</a><span>›</span>{{ T.pictoTitle }}</nav></div>
+<section class="section" style="padding-top:24px"><div class="container">
+  <h1 class="display">{{ T.pictoTitle }}</h1>
+  <p class="lead">{{ T.pictoLead }}</p>
+  <ul class="picto-grid">
+    {%- for p in pictograms %}
+    {%- set n = 0 %}{% for a in D.appCounts %}{% if a.key == p.key %}{% set n = a.n %}{% endif %}{% endfor %}
+    <li id="{{ p.key }}">
+      <a class="picto-card" href="{{ ('/products/?app=' ~ p.key) | u(lang) }}">
+        <img src="/assets/img/icons/{{ p.key }}.svg" alt="" width="72" height="72" loading="lazy">
+        <span><b>{{ p[lang][0] }}</b><span>{{ p[lang][1] }}</span>{% if n %}<em>{{ n }} {{ T.productsN }} →</em>{% endif %}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</div></section>

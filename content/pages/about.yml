@@ -44,6 +44,58 @@ th:
     - year: "2569"
       title: เปิดเว็บไซต์ orafon.co.th
       text: รวมข้อมูลสินค้า ORAFON และ Solstice® พร้อมข้อมูลทางเทคนิคไว้ในที่เดียว
+  quality_title: คุณภาพที่ตรวจสอบได้
+  quality_lead: ผู้นำเข้าและจัดจำหน่ายสารทำความเย็นและเคมีภัณฑ์ ที่มีฐานการผลิตจากแหล่งผลิตระดับโลก ได้รับการรับรองมาตรฐาน ISO 9001:2015 และยึดมั่นในมาตรฐานคุณภาพผลิตภัณฑ์ AHRI 700 (2019) ด้วยการใช้เทคโนโลยีการตรวจสอบคุณภาพให้เป็นไปตามมาตรฐานระดับสากล
+  quality_badges:
+    - ISO 9001:2015
+    - AHRI 700 (2019)
+  quality_quote: เราส่งมอบผลิตภัณฑ์ที่ดีที่สุด เพื่อคุณ
+  lab_title: เครื่องมือตรวจสอบคุณภาพ
+  lab_lead: เรามุ่งเน้นการเพิ่มมูลค่าให้กับผลิตภัณฑ์ด้วยบริการที่สมบูรณ์ในทุกด้าน และไม่นำเข้าน้ำยาแอร์ที่ไม่ผ่านการตรวจสอบตามมาตรฐานเข้ามาจำหน่าย
+  lab:
+    - title: Gas Chromatography
+      featured: true
+      image: /assets/uploads/lab/gas-chromatography.webp
+      text: ตรวจค่าความบริสุทธิ์และสารปนเปื้อนในน้ำยาแอร์ 2 ค่าหลัก
+      points:
+        - title: Purity Test
+          text: ตรวจความบริสุทธิ์ของน้ำยาแอร์ว่าตรงตามที่ผู้ผลิตระบุ เพราะน้ำยาอาจมีสารปลอมปนหรือส่วนผสมไม่ตรงตามที่ระบุไว้
+        - title: Non-Condensable Test
+          text: ตรวจวัดสารที่ไม่ควบแน่น เช่น อากาศ ไนโตรเจน และออกซิเจน ที่ปนอยู่ในน้ำยาแอร์ สารเหล่านี้ส่งผลต่ออุปกรณ์ในระบบปรับอากาศและทำให้เกิดการกัดกร่อน
+    - title: Coulometer
+      image: /assets/uploads/lab/coulometer.webp
+      text: ตรวจวัดปริมาณความชื้น (Moisture) ที่ปนเปื้อนในสารทำความเย็นด้วยวิธี Karl Fischer แบบ Coulometric ซึ่งละเอียดถึงระดับ ppm (ส่วนในล้านส่วน) ความชื้นเพียงเล็กน้อยก็ทำให้ระบบเสียหายได้ การตรวจความชื้นจึงเป็นหัวใจของคุณภาพน้ำยาแอร์
+      points:
+        - title: ป้องกันน้ำแข็งอุดตัน
+          text: ความชื้นจะกลายเป็นน้ำแข็งที่วาล์วลดแรงดันหรือท่อ Capillary ทำให้น้ำยาไหลไม่สะดวกและความเย็นลดลง
+        - title: ป้องกันกรดกัดกร่อน
+          text: ความชื้นทำปฏิกิริยากับน้ำยาและน้ำมันคอมเพรสเซอร์ เช่น POE และ PVE จนเกิดกรด กัดกร่อนชิ้นส่วนโลหะและฉนวนมอเตอร์ของคอมเพรสเซอร์
+        - title: ยืดอายุระบบ
+          text: น้ำยาที่แห้งตามมาตรฐานช่วยให้คอมเพรสเซอร์ทำงานได้เต็มประสิทธิภาพและใช้งานได้ยาวนาน ลดงานซ่อมบำรุง
+    - title: Refrigerant Analyzer
+      image: /assets/uploads/lab/refrigerant-analyzer.webp
+      text: วิเคราะห์และระบุชนิดของสารทำความเย็น พร้อมแสดงส่วนผสมเป็นเปอร์เซ็นต์ได้อย่างแม่นยำและรวดเร็ว รู้ผลภายในไม่กี่นาที เป็นด่านแรกที่ช่วยคัดกรองให้ลูกค้าได้น้ำยาตรงตามฉลาก
+      points:
+        - title: ยืนยันชนิดน้ำยา
+          text: ตรวจว่าน้ำยาในถังเป็นเบอร์เดียวกับที่ระบุบนฉลาก ป้องกันน้ำยาปลอมหรือบรรจุผิดเบอร์
+        - title: ตรวจสัดส่วนน้ำยาผสม
+          text: น้ำยาผสม (Blend) เช่น R-410A และ R-404A ต้องมีสัดส่วนตรงตามสูตร ถ้าเพี้ยนจะทำให้แรงดันและความเย็นไม่ตรงตามที่ออกแบบ
+        - title: คัดกรองสารปนเปื้อน
+          text: ตรวจพบสารแปลกปลอม เช่น น้ำยาเบอร์อื่นหรือสาร Hydrocarbon ที่ไวไฟ ก่อนถึงมือลูกค้า
+  clients_title: กลุ่มลูกค้าที่ไว้วางใจ ORAFON
+  clients_lead: ORAFON เป็นที่ยอมรับอย่างกว้างขวางในกลุ่มผู้ผลิตเครื่องปรับอากาศและเครื่องใช้ไฟฟ้า
+  clients:
+    - { name: LG, logo: /assets/uploads/clients/lg.svg }
+    - { name: SAMSUNG, logo: /assets/uploads/clients/samsung.svg }
+    - { name: Mitsubishi Heavy Industries, logo: /assets/uploads/clients/mitsubishi-heavy.svg }
+    - { name: Electrolux, logo: /assets/uploads/clients/electrolux.svg }
+    - { name: TOSHIBA, logo: /assets/uploads/clients/toshiba.svg }
+    - { name: HITACHI, logo: /assets/uploads/clients/hitachi.svg }
+    - { name: SHARP, logo: /assets/uploads/clients/sharp.svg }
+    - { name: Beko, logo: /assets/uploads/clients/beko.svg }
+    - { name: Carrier, logo: /assets/uploads/clients/carrier.svg }
+    - { name: Midea, logo: /assets/uploads/clients/midea.svg }
+    - { name: Haier, logo: /assets/uploads/clients/haier.svg }
   body: ""
 en:
   title: We are
@@ -89,3 +141,40 @@ en:
     - year: "2026"
       title: orafon.co.th launches
       text: ORAFON and Solstice® products and technical data in one place.
+  quality_title: Quality you can verify
+  quality_lead: We import and distribute refrigerants and chemicals made by world-class manufacturers. We are certified to ISO 9001:2015 and follow the AHRI 700 (2019) product quality standard, using modern testing technology to meet international standards.
+  quality_quote: We deliver the best products for you
+  lab_title: Quality testing equipment
+  lab_lead: We add value to every product with complete service, and we never import refrigerant that has not passed standard quality testing.
+  lab:
+    - title: Gas Chromatography
+      featured: true
+      image: /assets/uploads/lab/gas-chromatography.webp
+      text: Tests refrigerant purity and contamination on two key values.
+      points:
+        - title: Purity Test
+          text: Confirms the refrigerant matches the manufacturer's specification, since refrigerant can be adulterated or have a different composition from the label.
+        - title: Non-Condensable Test
+          text: Measures non-condensable gases such as air, nitrogen and oxygen in the refrigerant, which harm air-conditioning components and cause corrosion.
+    - title: Coulometer
+      image: /assets/uploads/lab/coulometer.webp
+      text: Measures moisture contamination in refrigerant by coulometric Karl Fischer titration, down to ppm (parts per million). Even a trace of water can damage a system, so moisture testing is at the heart of refrigerant quality.
+      points:
+        - title: Prevents ice blockage
+          text: Moisture freezes at the expansion valve or capillary tube, restricting flow and reducing cooling.
+        - title: Prevents acid corrosion
+          text: Water reacts with refrigerant and compressor oils such as POE and PVE to form acids that attack metal parts and the compressor motor insulation.
+        - title: Longer system life
+          text: Refrigerant that meets dryness standards keeps the compressor running efficiently for longer, with less maintenance.
+    - title: Refrigerant Analyzer
+      image: /assets/uploads/lab/refrigerant-analyzer.webp
+      text: Identifies the refrigerant type and reports the blend composition in percent, quickly and accurately, with results in minutes. It is the first line of screening so customers receive exactly what the label says.
+      points:
+        - title: Confirms the refrigerant
+          text: Checks that the cylinder holds the grade on its label, guarding against counterfeit or mis-filled refrigerant.
+        - title: Checks blend ratios
+          text: Blends such as R-410A and R-404A must match their formulation; an off-ratio blend gives the wrong pressures and cooling.
+        - title: Screens out contaminants
+          text: Detects foreign substances, such as other refrigerant grades or flammable hydrocarbons, before they reach the customer.
+  clients_title: Trusted by leading manufacturers
+  clients_lead: ORAFON is widely trusted by air-conditioner and appliance manufacturers.

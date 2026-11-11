@@ -6,6 +6,13 @@ th:
   slides:
     - image: ""
       image_mobile: ""
+      product: solstice-r513a
+      url: ""
+      title: Solstice® 513A (R-513A)
+      text: สารทดแทน R-134a ไม่ติดไฟ A1 GWP ต่ำกว่ามาก สำหรับชิลเลอร์และงานทำความเย็น
+      button: ดูรายละเอียดสินค้า
+    - image: ""
+      image_mobile: ""
       product: solstice-n40
       url: ""
       title: Solstice® N40 (R-448A)
@@ -13,29 +20,14 @@ th:
       button: ดูรายละเอียดสินค้า
     - image: ""
       image_mobile: ""
-      product: orafon-r32
+      product: orafon-r1234yf
       url: ""
-      title: ORAFON R-32
-      text: สารทำความเย็นสำหรับแอร์อินเวอร์เตอร์รุ่นใหม่ GWP ต่ำกว่า R-410A
+      title: ORAFON R-1234yf
+      text: สาร HFO GWP ต่ำมาก มาตรฐานแอร์รถยนต์รุ่นใหม่แทน R-134a
       button: ดูรายละเอียดสินค้า
-  promos:
-    - image: ""
-      product: orafon-r410a
-      url: ""
-      title: ORAFON R-410A
-      text: สำหรับแอร์บ้านและแอร์เชิงพาณิชย์
-    - image: ""
-      product: solstice-r454b
-      url: ""
-      title: Solstice® 454B (R-454B)
-      text: GWP ต่ำ สำหรับแอร์รุ่นใหม่
-    - image: ""
-      product: orafon-r290
-      url: ""
-      title: ORAFON R-290
-      text: สารทำความเย็นธรรมชาติ GWP ต่ำมาก
   wide_banner:
-    image: ""
+    image: /assets/img/solstice-banner-bg.svg
+    logo: /assets/uploads/solstice-logo-white.png
     image_mobile: ""
     product: ""
     url: /brands/solstice/
@@ -53,6 +45,21 @@ th:
       label: ผู้รับเหมา ร้านค้า ผู้ใช้ทั่วไป และส่งออกต่างประเทศ
   cta_title: พร้อมช่วยวางแผนสารทำความเย็นสำหรับงานของคุณ
   cta_text: ทีมงาน ORAFON พร้อมให้คำปรึกษาการเลือกสาร ตรวจสอบสต็อก และจัดทำใบเสนอราคา ทั้งลูกค้าในประเทศและส่งออกต่างประเทศ
+  clients_title: ลูกค้าหลักของเรา
+  clients_lead: ผู้ผลิตเครื่องปรับอากาศและเครื่องใช้ไฟฟ้าชั้นนำที่ไว้วางใจ ORAFON
+  clients:
+    - { name: LG, logo: /assets/uploads/clients/lg.svg }
+    - { name: SAMSUNG, logo: /assets/uploads/clients/samsung.svg }
+    - { name: Mitsubishi Heavy Industries, logo: /assets/uploads/clients/mitsubishi-heavy.svg }
+    - { name: Electrolux, logo: /assets/uploads/clients/electrolux.svg }
+    - { name: TOSHIBA, logo: /assets/uploads/clients/toshiba.svg }
+    - { name: HITACHI, logo: /assets/uploads/clients/hitachi.svg }
+    - { name: SHARP, logo: /assets/uploads/clients/sharp.svg }
+    - { name: Beko, logo: /assets/uploads/clients/beko.svg }
+    - { name: Carrier, logo: /assets/uploads/clients/carrier.svg }
+    - { name: Midea, logo: /assets/uploads/clients/midea.svg }
+    - { name: Haier, logo: /assets/uploads/clients/haier.svg }
+
 en:
   hero_title: Refrigerants
   hero_highlight: trusted by professionals
@@ -60,34 +67,25 @@ en:
   slides:
     - image: ""
       image_mobile: ""
-      product: solstice-n40
+      product: solstice-r513a
       url: ""
-      title: Solstice® N40 (R-448A)
-      text: Non-flammable A1 replacement for R-404A with 68% lower GWP for commercial refrigeration
+      title: Solstice® 513A (R-513A)
+      text: Non-flammable (A1) R-134a replacement with a much lower GWP, for chillers and refrigeration
       button: View product
     - image: ""
       image_mobile: ""
-      product: orafon-r32
+      product: solstice-n40
       url: ""
-      title: ORAFON R-32
-      text: Refrigerant for new inverter air conditioners, lower GWP than R-410A
+      title: Solstice® N40 (R-448A)
+      text: Non-flammable (A1) R-404A replacement with 68% lower GWP for commercial refrigeration
       button: View product
-  promos:
     - image: ""
-      product: orafon-r410a
+      image_mobile: ""
+      product: orafon-r1234yf
       url: ""
-      title: ORAFON R-410A
-      text: For residential and commercial AC
-    - image: ""
-      product: solstice-r454b
-      url: ""
-      title: Solstice® 454B (R-454B)
-      text: Low GWP for new air conditioners
-    - image: ""
-      product: orafon-r290
-      url: ""
-      title: ORAFON R-290
-      text: Natural refrigerant with ultra-low GWP
+      title: ORAFON R-1234yf
+      text: Ultra-low-GWP HFO, the standard for new automotive AC in place of R-134a
+      button: View product
   wide_banner:
     image: ""
     image_mobile: ""
@@ -107,3 +105,5 @@ en:
       label: Contractors, dealers, end users and export customers
   cta_title: Let us help plan the right refrigerant for your job
   cta_text: The ORAFON team can advise on refrigerant selection, check stock and prepare a quotation, for customers in Thailand and overseas.
+  clients_title: Our key customers
+  clients_lead: Leading air-conditioner and appliance manufacturers that trust ORAFON
