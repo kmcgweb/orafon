@@ -638,11 +638,13 @@
     <loc>https://orafon.co.th/products/orafon-fa374/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-fa374/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-fa374/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-fa374-30kg.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://orafon.co.th/en/products/orafon-fa374/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/products/orafon-fa374/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/orafon-fa374/"/>
+    <image:image><image:loc>https://orafon.co.th/assets/uploads/orafon-fa374-30kg.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://orafon.co.th/products/orafon-uv-check/</loc>
