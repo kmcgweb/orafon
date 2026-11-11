@@ -162,7 +162,7 @@ function buildDb() {
         const seoTitle = p.tagline ? `${titleName} | ${p.tagline}` : titleName;
         const baseDesc = p.seo_description || p.short || "";
         const seoDescription = kwTitle && lang === "th" && !baseDesc.includes(kwTitle) ? `${kwTitle} · ${baseDesc}` : baseDesc;
-        return { ...p, imageAlt, seoTitle, seoKeyword, seoDescription, packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
+        return { ...p, imageAlt, seoTitle, seoKeyword, seoDescription, seoH1: lang === "th" ? kwTitle : "", packages, ref, brandObj, searchText, labels, eco, tags, packText, packShort, oilData, coverImage, gallery, tankColor, apps, appKeys, category, menuName, oilType, kind, oilGrade, previewChips };
       })
       .sort(byOrder);
 
