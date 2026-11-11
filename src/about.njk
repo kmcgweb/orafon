@@ -62,7 +62,7 @@ eleventyComputed:
   <h2 class="display">{{ A.clients_title }}</h2>
   {%- if A.clients_lead %}<p class="lead">{{ A.clients_lead }}</p>{% endif %}
   <ul class="client-wall">
-    {%- for c in A.clients %}<li class="client-logo"><img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy"></li>{% endfor %}
+    {%- for c in A.clients %}<li class="client-logo cl-{{ c.name | slugify }}"><img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy"></li>{% endfor %}
   </ul>
 </div></section>
 {%- endif %}

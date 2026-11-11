@@ -181,7 +181,7 @@ pageScript: home.js
   <h2 class="display">{{ H.clients_title }}</h2>
   {%- if H.clients_lead %}<p class="lead">{{ H.clients_lead }}</p>{% endif %}
   <ul class="client-wall">
-    {%- for c in H.clients %}<li class="client-logo">{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}
+    {%- for c in H.clients %}<li class="client-logo cl-{{ c.name | slugify }}">{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}
   </ul>
 </div></section>
 {%- endif %}
