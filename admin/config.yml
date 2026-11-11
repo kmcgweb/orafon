@@ -364,6 +364,7 @@ collections:
           - { name: quality_lead, label: "คุณภาพ: คำอธิบาย", widget: text, required: false, i18n: true }
           - { name: quality_badges, label: "คุณภาพ: มาตรฐาน", hint: "เช่น ISO 9001:2015", widget: list, required: false }
           - { name: quality_quote, label: "คุณภาพ: สโลแกน", widget: string, required: false, i18n: true }
+          - { name: lab_show, label: "แสดงส่วนเครื่องมือตรวจสอบคุณภาพ", widget: boolean, default: false, required: false, i18n: duplicate }
           - { name: lab_title, label: "เครื่องมือตรวจสอบ: หัวข้อ", widget: string, required: false, i18n: true }
           - { name: lab_lead, label: "เครื่องมือตรวจสอบ: คำอธิบาย", widget: text, required: false, i18n: true }
           - name: lab
