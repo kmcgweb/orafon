@@ -49,7 +49,8 @@ pageScript: home.js
       {%- set p = D.productMap[s.product] if s.product else null %}
       {%- set r = p.ref if p else null %}
       {%- set href = s | bannerHref(lang) %}
-      <div class="dk-text{% if loop.first %} active{% endif %}" data-i="{{ loop.index0 }}" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
+      {%- set pal = [["#0B6E6A","#14A39A"],["#4B1FA8","#7B4BE0"],["#1B2A8C","#2F6FD6"],["#9A3412","#EA7A2C"]] %}{%- set pc = pal[loop.index0 % 4] %}
+      <div class="dk-text{% if loop.first %} active{% endif %}" data-i="{{ loop.index0 }}" data-p1="{{ s.color or pc[0] }}" data-p2="{{ s.color or pc[1] }}" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
         <span class="dk-kicker">{% if p %}{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% elif p.kind %} · {{ p.kind }}{% endif %}{% else %}ORAFON REFRIGERANT{% endif %}</span>
         {#- non-breaking hyphens keep grade numbers such as R-448A on one line -#}
         <h2>{{ (s.title or (p.name if p)) | replace("-", "‑") }}</h2>

@@ -1860,3 +1860,8 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .cl-haier{--lw:52%;--lh:32px}
 @media (max-width:1000px){.client-logo{flex-basis:calc((100% - 3 * 14px) / 4)}}
 @media (max-width:620px){.client-wall{gap:10px}.client-logo{flex-basis:calc((100% - 2 * 10px) / 3);height:76px}}
+/* hero panel colour changes per slide; registered so the gradient can fade between colours */
+@property --panel{syntax:"<color>";inherits:true;initial-value:#2F3192}
+@property --panel2{syntax:"<color>";inherits:true;initial-value:#1E5BB8}
+.dk-hero{transition:--panel 1.1s cubic-bezier(.22,.61,.36,1),--panel2 1.1s cubic-bezier(.22,.61,.36,1)}
+.dk-panel{background:linear-gradient(160deg,var(--panel2) 0%,var(--panel) 72%)}
