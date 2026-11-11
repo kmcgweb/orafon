@@ -47,6 +47,12 @@
       t.querySelectorAll("a,button").forEach(function (el) { el.tabIndex = on ? 0 : -1; });
     });
     slides.forEach(function (s, k) { s.classList.toggle("active", k === i); });
+    // each slide has its own panel colour
+    var t = texts[i];
+    if (t && t.getAttribute("data-p1")) {
+      root.style.setProperty("--panel", t.getAttribute("data-p1"));
+      root.style.setProperty("--panel2", t.getAttribute("data-p2"));
+    }
     tabs.forEach(function (b, k) {
       b.classList.remove("active");
       b.setAttribute("aria-selected", k === i);
