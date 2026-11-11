@@ -2,13 +2,22 @@ th:
   id: orafon-r1234yf
   name: ORAFON R-1234yf
   brand: orafon
+  category: refrigerant
+  oil_type: ''
   refrigerant: r-1234yf
   tagline: สารทำความเย็น HFO สำหรับแอร์รถยนต์รุ่นใหม่
   tag: ''
+  cover: /assets/uploads/R-1234yf.webp
   images: []
+  tank_color: ''
   packages:
     - name: DAC
       kg: 5
+      unit: kg
+      lb: null
+      sku: ''
+      special: false
+  specs: []
   badges:
     - GWP 4
     - A2L ติดไฟได้เล็กน้อย
@@ -48,6 +57,8 @@ th:
     - q: มีขนาดบรรจุอะไรบ้าง ขอราคาอย่างไร?
       a: มีถัง DAC ขนาด 5 kg ติดต่อทีม ORAFON เพื่อสอบถามสต็อกและขอใบเสนอราคา ผ่านปุ่ม "ขอใบเสนอราคา" LINE หรือโทรศัพท์
   seo_description: ORAFON R-1234yf สารทำความเย็น HFO สำหรับแอร์รถยนต์รุ่นใหม่ A2L GWP 4 ถัง DAC 5 kg จัดจำหน่ายโดย ORAFON ขอใบเสนอราคาได้
+  seo_keyword: ''
+  eco: ''
   labels:
     - new
   draft: false
@@ -56,6 +67,7 @@ en:
   name: ORAFON R-1234yf
   tagline: HFO refrigerant for new automotive AC
   tag: ''
+  specs: []
   badges:
     - GWP 4
     - A2L mildly flammable
@@ -91,3 +103,4 @@ en:
     - q: Which pack sizes are available, and how do I get a price?
       a: A 5 kg DAC cylinder. Contact the ORAFON team for stock and a quotation via the "Request a quote" button, LINE or phone.
   seo_description: ORAFON R-1234yf HFO refrigerant for new automotive AC, A2L, GWP 4, 5 kg DAC cylinder. Distributed by ORAFON — request a quotation.
+  seo_keyword: ''
