@@ -21,16 +21,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/products/"/>
   </url>
   <url>
-    <loc>https://orafon.co.th/technical/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/technical/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/technical/"/>
-  </url>
-  <url>
-    <loc>https://orafon.co.th/en/technical/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/technical/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/technical/"/>
-  </url>
-  <url>
     <loc>https://orafon.co.th/retrofit/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/retrofit/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/retrofit/"/>
@@ -41,16 +31,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/retrofit/"/>
   </url>
   <url>
-    <loc>https://orafon.co.th/documents/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/documents/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/documents/"/>
-  </url>
-  <url>
-    <loc>https://orafon.co.th/en/documents/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/documents/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/documents/"/>
-  </url>
-  <url>
     <loc>https://orafon.co.th/about/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/about/"/>
@@ -59,6 +39,16 @@
     <loc>https://orafon.co.th/en/about/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/about/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/dealers/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/dealers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/dealers/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/dealers/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/dealers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/dealers/"/>
   </url>
   <url>
     <loc>https://orafon.co.th/contact/</loc>
@@ -119,6 +109,16 @@
     <loc>https://orafon.co.th/en/brands/solstice/</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/brands/solstice/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/brands/solstice/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/articles/compressor-oil-types/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/compressor-oil-types/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/compressor-oil-types/"/>
+  </url>
+  <url>
+    <loc>https://orafon.co.th/en/articles/compressor-oil-types/</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://orafon.co.th/articles/compressor-oil-types/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orafon.co.th/en/articles/compressor-oil-types/"/>
   </url>
   <url>
     <loc>https://orafon.co.th/articles/r22-replacement-guide/</loc>

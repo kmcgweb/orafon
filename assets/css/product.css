@@ -363,3 +363,8 @@ html{scroll-padding-top:130px}
 .pq-row .pd-qty button{width:38px}
 .pq-err{margin:-4px 0 12px;font-size:13.5px;font-weight:600;color:#B42318}
 .pq-view .nq-count{margin-left:4px}
+@media (min-width:1024px){html{scroll-padding-top:154px}.pd-side{top:154px}}
+.pd-iconrow{gap:6px}
+.pd-ic{width:62px;height:62px}
+.pd-ic img{width:50px;height:50px}
+@media (max-width:560px){.pd-ic{width:52px;height:52px}.pd-ic img{width:42px;height:42px}}
