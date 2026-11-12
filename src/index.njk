@@ -191,3 +191,15 @@ pageScript: home.js
   </div>
 </section>
 {%- endif %}
+
+{#- Export markets: a wordless animated map, arrows from Thailand to the countries we ship to -#}
+<section class="section hsec xm-sec"><div class="container">
+  <div class="xm-card" id="exportMap">
+    {% include "partials/export-map.njk" %}
+    {#- brand line sits in the open Pacific, bottom right; fades in after the first routes go out -#}
+    <div class="xm-brand">
+      <img src="/assets/img/orafon-logo-white.png" alt="ORAFON Refrigerant" loading="lazy">
+      {%- if D.site.footer_about %}<p>{{ D.site.footer_about }}</p>{% endif %}
+    </div>
+  </div>
+</div></section>
