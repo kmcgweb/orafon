@@ -1894,3 +1894,16 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 @media (max-width:640px){.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{left:10px;top:10px;width:70px;height:24px;padding:5px 8px;border-radius:8px}}
 .pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{width:92px;height:34px;padding:6px 10px;background-position:center}
 @media (max-width:640px){.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{width:70px;height:26px;padding:5px 8px}}
+
+/* home: client logos as two slow marquee rows; product cards: quote is the only button (fills the row) */
+.client-marquee{display:flex;flex-direction:column;gap:14px;margin-top:28px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.cm-row{display:flex;overflow:hidden}
+.cm-track{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex:none;animation:cm-move 90s linear infinite;padding-right:14px}
+.cm-row.rev .cm-track{animation-direction:reverse}
+.client-marquee:hover .cm-track{animation-play-state:paused}
+.cm-track .client-logo{flex:0 0 220px;height:96px;padding:0}
+@keyframes cm-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){.cm-track .client-logo{flex-basis:150px;height:72px}.cm-track{animation-duration:70s}}
+@media (prefers-reduced-motion:reduce){.cm-track{animation:none}.cm-row{overflow-x:auto}}
+.prod-foot .pc-quote{flex:1;height:36px;font-size:13px}
+.pc-go{display:none}

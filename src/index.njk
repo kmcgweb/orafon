@@ -126,18 +126,6 @@ pageScript: home.js
 </div></section>
 {%- endif %}
 
-{%- set showList = featured if featured.length else D.products %}
-{%- if showList.length %}
-<section class="section"><div class="container">
-  <h2 class="display">{{ T.featured }}</h2>
-  <p class="lead">{{ T.featuredLead }}</p>
-  <div class="prod-grid">
-    {%- for p in showList | batch(8) | first %}{{ productCard(p, lang, T) }}{% endfor %}
-  </div>
-  <div style="margin-top:28px"><a class="btn btn-ghost" href="{{ '/products/' | u(lang) }}">{{ T.viewAll }} →</a></div>
-</div></section>
-{%- endif %}
-
 {%- if D.classCounts.length %}
 <section class="section" style="padding-top:0"><div class="container">
   <span class="kicker">{{ T.byClass }}</span>
@@ -181,8 +169,17 @@ pageScript: home.js
 <section class="section" id="clients" style="padding-top:0"><div class="container">
   <h2 class="display">{{ H.clients_title }}</h2>
   {%- if H.clients_lead %}<p class="lead">{{ H.clients_lead }}</p>{% endif %}
-  <ul class="client-wall">
-    {%- for c in H.clients %}<li class="client-logo cl-{{ c.name | slugify }}">{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name }}" loading="lazy">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}
-  </ul>
-</div></section>
+</div>
+  {#- two rows drifting in opposite directions; each row repeats its logos 4x and slides half the track, so the loop is seamless on wide screens -#}
+  {%- set half = (H.clients.length / 2) | round(0, "ceil") %}
+  <div class="client-marquee">
+    {%- for row in [H.clients.slice(0, half), H.clients.slice(half)] %}
+    <div class="cm-row{% if loop.index == 2 %} rev{% endif %}">
+      <ul class="cm-track">
+        {%- for rep in [1, 2, 3, 4] %}{% for c in row %}<li class="client-logo cl-{{ c.name | slugify }}"{% if rep > 1 %} aria-hidden="true"{% endif %}>{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name if rep == 1 }}" loading="lazy">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}{% endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
 {%- endif %}

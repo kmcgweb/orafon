@@ -102,7 +102,6 @@
     <div class="pc-pack">{% for k in p.packages %}<span>{{ k.kg | kg }} {{ k.unit or "kg" }}</span>{% endfor %}</div>
     {%- endif %}
     <div class="prod-foot">
-      <a class="pc-go" href="{{ href }}">{{ T.viewDetails }} <span aria-hidden="true">→</span></a>
       <a class="pc-quote" href="{{ href }}#pd-quote">{{ T.quoteShort }}</a>
     </div>
   </div>
