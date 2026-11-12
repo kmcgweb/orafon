@@ -1929,3 +1929,19 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .dk-kicker{font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.01em;text-transform:none;color:#fff;display:inline-flex;align-items:center;gap:10px}
 .dk-kicker::before{content:"";width:22px;height:2px;border-radius:2px;background:rgba(255,255,255,.7)}
 @media (max-width:900px){.dk-texts{margin:0;width:100%}.dk-kicker{font-size:15px}}
+
+/* wide banner motion (Solstice): inline SVG background. Both orbs glide in from the edges and settle; 0.5s after they
+   come to rest (~3.5s) the logo slowly sharpens into view. home.js adds .wb-anim (hidden start, applied instantly: no transition)
+   and then .in when the banner is on screen (transitions live only there). Without JS or with reduced motion: static. */
+.wide-banner .wb-bg{position:absolute;inset:0;width:100%;height:100%}
+.wb-anim .wb-orb-l{transform:translate(-420px,180px);opacity:0}
+.wb-anim .wb-orb-r{transform:translateX(620px);opacity:0}
+.wb-anim .wb-logo{opacity:0;filter:blur(16px);scale:.96}
+.wb-anim .wb-content > *{opacity:0;translate:0 12px}
+.wb-anim.in .wb-orb-l,.wb-anim.in .wb-orb-r{transform:none;opacity:1;transition:transform 3.4s cubic-bezier(.16,1,.3,1),opacity 2.2s ease}
+.wb-anim.in .wb-orb-r{transition-delay:.3s}
+.wb-anim.in .wb-logo{opacity:1;filter:blur(0);scale:1;transition:opacity 2.4s cubic-bezier(.4,0,.2,1) 3.8s,filter 2.6s cubic-bezier(.4,0,.2,1) 3.8s,scale 2.8s cubic-bezier(.16,1,.3,1) 3.8s}
+.wb-anim.in .wb-content > *{opacity:1;translate:0 0;transition:opacity 1.4s ease,translate 1.6s cubic-bezier(.16,1,.3,1)}
+.wb-anim.in .wb-content > :nth-child(1){transition-delay:.9s}
+.wb-anim.in .wb-content > :nth-child(2){transition-delay:1.15s}
+.wb-anim.in .wb-content > :nth-child(3){transition-delay:1.4s}
