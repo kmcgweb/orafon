@@ -1907,3 +1907,18 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 @media (prefers-reduced-motion:reduce){.cm-track{animation:none}.cm-row{overflow-x:auto}}
 .prod-foot .pc-quote{flex:1;height:36px;font-size:13px}
 .pc-go{display:none}
+/* mobile hero: the product leads. Taller stage, bigger bottle centred in a spotlight, quieter grade watermark */
+@media (max-width:900px){
+  .dk-media{height:clamp(340px,96vw,460px)}
+  .dk-studio{background:radial-gradient(70% 60% at 50% 46%,#FFFFFF 0%,#EEF3FA 40%,#CCDAEB 80%,#B3C6DE 100%)}
+  .dk-studio::before{-webkit-mask:radial-gradient(60% 60% at 50% 50%,#000,transparent);mask:radial-gradient(60% 60% at 50% 50%,#000,transparent)}
+  .dk-prod{height:96%;max-width:92%;bottom:5%;filter:drop-shadow(0 26px 26px rgba(16,30,80,.30))}
+  .dk-floor{bottom:6%;width:62%;height:34px}
+  .dk-num{font-size:clamp(120px,40vw,220px);-webkit-text-stroke-width:1px;top:42%}
+  .dk-slide.active .dk-num{opacity:.45}
+  .dk-panel{padding-top:44px}
+}
+@media (max-width:900px){.dk-prod{height:84%;max-width:78%;bottom:9%}.dk-floor{bottom:8%;width:56%}}
+/* home: one even gap between stacked sections (the first after the hero keeps its full top padding) */
+.hsec + .hsec{padding-top:0}
+.hsec:last-child{padding-bottom:0}
