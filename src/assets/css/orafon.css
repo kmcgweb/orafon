@@ -2000,3 +2000,16 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
   .xm-brand img{width:118px;margin-bottom:6px}
   .xm-brand p{font-size:11.5px;line-height:1.5}
 }
+/* contact: tighter info column, address opens Google Maps, embedded map */
+.ct-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-top:22px}
+.ct-item .e{width:40px;height:40px}
+.ct-item .e svg{width:19px;height:19px}
+.ct-item .v{font-size:14.5px}
+.ct-addr{grid-column:1/-1;order:5}
+.ct-list>.ct-item:last-child:not(.ct-addr){order:4}
+a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.ct-map{position:relative;margin-top:20px;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.ct-map iframe{display:block;width:100%;height:300px;border:0}
+.ct-map-open{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:var(--r-sm);background:#fff;border:1px solid var(--border);font-size:13px;font-weight:600;box-shadow:var(--shadow-soft)}
+.ct-map-open svg{width:15px;height:15px}
+@media (max-width:560px){.ct-list{grid-template-columns:1fr}.ct-map iframe{height:240px}}
