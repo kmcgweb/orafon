@@ -116,3 +116,15 @@
   }, { threshold: 0.35 });
   io.observe(wb);
 })();
+
+// export map: start the route animation only once the map is on screen
+(function () {
+  var m = document.getElementById("exportMap");
+  if (!m) return;
+  if (!("IntersectionObserver" in window)) { m.classList.add("in"); return; }
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) m.classList.add("xm-anim");
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { m.classList.add("in"); io.disconnect(); } });
+  }, { threshold: 0.3 });
+  io.observe(m);
+})();
