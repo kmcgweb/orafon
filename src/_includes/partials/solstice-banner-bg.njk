@@ -1,0 +1,65 @@
+{#- Solstice wide banner background, inline so its two orbs can move (home.js adds .in when the banner is on screen;
+    CSS in orafon.css "wide banner motion"). Same layout as /assets/img/solstice-banner-bg.svg: a huge orb rising
+    from the lower left (its rim arcs across the copy side) and a large orb on the right behind the logo. -#}
+<svg class="wb-bg" viewBox="0 0 1920 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="wbBase" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#05062A"/>
+      <stop offset=".45" stop-color="#1A1580"/>
+      <stop offset=".75" stop-color="#3B1FB8"/>
+      <stop offset="1" stop-color="#6A45D9"/>
+    </linearGradient>
+    <!-- left orb: dark glassy body that only lights up toward its rim, so the copy on it stays readable -->
+    <radialGradient id="wbL" cx="-120" cy="900" r="1050" fx="-60" fy="820" gradientUnits="userSpaceOnUse">
+      <stop offset=".72" stop-color="#2A1FA0" stop-opacity="0"/>
+      <stop offset=".9" stop-color="#5B3FD6" stop-opacity=".35"/>
+      <stop offset=".975" stop-color="#A68CFF" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#EDE4FF" stop-opacity=".95"/>
+    </radialGradient>
+    <!-- right orb: lit from the upper left, deep violet core -->
+    <radialGradient id="wbR" cx="2050" cy="260" r="760" fx="1500" fy="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C4AEFF"/>
+      <stop offset=".3" stop-color="#9472F5"/>
+      <stop offset=".65" stop-color="#6C45E0"/>
+      <stop offset=".9" stop-color="#5530C8"/>
+      <stop offset=".97" stop-color="#9C82FA"/>
+      <stop offset="1" stop-color="#F1EBFF"/>
+    </radialGradient>
+    <radialGradient id="wbHalo" cx="2050" cy="260" r="900" gradientUnits="userSpaceOnUse">
+      <stop offset=".8" stop-color="#8E6CFF" stop-opacity="0"/>
+      <stop offset=".855" stop-color="#8E6CFF" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#8E6CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wbSheen" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wbBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="wbSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <clipPath id="wbClipL"><circle cx="-120" cy="900" r="1050"/></clipPath>
+    <clipPath id="wbClipR"><circle cx="2050" cy="260" r="760"/></clipPath>
+  </defs>
+
+  <rect width="1920" height="480" fill="url(#wbBase)"/>
+
+  <g class="wb-orb-l">
+    <circle cx="-120" cy="900" r="1050" fill="url(#wbL)"/>
+    <g clip-path="url(#wbClipL)">
+      <!-- sheen where the rim catches the light, upper right of the arc -->
+      <ellipse cx="560" cy="120" rx="230" ry="70" fill="url(#wbSheen)" opacity=".7" filter="url(#wbSoft)" transform="rotate(42 560 120)"/>
+    </g>
+    <circle cx="-120" cy="900" r="1050" fill="none" stroke="#C9B6FF" stroke-opacity=".55" stroke-width="10" filter="url(#wbBlur)"/>
+    <circle cx="-120" cy="900" r="1049" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
+  </g>
+
+  <g class="wb-orb-r">
+    <circle cx="2050" cy="260" r="900" fill="url(#wbHalo)"/>
+    <circle cx="2050" cy="260" r="760" fill="url(#wbR)"/>
+    <g clip-path="url(#wbClipR)">
+      <ellipse cx="1490" cy="110" rx="200" ry="120" fill="url(#wbSheen)" filter="url(#wbSoft)" transform="rotate(-28 1490 110)"/>
+      <circle cx="2150" cy="420" r="700" fill="#1A0A63" opacity=".28" filter="url(#wbBlur)"/>
+    </g>
+    <circle cx="2050" cy="260" r="760" fill="none" stroke="#F3EEFF" stroke-opacity=".75" stroke-width="12" filter="url(#wbBlur)"/>
+    <circle cx="2050" cy="260" r="758" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
+  </g>
+</svg>

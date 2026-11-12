@@ -154,7 +154,8 @@ pageScript: home.js
 {%- if w and (w.image or w.title) %}
 <section class="section hsec"><div class="container">
   <a class="wide-banner{% if not w.image %} is-ph{% endif %}" href="{{ w | bannerHref(lang) }}">
-    {%- if w.image %}
+    {%- if w.image and w.image == "/assets/img/solstice-banner-bg.svg" and not w.image_mobile %}{% include "partials/solstice-banner-bg.njk" %}
+    {%- elif w.image %}
     <picture>
       {%- if w.image_mobile %}<source media="(max-width:768px)" srcset="{{ w.image_mobile }}">{% endif %}
       <img src="{{ w.image }}" alt="{{ w.title }}" loading="lazy">

@@ -104,3 +104,15 @@
   go(0, 1);
   play();
 })();
+
+// wide banner: once it is on screen, the orbs glide in and settle, then the logo comes into focus (CSS does the motion)
+(function () {
+  var wb = document.querySelector(".wide-banner");
+  if (!wb || !wb.querySelector(".wb-bg") || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  wb.classList.add("wb-anim");
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { wb.classList.add("in"); io.disconnect(); } });
+  }, { threshold: 0.35 });
+  io.observe(wb);
+})();
