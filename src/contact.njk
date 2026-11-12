@@ -30,7 +30,11 @@ eleventyComputed:
     </div>
     {%- if S.address %}
     <div class="ct-map">
-      <iframe src="https://www.google.com/maps?q={{ mapQuery | urlencode }}&amp;hl={{ lang }}&amp;z=15&amp;output=embed" title="Google Maps — {{ S.company_name }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      {%- set mapEmbed = "https://www.google.com/maps?q=" ~ (mapQuery | urlencode) ~ "&hl=" ~ lang ~ "&z=15&output=embed" %}
+      {#- placeholder shows at once; contact.js loads the heavy Google embed after the page is ready and fades it in -#}
+      <div class="ct-map-ph" aria-hidden="true"><span>{{ icon("pin") }}</span></div>
+      <iframe data-src="{{ mapEmbed }}" title="Google Maps — {{ S.company_name }}" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <noscript><iframe src="{{ mapEmbed }}" title="Google Maps — {{ S.company_name }}" loading="lazy" style="opacity:1"></iframe></noscript>
       <a class="ct-map-open" href="{{ mapHref }}" target="_blank" rel="noopener">{{ icon("pin") }} Google Maps</a>
     </div>
     {%- endif %}
