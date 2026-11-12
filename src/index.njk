@@ -51,7 +51,14 @@ pageScript: home.js
       {%- set href = s | bannerHref(lang) %}
       {%- set pal = [["#0B6E6A","#14A39A"],["#1B2A8C","#2F6FD6"],["#4B1FA8","#7B4BE0"],["#7A1F5C","#C2418E"]] %}{%- set pc = pal[loop.index0 % 4] %}
       <div class="dk-text{% if loop.first %} active{% endif %}" data-i="{{ loop.index0 }}" data-p1="{{ s.color or pc[0] }}" data-p2="{{ s.color or pc[1] }}" role="group" aria-roledescription="slide" aria-label="{{ loop.index }} / {{ H.slides.length }}"{% if not loop.first %} aria-hidden="true"{% endif %}>
-        <span class="dk-kicker">{% if p %}{{ p.brandObj.name if p.brandObj }}{% if r %} · {{ r.class }}{% elif p.kind %} · {{ p.kind }}{% endif %}{% else %}ORAFON REFRIGERANT{% endif %}</span>
+        {#- kicker says plainly what the product is ("น้ำยาแอร์ R-448A"); the slide's own kicker field wins, else built from the product -#}
+        {%- set kWord = {"refrigerant": ("น้ำยาแอร์" if lang == "th" else "Refrigerant"), "oil": ("น้ำมันคอมเพรสเซอร์" if lang == "th" else "Compressor oil")} %}
+        {%- if s.kicker %}{% set kick = s.kicker %}
+        {%- elif p and r and r.number %}{% set kick = kWord.refrigerant ~ " " ~ r.number %}
+        {%- elif p and p.category == "oil" and p.oilGrade %}{% set kick = kWord.oil ~ " " ~ p.oilGrade %}
+        {%- elif p %}{% set kick = (p.brandObj.name if p.brandObj else "") ~ (" · " ~ p.kind if p.kind else "") %}
+        {%- else %}{% set kick = "ORAFON REFRIGERANT" %}{% endif %}
+        <span class="dk-kicker">{{ kick | replace("-", "‑") }}</span>
         {#- non-breaking hyphens keep grade numbers such as R-448A on one line -#}
         <h2>{{ (s.title or (p.name if p)) | replace("-", "‑") }}</h2>
         <i class="dk-rule"></i>

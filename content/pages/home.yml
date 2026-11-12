@@ -8,6 +8,7 @@ th:
       image_mobile: ""
       product: orafon-fa374
       url: ""
+      kicker: น้ำยาทำความสะอาดชิ้นงาน FA-374
       title: ORAFON FA-374
       text: น้ำยาทำความสะอาดชิ้นงานอุตสาหกรรม ไม่ติดไฟ ODP 0 ใช้แทน TCE, nPB และ HCFC-141b
       button: ดูรายละเอียดสินค้า
@@ -76,6 +77,7 @@ en:
       image_mobile: ""
       product: orafon-fa374
       url: ""
+      kicker: Industrial cleaning fluid FA-374
       title: ORAFON FA-374
       text: Non-flammable industrial cleaning fluid, ODP 0, replacing TCE, nPB and HCFC-141b
       button: View product
