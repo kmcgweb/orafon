@@ -2013,3 +2013,16 @@ a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline
 .ct-map-open{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:var(--r-sm);background:#fff;border:1px solid var(--border);font-size:13px;font-weight:600;box-shadow:var(--shadow-soft)}
 .ct-map-open svg{width:15px;height:15px}
 @media (max-width:560px){.ct-list{grid-template-columns:1fr}.ct-map iframe{height:240px}}
+
+/* contact map: placeholder until the Google embed has loaded */
+.ct-map{min-height:300px;background:#EEF3F8}
+.ct-map iframe{position:relative;opacity:0;transition:opacity .5s ease}
+.ct-map.ready iframe{opacity:1}
+.ct-map-ph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.65) 50%,rgba(255,255,255,0) 100%) -150% 0/60% 100% no-repeat,repeating-linear-gradient(0deg,transparent 0 39px,rgba(13,59,122,.06) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(13,59,122,.06) 39px 40px),#EEF3F8;animation:ct-shimmer 1.4s linear infinite}
+.ct-map-ph span{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff;color:var(--primary);box-shadow:var(--shadow-soft)}
+.ct-map-ph svg{width:22px;height:22px}
+.ct-map.ready .ct-map-ph{display:none}
+.ct-map-open{z-index:1}
+@keyframes ct-shimmer{to{background-position:250% 0,0 0,0 0,0 0}}
+@media (max-width:560px){.ct-map{min-height:240px}}
+@media (prefers-reduced-motion:reduce){.ct-map-ph{animation:none}}
