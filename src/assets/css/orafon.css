@@ -1885,3 +1885,12 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .pc-tagrow .pc-tag{flex:1;min-width:0;margin-top:0}
 .pc-eco{flex:none;margin-left:auto;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#ECFDF3;color:#067647;border:1px solid #ABEFC6}
 .pc-eco svg{width:16px;height:16px;stroke-width:2.2}
+/* product cards: no brand/type line; the quote button turns solid blue when the card is hovered */
+.prod-card .prod-brand{display:none}
+.prod-card:hover .pc-quote{background:var(--primary);border-color:var(--primary);color:#fff!important}
+/* product cards: brand logo on a raised white chip (depth: layered shadow + top highlight) */
+.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{left:14px;top:14px;bottom:auto;width:96px;height:32px;padding:7px 11px;box-sizing:border-box;opacity:1;background-color:#fff;background-origin:content-box;background-clip:padding-box;border:1px solid rgba(47,49,146,.10);border-radius:10px;box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(15,23,42,.08),0 4px 10px -2px rgba(30,40,110,.16),0 10px 22px -8px rgba(30,40,110,.22);transition:transform .25s,box-shadow .25s}
+.prod-card:hover .pc-logo{transform:translateY(-1px);box-shadow:inset 0 1px 0 #fff,0 2px 3px rgba(15,23,42,.08),0 8px 16px -4px rgba(30,40,110,.22),0 16px 28px -10px rgba(30,40,110,.28)}
+@media (max-width:640px){.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{left:10px;top:10px;width:70px;height:24px;padding:5px 8px;border-radius:8px}}
+.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{width:92px;height:34px;padding:6px 10px;background-position:center}
+@media (max-width:640px){.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{width:70px;height:26px;padding:5px 8px}}
