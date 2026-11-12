@@ -38,7 +38,7 @@ export default {
     category: "หมวดสินค้า",
     byCategory: "หมวดสินค้า",
     allCats: "ทุกหมวดสินค้า",
-    cats: { refrigerant: "สารทำความเย็น", oil: "น้ำมันคอม", other: "ผลิตภัณฑ์อื่นๆ" },
+    cats: { refrigerant: "สารทำความเย็น", oil: "น้ำมันคอมเพรสเซอร์", other: "ผลิตภัณฑ์อื่นๆ" },
     oilTypeCol: "ชนิดน้ำมัน",
     viscGrade: "เกรด",
     visc40: "ความหนืด 40 °C",
