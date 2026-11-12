@@ -267,6 +267,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("brandPages", () => perLang(buildDb(), "brands"));
   eleventyConfig.addGlobalData("articlePages", () => perLang(buildDb(), "articles"));
   eleventyConfig.addGlobalData("buildYear", () => new Date().getFullYear());
+  // changes on every build, so browsers fetch fresh CSS/JS after each deploy (the server sends no cache headers)
+  const assetV = Date.now().toString(36);
+  eleventyConfig.addGlobalData("assetV", () => assetV);
 
   // "/products/" + "en" -> "/en/products/"
   eleventyConfig.addFilter("u", (p, lang) => (lang && lang !== DEFAULT_LANG ? `/${lang}${p}` : p));
