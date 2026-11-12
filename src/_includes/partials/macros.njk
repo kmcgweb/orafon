@@ -64,9 +64,14 @@
 <article class="prod-card" style="--c:{{ p.tankColor }}" data-labels="{{ p.tags | join(' ') }}" data-class="{{ p.kind }}" data-brand="{{ p.brand }}" data-ref="{{ p.refrigerant }}" data-app="{{ p.appKeys }}" data-cat="{{ p.category }}" data-text="{{ p.searchText }}">
   <a class="prod-media" href="{{ href }}" tabindex="-1" aria-hidden="true">
     {%- if p.brandObj and p.brandObj.logo %}<span class="pc-logo" style="background-image:url('{{ p.brandObj.logo }}')" role="img" aria-label="{{ p.brandObj.name }}"></span>{% endif %}
-    {%- if p.tags.length or p.tag %}<span class="prod-tags">
-      {%- for l in p.tags %}{{ tagBadge(l, T) }}{% endfor %}
-      {%- if p.tag %}<span class="prod-tag lb-custom">{{ p.tag }}</span>{% endif %}
+    {#- eco / low-GWP / natural products: no text badge on the photo, just a leaf icon next to the tagline -#}
+    {%- set greenTag = p.tag and ("GWP" in p.tag or "ธรรมชาติ" in p.tag or "Natural" in p.tag) -%}
+    {%- set green = ("eco" in p.tags) or greenTag -%}
+    {%- set cardTags = p.tags | reject("equalto", "eco") | list -%}
+    {%- set customTag = p.tag if (p.tag and not greenTag) else "" -%}
+    {%- if cardTags.length or customTag %}<span class="prod-tags">
+      {%- for l in cardTags %}{{ tagBadge(l, T) }}{% endfor %}
+      {%- if customTag %}<span class="prod-tag lb-custom">{{ customTag }}</span>{% endif %}
     </span>{% endif %}
     {%- if r and r.safety %}<span class="pc-safety sf-{{ r.safety }}">{{ r.safety }}</span>{% endif %}
     {%- if p.coverImage %}<img src="{{ p.coverImage }}" alt="{{ p.imageAlt }}" loading="lazy">{% else %}{{ cylinder(r, "card-" ~ p.slug) }}{% endif -%}
@@ -74,7 +79,7 @@
   <div class="prod-body">
     <span class="prod-brand"><i class="dot" style="background:{{ p.tankColor }}"></i>{{ p.brandObj.name if p.brandObj }}{% if p.kind %} · {{ p.kind }}{% else %} · {{ T.cats[p.category] }}{% endif %}</span>
     <h3 class="prod-name"><a href="{{ href }}">{% if r and r.number and r.number in p.name %}{{ (p.name | escape | string) | replace(r.number, "<span class=\"pc-ref\">" ~ r.number ~ "</span>") | safe }}{% else %}{{ p.name }}{% endif %}</a></h3>
-    {%- if p.tagline %}<p class="pc-tag">{{ p.tagline }}</p>{% endif %}
+    {%- if p.tagline or green %}<div class="pc-tagrow">{% if p.tagline %}<p class="pc-tag">{{ p.tagline }}</p>{% endif %}{% if green %}<span class="pc-eco" title="{{ T.labels.eco }}" aria-label="{{ T.labels.eco }}" role="img">{{ icon("leaf") }}</span>{% endif %}</div>{% endif %}
     {%- if r %}
     <dl class="pc-specs">
       <div><dt>GWP</dt><dd>{{ r.gwp_ar4 or "—" }}</dd></div>
