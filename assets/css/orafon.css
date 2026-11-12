@@ -1922,3 +1922,10 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 /* home: one even gap between stacked sections (the first after the hero keeps its full top padding) */
 .hsec + .hsec{padding-top:0}
 .hsec:last-child{padding-bottom:0}
+/* hero copy: right edge lines up with the header's quote button (the container's content edge).
+   % here is of the panel, which is 52% of the hero, so 100% / .52 is the hero width */
+.dk-texts{--dkm:calc(max(0px,(100% / .52 - var(--container)) / 2) + clamp(16px,3vw,48px));margin-right:var(--dkm);width:min(540px,calc(100% * .7 - var(--dkm)))}
+/* kicker reads as a plain statement of what the product is: "น้ำยาแอร์ R-448A" */
+.dk-kicker{font-family:inherit;font-size:16px;font-weight:600;letter-spacing:.01em;text-transform:none;color:#fff;display:inline-flex;align-items:center;gap:10px}
+.dk-kicker::before{content:"";width:22px;height:2px;border-radius:2px;background:rgba(255,255,255,.7)}
+@media (max-width:900px){.dk-texts{margin:0;width:100%}.dk-kicker{font-size:15px}}

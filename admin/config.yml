@@ -291,6 +291,7 @@ collections:
               - { name: image_mobile, label: "รูปแบนเนอร์ (มือถือ) 1080×1350", widget: image, required: false, i18n: duplicate }
               - { name: product, label: "ลิงก์ไปสินค้า", widget: relation, collection: products, value_field: "{{slug}}", search_fields: [name], display_fields: [name], required: false, i18n: duplicate }
               - { name: url, label: "หรือลิงก์อื่น", hint: "เช่น /technical/ (ถ้าใส่ จะใช้แทนลิงก์สินค้า)", widget: string, required: false, i18n: duplicate }
+              - { name: kicker, label: "บอกว่าสินค้าคืออะไร (เหนือหัวข้อ)", hint: "เช่น น้ำยาแอร์ R-448A · เว้นว่าง = สร้างให้อัตโนมัติจากสินค้า (สารทำความเย็น/น้ำมันคอมเพรสเซอร์)", widget: string, required: false }
               - { name: title, label: "หัวข้อบนแบนเนอร์", hint: "เว้นว่างได้ ถ้ารูปมีข้อความอยู่แล้ว", widget: string, required: false }
               - { name: text, label: "ข้อความรอง", widget: string, required: false }
               - { name: button, label: "ข้อความปุ่ม", widget: string, required: false }
