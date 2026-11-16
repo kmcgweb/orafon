@@ -397,6 +397,7 @@ collections:
             fields:
               - { name: name, label: "ชื่อบริษัท", widget: string }
               - { name: logo, label: "โลโก้", widget: image }
+              - { name: row, label: "แถว", widget: select, options: [{ label: "แถวบน", value: "1" }, { label: "แถวล่าง", value: "2" }], default: "1", required: false, hint: "ถ้าไม่มีโลโก้ไหนเลือกแถวล่าง จะแบ่งครึ่งให้อัตโนมัติ" }
           - { name: body, label: "เนื้อหาเพิ่มเติม", widget: markdown, required: false, i18n: true }
       - name: privacy
         label: "นโยบายความเป็นส่วนตัว"
