@@ -1863,6 +1863,7 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .cl-elaraby{--lw:52%;--lh:50px}
 .cl-samsung-fair-electronics{--lw:86%;--lh:38px}
 .cl-arcelik-lg{--lw:84%;--lh:38px}
+.cl-lg-shaker{--lw:88%;--lh:44px}
 @media (max-width:1000px){.client-logo{flex-basis:calc((100% - 3 * 14px) / 4)}}
 @media (max-width:620px){.client-wall{gap:10px}.client-logo{flex-basis:calc((100% - 2 * 10px) / 3);height:76px}}
 /* hero panel colour changes per slide; registered so the gradient can fade between colours */
@@ -2045,8 +2046,8 @@ a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline
 .xm-over{will-change:transform;transform:translateZ(0)}
 .xm-card.xm-off .xm-route > *,.xm-card.xm-off .xm-hub-ring{animation-play-state:paused!important}
 /* wide two-brand logos get a wider tile so they read at the same size as the rest */
-.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg{flex-basis:300px}
-@media (max-width:640px){.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg{flex-basis:210px}}
+.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg,.cm-track .client-logo.cl-lg-shaker{flex-basis:300px}
+@media (max-width:640px){.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg,.cm-track .client-logo.cl-lg-shaker{flex-basis:210px}}
 /* export map on phones: card a bit taller, map zoomed in on the routes (the empty sea on the right is cropped), text below it */
 @media (max-width:768px){
   .xm-card{aspect-ratio:4/3}

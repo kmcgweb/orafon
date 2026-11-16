@@ -72,6 +72,7 @@ th:
     - { name: ELARABY, logo: /assets/uploads/clients/elaraby.png, row: "2" }
     - { name: Samsung Fair Electronics, logo: /assets/uploads/clients/samsung-fair-electronics.png, row: "2" }
     - { name: Arçelik LG, logo: /assets/uploads/clients/arcelik-lg.png, row: "2" }
+    - { name: LG-Shaker, logo: /assets/uploads/clients/lg-shaker.png, row: "2" }
 
 en:
   hero_title: Refrigerants
