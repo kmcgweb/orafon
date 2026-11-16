@@ -1858,6 +1858,11 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .cl-carrier{--lw:58%;--lh:40px}
 .cl-midea{--lw:54%;--lh:36px}
 .cl-haier{--lw:52%;--lh:32px}
+.cl-daikin{--lw:66%;--lh:30px}
+.cl-aqua{--lw:56%;--lh:30px}
+.cl-elaraby{--lw:52%;--lh:50px}
+.cl-samsung-fair-electronics{--lw:86%;--lh:38px}
+.cl-arcelik-lg{--lw:84%;--lh:38px}
 @media (max-width:1000px){.client-logo{flex-basis:calc((100% - 3 * 14px) / 4)}}
 @media (max-width:620px){.client-wall{gap:10px}.client-logo{flex-basis:calc((100% - 2 * 10px) / 3);height:76px}}
 /* hero panel colour changes per slide; registered so the gradient can fade between colours */
@@ -1896,13 +1901,13 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 @media (max-width:640px){.pc-logo,.prod-media:has(img[src*="-photo-"]) .pc-logo{width:70px;height:26px;padding:5px 8px}}
 
 /* home: client logos as two slow marquee rows; product cards: quote is the only button (fills the row) */
-.client-marquee{display:flex;flex-direction:column;gap:14px;margin-top:28px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.client-marquee{position:relative;display:flex;flex-direction:column;gap:14px;margin-top:28px;overflow:hidden}
 .cm-row{display:flex;overflow:hidden}
-.cm-track{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex:none;animation:cm-move 90s linear infinite;padding-right:14px}
+.cm-track{list-style:none;margin:0;padding:0;display:flex;gap:14px;flex:none;animation:cm-move 90s linear infinite;padding-right:14px;will-change:transform;backface-visibility:hidden}
 .cm-row.rev .cm-track{animation-direction:reverse}
 .client-marquee:hover .cm-track{animation-play-state:paused}
 .cm-track .client-logo{flex:0 0 220px;height:96px;padding:0}
-@keyframes cm-move{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes cm-move{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media (max-width:640px){.cm-track .client-logo{flex-basis:150px;height:72px}.cm-track{animation-duration:70s}}
 @media (prefers-reduced-motion:reduce){.cm-track{animation:none}.cm-row{overflow-x:auto}}
 .prod-foot .pc-quote{flex:1;height:36px;font-size:13px}
@@ -1933,14 +1938,16 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 /* wide banner motion (Solstice): inline SVG background. Both orbs glide in from the edges and settle; 0.5s after they
    come to rest (~3.5s) the logo slowly sharpens into view. home.js adds .wb-anim (hidden start, applied instantly: no transition)
    and then .in when the banner is on screen (transitions live only there). Without JS or with reduced motion: static. */
-.wide-banner .wb-bg{position:absolute;inset:0;width:100%;height:100%}
-.wb-anim .wb-orb-l{transform:translate(-420px,180px);opacity:0}
-.wb-anim .wb-orb-r{transform:translateX(620px);opacity:0}
-.wb-anim .wb-logo{opacity:0;filter:blur(16px);scale:.96}
+.wide-banner .wb-bg{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:hidden}
+.wb-bg > svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.wb-orb{will-change:transform,opacity;backface-visibility:hidden}
+.wb-anim .wb-orb-l{transform:translate3d(-22%,37.5%,0);opacity:0}
+.wb-anim .wb-orb-r{transform:translate3d(32%,0,0);opacity:0}
+.wb-anim .wb-logo{opacity:0;scale:.96}
 .wb-anim .wb-content > *{opacity:0;translate:0 12px}
 .wb-anim.in .wb-orb-l,.wb-anim.in .wb-orb-r{transform:none;opacity:1;transition:transform 3.4s cubic-bezier(.16,1,.3,1),opacity 2.2s ease}
 .wb-anim.in .wb-orb-r{transition-delay:.3s}
-.wb-anim.in .wb-logo{opacity:1;filter:blur(0);scale:1;transition:opacity 2.4s cubic-bezier(.4,0,.2,1) 3.8s,filter 2.6s cubic-bezier(.4,0,.2,1) 3.8s,scale 2.8s cubic-bezier(.16,1,.3,1) 3.8s}
+.wb-anim.in .wb-logo{opacity:1;scale:1;transition:opacity 2.4s cubic-bezier(.4,0,.2,1) 3.8s,scale 2.8s cubic-bezier(.16,1,.3,1) 3.8s}
 .wb-anim.in .wb-content > *{opacity:1;translate:0 0;transition:opacity 1.4s ease,translate 1.6s cubic-bezier(.16,1,.3,1)}
 .wb-anim.in .wb-content > :nth-child(1){transition-delay:.9s}
 .wb-anim.in .wb-content > :nth-child(2){transition-delay:1.15s}
@@ -1951,12 +1958,13 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .xm-svg{display:block;width:100%;height:auto;overflow:visible}
 .xm-land{fill:none;stroke:#6F8BE0;stroke-opacity:.34;stroke-width:8;stroke-linecap:round}
 .xm-th{fill:#3FB4FF;stroke:#CDEBFF;stroke-width:2.5;stroke-linejoin:round;filter:drop-shadow(0 0 12px rgba(63,180,255,.85))}
-.xm-glow{animation:xm-breathe 4s ease-in-out infinite}
+.xm-glow{opacity:.85}
 .xm-hub{fill:#fff}
 .xm-hub-ring{fill:none;stroke:#9EDCFF;stroke-width:3;transform-box:fill-box;transform-origin:center;animation:xm-pulse 2.6s ease-out infinite}
 .xm-hub-ring.r2{animation-delay:1.3s}
-.xm-arc{fill:none;stroke:url(#xmArc);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px rgba(127,211,255,.6))}
-.xm-head,.xm-pin{fill:#fff;opacity:0}
+.xm-arc{fill:none;stroke:url(#xmArc);stroke-width:3.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.xm-head{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.xm-pin{fill:#fff;opacity:0}
 .xm-ping{fill:none;stroke:#7FD3FF;stroke-width:3;opacity:0;transform-box:fill-box;transform-origin:center}
 .xm-route > *{animation-duration:10s;animation-iteration-count:infinite;animation-delay:calc(var(--i) * .38s);animation-play-state:paused}
 .xm-arc{animation-name:xm-draw;animation-timing-function:cubic-bezier(.45,0,.2,1)}
@@ -1969,7 +1977,7 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 @keyframes xm-pulse{from{transform:scale(1);opacity:.9}to{transform:scale(5.5);opacity:0}}
 @keyframes xm-breathe{0%,100%{opacity:.75}50%{opacity:1}}
 @media (prefers-reduced-motion:reduce){
-  .xm-route > *,.xm-hub-ring,.xm-glow{animation:none!important}
+  .xm-route > *,.xm-hub-ring{animation:none!important}
   .xm-arc{stroke-dashoffset:0}.xm-head,.xm-pin{opacity:1}
 }
 /* export map: logo + company line in the open Pacific (bottom right); fades in after the first routes go out.
@@ -1977,8 +1985,8 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 .xm-brand{position:absolute;right:clamp(20px,4.5%,64px);bottom:clamp(18px,7%,56px);width:min(36%,440px);color:#fff}
 .xm-brand img{display:block;width:min(100%,250px);height:auto;margin-bottom:14px}
 .xm-brand p{margin:0;font-size:clamp(13px,1.05vw,15.5px);line-height:1.7;color:rgba(226,236,255,.86)}
-.xm-anim .xm-brand > *{opacity:0;translate:0 14px;filter:blur(6px)}
-.xm-anim.in .xm-brand > *{opacity:1;translate:0 0;filter:blur(0);transition:opacity 1.6s ease,translate 1.8s cubic-bezier(.16,1,.3,1),filter 1.6s ease}
+.xm-anim .xm-brand > *{opacity:0;translate:0 14px}
+.xm-anim.in .xm-brand > *{opacity:1;translate:0 0;transition:opacity 1.6s ease,translate 1.8s cubic-bezier(.16,1,.3,1)}
 .xm-anim.in .xm-brand img{transition-delay:1.6s}
 .xm-anim.in .xm-brand p{transition-delay:2.1s}
 @media (max-width:820px){
@@ -1988,7 +1996,7 @@ header.site.is-scrolled{box-shadow:0 1px 0 var(--border),0 10px 30px -18px rgba(
 /* export map: same frame as the Solstice wide banner (1920×480, 16:9 on phones, same corner radius) */
 .xm-card{aspect-ratio:1920/480;padding:0;border-radius:var(--r);box-shadow:none}
 .xm-svg{position:absolute;inset:0;width:100%;height:100%}
-.xm-brand{right:17%;bottom:8%;width:min(34%,430px)}
+.xm-brand{right:6%;bottom:9%;width:min(34%,430px)}
 .xm-brand img{width:min(100%,210px);margin-bottom:12px}
 @media (max-width:820px){
   .xm-brand{position:absolute;right:auto;left:clamp(16px,4%,40px);bottom:clamp(14px,4%,32px);width:min(60%,420px);padding:0}
@@ -2026,3 +2034,21 @@ a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline
 @keyframes ct-shimmer{to{background-position:250% 0,0 0,0 0,0 0}}
 @media (max-width:560px){.ct-map{min-height:240px}}
 @media (prefers-reduced-motion:reduce){.ct-map-ph{animation:none}}
+
+/* smoothness: marquee edges fade with overlays instead of a CSS mask (a mask over moving content is re-drawn every frame
+   and stutters/flickers on many PCs and phones); the export map's static base sits on its own layer; motion pauses off screen */
+.client-marquee::before,.client-marquee::after{content:"";position:absolute;top:0;bottom:0;width:6%;z-index:2;pointer-events:none}
+.client-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.client-marquee::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.client-marquee.cm-off .cm-track{animation-play-state:paused}
+.xm-base{will-change:transform;transform:translateZ(0)}
+.xm-over{will-change:transform;transform:translateZ(0)}
+.xm-card.xm-off .xm-route > *,.xm-card.xm-off .xm-hub-ring{animation-play-state:paused!important}
+/* wide two-brand logos get a wider tile so they read at the same size as the rest */
+.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg{flex-basis:300px}
+@media (max-width:640px){.cm-track .client-logo.cl-samsung-fair-electronics,.cm-track .client-logo.cl-arcelik-lg{flex-basis:210px}}
+/* export map on phones: card a bit taller, map zoomed in on the routes (the empty sea on the right is cropped), text below it */
+@media (max-width:768px){
+  .xm-card{aspect-ratio:4/3}
+  .xm-svg{top:2%;left:-1.5%;right:auto;width:160%;height:auto}
+}

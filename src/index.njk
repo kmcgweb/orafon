@@ -178,16 +178,21 @@ pageScript: home.js
   <h2 class="display">{{ H.clients_title }}</h2>
   {%- if H.clients_lead %}<p class="lead">{{ H.clients_lead }}</p>{% endif %}
 </div>
-  {#- two rows drifting in opposite directions; each row repeats its logos 4x and slides half the track, so the loop is seamless on wide screens -#}
-  {%- set half = (H.clients.length / 2) | round(0, "ceil") %}
+  {#- two rows drifting in opposite directions. Logos marked row "2" in the CMS go on the bottom row; if none are, the list is split in half.
+      Each row repeats its logos to about 24 tiles (an even number of copies) and slides half the track, so every row loops seamlessly at the same speed -#}
+  {%- set upper = [] %}{% set lower = [] %}
+  {%- for c in H.clients %}{% if c.row == "2" or c.row == 2 %}{% set _x = lower.push(c) %}{% else %}{% set _x = upper.push(c) %}{% endif %}{% endfor %}
+  {%- if lower.length %}{% set rows = [upper, lower] %}
+  {%- else %}{% set half = (H.clients.length / 2) | round(0, "ceil") %}{% set rows = [H.clients.slice(0, half), H.clients.slice(half)] %}{% endif %}
   <div class="client-marquee">
-    {%- for row in [H.clients.slice(0, half), H.clients.slice(half)] %}
+    {%- for row in rows %}{% if row.length %}
+    {%- set reps = ((24 / row.length / 2) | round(0, "ceil")) * 2 %}
     <div class="cm-row{% if loop.index == 2 %} rev{% endif %}">
       <ul class="cm-track">
-        {%- for rep in [1, 2, 3, 4] %}{% for c in row %}<li class="client-logo cl-{{ c.name | slugify }}"{% if rep > 1 %} aria-hidden="true"{% endif %}>{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name if rep == 1 }}" loading="lazy">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}{% endfor %}
+        {%- for rep in range(1, reps + 1) %}{% for c in row %}<li class="client-logo cl-{{ c.name | slugify }}"{% if rep > 1 %} aria-hidden="true"{% endif %}>{% if c.logo %}<img src="{{ c.logo }}" alt="{{ c.name if rep == 1 }}" decoding="async">{% else %}<span class="client-name">{{ c.name }}</span>{% endif %}</li>{% endfor %}{% endfor %}
       </ul>
     </div>
-    {%- endfor %}
+    {%- endif %}{% endfor %}
   </div>
 </section>
 {%- endif %}

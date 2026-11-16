@@ -128,3 +128,15 @@
   }, { threshold: 0.3 });
   io.observe(m);
 })();
+
+// Pause the logo marquee and the export map's loops while they are off screen (saves work, keeps scrolling smooth)
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  [[".client-marquee", "cm-off"], ["#exportMap", "xm-off"]].forEach(function (pair) {
+    var el = document.querySelector(pair[0]);
+    if (!el) return;
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { el.classList.toggle(pair[1], !e.isIntersecting); });
+    }).observe(el);
+  });
+})();
