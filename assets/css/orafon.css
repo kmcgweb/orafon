@@ -2057,3 +2057,5 @@ a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline
 .prod-media{background:linear-gradient(180deg,#F5F8FD 0%,#E4ECF8 100%)}
 /* products mega menu: no brand · type line above the featured product name */
 .mgf-kicker{display:none}
+/* products mega menu: the featured card keeps its full border (an old rule removed the left edge) */
+.mg3 .mg-feature{border-left:1px solid var(--border)}
