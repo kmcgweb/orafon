@@ -2052,3 +2052,8 @@ a.ct-item:hover .v{color:var(--primary);text-decoration:underline;text-underline
   .xm-card{aspect-ratio:4/3}
   .xm-svg{top:2%;left:-1.5%;right:auto;width:160%;height:auto}
 }
+
+/* product cards: light blue gradient behind the product photo (same for every product) */
+.prod-media{background:linear-gradient(180deg,#F5F8FD 0%,#E4ECF8 100%)}
+/* products mega menu: no brand · type line above the featured product name */
+.mgf-kicker{display:none}
