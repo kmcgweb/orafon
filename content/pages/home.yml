@@ -69,7 +69,7 @@ th:
     - { name: Haier, logo: /assets/uploads/clients/haier.svg }
     - { name: DAIKIN, logo: /assets/uploads/clients/daikin.svg }
     - { name: AQUA, logo: /assets/uploads/clients/aqua.png, row: "2" }
-    - { name: ELARABY, logo: /assets/uploads/clients/elaraby.jpg, row: "2" }
+    - { name: ELARABY, logo: /assets/uploads/clients/elaraby.png, row: "2" }
     - { name: Samsung Fair Electronics, logo: /assets/uploads/clients/samsung-fair-electronics.png, row: "2" }
     - { name: Arçelik LG, logo: /assets/uploads/clients/arcelik-lg.png, row: "2" }
 
