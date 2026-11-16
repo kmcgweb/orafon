@@ -68,7 +68,7 @@
     {%- set greenTag = p.tag and ("GWP" in p.tag or "ธรรมชาติ" in p.tag or "Natural" in p.tag) -%}
     {%- set green = ("eco" in p.tags) or greenTag -%}
     {%- set cardTags = p.tags | reject("equalto", "eco") | list -%}
-    {%- set customTag = p.tag if (p.tag and not greenTag) else "" -%}
+    {%- set customTag = p.tag if (p.tag and not greenTag and not ("etrofit" in p.tag)) else "" -%}
     {%- if cardTags.length or customTag %}<span class="prod-tags">
       {%- for l in cardTags %}{{ tagBadge(l, T) }}{% endfor %}
       {%- if customTag %}<span class="prod-tag lb-custom">{{ customTag }}</span>{% endif %}
